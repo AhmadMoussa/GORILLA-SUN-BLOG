@@ -2,10 +2,3 @@ url: "https://ahmadmoussa.github.io" # the base hostname & protocol for your sit
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag
-  
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
