@@ -4,7 +4,7 @@ author: Ahmad Moussa
 description: Sending MIDI signals from an external python script to Ableton is easy but requires a little bit of setup, which I'll guide you through in this blog post.
 thumbnail_path: 2021-02-01-A-tutorial-on-sending-MIDI-signals-from-a-python-script-to-Ableton-Live.png
 ---
-<span class="image left"><img src="https://ahmadmoussa.github.io/sunblog/thumbnails/2021-02-01-A-tutorial-on-sending-MIDI-signals-from-a-python-script-to-Ableton-Live.png" alt="" /></span>
+<span class="image left"><img src="https://gorillasun.de/thumbnails/2021-02-01-A-tutorial-on-sending-MIDI-signals-from-a-python-script-to-Ableton-Live.png" alt="" /></span>
 
 <p>Over two years ago, I saw Andrew Huang's video on creating music from a video of fireworks. He used a software that essentially took the pixel values of a video and converted them to midi signals that were sent to his modular synth. Since I had no modular synth (and I still don't have one), but had Ableton Live, I wanted to build somthing similar. However I had no idea how to send external triggers to Ableton or how it could receive them. I honestly didn't know where to begin with, and info on this seemed very sparse on the internet. But after a little digging I was able to piece together all the components that I needed. After that I created a github repository that guides one through the necessary steps to have a python script trigger a synth in Ableton. Which is to date my most starred github repository. It's only appropriate that I revisit it and write a more detailed blog post about it. Let's get started! </p>
 
@@ -70,6 +70,6 @@ del midiout
 
 <h2>Configuring Ableton</h2>
 <p>In Ableton we'll have to do click a couple of buttons. First jump to your preferences and go to Link MIDI. In the 'MIDI ports' section you should see a entry called 'Loop MIDI' port under inputs. Click on the 'on' button under the 'track' column.</p>
-<span class="image right"><img src="https://ahmadmoussa.github.io/sunblog/post_images/2021-02-01-A-tutorial-on-sending-MIDI-signals-from-a-python-script-to-Ableton-Live/ableton_config1.png" alt="" /></span>
+<span class="image right"><img src="https://gorillasun.de/post_images/2021-02-01-A-tutorial-on-sending-MIDI-signals-from-a-python-script-to-Ableton-Live/ableton_config1.png" alt="" /></span>
 
 <p>After that create a MIDI track and make sure it has an instrument loaded. Next you'll want to arm the track, set it to auto and set the 'MIDI from' field to the 'Loop MIDI' port. Now run the script, and voila it should have trigerred the midi note.</p>
