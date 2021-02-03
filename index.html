@@ -38,7 +38,7 @@ meta: A blog to nerd out about computers and music
 {% for post in site.posts limit:2 %}
 	
 	<article>
-		<a href="https://ahmadmoussa.github.io/sunblog/{{ post.url }}" class="image"><img src="https://ahmadmoussa.github.io/sunblog/thumbnails/{{ post.thumbnail_path }}" alt="" /></a>
+		<a href="https://ahmadmoussa.github.io/sunblog/{{ post.url }}" class="image"><img src="https://ahmadmoussa.github.io/thumbnails/{{ post.thumbnail_path }}" alt="" /></a>
 		<a href="https://ahmadmoussa.github.io/sunblog/{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
 		<p>{{post.description}}</p>
 		<ul class="actions">
