@@ -1,3 +1,5 @@
+title: SUN BLOG
+author: Ahmad Moussa
 url: "https://gorillasun.de" # the base hostname & protocol for your site
 gems:
   - jekyll-sitemap
