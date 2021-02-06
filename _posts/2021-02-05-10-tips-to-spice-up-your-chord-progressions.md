@@ -2,9 +2,9 @@
 title: 10 tips to spice up your chord progressions
 author: Ahmad Moussa
 description: 10 fool proof ways to make your chord progressions more interesting
-thumbnail_path: 2021-05-02-10-tips-to-spice-up-your-chord-progressions.png
+thumbnail_path: 2021-02-05-10-tips-to-spice-up-your-chord-progressions.png
 ---
-<span class="image left"><img src="https://gorillasun.de/thumbnails/2021-05-02-10-tips-to-spice-up-your-chord-progressions.png.png" alt="" /></span>
+<span class="image left"><img src="https://gorillasun.de/thumbnails/2021-02-05-10-tips-to-spice-up-your-chord-progressions.png" alt="" /></span>
 
 <p>The chord progression is inarguably the underlying driving force of every song. They way I like to think about it, is that specific chords can convey very specific types of emotions, and it's the transition between two chords what conveys a sense of movement to your composition. I am well aware that this type of blog post is probably a horse beaten far beyond the point of no return, but I'll try to offer some tips that I use when I feel like I'm stuck while writing music. Let's get started!</p>
 
