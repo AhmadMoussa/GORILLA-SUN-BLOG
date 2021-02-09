@@ -9,17 +9,20 @@ meta: A blog to nerd out about computers and music
 <header class="major">
 	<h2>The Archive</h2>
 </header>
-<div id='articles' class="posts">
-{% for post in site.posts %}
+<div >
+
 	
-	<article>
-		<a href="https://gorillasun.de/{{ post.url }}" class="image"><img src="https://gorillasun.de/thumbnails/{{post.thumbnail_path}}" alt="" /></a>
-		<a href="https://gorillasun.de/{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
-		<p>{{post.description}}</p>
-		<ul class="actions">
-			<li><a href="https://gorillasun.de/{{ post.url }}" class="button">Jump to blog post</a></li>
-		</ul>
-	</article>
+{% for post in site.posts %}
+
+    {% capture day %}{{ post.date | date: '%m%d%Y' }}{% endcapture %}
+    {% capture nday %}{{ post.next.date | date: '%m%d%Y' }}{% endcapture %}
+
+    {% if day != nday %}
+        <h5 class="date">{{ post.date | date: "%A, %B %e, %Y" }}</h5>
+    {% endif %}
+    {{ post.content }}
+    <hr>
+
 {% endfor %}
 
 </div>
