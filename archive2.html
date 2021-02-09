@@ -14,7 +14,7 @@ meta: A blog to nerd out about computers and music
 
 	
 {% assign postsByMonth = 
-site.posts | group_by_exp:"post", "post.date | date: '%A, %e %X, %Y'" %}
+site.posts | group_by_exp:"post", "post.date | date: '%Y, %b'" %}
 
 {% for month in postsByMonth %}
   <h4>{{ month.name }}</h1>
