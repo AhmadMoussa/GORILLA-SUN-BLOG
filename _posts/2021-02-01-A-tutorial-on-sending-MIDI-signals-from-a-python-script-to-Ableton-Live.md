@@ -1,6 +1,7 @@
 ---
 title: A tutorial on sending MIDI signals from a python script to Ableton Live
 author: Ahmad Moussa
+date: 2021-02-01
 description: Sending MIDI signals from an external python script to Ableton is easy but requires a little bit of setup, which I'll guide you through in this blog post.
 thumbnail_path: 2021-02-01-A-tutorial-on-sending-MIDI-signals-from-a-python-script-to-Ableton-Live.png
 ---
