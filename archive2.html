@@ -9,20 +9,20 @@ meta: A blog to nerd out about computers and music
 <header class="major">
 	<h2>The Archive</h2>
 </header>
-<div >
+	
+<div>
 
 	
-{% for post in site.posts %}
+{% assign postsByDay = 
+site.posts | group_by_exp:"post", "post.date | date: '%A, %B %e, %Y'" %}
 
-    {% capture day %}{{ post.date | date: '%m%d%Y' }}{% endcapture %}
-    {% capture nday %}{{ post.next.date | date: '%m%d%Y' }}{% endcapture %}
-
-    {% if day != nday %}
-        <h5 class="date">{{ post.date | date: "%A, %B %e, %Y" }}</h5>
-    {% endif %}
-    {{ post.content }}
-    <hr>
-
+{% for day in postsByDay %}
+  <h1>{{ day.name }}</h1>
+    <ul>
+      {% for post in day.items %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
 {% endfor %}
 
 </div>
