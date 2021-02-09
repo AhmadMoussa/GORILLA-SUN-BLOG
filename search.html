@@ -19,7 +19,7 @@ meta: A blog to nerd out about computers and music
 
 <script type="text/javascript" src="assets/scripts/fetch.js"></script>
 <script type="text/javascript">
-  const endpoint = "{{ 'assets/search.json'}}";
+  const endpoint = "{{ 'assets/search.json' | | relative_url}}";
 
   const pages = [];
 
