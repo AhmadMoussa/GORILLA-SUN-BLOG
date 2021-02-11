@@ -17,16 +17,14 @@ thumbnail_path: 2021-02-06-Morphing-squares-with-P5JS.png
 <p>The Sine function has two awesome properties. Firstly it is bounded by the interval [-1,1], and secondly, we can use it to convert a linear movement into an oscillating movement. You'll get what I mean with this in a second. Remember the definition of the Sine function 'The Sine function of an angle is defined as the ratio of the opposite side of an angle to it's hypotenuse' yada yada, for creative coding, the interesting property of this trigonometric function comes when you add a linearly increasing parameter to the mix. The simplest form of such a parameter that you can find in probably every programming language is time. In P5JS you can get the current time since the moment of starting the rogramming by invoking the millis() function. This is a constantly increasing value. Plug this into the Sine function and you'll obtain a radius that is sweeping around the circle.</p>
 
 
-<iframe style="width: 100%; height: 40vh;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/RwgHRtHtA"></iframe>
+<iframe style="width: 100%; height: 50vh;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/RwgHRtHtA"></iframe>
 
 
 <hr class="major" />
 
 
+<iframe style="width: 100%; height: 100vh;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/kUy5aaU6v"></iframe>
 
-<span class='image fit'>
-<iframe style="width: 100%; height: 50vh;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/kUy5aaU6v"></iframe>
- </span>
 
 <h2></h2>
 
