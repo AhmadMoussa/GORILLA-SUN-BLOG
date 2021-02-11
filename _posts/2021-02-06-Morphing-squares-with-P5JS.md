@@ -12,7 +12,7 @@ thumbnail_path: 2021-02-06-Morphing-squares-with-P5JS.png
 
 
 
-<iframe class='image fit' style="width: 100%; height: 100%;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/kUy5aaU6v"></iframe>
+<iframe style="width: 100%; height: 100vh;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/kUy5aaU6v"></iframe>
 
 
 <hr class="major" />
