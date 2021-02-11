@@ -17,15 +17,15 @@ thumbnail_path: 2021-02-05-10-tips-to-spice-up-your-chord-progressions.png
 <!-- Break -->
 <div class="col-4 col-12-medium">
   <h3>2-5-1</h3>
-  <iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/271188615&color=ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
+  <iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://soundcloud.com/ahmad-moussa-610807633/major-2-5-1/s-f1fN1uhVaaT"></iframe>
 </div>
 <div class="col-4 col-12-medium">
   <h3>4-5-6-1</h3>
-  <iframe width="100%" height="80" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/983320672%3Fsecret_token%3Ds-ripQ4qsDTsp&color=%23c6d2d8&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ahmad-moussa-610807633" title="Gorilla Sun" target="_blank" style="color: #cccccc; text-decoration: none;">Gorilla Sun</a> · <a href="https://soundcloud.com/ahmad-moussa-610807633/3-4a/s-ripQ4qsDTsp" title="Major 4-5-6-1" target="_blank" style="color: #cccccc; text-decoration: none;">Major 4-5-6-1</a></div>
+  <iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/271188615&color=ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
 </div>
 <div class="col-4 col-12-medium">
   <h3>4-5-6-7</h3>
-  <iframe width="100%" height="80" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/983321110&color=%23c6d2d8&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ahmad-moussa-610807633" title="Gorilla Sun" target="_blank" style="color: #cccccc; text-decoration: none;">Gorilla Sun</a> · <a href="https://soundcloud.com/ahmad-moussa-610807633/major-4-5-6-7" title="Major 4-5-6-7" target="_blank" style="color: #cccccc; text-decoration: none;">Major 4-5-6-7</a></div>
+  <iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/271188615&color=ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
 </div>
 </div>
 
