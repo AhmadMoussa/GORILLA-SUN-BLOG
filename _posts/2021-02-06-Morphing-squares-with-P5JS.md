@@ -19,7 +19,7 @@ thumbnail_path: 2021-02-06-Morphing-squares-with-P5JS.png
 <!--
 <iframe style="width: 100%; height: 50vh;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/RwgHRtHtA"></iframe>
 -->
-<span class="image left"><img src="https://gorillasun.de/checkerboard.gif" alt="" /></span>
+<span class="image left"><img src="https://gorillasun.de/out.gif" alt="" /></span>
 <hr class="major" />
 
 
