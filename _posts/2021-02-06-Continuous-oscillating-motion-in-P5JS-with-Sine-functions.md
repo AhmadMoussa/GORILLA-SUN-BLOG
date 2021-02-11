@@ -25,21 +25,20 @@ thumbnail_path: 2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-funct
 	<pre><code>function setup() {
   createCanvas(400, 400);
   background(220);
-  speed = 100
 }
 
+speed = 4000
 function draw() {
   ellipse(200, 200, 200)
   stroke(255, 0, 0)
-  line(200, 200, sin(radians(millis()) / speed) * 100 + 200, 200)
+  line(200, 200, sin(millis() / speed) * 100 + 200, 200)
   stroke(0)
-  line(200, 200, sin(radians(millis()) / speed) * 100 + 200, cos(radians(millis()) / speed) * 100 + 200)
-  line(sin(radians(millis()) / speed) * 100 + 200, cos(radians(millis()) / speed) * 100 + 200, sin(radians(millis()) / speed) * 100 + 200, 200)
+  line(200, 200, sin(millis() / speed) * 100 + 200, cos(millis() / speed) * 100 + 200)
+  line(sin(millis() / speed) * 100 + 200, cos(millis() / speed) * 100 + 200, sin(millis()/ speed) * 100 + 200, 200)
 }</code></pre></div>
 		</div>
-
-
-
+		
+<p> The red line that is contracting and expanding over time is drawn by the following command <code>line(200, 200, sin(radians(millis()) / speed) * 100 + 200, 200)</code>. The P5JS line function takes takes 4 arguments, the x and y coordinates of the start point and the x and y coordinates of the end point of the line. By replacing the x coordinate of the end point by a sine function we can obtain this oscillating motion. Obviously, as stated earlier we need to give some input to the sine function, which will essentially be a function of time. We call the <code>millis()</code> function to get the current time and divide it by a speed parameter. This is slow down the movement so that the sweeping radius doesn't go haywire (try running the sketch without dividing by speed). Then you just have to wrap the result in the already inbuilt <code>sin()</code> function and scale it appropriately such that it appears in the correct location on the canvas.</p>
 <hr class="major" />
 
 
