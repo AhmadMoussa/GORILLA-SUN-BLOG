@@ -11,7 +11,9 @@ thumbnail_path: 2021-02-05-10-tips-to-spice-up-your-chord-progressions.png
 <hr class="major" />
 
 <h2>1 - Stick to the basics</h2>
-<p>One thing I learned the hard way is that adding complexity to your music, for the sake of adding complexity is usually not a good way to develop your composition or track. You don't need incredibly complex harmony to create an interesting piece of music.</p>
+<p>One thing I learned the hard way is that adding complexity to your music, for the sake of adding complexity is usually not a good way to develop your composition or track. You don't need incredibly complex harmony to create an interesting piece of music. You really don't need more than the simple old major scale to make good music.</p>
+
+<iframe width="100%" height="80" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/797097232&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ahmad-moussa-16" title="Gorilla Sun" target="_blank" style="color: #cccccc; text-decoration: none;">Gorilla Sun</a> · <a href="https://soundcloud.com/ahmad-moussa-16/paradise-cream-better" title="Paradise Cream Better" target="_blank" style="color: #cccccc; text-decoration: none;">Paradise Cream Better</a></div>
 <hr class="major" />
 
 <hr class="major" />
