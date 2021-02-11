@@ -11,8 +11,7 @@ thumbnail_path: 2021-02-06-Morphing-squares-with-P5JS.png
 <p>In mathematics the Sine function of an angle is defined as the ratio of the opposite side of an angle to it's hypotenuse. And it's exactly this definition that I hated so much in school. It doesn't really show you all the wonderful things that you can do with the Sine function, it's just a bland non-descriptive book definition. In the next part I'll explain why the Sine function is so great and how I like to think about it.</p>
 
 <span class="image fit">
-<iframe style="width: 100%; height: 400; overflow: auto;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/8PTN0Nc1X">
-  </iframe>
+  <iframe style="width: 100%; height: 400; overflow: auto;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/kUy5aaU6v"></iframe>
 </span>
 
 <hr class="major" />
