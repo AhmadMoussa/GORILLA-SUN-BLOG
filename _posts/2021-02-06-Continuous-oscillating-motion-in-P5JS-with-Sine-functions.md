@@ -21,7 +21,24 @@ thumbnail_path: 2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-funct
 -->
 <div class="row gtr-200">
 			<div class="col-6 col-12-medium"><span class="image fit"><img src="https://gorillasun.de/out.gif" alt="" /></span></div>
-			<div class="col-6 col-12-medium"><p> The exact code for this is a little bit more complicated </p></div>
+			<div class="col-6 col-12-medium"><p> The exact code for this is a little bit more complicated </p>
+	<code>function setup() {
+  createCanvas(400, 400);
+  speed = 100
+}
+
+function draw() {
+  background(220);
+  strokeWeight(2)
+  stroke(0)
+  ellipse(200, 200, 200)
+  stroke(255, 0, 0)
+  line(200, 200, sin(radians(millis()) / speed) * 100 + 200, 200)
+  stroke(0)
+  line(200, 200, sin(radians(millis()) / speed) * 100 + 200, cos(radians(millis()) / speed) * 100 + 200)
+  line(sin(radians(millis()) / speed) * 100 + 200, cos(radians(millis()) / speed) * 100 + 200, sin(radians(millis()) / speed) * 100 + 200, 200)
+  strokeWeight(10)
+}</code></div>
 		</div>
 
 
