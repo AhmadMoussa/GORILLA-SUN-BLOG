@@ -17,15 +17,15 @@ thumbnail_path: 2021-02-05-10-tips-to-spice-up-your-chord-progressions.png
 <!-- Break -->
 <div class="col-4 col-12-medium">
   <h3>2-5-1</h3>
-  <iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/983318446%3Fsecret_token%3Ds-f1fN1uhVaaT&color=%23c6d2d8&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+  <iframe width="100%" height="40" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/983318446%3Fsecret_token%3Ds-f1fN1uhVaaT&color=%23c6d2d8&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
 </div>
 <div class="col-4 col-12-medium">
   <h3>4-5-6-1</h3>
-  <iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/983320672%3Fsecret_token%3Ds-ripQ4qsDTsp&color=%23c6d2d8&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+  <iframe width="100%" height="40" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/983320672%3Fsecret_token%3Ds-ripQ4qsDTsp&color=%23c6d2d8&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
 </div>
 <div class="col-4 col-12-medium">
   <h3>4-5-6-7</h3>
-  <iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/983321110&color=%23c6d2d8&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+  <iframe width="100%" height="40" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/983321110&color=%23c6d2d8&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
 </div>
 </div>
 
