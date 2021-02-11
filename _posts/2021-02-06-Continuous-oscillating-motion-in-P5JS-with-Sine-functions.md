@@ -24,20 +24,17 @@ thumbnail_path: 2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-funct
 			<div class="col-6 col-12-medium"><p> The exact code for this is a little bit more complicated </p>
 	<pre><code>function setup() {
   createCanvas(400, 400);
+  background(220);
   speed = 100
 }
 
 function draw() {
-  background(220);
-  strokeWeight(2)
-  stroke(0)
   ellipse(200, 200, 200)
   stroke(255, 0, 0)
   line(200, 200, sin(radians(millis()) / speed) * 100 + 200, 200)
   stroke(0)
   line(200, 200, sin(radians(millis()) / speed) * 100 + 200, cos(radians(millis()) / speed) * 100 + 200)
   line(sin(radians(millis()) / speed) * 100 + 200, cos(radians(millis()) / speed) * 100 + 200, sin(radians(millis()) / speed) * 100 + 200, 200)
-  strokeWeight(10)
 }</code></pre></div>
 		</div>
 
