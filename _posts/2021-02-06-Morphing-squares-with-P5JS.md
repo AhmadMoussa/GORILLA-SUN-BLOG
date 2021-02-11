@@ -11,14 +11,14 @@ thumbnail_path: 2021-02-06-Morphing-squares-with-P5JS.png
 <p>In mathematics the Sine function of an angle is defined as the ratio of the opposite side of an angle to it's hypotenuse. And it's exactly this definition that I hated so much in school. It doesn't really show you all the wonderful things that you can do with the Sine function, it's just a bland non-descriptive book definition. In the next part I'll explain why the Sine function is so great and how I like to think about it.</p>
 
 <span class="image fit">
-<iframe style="width: 100%; height: 100%; overflow: auto;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/8PTN0Nc1X">
+<iframe style="width: 100%; height: 400; overflow: auto;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/8PTN0Nc1X">
   </iframe>
 </span>
 
 <hr class="major" />
 
 <h3>The Sine function is a conversion of linear motion into oscillating motion</h3>
-<p>The Sine function has two awesome properties. Firstly it is bounded by the interval [-1,1] and secondly we can use it to convert a linear movement into an oscillating movement. You'll get what I mean with this in a second.</p>
+<p>The Sine function has two awesome properties. Firstly it is bounded by the interval [-1,1], and secondly, we can use it to convert a linear movement into an oscillating movement. You'll get what I mean with this in a second. Remember the definition of the Sine function 'The Sine function of an angle is defined as the ratio of the opposite side of an angle to it's hypotenuse' yada yada, for creative coding, the interesting property of this trigonometric function comes when you add a linearly increasing parameter to the mix. The simplest form of such a parameter that you can find in probably every programming language is time. In P5JS you can get the current time since the moment of starting the rogramming by invoking the millis() function. This is a constantly increasing value. Plug this into the Sine function and you'll obtain a radius that is sweeping around the circle.</p>
 <hr class="major" />
 
 <h2></h2>
