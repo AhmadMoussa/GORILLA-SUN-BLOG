@@ -19,9 +19,13 @@ thumbnail_path: 2021-02-06-Morphing-squares-with-P5JS.png
 <!--
 <iframe style="width: 100%; height: 50vh;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/RwgHRtHtA"></iframe>
 -->
-<span class="image left"><img src="https://gorillasun.de/out.gif" alt="" /></span>
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium"><span class="image fit"><img src="https://gorillasun.de/out.gif" alt="" /></span></div>
+			<div class="col-6 col-12-medium"><p> The exact code for this is a little bit more complicated </p></div>
+		</div>
 
-<p> The code for this looks a little bit more complicated </p>
+
+
 <hr class="major" />
 
 
