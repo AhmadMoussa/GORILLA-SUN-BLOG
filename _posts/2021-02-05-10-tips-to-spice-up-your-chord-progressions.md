@@ -55,7 +55,33 @@ Your browser does not support the audio element.
 <hr class="major" />
 
 <h2>4. Interleaving melody and chords</h2>
-<p> Sprinkling some notes on top of your chords can add a lot of character.  </p>
+<p> Sprinkling some notes on top of your chords can add a lot of character. Here are 3 variations of melodies on top of the 3-4-5-6 chord progression we have already seen earlier:</p>
+
+<div class="row">
+<!-- Break -->
+<div class="col-4 col-12-medium">
+  <h3>2-5-1</h3>
+  <audio controls>
+  <source src="https://gorillasun.de/audios/2021-02-05-10-tips-to-spice-up-your-chord-progressions/3-4-5-6var1.wav" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  
+</div>
+<div class="col-4 col-12-medium">
+  <h3>4-5-6-1</h3>
+    <audio controls>
+  <source src="https://gorillasun.de/audios/2021-02-05-10-tips-to-spice-up-your-chord-progressions/3-4-5-6var2.wav" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
+<div class="col-4 col-12-medium">
+  <h3>4-5-6-7</h3>
+    <audio controls>
+  <source src="https://gorillasun.de/audios/2021-02-05-10-tips-to-spice-up-your-chord-progressions/3-4-5-6var3.wav" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
+</div>
 
 <hr class="major" />
 
