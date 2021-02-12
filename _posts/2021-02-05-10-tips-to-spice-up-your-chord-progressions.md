@@ -10,7 +10,7 @@ thumbnail_path: 2021-02-05-10-tips-to-spice-up-your-chord-progressions.png
 
 <hr class="major" />
 
-<h2>1 - Stick to the basics</h2>
+<h2>1. Stick to the basics</h2>
 <p>One thing I learned the hard way is that adding complexity to your music, for the sake of adding complexity is usually not a good way to develop your composition or track. You don't need incredibly complex harmony to create an interesting piece of music. You really don't need more than the simple old major scale to make good music.</p>
 
 <div class="row">
@@ -43,20 +43,26 @@ Your browser does not support the audio element.
 
 <hr class="major" />
 
-<h2>2 - Add jitter and grace notes</h2>
+<h2>2. The occasional extended chord</h2>
+<p> I will probably discuss extended chords in another blog post at length, however for the sake of this article they're worth bringing up. </p>
+
+<hr class="major" />
+
+
+<h2>3. Add jitter and grace notes</h2>
 <p> When working with MIDI it's easy to forget the human aspect of music</p>
 
 <hr class="major" />
 
-<h2>3 - Interleaving melody and chords</h2>
+<h2>4. Interleaving melody and chords</h2>
 <p> Sprinkling some notes on top of your chords can add a lot of character.  </p>
 
 <hr class="major" />
 
-<h2>4 - Extended chords and inversions</h2>
+<h2>5. Inversions and B sections with borrowed chords</h2>
 <p>Once you've come up with a solid set of changes, try adding notes on top of these chords. Notes beyond the 3rd and 5th can add a lot flavor to your progression.</p>
 
 <hr class="major" />
 
-<h2>5 - Trust your ear</h2>
+<h2>6. Trust and follow your ears</h2>
 <p>Using my ears is maybe one of the things that I forget most often. And by using my ears I mean actively listening to the music I'm working on, and trying to imagine where it wants to go. Every chord has a tendency to go somewhere, it's somehow pulling towards a different set of notes, sometimes it's not very obvious where it wants to go though. For example a simple major chord is very comfortable and doesn't seem like it's about to go anywhere, but if you try to picture where it could go you can start hearing some options. </p>
