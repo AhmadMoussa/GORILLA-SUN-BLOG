@@ -17,12 +17,11 @@ thumbnail_path: 2021-02-05-10-tips-to-spice-up-your-chord-progressions.png
 <!-- Break -->
 <div class="col-4 col-12-medium">
   <h3>2-5-1</h3>
-  <iframe
-  frameborder="0"
-  width="100%"
-  height="80"
-  src="https://drive.google.com/file/d/1JolGSfisCFcPM0enwZOd-HK8JutmlQAx/preview">
-</iframe>
+  <audio controls>
+  <source src="https://freesound.org/people/Yuval/sounds/204528/" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  
 </div>
 <div class="col-4 col-12-medium">
   <h3>4-5-6-1</h3>
