@@ -18,7 +18,7 @@ thumbnail_path: 2021-02-05-10-tips-to-spice-up-your-chord-progressions.png
 <div class="col-4 col-12-medium">
   <h3>2-5-1</h3>
 
-  <!--Simplest syntax--> <audio src="https://drive.google.com/file/d/1JolGSfisCFcPM0enwZOd-HK8JutmlQAx/view?usp=sharing" type="audio/mpeg" controls> I'm sorry. You're browser doesn't support HTML5 <code>audio</code>. </audio>
+  <!--Simplest syntax--> <audio src="https://drive.google.com/file/d/1JolGSfisCFcPM0enwZOd-HK8JutmlQAx/preview" type="audio/mpeg" controls> I'm sorry. You're browser doesn't support HTML5 <code>audio</code>. </audio>
 </div>
 <div class="col-4 col-12-medium">
   <h3>4-5-6-1</h3>
