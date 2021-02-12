@@ -85,9 +85,33 @@ Your browser does not support the audio element.
 
 <hr class="major" />
 
-<h2>5. Inversions and B sections with borrowed chords</h2>
+<h2>5. Borrowed Chords</h2>
 <p>Once you've come up with a solid set of changes, try adding notes on top of these chords. Notes beyond the 3rd and 5th can add a lot flavor to your progression.</p>
-
+<div class="row">
+<!-- Break -->
+<div class="col-4 col-12-medium">
+  <h3>2-5-1</h3>
+  <audio controls>
+  <source src="https://gorillasun.de/audios/2021-02-05-10-tips-to-spice-up-your-chord-progressions/I-III-IV-V.wav" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  
+</div>
+<div class="col-4 col-12-medium">
+  <h3>4-5-6-1</h3>
+    <audio controls>
+  <source src="https://gorillasun.de/audios/2021-02-05-10-tips-to-spice-up-your-chord-progressions/I-V-VI-III.wav" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
+<div class="col-4 col-12-medium">
+  <h3>4-5-6-7</h3>
+    <audio controls>
+  <source src="https://gorillasun.de/audios/2021-02-05-10-tips-to-spice-up-your-chord-progressions/I-IV-iv.wav" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
+</div>
 <hr class="major" />
 
 <h2>6. Trust and follow your ears</h2>
