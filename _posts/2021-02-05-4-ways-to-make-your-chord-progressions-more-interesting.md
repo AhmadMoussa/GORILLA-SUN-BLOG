@@ -1,8 +1,8 @@
 ---
-title: 10 tips to spice up your chord progressions
+title: 4 ways to make your chord progressions more interesting
 author: Ahmad Moussa
-description: 10 fool proof ways to make your chord progressions more interesting
-thumbnail_path: 2021-02-05-10-tips-to-spice-up-your-chord-progressions.png
+description: Writing interesting chord progressions can be difficult, but arming yourself with a little bit of music theory and creativity you'll be able to break out of any type musical rut.
+thumbnail_path: 2021-02-05-4-ways-to-make-your-chord-progressions-more-interesting.png
 ---
 <span class="image left"><img src="https://gorillasun.de/thumbnails/2021-02-05-10-tips-to-spice-up-your-chord-progressions.png" alt="" /></span>
 
@@ -39,22 +39,9 @@ Your browser does not support the audio element.
 </div>
 </div>
 
-
-
 <hr class="major" />
 
-<h2>2. The occasional extended chord</h2>
-<p> I will probably discuss extended chords in another blog post at length, however for the sake of this article they're worth bringing up. </p>
-
-<hr class="major" />
-
-
-<h2>3. Add jitter and grace notes</h2>
-<p> When working with MIDI it's easy to forget the human aspect of music</p>
-
-<hr class="major" />
-
-<h2>4. Interleaving melody and chords</h2>
+<h2>2. Add melody on top of your chords</h2>
 <p> Sprinkling some notes on top of your chords can add a lot of character. Here are 3 variations of melodies on top of the 3-4-5-6 chord progression we have already seen earlier:</p>
 
 <div class="row">
@@ -85,7 +72,7 @@ Your browser does not support the audio element.
 
 <hr class="major" />
 
-<h2>5. Borrowed Chords</h2>
+<h2>3. Borrowed Chords</h2>
 <p>Once you've come up with a solid set of changes, try adding notes on top of these chords. Notes beyond the 3rd and 5th can add a lot flavor to your progression.</p>
 <div class="row">
 <!-- Break -->
@@ -114,7 +101,7 @@ Your browser does not support the audio element.
 </div>
 <hr class="major" />
 
-<h2>6. Trust and follow your ears</h2>
+<h2>4. Trust your ears</h2>
 <p>Using my ears is maybe one of the things that I forget most often. And by using my ears I mean actively listening to the music I'm working on, and trying to imagine where it wants to go. Every chord has a tendency to go somewhere, it's somehow pulling towards a different set of notes, sometimes it's not very obvious where it wants to go though. For example a simple major chord is very comfortable and doesn't seem like it's about to go anywhere, but if you try to picture where it could go you can start hearing some options. </p>
 
 <audio controls>
