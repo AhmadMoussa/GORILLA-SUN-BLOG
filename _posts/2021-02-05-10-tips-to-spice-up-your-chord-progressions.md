@@ -16,7 +16,7 @@ thumbnail_path: 2021-02-05-10-tips-to-spice-up-your-chord-progressions.png
 <div class="row">
 <!-- Break -->
 <div class="col-4 col-12-medium">
-  <h3>2-5-1</h3>
+  <h3>II-V-I</h3>
   <audio controls>
   <source src="https://gorillasun.de/audios/2021-02-05-10-tips-to-spice-up-your-chord-progressions/major2-5-1.wav" type="audio/mpeg">
 Your browser does not support the audio element.
@@ -24,16 +24,16 @@ Your browser does not support the audio element.
   
 </div>
 <div class="col-4 col-12-medium">
-  <h3>4-5-6-1</h3>
+  <h3>IV-V-vi-I-</h3>
     <audio controls>
   <source src="https://gorillasun.de/audios/2021-02-05-10-tips-to-spice-up-your-chord-progressions/major4-5-6-1.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 </div>
 <div class="col-4 col-12-medium">
-  <h3>4-5-6-7</h3>
+  <h3>iii-IV-V-vi</h3>
     <audio controls>
-  <source src="https://gorillasun.de/audios/2021-02-05-10-tips-to-spice-up-your-chord-progressions/major4-5-6-7.wav" type="audio/mpeg">
+  <source src="https://gorillasun.de/audios/2021-02-05-10-tips-to-spice-up-your-chord-progressions/major3-4-5-6.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 </div>
