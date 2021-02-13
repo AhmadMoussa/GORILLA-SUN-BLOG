@@ -13,4 +13,16 @@ thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypon
 
 <h3> Lillypond </h3>
 
-<p> Lillypond is not a software per se, it is kind of a markup language. If you've never had to use one, you're better for it. Markup Languages can be thought of as a set of instructions that allow you to format and position elements in a document exactly the way you want. Personally, I use markup languages quite often as they're very convenient and allow you to create digital documents that look very slick. For example, I've come to prefer using Latex over MS Word. Documents made in Latex just look much better, and it makes positioning figures easier, especially when writing academic papers. Coming back from this tangent, Lillypond's goal is to create   </p>
+<p> Lillypond is not a software per se, it is kind of a markup language. If you've never had to use one, you're better for it. Markup Languages can be thought of as a set of instructions that allow you to format and position elements in a document exactly the way you want. Personally, I use markup languages quite often as they're very convenient and allow you to create digital documents that look very slick. For example, I've come to prefer using Latex over MS Word. Documents made in Latex just look much better, and it makes positioning figures easier, especially when writing academic papers. Coming back from this tangent, Lillypond's primary goal is to create beautiful sheet music via a set of commands that specify what it should look like. We'll get into it in more depth in a minute. Lillypond can be used by itself, but to make easier to edit your script files you'll also want to download another software called Frescobaldi, which comes with a number of features. </p>
+
+<h3>Downloading and Installing Lilypond and Frescobaldi</h3>
+
+<ul>
+  <li>Download Lilypond <a href='http://lilypond.org/'>Here</a></li>
+  <li>Download Frescobaldi <a href='https://frescobaldi.org/download'>Here</a></li>
+</ul>
+
+<h3>Setting up Lilypond and Frescobaldi</h3>
+<p>After installing both softwares, go ahead and open up Frescobaldi. We have to tell Frescobaldi where to find Lilypond on our device.</p>
+
+
