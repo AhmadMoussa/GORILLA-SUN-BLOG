@@ -23,16 +23,24 @@ thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypon
 </ul>
 
 <h3>Setting up Lilypond and Frescobaldi</h3>
-<p>After installing both softwares, go ahead and open up Frescobaldi. We have to tell Frescobaldi where to find Lilypond on our device. To do that click edit then preferences.</p>
 
-<span class="image fit"><img src="https://gorillasun.de/post_images/2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypond-and-Frescobaldi/Settings1.png" alt="" /></span>
 
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium"><span class="image fit"><img src="https://gorillasun.de/post_images/2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypond-and-Frescobaldi/Settings1.png" alt="" /></span></div>
+			<div class="col-6 col-12-medium">
+        <p>After installing both softwares, go ahead and open up Frescobaldi. We have to tell Frescobaldi where to find Lilypond on our device. To do that click edit then preferences.</p>
+        
 <ol>
   <li>Click on Lilypond Preferences</li>
   <li>Click the add button</li>
   <li>Look for the 'Lilypond-windows.exe' where you installed Lilypond. On windows this should be somewhere on your C drive.</li>
   <li>Make sure to check 'Run Lilypond with english English messages'</li>
 </ol>
+    </div>
+</div>
+
+
+
 
 <h3>Engraving music</h3>
 <p>As a guitarist that uses alternate tunings on a regular basis, Lilypond does not disappoint. I'll share the template that I use regularly and have modified over time.</p>
