@@ -64,7 +64,7 @@ thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypon
           
           \break
           
-          c\2 d\2 c\3 bes\3 bes8\3 \grace bes\6 bes\3 bes\3 \6
+          c\2 d\2 c\3 bes\3 bes8\3 \grace bes\6 bes\3 bes4\3 bes4\1 
           
     }
   }
@@ -74,24 +74,13 @@ thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypon
 }
 
 
- \relative {
-    \tabFullNotation {
-      \set Staff.stringTunings = \stringTuning <bes, f, bes, ees, f, d>
-      \time 4/4
-        \repeat volta 2{
-            \grace bes,\6 bes\3 a'\4 g\6 f,\5 (g\5) d'\6 \glissando ees\6 ees,\3
-            d'\4 (bes\4) \deadNote bes\6 ees\6 f\4 bes,\3 c\2 d\1 
-            bes\2
-        }
-    }
-}
-
-
 \header {
   title = "Cotton Candy Dream"
   composer = "Ahmad Y. Moussa"
 }
-
 </code></pre>
+
+And we obtain sheet music that looks like this:
+
 
 <p>The number of ways you can format sheet music with Lilipond is insane and can be overwhelming at first. However there is an extensive documentation that is just a google search away in case you can't figure out how to do something specific.</p>
