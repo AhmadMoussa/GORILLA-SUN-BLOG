@@ -91,7 +91,7 @@ thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypon
 </code></pre>
 </div>
 <div class="col-6 col-12-medium">
-	
+	<span class="image fit"><img src="https://gorillasun.de/post_images/2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypond-and-Frescobaldi/Sheet1.png" alt="" /></span>
 </div>
 </div>
 
