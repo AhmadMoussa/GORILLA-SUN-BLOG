@@ -11,6 +11,17 @@ thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypon
 
 <p>Until after some time, when my desktop broke and I got a laptop. During my college days I had a notebook, in which I would religiously jot down all the jazz licks that I could come up with. But I also forfeited this habit with time, I didn't have a clear systematic way of notating my ideas and it was very obvious how things were meant to be played when I came back to my notes. Which recently led me to explore again what other tools exist for notating music. One of first that'll pop up would be Muse Score, which I tried but decided that it wasn't for me. I just couldn't get the hang of it. In guitar pro you can simply punch in the fret number on a specific fret and that's it. Muse Score being designed not specifically for guitarists is a lot more versatile, which was way too much for my purposes. I re-downloaded Guitar Pro 7, and messed around a little with the different sounds that already come with it for around a month until my free trial expired. After which I didn't really feel like breaking the bank to get a license. Finally I found something called Lillypond which peaked my interest.</p>
 
+<div id="843244427">
+    <script type="text/javascript">
+        try {
+            window._mNHandle.queue.push(function (){
+                window._mNDetails.loadTag("843244427", "728x90", "843244427");
+            });
+        }
+        catch (error) {}
+    </script>
+</div>
+
 <h3> Lillypond </h3>
 
 <p> Lillypond is not a software per se, it is kind of a markup language. If you've never had to use one, you're better for it. Markup Languages can be thought of as a set of instructions that allow you to format and position elements in a document exactly the way you want. Personally, I use markup languages quite often as they're very convenient and allow you to create digital documents that look very slick. For example, I've come to prefer using Latex over MS Word. Documents made in Latex just look much better, and it makes positioning figures easier, especially when writing academic papers. Coming back from this tangent, Lillypond's primary goal is to create beautiful sheet music via a set of commands that specify what it should look like. We'll get into it in more depth in a minute. Lillypond can be used by itself, but to make easier to edit your script files you'll also want to download another software called Frescobaldi, which comes with a number of features. </p>
