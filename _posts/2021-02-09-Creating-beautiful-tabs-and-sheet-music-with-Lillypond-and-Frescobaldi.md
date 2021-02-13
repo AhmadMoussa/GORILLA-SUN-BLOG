@@ -33,3 +33,65 @@ thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypon
   <li>Look for the 'Lilypond-windows.exe' where you installed Lilypond. On windows this should be somewhere on your C drive.</li>
   <li>Make sure to check 'Run Lilypond with english English messages'</li>
 </ol>
+
+<h3>Engraving music</h3>
+<p>As a guitarist that uses alternate tunings on a regular basis, Lilypond does not disappoint. I'll share the template that I use regularly and have modified over time.</p>
+
+<pre><code>
+\version "2.18.2"
+
+\score{
+  \relative {
+    \tabFullNotation {
+      \set Staff.stringTunings = \stringTuning <bes, f, bes, ees, f, d>
+      \time 4/4
+        \repeat volta 2{
+          d16\4 (ees\4) g,\3 (bes\3) a\2 d\1 a\2 bes\3 \tuplet 3/2 {ees8\4 (f\4) g,\3} bes\2 \glissando d\2 \bar "|"
+          
+          f16\4 bes,\3 c\2 a'32\1 (bes\1 a16\1) c,\2 bes\3 f'\4 bes,8\6 ees\4 g,\3 f\2 \bar "|"
+          g'4\1 (f4\1) f\1 f\1 \bar "|"
+          
+          \break
+          
+          ees16\6 d\4 bes\3 f\2 c'\1 f,\5 f'\4 g,\3 bes4\1 bes4\1 \bar "|"
+          
+          }	
+          \break
+          
+          \grace bes16\6 f'\4 g,\3 bes\3\staccato bes\6 
+          bes8\3\staccato \grace bes16\6 bes\3\staccato  c16\2 f\4 
+          g,\3 <bes\3 f\2> \staccato bes\6 f8\2 \grace g'16\6 g\4 bes,\3 \bar "|"
+          
+          \break
+          
+          c\2 d\2 c\3 bes\3 bes8\3 \grace bes\6 bes\3 bes\3 \6
+          
+    }
+  }
+  \header {
+    piece = "Tuning:  A# F A# D# F D // Capo: 3rd fret"
+  }
+}
+
+
+ \relative {
+    \tabFullNotation {
+      \set Staff.stringTunings = \stringTuning <bes, f, bes, ees, f, d>
+      \time 4/4
+        \repeat volta 2{
+            \grace bes,\6 bes\3 a'\4 g\6 f,\5 (g\5) d'\6 \glissando ees\6 ees,\3
+            d'\4 (bes\4) \deadNote bes\6 ees\6 f\4 bes,\3 c\2 d\1 
+            bes\2
+        }
+    }
+}
+
+
+\header {
+  title = "Cotton Candy Dream"
+  composer = "Ahmad Y. Moussa"
+}
+
+</code><pre>
+
+<p>The number of ways you can format sheet music with Lilipond is insane and can be overwhelming at first. However there is an extensive documentation that is just a google search away in case you can't figure out how to do something specific.</p>
