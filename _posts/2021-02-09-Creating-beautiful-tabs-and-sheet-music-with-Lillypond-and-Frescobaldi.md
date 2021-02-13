@@ -44,7 +44,7 @@ thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypon
 <div class="row gtr-200">
 			<div class="col-6 col-12-medium"><span class="image fit"><img src="https://gorillasun.de/post_images/2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypond-and-Frescobaldi/Settings2.png" alt="" /></span></div>
 			<div class="col-6 col-12-medium">
-        <p>After installing both softwares, go ahead and open up Frescobaldi. We have to tell Frescobaldi where to find Lilypond on our device. To do that click edit then preferences.</p>
+        <p>We start engraving our music now. We can engrave notes by simply opening the brackets and typing in the appropriate letters.</p>
 <pre><code>
 \version "2.18.2"
 
