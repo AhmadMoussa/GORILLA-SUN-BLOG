@@ -25,4 +25,4 @@ thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypon
 <h3>Setting up Lilypond and Frescobaldi</h3>
 <p>After installing both softwares, go ahead and open up Frescobaldi. We have to tell Frescobaldi where to find Lilypond on our device.</p>
 
-
+<span class="image left"><img src="https://gorillasun.de/post_images/2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypond-and-Frescobaldi.png" alt="" /></span>
