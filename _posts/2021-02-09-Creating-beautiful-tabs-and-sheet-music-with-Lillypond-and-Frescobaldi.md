@@ -92,6 +92,6 @@ thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypon
   composer = "Ahmad Y. Moussa"
 }
 
-</code><pre>
+</code></pre>
 
 <p>The number of ways you can format sheet music with Lilipond is insane and can be overwhelming at first. However there is an extensive documentation that is just a google search away in case you can't figure out how to do something specific.</p>
