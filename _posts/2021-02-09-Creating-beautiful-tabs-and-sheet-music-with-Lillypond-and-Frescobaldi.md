@@ -45,8 +45,6 @@ thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypon
 <h3>Engraving music</h3>
 <p>As a guitarist that uses alternate tunings on a regular basis, Lilypond does not disappoint. I'll share the template that I use regularly and have modified over time.</p>
 
-<div class="row gtr-200">
-			<div class="col-6 col-12-medium">
 <pre><code>
 \version "2.18.2"
 
@@ -89,11 +87,8 @@ thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypon
   composer = "Ahmad Y. Moussa"
 }
 </code></pre>
-</div>
-<div class="col-6 col-12-medium">
-	<span class="image fit"><img src="https://gorillasun.de/post_images/2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypond-and-Frescobaldi/Sheet1.png" alt="" /></span>
-</div>
-</div>
+<span class="image fit"><img src="https://gorillasun.de/post_images/2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypond-and-Frescobaldi/Sheet1.png" alt="" /></span>
+
 
 And we obtain sheet music that looks like this:
 
