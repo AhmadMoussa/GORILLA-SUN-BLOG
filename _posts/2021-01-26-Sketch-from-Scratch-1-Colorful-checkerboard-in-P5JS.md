@@ -1,12 +1,12 @@
 ---
-title: Sketch from Scratch #1 | Colorful checkerboard in P5JS
+title: Sketch from Scratch 1 Colorful checkerboard in P5JS
 author: Ahmad Moussa
 categories:
   - P5JS
 description: Delve with me into the wonderful world of P5JS. Procedural and generative art are becoming a lot more popular these days, so why not learn how to make some?
-thumbnail_path: 2021-01-26-Sketch-from-Scratch-1-|-Colorful-checkerboard-in-P5JS.png
+thumbnail_path: 2021-01-26-Sketch-from-Scratch-1-Colorful-checkerboard-in-P5JS.png
 ---
-<span class="image main"><img src="https://gorillasun.de/thumbnails/2021-01-26-Sketch-from-Scratch-1-|-Colorful-checkerboard-in-P5JS.png" alt="" /></span>
+<span class="image main"><img src="https://gorillasun.de/thumbnails/2021-01-26-Sketch-from-Scratch-1-Colorful-checkerboard-in-P5JS.png" alt="" /></span>
 
 <p>Twitter and Instagram are primarily visual mediums and are not extremely well suited for sharing audio content. Digital artists, designers and models can get a lot of traction from posting beautiful pictures or videos, especially since it would be something that other people would want to re-tweet or share in their stories. As a musician or producer, screen recordings of your DAW playing back your track is usually not extremely aesthetically pleasing. Personally, it's been extremely difficult to find something visually interesting and also thematically appropriate to use as cover art for your social media post.</p>
 <p>Another restriction that I restrained myself with was that everything that I post had to be completely original, which naturally includes the cover art. This led me to experiment with different programming languages and tools that could technically be used for creating these visuals. I've seen a lot of posts that use touchdesigner to create visuals for their music and it's quite fantastic in that regard. Touchdesigner is a python powered node based visual programming language that's seeing a lot of use by DJs and visual performers, however I found it too difficult to use for my purposes, as I wanted something quick and simple. I also experimented with OpenGL and GLSL, all the time while reminiscing about the computer graphics class that I've taken a few years ago. But shading languages are also way overkill for simple visuals. I also attempted to use OpenFramenworks, a creative coding library in c++ and built on top of OpenGL, but I found it equivalently too difficult.</p>
