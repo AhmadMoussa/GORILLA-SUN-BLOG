@@ -1,4 +1,4 @@
-	
+<div>
 {% assign postsByMonth = 
 site.posts | group_by_exp:"post", "post.date | date: '%Y, %b'" %}
 
@@ -10,3 +10,4 @@ site.posts | group_by_exp:"post", "post.date | date: '%Y, %b'" %}
       {% endfor %}
     </ul>
 {% endfor %}
+</div>
