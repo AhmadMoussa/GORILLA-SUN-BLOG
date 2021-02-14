@@ -1,9 +1,9 @@
-{% for category in site.posts.categories %}
+{% for category in posts.categories %}
   {% assign category_name = category | first %}
   <section class="section  typeset">
     <h2 id="{{ category_name | slugify }}">{{ category_name }}</h2>
     <ul class="list  list--posts">
-      {% for post in site.posts.categories[category_name] %}
+      {% for post in posts.categories[category_name] %}
         {% assign has_categories = true %}
         <li>
           <article>
