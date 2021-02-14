@@ -18,7 +18,7 @@ site.posts | group_by_exp:"post", "post.date | date: '%Y, %b'" %}
 
 {% for month in postsByMonth %}
   <h3>{{ month.name }}</h3>
-    <ul>
+    <ul style="list-style-type:none;">
       {% for post in month.items %}
 	 <li>{{ post.date | date: "%d" }}:  <a href="https://gorillasun.de/{{ post.url }}">{{post.title}}</a></li>
       {% endfor %}
