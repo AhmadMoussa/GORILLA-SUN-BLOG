@@ -14,7 +14,7 @@ meta: A blog to nerd out about computers and music
 {% for post in site.posts %}
 	
 	<article>
-	<a href="https://gorillasun.de/{{ post.url }}"><img src="https://gorillasun.de/thumbnails/{{post.thumbnail_path}}" alt="" /></a>
+	<a href="https://gorillasun.de/{{ post.url }}"><div class='image fit'><img src="https://gorillasun.de/thumbnails/{{post.thumbnail_path}}" alt="" /></div></a>
             <a href="https://gorillasun.de/{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
             <p>{{post.description}}</p>
             <ul class="actions">
