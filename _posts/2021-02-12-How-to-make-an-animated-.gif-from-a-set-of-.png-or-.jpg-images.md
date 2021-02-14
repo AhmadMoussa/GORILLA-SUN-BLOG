@@ -18,3 +18,8 @@ We'll at some tools to create animated gifs from a sequence a frames, which alre
   <li>ImageMagick: another command-line tool similar to FFMPEG, but specifically designed for manipulating images.</li>
   <li>Online Converters: my least favorite option, but there's a lot of websites out there where you can upload your sequence of frames and download the gif.</li>
   </ul>
+ 
+<h3>Installing and using FFMPEG </h3>
+Simply head over to <a href='https://ffmpeg.org/download.html'> https://ffmpeg.org/download.html </a> to download the latest version and follow the <a href='https://www.wikihow.com/Install-FFmpeg-on-Windows'> WikiHow </a> steps on how to install it. There would be no point in me repeating the steps here as the WikiHow tutorial already does a great job at it. However the trickiest part of installing FFMPEG might be adding the exectuable to your Path. This step is necessary since FFMPEG only comes as source code, and adding it to your path will allow you to use FFMPEG from the command line from any directory.
+
+Once that's done
