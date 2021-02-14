@@ -22,8 +22,8 @@ We'll at some tools to create animated gifs from a sequence a frames, which alre
 <h3>Installing and using FFMPEG </h3>
 <p>Simply head over to <a href='https://ffmpeg.org/download.html'> https://ffmpeg.org/download.html </a> to download the latest version and follow the <a href='https://www.wikihow.com/Install-FFmpeg-on-Windows'> WikiHow </a> steps on how to install it. There would be no point in me repeating the steps here as the WikiHow tutorial already does a great job at it. However the trickiest part of installing FFMPEG might be adding the exectuable to your Path. This step is necessary since FFMPEG only comes as source code, and adding it to your path will allow you to use FFMPEG from the command line from any directory.</p>
 
-Once that's done, go ahead and open up your terminal. Pro tip: you can type 'cmd' in the address bar of the windows file explorer and it'll open a terminal that's already pointed at the directory that you've invoked it from. 
+Once that's done, you'll have to open up a terminal. Go ahead and go to the forlder where your sequence of frames is, and I'll give you a Pro Tip: you can type 'cmd' in the address bar of the windows file explorer and it'll open a terminal that's already pointed at the directory that you've invoked it from. 
 
 <pre><code>
-
+ffmpeg -f image2 -i image%d.jpg video.avi
 </code></pre>
