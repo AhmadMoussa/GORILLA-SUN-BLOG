@@ -3,7 +3,7 @@
   <section class="section  typeset">
     <h2 id="{{ category_name | slugify }}">{{ category_name }}</h2>
     <ul class="list  list--posts">
-      {% for page in site.categories[category_name] %}
+      {% for page in posts.categories[category_name] %}
         {% assign has_categories = true %}
         <li class="item  item--post">
           <article class="article  article--post  typeset">
