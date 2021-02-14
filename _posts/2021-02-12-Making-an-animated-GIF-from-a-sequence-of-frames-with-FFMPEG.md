@@ -30,8 +30,10 @@ ffmpeg -f image2 -framerate 30 -i image%d.jpg video.mp4
 
 <p>The first command is 'ffmpeg' which tells the terminal that what follows is an ffmpeg command. '-f image2' is an option that specifies the file type of the input. Here we are indicating that what follows will be a sequence of images. '-framerate 60' specifies the target framerate that we want to have in our output video. This is important as it indicates how many images per second we want to show, and essentially allows you to control the playback speed, if you set it to higher values. '-i image%d.jpg' specifies the name of each image in the sequence of frames in your directory. This is quite important, you want to make sure that your sequence of frames are named in increasing order, so for example 'image%d.jpg' means that ffmpeg expects the frames to be name as follows: image0.jpg, image1.jpg, image2.jpg, ... and so on. 'video.mp4' and lastly we have to specify the name and file exetension of the output, which in this case will be .mp4, but you can try other video formats and see if they work. If not ffmpeg will throw an error.</p>
 
-<p>The next step consists of </p>
+<p>The next step consists of converting the video into a GIF, and keeping the size of the GIF on disk reasonable. GIFs are very bad at compression, in comparison to the .mp4 format. The gif that I used for testing to write this post had a little over 1000 frames all of which amount to roughly 20mb on disk. The encoded .mp4 at 60 frames per second would only be 150kbs in comparison. This is a considerable difference in size (even though the reduction depends on what is happening in the frames of the video). To convert the .mp4 to a .gif and keep it's size reasonable we can use the following command:</p>
+
 <pre><code>
-ffmpeg -f image2 -framerate 30 -i image%d.jpg video.mp4
+ffmpeg -i video.mp4 -vf "fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -pix_fmt rgb24 -loop 0 out.gif
 </code></pre>
 
+<p>This will drastically affect the quality of the .gif and not have a size as small as the .mp4, but will do the job. Credit where credit is due, the command is explained in detail in <a href='https://superuser.com/a/556031'>this stackoverflow answer</a></p>
