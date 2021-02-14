@@ -1,6 +1,6 @@
-<ul class="list  list--categories">
+<ul>
   {% for item in site.categories %}
-    <li class="item  item--category">
+    <li>
       <a href="#{{ item | first | slugify }}">{{ item | first }}</a>
     </li>
   {% endfor %}
