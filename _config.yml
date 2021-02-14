@@ -4,6 +4,7 @@ url: "https://gorillasun.de" # the base hostname & protocol for your site
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-archives
   
 # 5. Collections
 collections:
