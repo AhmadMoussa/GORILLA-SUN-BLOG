@@ -1,5 +1,5 @@
 <ul>
-  {% for item in site.categories %}
+  {% for item in posts.categories %}
     <li>
       <a href="#{{ item | first | slugify }}">{{ item | first }}</a>
     </li>
