@@ -1,4 +1,4 @@
-{% for category in site.categories %}
+{% for item in site.categories %}
   {% assign category_name = category | first %}
   <section class="section  typeset">
     <h2 id="{{ category_name | slugify }}">{{ category_name }}</h2>
