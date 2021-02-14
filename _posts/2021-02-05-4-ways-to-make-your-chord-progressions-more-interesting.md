@@ -1,6 +1,8 @@
 ---
 title: 4 ways to make your chord progressions more interesting
 author: Ahmad Moussa
+categories:
+  - ableton
 description: Writing interesting chord progressions can be difficult, but arming yourself with a little bit of music theory and creativity you'll be able to break out of any type musical rut.
 thumbnail_path: 2021-02-05-4-ways-to-make-your-chord-progressions-more-interesting.png
 ---
