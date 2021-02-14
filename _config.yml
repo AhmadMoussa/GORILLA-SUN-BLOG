@@ -4,3 +4,10 @@ url: "https://gorillasun.de" # the base hostname & protocol for your site
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag
+  
+# 5. Collections
+collections:
+  posts:
+    title: Posts # Needed for Siteleaf
+    output: true
+    description: "My thoughts and ideas" # The post list page content
