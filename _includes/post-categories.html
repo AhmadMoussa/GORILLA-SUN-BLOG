@@ -1,8 +1,7 @@
 {% for category in site.categories %}
   {% assign category_name = category | first %}
-  <section class="section  typeset">
     <h2 id="{{ category_name | slugify }}">{{ category_name }}</h2>
-    <ul class="list  list--posts">
+    <div id='articles' class="posts">
       {% for post in site.categories[category_name] %}
         {% assign has_categories = true %}
         
@@ -15,9 +14,8 @@
           </article>
        
       {% endfor %}
-    </ul>
+    </div>
     {% unless forloop.last %}<hr/>{% endunless %}
-  </section>
 {% endfor %}
 
 {% if has_categories != true %}
