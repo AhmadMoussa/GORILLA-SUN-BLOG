@@ -1,3 +1,17 @@
+---
+layout: main
+author: Ahmad Moussa
+description: Welcome to The Archive. Here you can find a list of every single post I have ever written.
+meta: A blog to nerd out about computers and music
+---
+
+<section>
+<header class="major">
+	<h2>The Archive</h2>
+</header>
+	
+<div>
+
 {% for category in site.categories %}
   {% assign category_name = category | first %}
   <section class="section  typeset">
@@ -23,3 +37,6 @@
     <p>There are no categorised posts</p>
   </section>
 {% endif %}
+  
+</div>
+</section>
