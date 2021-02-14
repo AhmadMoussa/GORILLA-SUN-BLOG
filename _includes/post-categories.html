@@ -3,13 +3,16 @@
   <section class="section  typeset">
     <h2 id="{{ category_name | slugify }}">{{ category_name }}</h2>
     <ul class="list  list--posts">
-      {% for page in site.posts.categories[category_name] %}
+      {% for post in site.posts.categories[category_name] %}
         {% assign has_categories = true %}
         <li class="item  item--post">
-          <article class="article  article--post  typeset">
-            <h3><a href="https://gorillasun.de/{{ page.url }}">{{ page.title }}</a></h3>
-            {% include post-meta.html %}
-            {{ page.excerpt | truncatewords: 60 | markdownify }}
+          <article>
+            <a href="https://gorillasun.de/{{ post.url }}" class="image"><img src="https://gorillasun.de/thumbnails/{{post.thumbnail_path}}" alt="" /></a>
+            <a href="https://gorillasun.de/{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
+            <p>{{post.description}}</p>
+            <ul class="actions">
+              <li><a href="https://gorillasun.de/{{ post.url }}" class="button">Jump to blog post</a></li>
+            </ul>
           </article>
         </li>
       {% endfor %}
