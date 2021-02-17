@@ -14,7 +14,8 @@ In an earlier blog post, I explain how one can send MIDI signals from a python s
 Next we'll hop over to the web editor where we have to configure a couple of things. In the web editor, directly underneath the the large 'play' button, there is a smaller arrow button. Clicking on it reveals to use that there are other files, in addition to 'sketch.js' which we are currently editing. Click on 'index.html'. In the '<head>' tag you can a number of lines that are importing the P5JS library for us to use. Here we can also import other javascript libraries, such as WebMIDI.js. Go ahead and add the following line in the head tag of index.html:
   
   <pre><code>
-  <script src="https://cdn.jsdelivr.net/npm/webmidi"></script>
+  
+      <script src="https://cdn.jsdelivr.net/npm/webmidi"></script>
   </code></pre>
 
 <h4>Enabling WebMIDI</h4>
