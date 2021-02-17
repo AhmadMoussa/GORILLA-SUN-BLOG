@@ -1,5 +1,5 @@
 ---
-title: Sketch from Scratch 2 Morphing Squares with Since functions
+title: Sketch from Scratch 2 Morphing Squares with Sine functions
 author: Ahmad Moussa
 categories:
   - p5js
