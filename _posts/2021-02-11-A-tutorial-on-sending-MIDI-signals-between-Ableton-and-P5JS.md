@@ -15,7 +15,7 @@ Next we'll hop over to the web editor where we have to configure a couple of thi
   
   <pre><code>
   
-      &lt;scriptsrc="https://cdn.jsdelivr.net/npm/webmidi"&gt; &lt;/script&gt; 
+      &lt;script src="https://cdn.jsdelivr.net/npm/webmidi"&gt; &lt;/script&gt; 
   </code></pre>
 
 <h4>Enabling WebMIDI</h4>
