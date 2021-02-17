@@ -12,13 +12,13 @@ In this post we have a look a WebMIDI.js, a javascript library that'll allow to 
 In an earlier blog post, I explain how one can send MIDI signals from a python script to ableton live, which requires us to create a virtual port.  This time around we'll also need the LoopMIDI virtual port that we have used for the python tutorial, so go ahead and download it from <a href='http://www.tobias-erichsen.de/software/loopmidi.html' target="_blank" rel="noopener noreferrer">here</a>.
 
 Next we'll hop over to the web editor where we have to configure a couple of things. In the web editor, directly underneath the the large 'play' button, there is a smaller arrow button. Clicking on it reveals to use that there are other files, in addition to 'sketch.js' which we are currently editing. Click on 'index.html'. In the '<head>' tag you can a number of lines that are importing the P5JS library for us to use. Here we can also import other javascript libraries, such as WebMIDI.js. Go ahead and add the following line in the head tag of index.html:
-  {% highlight javascript %}
+  
   <pre><code>
  
       &lt;script src="https://cdn.jsdelivr.net/npm/webmidi"&gt; &lt;/script&gt; 
       
   </code></pre>
-  {% endhighlight %}
+
 
 <h4>Enabling WebMIDI</h4>
 The next thing we need to do is to check that WebMIDI works and that we can see the accesible MIDI ports. Inside the setup function we need to insert the following snippet of code:
