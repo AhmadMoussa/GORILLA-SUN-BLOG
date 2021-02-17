@@ -1,8 +1,6 @@
 ---
 title: Making an animated GIF from a sequence of frames with FFMPEG
 author: Ahmad Moussa
-categories:
-  - ableton
 description: Combining a number of individual frames can be tricky if you haven't done it before, in this article we show how to accomplish it with FFMPEG.
 thumbnail_path: 2021-02-12-Making-an-animated-GIF-from-a-sequence-of-frames-with-FFMPEG.png
 ---
