@@ -12,7 +12,7 @@ thumbnail_path: 2021-02-12-Making-an-animated-GIF-from-a-sequence-of-frames-with
 <p>Naturally, making gifs from a sequence of frames is not only useful academically, but can also be used for other purposes. Since I couldn't figure out how to capture a gif directly from the P5JS web editor of my canvas, I resorted to downloading individual frames and then concatenating them into a gif. Now the problem with gifs is that there has to be some compression algorithm involved that reduces the overall size of the final gif. Digital images can already take up a significant amount of space on your hard disk, depending on the resolution and encoding format, however it usually is the case that there is not a lot of change between two consecutive frames, for example, the backdrop of a scene doesn't always change significantly, only the main object that's moving. In this case it would be very wasteful to not encode some shared information jointly between different frames.</p>
 
 <h3>Gif making tools</h3>
-We'll at some tools to create animated gifs from a sequence a frames, which already take care of compression, and provide of additional options for you to choose from:
+<p>We'll at some tools to create animated gifs from a sequence a frames, which already take care of compression, and provide of additional options for you to choose from:</p>
 <ul>
   <li>FFMPEG: which stands for Fast Forward MPEG and is designed to be an open source command-line tool for video and audio handling.</li>
   <li>ImageMagick: another command-line tool similar to FFMPEG, but specifically designed for manipulating images.</li>
@@ -22,7 +22,7 @@ We'll at some tools to create animated gifs from a sequence a frames, which alre
 <h3>Installing and using FFMPEG </h3>
 <p>Simply head over to <a href='https://ffmpeg.org/download.html'> https://ffmpeg.org/download.html </a> to download the latest version and follow the <a href='https://www.wikihow.com/Install-FFmpeg-on-Windows'> WikiHow </a> steps on how to install it. There would be no point in me repeating the steps here as the WikiHow tutorial already does a great job at it. However the trickiest part of installing FFMPEG might be adding the exectuable to your Path. This step is necessary since FFMPEG only comes as source code, and adding it to your path will allow you to use FFMPEG from the command line from any directory.</p>
 
-Once that's done, you'll have to open up a terminal. Go ahead and navigate to the folder where your sequence of frames is, and I'll give you a Pro Tip: you can type 'cmd' in the address bar of the windows file explorer and it'll open a terminal that's already pointed at the directory that you've invoked it from. Next, we'll actually use ffmpeg. Making a gif with ffmpeg is a two step process, first you'll want to turn the sequence of frames into a video, and then convert that video to the .gif format. The first step is done with the following command:
+<p>Once that's done, you'll have to open up a terminal. Go ahead and navigate to the folder where your sequence of frames is, and I'll give you a Pro Tip: you can type 'cmd' in the address bar of the windows file explorer and it'll open a terminal that's already pointed at the directory that you've invoked it from. Next, we'll actually use ffmpeg. Making a gif with ffmpeg is a two step process, first you'll want to turn the sequence of frames into a video, and then convert that video to the .gif format. The first step is done with the following command:</p>
 
 <pre><code>
 ffmpeg -f image2 -framerate 30 -i image%d.jpg video.mp4
