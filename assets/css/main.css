@@ -21,7 +21,9 @@ section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+  zoom: 90%;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
