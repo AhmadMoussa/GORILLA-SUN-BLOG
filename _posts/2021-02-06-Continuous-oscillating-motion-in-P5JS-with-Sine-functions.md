@@ -8,7 +8,9 @@ thumbnail_path: 2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-funct
 ---
 <span class="image left"><img src="https://gorillasun.de/out.gif" alt="" /></span>
 
-<p> Everybody hates trigonometry (at least at some point throughout their life), but if you want to add motion to your creative coding sketches, then there's no way around it. And trigonometry is not just useful for that, understanding some of the concept intuiteively could go a long way in improving your problem solving skills. I remember studying trigonometric functions in school, and having the worst time of my life. I didn't get them, I hated them and they had no practical purpose for me in real life. But it's kind of funny that I've come around to loving them, almost eight years after having been introduced to them for the first time.</p>
+<p> Everybody hates trigonometry (at least at some point throughout their life), but if you want to add motion to your creative coding sketches, then there's no way around it. </p>
+
+<p>And trigonometry is not just useful for that, understanding trigonometric concepts intuitively could go a long way in improving your problem solving skills. I remember studying trigonometric functions in school, and having the worst time of my life. I didn't get them, I hated them and they had no practical purpose for me in real life. But it's kind of funny that I've come around to loving them, almost eight years after having been introduced to them for the first time.</p>
 
 <p>In mathematics the Sine function of an angle is defined as the ratio of the opposite side of an angle to it's hypotenuse. And it's exactly this definition that I hated so much in school. It doesn't really show you all the wonderful things that you can do with the Sine function, it's just a bland non-descriptive book definition. In the next part I'll explain why the Sine function is so great and how I like to think about it.</p>
 
