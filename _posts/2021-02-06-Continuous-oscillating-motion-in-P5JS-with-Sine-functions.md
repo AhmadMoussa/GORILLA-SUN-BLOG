@@ -18,7 +18,9 @@ thumbnail_path: 2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-funct
 <hr class="major" />
 
 <h3>The Sine function is a conversion of linear motion into oscillating motion</h3>
-<p>The Sine function has two awesome properties. Firstly it is bounded by the interval [-1,1], and secondly, we can use it to convert a linear movement into an oscillating movement. You'll get what I mean with this in a second. Remember the definition of the Sine function 'The Sine function of an angle is defined as the ratio of the opposite side of an angle to it's hypotenuse' yada yada, for creative coding, the interesting property of this trigonometric function comes when you add a linearly increasing parameter to the mix. The simplest form of such a parameter that you can find in probably every programming language is time. In P5JS you can get the current time since the moment of starting the rogramming by invoking the millis() function. This is a constantly increasing value. Plug this into the Sine function and you'll obtain a radius that is sweeping around the circle. The animated gif below exemplifies this, and the snippet of code is what creates the animation. It looks a little messy but I'll explain in detail in what follows.</p>
+<p>The Sine function has two awesome properties. Firstly it is bounded by the interval [-1,1], and secondly, we can use it to convert a linear movement into an oscillating movement. You'll get what I mean with this in a second. </p> 
+
+<p>Let's start with the definition of a Sine function: 'The Sine function of an angle is defined as the ratio of the opposite side of an angle to it's hypotenuse'. Personally, this definition is not extremely illustrative. For purposes of creative coding, the interesting property of this trigonometric function arises when you add a linearly increasing parameter to the mix. The simplest form of such a parameter that you can find in probably every programming language, is time. In P5JS you can get the current time since the moment of starting the program by invoking the <code>millis()</code> function. The <code>millis()</code> return time in milliseconds which is in fact a linearly increasing value. Plugging this value into the Sine function we'll obtain a radius that is sweeping around the circle. The animated gif below exemplifies this, and the snippet of code is what creates the animation. It looks a little messy, but I'll explain in detail in what follows.</p>
 
 <!--
 <iframe style="width: 100%; height: 50vh;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/RwgHRtHtA"></iframe>
@@ -26,11 +28,7 @@ thumbnail_path: 2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-funct
 <div class="row gtr-200">
 			<div class="col-6 col-12-medium"><span class="image fit"><img src="https://gorillasun.de/out.gif" alt="" /></span></div>
 			<div class="col-6 col-12-medium"><p> The exact code for this is a little bit more complicated </p>
-	<pre><code>function setup() {
-  createCanvas(400, 400);
-  background(220);
-}
-
+<pre><code>
 speed = 4000
 function draw() {
   ellipse(200, 200, 200)
@@ -38,9 +36,12 @@ function draw() {
   line(200, 200, sin(millis() / speed) * 100 + 200, 200)
   stroke(0)
   line(200, 200, sin(millis() / speed) * 100 + 200, cos(millis() / speed) * 100 + 200)
-  line(sin(millis() / speed) * 100 + 200, cos(millis() / speed) * 100 + 200, sin(millis()/ speed) * 100 + 200, 200)
-}</code></pre></div>
-		</div>
+  line(sin(millis() / speed) * 100 + 200, cos(millis() / speed) * 100 + 200,
+    sin(millis()/ speed) * 100 + 200, 200)
+}
+</code></pre>
+</div>
+</div>
 		
 <p> The red line that is contracting and expanding over time is drawn by the following command <code>line(200, 200, sin(radians(millis()) / speed) * 100 + 200, 200)</code>. The P5JS line function takes 4 arguments, the x and y coordinates of the start point and the x and y coordinates of the end point of the line. By replacing the x coordinate of the end point by a sine function we can obtain this oscillating motion. Obviously, as stated earlier we need to give some input to the sine function, which will essentially be a function of time. We call the <code>millis()</code> function to get the current time and divide it by a speed parameter. The speed parameter is used to slow down the movement so that the sweeping radius doesn't go haywire (try running the sketch without dividing by speed). Then, the last thing you still need to do, is to just wrap the result in the already inbuilt <code>sin()</code> function and scale it appropriately such that it appears in the correct location on the canvas (which means multiply by the radius of the circle and translate it to the center of the circle).</p>
 
