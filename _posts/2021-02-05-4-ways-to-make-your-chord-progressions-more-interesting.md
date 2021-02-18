@@ -44,7 +44,7 @@ Your browser does not support the audio element.
 <hr class="major" />
 
 <h2>2. Add melody on top of your chords</h2>
-<p> Sprinkling some notes on top of your chords can add a lot of character. Here are 3 variations of melodies on top of the 3-4-5-6 chord progression we have already seen earlier:</p>
+<p> Sprinkling some notes on top of your chords can add a lot of character. Notes beyond the 3rd and 5th of a chord can add a lot flavor to your progression and make it feel like you've already composed a little composition that only needs a little more fleshing out. Here are 3 variations of melodies on top of the 3-4-5-6 chord progression we have already seen earlier:</p>
 
 <div class="row">
 <!-- Break -->
@@ -75,7 +75,7 @@ Your browser does not support the audio element.
 <hr class="major" />
 
 <h2>3. Borrowed Chords</h2>
-<p>Once you've come up with a solid set of changes, try adding notes on top of these chords. Notes beyond the 3rd and 5th can add a lot flavor to your progression.</p>
+<p>Next up are borrowed chords. Inserting a chord from another mode in your progression can change the entire overall mood, and has the effect of giving a surprising audible twist. Here are some examples, with the same chord progressions from the first tip, but where we replace one of them by it's major or minor equivalent.</p>
 <div class="row">
 <!-- Break -->
 <div class="col-4 col-12-medium">
