@@ -32,8 +32,7 @@ thumbnail_path: 2021-02-01-A-tutorial-on-sending-MIDI-signals-from-a-python-scri
 
 <h2>The python script, how to use rtmidi and a brief explanation of MIDI signals</h2>
 <p>Create an empty python file somewhere in a directory on your pc. Copy the following content into it: </p>
-<pre><code>
-# import time and rtmidi package
+<pre><code># import time and rtmidi package
 import time
 import rtmidi
 
