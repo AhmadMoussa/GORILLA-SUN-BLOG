@@ -6,11 +6,16 @@ categories:
 description: Delve with me into the wonderful world of P5JS. Procedural and generative art are becoming a lot more popular these days, so why not learn how to make some?
 thumbnail_path: 2021-01-26-Sketch-from-Scratch-1-Colorful-checkerboard-in-P5JS.png
 ---
-<span class="image left"><img src="https://gorillasun.de/post_images/2021-01-26-Sketch-from-Scratch-1-Colorful-checkerboard-in-P5JS/out.gif" alt="" /></span>
+<div class="row gtr-200">
+				<div class="col-6 col-12-medium">
+            <span class="image fit"><img src="https://gorillasun.de/post_images/2021-01-26-Sketch-from-Scratch-1-Colorful-checkerboard-in-P5JS/out.gif" alt="" /></span>
+        </div>
+  <div class="col-6 col-12-medium">
 
 <p>Twitter and Instagram are primarily visual mediums and are not extremely well suited for sharing audio content. Digital artists, designers and models can get a lot of traction from posting beautiful pictures or videos, especially since it would be something that other people would want to re-tweet or share in their stories. As a musician or producer, screen recordings of your DAW playing back your track is usually not extremely aesthetically pleasing. Personally, it's been extremely difficult to find something visually interesting and also thematically appropriate to use as cover art for your social media post.</p>
 <p>Another restriction that I restrained myself with was that everything that I post had to be completely original, which naturally includes the cover art. This led me to experiment with different programming languages and tools that could technically be used for creating these visuals. I've seen a lot of posts that use touchdesigner to create visuals for their music and it's quite fantastic in that regard. Touchdesigner is a python powered node based visual programming language that's seeing a lot of use by DJs and visual performers, however I found it too difficult to use for my purposes, as I wanted something quick and simple. I also experimented with OpenGL and GLSL, all the time while reminiscing about the computer graphics class that I've taken a few years ago. But shading languages are also way overkill for simple visuals. I also attempted to use OpenFramenworks, a creative coding library in c++ and built on top of OpenGL, but I found it equivalently too difficult.</p>
 <p>However recently I discovered P5JS, another creative coding library built with Javascript. What I found most exciting about it was that it had online editor where you could code up sketches very quickly and run them directly in your browser. No hassle with any downloads or installation, no dealing with a compiler on system, and tons of tutorials and sketches from other people that you can simply view and get inspired by.</p>
+</div>
 
 
 <h3>How does P5JS work?</h3>
