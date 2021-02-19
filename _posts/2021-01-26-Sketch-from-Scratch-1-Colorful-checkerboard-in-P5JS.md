@@ -55,7 +55,7 @@ class Square{
 <p>
 Next we create an object that creates, arranges and shows the individual squares in our grid. The tricky part about it is calculating the space between all the squares as well as their respective widths, such that the grid is always centered:
 </p>
-<pre><code>
+<pre><code class='javascript'>
 class SquareGrid{
   constructor(){
     this.squares = []
