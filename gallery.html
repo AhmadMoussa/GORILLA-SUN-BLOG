@@ -15,4 +15,12 @@ meta: A blog to nerd out about computers and music
 		I also sometimes take pictures of things, mostly clouds and animals. If you'd like to use one or many of my photos shoot me a message!
 		</h3>
 	</div>
+	
+	<div>
+	{% for image in site.static_files %}
+   		{% if image.path contains 'images/gallery' %}
+        		<img src="{{ site.url }}{{ image.path }}" alt="image" />
+    		{% endif %}
+	{% endfor %}
+	</div>
 </section>
