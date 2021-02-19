@@ -22,9 +22,9 @@ thumbnail_path: 2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-funct
 <p>Let's start with the definition of a Sine function: 'The Sine function of an angle is defined as the ratio of the opposite side of an angle to it's hypotenuse'. Personally, this definition is not extremely illustrative. For purposes of creative coding, the interesting property of this trigonometric function arises when you add a linearly increasing parameter to the mix. The simplest form of such a parameter that you can find in probably every programming language, is time. In P5JS you can get the current time since the moment of starting the program by invoking the <code>millis()</code> function. The <code>millis()</code> return time in milliseconds which is in fact a linearly increasing value. Plugging this value into the Sine function we'll obtain a radius that is sweeping around the circle. The animated gif below exemplifies this, and the snippet of code is what creates the animation. It looks a little messy, but I'll explain in detail in what follows.</p>
 
 <span class="image fit"><img src="https://gorillasun.de/out.gif" alt="" /></span>
-<p> The exact code for this is a little bit more complicated </p>
-<pre><code>
-speed = 4000
+<p> The exact code for this is a little bit more complicated:</p>
+
+<pre><code>speed = 4000
 function draw() {
   ellipse(200, 200, 200)
   stroke(255, 0, 0)
@@ -43,7 +43,7 @@ function draw() {
 
 <section>
 <h2>How to use this in context</h2>
-You see this is awesome, because it allows us to add a lot of interesting motion to our P5JS sketches (of course it's not limited to only P5JS). For example we can draw some points and have them move in a wavy pattern as you can see in the next animated gif. 
+<p>You see this is awesome, because it allows us to add a lot of interesting motion to our P5JS sketches (of course it's not limited to only P5JS). For example we can draw some points and have them move in a wavy pattern as you can see in the next animated gif.</p>
 
 <span class="image fit"><img src="https://gorillasun.de/out2.gif" alt="" /></span>
 
