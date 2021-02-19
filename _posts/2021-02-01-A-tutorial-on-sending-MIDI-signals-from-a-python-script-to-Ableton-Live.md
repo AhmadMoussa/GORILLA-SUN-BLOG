@@ -75,7 +75,7 @@ del midiout
 <p>In Ableton we'll have to do click a couple of buttons. First jump to your preferences and go to Link MIDI. In the 'MIDI ports' section you should see a entry called 'Loop MIDI' port under inputs. Click on the 'on' button under the 'track' column.</p>
 </div>
 <div class="col-6 col-12-medium">
-<span class="image right"><img src="https://gorillasun.de/post_images/2021-02-01-A-tutorial-on-sending-MIDI-signals-from-a-python-script-to-Ableton-Live/ableton_config1.png" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/post_images/2021-02-01-A-tutorial-on-sending-MIDI-signals-from-a-python-script-to-Ableton-Live/ableton_config1.png" alt="" /></span>
 </div>
 
 <p>After that create a MIDI track and make sure it has an instrument loaded. Next you'll want to arm the track, set it to auto and set the 'MIDI from' field to the 'Loop MIDI' port. Now run the script, and voila it should have trigerred the midi note.</p>
