@@ -33,7 +33,9 @@ The first thing we'll want to do is grab a bunch of harmonious colors from <a hr
 <p>
 Next we create a template square class which we can reuse to create each individual square in our grid. For now the square will contain it's position, it's size and it's color:
 </p>
-<pre><code>class Square{
+<pre><code>
+{% highlight ruby %}
+class Square{
   constructor(px,py,s){
     this.positionX = px
     this.positionY = py
@@ -46,6 +48,7 @@ Next we create a template square class which we can reuse to create each individ
     rect(this.positionX-this.size/2, this.positionY-this.size/2, this.size, this.size)
   }
 }
+{% endhighlight %}
 </code></pre>
 <p>The move function will be empty for now, as the individual squares do not have any moving behaviour. Experiment with it though, maybe you can come up with something interesting!</p>
 
