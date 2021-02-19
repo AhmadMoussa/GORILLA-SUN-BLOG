@@ -34,20 +34,17 @@ The first thing we'll want to do is grab a bunch of harmonious colors from <a hr
 Next we create a template square class which we can reuse to create each individual square in our grid. For now the square will contain it's position, it's size and it's color:
 </p>
 <pre><code>class Square{
-constructor(px,py,s){
-this.positionX = px
-this.positionY = py
-this.size = s
-this.c = listOfColors[int(random(0, listOfColors.length))]
-}
+  constructor(px,py,s){
+    this.positionX = px
+    this.positionY = py
+    this.size = s
+    this.c = listOfColors[int(random(0, listOfColors.length))]
+  }
 
-move(){
-}
-
-display(){
-fill(this.c)
-rect(this.positionX-this.size/2, this.positionY-this.size/2, this.size, this.size)
-}
+  display(){
+    fill(this.c)
+    rect(this.positionX-this.size/2, this.positionY-this.size/2, this.size, this.size)
+  }
 }
 </code></pre>
 <p>The move function will be empty for now, as the individual squares do not have any moving behaviour. Experiment with it though, maybe you can come up with something interesting!</p>
@@ -57,38 +54,34 @@ rect(this.positionX-this.size/2, this.positionY-this.size/2, this.size, this.siz
 Next we create an object that creates, arranges and shows the individual squares in our grid. The tricky part about it is calculating the space between all the squares as well as their respective widths, such that the grid is always centered:
 </p>
 <pre><code>class SquareGrid{
-constructor(){
-this.squares = []
-this.gridSize = 8
-this.squareSize = 13
-this.spacing = 16
-this.positionX = width/2 - ((this.gridSize-1) * (this.spacing))/2
-console.log(this.positionX)
-this.positionY = height/2 - ((this.gridSize-1) * (this.spacing))/2
+  constructor(){
+    this.squares = []
+    this.gridSize = 8
+    this.squareSize = 13
+    this.spacing = 16
+    this.positionX = width/2 - ((this.gridSize-1) * (this.spacing))/2
+    console.log(this.positionX)
+    this.positionY = height/2 - ((this.gridSize-1) * (this.spacing))/2
 
-for(let i=0; i&ltthis.gridSize; i++){
-let row = []
-for(let j=0; j&ltthis.gridSize; j++){
-row.push(
-new Square((this.positionX + this.spacing * i),(this.positionY + this.spacing * j ),this.squareSize)
-)
-}
-this.squares.push(row)
-}
-}
+    for(let i=0; i&ltthis.gridSize; i++){
+      let row = []
+      for(let j=0; j&ltthis.gridSize; j++){
+        row.push(
+          new Square((this.positionX + this.spacing * i),(this.positionY + this.spacing * j ),this.squareSize)
+        )
+      }
+      this.squares.push(row)
+    }
+  }
 
-move(){
-}
-
-display(){
-for(let i=0; i&ltthis.gridSize; i++){
-for(let j=0; j&ltthis.gridSize; j++){
-this.squares[i][j].display()
-}
-}
-
-this.squares[int(random(this.gridSize))][int(random(this.gridSize))].c = listOfColors[int(random(0, listOfColors.length))]
-}
+  display(){
+    for(let i=0; i&ltthis.gridSize; i++){
+      for(let j=0; j&ltthis.gridSize; j++){
+        this.squares[i][j].display()
+      }
+    }
+    this.squares[int(random(this.gridSize))][int(random(this.gridSize))].c = listOfColors[int(random(0, listOfColors.length))]
+  }
 }
 </code></pre>
 <p>The final statement at the bottom of the display function is there to make the grid appear animated. Simply after drawing the entire grid, one cell will be selected at random and it's color will be updated by a random color from the color array.</p>
@@ -97,12 +90,12 @@ this.squares[int(random(this.gridSize))][int(random(this.gridSize))].c = listOfC
 The last thing we still need to do is instantiate the grid and we'll obtain the grid that you've already seen above.
 </p>
 <pre><code>function setup() {
-createCanvas(256, 256);
-grid = new SquareGrid()
+  createCanvas(256, 256);
+  grid = new SquareGrid()
 }
 
 function draw() {
-background(220);
-grid.display()
+  background(220);
+  grid.display()
 }</code></pre>
 <p> The entire code can run in the web editor <a href='https://editor.p5js.org/AhmadMoussa/sketches/j_CIeN6aU'>here</a>. If there's something that's not very clear leave me a comment below. And if you enjoyed this post consider following me on Instagram or Twitter, or alternatively shoot me an email. Cheers and thanks for reading.</p>
