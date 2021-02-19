@@ -19,7 +19,7 @@ meta: A blog to nerd out about computers and music
 	<div>
 	{% for image in site.static_files %}
    		{% if image.path contains 'images/gallery' %}
-        		<img src="{{ site.url }}{{ image.path }}" alt="image" />
+        		<span class='image fit'><img src="{{ site.url }}{{ image.path }}" alt="image" /></span>
     		{% endif %}
 	{% endfor %}
 	</div>
