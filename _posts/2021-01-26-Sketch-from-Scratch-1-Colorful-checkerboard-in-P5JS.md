@@ -33,7 +33,7 @@ The first thing we'll want to do is grab a bunch of harmonious colors from <a hr
 <p>
 Next we create a template square class which we can reuse to create each individual square in our grid. For now the square will contain it's position, it's size and it's color:
 </p>
-```javascript
+~~~javascript
 class Square{
   constructor(px,py,s){
     this.positionX = px
@@ -47,8 +47,7 @@ class Square{
     rect(this.positionX-this.size/2, this.positionY-this.size/2, this.size, this.size)
   }
 }
-{% endraw %}
-{% endhighlight %}
+~~~
 
 <p>The move function will be empty for now, as the individual squares do not have any moving behaviour. Experiment with it though, maybe you can come up with something interesting!</p>
 
@@ -87,7 +86,7 @@ class SquareGrid{
     this.squares[int(random(this.gridSize))][int(random(this.gridSize))].c = listOfColors[int(random(0, listOfColors.length))]
   }
 }
-```
+</code></pre>
 
 <p>The final statement at the bottom of the display function is there to make the grid appear animated. Simply after drawing the entire grid, one cell will be selected at random and it's color will be updated by a random color from the color array.</p>
 <h3>Setup and Draw and Voila</h3>
