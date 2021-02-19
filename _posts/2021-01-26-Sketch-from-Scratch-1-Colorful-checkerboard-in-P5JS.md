@@ -38,8 +38,7 @@ The first thing we'll want to do is grab a bunch of harmonious colors from <a hr
 <p>
 Next we create a template square class which we can reuse to create each individual square in our grid. For now the square will contain it's position, it's size and it's color:
 </p>
-<pre><code>
-class Square{
+<pre><code>class Square{
   constructor(px,py,s){
     this.positionX = px
     this.positionY = py
@@ -60,8 +59,7 @@ class Square{
 <p>
 Next we create an object that creates, arranges and shows the individual squares in our grid. The tricky part about it is calculating the space between all the squares as well as their respective widths, such that the grid is always centered:
 </p>
-<pre><code class='javascript'>
-class SquareGrid{
+<pre><code class='javascript'>class SquareGrid{
   constructor(){
     this.squares = []
     this.gridSize = 8
