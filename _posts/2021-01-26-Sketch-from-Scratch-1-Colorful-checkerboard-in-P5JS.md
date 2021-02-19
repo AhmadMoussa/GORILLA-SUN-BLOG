@@ -53,8 +53,7 @@ Next we create a template square class which we can reuse to create each individ
 <p>
 Next we create an object that creates, arranges and shows the individual squares in our grid. The tricky part about it is calculating the space between all the squares as well as their respective widths, such that the grid is always centered:
 </p>
-<pre>
-```javascript
+<pre><code>
 class SquareGrid{
   constructor(){
     this.squares = []
@@ -85,8 +84,7 @@ class SquareGrid{
     this.squares[int(random(this.gridSize))][int(random(this.gridSize))].c = listOfColors[int(random(0, listOfColors.length))]
   }
 }
-```
-</pre>
+</code></pre>
 
 <p>The final statement at the bottom of the display function is there to make the grid appear animated. Simply after drawing the entire grid, one cell will be selected at random and it's color will be updated by a random color from the color array.</p>
 <h3>Setup and Draw and Voila</h3>
