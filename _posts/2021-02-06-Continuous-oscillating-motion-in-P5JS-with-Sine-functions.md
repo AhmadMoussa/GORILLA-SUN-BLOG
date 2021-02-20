@@ -10,7 +10,7 @@ thumbnail_path: 2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-funct
 
 <p>Everybody hates trigonometry (at least at some point throughout their life), however, if you want to add specific kinds of motion, such as angular, orbiting and oscillating motions (to name a few), to your creative coding sketches, then there's no way around trigonometry. Understanding trigonometric concepts intuitively can go a long way in improving your problem solving skills. I know it did for me.</p>
 
-<span class="image fit"><img src="https://gorillasun.de/out.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-functions/out.gif" alt="" /></span>
 
 <h3> The way it's taught... is problematic</h3>
 
@@ -22,7 +22,7 @@ thumbnail_path: 2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-funct
 
 <p>Let's start with the definition of a Sine function: 'The Sine function of an angle is defined as the ratio of the opposite side of an angle to it's hypotenuse'. Personally, this definition is not extremely illustrative. For purposes of creative coding, the interesting property of this trigonometric function arises when you add a linearly increasing parameter to the mix. The simplest form of such a parameter that you can find in probably every programming language, is time. In P5JS you can get the current time since the moment of starting the program by invoking the <code>millis()</code> function. The <code>millis()</code> return time in milliseconds which is in fact a linearly increasing value. Plugging this value into the Sine function we'll obtain a radius that is sweeping around the circle. The animated gif below exemplifies this, and the snippet of code is what creates the animation. It looks a little messy, but I'll explain in detail in what follows.</p>
 
-<span class="image fit"><img src="https://gorillasun.de/out.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-functions/out.gif" alt="" /></span>
 
 <p> The exact code for this is a little bit more complicated:</p>
 
@@ -37,7 +37,7 @@ function draw() {
     sin(millis()/ speed) * 100 + 200, 200)
 }
 </code></pre>
-		
+
 <p> The red line that is contracting and expanding over time is drawn by the following command 'line(200, 200, sin(radians(millis()) / speed) * 100 + 200, 200)'. The P5JS line function takes 4 arguments, the x and y coordinates of the start point and the x and y coordinates of the end point of the line. By replacing the x coordinate of the end point by a sine function we can obtain this oscillating motion. Obviously, as stated earlier we need to give some input to the sine function, which will essentially be a function of time. We call the 'millis()' function to get the current time and divide it by a speed parameter. The speed parameter is used to slow down the movement so that the sweeping radius doesn't go haywire (try running the sketch without dividing by speed). Then, the last thing you still need to do, is to just wrap the result in the already inbuilt 'sin()' function and scale it appropriately such that it appears in the correct location on the canvas (which means multiply by the radius of the circle and translate it to the center of the circle).</p>
 
 <p>You can also see two other lines, the sweeping radius and the line opposite to the angle formed by the radius and the red line, which is essentially the Sine. The rest of the code snippet show how to draw them.</p>
@@ -46,7 +46,7 @@ function draw() {
 
 <p>You see this is awesome, because it allows us to add a lot of interesting motion to our P5JS sketches (of course it's not limited to only P5JS). For example we can draw some points and have them move in a wavy pattern as you can see in the next animated gif.</p>
 
-<span class="image fit"><img src="https://gorillasun.de/out2.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-functions/out2.gif" alt="" /></span>
 
 <p>We create a number of points in a for loop and modulate their y coordinate with a sine function which will be parametrized by their position in addition to time. This yields an oscillating wave shaped string of dots.</p>
 
