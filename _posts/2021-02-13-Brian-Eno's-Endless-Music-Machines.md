@@ -24,14 +24,19 @@ Generative Music finds it's beginnings with Brian Eno, an English musician and r
 <h3>What is Generative Music Exactly?</h3>
 Generative music, also known as procedurally generated music, is created by a system according to some pre-defined algorithmic rules, that are capable of arranging musical ideas in a coherent manner. This arrangement happens in such a manner that the emerging musical patterns may or may not repeat over the course of some time. 'Algorithmic rules' can generally mean a broad number of things, ranging from simple rules such as simple ratios and probabilities but also more complex types of sequencing and automatic composition. In this manner, the generated music is never truly 'random', it does follow specific patterns, which should not be immediately evident to the listener.
 
-<h3>How did Brian Eno make his music?</h3>
+<h3>The thought process behind Brian Eno's Work</h3>
 <div class="row">
 	<div class="col-6 col-12-small">
 		<p>In his 1996 talk "Evolving metaphors, in my opinion, is what artists do." he explains that one of his inspirations were pieces of music such as 'It's gonna rain' by steve reich. It's a fairly long piece, built on a fairly simple idea. It essentially loops the same sample over and over again played back on two machines at the same time, due to the minute differences in speed between the two machines it makes it such that the sample slips in and out of sync with itself, creating very interesting textures. </p>
 <p>Whilst reading the transcript of the speech, I quickly opened Youtube and listened a little bit to the piece, and skimmed back and forth a bit. Back to the transcript, Brian gives a visual analogy. Usually when you stare at something for a long time, you start noticing things that you wouldn't have immediately noticed from a first glance. Your ear works in the same manner, if you listen to the same thing over and over again, you become infinitely more aware of the small details that are present in the repeated sample. This is what happens in Steve Reich's track, even though the sample might seem a little silly at first, it is incredibly rich with information. Brian mentions that there are sounds of pigeons on the track, which I didn't hear in my first listening. Which made me go back for a second listening, and indeed after a while you start hearing some bird like sounds, even though them being very feeble</p>
+		<p>He gives another visual analogy, that of Moiree Patterns. Moiree patterns are interference patterns, patterns that emerge from overlapping two grid-like patterns.</p>
+		<blockquote>Now a moire pattern is when you overlay two identical grids with one another. Here's one, here's the other. Now when I overlay them, see what happens, you get a very complicated interaction. You get something that actually you wouldn't have predicted from these two original identical sheets of paper. This is actually a very good analog of the Steve Reich piece in action. Something happens because of one's perception rather than because of anything physically happening to these two sheets of plastic which produce an effect that you simply couldn't have expected or predicted.
+		</blockquote>
 	</div>
 	<div class="col-6 col-12-small">
 		<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-13-Brian-Eno's-Endless-Music-Machines/moiree.png" alt="" /></span>
 	</div>
 </div>
+
+<h3>The mechanics of Brian Eno's work</h3>
  
