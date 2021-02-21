@@ -11,7 +11,7 @@ thumbnail_path: 2021-02-13-Endless-Procedural-and-Generative-Music.png
 <blockquote>“One of my long-term interests has been the invention of ‘machines’ and ‘systems’ that could produce musical and visual experiences… [T]he point of them was to make music with materials and processes I specified, but in combinations and interactions that I did not.” — From “Generative Music” in A Year With Swollen Appendices</blockquote>
                         </div>
   <div class="col-6 col-12-medium">
-    
+    <iframe src="https://open.spotify.com/embed/album/063f8Ej8rLVTz9KkjQKEMa" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
  </div>
 </div>
 
