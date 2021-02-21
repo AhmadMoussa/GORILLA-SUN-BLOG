@@ -12,15 +12,14 @@ thumbnail_path: 2021-02-01-A-tutorial-on-sending-MIDI-signals-from-a-python-scri
 
 <hr class="major" />
 
-<h3>Requirements</h3>
+<h2>Requirements</h2>
 <ul>
-  <li>Obviously you need to have python installed on your pc/laptop.</li>
-  <li>After verifiying that you have python installed correctly on your machine, install this package via pip: <code>!pip install python-rtmidi</code></li>
-  <li>Install this software: <a href='http://www.tobias-erichsen.de/software/loopmidi.html'>LoopMIDI by Tobias Erichsen</a></li>
-  <li>And naturally you'll also need Ableton Live installed on your device.</li>
+  <li><p>Obviously you need to have python installed on your pc/laptop.</p></li>
+  <li><p>After verifiying that you have python installed correctly on your machine, install this package via pip:</p> <code>!pip install python-rtmidi</code></li>
+  <li><p>Install this software: <a href='http://www.tobias-erichsen.de/software/loopmidi.html'>LoopMIDI by Tobias Erichsen</a></p></li>
+  <li><p>And naturally you'll also need Ableton Live installed on your device.</p></li>
 </ul>
-<p></p>
-<p></p>
+
 <hr class="major" />
 
 <h2>Why do I need to install rtmidi and LoopMIDI?</h2>
