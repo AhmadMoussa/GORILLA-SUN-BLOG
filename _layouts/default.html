@@ -56,64 +56,62 @@
 
 							<!-- Content -->
 							
-							<header class="main">
+							
 							<div class="row gtr-200">
 								<div class="col-3 col-12-medium">
 								</div>
 								<div class="col-6 col-12-medium">
-								<section>
-								<h2>{{ page.title }}</h2>
-							</header>
-							{{content}}
-							</section>
-							</div>
-							<div class="col-3 col-12-medium">
 								
-							<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-							<style type="text/css">
-								#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-								/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-								   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-							</style>
-							<div id="mc_embed_signup">
-							<h3 class='major'>Subscribe to my mailing list if you enjoyed this article!</h3>
-							
-							<form method="post" action="https://gorillasun.us1.list-manage.com/subscribe/post?u=2ec45cad93e090c190c03f02d&amp;id=f34e6ff990" 
-							      id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-								<div class="row gtr-uniform">
-									<div class="col-6 col-12-xsmall">
-										<input type="text" name="FNAME" id="mce-FNAME" value="" placeholder="First Name" />
-									</div>
-									<div class="col-6 col-12-xsmall">
-										<input type="text" name="LNAME" id="mce-LNAME" value="" placeholder="Last Name" />
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="email" name="EMAIL" id="mce-EMAIL" value="" placeholder="Email" required>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-human" name="demo-human" required>
-										<label for="demo-human">I am a human</label>
-									</div>
-									<div id="mce-responses" class="clear">
-										<div class="response" id="mce-error-response" style="display:none"></div>
-										<div class="response" id="mce-success-response" style="display:none"></div>
-									</div> 
-									<!-- Break -->
-									<div class="col-12">
-										<ul class="actions">
-											<li><input input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="primary" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-							</div>
-							<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-<!--End mc_embed_signup-->
+									<header class="main">
+										<h2>{{ page.title }}</h2>
+									</header>
+									{{content}}
 
-							{% include disqus.html %}
-							
-							</div>
 								</div>
+								<div class="col-3 col-12-medium">
+
+									<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+									<style type="text/css">
+										#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+										/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+										   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+									</style>
+									<div id="mc_embed_signup">
+										<h3 class='major'>Subscribe to my mailing list if you enjoyed this article!</h3>
+
+										<form method="post" action="https://gorillasun.us1.list-manage.com/subscribe/post?u=2ec45cad93e090c190c03f02d&amp;id=f34e6ff990" 
+										      id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+											<div class="row gtr-uniform">
+												<div class="col-6 col-12-xsmall">
+													<input type="text" name="FNAME" id="mce-FNAME" value="" placeholder="First Name" />
+												</div>
+												<div class="col-6 col-12-xsmall">
+													<input type="text" name="LNAME" id="mce-LNAME" value="" placeholder="Last Name" />
+												</div>
+												<div class="col-6 col-12-small">
+													<input type="email" name="EMAIL" id="mce-EMAIL" value="" placeholder="Email" required>
+												</div>
+												<div class="col-6 col-12-small">
+													<input type="checkbox" id="demo-human" name="demo-human" required>
+													<label for="demo-human">I am a human</label>
+												</div>
+												<div id="mce-responses" class="clear">
+													<div class="response" id="mce-error-response" style="display:none"></div>
+													<div class="response" id="mce-success-response" style="display:none"></div>
+												</div> 
+												<!-- Break -->
+												<div class="col-12">
+													<ul class="actions">
+														<li><input input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="primary" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+									</div>
+									<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+									{% include disqus.html %}
+								</div>
+							</div>
 						</div>
 					</div>
 
