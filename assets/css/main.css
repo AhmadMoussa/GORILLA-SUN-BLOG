@@ -166,11 +166,11 @@ h6 {
 
 @media screen and (max-width: 1680px) {
   h1 {
-    font-size: 3.5em; } }
+    font-size: 2em; } }
 
 @media screen and (max-width: 980px) {
   h1 {
-    font-size: 3.25em; } }
+    font-size: 2em; } }
 
 @media screen and (max-width: 736px) {
   h1 {
@@ -193,7 +193,9 @@ blockquote {
   border-left: solid 3px rgba(210, 215, 217, 0.75);
   font-style: italic;
   margin: 0 0 2em 0;
-  padding: 0.5em 0 0.5em 2em; }
+  padding: 0.5em 0 0.5em 2em; 
+  font-size: 14pt;
+}
 
 code {
   background: rgba(230, 235, 237, 0.25);
@@ -202,7 +204,8 @@ code {
   font-family: "Courier New", monospace;
   font-size: 0.9em;
   margin: 0 0.25em;
-  padding: 0.25em 0.65em; }
+  padding: 0.25em 0.65em; 
+font-size: 11pt;}
 
 pre {
   -webkit-overflow-scrolling: touch;
