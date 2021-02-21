@@ -1,10 +1,10 @@
 ---
-title: Endless Generative Music 1
+title: Brian Eno's Endless Music Machines
 author: Ahmad Moussa
 categories:
   - music
-description: The idea of procedurally generated music is interesting, especially in conjuction with streaming services and the way that music is consumed nowadays.
-thumbnail_path: 2021-02-13-Endless-Procedural-and-Generative-Music.png
+description: The idea of procedurally generated music is interesting, in this article we have a look at how Brian Eno sparked this idea into life and how he approached it, as well as how you can start making something similar.
+thumbnail_path: 2021-02-13-Brian-Eno's-Endless-Music-Machines.png
 ---
 <div class="row gtr-200">
 	<div class="col-6 col-12-medium">
