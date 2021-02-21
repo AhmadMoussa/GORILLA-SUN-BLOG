@@ -129,7 +129,7 @@ em, i {
 
 p {
   margin: 0 0 2em 0;
-font-size: 12pt;}
+font-size: 13pt;}
 
 h1, h2, h3, h4, h5, h6 {
   color: #3d4449;
@@ -143,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 0; }
 
 h1 {
-  font-size: 4em;
+  font-size: 3em;
   margin: 0 0 0.5em 0;
   line-height: 1.3; }
 
