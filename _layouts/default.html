@@ -55,12 +55,19 @@
 								</header>
 
 							<!-- Content -->
-							<section>
+							
 							<header class="main">
-								<h1>{{ page.title }}</h1>
+							<div class="row gtr-200">
+								<div class="col-3 col-12-medium">
+								</div>
+								<div class="col-6 col-12-medium">
+								<section>
+								<h2>{{ page.title }}</h2>
 							</header>
 							{{content}}
 							</section>
+							<div class="col-3 col-12-medium">
+								
 							<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 							<style type="text/css">
 								#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
@@ -104,7 +111,8 @@
 
 							{% include disqus.html %}
 							
-							
+							</div>
+								</div>
 						</div>
 					</div>
 
