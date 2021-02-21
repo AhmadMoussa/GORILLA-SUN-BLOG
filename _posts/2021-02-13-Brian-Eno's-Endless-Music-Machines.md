@@ -32,4 +32,5 @@ Generative music, also known as procedurally generated music, is created by a sy
 	<div class="col-6 col-12-small">
 		<span class="image fit"><img src="2021-02-13-Brian-Eno's-Endless-Music-Machines/moiree.png" alt="" /></span>
 	</div>
+</div>
  
