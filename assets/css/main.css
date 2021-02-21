@@ -128,8 +128,10 @@ em, i {
   font-style: italic; }
 
 p {
+  color: #3d4449;
   margin: 0 0 2em 0;
-font-size: 13pt;}
+  font-size: 13pt;
+}
 
 h1, h2, h3, h4, h5, h6 {
   color: #3d4449;
