@@ -166,15 +166,15 @@ h6 {
 
 @media screen and (max-width: 1680px) {
   h1 {
-    font-size: 2em; } }
+    font-size: 3em; } }
 
 @media screen and (max-width: 980px) {
   h1 {
-    font-size: 2em; } }
+    font-size: 3em; } }
 
 @media screen and (max-width: 736px) {
   h1 {
-    font-size: 2em;
+    font-size: 3em;
     line-height: 1.4; }
   h2 {
     font-size: 1.5em; } }
