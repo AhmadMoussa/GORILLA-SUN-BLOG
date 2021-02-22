@@ -7,17 +7,18 @@ description: Delve with me into the wonderful world of P5JS. Procedural and gene
 thumbnail_path: 2021-01-26-Sketch-from-Scratch-1-Colorful-checkerboard-in-P5JS.png
 ---
 
-<h3>Why you need a visual medium alongside your music</h3>
+<h2>Why you need a visual medium alongside your music</h2>
 <span class="image right"><img src="https://gorillasun.de/assets/images/2021-01-26-Sketch-from-Scratch-1-Colorful-checkerboard-in-P5JS/out.gif" alt="" /></span>
 <p>Twitter and Instagram are primarily visual mediums and are not extremely well suited for sharing audio content. Digital artists, designers and models can get a lot of traction from posting beautiful pictures or videos, especially since it would be something that other people would want to re-tweet or share in their stories. As a musician or producer, screen recordings of your DAW playing back your track is usually not extremely aesthetically pleasing. Personally, it's been extremely difficult to find something visually interesting and also thematically appropriate to use as cover art for your social media post.</p>
 
-<h3>Keeping it original</h3>
+<h2>Keeping it original</h2>
 <p>Another restriction that I restrained myself with was that everything that I post had to be completely original, which naturally includes the cover art. This led me to experiment with different programming languages and tools that could technically be used for creating these visuals. I've seen a lot of posts that use touchdesigner to create visuals for their music and it's quite fantastic in that regard. Touchdesigner is a python powered node based visual programming language that's seeing a lot of use by DJs and visual performers, however I found it too difficult to use for my purposes, as I wanted something quick and simple. I also experimented with OpenGL and GLSL, all the time while reminiscing about the computer graphics class that I've taken a few years ago. But shading languages are also way overkill for simple visuals. I also attempted to use OpenFramenworks, a creative coding library in c++ and built on top of OpenGL, but I found it equivalently too difficult.</p>
 
+<h2>P5JS</h2>
 <h3>What's P5JS?</h3>
 <p>However recently I discovered P5JS, another creative coding library built with Javascript. What I found most exciting about it was that it had online editor where you could code up sketches very quickly and run them directly in your browser. No hassle with any downloads or installation, no dealing with a compiler on system, and tons of tutorials and sketches from other people that you can simply view and get inspired by.</p>
 
-<h2>How does P5JS work?</h2>
+<h3>How does P5JS work?</h3>
 <p>Comprehensive and exhaustive tutorials on P5JS can be found on The Coding Train's Youtube channel, and the complete P5JS can be found on the official website. Quick sketches can be spun up in the web editor.</p>
 <p>An empty sketch starts with two functions. Setup and Draw. The setup functions contains the canvas() statement that creates the (surprise!) canvas and should usually contain everything that you want to do before drawing to the canvas. When you hit the run button in the top left corner of the web editor, the setup function is executed, and then immediately after, the draw function is called. The draw function will then continuously execute it's contents, and depending on what that is, will make something appear on screen.</p>
 
@@ -31,7 +32,8 @@ thumbnail_path: 2021-01-26-Sketch-from-Scratch-1-Colorful-checkerboard-in-P5JS.p
 <p>
 The first thing we'll want to do is grab a bunch of harmonious colors from <a href='https://coolors.co/generate'>Coolors</a>, which conveniently lets us export the hex codes. We can later on randomly draw colors from this array to color the squares in our grid:
 </p>
-<pre><code>var listOfColors = ["#1c77c3", "#39a9db", "#40bcd8", "#f39237", "#d63230", "#540d6e", "#ee4266", "#ffd23f", "#f3fcf0", "#1f271b"];
+<pre><code>var listOfColors = ["#1c77c3", "#39a9db", "#40bcd8", "#f39237", "#d63230",
+                                "#540d6e", "#ee4266", "#ffd23f", "#f3fcf0", "#1f271b"];
 </code></pre>
 <p>This array is in the global scope and therefore accesible everywhere throughout the rest of the code.</p>
 <h3>The Square</h3>
