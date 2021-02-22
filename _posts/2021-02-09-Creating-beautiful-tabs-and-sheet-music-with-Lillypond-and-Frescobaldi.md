@@ -7,7 +7,7 @@ description: We have a closer look at a free scripting language that allows us t
 thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypond-and-Frescobaldi.png
 ---
 <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/MmhZ6qe099sETqGzhZ" width="100%" height="100%" style="position:absolute; pointer-events: none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-
+<p></p>
 <h2>Archiving Ideas as a musician</h2>
 <h3>My personal struggle keeping track of ideas</h3>
 <p> One of the things that I've found to be very difficult over the years, is finding a good system for archiving and documenting your own musical ideas. Often I would simply make a quick phone recording (voice note) at the end of a practice session, sometimes even a short video, shot from an ungodly angle, with horrible audio quality. It's probably evident that listening back after a couple of weeks to these recordings does not really help me in remembering what I was actually playing, and the thought process at the moment of recording has also disappeared. Sometimes if I'm really desperate I manage to salvage what I can by trying to figure out the tune by ear, but If you're someone who enjoys obscure and abstruse alternate tunings then you've just made it even harder on yourself.</p>
