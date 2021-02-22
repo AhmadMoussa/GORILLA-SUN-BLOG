@@ -7,7 +7,7 @@ description: A tutorial on sending MIDI signals between Ableton and P5JS.
 thumbnail_path: 2021-02-11-A-tutorial-on-sending-MIDI-signals-between-Ableton-and-P5JS.png
 ---
 <div style="width:100%;height:0;padding-bottom:69%;position:relative;"><iframe src="https://giphy.com/embed/FP2tlzlCyplK0NhGaE" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-
+<p></p>
 <p>In this post we have a look a WebMIDI.js, a javascript library that'll allow to handle MIDI signals in p5js. This is especially useful if you want to create a visual interactive midi controller, or control you sketches with MIDI signals sent from your daw. In this post I'll show you how to do the latter.</p>
 
 <h2>Importing WebMIDI.js</h2>
