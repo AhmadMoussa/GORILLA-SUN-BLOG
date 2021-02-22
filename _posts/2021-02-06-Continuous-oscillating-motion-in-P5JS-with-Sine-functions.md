@@ -6,6 +6,8 @@ categories:
 description: Creating continuous oscillating motion in P5JS can be done via sine functions, in this blog post I explain how it's done and how it can be intuitively understood.
 thumbnail_path: 2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-functions.png
 ---
+<section>
+<h2>What's the problem with trigonometry?</h2>
 <h3>Everybody hates trigonometry</h3>
 
 <p>Everybody hates trigonometry (at least at some point throughout their life), however, if you want to add specific kinds of motion, such as angular, orbiting and oscillating motions (to name a few), to your creative coding sketches, then there's no way around trigonometry. Understanding trigonometric concepts intuitively can go a long way in improving your problem solving skills. I know it did for me.</p>
@@ -16,6 +18,7 @@ thumbnail_path: 2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-funct
 
 <p>I remember studying trigonometric functions in school, and having the worst time of my life. I didn't get them, I hated them and they had no practical purpose for me in real life. But it's kind of funny that I've come around to loving them, almost eight years after having been introduced to them for the first time.In mathematics the Sine function of an angle is defined as the ratio of the opposite side of an angle to it's hypotenuse. And it's exactly this definition that I hated so much in school. It doesn't really show you all the wonderful things that you can do with the Sine function, it's just a bland non-descriptive book definition. In the next part I'll explain why the Sine function is so great and how I like to think about it.</p>
 
+<h2>Sine functions are useful!</h2>
 <h3>The Sine function is a conversion of linear motion into oscillating motion</h3>
 
 <p>The Sine function has two awesome properties. Firstly it is bounded by the interval [-1,1], and secondly, we can use it to convert a linear movement into an oscillating movement. You'll get what I mean with this in a second. </p>
@@ -71,3 +74,4 @@ function draw() {
   }
 }
 </code></pre>
+</section>
