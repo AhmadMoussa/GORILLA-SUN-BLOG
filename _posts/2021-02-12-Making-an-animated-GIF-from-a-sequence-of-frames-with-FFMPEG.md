@@ -27,4 +27,4 @@ thumbnail_path: 2021-02-12-Making-an-animated-GIF-from-a-sequence-of-frames-with
 
 <pre><code>ffmpeg -i video.mp4 -vf "fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -pix_fmt rgb24 -loop 0 out.gif</code></pre>
 
-<p>This will drastically affect the quality of the .gif and not have a size as small as the .mp4, but will do the job. Credit where credit is due, the command is explained in detail in <a href='https://superuser.com/a/556031' target="_blank" rel="noopener noreferrer">this StackExchange answer</a></p>
+<p>This will drastically affect the quality of the .gif and not have a size as small as the .mp4, but will do the job. Credit where credit is due, the command is explained in detail in <a href='https://superuser.com/a/556031'>this StackExchange answer</a></p>
