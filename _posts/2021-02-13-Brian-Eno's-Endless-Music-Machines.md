@@ -45,5 +45,10 @@ Being inspired and impressed by Steve Reich's track and the concept of Moiree Pa
 
 <blockquote> Music for Airports, at least one of the pieces on there, is structurally very, very simple. There are sung notes, sung by three women and my self. One of the notes repeats every 23 1/2 seconds. It is in fact a long loop running around a series of tubular aluminum chairs in Conny Plank's studio. The next lowest loop repeats every 25 7/8 seconds or something like that. The third one every 29 15/16 seconds or something. What I mean is they all repeat in cycles that are called incommensurable -- they are not likely to come back into sync again. </blockquote>
 
-<p>In a way, this is very similar to polyrhythms, but on a much larger scale.</p>
- 
+<p>In a way, this is very similar to polyrhythms, but on a much larger scale, which is ingenious to me.
+  
+<h2>Creating my own generative music system</h2>
+<h3>Using sequencers and python scripts</h3>
+<p>For a while now, I've been becoming more obsessed with creating a system that can generate or at least simulate a stream of music with endless variety. However I've found it quiet difficult to find the right tools for it. For example, even though Ableton Live provides a sequencer, it doesn't allow for much control on the sequencing, such as assigning a probability to each step in the sequence, making it such that the loop doesn't repeat the exact same way every iteration. After discovering that I can send MIDI signals from a python script to Ableton I attempted writing scripts that would send random MIDI notes quantized to a scale and play them. Random MIDI notes, even if they're quantized don't sound very good, and designing intricate melodic sequences that are proceurally generated or at least procedurally conditional is very difficult. There are  many more ways in which I attempted to tackle this problem, all while not having to spend any money on gear or software, which I will probably talk about in one of my future posts.</p>
+
+<p>Eno goes on to talk about other inspirations that he encountered in the coming years of his career, such as Conway's Game of Life (which I will definitely discuss in a future post) amongst others. The entire transcript of the talk can be found <a href='https://inmotionmagazine.com/eno1.html'>here</a>, it's a very interesting and very entertaining talk and I recommend having a look at it.</p>
