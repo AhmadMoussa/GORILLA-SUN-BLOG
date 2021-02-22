@@ -9,7 +9,7 @@ thumbnail_path: 2021-02-13-Brian-Eno's-Endless-Music-Machines.png
 
 <blockquote>“One of my long-term interests has been the invention of ‘machines’ and ‘systems’ that could produce musical and visual experiences… [T]he point of them was to make music with materials and processes I specified, but in combinations and interactions that I did not.” — From “Generative Music” in A Year With Swollen Appendices</blockquote>
 
-<iframe src="https://open.spotify.com/embed/album/063f8Ej8rLVTz9KkjQKEMa" width="100%" height="280" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<iframe src="https://open.spotify.com/embed/track/3bCmDqflFBHijgJfvtqev5" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 <p></p>
 <h2>An endless stream of ever changing music</h2>
 <h3>My journey into Ambient Music</h3>
