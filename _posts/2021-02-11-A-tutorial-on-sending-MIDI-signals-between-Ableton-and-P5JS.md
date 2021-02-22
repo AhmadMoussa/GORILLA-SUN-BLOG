@@ -69,30 +69,33 @@ inputSoftware = WebMidi.inputs[0];
 </code></pre>
 
 <h3>The listener</h3>
-<p>And lastly we need to create the actual listener:</h3>
+<p>And lastly we need to create the actual listener:</p>
 <pre><code>//listen to all incoming "note on" input events
-  inputSoftware.addListener('noteon', "all",
-    function(e) {
-      //Show what we are receiving
-      console.log("Received 'noteon' message (" + e.note.name + e.note.octave + ") " + e.note.number + ".");
-      displayText = "Received 'noteon' message (" + e.note.name + e.note.octave + ") " + e.note.number + ".";
+inputSoftware.addListener('noteon', "all",
+  function(e) {
+    //Show what we are receiving
+    console.log("Received 'noteon' message (" + e.note.name + e.note.octave + ") " + e.note.number + ".");
 
-      //the function you want to trigger on a 'note on' event goes here
-    }
-  );
+    //the function you want to trigger on a 'note on' event goes here
+  }
+);
 
-  //The note off functionality will need its own event listener
-  //You don't need to pair every single note on with a note off
-  inputSoftware.addListener('noteoff', "all",
-    function(e) {
-      //Show what we are receiving
-      console.log("Received 'noteoff' message (" + e.note.name + e.note.octave + ") " + e.note.number + ".");
+//The note off functionality will need its own event listener
+//You don't need to pair every single note on with a note off
+inputSoftware.addListener('noteoff', "all",
+  function(e) {
+    //Show what we are receiving
+    console.log("Received 'noteoff' message (" + e.note.name + e.note.octave + ") " + e.note.number + ".");
 
-      //the function you want to trigger on a 'note on' event goes here
-    }
-  );
-  
-  //
-  //end of MIDI setup
-  //
+    //the function you want to trigger on a 'note on' event goes here
+  }
+);
+
+//
+//end of MIDI setup
+//
 </code></pre>
+<p>And we're good! Hit the run button and hop over to Ableton.</p>
+
+<h2>Configuring Ableton</h2>
+<p>In ableton we now need to create a MIDI track, arm it and set the output of it to the virtual port, which is 'LoopMidi port'. Lastly also set the input of the track to your MIDI controller, or to your computer keyboard. Now if you hit a button or key, the console in P5JS should print the corresponding note name. Now you can do all sorts of crazy stuff, making your animations react to MIDI inputs from Ableton, or from other softwares. Next blog post will have a hand on tutorial for making a sketch that is in sync with your MIDI signals. Thanks for reading!</p>
