@@ -33,12 +33,11 @@ Generative music, also known as procedurally generated music, is created by a sy
 
 <h3>Moiree Patterns</h3>
 <p>He gives another visual analogy, that of Moiree Patterns. Moiree patterns are interference patterns, patterns that emerge from overlapping two grid-like patterns.</p>
-		<blockquote>Now a moire pattern is when you overlay two identical grids with one another. Here's one, here's the other. Now when I overlay them, see what happens, you get a very complicated interaction. You get something that actually you wouldn't have predicted from these two original identical sheets of paper. This is actually a very good analog of the Steve Reich piece in action. Something happens because of one's perception rather than because of anything physically happening to these two sheets of plastic which produce an effect that you simply couldn't have expected or predicted.
-		</blockquote>
-</div>
-	
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-13-Brian-Eno's-Endless-Music-Machines/moiree.png" alt="" /></span>
+<blockquote>Now a moire pattern is when you overlay two identical grids with one another. Here's one, here's the other. Now when I overlay them, see what happens, you get a very complicated interaction. You get something that actually you wouldn't have predicted from these two original identical sheets of paper. This is actually a very good analog of the Steve Reich piece in action. Something happens because of one's perception rather than because of anything physically happening to these two sheets of plastic which produce an effect that you simply couldn't have expected or predicted.
+</blockquote>
 
+<p>And here's an example of a Moiree Pattern:</p>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-13-Brian-Eno's-Endless-Music-Machines/moiree.png" alt="" /></span>
 
 <h2>The mechanics of Eno's work</h2>
  
