@@ -11,8 +11,6 @@ thumbnail_path: 2021-02-13-Brian-Eno's-Endless-Music-Machines.png
 
 <iframe src="https://open.spotify.com/embed/album/063f8Ej8rLVTz9KkjQKEMa" width="100%" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
-<div style="position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%;"><iframe src="https://embed.tidal.com/albums/1403576?layout=gridify" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 1px; min-height: 100%; margin: 0 auto;"></iframe></div>
-
 <p></p>
 <h2>An endless stream of ever changing music</h2>
 <h3>My journey into Ambient Music</h3>
