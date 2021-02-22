@@ -10,8 +10,6 @@ thumbnail_path: 2021-02-01-A-tutorial-on-sending-MIDI-signals-from-a-python-scri
 
 <p>Over two years ago, I saw Andrew Huang's video on creating music from a video of fireworks. He used a software that essentially took the pixel values of a video and converted them to midi signals that were sent to his modular synth. Since I had no modular synth (and I still don't have one), but had Ableton Live, I wanted to build somthing similar. However I had no idea how to send external triggers to Ableton or how it could receive them. I honestly didn't know where to begin with, and info on this seemed very sparse on the internet. But after a little digging I was able to piece together all the components that I needed. After that I created a github repository that guides one through the necessary steps to have a python script trigger a synth in Ableton. Which is to date my most starred github repository. It's only appropriate that I revisit it and write a more detailed blog post about it. Let's get started! </p>
 
-<hr class="major" />
-
 <h2>Requirements</h2>
 <p>
 <ul>
@@ -21,7 +19,6 @@ thumbnail_path: 2021-02-01-A-tutorial-on-sending-MIDI-signals-from-a-python-scri
   <li>And naturally you'll also need Ableton Live installed on your device.</li>
 </ul>
 </p>
-<hr class="major" />
 
 <h2>Setup</h2>
 <h3>Why do I need to install rtmidi and LoopMIDI?</h3>
