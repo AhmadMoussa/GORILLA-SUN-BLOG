@@ -32,7 +32,7 @@ Generative music, also known as procedurally generated music, is created by a sy
 <p>Whilst reading the transcript of the speech, I quickly opened Youtube and listened a little bit to the piece, and skimmed back and forth a bit. Back to the transcript, Brian gives a visual analogy. Usually when you stare at something for a long time, you start noticing things that you wouldn't have immediately noticed from a first glance. Your ear works in the same manner, if you listen to the same thing over and over again, you become infinitely more aware of the small details that are present in the repeated sample. This is what happens in Steve Reich's track, even though the sample might seem a little silly at first, it is incredibly rich with information. Brian mentions that there are sounds of pigeons on the track, which I didn't hear in my first listening. Which made me go back for a second listening, and indeed after a while you start hearing some bird like sounds, even though them being very feeble</p>
 
 <h3>Moiree Patterns</h3>
-<p>He gives another visual analogy, that of Moiree Patterns. Moiree patterns are interference patterns, patterns that emerge from overlapping two grid-like patterns.</p>
+<p>He gives another visual analogy, that of Moiree Patterns. Moiree patterns are interference patterns, patterns that emerge from overlapping two grid-like patterns:</p>
 <blockquote>Now a moire pattern is when you overlay two identical grids with one another. Here's one, here's the other. Now when I overlay them, see what happens, you get a very complicated interaction. You get something that actually you wouldn't have predicted from these two original identical sheets of paper. This is actually a very good analog of the Steve Reich piece in action. Something happens because of one's perception rather than because of anything physically happening to these two sheets of plastic which produce an effect that you simply couldn't have expected or predicted.
 </blockquote>
 
@@ -40,4 +40,10 @@ Generative music, also known as procedurally generated music, is created by a sy
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-13-Brian-Eno's-Endless-Music-Machines/moiree.png" alt="" /></span>
 
 <h2>The mechanics of Eno's work</h2>
+<h3>Musical Moiree Patterns</h3>
+Being inspired and impressed by Steve Reich's track and the concept of Moiree Patterns, that is, complex patterns emerging from overlapping simple patterns, he attempted to approach composition in his manner. In a similar manner to the picture that you can see above, Eno tried to overlap simple patterns and obtain a more intricate whole. Naturally, music is something that progresses as time goes on, and one can only experience a single moment of the piece at any given time, as opposed to an image, which you can observe in it's entirety at any given time. To simulate Moiree Patterns in a temporal manner, Eno recorded several different notes, each on a separate tape recorder, and configured them such that they looped at different intervals, thus creating a stream of music that seems to have an infinite number of variety as the played notes interact differently with each other over time.
+
+<blockquote> Music for Airports, at least one of the pieces on there, is structurally very, very simple. There are sung notes, sung by three women and my self. One of the notes repeats every 23 1/2 seconds. It is in fact a long loop running around a series of tubular aluminum chairs in Conny Plank's studio. The next lowest loop repeats every 25 7/8 seconds or something like that. The third one every 29 15/16 seconds or something. What I mean is they all repeat in cycles that are called incommensurable -- they are not likely to come back into sync again. </blockquote>
+
+<p>In a way, this is very similar to polyrhythms, but on a much larger scale.</p>
  
