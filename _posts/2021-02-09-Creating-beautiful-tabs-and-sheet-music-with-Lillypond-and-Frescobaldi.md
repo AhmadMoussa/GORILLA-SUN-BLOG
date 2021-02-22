@@ -105,10 +105,9 @@ thumbnail_path: 2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypon
   composer = "Ahmad Y. Moussa"
 }
 </code></pre>
+
+
+<p>And we obtain sheet music that looks like this:</p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-09-Creating-beautiful-tabs-and-sheet-music-with-Lillypond-and-Frescobaldi/Sheet1.png" alt="" /></span>
-
-
-And we obtain sheet music that looks like this:
-
 
 <p>The number of ways you can format sheet music with Lilipond is insane and can be overwhelming at first. However there is an extensive documentation that is just a google search away in case you can't figure out how to do something specific.</p>
