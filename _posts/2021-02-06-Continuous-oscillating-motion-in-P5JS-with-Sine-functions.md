@@ -7,12 +7,12 @@ description: Creating continuous oscillating motion in P5JS can be done via sine
 thumbnail_path: 2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-functions.png
 ---
 <section>
+ <div style="width:100%;height:0;padding-bottom:86%;position:relative;"><iframe src="https://giphy.com/embed/ZThQqlxY5BXMc" width="100%" height="100%" style="position:absolute; pointer-events: none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+<p></p>
 <h2>What's the problem with trigonometry?</h2>
 <h3>Everybody hates trigonometry</h3>
 
 <p>Everybody hates trigonometry (at least at some point throughout their life), however, if you want to add specific kinds of motion, such as angular, orbiting and oscillating motions (to name a few), to your creative coding sketches, then there's no way around trigonometry. Understanding trigonometric concepts intuitively can go a long way in improving your problem solving skills. I know it did for me.</p>
-
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-06-Continuous-oscillating-motion-in-P5JS-with-Sine-functions/out.gif" alt="" /></span>
 
 <h3> The way it's taught... is problematic</h3>
 
