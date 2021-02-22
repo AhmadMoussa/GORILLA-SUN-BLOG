@@ -31,7 +31,9 @@ body {
   line-height: 1; }
 
 ol, ul {
-  list-style: none; }
+  list-style: none; 
+font-size: 13pt;
+}
 
 blockquote, q {
   quotes: none; }
