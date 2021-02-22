@@ -9,7 +9,11 @@ thumbnail_path: 2021-02-13-Brian-Eno's-Endless-Music-Machines.png
 
 <blockquote>“One of my long-term interests has been the invention of ‘machines’ and ‘systems’ that could produce musical and visual experiences… [T]he point of them was to make music with materials and processes I specified, but in combinations and interactions that I did not.” — From “Generative Music” in A Year With Swollen Appendices</blockquote>
 
-<iframe src="https://open.spotify.com/embed/album/063f8Ej8rLVTz9KkjQKEMa" width="100%" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><p></p>
+<iframe src="https://open.spotify.com/embed/album/063f8Ej8rLVTz9KkjQKEMa" width="100%" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+<div style="position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%;"><iframe src="https://embed.tidal.com/albums/1403576?layout=gridify" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 1px; min-height: 100%; margin: 0 auto;"></iframe></div>
+
+<p></p>
 <h2>An endless stream of ever changing music</h2>
 <h3>My journey into Ambient Music</h3>
 My love for ambient music started when I first listened to artists like Tycho and Jake Bowen. When listening to some of their pieces, I often feel like I'm being taken away into a distant world, entirely drawn through the narrative that the music is telling. In this captivated state I can't help but feel a deep sense of serenity and melancholy. Among others, they were maybe the first two artists that inspired me to get into electronic music myself. And I couldn't help but be mind-blown when I saw all the possibilities that modern softwares offer. For instance, I can have an entire orchestra at my disposition at any time of the day. Which makes me think how tedious it must have been for composers before our time, we now have the incredible luxury of not just being able to hear our compositions at any given instant, but we can also manipulate sound as if it were a physical entity. Lest I go on a tangent, with these modern tools many have attempted the creation of systems that are capable of generating streams of music, all by themselves, and without any further human input. The most noteworthy individual among them might be Brian Eno.
