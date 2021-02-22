@@ -19,8 +19,7 @@ thumbnail_path: 2021-02-11-A-tutorial-on-sending-MIDI-signals-between-Ableton-an
 <h2>Enabling WebMIDI</h2>
 <p>The next thing we need to do is to check that WebMIDI works and that we can see the accesible MIDI ports. Inside the setup function we need to insert the following snippet of code:</p>
 
-<pre><code>
-WebMidi.enable(function(err) { //check if WebMidi.js is enabled
+<pre><code>WebMidi.enable(function(err) { //check if WebMidi.js is enabled
   if (err) {
     console.log("WebMidi could not be enabled.", err);
   } else {
@@ -32,10 +31,9 @@ WebMidi.enable(function(err) { //check if WebMidi.js is enabled
 <p>If you run your sketch now, and the console displays 'WebMidi enabled!' then you're good so far!</p>
 
 <h4>Creating the MIDI listener</h4>
-<p>The next thing we have to do is creating a MIDI listener that listens to a MIDI port for signals. Go ahead and fire up LoopMIDI and let it run in the background for now. Still within the setup function and inside the <code>WebMidi.enable(function(err) {}</code> clause we add this snippet of code:</p>
+<p>The next thing we have to do is creating a MIDI listener that listens to a MIDI port for signals. Go ahead and fire up LoopMIDI and let it run in the background for now. Still within the setup function and inside the <code>WebMidi.enable(function(err){})</code> clause we add this snippet of code:</p>
 
-<pre><code>
-//name our visible MIDI input and output ports
+<pre><code>//name our visible MIDI input and output ports
 console.log("---");
 console.log("Inputs Ports: ");
 for (i = 0; i < WebMidi.inputs.length; i++) {
@@ -60,8 +58,7 @@ Output Ports:
 0: loopMIDI Port 
 </pre>
 
-<pre><code>
-//Choose an input port
+<pre><code>//Choose an input port
 inputSoftware = WebMidi.inputs[0];
 //The 0 value is the first value in the array
 //meaning that we are going to use the first MIDI input we see
