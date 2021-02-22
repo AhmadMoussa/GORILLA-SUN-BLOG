@@ -23,14 +23,15 @@ thumbnail_path: 2021-02-01-A-tutorial-on-sending-MIDI-signals-from-a-python-scri
 </p>
 <hr class="major" />
 
-<h2>Why do I need to install rtmidi and LoopMIDI?</h2>
+<h2>Setup</h2>
+<h3>Why do I need to install rtmidi and LoopMIDI?</h3>
 <p>rtmidi is a python package that makes it easy to create a MIDI signal with a couple of lines of code in a python script, whereas LoopMIDI allows us to create a virtual port. Both  are essential for us to be able to send the MIDI signal to Ableton. We will configure ableton in such a way that it is going to listen to the virtual port, whereas the python script will create and send MIDI signals to that port. </p>
 
 
-<h2>Creating a port with LoopMIDI</h2>
+<h3>Creating a port with LoopMIDI</h3>
 <p>Creating a new port with LoopMIDI is as simple as running the executable and then clicking on the small + button in the lower left corner. You'll see a new entry pop up in the list of ports. Voila, we have created a port!</p>
 
-<h2>The python script, how to use rtmidi and a brief explanation of MIDI signals</h2>
+<h3>The python script</h3>
 <p>Create an empty python file somewhere in a directory on your pc. Copy the following content into it: </p>
 <pre><code># import time and rtmidi package
 import time
@@ -65,6 +66,7 @@ del midiout
 </code></pre>
 <p>There's a number of things happening in this short piece of code. First we are importing the rtmidi package that we installed with pip as well as the time module from python, we'll need it in a bit. Next we invoke check which ports exist on our device at the moment of execution and print a list of them. There should be two, one default port that already exists on our system as well as the LoopMIDI port that we created.</p>
 
+<h3>But what are MIDI signals exactly?</h3>
 <p>If you got this far, great! Now we need to create the midi note that we will send to the port. MIDI signals are essntially a set of commands that can be created following certain specifications. More formally a midi command consists of a series of numbers that indicate a certain instruction that will be executed when received by a MIDI device. rtmidi allows us to create such a command simply by creating an array consisting of three values. The first being the event type, here we wrote 0x90 indicating a 'note on' event. The second value indicates the pitch of the note. MIDI notes span from 0 to 127, where a value of 60 would indicate a middle C note. And lastly, we indicate the velocity of the note, which is essentially the intensity with which we are playing the note. Analogically, velocity can be portrayed by how hard you're pressing down on a piano key. On the following line of code you can see another set of values, indicating the 'note off' event, which we will need to turn indicate that we are done playing the middle C note that we just sent over the port. Notice that here we indicate a velocity of 0.</p>
 
 <p>After creating both 'note on' and 'note off' events we can proceed to sending the notes over to the port. This is simply done by invoking the handler and using the send_message() function, where we pass the 'note on' message. If you switch to the LoopMIDI window you'll see that the value in the 'Total Data' column for the respective port will have increased, which means that the note has been received.</p>
