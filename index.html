@@ -43,6 +43,7 @@ meta: A blog to nerd out about computers and music
 
 	<div class="row gtr-200">
 			<div class="col-6 col-12-medium">
+				<!--
 				{% assign postsByMonth = 
 					site.posts | group_by_exp:"post", "post.date | date: '%Y, %b'" %}
 
@@ -54,6 +55,18 @@ meta: A blog to nerd out about computers and music
 					      {% endfor %}
 					    </ul>
 					{% endfor %}
+				-->
+				{% assign postsByMonth = 
+				site.posts | group_by_exp:"post", "post.date | date: '%Y, %b'" %}
+
+				{% for month in postsByMonth %}
+				  <h3>{{ month.name }}</h3>
+				    <ul style="list-style-type:none;">
+				      {% for post in month.items %}
+					 <li>{{ post.date | date: "%d" }}:  <a href="https://gorillasun.de/{{ post.url }}">{{post.title}}</a></li>
+				      {% endfor %}
+				    </ul>
+				{% endfor %}
 			</div>
 			<div class="col-6 col-12-medium">
 				<p> In my blog posts I talk about a plethora of things that span a broad range of different topics, from music making to creative coding to using machine learning for music making. Occasionally I also might talk about some issues of personal concern.</p>
