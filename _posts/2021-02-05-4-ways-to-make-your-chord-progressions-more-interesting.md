@@ -17,12 +17,12 @@ thumbnail_path: 2021-02-05-4-ways-to-make-your-chord-progressions-more-interesti
 <!-- Break -->
 <div class="col-4 col-12-medium">
   <h3>II-V-I</h3>
-  <div style='width=100%;'>
-  <audio controls>
+
+  <audio controls width='100%'>
   <source src="https://gorillasun.de/assets/images/2021-02-05-10-tips-to-spice-up-your-chord-progressions/major2-5-1.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
-</div>
+
 </div>
 <div class="col-4 col-12-medium">
   <h3>IV-V-vi-I</h3>
