@@ -26,14 +26,14 @@ Your browser does not support the audio element.
 </div>
 <div class="col-4 col-12-medium">
   <h3>IV-V-vi-I</h3>
-    <audio controls>
+    <audio controls style="width: 100%;">
   <source src="https://gorillasun.de/assets/images/2021-02-05-10-tips-to-spice-up-your-chord-progressions/major4-5-6-1.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 </div>
 <div class="col-4 col-12-medium">
   <h3>iii-IV-V-vi</h3>
-    <audio controls>
+    <audio controls style="width: 100%;">
   <source src="https://gorillasun.de/assets/images/2021-02-05-10-tips-to-spice-up-your-chord-progressions/major3-4-5-6.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
@@ -49,7 +49,7 @@ Your browser does not support the audio element.
 <!-- Break -->
 <div class="col-4 col-12-medium">
   <h3>Variation 1</h3>
-  <audio controls>
+  <audio controls style="width: 100%;">
   <source src="https://gorillasun.de/assets/images/2021-02-05-10-tips-to-spice-up-your-chord-progressions/3-4-5-6var1.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
@@ -57,14 +57,14 @@ Your browser does not support the audio element.
 </div>
 <div class="col-4 col-12-medium">
   <h3>Variation 2</h3>
-    <audio controls>
+    <audio controls style="width: 100%;">
   <source src="https://gorillasun.de/assets/images/2021-02-05-10-tips-to-spice-up-your-chord-progressions/3-4-5-6var2.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 </div>
 <div class="col-4 col-12-medium">
   <h3>Variation 3</h3>
-    <audio controls>
+    <audio controls style="width: 100%;">
   <source src="https://gorillasun.de/assets/images/2021-02-05-10-tips-to-spice-up-your-chord-progressions/3-4-5-6var3.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
@@ -79,7 +79,7 @@ Your browser does not support the audio element.
 <!-- Break -->
 <div class="col-4 col-12-medium">
   <h3>I-III-IV-V</h3>
-  <audio controls>
+  <audio controls style="width: 100%;">
   <source src="https://gorillasun.de/assets/images/2021-02-05-10-tips-to-spice-up-your-chord-progressions/I-III-IV-V.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
@@ -87,14 +87,14 @@ Your browser does not support the audio element.
 </div>
 <div class="col-4 col-12-medium">
   <h3>I-V-VI-III</h3>
-    <audio controls>
+    <audio controls style="width: 100%;">
   <source src="https://gorillasun.de/assets/images/2021-02-05-10-tips-to-spice-up-your-chord-progressions/I-V-VI-III.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 </div>
 <div class="col-4 col-12-medium">
   <h3>I-IV-iv</h3>
-    <audio controls>
+    <audio controls style="width: 100%;">
   <source src="https://gorillasun.de/assets/images/2021-02-05-10-tips-to-spice-up-your-chord-progressions/I-IV-iv.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
@@ -105,7 +105,7 @@ Your browser does not support the audio element.
 <h2>4. Trust your ears</h2>
 <p>Using my ears is maybe one of the things that I forget most often. And by using my ears I mean actively listening to the music I'm working on, and trying to imagine where it wants to go. Every chord has a tendency to go somewhere, it's somehow pulling towards a different set of notes, sometimes it's not very obvious where it wants to go though. For example a simple major chord is very comfortable and doesn't seem like it's about to go anywhere, but if you try to picture where it could go you can start hearing some options. </p>
 
-<audio controls>
+<audio controls style="width: 100%;">
   <source src="https://gorillasun.de/assets/images/2021-02-05-10-tips-to-spice-up-your-chord-progressions/example.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
