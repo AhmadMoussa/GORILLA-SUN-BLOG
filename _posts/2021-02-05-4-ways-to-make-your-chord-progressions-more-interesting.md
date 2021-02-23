@@ -1,5 +1,5 @@
 ---
-title: 4 ways to make your chord progressions more interesting
+title: How to write interesting chord progressions
 author: Ahmad Moussa
 categories:
   - ableton
@@ -8,22 +8,21 @@ thumbnail_path: 2021-02-05-4-ways-to-make-your-chord-progressions-more-interesti
 ---
 <span class="image left"><img src="https://gorillasun.de/assets/images/thumbnails/2021-02-05-10-tips-to-spice-up-your-chord-progressions.png" alt="" /></span>
 
-<p>The chord progression is inarguably the underlying driving force of every song. They way I like to think about it, is that specific chords can convey very specific types of emotions, and it's the transition between two chords what conveys a sense of movement to your composition. I am well aware that this type of blog post is probably a horse beaten far beyond the point of no return, but I'll try to offer some tips that I use when I feel like I'm stuck while writing music. Let's get started!</p>
+<p>The chord progression is without a doubt the underlying driving force of your song. The way I like to think about it, is that specific chords can convey very specific types of emotions, and more specifically, it's the transition between two chords what conveys a sense of emotive movement in your composition. I am well aware that this type of blog post is probably a horse beaten far beyond the point of no return, but I'll try to offer some tips that I use when I feel like I'm stuck while writing music. Let's get started!</p>
 
-<hr class="major" />
-
-<h2>1. Stick to the basics</h2>
-<p>One thing I learned the hard way is that adding complexity to your music, for the sake of adding complexity is usually not a good way to develop your composition or track. You don't need incredibly complex harmony to create an interesting piece of music. You really don't need more than the simple old major scale to make good music.</p>
+<h2>Remember the basics</h2>
+<p>One thing that I've learned the hard way, is that adding complexity to your music, for the sake of adding complexity is usually not a good way to develop your composition. You don't really need incredibly complex harmony to create an interesting piece of music. You really don't need more than the simple old major scale to make good music.</p>
 
 <div class="row">
 <!-- Break -->
 <div class="col-4 col-12-medium">
   <h3>II-V-I</h3>
+  <div style='width=100%;'>
   <audio controls>
   <source src="https://gorillasun.de/assets/images/2021-02-05-10-tips-to-spice-up-your-chord-progressions/major2-5-1.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
-
+</div>
 </div>
 <div class="col-4 col-12-medium">
   <h3>IV-V-vi-I</h3>
