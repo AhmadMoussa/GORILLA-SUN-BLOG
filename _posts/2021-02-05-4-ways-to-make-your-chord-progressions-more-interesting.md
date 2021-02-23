@@ -11,7 +11,9 @@ thumbnail_path: 2021-02-05-4-ways-to-make-your-chord-progressions-more-interesti
 <p>The chord progression is without a doubt the underlying driving force of your song. The way I like to think about it, is that specific chords can convey very specific types of emotions, and more specifically, it's the transition between two chords what conveys a sense of emotive movement in your composition. I am well aware that this type of blog post is probably a horse beaten far beyond the point of no return, but I'll try to offer some tips that I use when I feel like I'm stuck while writing music. Let's get started!</p>
 
 <h2>Remember the basics</h2>
-<p>One thing that I've learned the hard way, is that adding complexity to your music, for the sake of adding complexity is usually not a good way to develop your composition. You don't really need incredibly complex harmony to create an interesting piece of music. You really don't need more than the simple old major scale to make good music.</p>
+<p>One thing that I've learned the hard way, is that adding complexity to your music, for the sake of adding complexity is usually not a good way to develop your composition. You don't really need incredibly complex harmony to create an interesting piece of music. You really don't need more than the simple old major scale to create good chord progressions, as a matter of fact if you're building your chords from a diatonic scale, it'll be unlikely that you end up with something that doesn't sound nice.</p>
+
+<p>Here are some examples of chord progressions that I personally use a lot:</p>
 
 <div class="row">
 <!-- Break -->
@@ -42,7 +44,7 @@ Your browser does not support the audio element.
 
 <hr class="major" />
 
-<h2>2. Add melody on top of your chords</h2>
+<h2>Melody on top of your chords</h2>
 <p> Sprinkling some notes on top of your chords can add a lot of character. Notes beyond the 3rd and 5th of a chord can add a lot flavor to your progression and make it feel like you've already composed a little composition that only needs a little more fleshing out. Here are 3 variations of melodies on top of the 3-4-5-6 chord progression we have already seen earlier:</p>
 
 <div class="row">
@@ -73,7 +75,7 @@ Your browser does not support the audio element.
 
 <hr class="major" />
 
-<h2>3. Borrowed Chords</h2>
+<h2>Borrowed Chords</h2>
 <p>Next up are borrowed chords. Inserting a chord from another mode in your progression can change the entire overall mood, and has the effect of giving a surprising audible twist. Here are some examples, with the same chord progressions from the first tip, but where we replace one of them by it's major or minor equivalent.</p>
 <div class="row">
 <!-- Break -->
