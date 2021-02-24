@@ -25,7 +25,7 @@ Generative Music finds it's beginnings with Brian Eno, an English musician and r
 <h3>What is Generative Music Exactly?</h3>
 Generative music, also known as procedurally generated music, is created by a system according to some pre-defined algorithmic rules, that are capable of arranging musical ideas in a coherent manner. This arrangement happens in such a manner that the emerging musical patterns may or may not repeat over the course of some time.</p>
 
-<p>'Algorithmic rules' can generally mean a broad number of things, ranging from simple rules such as simple ratios and probabilities but also more complex types of sequencing and automatic composition. In this manner, the generated music is never truly 'random', it does follow specific patterns, which should not be immediately evident to the listener.
+<p>&aposAlgorithmic Rules&apos can generally mean a broad number of things, ranging from simple rules such as simple ratios and probabilities but also more complex types of sequencing and automatic composition. In this manner, the generated music is never truly 'random', it does follow specific patterns, which should not be immediately evident to the listener.
 
 <h3>Eno's work</h3>
 <p></p>
