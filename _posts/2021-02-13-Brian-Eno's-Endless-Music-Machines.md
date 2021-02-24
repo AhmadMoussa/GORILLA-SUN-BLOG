@@ -14,7 +14,8 @@ thumbnail_path: 2021-02-13-Brian-Eno's-Endless-Music-Machines.png
 <p></p>
 <h2>An endless stream of ever changing music</h2>
 <h3>My journey into Ambient Music</h3>
-My love for ambient music started when I first listened to artists like Tycho and Jake Bowen. When listening to some of their pieces, I often feel like I'm being taken away into a distant world, entirely drawn through the narrative that the music is telling. In this captivated state I can't help but feel a deep sense of serenity and melancholy. Among others, they were maybe the first two artists that inspired me to get into electronic music myself. And I couldn't help but be mind-blown when I saw all the possibilities that modern softwares offer.</p>
+My love for ambient music started when I first listened to artists like Tycho and Jake Bowen. When listening to some of their pieces, I often feel like I'm being taken away into a distant world, entirely drawn through the narrative that the music is telling. In this captivated state I can't help but feel a deep sense of serenity and melancholy. Among others, they were maybe the first two artists that inspired me to get into electronic music myself. And I couldn't help but be mind-blown when I saw all the possibilities that modern softwares offer.
+</p>
 
 <p>For instance, I can have an entire orchestra at my disposition at any time of the day. Which makes me think how tedious it must have been for composers before our time, we now have the incredible luxury of not just being able to hear our compositions at any given instant, but we can also manipulate sound as if it were a physical entity. Lest I go on a tangent, with these modern tools many have attempted the creation of systems that are capable of generating streams of music, all by themselves, and without any further human input. The most noteworthy individual among them might be Brian Eno.
 
