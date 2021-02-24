@@ -104,7 +104,7 @@ Your browser does not support the audio element.
 </div>
 <hr class="major" />
 
-<h2>4. Trust your ears</h2>
+<h2>Trust your ears</h2>
 <p>Using my ears is maybe one of the things that I forget most often. And by using my ears I mean actively listening to the music I'm working on, and trying to imagine where it wants to go. Every chord has a tendency to go somewhere, it's somehow pulling towards a different set of notes, sometimes it's not very obvious where it wants to go though. For example a simple major chord is very comfortable and doesn't seem like it's about to go anywhere, but if you try to picture where it could go you can start hearing some options. </p>
 
 <audio controls style="width: 100%;">
