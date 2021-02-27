@@ -13,7 +13,14 @@ For example, recently I've stumbled across a number of P5JS and Processing sketc
 
 A little bit further down the rabbit hole, I find out that packing problems are actually actually a quite difficult family of mathematical optimization problems. This doesn't discourage me however, but rather makes the problem even more exciting as well as challenging.
 
-## 
+## Why is Rectangle Packing so difficult
 
 Optimization problems are generally not my cup of tea, and even though I had to take some courses on alorithmic complexity during my bachelor years, this is usually way over my head. But I found a number of interesting papers on the topic, one of them was very old: "The bottom-left bin-packing heuristic: An efficient Implementation" from 1983 by Bernard Chazelle. And I have a weak spot for old papers, especially when they have figures that must have taken a lot of effort to make back then. I found it through this heated stackoverflow thread that was also inquiring about a solution for this problem.
 
+## Existing algorithms
+
+## Not reinventing the wheel
+
+## Rectangle packing with python and P5JS
+
+## Partitioning rectangles for optimal packing
