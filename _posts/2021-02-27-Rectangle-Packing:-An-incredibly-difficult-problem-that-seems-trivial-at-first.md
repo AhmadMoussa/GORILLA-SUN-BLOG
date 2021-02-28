@@ -21,6 +21,8 @@ published: true
 Packing problems are a class of optimization problems in mathematics that involve attempting to pack objects together into containers. The goal is to either pack a single container as densely as possible or pack all objects using as few containers as possible. [...] Usually the packing must be without overlaps between goods and other goods or the container walls. In some variants, the aim is to find the configuration that packs a single container with the maximal density. More commonly, the aim is to pack all the objects into as few containers as possible.
 </blockquote>
 
+Essentially, we'll want to jampack the largest possible number of items into the least amount of space. This type of problem is usually studied in the context where you have multiple bins or containers which you want to fill optimally with the items at hand, however in my case I'm looking we're simply looking at one container that we want to fill.
+
 <h2>Why is Rectangle Packing so difficult</h2>
 
 <p>Optimization problems are generally not my cup of tea, and even though I had to take some courses on alorithmic complexity during my bachelor years, this is usually way over my head. But I found a number of interesting papers on the topic, one of them was very old: "The bottom-left bin-packing heuristic: An efficient Implementation" from 1983 by Bernard Chazelle. And I have a weak spot for old papers, especially when they have figures that must have taken a lot of effort to make back then. I found it through this heated stackoverflow thread that was also inquiring about a solution for this problem.</p>
