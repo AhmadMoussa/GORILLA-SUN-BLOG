@@ -8,7 +8,7 @@ thumbnail_path: 2021-02-17-Linear-Interpolation-in-p5js.png
 published: true
 ---
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/thumbnails/2021-02-27-rectangle-packing/rectangles1.png" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-27-rectangle-packing/rectangles1.png" alt="" /></span>
 
 <p>Very often, it happens that I have an idea for a sketch, that seems relatively simple to implement, however, when the time comes and I'm free to start working on it, I have literally no clue where to even begin. This is usually because I underestimated the complexity of the problem at hand. 
 For example, recently I've stumbled across a number of P5JS and Processing sketches, that try to fit as many simple shapes as possible, where each shape has a different size, into an area of limited size. This is usually called packing, or more comonly known as packing problems.</p>
