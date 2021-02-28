@@ -20,6 +20,7 @@ Optimization problems are generally not my cup of tea, and even though I had to 
 ## Existing algorithms
 
 ## Not reinventing the wheel
+After staring at my laptop screen for more than two hours with frustration, trying to implement some simple version of a greedy heuristic algorithm that will neatly pack my rectangles, I ultimately gave up and started looking for already implemented algorithms.
 
 ## Rectangle packing with python and P5JS
 
