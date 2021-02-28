@@ -112,7 +112,76 @@ packer = newPacker(pack_algo=guillotine.GuillotineBafSas)
 <p>The framework and the list of the supported algorithms can be found <a href='https://github.com/secnot/rectpack'>here</a></p>
 
 <h3>Visualizing it in P5JS</h3>
+<p>Even though I love matplotlib, I'm not a big fan of the rectangles look, hence I've used P5JS to visualize them, which gives us some more flexibility in the appearance.
+<pre><code>var listOfColors = ["#01295f","#22547b","#437f97","#64895e","#849324","#c2a31a","#ffb30f","#fe6415","#fd151b","#fd2a30"]
 
-<pre><code>
+var rectangles = [[0, 0, 250, 250], [250, 0, 100, 200], [250, 200, 100, 200]]
+
+class Item {
+  constructor(x, y, w, h, c) {
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.c = listOfColors[int(random(0, listOfColors.length))];
+  }
+
+  display() {
+    strokeWeight(2)
+    fill(this.c);
+    rect(this.x, this.y, this.w, this.h);
+  }
+}
+
+class Pack {
+  constructor(x, y, w, h, numItems) {
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.c = 0;
+
+    this.numItems = rectangles.length;
+    this.items = [];
+
+    for (let i = 0; i < this.numItems; i++) {
+      this.items.push(new Item(rectangles[i][0],
+                               rectangles[i][1],
+                               rectangles[i][2],
+                               rectangles[i][3]))
+    }
+  }
+
+  sortByLargestArea() {
+    while (this.items.length > 0) {
+      console.log(this.items.length)
+      var largestArea = 0
+      var largestAreaIndex = 0
+      for (let i = 0; i < this.items.length; i++) {
+        if (this.items[i].w * this.items[i].h > largestArea) {
+          largestArea = this.items[i].w * this.items[i].h;
+          largestAreaIndex = i;
+        }
+      }
+      this.itemsDone.push(this.items.splice(largestAreaIndex, 1)[0]);
+    }
+  }
+
+  display() {
+    for (let i = 0; i < this.items.length; i++) {
+      this.items[i].display();
+    }
+  }
+}
+
+function setup() {
+  createCanvas(500, 500);
+  packer = new Pack(0, 0, 100, 100, 10);
+}
+
+function draw() {
+  background(220);
+  packer.display();
+}
 </code></pre>
 
