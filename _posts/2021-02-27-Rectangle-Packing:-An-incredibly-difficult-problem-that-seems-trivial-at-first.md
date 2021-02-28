@@ -38,7 +38,7 @@ Packing problems are a class of optimization problems in mathematics that involv
  
  <p></p>
  
- <p>Now consider the case where you have to arrange more rectangles, it'll probably take you a lot more time to do so:</p>
+ <p>Now consider the case where you have to arrange more rectangles, it'll probably take you a lot more time to do so by trial and error, and you can see that some of the examples below are far from being optimal:</p>
  
   <div class="row gtr-50 gtr-uniform">
       <div class="col-4"><span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-27-rectangle-packing/rectangles_example4.png" alt="" /></span></div>
@@ -46,11 +46,12 @@ Packing problems are a class of optimization problems in mathematics that involv
       <div class="col-4"><span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-27-rectangle-packing/rectangles_example6.png" alt="" /></span></div>
  </div>
  
-<p>But I found a number of interesting papers on the topic, one of them was very old: "The bottom-left bin-packing heuristic: An efficient Implementation" from 1983 by Bernard Chazelle. And I have a weak spot for old papers, especially when they have figures that must have taken a lot of effort to make back then. I found it through this heated stackoverflow thread that was also inquiring about a solution for this problem.</p>
+ <p></p>
+ <p>You can see that the complexity of the problem scales with it's size. This innocent looking problem, reveals itself to be a monstrosity of a conundrum. Another problem is, can we even check that our arrangment is optimal? Well, technically yes, however, there is no known strategy to finding that optimal solution. In fact bin packing problems are at least NP-hard, and the best we can do currently is solving them with heuristic methods that find solutions relatively quick. The literature on packing problems is quite extensive, one really interesting paper on the topic is 'A Thousand Ways to Pack the Bin - A Practical Approach to Two-Dimensional Rectangle Bin Packing' by Jukka Jylänki, which is a relatively old paper from 2010. So you can see that I'm probably not going to be able to create a better algorithm than what the literature has already suggested. </p>
+  
+<p>Another interesting paper was quite old 'The bottom-left bin-packing heuristic: An efficient Implementation' from 1983 by Bernard Chazelle. And I do have a weak spot for old papers, especially when they have figures that must have taken a lot of effort to make back then. I found it through <a href='https://stackoverflow.com/questions/1213394/what-algorithm-can-be-used-for-packing-rectangles-of-different-sizes-into-the-sm'>this heated stackoverflow thread</a> that was also inquiring about a solution for the rectangle packing problem, and is as of now more than 11 years old.</p>
 
-<h2> Existing algorithms </h2>
-
-<h2> Not reinventing the wheel </h2>
+<h2> Creating the visualizations </h2>
 <p>After staring at my laptop screen for more than two hours with frustration, trying to implement some simple version of a greedy heuristic algorithm that will neatly pack my rectangles, I ultimately gave up and started looking for already implemented algorithms.</p>
 
 <h2> Rectangle packing with python and P5JS </h2>
