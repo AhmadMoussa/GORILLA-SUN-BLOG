@@ -1,5 +1,5 @@
 ---
-title: Neural Color Spaces: a project that I agonized over for more than a year.
+title: Neural Color Spaces&#58; a project that I agonized over for more than a year.
 author: Ahmad Moussa
 categories:
   - p5js
