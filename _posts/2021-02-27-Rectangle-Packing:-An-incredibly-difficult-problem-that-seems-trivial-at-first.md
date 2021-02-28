@@ -112,8 +112,9 @@ packer = newPacker(pack_algo=guillotine.GuillotineBafSas)
 <p>The framework and the list of the supported algorithms can be found <a href='https://github.com/secnot/rectpack'>here</a></p>
 
 <h3>Visualizing it in P5JS</h3>
-<p>Even though I love matplotlib, I'm not a big fan of the rectangles look, hence I've used P5JS to visualize them, which gives us some more flexibility in the appearance.
-<pre><code>var listOfColors = ["#01295f","#22547b","#437f97","#64895e","#849324","#c2a31a","#ffb30f","#fe6415","#fd151b","#fd2a30"]
+<p>Even though I love matplotlib, I'm not a big fan of the rectangles look, hence I've used P5JS to visualize them, which gives us some more flexibility in the appearance.</p>
+<pre><code>var listOfColors = ["#01295f","#22547b","#437f97","#64895e","#849324",
+				"#c2a31a","#ffb30f","#fe6415","#fd151b","#fd2a30"]
 
 var rectangles = [[0, 0, 250, 250], [250, 0, 100, 200], [250, 200, 100, 200]]
 
@@ -185,3 +186,4 @@ function draw() {
 }
 </code></pre>
 
+<p>And this pretty much sums up the post, if you've enjoyed reading this post as much as I enjoyed writing it, feel free to leave a comment or subscribing to my mailing list. Otherwise, check out some other posts, who knows, maybe you'll find something that interests you! Cheers!</p>
