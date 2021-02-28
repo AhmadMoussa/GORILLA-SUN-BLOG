@@ -25,7 +25,7 @@ Packing problems are a class of optimization problems in mathematics that involv
 
 <h2>Why is Rectangle Packing so difficult</h2>
 
-<p>Optimization problems are generally not my cup of tea, and even though I've had to take some courses on algorithmic complexity as well as convex optimization during my time at university, it's usually way over my head.</p>
+<p>Optimization problems are generally not my cup of tea, and even though I've had to take some courses on algorithmic complexity as well as convex optimization during my time at university, it's usually way over my head, however I will attempt to explain succinctly.</p>
 
 <p>Let's have look at some trivial examples. How would you optimally place a handful of rectangles, such that they take the least amount of space possible? For a small number of rectangles it's probably quiet easy to do by hand:</p>
   
@@ -54,7 +54,66 @@ Packing problems are a class of optimization problems in mathematics that involv
 <h2> Creating the visualizations </h2>
 <p>After staring at my laptop screen for more than two hours with frustration, trying to implement some simple version of a greedy heuristic algorithm that will neatly pack my rectangles, I ultimately gave up and started looking for already implemented algorithms.</p>
 
-<h2> Rectangle packing with python and P5JS </h2>
+<h3>Python rectpacker</h3>
+<pre><code>from rectpack import newPacker
 
-<h2> Partitioning rectangles for optimal packing </h2>
+rectangles = [(50,50),(100,50),(25,45),(80,60),(40,60),(40,30)]
+bins = [(200, 200)]
+
+packer = newPacker()
+
+# Add the rectangles to packing queue
+for r in rectangles:
+	packer.add_rect(*r)
+
+# Add the bins where the rectangles will be placed
+for b in bins:
+	packer.add_bin(*b)
+
+# Start packing
+packer.pack()
+
+import matplotlib.pyplot as plt
+from matplotlib import patches
+
+output = []
+for index, abin in enumerate(packer):
+  bw, bh  = abin.width, abin.height
+  print('bin', bw, bh, "nr of rectangles in bin", len(abin))
+  fig = plt.figure()
+  ax = fig.add_subplot(111, aspect='equal')
+  for rect in abin:
+    x, y, w, h = rect.x, rect.y, rect.width, rect.height
+    output.append([x,y,w,h])
+    plt.axis([0,bw,0,bh])
+    print('rectangle', w,h)
+    ax.add_patch(
+        patches.Rectangle(
+            (x, y),  # (x,y)
+            w,          # width
+            h,          # height
+            facecolor="#00ffff",
+            edgecolor="black",
+            linewidth=3
+        )
+    )
+  fig.savefig("rect_%(index)s.png" % locals(), dpi=144, bbox_inches='tight')
+
+# printing the rectangle coordinates to plot them in P5JS
+print(output)
+</code></pre>
+
+<pre><code>
+import rectpack.guillotine as guillotine
+import rectpack.maxrects as maxrects
+
+#packer = newPacker(pack_algo=guillotine.GuillotineBafSas)
+#packer = newPacker(pack_algo=guillotine.GuillotineBssfLas)
+#packer = newPacker(pack_algo=guillotine.GuillotineBssfMaxas)
+</code></pre>
+
+<h3>Visualizing it in P5JS</h3>
+
+<pre><code>
+</code></pre>
 
