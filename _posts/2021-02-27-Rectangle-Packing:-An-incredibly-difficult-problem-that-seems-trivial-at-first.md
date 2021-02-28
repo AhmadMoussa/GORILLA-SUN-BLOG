@@ -10,10 +10,16 @@ published: true
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-27-rectangle-packing/rectangles1.png" alt="" /></span>
 
-<p>Very often, it happens that I have an idea for a sketch, that seems relatively simple to implement, however, when the time comes and I'm free to start working on it, I have literally no clue where to even begin. This is usually because I underestimated the complexity of the problem at hand. 
-For example, recently I've stumbled across a number of P5JS and Processing sketches, that try to fit as many simple shapes as possible, where each shape has a different size, into an area of limited size. This is usually called packing, or more comonly known as packing problems.</p>
+<p>It often happens that I have an idea for a sketch, which in my mind, seems relatively simple to implement; however, when the time comes and I'm free to start working on it, I have literally no clue where to even begin. This is usually because I severly underestimated the complexity of the problem at hand.</p>
+<p>For instance, recently I've stumbled across a number of P5JS and Processing sketches, that try to fit as many simple shapes as possible, where each shape has a different size, into an area of limited size. This is usually called packing, or more comonly known as packing problems. It seemed worthwhile to learn a little bit more about them.</p>
 
-<p>A little bit further down the rabbit hole, I find out that packing problems are actually actually a quite difficult family of mathematical optimization problems. This doesn't discourage me however, but rather makes the problem even more exciting as well as challenging.</p>
+<h2>Packing Problems</h2>
+
+<p>A little bit further down the rabbit hole, I find out that packing problems are actually actually a quite difficult family of mathematical optimization problems. This doesn't discourage me however, but rather makes the problem even more exciting as well as challenging. Wikipedia explains the problem much more eloquently than what I'm capable of:</p>
+
+<blockquote>
+Packing problems are a class of optimization problems in mathematics that involve attempting to pack objects together into containers. The goal is to either pack a single container as densely as possible or pack all objects using as few containers as possible. [...] Usually the packing must be without overlaps between goods and other goods or the container walls. In some variants, the aim is to find the configuration that packs a single container with the maximal density. More commonly, the aim is to pack all the objects into as few containers as possible.
+</blockquote>
 
 <h2>Why is Rectangle Packing so difficult</h2>
 
