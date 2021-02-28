@@ -32,8 +32,8 @@ Packing problems are a class of optimization problems in mathematics that involv
   
  <div class="row gtr-50 gtr-uniform">
       <div class="col-4"><span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-27-rectangle-packing/rectangles_example1.png" alt="" /></span></div>
-      <div class="col-4"><span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-27-rectangle-packing/rectangles_example1.png" alt="" /></span></div>
-      <div class="col-4"><span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-27-rectangle-packing/rectangles_example1.png" alt="" /></span></div>
+      <div class="col-4"><span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-27-rectangle-packing/rectangles_example2.png" alt="" /></span></div>
+      <div class="col-4"><span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-27-rectangle-packing/rectangles_example3.png" alt="" /></span></div>
  </div>
  
 <p>But I found a number of interesting papers on the topic, one of them was very old: "The bottom-left bin-packing heuristic: An efficient Implementation" from 1983 by Bernard Chazelle. And I have a weak spot for old papers, especially when they have figures that must have taken a lot of effort to make back then. I found it through this heated stackoverflow thread that was also inquiring about a solution for this problem.</p>
