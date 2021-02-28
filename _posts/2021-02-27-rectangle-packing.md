@@ -5,7 +5,7 @@ categories:
   - p5js
 description: Sometimes problems can be much more difficult than they appear to be.
 thumbnail_path: 2021-02-17-Linear-Interpolation-in-p5js.png
-published: false
+published: true
 ---
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/thumbnails/2021-02-27-rectangle-packing/rectangles1.png" alt="" /></span>
