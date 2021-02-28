@@ -1,7 +1,7 @@
 title: GORILLA SUN BLOG
 author: Ahmad Moussa
 url: "https://gorillasun.de" # the base hostname & protocol for your site
-permalink: blog/:title
+permalink: /blog/:title
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag
