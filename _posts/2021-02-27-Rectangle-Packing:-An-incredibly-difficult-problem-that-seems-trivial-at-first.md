@@ -1,5 +1,5 @@
 ---
-title: Rectangle Packing: An incredibly difficult problem that seems trivial at first
+title: Rectangle Packing An incredibly difficult problem that seems trivial at first
 author: Ahmad Moussa
 categories:
   - p5js
