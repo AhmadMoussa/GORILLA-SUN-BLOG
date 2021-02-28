@@ -15,7 +15,7 @@ published: true
 
 <h2>Packing Problems</h2>
 
-<p>A little bit further down the rabbit hole, I find out that packing problems are actually actually a quite difficult family of mathematical optimization problems. This doesn't discourage me however, but rather makes the problem even more exciting as well as challenging. Wikipedia explains the problem much more eloquently than what I'm capable of:</p>
+<p>A little bit further down the rabbit hole, I find out that packing problems are actually a quite difficult family of mathematical optimization problems. This doesn't discourage me however, but rather makes the problem even more exciting as well as challenging. Wikipedia explains the problem much more eloquently than what I'm capable of:</p>
 
 <blockquote>
 Packing problems are a class of optimization problems in mathematics that involve attempting to pack objects together into containers. The goal is to either pack a single container as densely as possible or pack all objects using as few containers as possible. [...] Usually the packing must be without overlaps between goods and other goods or the container walls. In some variants, the aim is to find the configuration that packs a single container with the maximal density. More commonly, the aim is to pack all the objects into as few containers as possible.
