@@ -7,6 +7,7 @@ description: This blog post describes a course project where I attempted to gene
 thumbnail_path: 2021-02-17-Linear-Interpolation-in-p5js.png
 published: true
 ---
+<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/3o85xyGspig9UUbHc4" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
 <h2>Conception</h2>
 In September 2019, for the second semester of my Master studies, I signed up for a course called 'Computer Graphics Optimization'. Which sounded interesting to me, since I had taken a course on computer graphics before, where I learned to use OpenGL and implement many computer graphics concepts such as ray-tracing, creating meshes and a lot about the camera object and how illumination is simulated. However, I wasn't ready for this course. Very quickly I found myself knee-deep in convex optimization and trying to understand what the heck a Lagrangian was, among other topics that went way over my head. Ultimately I did pass by the skin of my teeth, the professor being kind enough to adhere to the practice exam that uploaded prior to the actual final. 
