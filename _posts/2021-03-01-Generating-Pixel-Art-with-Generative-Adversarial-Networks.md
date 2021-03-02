@@ -5,7 +5,7 @@ categories:
   - p5js
 description: This blog post describes a course project where I attempted to generate pixel art with Generative Adversarial Networks.
 thumbnail_path: 2021-02-17-Linear-Interpolation-in-p5js.png
-published: true
+published: false
 ---
 <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/3o85xyGspig9UUbHc4" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
