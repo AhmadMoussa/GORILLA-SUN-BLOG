@@ -19,5 +19,8 @@ The important part of the story is the course project that we were assigned. Not
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/Czkf9bhI4xk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<p>What you're seeing is a visualization of the learned latent space of the GAN. Every training epoch I generate an image and then I concatenated all of them into the video you're seeing. I also made some music for it, but that's besides the point. Towards the end of the video you can see a shape emerge that vaguely looks like a sprite, I dont think that it would have gotten any better if I left it training for longer since the dataset was very small, all things considered.</p>
+
+
 
 
