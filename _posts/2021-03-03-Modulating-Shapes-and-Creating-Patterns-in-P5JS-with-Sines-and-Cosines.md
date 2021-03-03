@@ -24,7 +24,7 @@ published: true
 <p>Essentially, we're creating a grid of objects, each of which holds a number of parameters and <code>display()</code> function to draw itself to the canvas. The parameters include it's position and size, and optionally also it's color. The heavy lifting happens in the <code>display()</code> function. Since every rectangle is continuously redrawn, what if we were to change their size and color over time? We could simply do so by modulating the size attribute with a sine function. But first things first, let's create the grid.</p>
 
 <h3>The grid</h3>
-<span class="image fit"><img src="assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/grid.png" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/grid.png" alt="" /></span>
 <pre><code>class Square {
   constructor(px, py, s) {
     this.positionX = px;
@@ -83,7 +83,7 @@ function draw() {
 
 <h3>Modulating Rectangle Sizes</h3>
 <h4>Sin() function</h4>
-<span class="image fit"><img src="assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/modulatingSize.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/modulatingSize.gif" alt="" /></span>
 <pre><code>
 class Square {
   constructor(px, py, s) {
@@ -106,7 +106,7 @@ class Square {
 </code></pre>
 
 <h4>Sin() function with respect to X coordinate</h4>
-<span class="image fit"><img src="assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/positionX.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/positionX.gif" alt="" /></span>
 <pre><code>display() {
     strokeWeight(3);
     
@@ -117,15 +117,15 @@ class Square {
 </code></pre>
 
 <h4>Sin() function with respect to Y coordinate</h4>
-<span class="image fit"><img src="assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/positionY.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/positionY.gif" alt="" /></span>
 <pre><code>this.size = 20 + 14 * sin(this.positionY + millis() / 500);</code></pre>
 
 <h4>Sin() function with respect to X and Y coordinate</h4>
-<span class="image fit"><img src="assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/positionXnY.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/positionXnY.gif" alt="" /></span>
 <pre><code>this.size = 20 + 14 * sin(this.positionY +this.positionX + millis() / 500);</code></pre>
 
 <h4>Adding Color</h4>
-<span class="image fit"><img src="assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/color.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/color.gif" alt="" /></span>
 <pre><code>fill(127.5 + 127.5 * cos(this.positionX + tan(millis() / 5000) + millis() / 500), 127.5 + 127.5 * sin(this.positionY + cos(millis() / 500) + millis() / 500), 120.5)</code></pre>
 
 <!--
