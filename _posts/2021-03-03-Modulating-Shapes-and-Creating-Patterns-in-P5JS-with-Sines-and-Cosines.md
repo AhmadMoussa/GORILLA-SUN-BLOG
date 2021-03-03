@@ -20,7 +20,7 @@ published: true
 <p>Once you code up a working sketch with such a structure, cimply changing one parameter can lead to an entirely different behaviour. At that point you're not really 'coding' your sketch anymore, but you're 'playing' with it.</p>
 
 <h2>Sketch from Scratch</h2>
-<p>In this blog post specifically I'd like to explain what's going on in this Sketch:</p>
+<p>In this blog post I'd like to explain what's going on in this Sketch specifically:</p>
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/f0RLlSmxfK8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -146,4 +146,4 @@ class Square {
 </div>
 -->
 
-<p>If you enjoyed this article, consider subscribing to my mailing list, or if you'd like to support this website, consider sharing this article.</p>
+<p>This is it for today's blog post, if you have any questions leave a comment, or shoot me a message directly on any of my social medias! If you enjoyed this article, consider subscribing to my mailing list, or if you'd like to support this website, consider sharing this article.</p>
