@@ -7,7 +7,13 @@ description: Modulating the height and width of rectangle objects, with respect 
 thumbnail_path: 2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines.png
 published: true
 ---
-
+<div class="box alt">
+    <div class="row gtr-50 gtr-uniform">
+        <div class="col-4"><span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/positionX.gif" alt="" /></span></div>
+        <div class="col-4"><span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/positionY.gif" alt="" /></span></div>
+        <div class="col-4"><span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/positionXnY.gif" alt="" /></span></div>
+    </div>
+</div>
 <h2>Continuously evolving your sketches</h2>
 <p>As of now, I've already written a couple of blog posts about creating sketches with P5JS which detail a number of interesting techniques to achieve interesting animated effects, and I don't think I'm going to run out of ideas anytime soon. My very first post talks about creating a grid of shapes, which I think teaches a very important concept, that is 'instancing'. Thinking in an object oriented manner can go a long way when creating sketches sketches, and can lead to a sort of modular structure for your code.</p> 
 
