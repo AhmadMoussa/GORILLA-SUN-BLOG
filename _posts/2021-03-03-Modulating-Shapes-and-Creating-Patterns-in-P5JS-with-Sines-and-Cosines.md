@@ -17,7 +17,7 @@ published: true
 <h2>Continuously evolving your sketches</h2>
 <p>My very first post on this website explains how to create a arbitrarily sized grid of shapes, which I think teaches a very important concept, which is 'instancing'. Thinking in an object oriented manner can go a long way when creating sketches, and can lead to having code that follows a modular structure.</p> 
 
-<p>Once you code up a working sketch with such a structure, cimply changing one parameter can lead to an entirely different behaviour. At that point you're not really 'coding' your sketch anymore, but you're 'playing' with it.</p>
+<p>Once you code up a working sketch with such a structure, simply changing one parameter can lead to an entirely different behaviour. At that point you're not really 'coding' your sketch anymore, but you're 'playing' with it.</p>
 
 <h2>Sketch from Scratch</h2>
 <p>In this blog post I'd like to explain what's going on in this Sketch specifically:</p>
