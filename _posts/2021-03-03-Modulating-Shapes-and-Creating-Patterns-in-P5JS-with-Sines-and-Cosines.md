@@ -89,10 +89,9 @@ function draw() {
   grid.display();  
 }
 </code></pre>
-
-<h3>Modulating the Rectangle's size</h3>
+<p></p>
+<h2>Modulating the Rectangle's size</h2>
 <p>As I already mentioned, since the rectangles are continuously redrawn, it would be interesting to plug something more interesting into it's 'this.size' attribute, rather than just a fixed number. For example, a sine function! We also need the <code>millis()</code> function that p5js provides to get motion out of the <code>sin()</code> function. The sine function now start oscillating between it's two bounds, that are -1 and 1, and we need to scale it accordingly to obtain any visual change, in this case I just multiply it by 14, which is adequate for the canvas and rectangle size we are using. You might have to change this number if you change the canvas size and the overall size of you drawn objects. Additionally I divide <code>millis()</code> by a value, which essentially just slows down the osciallting movement of the sine function. Otherwise it would be nauseatingly fast.</p>
-<h4>Sin() function</h4>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/modulatingSize.gif" alt="" /></span>
 <pre><code>
 class Square {
@@ -112,10 +111,9 @@ class Square {
     rect(this.positionX - this.size / 2, this.positionY - this.size / 2, this.size, this.size, this.curvature, this.curvature, this.curvature, this.curvature);
   }
 }
-
 </code></pre>
-
-<h4>Sin() function with respect to X coordinate</h4>
+<p></p>
+<h3>Sine function with respect to x coordinate</h3>
 <p>Here's where things become interesting, what if we were to plug in another attribute into the sine function? For instance, the x coordinate of the drawn object? This would offset the sine function by some amount, and the size of each one of the rectangles wouldn't uniformly increasing and decreasing. Here you can see the effect:</p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/positionX.gif" alt="" /></span>
 <pre><code>display() {
@@ -126,18 +124,18 @@ class Square {
     rect(this.positionX - this.size / 2, this.positionY - this.size / 2, this.size, this.size, this.curvature, this.curvature, this.curvature, this.curvature);
 }
 </code></pre>
-
-<h4>Sin() function with respect to Y coordinate</h4>
+<p></p>
+<h3>Sine function with respect to y coordinate</h3>
 <p>What about the Y coordinate?</p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/positionY.gif" alt="" /></span>
 <pre><code>this.size = 20 + 14 * sin(this.positionY + millis() / 500);</code></pre>
-
-<h4>Sin() function with respect to X and Y coordinate</h4>
+<p></p>
+<h4>Sine function with respect to x and y coordinate</h4>
 <p>What if we were to use both X and Y coordinates?</p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/positionXnY.gif" alt="" /></span>
 <pre><code>this.size = 20 + 14 * sin(this.positionY +this.positionX + millis() / 500);</code></pre>
-
-<h4>Adding Color</h4>
+<p></p>
+<h3>Adding Color</h3>
 <p>Now we can apply this same concept to the color of each object. And we're not just limited to the sine function, we could alternatively use a cosine function or a combination of the two. The possibilities really are endless!</p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/color.gif" alt="" /></span>
 <pre><code>fill(127.5 + 127.5 * cos(this.positionX + tan(millis() / 5000) + millis() / 500), 127.5 + 127.5 * sin(this.positionY + cos(millis() / 500) + millis() / 500), 120.5)</code></pre>
