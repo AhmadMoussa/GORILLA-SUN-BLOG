@@ -22,7 +22,9 @@ published: true
 
 <h2>Intuition behind the Sketch</h2>
 <p>Essentially, we're creating a grid of objects, each of which holds a number of parameters and <code>display()</code> function to draw itself to the canvas. The parameters include it's position and size, and optionally also it's color. The heavy lifting happens in the <code>display()</code> function. Since every rectangle is continuously redrawn, what if we were to change their size and color over time? We could simply do so by modulating the size attribute with a sine function. Here's an example:</p>
-<iframe width="100%" src="https://editor.p5js.org/AhmadMoussa/embed/HaWoY9swq"></iframe>
+<iframe style="width:100%;height:0;padding-bottom:58%;position:relative;" src="https://editor.p5js.org/AhmadMoussa/embed/HaWoY9swq"></iframe>
+
+
 <pre><code>
 
 </code></pre>
