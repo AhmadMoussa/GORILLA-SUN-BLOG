@@ -29,7 +29,7 @@ published: true
 <h2>Intuition behind the Sketch</h2>
 <p>Essentially, we're creating a grid of objects, each of which holds a number of parameters and <code>display()</code> function to draw itself to the canvas. The parameters include it's position and size, and optionally also it's color. The heavy lifting happens in the <code>display()</code> function. Since every rectangle is continuously redrawn, what if we were to change their size and color over time? We could simply do so by modulating the size attribute with a sine function. But first things first, let's create the grid.</p>
 
-<h3>The grid</h3>
+<h2>The grid</h2>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/grid.png" alt="" /></span>
 
 <p>For the sake of clarity I'll brush over the code for creating the grid, however a more detailed explanation can be found <a href='https://gorillasun.de/blog/Sketch-from-Scratch-1-Colorful-checkerboard-in-P5JS' target="_blank" rel="noopener noreferrer">here</a>. This snippet, that constitutes the largest part of the code, creates a 'Grid' object which holds an array of 'Square' objects. Invoking the display function of the Grid object will in turn call all the display functions of each Square object and draw them to the canvas, depending on it's position. The grid object takes care of positioning the Squares such that you can create grids with an arbitrary number of rows and columns:</p>
