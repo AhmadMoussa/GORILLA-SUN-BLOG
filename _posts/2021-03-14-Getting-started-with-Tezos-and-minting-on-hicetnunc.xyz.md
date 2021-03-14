@@ -7,7 +7,6 @@ description: This blog post shows you how to get started with tezos and minting 
 thumbnail_path: 
 published: true
 ---
-<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/W0LADAvWlQks4o6Ulk" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/igNx7sm9Ygj0k" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
 
