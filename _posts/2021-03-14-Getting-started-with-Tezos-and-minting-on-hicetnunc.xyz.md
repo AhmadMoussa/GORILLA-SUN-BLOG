@@ -18,7 +18,15 @@ To get straight to the point, you essentially need these two things:
 And then you're ready to get started with minting on the Tezos blockchain via hicetnunc.xyz.
 
 ## Tezos Wallets
-There's many different wallets all with their pros and cons, 4 of which are currently suported by hicetnunc.xyz: Temple Wallet, Spire, Galleon and Kukai.
+<div class="row">
+<!-- Break -->
+<div class="col-5 col-12-medium">
+      There's many different wallets all with their pros and cons, 4 of which are currently suported by hicetnunc.xyz: Temple Wallet, Spire, Galleon and Kukai.
+  </div>
+  <div class="col-7 col-12-medium">
+    
+    </div>
+  </div>
 
 Personally I use Temple Wallet because it's the first one I tried and seems convenient so far. Once you install the extension or desktop app, you'll have to create a wallet. You will be asked to set up a seed phrase and store it somewhere secure so you remember it later. <strong>This is very important, store your seedphrase securely! Otherwise you might not have access to your money anymore!</strong>
 
