@@ -17,7 +17,7 @@ To get straight to the point, you essentially need these two things:
 
 And then you're ready to get started with minting on the Tezos blockchain via <a href='https://hicetnunc.xyz' target="_blank" rel="noopener noreferrer">hicetnunc.xyz</a>.
 
-## Tezos Wallets
+<h2>Tezos Wallets</h2>
 <div class="row">
 <!-- Break -->
 There's many different wallets all with their pros and cons, 4 of which are currently suported by hicetnunc.xyz: Temple Wallet, Spire, Galleon and Kukai.
@@ -28,7 +28,7 @@ Personally I use Temple Wallet because it's the first one I tried and seems conv
 
 Once you have your wallet set up, you're ready to receive Tezos in it. You can either set up an account on an exchange site like coinbase and binance, exchange some fiat currency for Tezos and then send them to yourself, or have someone who already has some Tezos send some to you. Where the easier option is the latter. Some kind eople on Twitter are actually giving some Tezos for free to get you started, such as these guys <a href='https://twitter.com/tezosnftfaucet' target="_blank" rel="noopener noreferrer">here</a>. Eventually you'll have to set up an axchange account anyway to trade it in for real money.
 
-## Minting on Hicetnunc.xyz
+<h2>Minting on Hicetnunc.xyz</h2>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-14-Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz/minting.png" alt="" />
 
@@ -41,7 +41,7 @@ If you're ready to mint your first #CleanNFT and you have at least 0.08 XTZ in y
 
 Now hit the 'mint' button. It'll notify that you have to 'sync' first, with a pop up window. Hit 'sync' in the upper right corner, grant permission with your wallet, then try pressing mint again. It'll ask you for another notification from your wallet to execute the transaction. The Temple wallet should show you sccuess message in the top right corner, or something else if something goes wrong. If everything went well it should have minted your NFT.
 
-## Managing and curating your assets
+<h2>Managing and curating your assets</h2>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-14-Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz/curating.png" alt="" />
   
 After minting your OBJKT wait 2-3 minutes then click the drop down menu again, and click 'manage assets'. Your wallet is going to ask for permission. Now it should show you a page that contains your OBJKT with it's resective number (if it doesn't then wait a while longer before you try minting it again, sometimes it just doesn't mint it). Click on your OBJKT, and it should take to a page that is displaying your OBJKT in all it's glory with the information you've entered earlier below it.
