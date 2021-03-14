@@ -21,11 +21,12 @@ And then you're ready to get started with minting on the Tezos blockchain via hi
 <div class="row">
 <!-- Break -->
 There's many different wallets all with their pros and cons, 4 of which are currently suported by hicetnunc.xyz: Temple Wallet, Spire, Galleon and Kukai.
+ 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-14-Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz/hicetnuncwallet.png" alt="" />
 
 Personally I use Temple Wallet because it's the first one I tried and seems convenient so far. Once you install the extension or desktop app, you'll have to create a wallet. You will be asked to set up a seed phrase and store it somewhere secure so you remember it later. <strong>This is very important, store your seedphrase securely! Otherwise you might not have access to your money anymore!</strong>
 
-Once you have your wallet set up, you're ready to receive Tezos in it. You can either set up an account on an exchange site like coinbase and binance, exchange some fiat currency for Tezos and then send them to yourself, or have someone who already has some Tezos send some to you. Where the easier option is the latter. Some kind eople on Twitter are actually giving some Tezos for free to get you started, such as these guys <a href='https://twitter.com/tezosnftfaucet' target="_blank" rel="noopener noreferrer">here</href> Eventually you'll have to set up an axchange account anyway to trade it in for real money.
+Once you have your wallet set up, you're ready to receive Tezos in it. You can either set up an account on an exchange site like coinbase and binance, exchange some fiat currency for Tezos and then send them to yourself, or have someone who already has some Tezos send some to you. Where the easier option is the latter. Some kind eople on Twitter are actually giving some Tezos for free to get you started, such as these guys <a href='https://twitter.com/tezosnftfaucet' target="_blank" rel="noopener noreferrer">here</a>. Eventually you'll have to set up an axchange account anyway to trade it in for real money.
 
 ## Minting on Hicetnunc.xyz
 
