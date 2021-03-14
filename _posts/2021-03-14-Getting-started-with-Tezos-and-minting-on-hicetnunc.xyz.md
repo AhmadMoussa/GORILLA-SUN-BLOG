@@ -9,10 +9,12 @@ published: true
 ---
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/W0LADAvWlQks4o6Ulk" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
-To get straight to the point, you'' essentially need these two things:
+<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/igNx7sm9Ygj0k" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
+
+To get straight to the point, you essentially need these two things:
 
 1. A hicetnunc compatible Tezos wallet
-2. Some tezos in your Tezos wallet
+2. Some Tezos in your Tezos wallet
 
 And then you're ready to get started with minting on the Tezos blockchain via hicetnunc.xyz.
 
@@ -21,7 +23,7 @@ There's many different wallets all with their pros and cons, 4 of which are curr
 
 Personally I use Temple Wallet because it's the first one I tried and seems convenient so far. Once you install the extension or desktop app, you'll have to create a wallet, all of themm will ask you to set up a seed phrase and store it somewhere secure so you remember it later. This is very important, otherwise you might not have access to your money anymore.
 
-Once you have your wallet set up, you're ready to receive Tezos in it. You can either set up an account on an exchange site like coinbase and binance, exchange some fiat currency for Tezos and then send them to yourself, or have someone who already has some Tezos send some to you. Where the easier option is the latter. Eventually you'll have to set up an axchange account anyway to trade it in for real money.
+Once you have your wallet set up, you're ready to receive Tezos in it. You can either set up an account on an exchange site like coinbase and binance, exchange some fiat currency for Tezos and then send them to yourself, or have someone who already has some Tezos send some to you. Where the easier option is the latter. Some kind eople on Twitter are actually giving some Tezos for free to get you started, such as these guys <a href='https://twitter.com/tezosnftfaucet' target="_blank" rel="noopener noreferrer">here</href> Eventually you'll have to set up an axchange account anyway to trade it in for real money.
 
 ## Minting on Hicetnunc.xyz
 
