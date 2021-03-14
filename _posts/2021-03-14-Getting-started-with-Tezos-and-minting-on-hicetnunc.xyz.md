@@ -17,11 +17,13 @@ To get straight to the point, you'' essentially need these two things:
 And then you're ready to get started with minting on the Tezos blockchain via hicetnunc.xyz.
 
 ## Tezos Wallets
-There's many different wallets all with their pros and cons, personally I use the Temple Wallet which is supported by hicetnunc, convenient and exists as a Google Chrome extension. Once you install the extension, you'll have to create a wallet, it'll ask you to set up a seed phrase and store it somewhere secure so you remember it later. This is very important.
+There's many different wallets all with their pros and cons, 4 of which are currently suported by hicetnunc.xyz: Temple Wallet, Spire, Galleon and Kukai.
+
+Personally I use Temple Wallet because it's the first one I tried and seems convenient so far. Once you install the extension or desktop app, you'll have to create a wallet, all of themm will ask you to set up a seed phrase and store it somewhere secure so you remember it later. This is very important, otherwise you might not have access to your money anymore.
 
 Once you have your wallet set up, you're ready to receive Tezos in it. You can either set up an account on an exchange site like coinbase and binance, exchange some fiat currency for Tezos and then send them to yourself, or have someone who already has some Tezos send some to you. Where the easier option is the latter. Eventually you'll have to set up an axchange account anyway to trade it in for real money.
 
-## Hicetnunc.xyz
+## Minting on Hicetnunc.xyz
 
 If you're ready to mint your first #CleanNFT and you have at least 0.08 XTZ in your wallet, then you're good to go. Head over to hicetnunc.xyz, click the drop down icon in the top right corner and click 'mint OBJKTs'. It'll take you to a page where you have to fill out some details about the NFT you want to mint. Fill out the the first three fields with the OBJKT's name, a brief description about the NFT (also make sure to include your Twitter handle in this description such that potential buyers can verify you're the original creator), and lastely some tags relevant to the NFT (they don't do anything just yet, but will probably help in the future for organizing the content on the website).
 
