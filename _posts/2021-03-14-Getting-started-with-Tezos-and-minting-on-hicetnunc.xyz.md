@@ -24,7 +24,7 @@ And then you're ready to get started with minting on the Tezos blockchain via hi
       There's many different wallets all with their pros and cons, 4 of which are currently suported by hicetnunc.xyz: Temple Wallet, Spire, Galleon and Kukai.
   </div>
   <div class="col-7 col-12-medium">
-    
+    <span class="image fit"><img src="https://gorillasun.de/assets/images/thumbnails/2021-02-05-10-tips-to-spice-up-your-chord-progressions.png" alt="" /></span>
     </div>
   </div>
 
