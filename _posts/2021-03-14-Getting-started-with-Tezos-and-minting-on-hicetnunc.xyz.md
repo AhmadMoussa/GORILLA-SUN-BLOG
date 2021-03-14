@@ -8,10 +8,12 @@ thumbnail_path:
 published: true
 ---
 
-To get straight to the point, things you'll need to get started with minting on the Tezos blockchain via hicetnunc.xyz are:
+To get straight to the point, you'' essentially need these two things:
 
-- A tezos wallet
-- Some tezos
+1. A hicetnunc compatible Tezos wallet
+2. Some tezos in your Tezos wallet
+
+And then you're ready to get started with minting on the Tezos blockchain via hicetnunc.xyz.
 
 ## Tezos Wallets
 There's many different wallets all with their pros and cons, personally I use the Temple Wallet which is supported by hicetnunc, convenient and exists as a Google Chrome extension. Once you install the extension, you'll have to create a wallet, it'll ask you to set up a seed phrase and store it somewhere secure so you remember it later. This is very important.
@@ -28,4 +30,6 @@ Now hit the 'mint' button. It'll notify that you have to 'sync' first, with a po
 
 ## Managing and curating your assets
 
-After minting your OBJKT wait 2-3 minutes then click the drop down menu again, and click 'manage assets'. Your wallet is going to ask for permission. Now it should show you a page that contains your OBJKT with a number. Click on your OBJKT, and it should take to a page that is displaying your OBJKT in all it's glory with the information you've entered earlier below it. Your NFT is minted, but you still have to offer it up for purchase. Hit 'sync', and some new buttons should show u next to 'info' and 'owners'. Click on the 'curate' button (it could also have a different name like 'swap', depending on what the devs decide to call it). It'll make two fields apear underneath it 'objkt amount' and 'price per objkt (in tez)'. The first field will specify how many of the OBJKTs you minted you want to offer up for auction
+After minting your OBJKT wait 2-3 minutes then click the drop down menu again, and click 'manage assets'. Your wallet is going to ask for permission. Now it should show you a page that contains your OBJKT with a number. Click on your OBJKT, and it should take to a page that is displaying your OBJKT in all it's glory with the information you've entered earlier below it. Your NFT is minted, but you still have to offer it up for purchase. Hit 'sync', and some new buttons should show u next to 'info' and 'owners'. Click on the 'curate' button (it could also have a different name like 'swap', depending on what the devs decide to call it). It'll make two fields apear underneath it 'objkt amount' and 'price per objkt (in tez)'. The first field will specify how many of the OBJKTs you minted you want to offer up for auction. If you minted 3 editions of your OBJKT earlier, you might want to offer up 2 of them for purchase and keep one for yourself, hence you would enter 2 in this field. In the next field you'll enter the price you want to sell each edition of your your OBJKT for. Depending on how much work you've put into your OBJKT this might vary. Keep in mind how much 1 XTZ is in USD, currently 1 XTZ is about 4 USD, so you'll have to see for yourself how much you value your art. Then just hit 'curate' and after a couple of minutes your NFT will be ready for purchase. Now go and spread the word about it on Twitter or Reddit, so that people can find your NFT and buy it.
+
+
