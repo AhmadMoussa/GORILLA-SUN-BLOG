@@ -27,9 +27,12 @@ Once you have your wallet set up, you're ready to receive Tezos in it. You can e
 
 ## Minting on Hicetnunc.xyz
 
-If you're ready to mint your first #CleanNFT and you have at least 0.08 XTZ in your wallet, then you're good to go. Head over to hicetnunc.xyz, click the drop down icon in the top right corner and click 'mint OBJKTs'. It'll take you to a page where you have to fill out some details about the NFT you want to mint. Fill out the the first three fields with the OBJKT's name, a brief description about the NFT (also make sure to include your Twitter handle in this description such that potential buyers can verify you're the original creator), and lastely some tags relevant to the NFT (they don't do anything just yet, but will probably help in the future for organizing the content on the website).
+If you're ready to mint your first #CleanNFT and you have at least 0.08 XTZ in your wallet, then you're good to go! Head over to hicetnunc.xyz, click the drop down icon in the top right corner and click 'OBJKTs (mint NFTs)'. An OBJKT is basically hicetnunc's alias for NFTs. It'll take you to a page where you have to fill out some details about the NFT you want to mint:
 
-Lastly you have to specify how many editions you want to have of the minted OBJKT. Depending on how rare you want to have your NFT, then you should specify a lower number. This will also determine how much it will cost to mint the OBJKT, each edition you mint costs 0.08 XTZ. So minting 3 editions of your OBJKT will cost you 0.24 XTZ. Keep that in mind.
+1. A quirky name for your OBJKT
+2. A brief description about the NFT (also make sure to include your Twitter handle in this description such that potential buyers can verify you're the original creator)
+3. And thirdly some tags relevant to the NFT (they don't do anything just yet, but will probably help in the future for organizing the content on the website).
+4. Lastly you have to specify how many editions you want to have of the minted OBJKT. Depending on how rare you want to have your NFT, then you should specify a lower number. This will also determine how much it will cost to mint the OBJKT, each edition you mint costs 0.08 XTZ. So minting 3 editions of your OBJKT will cost you 0.24 XTZ. Keep that in mind.
 
 Now hit the 'mint' button. It'll notify that you have to 'sync' first, with a pop up window. Hit 'sync' in the upper right corner, grant permission with your wallet, then try pressing mint again. It'll ask you for another notification from your wallet to execute the transaction. The Temple wallet should show you sccuess message in the top right corner, or something else if something goes wrong. If everything went well it should have minted your NFT.
 
