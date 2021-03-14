@@ -1,5 +1,5 @@
 ---
-title: Getting started with Tezos and minting on hicetnunc.xyz?
+title: Getting started with Tezos and minting on hicetnunc.xyz
 author: Ahmad Moussa
 categories:
   - cryptoart
@@ -15,7 +15,7 @@ To get straight to the point, you essentially need these two things:
 1. A hicetnunc compatible Tezos wallet
 2. Some Tezos in your Tezos wallet
 
-And then you're ready to get started with minting on the Tezos blockchain via hicetnunc.xyz.
+And then you're ready to get started with minting on the Tezos blockchain via <a href='https://hicetnunc.xyz' target="_blank" rel="noopener noreferrer">hicetnunc.xyz</a>.
 
 ## Tezos Wallets
 <div class="row">
