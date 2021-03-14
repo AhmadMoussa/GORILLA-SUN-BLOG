@@ -18,7 +18,7 @@ To get straight to the point, you essentially need these two things:
 And then you're ready to get started with minting on the Tezos blockchain via <a href='https://hicetnunc.xyz' target="_blank" rel="noopener noreferrer">hicetnunc.xyz</a>.
 
 <h2>Tezos Wallets</h2>
-<div class="row">
+
 <!-- Break -->
 There's many different wallets all with their pros and cons, 4 of which are currently suported by hicetnunc.xyz: Temple Wallet, Spire, Galleon and Kukai.
  
