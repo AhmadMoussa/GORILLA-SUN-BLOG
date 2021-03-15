@@ -21,7 +21,7 @@ Du brauchst im Wesentlichen diese zwei Sachen:
 1. Eine Hicetnunc-kompatible Tezos-Wallet
 2. Einige tez in deiner Tezos-Wallet
 
-Eine Krypto Wallet ist sozusagen eine Digitale Geldbörse (oder auch alternative eine adresse) in der Du deine Krypto Waehrung aufbewahrst. Auserdem benoetigst Du sie um Krypto transaktionen zu volziehen. Einen hilfreichen artikel findest Du <a href='https://coinsundtokens.com/krypto-wallet/#:~:text=Eine%20Krypto%2DWallet%20stellt%20eine,zur%20Aufbewahrung%20Ihrer%20Kryptow%C3%A4hrungen%20ben%C3%B6tigen.' target="_blank" rel="noopener noreferrer"> hier</a>. Und dann kannst Du mit dem prägen deiner NFTs auf hicetnunc.xyz beginnen. Es kann sein dass hicetnunc.xyz nicht lädt oder eine leere Seite anzeigt, keine angst, die Seite wird noch entwickelt und technische Probleme können manchmal auftreten. Dann einfach nur ein bisschen warten.
+Eine Krypto Wallet ist sozusagen eine Digitale Geldbörse (oder auch alternative eine adresse) in der Du deine Krypto Waehrung aufbewahrst. Auserdem benoetigst Du sie um Krypto transaktionen zu volziehen. Einen hilfreichen artikel findest Du <a href='https://coinsundtokens.com/krypto-wallet/#:~:text=Eine%20Krypto%2DWallet%20stellt%20eine,zur%20Aufbewahrung%20Ihrer%20Kryptow%C3%A4hrungen%20ben%C3%B6tigen.' target="_blank" rel="noopener noreferrer"> hier</a>. Und dann kannst Du mit dem prägen deiner NFTs auf hicetnunc beginnen. Es kann sein dass hicetnunc nicht lädt oder eine leere Seite anzeigt, keine angst, die Seite wird noch entwickelt und technische Probleme können manchmal auftreten. Dann einfach nur ein bisschen warten.
 
 <h2>Tezos Wallets</h2>
 
