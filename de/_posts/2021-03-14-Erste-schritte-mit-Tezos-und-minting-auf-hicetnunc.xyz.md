@@ -60,7 +60,7 @@ Gehe zu hicetnunc.xyz, klicke auf das Dropdown-Symbol (Hamburger Menu) in der ob
 
 2. Falls du nicht schon auf 'Sync' geklickt hast bekommst du jetzt ein pop-up, das nur 'sync' sagt. Jetzt kannst du endlich auf 'mint' klicken und eine weitere Benachrichtigung von deiner Wallet wird dich nun um confirmation fragen, um die Transaktion durchzuführen. In der oberen rechten Ecke deines Browsers sollte eine Erfolgsmeldung erscheinen, oder alternativ eine Fehlermeldung, falls etwas schief laufen sollte. Wenn alles gut gegangen ist, sollte es dein NFT gepraegt haben.
 
-<h2>Managing and curating your assets</h2>
+<h2>Verwalten und Feilbieten deiner Prägungen</h2>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/de_images/2021-03-14-Erste-schritte-mit-Tezos-und-minting-auf-hicetnunc.xyz/manage_assets.png" alt="" />
   
 Warte nach dem Prägen deines OBJKTs 2-3 Minuten, klicke erneut auf das Dropdown-Menü und dann auf "Manage Assets". Deine Wallet wird erneut um Erlaubnis bitten. Jetzt sollte eine Seite angezeigt werden, die dein OBJKT mit der entsprechenden Nummer enthält (wenn dies nicht der Fall ist, warte eine Weile, bevor du die Seite refreshst, manchmal funktioniert die Transaktion einfach nicht, und dann kann es sein dass du von vorne anfagen musst. Und keine Angst, du verlierst deine 0.08 XTZ nicht). 
