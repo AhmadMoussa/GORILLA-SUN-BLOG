@@ -7,7 +7,7 @@ description: This blog post shows you how to get started with tezos and minting 
 thumbnail_path: 
 published: true
 ---
-This blog post is also available in German <a href='https://gorillasun.de/de/posts/2021-03-14-Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz.md'>here</a>.
+
 
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/igNx7sm9Ygj0k" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
 
