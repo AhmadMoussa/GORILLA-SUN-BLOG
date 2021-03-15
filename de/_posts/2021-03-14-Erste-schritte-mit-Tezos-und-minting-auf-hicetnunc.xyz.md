@@ -12,7 +12,7 @@ published: true
 
 Falls du in letzter zeit auf Twitter aktiv warst, dann bist du wahrscheinlich schon auf Begriffe wie NFT, Crypto-Kunst (Crypto-ART) und Block-Chain gestoßen, vor allem, wenn du dort Deinen Lieblingskünstlern folgst. Um all diese Begriffe im Detail zu diskutieren, würde ein Blog-Beitrag nicht ausreichen. Jedoch, werde Ich kurz erklären, was eine NFT ist, und wie du selbst dein erstes NFT auf einer umweltfreundlichen Blockchain prägst (minting auf English). 
 
-<h2>Was sind eigentlich eine NFTs?</h2>
+<h2>Was sind eigentlich NFTs?</h2>
 NFT steht für Nicht Fungibles Token (Non-Fungible Token), und der einfachste Weg, NFTs zu beschreiben besteht darin, sie mit einzigartigen Sammlerstücken in der realen Welt zu vergleichen. Die Blockchain-Technologie macht das digitale equivalent möglich, und Dies wiederum ermöglicht es Künstlern, ihre Kunst vollständig digital zu verkaufen und zu versteigern. Im Allgemeinen gibt es zwei Arten von Blockchains: PoW und PoS. Die Bitcoin- und Ethereum-Blockchains basieren auf Proof of Work und erfordern intensive und leistungshungrige GPU-Operationen, um Transaktionen abzuschließen. Im Gegensatz dazu basiert Tezos auf Proof-of-Stake, das nicht einmal einen Bruchteil der Rechenleistung der PoW-Blockchains benötigt, und ist daher sehr viel umweltfreundlicher. Wenn du mehr über die Blockchain und Kryptowährungen erfahren möchtest, empfehle Ich <a href='https://www.youtube.com/watch?v=bBC-nXj3Ng4&ab_channel=3Blue1Brown' target="_blank" rel="noopener noreferrer">dieses Video</a> von 3Blue1Brown in dem alles sehr gut erklärt wird. 
 
 <h2>Krypto Wallet</h2>
