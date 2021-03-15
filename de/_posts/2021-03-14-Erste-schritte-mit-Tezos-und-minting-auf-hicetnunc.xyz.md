@@ -42,7 +42,7 @@ Wenn du bereit bist, deine erste #CleanNFT zu minten und mindestens 0,08 XTZ in 
 
 Gehe zu hicetnunc.xyz, klicke auf das Dropdown-Symbol (Hamburger Menu) in der oberen rechten Ecke und klicke Sie auf "OBJKTs (Mint NFTs)". Der Begriff OBJKT ist im Grunde der Alias von hicetnunc für NFTs. Du wirst zu einer neuen Seite weitergeleitet, auf der du einige Details zu deiner NFT ausfüllen musst:
 
-1. Einen ulkigen Namen für Ihr OBJKT
+1. Einen ulkigen Namen für dein OBJKT
 
 2. Eine kurze Beschreibung der NFT. Stelle außerdem sicher, dass du deine Twitter-Handle in dieser Beschreibung hinzufuegst. Dann können potenzielle Käufer überprüfen, ob du der ursprüngliche Ersteller bist.
 
