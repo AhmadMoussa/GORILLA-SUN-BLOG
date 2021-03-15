@@ -10,44 +10,60 @@ published: false
 
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/igNx7sm9Ygj0k" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
 
-To get straight to the point, you essentially need these two things:
+Falls Du in letzter zeit auf Twitter aktiv warst, dann bisst Du wahrscheinlich schon auf Begriffe wie NFT, CryptoART und BlockChain gestoßen, vor allem, wenn Du dort Deinen Lieblingskünstlern folgst. All diese Begriffe im Detail zu diskutieren, würde ein Blog-Beitrag nicht ausreichen. Wir werden jedoch kurz erklären, was eine NFT ist, bevor ich Dir zeige, wie Du dein erstes NFT auf einer umweltfreundlichen Blockchain prägst. 
 
-1. A hicetnunc compatible Tezos wallet
-2. Some tez in your Tezos wallet
+<h2>Was ist eigentlich eine NFT?</h2>
+Der einfachste Weg, eine NFT zu beschreiben, besteht darin, sie mit einem einzigartigen Sammlerstück in der realen Welt zu vergleichen. Die Blockchain-Technologie macht es digital möglich.
 
-And then you're ready to get started with minting on the Tezos blockchain via <a href='https://hicetnunc.xyz' target="_blank" rel="noopener noreferrer">hicetnunc.xyz</a> (if the hicetnunc.xyz isn't loading or showing a blank page, don't panic the page is still being developed).
+
+<h2>Erste Schritte</h2>
+Sie brauchen im Wesentlichen diese zwei Sachen:
+
+1. Eine Hicetnunc-kompatible Tezos-Wallet
+2. Einige tez in Ihrer Tezos-Wallet
+
+Und dann können Sie mit dem Minting Ihrer NFTs auf der Tezos-Blockchain über hicetnunc.xyz beginnen (falls hicetnunc.xyz nicht lädt oder eine leere Seite anzeigt, keine angst, die Seite wird noch entwickelt).
 
 <h2>Tezos Wallets</h2>
 
 <!-- Break -->
-There's many different wallets all with their pros and cons, 4 of which are currently suported by hicetnunc.xyz: Temple Wallet, Spire, Galleon and Kukai.
+Es gibt viele verschiedene Wallets mit Vor- und Nachteilen, von denen derzeit 4 von hicetnunc.xyz unterstützt werden: Temple Wallet, Spire, Galleon und Kukai.
  
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-14-Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz/hicetnuncwallet.png" alt="" />
 
-Personally I use Temple Wallet because it's the first one I tried and seems convenient so far. Once you install the extension or desktop app, you'll have to create a wallet. You will be asked to set up a seed phrase and store it somewhere secure so you remember it later. This is very important, store your seedphrase securely! Otherwise you might not have access to your money anymore!
+Persönlich benutze ich die Temple Wallet, weil es die erste die ich ausprobiert habe und das sie mir bisher sehr praktisch erschien. Sobald Sie die Extension oder Desktop-App installiert haben, müssen Sie eine Wallet erstellen. Sie werden aufgefordert, eine Seedphrase einzurichten und an einem sicheren Ort aufzubewahren, damit Sie sich später daran erinnern können. Dies ist sehr wichtig, bewahren Sie Ihre Seedphrase sicher auf! Andernfalls haben Sie möglicherweise keinen Zugriff mehr auf Ihr Geld!
 
-Once you have your wallet set up, you're ready to receive tez in it. You can either set up an account on an exchange site like coinbase and binance, exchange some fiat currency for tez and then send them to yourself, or alternatively, have someone who already has some tez send some to you. Where the easier option is the latter. Some kind people on Twitter are actually giving out some tez for free to get you started, such as these guys <a href='https://twitter.com/tezosnftfaucet' target="_blank" rel="noopener noreferrer">here</a>. Nonetheless, you'll eventually have to set up an exchange account anyway to trade in your cryptocurrency for real money.
+Sobald Sie Ihre Wallet eingerichtet haben, können Sie tez darin erhalten. Sie können entweder ein Konto auf einer Boersen-Site wie Coinbase und Binance einrichten,
+Fiat-Währung gegen Tez eintauschen und diese dann an sich selbst senden, ODER alternativ jemanden, der bereits einige tez hat, eine kleine summe davon an Sie senden lassen. 
+Wo die einfachere Option die letztere ist. Einige nette Leute auf Twitter geben tatsächlich ein paar Tez kostenlos heraus, um Ihnen den Einstieg zu erleichtern, z.b. dieser account <a href='https://twitter.com/tezosnftfaucet' target="_blank" rel="noopener noreferrer">hier</a>. 
 
-<h2>Minting on Hicetnunc.xyz</h2>
+<h2>Minting auf Hicetnunc.xyz</h2>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-14-Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz/minting.png" alt="" />
 
-If you're ready to mint your first #CleanNFT and you have at least 0.08 XTZ in your wallet (it costs a small fee to mint the NFT), then you're good to go! Head over to hicetnunc.xyz, click the drop down icon in the top right corner and click 'OBJKTs (mint NFTs)'. The term OBJKT is basically hicetnunc's alias for NFTs. It'll take you to a page where you have to fill out some details about the NFT you want to mint:
+Wenn Sie bereit sind, Ihre erste #CleanNFT zu minten und mindestens 0,08 XTZ in Ihrer Wallet haben (dass minten einer NFT kostet eine geringe Gebühr), können Sie loslegen! 
+Gehen Sie zu hicetnunc.xyz, klicken Sie auf das Dropdown-Symbol in der oberen rechten Ecke und klicken Sie auf "OBJKTs (Mint NFTs)". Der Begriff OBJKT ist im Grunde der Alias von hicetnunc für NFTs. 
+Sie werden zu einer neuen Seite weitergeleitet, auf der Sie einige Details zu der NFT ausfüllen müssen, die Sie prägen möchten:
 
-1. A quirky name for your OBJKT
-2. A brief description about the NFT. Also make sure to include your Twitter handle in this description, various Twitter bots are tweeting out all the NFTs that go live on  hicetnunc in real time. Including your Twitter handle allows potential buyers to verify that you're the original creator.
-3. And thirdly some tags relevant to the NFT. They don't do anything just yet, but will probably play a role sometime in the future for organizing the content on the website.
-4. Lastly you'll have to specify how many editions you want to have of the minted OBJKT. This essentially specifies the rarity of your NFT, so set your number accordingly. This also determines how much it will cost to mint the OBJKT, each edition you mint costs you 0.08 XTZ. So minting 3 editions of your OBJKT will cost you 0.24 XTZ. Keep that in mind, lest you type in some arbitrarily large number.
+1. Einen ulkigen Namen für Ihr OBJKT
 
-Now hit the 'mint' button. It'll notify that you have to 'sync' first, with a pop up window. Hit 'sync' in the upper right corner, grant permission with your wallet, then try pressing mint again. It'll ask you for another notification from your wallet to execute the transaction. The Temple wallet should show you sccuess message in the top right corner, or something else if something goes wrong. If everything went well it should have minted your NFT.
+2. Eine kurze Beschreibung der NFT. Stellen Sie außerdem sicher, dass Sie Ihre Twitter-Handle in diese Beschreibung hinzufugen. Einige Twitter-Bots twittern alle NFTs, die in Echtzeit auf hicetnunc live geschaltet werden.
+Auserdem, koennen Durch das Einfügen Ihres Twitter-Handles können potenzielle Käufer überprüfen, ob Sie der ursprüngliche Ersteller sind.
+
+3. Und drittens, einige Tags, die für die NFT relevant sind. Die tags tun noch nichts, werden aber wahrscheinlich irgendwann in der Zukunft eine Rolle bei der Organisation der Inhalte auf der Website spielen.
+
+4. Zuletzt müssen Sie angeben, wie viele Editionen Sie für das geprägte OBJKT haben möchten. Dies bestimmt im Wesentlichen die Seltenheit deines NFTs (Mehr dazu spaeter). Dies bestimmt auch, wie viel es kostet, das OBJKT zu prägen. Jede Ausgabe, die du mintest, wird dich 0,08 XTZ kosten (rund 0.25€) . Das Prägen von 3 Ausgaben OBJKTs wuerde sie dann also 0,24 XTZ kosten.
+Klicken Sie nun auf die Schaltfläche "Minze". Es wird benachrichtigt, dass Sie zuerst mit einem Popup-Fenster "synchronisieren" müssen. Klicken Sie oben rechts auf "Synchronisieren", erteilen Sie die Erlaubnis für Ihre Brieftasche und drücken Sie erneut auf "Minze". Eine weitere Benachrichtigung von Ihrer Wallet wird sie um confirmation fragen, um die Transaktion auszuführen. In der oberen rechten Ecke deines browsers sollte eine Erfolgsmeldung erscheinen, oder alternativ eine fehlermeldung, falls etwas schief laufen sollte. Wenn alles gut gegangen ist, sollte es Ihre NFT ge-minted haben.
+
 
 <h2>Managing and curating your assets</h2>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-14-Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz/curating.png" alt="" />
   
-After minting your OBJKT wait 2-3 minutes then click the drop down menu again, and click 'manage assets'. Your wallet is going to ask for permission. Now it should show you a page that contains your OBJKT with it's resective number (if it doesn't then wait a while longer before you try minting it again, sometimes it just doesn't mint it). Click on your OBJKT, and it should take to a page that is displaying your OBJKT in all it's glory with the information you've entered earlier below it.
+Warten Sie nach dem minten Ihres OBJKTs 2-3 Minuten, klicken Sie dann erneut auf das Dropdown-Menü und klicken Sie auf "Manage Assets". Ihre Wallet wird erneut um Erlaubnis bitten. Jetzt sollte eine Seite angezeigt werden, die Ihr OBJKT mit der entsprechenden Nummer enthält (wenn dies nicht der Fall ist, warten Sie eine Weile, bevor Sie die Seite refreshen, manchmal funktioniert die tansaktion einfach nicht, und dann koenne sie erneut versuchen ihr OBJKT zu minten. Und keine angst, sie verlieren ihre 0.08 XTZ nicht). 
+Klicken Sie auf Ihr OBJKT, und es sollte eine Seite angezeigt werden, auf der Ihr OBJKT mit den zuvor eingegebenen Informationen in seiner ganzen Pracht angezeigt wird.
 
-Your NFT is minted, but you still have to offer it up for purchase. Hit 'sync', and some new buttons should show u next to 'info' and 'owners'. Click on the 'curate' button (it could also have a different name like 'swap', depending on what the devs decide to call it). It'll make two fields apear underneath it 'objkt amount' and 'price per objkt (in tez)'. The first field will specify how many of the OBJKTs you minted you want to offer up for auction. If you minted 3 editions of your OBJKT earlier, you might want to offer up 2 of them for purchase and keep one for yourself, hence you would enter 2 in this field. In the next field you'll enter the price you want to sell each edition of your your OBJKT for. Depending on how much work you've put into your OBJKT this might vary. Keep in mind how much 1 XTZ is in USD, currently 1 XTZ is about 4 USD, so you'll have to see for yourself how much you value your art. Then just hit 'curate' and after a couple of minutes your NFT will be ready for purchase. 
+Ihr NFT ist geprägt, aber Sie müssen es noch zum Kauf anbieten. Klicken Sie auf "Synchronisieren" und einige neue Schaltflächen sollten neben "Info" und "Eigentümer" angezeigt werden. Klicken Sie auf die Schaltfläche "Kuratieren" (es kann auch einen anderen Namen wie "Tauschen" haben, je nachdem, wie die Entwickler es nennen). Darunter erscheinen zwei Felder "Objektbetrag" und "Preis pro Objekt (in Tez)". Das erste Feld gibt an, wie viele der von Ihnen geprägten OBJKTs Sie zur Auktion anbieten möchten. Wenn Sie 3 Ausgaben Ihres OBJKT früher geprägt haben, möchten Sie möglicherweise 2 davon zum Kauf anbieten und eine für sich behalten, daher würden Sie 2 in dieses Feld eingeben. Im nächsten Feld geben Sie den Preis ein, für den Sie jede Ausgabe Ihres OBJKT verkaufen möchten. Je nachdem, wie viel Arbeit Sie in Ihr OBJKT gesteckt haben, kann dies variieren. Denken Sie daran, wie viel 1 XTZ in USD ist, derzeit ist 1 XTZ ungefähr 4 USD, also müssen Sie selbst sehen, wie sehr Sie Ihre Kunst schätzen. Dann klicken Sie einfach auf "Kuratieren" und nach ein paar Minuten ist Ihr NFT zum Kauf bereit.
 
-Now go and spread the word about it on Twitter or Reddit, so that people can find your NFT and buy it.
+Jetzt verbreiten Sie das Wort auf Twitter oder Reddit, damit die Leute Ihre NFT finden und kaufen können.
 
 
