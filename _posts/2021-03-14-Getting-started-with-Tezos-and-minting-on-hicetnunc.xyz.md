@@ -13,9 +13,9 @@ published: true
 To get straight to the point, you essentially need these two things:
 
 1. A hicetnunc compatible Tezos wallet
-2. Some Tezos in your Tezos wallet
+2. Some tez in your Tezos wallet
 
-And then you're ready to get started with minting on the Tezos blockchain via <a href='https://hicetnunc.xyz' target="_blank" rel="noopener noreferrer">hicetnunc.xyz</a>.
+And then you're ready to get started with minting on the Tezos blockchain via <a href='https://hicetnunc.xyz' target="_blank" rel="noopener noreferrer">hicetnunc.xyz</a> (if the hicetnunc.xyz isn't loading or showing a blank page, don't panic the page is still being developed).
 
 <h2>Tezos Wallets</h2>
 
@@ -26,18 +26,18 @@ There's many different wallets all with their pros and cons, 4 of which are curr
 
 Personally I use Temple Wallet because it's the first one I tried and seems convenient so far. Once you install the extension or desktop app, you'll have to create a wallet. You will be asked to set up a seed phrase and store it somewhere secure so you remember it later. This is very important, store your seedphrase securely! Otherwise you might not have access to your money anymore!
 
-Once you have your wallet set up, you're ready to receive Tezos in it. You can either set up an account on an exchange site like coinbase and binance, exchange some fiat currency for Tezos and then send them to yourself, or have someone who already has some Tezos send some to you. Where the easier option is the latter. Some kind eople on Twitter are actually giving some Tezos for free to get you started, such as these guys <a href='https://twitter.com/tezosnftfaucet' target="_blank" rel="noopener noreferrer">here</a>. Eventually you'll have to set up an axchange account anyway to trade it in for real money.
+Once you have your wallet set up, you're ready to receive tez in it. You can either set up an account on an exchange site like coinbase and binance, exchange some fiat currency for tez and then send them to yourself, or alternatively, have someone who already has some tez send some to you. Where the easier option is the latter. Some kind people on Twitter are actually giving out some tez for free to get you started, such as these guys <a href='https://twitter.com/tezosnftfaucet' target="_blank" rel="noopener noreferrer">here</a>. Nonetheless, you'll eventually have to set up an exchange account anyway to trade in your cryptocurrency for real money.
 
 <h2>Minting on Hicetnunc.xyz</h2>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-14-Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz/minting.png" alt="" />
 
-If you're ready to mint your first #CleanNFT and you have at least 0.08 XTZ in your wallet, then you're good to go! Head over to hicetnunc.xyz, click the drop down icon in the top right corner and click 'OBJKTs (mint NFTs)'. An OBJKT is basically hicetnunc's alias for NFTs. It'll take you to a page where you have to fill out some details about the NFT you want to mint:
+If you're ready to mint your first #CleanNFT and you have at least 0.08 XTZ in your wallet (it costs a small fee to mint the NFT), then you're good to go! Head over to hicetnunc.xyz, click the drop down icon in the top right corner and click 'OBJKTs (mint NFTs)'. The term OBJKT is basically hicetnunc's alias for NFTs. It'll take you to a page where you have to fill out some details about the NFT you want to mint:
 
 1. A quirky name for your OBJKT
-2. A brief description about the NFT (also make sure to include your Twitter handle in this description such that potential buyers can verify you're the original creator)
-3. And thirdly some tags relevant to the NFT (they don't do anything just yet, but will probably help in the future for organizing the content on the website).
-4. Lastly you have to specify how many editions you want to have of the minted OBJKT. Depending on how rare you want to have your NFT, then you should specify a lower number. This will also determine how much it will cost to mint the OBJKT, each edition you mint costs 0.08 XTZ. So minting 3 editions of your OBJKT will cost you 0.24 XTZ. Keep that in mind.
+2. A brief description about the NFT. Also make sure to include your Twitter handle in this description, various Twitter bots are tweeting out all the NFTs that go live on  hicetnunc in real time. Including your Twitter handle allows potential buyers to verify that you're the original creator.
+3. And thirdly some tags relevant to the NFT. They don't do anything just yet, but will probably play a role sometime in the future for organizing the content on the website.
+4. Lastly you'll have to specify how many editions you want to have of the minted OBJKT. This essentially specifies the rarity of your NFT, so set your number accordingly. This also determines how much it will cost to mint the OBJKT, each edition you mint costs you 0.08 XTZ. So minting 3 editions of your OBJKT will cost you 0.24 XTZ. Keep that in mind, lest you type in some arbitrarily large number.
 
 Now hit the 'mint' button. It'll notify that you have to 'sync' first, with a pop up window. Hit 'sync' in the upper right corner, grant permission with your wallet, then try pressing mint again. It'll ask you for another notification from your wallet to execute the transaction. The Temple wallet should show you sccuess message in the top right corner, or something else if something goes wrong. If everything went well it should have minted your NFT.
 
