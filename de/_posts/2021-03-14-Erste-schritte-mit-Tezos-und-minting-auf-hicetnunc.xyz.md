@@ -49,7 +49,7 @@ Gehe zu hicetnunc.xyz, klicke auf das Dropdown-Symbol (Hamburger Menu) in der ob
 
 4. Zuletzt musst Du noch angeben, wie viele Editionen Du prägen möchtest. Dies bestimmt im Wesentlichen die Seltenheit deines NFTs (Mehr dazu spaeter). Dies bestimmt auch, wie viel es kostet, das OBJKT zu prägen. Jede Ausgabe, die du mintest, wird dich 0,08 XTZ kosten (rund 0.25€) . Das Prägen von 3 Ausgaben OBJKTs wuerde dich dann also 0.24 XTZ kosten. 
 
-5. Laden das Objekt hoch, das Du prägen möchtest.
+5. Lade das Objekt hoch, das Du prägen möchtest.
 
 6. Klicke nun auf die Schaltfläche "Preview". Es wird dir eine Vorschau deines NFTs gezeigt.
 
