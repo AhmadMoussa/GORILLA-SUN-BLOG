@@ -10,19 +10,18 @@ published: true
 
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/igNx7sm9Ygj0k" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
 
-Falls Du in letzter zeit auf Twitter aktiv warst, dann bisst Du wahrscheinlich schon auf Begriffe wie NFT, Crypto-Kunst (Crypto-ART) und Block-Chain gestoßen, vor allem, wenn Du dort Deinen Lieblingskünstlern folgst. Um all diese Begriffe im Detail zu diskutieren, würde ein Blog-Beitrag nicht ausreichen. Jedoch, werden wir kurz erklären, was ein NFT ist, und wie Du selbst dein erstes NFT auf einer umweltfreundlichen Blockchain prägst (mint). 
+Falls Du in letzter zeit auf Twitter aktiv warst, dann bist Du wahrscheinlich schon auf Begriffe wie NFT, Crypto-Kunst (Crypto-ART) und Block-Chain gestoßen, vor allem, wenn Du dort Deinen Lieblingskünstlern folgst. Um all diese Begriffe im Detail zu diskutieren, würde ein Blog-Beitrag nicht ausreichen. Jedoch, werden Ich kurz erklären, was eine NFT ist, und wie Du selbst dein erstes NFT auf einer umweltfreundlichen Blockchain prägst (minting auf English). 
 
-<h2>Was ist eigentlich eine NFT?</h2>
-NFT steht für Nicht Fungibles Token (Non-Fungible Token), und der einfachste Weg, NFTs zu beschreiben besteht darin, sie mit einzigartigen Sammlerstücken in der realen Welt zu vergleichen. Die Blockchain-Technologie macht das digitale equivalent möglich, und Dies wiederum ermöglicht es Künstlern, ihre Kunst vollständig digital zu verkaufen und zu versteigern. Im Allgemeinen gibt es zwei Arten von Blockchains: PoW und PoS. Die Bitcoin- und Ethereum-Blockchains basieren auf Proof of Work und erfordern intensive und leistungshungrige GPU-Operationen, um Transaktionen abzuschließen. Im Gegensatz dazu basiert Tezos auf Proof-of-Stake, das nicht einmal einen Bruchteil der Rechenleistung der PoW-Blockchains benötigt, und ist daher viel umweltfreundlicher. Wenn Du mehr über die Blockchain und Kryptowährungen erfahren möchtest, empfehle Ich <a href='https://www.youtube.com/watch?v=bBC-nXj3Ng4&ab_channel=3Blue1Brown' target="_blank" rel="noopener noreferrer">dieses Video</a> von 3Blue1Brown in dem alles sehr gut erklärt wird. 
+<h2>Was sind eigentlich eine NFTs?</h2>
+NFT steht für Nicht Fungibles Token (Non-Fungible Token), und der einfachste Weg, NFTs zu beschreiben besteht darin, sie mit einzigartigen Sammlerstücken in der realen Welt zu vergleichen. Die Blockchain-Technologie macht das digitale equivalent möglich, und Dies wiederum ermöglicht es Künstlern, ihre Kunst vollständig digital zu verkaufen und zu versteigern. Im Allgemeinen gibt es zwei Arten von Blockchains: PoW und PoS. Die Bitcoin- und Ethereum-Blockchains basieren auf Proof of Work und erfordern intensive und leistungshungrige GPU-Operationen, um Transaktionen abzuschließen. Im Gegensatz dazu basiert Tezos auf Proof-of-Stake, das nicht einmal einen Bruchteil der Rechenleistung der PoW-Blockchains benötigt, und ist daher sehr viel umweltfreundlicher. Wenn Du mehr über die Blockchain und Kryptowährungen erfahren möchtest, empfehle Ich <a href='https://www.youtube.com/watch?v=bBC-nXj3Ng4&ab_channel=3Blue1Brown' target="_blank" rel="noopener noreferrer">dieses Video</a> von 3Blue1Brown in dem alles sehr gut erklärt wird. 
 
-
-<h2>Cryto Wallet</h2>
+<h2>Krypto Wallet</h2>
 Du brauchst im Wesentlichen diese zwei Sachen:
 
 1. Eine Hicetnunc-kompatible Tezos-Wallet
-2. Einige tez in Ihrer Tezos-Wallet
+2. Einige tez in deiner Tezos-Wallet
 
-Und dann können Sie mit dem Minting Ihrer NFTs auf der Tezos-Blockchain über hicetnunc.xyz beginnen (falls hicetnunc.xyz nicht lädt oder eine leere Seite anzeigt, keine angst, die Seite wird noch entwickelt).
+Eine Krypto Wallet ist sozusagen eine Digitale Geldbörse (oder auch alternative eine adresse) in der Du deine Krypto Waehrung aufbewahrst. Auserdem benoetigst Du sie um Krypto transaktionen zu volziehen. Einen hilfreichen artikel findest Du <a href='https://coinsundtokens.com/krypto-wallet/#:~:text=Eine%20Krypto%2DWallet%20stellt%20eine,zur%20Aufbewahrung%20Ihrer%20Kryptow%C3%A4hrungen%20ben%C3%B6tigen.' target="_blank" rel="noopener noreferrer"> hier</a>. Und dann kannst Du mit dem prägen deiner NFTs auf hicetnunc.xyz beginnen. Es kann sein dass hicetnunc.xyz nicht lädt oder eine leere Seite anzeigt, keine angst, die Seite wird noch entwickelt und technische Probleme können manchmal auftreten. Dann einfach nur ein bisschen warten.
 
 <h2>Tezos Wallets</h2>
 
@@ -31,7 +30,7 @@ Es gibt viele verschiedene Wallets mit Vor- und Nachteilen, von denen derzeit 4 
  
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-14-Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz/hicetnuncwallet.png" alt="" />
 
-Persönlich benutze ich die Temple Wallet, weil es die erste die ich ausprobiert habe und das sie mir bisher sehr praktisch erschien. Sobald Sie die Extension oder Desktop-App installiert haben, müssen Sie eine Wallet erstellen. Sie werden aufgefordert, eine Seedphrase einzurichten und an einem sicheren Ort aufzubewahren, damit Sie sich später daran erinnern können. Dies ist sehr wichtig, bewahren Sie Ihre Seedphrase sicher auf! Andernfalls haben Sie möglicherweise keinen Zugriff mehr auf Ihr Geld!
+Persönlicherweise benutze ich die Temple Wallet, da sie mir bisher sehr praktisch erschien. Sobald Sie die Chrome Extension oder Desktop-App ihrer Wallet installiert haben, müssen Sie eine Wallet erstellen. Sie werden aufgefordert, eine Seedphrase einzurichten und an einem sicheren Ort aufzubewahren, damit Sie sich später daran erinnern können. Dies ist sehr wichtig, bewahren Sie Ihre Seedphrase sicher auf! Andernfalls haben Sie möglicherweise keinen Zugriff mehr auf Ihr Geld!
 
 Sobald Sie Ihre Wallet eingerichtet haben, können Sie tez darin erhalten. Sie können entweder ein Konto auf einer Boersen-Site wie Coinbase und Binance einrichten,
 Fiat-Währung gegen Tez eintauschen und diese dann an sich selbst senden, ODER alternativ jemanden, der bereits einige tez hat, eine kleine summe davon an Sie senden lassen. 
