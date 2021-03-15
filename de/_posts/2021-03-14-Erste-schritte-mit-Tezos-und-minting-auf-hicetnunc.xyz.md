@@ -5,15 +5,15 @@ categories:
   - cryptoart
 description: This blog post shows you how to get started with tezos and minting your first NFT on hicetnunc.
 thumbnail_path: 
-published: false
+published: true
 ---
 
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/igNx7sm9Ygj0k" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
 
-Falls Du in letzter zeit auf Twitter aktiv warst, dann bisst Du wahrscheinlich schon auf Begriffe wie NFT, CryptoART und BlockChain gestoßen, vor allem, wenn Du dort Deinen Lieblingskünstlern folgst. All diese Begriffe im Detail zu diskutieren, würde ein Blog-Beitrag nicht ausreichen. Wir werden jedoch kurz erklären, was eine NFT ist, bevor ich Dir zeige, wie Du dein erstes NFT auf einer umweltfreundlichen Blockchain prägst. 
+Falls Du in letzter zeit auf Twitter aktiv warst, dann bisst Du wahrscheinlich schon auf Begriffe wie NFT, Crypto-Kunst (Crypto-ART) und Block-Chain gestoßen, vor allem, wenn Du dort Deinen Lieblingskünstlern folgst. Um all diese Begriffe im Detail zu diskutieren, würde ein Blog-Beitrag nicht ausreichen. Jedoch, werden wir kurz erklären, was ein NFT ist, und wie Du selbst dein erstes NFT auf einer umweltfreundlichen Blockchain prägst (mint). 
 
 <h2>Was ist eigentlich eine NFT?</h2>
-Der einfachste Weg, eine NFT zu beschreiben, besteht darin, sie mit einem einzigartigen Sammlerstück in der realen Welt zu vergleichen. Die Blockchain-Technologie macht es digital möglich.
+NFT steht für Nicht Fungibles Token (Non-Fungible Token), und der einfachste Weg, NFTs zu beschreiben besteht darin, sie mit einzigartigen Sammlerstücken in der realen Welt zu vergleichen. Die Blockchain-Technologie macht das digitale equivalent möglich, und Dies wiederum ermöglicht es Künstlern, ihre Kunst vollständig digital zu verkaufen und zu versteigern. Im Allgemeinen gibt es zwei Arten von Blockchains: PoW und PoS. Die Bitcoin- und Ethereum-Blockchains basieren auf Proof of Work und erfordern intensive und leistungshungrige GPU-Operationen, um Transaktionen abzuschließen. Im Gegensatz dazu basiert Tezos auf Proof-of-Stake, das nicht einmal einen Bruchteil der Rechenleistung der PoW-Blockchains benötigt, und ist daher viel umweltfreundlicher. Wenn Du mehr über die Blockchain und Kryptowährungen erfahren möchtest, empfehle Ich <a href='https://www.youtube.com/watch?v=bBC-nXj3Ng4&ab_channel=3Blue1Brown' target="_blank" rel="noopener noreferrer">dieses Video</a> von 3Blue1Brown in dem alles sehr gut erklärt wird. 
 
 
 <h2>Erste Schritte</h2>
