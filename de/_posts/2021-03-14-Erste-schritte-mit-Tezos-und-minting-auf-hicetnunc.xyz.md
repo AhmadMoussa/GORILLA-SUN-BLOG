@@ -16,8 +16,8 @@ Falls Du in letzter zeit auf Twitter aktiv warst, dann bisst Du wahrscheinlich s
 NFT steht für Nicht Fungibles Token (Non-Fungible Token), und der einfachste Weg, NFTs zu beschreiben besteht darin, sie mit einzigartigen Sammlerstücken in der realen Welt zu vergleichen. Die Blockchain-Technologie macht das digitale equivalent möglich, und Dies wiederum ermöglicht es Künstlern, ihre Kunst vollständig digital zu verkaufen und zu versteigern. Im Allgemeinen gibt es zwei Arten von Blockchains: PoW und PoS. Die Bitcoin- und Ethereum-Blockchains basieren auf Proof of Work und erfordern intensive und leistungshungrige GPU-Operationen, um Transaktionen abzuschließen. Im Gegensatz dazu basiert Tezos auf Proof-of-Stake, das nicht einmal einen Bruchteil der Rechenleistung der PoW-Blockchains benötigt, und ist daher viel umweltfreundlicher. Wenn Du mehr über die Blockchain und Kryptowährungen erfahren möchtest, empfehle Ich <a href='https://www.youtube.com/watch?v=bBC-nXj3Ng4&ab_channel=3Blue1Brown' target="_blank" rel="noopener noreferrer">dieses Video</a> von 3Blue1Brown in dem alles sehr gut erklärt wird. 
 
 
-<h2>Erste Schritte</h2>
-Sie brauchen im Wesentlichen diese zwei Sachen:
+<h2>Cryto Wallet</h2>
+Du brauchst im Wesentlichen diese zwei Sachen:
 
 1. Eine Hicetnunc-kompatible Tezos-Wallet
 2. Einige tez in Ihrer Tezos-Wallet
