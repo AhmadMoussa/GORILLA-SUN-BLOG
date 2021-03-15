@@ -51,25 +51,18 @@ Gehe zu hicetnunc.xyz, klicke auf das Dropdown-Symbol (Hamburger Menu) in der ob
 
 5. Laden das Objekt hoch, das Du prägen möchtest.
 
-6. Klicke nun auf die Schaltfläche "Preview". Es wird dir eine Vorschau deiners NFTs gezeigt.
+6. Klicke nun auf die Schaltfläche "Preview". Es wird dir eine Vorschau deines NFTs gezeigt.
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/de_images/2021-03-14-Erste-schritte-mit-Tezos-und-minting-auf-hicetnunc.xyz/mint2.png" alt="" />
   
-1. Klicke oben rechts auf 'Sync' (Sync aktiviert deine Wallet), und erteile die Erlaubnis für deine Wallet und drücken Sie erneut auf "Minze".
+1. Klicke oben rechts auf 'Sync' (Sync aktiviert deine Wallet) und klick 'confirm' in dem pop-up deiner Wallet.
 
-2. Falls Du nicht schon auf 'Sync' geklickt hast dan bekommst Du jetzt ein pop-up dass nur 'sync' sagt. Eine weitere Benachrichtigung von deiner Wallet wird dich nun um confirmation fragen, um die Transaktion auszuführen. In der oberen rechten Ecke deines browsers sollte eine Erfolgsmeldung erscheinen, oder alternativ eine fehlermeldung, falls etwas schief laufen sollte. Wenn alles gut gegangen ist, sollte es dein NFT gepraegt haben.
-
-
-
+2. Falls Du nicht schon auf 'Sync' geklickt hast dan bekommst Du jetzt ein pop-up dass nur 'sync' sagt. Jetzt kannst du endlich auf 'mint' klicken und eine weitere Benachrichtigung von deiner Wallet wird dich nun um confirmation fragen, um die Transaktion durchzuführen. In der oberen rechten Ecke deines browsers sollte eine Erfolgsmeldung erscheinen, oder alternativ eine fehlermeldung, falls etwas schief laufen sollte. Wenn alles gut gegangen ist, sollte es dein NFT gepraegt haben.
 
 <h2>Managing and curating your assets</h2>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/de_images/2021-03-14-Erste-schritte-mit-Tezos-und-minting-auf-hicetnunc.xyz/manage_assets.png" alt="" />
   
-Warten Sie nach dem minten Ihres OBJKTs 2-3 Minuten, klicken Sie dann erneut auf das Dropdown-Menü und klicken Sie auf "Manage Assets". Ihre Wallet wird erneut um Erlaubnis bitten. Jetzt sollte eine Seite angezeigt werden, die Ihr OBJKT mit der entsprechenden Nummer enthält (wenn dies nicht der Fall ist, warten Sie eine Weile, bevor Sie die Seite refreshen, manchmal funktioniert die tansaktion einfach nicht, und dann koenne sie erneut versuchen ihr OBJKT zu minten. Und keine angst, sie verlieren ihre 0.08 XTZ nicht). 
-Klicken Sie auf Ihr OBJKT, und es sollte eine Seite angezeigt werden, auf der Ihr OBJKT mit den zuvor eingegebenen Informationen in seiner ganzen Pracht angezeigt wird.
+Warten nach dem prägen deines OBJKTs 2-3 Minuten, klicke dann erneut auf das Dropdown-Menü und dann auf "Manage Assets". Deine Wallet wird erneut um Erlaubnis bitten. Jetzt sollte eine Seite angezeigt werden, die dein OBJKT mit der entsprechenden Nummer enthält (wenn dies nicht der Fall ist, warten eine Weile, bevor Du die Seite refreshst, manchmal funktioniert die transaktion einfach nicht, und dann kann es sein dass du von vorne anfagen musst. Und keine angst, Du verlierst deine 0.08 XTZ nicht). 
+Klicke auf dein OBJKT, und es sollte eine Seite angezeigt werden, auf der dein OBJKT mit den zuvor eingegebenen Informationen in seiner ganzen Pracht angezeigt wird.
 
-Ihr NFT ist geprägt, aber Sie müssen es noch zum Kauf anbieten. Klicken Sie auf "Synchronisieren" und einige neue Schaltflächen sollten neben "Info" und "Eigentümer" angezeigt werden. Klicken Sie auf die Schaltfläche "Kuratieren" (es kann auch einen anderen Namen wie "Tauschen" haben, je nachdem, wie die Entwickler es nennen). Darunter erscheinen zwei Felder "Objektbetrag" und "Preis pro Objekt (in Tez)". Das erste Feld gibt an, wie viele der von Ihnen geprägten OBJKTs Sie zur Auktion anbieten möchten. Wenn Sie 3 Ausgaben Ihres OBJKT früher geprägt haben, möchten Sie möglicherweise 2 davon zum Kauf anbieten und eine für sich behalten, daher würden Sie 2 in dieses Feld eingeben. Im nächsten Feld geben Sie den Preis ein, für den Sie jede Ausgabe Ihres OBJKT verkaufen möchten. Je nachdem, wie viel Arbeit Sie in Ihr OBJKT gesteckt haben, kann dies variieren. Denken Sie daran, wie viel 1 XTZ in USD ist, derzeit ist 1 XTZ ungefähr 4 USD, also müssen Sie selbst sehen, wie sehr Sie Ihre Kunst schätzen. Dann klicken Sie einfach auf "Kuratieren" und nach ein paar Minuten ist Ihr NFT zum Kauf bereit.
-
-Jetzt verbreiten Sie das Wort auf Twitter oder Reddit, damit die Leute Ihre NFT finden und kaufen können.
-
-
+Dein NFT ist nun geprägt, aber Du musst es noch zum Kauf anbieten. Klicke nocheinmals auf 'Sync' und einige neue Schaltflächen sollten neben "Info" und "owners" angezeigt werden. Klicke auf die Schaltfläche "+curate" (es kann auch einen anderen Namen wie "swap" haben, je nachdem, wie die Entwickler es nennen). Darunter erscheinen zwei Felder "Objekt amount" und "Price pro Objekt (in Tez)". Das erste Feld gibt an, wie viele der geprägten OBJKTs Du zur Auktion anbieten möchtest. Wenn Du 3 Ausgaben deinse OBJKTs geprägt hast, möchtest Du möglicherweise 2 davon zum Kauf anbieten und eine für dich selbst behalten, daher würdest Du 2 in dieses Feld eingeben. Im nächsten Feld gib den Preis ein, für den Du jede Ausgabe deines OBJKTs verkaufen möchtest. Je nachdem, wie viel Arbeit Du in dein OBJKT gesteckt hast, kann dies variieren. Derzeit ist 1 XTZ rund 4 USD, also musst Du selbst entscheiden, wie sehr Du deine Kunst schätzst. Dann klicke einfach auf "curate" und nach ein paar Minuten sollte dein NFT zum verkauf bereit sein.
