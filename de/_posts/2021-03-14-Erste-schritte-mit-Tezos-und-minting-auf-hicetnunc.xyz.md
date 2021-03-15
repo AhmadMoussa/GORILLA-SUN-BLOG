@@ -1,5 +1,5 @@
 ---
-title: Getting started with Tezos and minting on hicetnunc.xyz
+title: Erste Schritte mit Tezos und minting auf hicetnunc.xyz
 author: Ahmad Moussa
 categories:
   - cryptoart
