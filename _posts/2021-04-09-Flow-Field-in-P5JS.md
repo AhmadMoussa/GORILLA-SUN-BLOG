@@ -7,3 +7,5 @@ description: Flow Fields are a creative coding concept that are tricky to implem
 thumbnail_path: 2021-04-09-Flow-Fields-in-p5js.png
 published: false
 ---
+
+This is another one that is largely inspired by the great Tyler Hobbs and the pseudo code in one of his essays. 
