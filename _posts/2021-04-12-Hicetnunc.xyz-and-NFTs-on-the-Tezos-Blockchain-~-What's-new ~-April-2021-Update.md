@@ -36,7 +36,7 @@ This button introduced nnother problem, that caused a number of users quite the 
   
   This has now been fixed by showing all open offers for an NFT in it's collectors tab, with the respective price and the wallet address of the seller.  </p>
 
-<h2><a href='Templates'>HTML/P5JS/and other upload Templates</a></a></h2>
+<h2><a href='Templates'>HTML/P5JS/and other upload Templates</a></h2>
 Another big change has been the support of various data formats including html, svg, p5js, pdf. Amazing Right? 
 
 <iframe src="https://www.hicetnunc.xyz/objkt/25767" width="100%" height="100%"></iframe>
