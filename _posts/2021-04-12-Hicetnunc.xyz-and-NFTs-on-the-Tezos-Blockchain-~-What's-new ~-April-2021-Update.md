@@ -35,10 +35,10 @@ Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. I w
 <h2><a name='Secondary'>The Secondary Market</a></h2>
 <p>You can now not only collect, but also re-sell previously acquired OBJKTs</p>
 
-<h2><a name='OBJKT4OBJKT'></a></h2>
+<h2><a name='OBJKT4OBJKT'>OBJKT4OBJKT</a></h2>
 https://twitter.com/DiverseNftArt/status/1376156452180664323
 
-<h2><a name='Copyminters'></a></h2>
+<h2><a name='Copyminters'>Copyminters and Hoarders</a></h2>
 https://github.com/hicetnunc2000/hicetnunc/issues/433
 
 
