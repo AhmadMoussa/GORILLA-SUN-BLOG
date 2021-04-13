@@ -11,29 +11,30 @@ published: false
 This will be a loaded article, so hold on to your NFTs as we dive into all the recent developments of the past month! Here's a quick overview, if you're interested in reading up on something in particular:
 
 1. <a href='#UI'>UI/UX Changes</a>
-2. <a href='#Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a>
-3. <a href='#Secondary'>The Secondary Market</a>
-4. HTML/P5JS/and other upload Templates
-5. OBJKT4OBJKT Event
-6. Copyminters and Hoarders
-7. The hDAO feed
-8. Tezos to the moon
+2. <a href='#Secondary'>The Secondary Market Launches</a>
+3. <a href='#Templates'>HTML/P5JS/and other upload Templates</a>
+4. <a href='#hDAO'>The hDAO feed</a>
+5. <a href='#OBJKT4OBJKT'>OBJKT4OBJKT Event</a>
+6. <a href='#Copyminters'>Copyminters and Hoarders</a>
+7. <a href='#Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a>
+8. <a href='#Tezos'>Tezos to the moon</a>
 9. How to price things adequately ~ Quasimondo insights
-10. The presstube method
+10. <a href='Presstube'>The presstube method</a>
 11. <a href='#Livestream'>Weekly Livestreams</a>
 12. Tezos Developer portal
 13. Companion sites and art reviews ~ 
-14. Other interesting Articles,Resources and Stuff(s)
+14. Other interesting Articles, Resources and Stuff(s)
 
 
 <h2><a name='UI'>UI/UX Changes</a></h2>
-Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. I will showcase some of them here, however this is not a tutorial, if you'd like to learn more about how to mint something on hicetnunc.xyz there already are a number of cool tutorials in different formats
-
-<h2><a name='Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a></h2>
-
+Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. I will showcase some of them here, however this is not a tutorial, if you'd like to learn more about how to mint something on hicetnunc.xyz there already are a number of cool tutorials in anumber of different formats
 
 <h2><a name='Secondary'>The Secondary Market</a></h2>
-<p>You can now not only collect, but also re-sell previously acquired OBJKTs</p>
+<p>You can now not only collect, but also re-sell previously acquired OBJKTs in your collection. This feature was introduced quitely throughout the month an had some issues at first. The UI worked in such a manner that if someone were to offer up an NFT for sale that they've collected, while the original creator still had remaining editions of said NFT up for sale, they would essentially be superseded by the new seller, since they would essentially have to share the 'click to collect' button. 
+  
+This button introduced nnother problem, that caused a number of users quite the frustration. If an NFT were to sell all of it's remaining editions, the button would show 'not for sale'. This, however, didn't mean that the button was not able to be clicked 
+  
+  This has now been fixed by showing all open offers for an NFT in it's collectors tab, with the respective price and the wallet address of the seller.  </p>
 
 <h2><a name='OBJKT4OBJKT'>OBJKT4OBJKT</a></h2>
 https://twitter.com/DiverseNftArt/status/1376156452180664323
@@ -45,6 +46,8 @@ https://github.com/hicetnunc2000/hicetnunc/issues/433
 
 <h2><a name='Presstube'>The 'Presstube' method</a></h2>
 The 'Presstube' method is essentially a specific way of pricing NFTs on hicetnunc, which rewards the early birds that swoop in and cop the first couple of editions of a freshly minted NFT. When you mint an NFT on hicetnunc, it appears in the store, however it is not immediately up for sale.
+
+<h2><a name='Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a></h2>
 
 <h2><a href='Livestream'>Weekly Livestreams</a></h2>
 1. https://twitter.com/verticalcrypto
