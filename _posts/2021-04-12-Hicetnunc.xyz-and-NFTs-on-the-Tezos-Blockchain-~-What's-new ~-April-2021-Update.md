@@ -51,7 +51,9 @@ The 'Presstube' method is essentially a specific way of pricing NFTs on hicetnun
 
 <h2><a name='Tezos'>Tezos to the Moon</a></h2>
 The NFT activity on the Tezos blockchain has catapulted the number of contract calls, surpassing previous all-time highs. Twitter user @Esclaponr shows some stats he has aggregated:
+<div style='width: 100%'>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Largest spike in new users on <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> since I started collecting some data about the smart contract usage two days ago <a href="https://t.co/jQVBEmqh8h">pic.twitter.com/jQVBEmqh8h</a></p>&mdash; Ricky Esclapon (@Esclaponr) <a href="https://twitter.com/Esclaponr/status/1374910647956344834?ref_src=twsrc%5Etfw">March 25, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
 
 <h2><a href='Livestream'>Weekly Livestreams</a></h2>
 1. https://twitter.com/verticalcrypto
