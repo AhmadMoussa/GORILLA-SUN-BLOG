@@ -32,16 +32,16 @@ Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. The
 
 <div class="row">
     <div class="col-6 col-12-small">
-      <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/sync.png" alt="" />
+      <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/sync.png" alt="" /></span>
     </div>
     <div class="col-6 col-12-small">
-      <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/unsync.png" alt="" />
+      <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/unsync.png" alt="" /></span>
     </div>
 </div>
 
 
 <p>Another major change is that you now get to preview your NFT before minting it. This conveniently allows you to check that everything is right before minting.</p>
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/minting_updated.png" alt="" />
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/minting_updated.png" alt="" /></span>
 
 Additionally, setting the royalties on your mints is now back. Royalties in this context basically mean that you'll get a percentage share of every subsequent sale of your NFTs. You can set this percentage between 0% and 25%.
 
