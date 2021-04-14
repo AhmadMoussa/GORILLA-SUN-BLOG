@@ -38,10 +38,10 @@ Additionally, setting the royalties on your mints is now back. Royalties in this
   
 This button introduced another problem, that caused a number of users quite the frustration. If an NFT were to sell all of it's remaining editions, the button would show 'not for sale'. This, however, didn't mean that the button was not able to be clicked 
   
-  This has now been fixed by showing all open offers for an NFT in it's collectors tab, with the respective price and the wallet address of the seller.  </p>
+This has now been fixed by showing all open offers for an NFT in it's collectors tab, with the respective price and the wallet address of the seller.  </p>
 
 <h2><a href='Templates'>HTML/P5JS/and other upload Templates</a></h2>
-Another big change has been the support of various data formats including html, svg, p5js, pdf. Amazing Right? 
+Another big change has been the support of various data formats including html, svg, p5js, pdf. This was pioneered by '', who encapsulated an html page in an svg file. Now hicetnunc outright supports these formats, and you can find the respective templates for them here. You'll have to replace certain parts of the templates with your own code, replace the default thumbnail.png / thumbnail.gif with your own and zip all files. This zip file will be what you upload at mint time. Amazing Right? 
 
 <iframe src="https://www.hicetnunc.xyz/objkt/25767" width="100%" height="1000"></iframe>
 
