@@ -29,7 +29,9 @@ This will be a loaded article, so hold on to your NFTs as we dive into all the r
 <h2><a name='UI'>UI/UX Changes</a></h2>
 Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. The minting procedure is still pretty much the same as described in my tutorial <a href='https://gorillasun.de/blog/Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz'>here</a>, however there is no need to sync before every action you do on the website. Once you connect your wallet and grant permission it'll stay synced with your wallet address, and it'll show it to in the top right corner next to the drop down 'hamburger' menu. The sync button still exists however, you simply click the drop down  menu in the top right corner, and where it previously showed your wallet address it'll show an 'unsync' button. Click it and it'll disconnect your current wallet address. 'unsync' becomes 'sync' and clicking the latter will ask you again to grant permission, now you can choose a different wallet address.
 
+
 Another major change is that you now get to preview your NFT before minting it. This conveniently allows you to check that everything is right before minting.
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/minting_updated.png" alt="" />
 
 Additionally, setting the royalties on your mints is now back. Royalties in this context basically mean that you'll get a percentage share of every subsequent sale of your NFTs. You can set this percentage between 0% and 25%.
 
@@ -60,7 +62,7 @@ https://twitter.com/djangobits/status/1376278372712595464
 Copyminting is another huge issue, where someone mints an NFT/piece/artwork that is not originally theirs. Some solutions to this problem are being discussed <a href='https://github.com/hicetnunc2000/hicetnunc/issues/433'>here</a>.
 
 <h2><a href='hDAO'>hDAO and the hDAO feed</a></h2>
-You might've noticed already that every NFT on hicetnunc has a little circle underneath it towards the right. The same circle can be found on the NFT page itself as well as in the drop down menu. This circle isn't just an aesthetic UI fluff but it can actually be clicked. Clicking it underneath an NFT will trigger your Tezos wallet, clicking it in the hamburger menu takes you to the hDAO feed.
+You might've noticed already that every NFT on hicetnunc has a little circle underneath it, in the lower right corner. The same circle can be found on the NFT page itself, underneath the OBJKT number, and also in the drop down menu. This circle isn't just some aesthetical UI fluff but it can actually be clicked. Clicking it underneath an NFT will trigger your Tezos wallet, clicking it in the hamburger menu takes you to the hDAO feed.
 
 <h2><a name='Presstube'>The 'Presstube' method</a></h2>
 The 'Presstube' method is essentially a specific way of pricing NFTs on hicetnunc, which rewards the early birds that swoop in and cop the first couple of editions of a freshly minted NFT. When you mint an NFT on hicetnunc, it appears in the store, however it is not immediately up for sale.
