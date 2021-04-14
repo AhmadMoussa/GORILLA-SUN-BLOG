@@ -5,7 +5,7 @@ categories:
   - p5js
 description: Only a month has passed, however a lot has changed in the Tezos NFT world. Hicetnunc.xyz has become a lot slicker since it's launch roughly 2 months ago.
 thumbnail_path: 2021-04-12-hicetnunc.png
-published: false
+published: true
 ---
 
 This will be a loaded article, so hold on to your NFTs as we dive into all the recent developments of the past month! Here's a quick overview, if you're interested in reading up on something in particular:
@@ -43,19 +43,20 @@ This has now been fixed by showing all open offers for an NFT in it's collectors
 <h2><a href='Templates'>HTML/P5JS/and other upload Templates</a></h2>
 Another big change has been the support of various data formats including html, svg, p5js, pdf. This was pioneered by a number of Twitter users in parallel, some super insightiful articles by Twitter user @tarwin can be found here. What first started as html encapsulated in an svg file. Now hicetnunc outright supports these formats, and you can find the respective templates for them <a href='https://github.com/hicetnunc2000/hicetnunc/tree/main/templates'>here</a>. You'll have to replace certain parts of the templates with your own code, replace the default thumbnail.png / thumbnail.gif with your own and zip all files. This zip file will be what you upload at mint time. Amazing Right? 
 
-Here's an example of what a minted p5js sketch looks like. Refreshing the age randomizes the sketch
+Here's an example of what a minted p5js sketch looks like. Refreshing the page randomizes the sketch
 <iframe src="https://www.hicetnunc.xyz/objkt/25767" width="100%" height="1000"></iframe>
 
 Maybe the next cool thing could be a convenient iframe embed code? That would allow creators to display and sell their creations easily from their own websites.
 
 <h2><a name='OBJKT4OBJKT'>OBJKT4OBJKT</a></h2>
-Throughout the month we've also seen 
-https://twitter.com/DiverseNftArt/status/1376156452180664323
+On the weekend of the 24th of March we've also seen an event that encouraged users to share NFTs for free, such that users on hicetnunc could build up their collections without a cost:
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">To celebrate 10k <a href="https://twitter.com/hashtag/OBJKT?src=hash&amp;ref_src=twsrc%5Etfw">#OBJKT</a> mints, <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> and <a href="https://twitter.com/DiverseNftArt?ref_src=twsrc%5Etfw">@DiverseNftArt</a> are promoting a weekend of fun and celebration for all artists and collectors!<br> <a href="https://twitter.com/hashtag/cleanNFT?src=hash&amp;ref_src=twsrc%5Etfw">#cleanNFT</a> <a href="https://twitter.com/hashtag/OBJKT4OBJKT?src=hash&amp;ref_src=twsrc%5Etfw">#OBJKT4OBJKT</a> <a href="https://twitter.com/hashtag/NFTCollector?src=hash&amp;ref_src=twsrc%5Etfw">#NFTCollector</a> <a href="https://twitter.com/hashtag/NFTArt?src=hash&amp;ref_src=twsrc%5Etfw">#NFTArt</a> <a href="https://twitter.com/hashtag/NFTArtists?src=hash&amp;ref_src=twsrc%5Etfw">#NFTArtists</a> <a href="https://twitter.com/hashtag/cryptoart?src=hash&amp;ref_src=twsrc%5Etfw">#cryptoart</a> <a href="https://twitter.com/hashtag/lgbtqia?src=hash&amp;ref_src=twsrc%5Etfw">#lgbtqia</a> <a href="https://twitter.com/hashtag/bipoc?src=hash&amp;ref_src=twsrc%5Etfw">#bipoc</a> <a href="https://twitter.com/hashtag/diverse?src=hash&amp;ref_src=twsrc%5Etfw">#diverse</a> <a href="https://twitter.com/hashtag/artists?src=hash&amp;ref_src=twsrc%5Etfw">#artists</a> <a href="https://twitter.com/hashtag/WomenInTech?src=hash&amp;ref_src=twsrc%5Etfw">#WomenInTech</a> <a href="https://twitter.com/hashtag/Tezos?src=hash&amp;ref_src=twsrc%5Etfw">#Tezos</a> <a href="https://twitter.com/hashtag/XTZ?src=hash&amp;ref_src=twsrc%5Etfw">#XTZ</a> <a href="https://t.co/1iBeju6Ltw">pic.twitter.com/1iBeju6Ltw</a></p>&mdash; Diverse NFT Artists 🦄 (@DiverseNftArt) <a href="https://twitter.com/DiverseNftArt/status/1374751025219899393?ref_src=twsrc%5Etfw">March 24, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <h2><a name='Copyminters'>Copyminters and Hoarders</a></h2>
-https://github.com/hicetnunc2000/hicetnunc/issues/433
+A problem that arose with the OBJKT4OBJKT event was that some individuals would collect multiples of certain free OBJKTs, while not being illegal, it is clearly a dick move. Clearly the main purpose is the later resale of the claimed NFTs. 
+https://twitter.com/djangobits/status/1376278372712595464
 
-
+Copyminting is another huge issue, where someone mints an NFT/piece/artwork that is not originally theirs. Some solutions to this problem are being discussed <a href='https://github.com/hicetnunc2000/hicetnunc/issues/433'>here</a>.
 
 <h2><a name='Presstube'>The 'Presstube' method</a></h2>
 The 'Presstube' method is essentially a specific way of pricing NFTs on hicetnunc, which rewards the early birds that swoop in and cop the first couple of editions of a freshly minted NFT. When you mint an NFT on hicetnunc, it appears in the store, however it is not immediately up for sale.
