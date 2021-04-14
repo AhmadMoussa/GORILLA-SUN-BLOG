@@ -59,6 +59,9 @@ https://twitter.com/djangobits/status/1376278372712595464
 
 Copyminting is another huge issue, where someone mints an NFT/piece/artwork that is not originally theirs. Some solutions to this problem are being discussed <a href='https://github.com/hicetnunc2000/hicetnunc/issues/433'>here</a>.
 
+<h2><a href='hDAO'>hDAO and the hDAO feed</a></h2>
+You might've noticed already that every NFT on hicetnunc has a little circle underneath it towards the right. The same circle can be found on the NFT page itself as well as in the drop down menu. This circle isn't just an aesthetic UI fluff but it can actually be clicked. Clicking it underneath an NFT will trigger your Tezos wallet, clicking it in the hamburger menu takes you to the hDAO feed.
+
 <h2><a name='Presstube'>The 'Presstube' method</a></h2>
 The 'Presstube' method is essentially a specific way of pricing NFTs on hicetnunc, which rewards the early birds that swoop in and cop the first couple of editions of a freshly minted NFT. When you mint an NFT on hicetnunc, it appears in the store, however it is not immediately up for sale.
 
