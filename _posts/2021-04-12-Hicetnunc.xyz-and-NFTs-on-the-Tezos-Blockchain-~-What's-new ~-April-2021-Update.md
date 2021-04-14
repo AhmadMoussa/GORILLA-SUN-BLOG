@@ -5,7 +5,7 @@ categories:
   - p5js
 description: Only a month has passed, however a lot has changed in the Tezos NFT world. Hicetnunc.xyz has become a lot slicker since it's launch roughly 2 months ago.
 thumbnail_path: 2021-04-12-hicetnunc.png
-published: false
+published: true
 ---
 
 This will be a loaded article, so hold on to your NFTs as we dive into all the recent developments of the past month! Here's a quick overview, if you're interested in reading up on something in particular:
@@ -41,13 +41,15 @@ This button introduced another problem, that caused a number of users quite the 
 This has now been fixed by showing all open offers for an NFT in it's collectors tab, with the respective price and the wallet address of the seller.  </p>
 
 <h2><a href='Templates'>HTML/P5JS/and other upload Templates</a></h2>
-Another big change has been the support of various data formats including html, svg, p5js, pdf. This was pioneered by '', who encapsulated an html page in an svg file. Now hicetnunc outright supports these formats, and you can find the respective templates for them here. You'll have to replace certain parts of the templates with your own code, replace the default thumbnail.png / thumbnail.gif with your own and zip all files. This zip file will be what you upload at mint time. Amazing Right? 
+Another big change has been the support of various data formats including html, svg, p5js, pdf. This was pioneered by a number of Twitter users in parallel, some super insightiful articles by Twitter user @tarwin can be found here. What first started as html encapsulated in an svg file. Now hicetnunc outright supports these formats, and you can find the respective templates for them <a href='https://github.com/hicetnunc2000/hicetnunc/tree/main/templates'>here</a>. You'll have to replace certain parts of the templates with your own code, replace the default thumbnail.png / thumbnail.gif with your own and zip all files. This zip file will be what you upload at mint time. Amazing Right? 
 
+Here's an example of what a minted p5js sketch looks like. Refreshing the age randomizes the sketch
 <iframe src="https://www.hicetnunc.xyz/objkt/25767" width="100%" height="1000"></iframe>
 
-Maybe the next cool thing could be a convenient embed code? That would allow creators to display and sell their creations easily from their own websites.
+Maybe the next cool thing could be a convenient iframe embed code? That would allow creators to display and sell their creations easily from their own websites.
 
 <h2><a name='OBJKT4OBJKT'>OBJKT4OBJKT</a></h2>
+Throughout the month we've also seen 
 https://twitter.com/DiverseNftArt/status/1376156452180664323
 
 <h2><a name='Copyminters'>Copyminters and Hoarders</a></h2>
@@ -79,6 +81,7 @@ The NFT activity on the Tezos blockchain has catapulted the number of contract c
 <h2><a href='Other'>Other Interesting Articles, Resources and Stuff(s)</a></h2>
 1. https://www.plummerfernandez.com/works/not-another-jpeg/
 2. https://www.salon.com/2021/04/08/why-would-anyone-buy-crypto-art--let-alone-spend-millions-on-whats-essentially-a-link-to-a-jpeg_partner/
+3. Hosting your own IPFS node https://twitter.com/antic/status/1374417104489697283
 
 
 <h2>Adding your info to tezos blockchain</h2>
