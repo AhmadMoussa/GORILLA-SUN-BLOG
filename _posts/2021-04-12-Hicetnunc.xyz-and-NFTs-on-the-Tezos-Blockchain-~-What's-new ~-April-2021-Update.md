@@ -49,10 +49,17 @@ Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. The
 
 <h2><a name='Secondary'>The Secondary Market</a></h2>
 <p>On the topic of royalties, you can now not only collect, but also re-sell previously acquired OBJKTs in your collection! This feature was rolled out quietly throughout the month an had some issues at first. The UI worked in such a manner that if someone were to offer up an NFT for sale that they've collected, while the original creator still had remaining editions of said NFT up for sale, they would essentially supersede the original creator with their offer, since the 'click to collect' button would have to be shared. This was problematic, because if someone were to re-sell 1 edition of an NFT for 200tez, whereas the original creator still had dozens of the same NFT up for sale at a much lower price, these would then essentially be blocked until someone bought the NFT offered for 200tez.</p>
+
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Some people might not have realized it yet: the secondary market on <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> is open now.<br><br>Yes, you can sell any NFT you collected. The only problem is that the UI has not noticed that yet.<br><br>So if the first number before the &quot;/&quot; is &gt; 0, try clicking &quot;not for sale&quot;. <a href="https://t.co/lY9pr6UsvU">pic.twitter.com/lY9pr6UsvU</a></p>&mdash; Mario Klingemann (@quasimondo) <a href="https://twitter.com/quasimondo/status/1376098068425289730?ref_src=twsrc%5Etfw">March 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
   
 <p>This button introduced another problem, that caused a number of users quite the frustration. If an NFT were to sell all of it's remaining editions, the button would show 'not for sale'. This, however, didn't mean that the button was not able to be clicked. </p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Yes, i&#39;ll wait a bit before swapping, I just gave 20tez to someone who took 31 of my early freebies</p>&mdash; Patrick Tresset etc. (@patricktresset) <a href="https://twitter.com/patricktresset/status/1376163365312200706?ref_src=twsrc%5Etfw">March 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   
 <p>This has now been fixed by showing all open offers for an NFT in it's collectors tab, with the respective price and the wallet address of the seller.  </p>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/secondary_market.png" alt="" /></span>
 
 <h2><a href='Templates'>HTML/P5JS/and other upload Templates</a></h2>
 <p>What first started as html encapsulated in an svg file, has become another avant garde feature of hicetnunc. Data formats such as html, svg, p5js, pdf are now supported by hicetnunc and can be minted as NFTs. This was pioneered by a number of Twitter users in parallel, some super insightiful articles by Twitter user @tarwin can be found here.  You can find the respective templates for them <a href='https://github.com/hicetnunc2000/hicetnunc/tree/main/templates'>here</a>. You'll have to replace certain parts of the templates with your own code, replace the default thumbnail.png / thumbnail.gif with your own and zip all files. This zip file will be what you upload at mint time. Amazing Right?</p>
