@@ -99,17 +99,12 @@ Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. The
 
 <p>It's safe to say that the Tezos ecosystem is brimming with life more than it ever has before.</p>
 
-<h2><a name='Presstube'>The 'Presstube' method</a></h2>
-The 'Presstube' method is essentially a specific way of pricing NFTs on hicetnunc, which rewards the early birds that swoop in and cop the first couple of editions of a freshly minted NFT. When you mint an NFT on hicetnunc, it appears in the store, however it is not immediately up for sale.
+<h2><a name='Presstube'>Pricing things adequately and the 'Presstube' method</a></h2>
+It's still not very clear how number of editions and price are corelated, and what combinations thereof will maximise your sales, but scarcity is something that you should keep in mind. After experimenting, some hicetnunc users have come up with creative strategies for selling their NFTs, one of them being the 'Presstube' method.
 
-<div class="row">
-  <div class="col-6 col-12-small">
-    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I didn’t coin it so it’s marginally embarrassing every time I see it called that 😝 but...<br><br>The practice of pricing editions so that they begin accessible (even sometimes free) and then the price steps up as editions sell<br><br>Jury’s still out on whether it’s a good idea though! Ymmv</p>&mdash; James Paterson (@presstube) <a href="https://twitter.com/presstube/status/1378701285101305863?ref_src=twsrc%5Etfw">April 4, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  <div class="col-6 col-12-small">  
-    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">3/ Swap an NFT on <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> <a href="https://t.co/rcparEboUf">pic.twitter.com/rcparEboUf</a></p>&mdash; verticalcryptoart (@verticalcrypto) <a href="https://twitter.com/verticalcrypto/status/1374349243192860672?ref_src=twsrc%5Etfw">March 23, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-   </div>
-<div>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I didn’t coin it so it’s marginally embarrassing every time I see it called that 😝 but...<br><br>The practice of pricing editions so that they begin accessible (even sometimes free) and then the price steps up as editions sell<br><br>Jury’s still out on whether it’s a good idea though! Ymmv</p>&mdash; James Paterson (@presstube) <a href="https://twitter.com/presstube/status/1378701285101305863?ref_src=twsrc%5Etfw">April 4, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+The 'Presstube' method is essentially a specific way of pricing NFTs on hicetnunc, which rewards the early birds that swoop in and cop the first couple of editions of a freshly minted NFT. It's possible due to how the hicetnunc UI works. When you mint an NFT on hicetnunc, it appears in the feed and your creations tab, however it is not immediately up for sale. You still have to specify how many editions you want put up for sale. In that manner, you can sell different amounts for different prices.
 
 <h2><a href='Livestream'>Weekly Livestreams</a></h2>
 1. https://twitter.com/verticalcrypto
