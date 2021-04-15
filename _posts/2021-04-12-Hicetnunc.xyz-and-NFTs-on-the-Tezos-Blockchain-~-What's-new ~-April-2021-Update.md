@@ -47,6 +47,8 @@ Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. The
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Celebrating more than 10K minted objects on <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> with three video tutorials on how to get started creating <a href="https://twitter.com/hashtag/NFTs?src=hash&amp;ref_src=twsrc%5Etfw">#NFTs</a> on the platform🤍<br>Thanks to <a href="https://twitter.com/presstube?ref_src=twsrc%5Etfw">@presstube</a> for the video tutorials👇🤖<br> <br>1/ Set up a <a href="https://twitter.com/tezos?ref_src=twsrc%5Etfw">@tezos</a> wallet with <a href="https://twitter.com/TempleWallet?ref_src=twsrc%5Etfw">@TempleWallet</a> and apply for some tez w/ <a href="https://twitter.com/tezosnftfaucet?ref_src=twsrc%5Etfw">@tezosnftfaucet</a> <a href="https://t.co/64zGXQCTEQ">pic.twitter.com/64zGXQCTEQ</a></p>&mdash; verticalcryptoart (@verticalcrypto) <a href="https://twitter.com/verticalcrypto/status/1374349022245359627?ref_src=twsrc%5Etfw">March 23, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p></p>
 
+<p>Another change that I noticed just now, is that it now neatly arranges your creations</p>
+
 <h2><a name='Secondary'>The Secondary Market</a></h2>
 <p>On the topic of royalties, you can now not only collect, but also re-sell previously acquired OBJKTs in your collection! This feature was rolled out quietly throughout the month an had some issues at first. The UI worked in such a manner that if someone were to offer up an NFT for sale that they've collected, while the original creator still had remaining editions of said NFT up for sale, they would essentially supersede the original creator with their offer, since the 'click to collect' button would have to be shared. This was problematic, because if someone were to re-sell 1 edition of an NFT for 200tez, whereas the original creator still had dozens of the same NFT up for sale at a much lower price, these would then essentially be blocked until someone bought the NFT offered for 200tez.</p>
 
@@ -84,6 +86,16 @@ Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. The
 
 <h2><a href='hDAO'>hDAO and the hDAO feed</a></h2>
 <p>You might've noticed already that every NFT on hicetnunc has a little circle underneath it, in the lower right corner. The same circle can be found on the NFT page itself, underneath the OBJKT number, and also in the drop down menu. This circle isn't just some aesthetical UI fluff but it can actually be clicked. Clicking it underneath an NFT will trigger your Tezos wallet, clicking it in the hamburger menu takes you to the hDAO feed.</p>
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/hdao_underneath_NFT.png" alt="" /></span>
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/hdao_on_NFT_page.png" alt="" /></span>
+<p>When you click the circle underneath an NFT or from it's dedicated page, it'll trigger your wallet which will allow you to spend some of your hDAO tokens on the NFT. I'm not entirely sure what the tokens are or how they work, but once spent they essentially work as an upvote.</p>
+
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/hdao_feed.png" alt="" /></span>
+
+I'm not certain how many people are aware of the hDAO as of now, or if they're actually using it to search for potential purchases. This also brings up the issue of creators upvoting their creations with their hDAO tokens, boosting their rankings if/when the hDAO feed becomes a more integral part of hicetnunc.
 
 <h2><a name='Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a></h2>
 <p>Kalamint was officially announced on the 19th of December as the 'first NFT marketplace on Tezos', and was scheduled for a release in January 2021. This release was then delayed to the 18th of February, which was delayed again due to some UI problems and Kalamint didn't launch until the 23rd of March. At this point it might have been a little bit silly to still call it the 'first NFT platform for Tezos', when hicetnunc had already been up and running for more than a month. It could have been acknowledged at least? I'm not complaining though, the more the merrier, and maybe this competition will drive the different platforms to keep improving.<p>
