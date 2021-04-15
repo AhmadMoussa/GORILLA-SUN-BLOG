@@ -18,12 +18,11 @@ This will be a loaded article, so hold on to your NFTs as we dive into all the r
 6. <a href='#Copyminters'>Copyminters and Hoarders</a>
 7. <a href='#Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a>
 8. <a href='#Tezos'>Tezos to the moon</a>
-9. How to price things adequately ~ Quasimondo insights
-10. <a href='Presstube'>The presstube method</a>
-11. <a href='#Livestream'>Weekly Livestreams</a>
-12. Tezos Developer portal
-13. Companion sites and art reviews ~ 
-14. Other interesting Articles, Resources and Stuff(s)
+9. <a href='Presstube'>How to price things adequately and the Presstube Method</a>
+10. <a href='#Livestream'>Weekly Livestreams</a>
+11. Tezos Developer portal
+12. Companion sites and art reviews ~ 
+13. Other interesting Articles, Resources and Stuff(s)
 
 
 <h2><a name='UI'>UI/UX Changes</a></h2>
