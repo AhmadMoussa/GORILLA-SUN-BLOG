@@ -5,7 +5,7 @@ categories:
   - p5js
 description: Only a month has passed, however a lot has changed in the Tezos NFT world. Hicetnunc.xyz has become a lot slicker since it's launch roughly 2 months ago.
 thumbnail_path: 2021-04-12-hicetnunc.png
-published: false
+published: true
 ---
 
 This will be a loaded article, so hold on to your NFTs as we dive into all the recent developments of the past month! Here's a quick overview, if you're interested in reading up on something in particular:
@@ -60,7 +60,7 @@ Additionally, setting the royalties on your mints is now back. Royalties in this
 <h2><a name='OBJKT4OBJKT'>OBJKT4OBJKT</a></h2>
 <p>On the weekend of the 24th of March, in celebration of 10k minted NFTs on hicetnunc, we've seen an event started by Twitter duo @ameliemaiaa and @tataismo1 that go under the handle @DiverseNftArt, that encouraged users to share NFTs for free, such that users on hicetnunc could build up their collections without a cost. Even though the event is officially over, searching the hashtag #OBJKT4OBJKT on Twitter, you'll probably still be able to find some free NFT goodies. It is also very likely that this event will make a return in the future.</p>
 
-<div style='text-align:center;'>
+<div style='margin: auto;'>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">To celebrate 10k <a href="https://twitter.com/hashtag/OBJKT?src=hash&amp;ref_src=twsrc%5Etfw">#OBJKT</a> mints, <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> and <a href="https://twitter.com/DiverseNftArt?ref_src=twsrc%5Etfw">@DiverseNftArt</a> are promoting a weekend of fun and celebration for all artists and collectors!<br> <a href="https://twitter.com/hashtag/cleanNFT?src=hash&amp;ref_src=twsrc%5Etfw">#cleanNFT</a> <a href="https://twitter.com/hashtag/OBJKT4OBJKT?src=hash&amp;ref_src=twsrc%5Etfw">#OBJKT4OBJKT</a> <a href="https://twitter.com/hashtag/NFTCollector?src=hash&amp;ref_src=twsrc%5Etfw">#NFTCollector</a> <a href="https://twitter.com/hashtag/NFTArt?src=hash&amp;ref_src=twsrc%5Etfw">#NFTArt</a> <a href="https://twitter.com/hashtag/NFTArtists?src=hash&amp;ref_src=twsrc%5Etfw">#NFTArtists</a> <a href="https://twitter.com/hashtag/cryptoart?src=hash&amp;ref_src=twsrc%5Etfw">#cryptoart</a> <a href="https://twitter.com/hashtag/lgbtqia?src=hash&amp;ref_src=twsrc%5Etfw">#lgbtqia</a> <a href="https://twitter.com/hashtag/bipoc?src=hash&amp;ref_src=twsrc%5Etfw">#bipoc</a> <a href="https://twitter.com/hashtag/diverse?src=hash&amp;ref_src=twsrc%5Etfw">#diverse</a> <a href="https://twitter.com/hashtag/artists?src=hash&amp;ref_src=twsrc%5Etfw">#artists</a> <a href="https://twitter.com/hashtag/WomenInTech?src=hash&amp;ref_src=twsrc%5Etfw">#WomenInTech</a> <a href="https://twitter.com/hashtag/Tezos?src=hash&amp;ref_src=twsrc%5Etfw">#Tezos</a> <a href="https://twitter.com/hashtag/XTZ?src=hash&amp;ref_src=twsrc%5Etfw">#XTZ</a> <a href="https://t.co/1iBeju6Ltw">pic.twitter.com/1iBeju6Ltw</a></p>&mdash; Diverse NFT Artists 🦄 (@DiverseNftArt) <a href="https://twitter.com/DiverseNftArt/status/1374751025219899393?ref_src=twsrc%5Etfw">March 24, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
