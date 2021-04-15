@@ -34,6 +34,12 @@ Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. The
 <p>Another major change is that you now get to preview your NFT before minting it. This conveniently allows you to check that everything is right before minting.</p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/minting_updated.png" alt="" /></span>
 
+You also get the option to go back to fix the NFT details.
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/preview1.png" alt="" /></span>
+
+And then you hit mint to finalize the mint.
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/preview2.png" alt="" /></span>
+
 Additionally, setting the royalties on your mints is now back. Royalties in this context basically mean that you'll get a percentage share of every subsequent sale of your NFTs. You can set this percentage between 0% and 25%.
 
 <h2><a name='Secondary'>The Secondary Market</a></h2>
@@ -68,10 +74,6 @@ Copyminting is another huge issue, where someone mints an NFT/piece/artwork that
 <h2><a href='hDAO'>hDAO and the hDAO feed</a></h2>
 You might've noticed already that every NFT on hicetnunc has a little circle underneath it, in the lower right corner. The same circle can be found on the NFT page itself, underneath the OBJKT number, and also in the drop down menu. This circle isn't just some aesthetical UI fluff but it can actually be clicked. Clicking it underneath an NFT will trigger your Tezos wallet, clicking it in the hamburger menu takes you to the hDAO feed.
 
-
-<h2><a name='Presstube'>The 'Presstube' method</a></h2>
-The 'Presstube' method is essentially a specific way of pricing NFTs on hicetnunc, which rewards the early birds that swoop in and cop the first couple of editions of a freshly minted NFT. When you mint an NFT on hicetnunc, it appears in the store, however it is not immediately up for sale.
-
 <h2><a name='Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a></h2>
 Kalamint was officially announced on the 19th of December as the 'first NFT marketplace on Tezos', and was scheduled for a release in January 2021. This release was then delayed to the 18th of February, which was delayed again due to some UI problems and Kalamint didn't launch until the 23rd of March. At this point it might have been a little bit silly to still call it the 'first NFT platform for Tezos', when hicetnunc had already been up and running for more than a month. It could have been acknowledged at least? I'm not complaining though, the more the merrier, and maybe this competition will drive the different platforms to keep improving.
 
@@ -80,10 +82,18 @@ Kalamint also is vastly differently from hicetnunc, being described as boutique 
 Opensea has also <a href='https://opensea.io/blog/announcements/tezos-nfts-are-coming-to-opensea/'>announced</a> the support of Tezos NFTs, however there is no clear ETA. Speculatively later this month or early next month.
 
 <h2><a name='Tezos'>Tezos to the Moon</a></h2>
-The NFT activity on the Tezos blockchain has catapulted the number of contract calls, surpassing previous all-time highs. Twitter user @Esclaponr shows some stats he has aggregated:
+The NFT activity on the Tezos blockchain has catapulted the number of contract calls, surpassing previous all-time highs:
+<blockquote class="reddit-card" data-card-created="1618482286"><a href="https://www.reddit.com/r/tezos/comments/mpi9c0/tezos_contract_calls_april_12/">Tezos contract calls / April 12</a> from <a href="http://www.reddit.com/r/tezos">r/tezos</a></blockquote>
+<script async src="//embed.redditmedia.com/widgets/platform.js" charset="UTF-8"></script>
+
+
+It's safe to say that the Tezos ecosystem is brimming with life more than it ever has before. Hicetnunc is also still growing at a very fast rate, as of writing this post we've already surpassed 30k minted NFTs. Twitter user @Esclaponr shows some stats he has aggregated regarding the growth and activity on hicetnunc:
 <div style='width: 100%'>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Largest spike in new users on <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> since I started collecting some data about the smart contract usage two days ago <a href="https://t.co/jQVBEmqh8h">pic.twitter.com/jQVBEmqh8h</a></p>&mdash; Ricky Esclapon (@Esclaponr) <a href="https://twitter.com/Esclaponr/status/1374910647956344834?ref_src=twsrc%5Etfw">March 25, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
+</div>
+
+<h2><a name='Presstube'>The 'Presstube' method</a></h2>
+The 'Presstube' method is essentially a specific way of pricing NFTs on hicetnunc, which rewards the early birds that swoop in and cop the first couple of editions of a freshly minted NFT. When you mint an NFT on hicetnunc, it appears in the store, however it is not immediately up for sale.
 
 <h2><a href='Livestream'>Weekly Livestreams</a></h2>
 1. https://twitter.com/verticalcrypto
