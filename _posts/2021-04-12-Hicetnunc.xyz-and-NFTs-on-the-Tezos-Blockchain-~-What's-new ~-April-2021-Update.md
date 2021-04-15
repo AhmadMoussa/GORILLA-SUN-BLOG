@@ -5,7 +5,7 @@ categories:
   - p5js
 description: Only a month has passed, however a lot has changed in the Tezos NFT world. Hicetnunc.xyz has become a lot slicker since it's launch roughly 2 months ago.
 thumbnail_path: 2021-04-12-hicetnunc.png
-published: false
+published: true
 ---
 
 This will be a loaded article, so hold on to your NFTs as we dive into all the recent developments of the past month! Here's a quick overview, if you're interested in reading up on something in particular:
@@ -73,9 +73,11 @@ You might've noticed already that every NFT on hicetnunc has a little circle und
 The 'Presstube' method is essentially a specific way of pricing NFTs on hicetnunc, which rewards the early birds that swoop in and cop the first couple of editions of a freshly minted NFT. When you mint an NFT on hicetnunc, it appears in the store, however it is not immediately up for sale.
 
 <h2><a name='Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a></h2>
-Kalamint was officially announced on the 19th of December as the 'first NFT marketplace on Tezos', and was scheduled for a release in January 2021. This release was then delayed to the 18th of February, which was delayed again due to some UI problems and Kalamint didn't launch until the 23rd of March. At this point it might have been a little bit silly to still call it the 'first NFT platform for Tezos', when hicetnunc had already been up and running for more than a month. It could have been acknowledged at least?
+Kalamint was officially announced on the 19th of December as the 'first NFT marketplace on Tezos', and was scheduled for a release in January 2021. This release was then delayed to the 18th of February, which was delayed again due to some UI problems and Kalamint didn't launch until the 23rd of March. At this point it might have been a little bit silly to still call it the 'first NFT platform for Tezos', when hicetnunc had already been up and running for more than a month. It could have been acknowledged at least? I'm not complaining though, the more the merrier, and maybe this competition will drive the different platforms to keep improving.
 
-Kalamint also is vastly differently from hicetnunc, being described as boutique vs. spartanic.  But maybe they're intended to cater to cater to different audiences, hicetnunc being much more accessible to people who just want to dip their toes into the Tezos NFT waters. One thing that I like about Kalamint however is that they verify the creators before allowing them to mint and list NFTs, this somewhat circumvents the copyminting issue but can be regarded as gatekeeping, as they have full control of what is being minted on their platform.
+Kalamint also is vastly differently from hicetnunc, being described as boutique vs. spartanic.  But maybe they're intended to cater to cater to different audiences, hicetnunc being much more accessible to people who just want to dip their toes into the Tezos NFT waters. One thing that I like about Kalamint however is that they verify the creators before allowing them to mint and list NFTs, this somewhat circumvents the copyminting issue but could also be regarded as gatekeeping, as they have full control of what is being minted on their platform.
+
+Opensea has also <a href='https://opensea.io/blog/announcements/tezos-nfts-are-coming-to-opensea/'>announced</a> the support of Tezos NFTs, however there is no clear ETA. Speculatively later this month or early next month.
 
 <h2><a name='Tezos'>Tezos to the Moon</a></h2>
 The NFT activity on the Tezos blockchain has catapulted the number of contract calls, surpassing previous all-time highs. Twitter user @Esclaponr shows some stats he has aggregated:
