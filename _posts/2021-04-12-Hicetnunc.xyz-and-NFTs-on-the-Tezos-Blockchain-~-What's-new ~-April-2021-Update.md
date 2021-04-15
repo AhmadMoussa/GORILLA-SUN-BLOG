@@ -30,15 +30,7 @@ This will be a loaded article, so hold on to your NFTs as we dive into all the r
 Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. The minting procedure is still pretty much the same as described in my tutorial <a href='https://gorillasun.de/blog/Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz'>here</a>, however there is no need to sync before every action you do on the website. Once you connect your wallet and grant permission it'll stay synced with your wallet address, and it'll show it to in the top right corner next to the drop down 'hamburger' menu. The sync button still exists however, you simply click the drop down  menu in the top right corner, and where it previously showed your wallet address it'll show an 'unsync' button. Click it and it'll disconnect your current wallet address. 'unsync' becomes 'sync' and clicking the latter will ask you again to grant permission, now you can choose a different wallet address.
 
 
-<div class="row">
-    <div class="col-6 col-12-small">
-      <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/sync.png" alt="" /></span>
-    </div>
-    <div class="col-6 col-12-small">
-      <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/unsync.png" alt="" /></span>
-    </div>
-</div>
-
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/sync.png" alt="" /></span>
 
 <p>Another major change is that you now get to preview your NFT before minting it. This conveniently allows you to check that everything is right before minting.</p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/minting_updated.png" alt="" /></span>
