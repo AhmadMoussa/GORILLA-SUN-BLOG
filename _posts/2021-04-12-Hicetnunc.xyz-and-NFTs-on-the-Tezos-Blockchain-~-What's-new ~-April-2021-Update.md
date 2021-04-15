@@ -52,10 +52,10 @@ Additionally, setting the royalties on your mints is now back. Royalties in this
 <h2><a href='Templates'>HTML/P5JS/and other upload Templates</a></h2>
 <p>What first started as html encapsulated in an svg file, has become another avant garde feature of hicetnunc. Data formats such as html, svg, p5js, pdf are now supported by hicetnunc and can be minted as NFTs. This was pioneered by a number of Twitter users in parallel, some super insightiful articles by Twitter user @tarwin can be found here.  You can find the respective templates for them <a href='https://github.com/hicetnunc2000/hicetnunc/tree/main/templates'>here</a>. You'll have to replace certain parts of the templates with your own code, replace the default thumbnail.png / thumbnail.gif with your own and zip all files. This zip file will be what you upload at mint time. Amazing Right?</p>
 
-<p>Here's an example of what a minted interactive p5js sketch looks like. Refreshing the page randomizes the sketch:</p>
-<iframe src="https://www.hicetnunc.xyz/objkt/25767" width="100%" height="1000"></iframe>
+<p>Here's an example of what a minted interactive p5js sketch looks like. Hover over the NFT:</p>
+<iframe src="https://www.hicetnunc.xyz/objkt/27560" width="100%" height="1000"></iframe>
 
-<p>Maybe the next cool thing could be a convenient iframe embed code? That would allow creators to display and sell their creations easily from their own websites.</p>
+<p>Maybe the next cool thing could be a convenient and customizable iframe embed code? That could allow creators to display and sell their creations easily from their own website.</p>
 
 <h2><a name='OBJKT4OBJKT'>OBJKT4OBJKT</a></h2>
 <p>On the weekend of the 24th of March, in celebration of 10k minted NFTs on hicetnunc, we've seen an event started by Twitter duo @ameliemaiaa and @tataismo1 that go under the handle @DiverseNftArt, that encouraged users to share NFTs for free, such that users on hicetnunc could build up their collections without a cost. Even though the event is officially over, searching the hashtag #OBJKT4OBJKT on Twitter, you'll probably still be able to find some free NFT goodies. It is also very likely that this event will make a return in the future.</p>
