@@ -92,6 +92,8 @@ Additionally, setting the royalties on your mints is now back. Royalties in this
 <div style='width: 100%'>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Largest spike in new users on <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> since I started collecting some data about the smart contract usage two days ago <a href="https://t.co/jQVBEmqh8h">pic.twitter.com/jQVBEmqh8h</a></p>&mdash; Ricky Esclapon (@Esclaponr) <a href="https://twitter.com/Esclaponr/status/1374910647956344834?ref_src=twsrc%5Etfw">March 25, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
+<p>Up to date graphs can be found in this repo <a href='https://github.com/ries9112/NFTs-hicetnunc'>here</a>. Alternatively you can also purchase these live updating graphs as NFTs <a href='https://www.hicetnunc.xyz/tz/tz1c2iwyckUCcicx2qxqtwLEartYFEHg1pvB'>here</a> if you'd like to support @Esclaponr.</p> 
+
 <p>It's safe to say that the Tezos ecosystem is brimming with life more than it ever has before.</p>
 
 <h2><a name='Presstube'>The 'Presstube' method</a></h2>
