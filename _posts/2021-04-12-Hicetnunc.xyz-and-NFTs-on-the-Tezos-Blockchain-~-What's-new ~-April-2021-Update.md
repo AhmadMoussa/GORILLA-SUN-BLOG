@@ -33,14 +33,18 @@ Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. The
 
 <p>Another major change is that you now get to preview your NFT before minting it. This conveniently allows you to check that everything is right before minting.</p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/minting_updated.png" alt="" /></span>
+<p>Additionally, note that the option for setting the royalties on your mints is now back. Royalties in this context basically mean that you'll get a percentage share of every subsequent sale of your NFTs. You can set this percentage between 10% and 25%.</p>
 
-You also get the option to go back to fix the NFT details.
+<p>After hitting the preview button, you'll have the option to go back to fix any of the NFT details.</p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/preview1.png" alt="" /></span>
 
-And then you hit mint to finalize the mint.
+<p>If everything seems alright, then you can hit the 'mint' to finalize the mint.</p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/preview2.png" alt="" /></span>
 
-Additionally, setting the royalties on your mints is now back. Royalties in this context basically mean that you'll get a percentage share of every subsequent sale of your NFTs. You can set this percentage between 0% and 25%.
+<p>If you messed up anything, or just want to delete an NFT you've previously created, you now have the option to burn NFTs. Burning essentially means, that you'll send the NFT to a burner address that isn't owned by anyone (This is how I understand it). All of this costs almost nothing due to the cheap Tezos Gas Fees!</p>
+
+<p>If you're still confused about how to mint NFTs on hicetnunc.xyz then this Video series should clear up all remaining uncertainties:</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Celebrating more than 10K minted objects on <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> with three video tutorials on how to get started creating <a href="https://twitter.com/hashtag/NFTs?src=hash&amp;ref_src=twsrc%5Etfw">#NFTs</a> on the platform🤍<br>Thanks to <a href="https://twitter.com/presstube?ref_src=twsrc%5Etfw">@presstube</a> for the video tutorials👇🤖<br> <br>1/ Set up a <a href="https://twitter.com/tezos?ref_src=twsrc%5Etfw">@tezos</a> wallet with <a href="https://twitter.com/TempleWallet?ref_src=twsrc%5Etfw">@TempleWallet</a> and apply for some tez w/ <a href="https://twitter.com/tezosnftfaucet?ref_src=twsrc%5Etfw">@tezosnftfaucet</a> <a href="https://t.co/64zGXQCTEQ">pic.twitter.com/64zGXQCTEQ</a></p>&mdash; verticalcryptoart (@verticalcrypto) <a href="https://twitter.com/verticalcrypto/status/1374349022245359627?ref_src=twsrc%5Etfw">March 23, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <h2><a name='Secondary'>The Secondary Market</a></h2>
 <p>On the topic of royalties, you can now not only collect, but also re-sell previously acquired OBJKTs in your collection! This feature was rolled out quietly throughout the month an had some issues at first. The UI worked in such a manner that if someone were to offer up an NFT for sale that they've collected, while the original creator still had remaining editions of said NFT up for sale, they would essentially supersede the original creator with their offer, since the 'click to collect' button would have to be shared. This was problematic, because if someone were to re-sell 1 edition of an NFT for 200tez, whereas the original creator still had dozens of the same NFT up for sale at a much lower price, these would then essentially be blocked until someone bought the NFT offered for 200tez.</p>
