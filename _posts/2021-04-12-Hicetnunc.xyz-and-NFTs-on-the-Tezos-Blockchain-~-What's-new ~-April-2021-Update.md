@@ -67,7 +67,8 @@ On the weekend of the 24th of March, in celebration of 10k minted NFTs on hicetn
 
 <h2><a name='Copyminters'>Copyminters and Hoarders</a></h2>
 A problem that arose with the OBJKT4OBJKT event was that some individuals would collect multiples of certain free OBJKTs, while not being illegal, it is clearly a dick move. Clearly the main purpose is the later resale of the claimed NFTs. 
-https://twitter.com/djangobits/status/1376278372712595464
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Just realized that one of the guys shamelessly snatching dozens of copies of the free <a href="https://twitter.com/hashtag/OBJKT4OBJKT?src=hash&amp;ref_src=twsrc%5Etfw">#OBJKT4OBJKT</a> pieces was @sirboomcat aka tz1MHVtpYFsW7VDH1rhbhK3Krad14n6Ww8RD.<br><br>The hint is his own NFT, <a href="https://t.co/pZCSOvGdPg">https://t.co/pZCSOvGdPg</a>, which he minted for this reply here: <a href="https://t.co/UQOmiyxl5o">https://t.co/UQOmiyxl5o</a><br><br>1/2 <a href="https://t.co/DsEBrBLSA2">pic.twitter.com/DsEBrBLSA2</a></p>&mdash; Django BRRRRiꜩ 🌮 (@djangobits) <a href="https://twitter.com/djangobits/status/1376278372712595464?ref_src=twsrc%5Etfw">March 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Copyminting is another huge issue, where someone mints an NFT/piece/artwork that is not originally theirs. Some solutions to this problem are being discussed <a href='https://github.com/hicetnunc2000/hicetnunc/issues/433'>here</a>.
 
