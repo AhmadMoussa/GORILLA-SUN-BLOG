@@ -18,7 +18,7 @@ This will be a loaded article, so hold on to your NFTs as we dive into all the r
 6. <a href='#Copyminters'>Copyminters and Hoarders</a>
 7. <a href='#Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a>
 8. <a href='#Tezos'>Tezos to the moon</a>
-9. <a href='Presstube'>How to price things adequately and the Presstube Method</a>
+9. <a href='Presstube'>Pricing your NFTs adequately and the Presstube Method</a>
 10. <a href='#Livestream'>Weekly Livestreams</a>
 11. Tezos Developer portal
 12. Companion sites and art reviews ~ 
@@ -60,15 +60,8 @@ Additionally, setting the royalties on your mints is now back. Royalties in this
 <h2><a name='OBJKT4OBJKT'>OBJKT4OBJKT</a></h2>
 <p>On the weekend of the 24th of March, in celebration of 10k minted NFTs on hicetnunc, we've seen an event started by Twitter duo @ameliemaiaa and @tataismo1 that go under the handle @DiverseNftArt, that encouraged users to share NFTs for free, such that users on hicetnunc could build up their collections without a cost. Even though the event is officially over, searching the hashtag #OBJKT4OBJKT on Twitter, you'll probably still be able to find some free NFT goodies. It is also very likely that this event will make a return in the future.</p>
 
-<div class="row">
-  <div class="col-1 col-12-small">
-  </div>
-  <div class="col-10 col-12-small">                   
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">To celebrate 10k <a href="https://twitter.com/hashtag/OBJKT?src=hash&amp;ref_src=twsrc%5Etfw">#OBJKT</a> mints, <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> and <a href="https://twitter.com/DiverseNftArt?ref_src=twsrc%5Etfw">@DiverseNftArt</a> are promoting a weekend of fun and celebration for all artists and collectors!<br> <a href="https://twitter.com/hashtag/cleanNFT?src=hash&amp;ref_src=twsrc%5Etfw">#cleanNFT</a> <a href="https://twitter.com/hashtag/OBJKT4OBJKT?src=hash&amp;ref_src=twsrc%5Etfw">#OBJKT4OBJKT</a> <a href="https://twitter.com/hashtag/NFTCollector?src=hash&amp;ref_src=twsrc%5Etfw">#NFTCollector</a> <a href="https://twitter.com/hashtag/NFTArt?src=hash&amp;ref_src=twsrc%5Etfw">#NFTArt</a> <a href="https://twitter.com/hashtag/NFTArtists?src=hash&amp;ref_src=twsrc%5Etfw">#NFTArtists</a> <a href="https://twitter.com/hashtag/cryptoart?src=hash&amp;ref_src=twsrc%5Etfw">#cryptoart</a> <a href="https://twitter.com/hashtag/lgbtqia?src=hash&amp;ref_src=twsrc%5Etfw">#lgbtqia</a> <a href="https://twitter.com/hashtag/bipoc?src=hash&amp;ref_src=twsrc%5Etfw">#bipoc</a> <a href="https://twitter.com/hashtag/diverse?src=hash&amp;ref_src=twsrc%5Etfw">#diverse</a> <a href="https://twitter.com/hashtag/artists?src=hash&amp;ref_src=twsrc%5Etfw">#artists</a> <a href="https://twitter.com/hashtag/WomenInTech?src=hash&amp;ref_src=twsrc%5Etfw">#WomenInTech</a> <a href="https://twitter.com/hashtag/Tezos?src=hash&amp;ref_src=twsrc%5Etfw">#Tezos</a> <a href="https://twitter.com/hashtag/XTZ?src=hash&amp;ref_src=twsrc%5Etfw">#XTZ</a> <a href="https://t.co/1iBeju6Ltw">pic.twitter.com/1iBeju6Ltw</a></p>&mdash; Diverse NFT Artists 🦄 (@DiverseNftArt) <a href="https://twitter.com/DiverseNftArt/status/1374751025219899393?ref_src=twsrc%5Etfw">March 24, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-    <div class="col-1 col-12-small">
-    </div>
-</div>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">To celebrate 10k <a href="https://twitter.com/hashtag/OBJKT?src=hash&amp;ref_src=twsrc%5Etfw">#OBJKT</a> mints, <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> and <a href="https://twitter.com/DiverseNftArt?ref_src=twsrc%5Etfw">@DiverseNftArt</a> are promoting a weekend of fun and celebration for all artists and collectors!<br> <a href="https://twitter.com/hashtag/cleanNFT?src=hash&amp;ref_src=twsrc%5Etfw">#cleanNFT</a> <a href="https://twitter.com/hashtag/OBJKT4OBJKT?src=hash&amp;ref_src=twsrc%5Etfw">#OBJKT4OBJKT</a> <a href="https://twitter.com/hashtag/NFTCollector?src=hash&amp;ref_src=twsrc%5Etfw">#NFTCollector</a> <a href="https://twitter.com/hashtag/NFTArt?src=hash&amp;ref_src=twsrc%5Etfw">#NFTArt</a> <a href="https://twitter.com/hashtag/NFTArtists?src=hash&amp;ref_src=twsrc%5Etfw">#NFTArtists</a> <a href="https://twitter.com/hashtag/cryptoart?src=hash&amp;ref_src=twsrc%5Etfw">#cryptoart</a> <a href="https://twitter.com/hashtag/lgbtqia?src=hash&amp;ref_src=twsrc%5Etfw">#lgbtqia</a> <a href="https://twitter.com/hashtag/bipoc?src=hash&amp;ref_src=twsrc%5Etfw">#bipoc</a> <a href="https://twitter.com/hashtag/diverse?src=hash&amp;ref_src=twsrc%5Etfw">#diverse</a> <a href="https://twitter.com/hashtag/artists?src=hash&amp;ref_src=twsrc%5Etfw">#artists</a> <a href="https://twitter.com/hashtag/WomenInTech?src=hash&amp;ref_src=twsrc%5Etfw">#WomenInTech</a> <a href="https://twitter.com/hashtag/Tezos?src=hash&amp;ref_src=twsrc%5Etfw">#Tezos</a> <a href="https://twitter.com/hashtag/XTZ?src=hash&amp;ref_src=twsrc%5Etfw">#XTZ</a> <a href="https://t.co/1iBeju6Ltw">pic.twitter.com/1iBeju6Ltw</a></p>&mdash; Diverse NFT Artists 🦄 (@DiverseNftArt) <a href="https://twitter.com/DiverseNftArt/status/1374751025219899393?ref_src=twsrc%5Etfw">March 24, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p></p>
 
 <h2><a name='Copyminters'>Copyminters and Hoarders</a></h2>
 <p>A problem that arose with the OBJKT4OBJKT event was that some individuals would collect multiples of certain free OBJKTs, while not being illegal, it is clearly a dick move. Clearly the main purpose is the later resale of the claimed NFTs.</p>
@@ -104,6 +97,15 @@ Additionally, setting the royalties on your mints is now back. Royalties in this
 
 <h2><a name='Presstube'>The 'Presstube' method</a></h2>
 The 'Presstube' method is essentially a specific way of pricing NFTs on hicetnunc, which rewards the early birds that swoop in and cop the first couple of editions of a freshly minted NFT. When you mint an NFT on hicetnunc, it appears in the store, however it is not immediately up for sale.
+
+<div class="row">
+  <div class="col-6 col-12-small">
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I didn’t coin it so it’s marginally embarrassing every time I see it called that 😝 but...<br><br>The practice of pricing editions so that they begin accessible (even sometimes free) and then the price steps up as editions sell<br><br>Jury’s still out on whether it’s a good idea though! Ymmv</p>&mdash; James Paterson (@presstube) <a href="https://twitter.com/presstube/status/1378701285101305863?ref_src=twsrc%5Etfw">April 4, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+  <div class="col-6 col-12-small">  
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">3/ Swap an NFT on <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> <a href="https://t.co/rcparEboUf">pic.twitter.com/rcparEboUf</a></p>&mdash; verticalcryptoart (@verticalcrypto) <a href="https://twitter.com/verticalcrypto/status/1374349243192860672?ref_src=twsrc%5Etfw">March 23, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+   </div>
+<div>
 
 <h2><a href='Livestream'>Weekly Livestreams</a></h2>
 1. https://twitter.com/verticalcrypto
