@@ -46,8 +46,6 @@ Since it's launch, hicetnunc's UI has undergone a number of changes and revision
 <p></p>
 <p>Alternatively you can read up on it in my tutorial <a href='https://gorillasun.de/blog/Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz'>here</a></p>
 
-<p>Another change that I noticed just now, is that it now neatly arranges your creations</p>
-
 <h2><a name='Secondary'>The Secondary Market</a></h2>
 <p>You can now not only collect, but also re-sell previously acquired OBJKTs in your collection! This feature was rolled out quietly throughout the month an had some issues at first. The UI worked in such a manner that if someone were to offer up an NFT for sale that they've collected, while the original creator still had remaining editions of said NFT up for sale, they would essentially supersede the original creator with their offer, since the 'click to collect' button would have to be shared. This was problematic, because if someone were to re-sell 1 edition of an NFT for 100tez, when the original creator still had dozens of the same NFT up for sale at a much lower price, these would then essentially be blocked until someone bought the NFT offered for 100tez.</p>
 
