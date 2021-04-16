@@ -149,9 +149,12 @@ It's still not very clear to creators how to number editions and price their NFT
 
 <h3>NFT/Art Reviews</h3>
 <p>Articles that showcase artworks on hicetnunc</p>
+<p>
 1. Poptwig: https://medium.com/poptwig
 2. Artnome: https://www.artnome.com/news/2021/3/21/hic-et-nunc-revives-the-true-spirit-of-web-art-through-nfts
 3. VerticalCrypto: https://twitter.com/verticalcrypto/status/1382730395930755076
+
+</p>
 
 <p>Shoot me a message for additions to these lists, I know I missed a lot!</p>
 
