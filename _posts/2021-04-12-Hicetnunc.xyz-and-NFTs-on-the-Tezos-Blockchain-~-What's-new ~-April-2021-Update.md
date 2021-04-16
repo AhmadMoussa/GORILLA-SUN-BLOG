@@ -144,20 +144,17 @@ There also have been regular livestreams and 'campfire chats' between involved m
 1. Tile Grid of OBJKTs based on visual similarity: https://here-or-there.glitch.me/
 2. Live Feed of transactions on hicetnunc: https://objkts.xyz/
 3. Tag Discovery Tool: https://projects.stroep.nl/hicetnunc/#discover
-4. 
 
 <h3>NFT/Art Reviews</h3>
 <p>Articles that showcase artworks on hicetnunc</p>
-1. Poptwig https://medium.com/poptwig
-2. 
+1. Poptwig: https://medium.com/poptwig
+2. Artnome: https://www.artnome.com/news/2021/3/21/hic-et-nunc-revives-the-true-spirit-of-web-art-through-nfts
+3. VerticalCrypto: https://twitter.com/verticalcrypto/status/1382730395930755076
 
-
+<p>Shoot me a message for additions to these lists, I know I missed a lot!</p>
 
 <h2><a href='Other'>Other Interesting Articles, Resources and Stuff(s)</a></h2>
-1. https://www.plummerfernandez.com/works/not-another-jpeg/
-2. https://www.salon.com/2021/04/08/why-would-anyone-buy-crypto-art--let-alone-spend-millions-on-whats-essentially-a-link-to-a-jpeg_partner/
-3. Hosting your own IPFS node https://twitter.com/antic/status/1374417104489697283
-
-
-<h2>Adding your info to tezos blockchain</h2>
-https://twitter.com/quasimondo/status/1375788135171428356
+1. How to host your own IPFS node: https://twitter.com/antic/status/1374417104489697283
+2. Add your personal info to your hicetnunc profile: https://twitter.com/quasimondo/status/1375788135171428356
+3. https://www.plummerfernandez.com/works/not-another-jpeg/
+4. https://www.salon.com/2021/04/08/why-would-anyone-buy-crypto-art--let-alone-spend-millions-on-whats-essentially-a-link-to-a-jpeg_partner/
