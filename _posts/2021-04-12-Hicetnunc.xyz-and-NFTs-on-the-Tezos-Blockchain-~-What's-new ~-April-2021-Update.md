@@ -18,7 +18,7 @@ This will be a loaded article, so hold on to your NFTs as we dive into all the r
 6. <a href='#HDAO'>The hDAO feed</a>
 7. <a href='#Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a>
 8. <a href='#Tezos'>Tezos to the moon</a>
-9. <a href='Presstube'>Pricing your NFTs adequately and the Presstube Method</a>
+9. <a href='#Presstube'>Pricing your NFTs adequately and the Presstube Method</a>
 10. <a href='#Livestream'>Weekly Livestreams</a>
 11. <a href='#Companion'>List of Companion sites and NFT reviews</a>
 12. <a href='#Other'>Other interesting Articles, Resources and Stuff(s)</a>
