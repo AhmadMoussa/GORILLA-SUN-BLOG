@@ -13,9 +13,9 @@ This will be a loaded article, so hold on to your NFTs as we dive into all the r
 1. <a href='#UI'>UI/UX Changes</a>
 2. <a href='#Secondary'>The Secondary Market Launches</a>
 3. <a href='#Templates'>HTML/SVG/P5JS/and other upload Templates</a>
-4. <a href='#hDAO'>The hDAO feed</a>
-5. <a href='#OBJKT4OBJKT'>OBJKT4OBJKT Event</a>
-6. <a href='#Copyminters'>Copyminters and Hoarders</a>
+4. <a href='#OBJKT4OBJKT'>OBJKT4OBJKT Event</a>
+5. <a href='#Copyminters'>Copyminters and Hoarders</a>
+6. <a href='#hDAO'>The hDAO feed</a>
 7. <a href='#Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a>
 8. <a href='#Tezos'>Tezos to the moon</a>
 9. <a href='Presstube'>Pricing your NFTs adequately and the Presstube Method</a>
