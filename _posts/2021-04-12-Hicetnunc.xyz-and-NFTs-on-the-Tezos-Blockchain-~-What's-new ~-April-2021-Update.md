@@ -161,3 +161,5 @@ I'm not certain how many people are aware of the hDAO as of now, or if they're a
 <li><a href='https://www.plummerfernandez.com/works/not-another-jpeg/'>Not another jpeg</a></li>
 <li><a href='https://www.salon.com/2021/04/08/why-would-anyone-buy-crypto-art--let-alone-spend-millions-on-whats-essentially-a-link-to-a-jpeg_partner/'>Why would anyone buy crypto art let alone spend millions on what's essentially a link to a jpeg</a></li>
 </ul>
+
+<p>If you've reached this far, thanks for reading! Leave a comment if there's any typos or if I missed anything!</p>
