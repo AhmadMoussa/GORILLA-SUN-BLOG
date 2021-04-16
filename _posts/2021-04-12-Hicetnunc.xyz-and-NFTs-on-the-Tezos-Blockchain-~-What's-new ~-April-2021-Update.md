@@ -102,6 +102,8 @@ This is why I believe that we have to address this problem at the root - which i
 
 I'm not certain how many people are aware of the hDAO as of now, or if they're actually using it to search for potential purchases. This also brings up the issue of creators upvoting their own creations with their hDAO tokens, esentially boosting and skewing the rankings in their favor (if/when the hDAO feed becomes a more integral part of hicetnunc).
 
+<blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">So what exactly are hDAO tokens on hicetnunc? What can I do with them (other than upvoting NFTs) and why do get some whenever I make a transaction on the website? Explain like I&#39;m 5 <a href="https://twitter.com/hashtag/Tezos?src=hash&amp;ref_src=twsrc%5Etfw">#Tezos</a> <a href="https://twitter.com/search?q=%24XTZ&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$XTZ</a> <a href="https://twitter.com/hashtag/hicetnunc?src=hash&amp;ref_src=twsrc%5Etfw">#hicetnunc</a> <a href="https://twitter.com/hashtag/CleanNFT?src=hash&amp;ref_src=twsrc%5Etfw">#CleanNFT</a></p>&mdash; Gorilla.sun (@gorillasu) <a href="https://twitter.com/gorillasu/status/1382764104721440771?ref_src=twsrc%5Etfw">April 15, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <h2><a name='Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a></h2>
 <p>Kalamint was officially announced on the 19th of December as the 'first NFT marketplace on Tezos', and was scheduled for a release in January 2021. This release was then delayed to the 18th of February, which was delayed again due to some UI problems and Kalamint didn't launch until the 23rd of March. At this point it might be a little bit silly to still call it the 'first NFT platform for Tezos', when hicetnunc had already been up and running for more than a month. Not complaining though, the more the merrier, and maybe this competition will drive both platforms to keep improving.<p>
 
@@ -137,10 +139,18 @@ There also have been regular livestreams and 'campfire chats' between involved m
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Decided to frame and mint part of <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> history: the first Hicetnunc &amp; friends livestream 🤍<br><br>featuring: <a href="https://twitter.com/crzypatchwork?ref_src=twsrc%5Etfw">@crzypatchwork</a> , <a href="https://twitter.com/quasimondo?ref_src=twsrc%5Etfw">@quasimondo</a> , <a href="https://twitter.com/presstube?ref_src=twsrc%5Etfw">@presstube</a> <a href="https://twitter.com/theAngieTaylor?ref_src=twsrc%5Etfw">@theAngieTaylor</a> , <a href="https://twitter.com/NeuralBricolage?ref_src=twsrc%5Etfw">@NeuralBricolage</a> , <a href="https://twitter.com/JoanieLemercier?ref_src=twsrc%5Etfw">@JoanieLemercier</a> <br><br>20 editions here:<a href="https://t.co/mmm5yUSH62">https://t.co/mmm5yUSH62</a><a href="https://twitter.com/hashtag/NFT?src=hash&amp;ref_src=twsrc%5Etfw">#NFT</a> <a href="https://twitter.com/hashtag/hicetnunc?src=hash&amp;ref_src=twsrc%5Etfw">#hicetnunc</a> <a href="https://twitter.com/hashtag/Tezos?src=hash&amp;ref_src=twsrc%5Etfw">#Tezos</a> <a href="https://t.co/DMM8tiMWI9">pic.twitter.com/DMM8tiMWI9</a></p>&mdash; verticalcryptoart (@verticalcrypto) <a href="https://twitter.com/verticalcrypto/status/1381735667282104326?ref_src=twsrc%5Etfw">April 12, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <h2><a href='Companion'>Companion sites and art reviews</a></h2>
-1. Poptwig https://medium.com/poptwig
-2. Discovery Tool https://projects.stroep.nl/hicetnunc/#discover
-3. https://here-or-there.glitch.me/
+<h3>Companion Sites</h3>
+<p>Companion sites are a number of websites that allow you to explore NFTs on hicetnunc in a different manner:</p>
+1. Tile Grid of OBJKTs based on visual similarity: https://here-or-there.glitch.me/
+2. Live Feed of transactions on hicetnunc: https://objkts.xyz/
+3. Tag Discovery Tool: https://projects.stroep.nl/hicetnunc/#discover
 4. 
+
+<h3>NFT/Art Reviews</h3>
+<p>Articles that showcase artworks on hicetnunc</p>
+1. Poptwig https://medium.com/poptwig
+2. 
+
 
 
 <h2><a href='Other'>Other Interesting Articles, Resources and Stuff(s)</a></h2>
