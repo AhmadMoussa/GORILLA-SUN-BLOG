@@ -53,11 +53,11 @@ Since it's launch, hicetnunc's UI has undergone a number of changes and revision
 <p>You can now not only collect, but also re-sell previously acquired OBJKTs in your collection! This feature was rolled out quietly throughout the month an had some issues at first. The UI worked in such a manner that if someone were to offer up an NFT for sale that they've collected, while the original creator still had remaining editions of said NFT up for sale, they would essentially supersede the original creator with their offer, since the 'click to collect' button would have to be shared. This was problematic, because if someone were to re-sell 1 edition of an NFT for 100tez, when the original creator still had dozens of the same NFT up for sale at a much lower price, these would then essentially be blocked until someone bought the NFT offered for 100tez.</p>
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Some people might not have realized it yet: the secondary market on <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> is open now.<br><br>Yes, you can sell any NFT you collected. The only problem is that the UI has not noticed that yet.<br><br>So if the first number before the &quot;/&quot; is &gt; 0, try clicking &quot;not for sale&quot;. <a href="https://t.co/lY9pr6UsvU">pic.twitter.com/lY9pr6UsvU</a></p>&mdash; Mario Klingemann (@quasimondo) <a href="https://twitter.com/quasimondo/status/1376098068425289730?ref_src=twsrc%5Etfw">March 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<p></p>
 <p>This button introduced another problem, that caused a number of users quite the frustration. If an NFT were to sell all of it's remaining editions, the button would show 'not for sale'. This, however, didn't mean that the button was not able to be clicked. </p>
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Yes, i&#39;ll wait a bit before swapping, I just gave 20tez to someone who took 31 of my early freebies</p>&mdash; Patrick Tresset etc. (@patricktresset) <a href="https://twitter.com/patricktresset/status/1376163365312200706?ref_src=twsrc%5Etfw">March 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  
+</p>
 <p>This has now been fixed by showing all open offers for an NFT in it's collectors tab, with the respective price and the wallet address of the seller.  </p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/secondary_market.png" alt="" /></span>
 
@@ -68,7 +68,7 @@ Since it's launch, hicetnunc's UI has undergone a number of changes and revision
 
 <p>And here's an example of what a minted interactive p5js sketch looks like. Go ahead and hover over the NFT:</p>
 <iframe src="https://www.hicetnunc.xyz/objkt/27560" width="100%" height="1000"></iframe>
-
+<p></p>
 <p>Maybe the next cool thing could be a convenient and customizable iframe embed code? That could allow creators to display and sell their creations easily from their own website.</p>
 
 <h2><a name='OBJKT4OBJKT'>OBJKT4OBJKT</a></h2>
@@ -81,7 +81,7 @@ Since it's launch, hicetnunc's UI has undergone a number of changes and revision
 <p>A problem that arose with the OBJKT4OBJKT event was that some individuals would collect multiples of certain free OBJKTs, while not being illegal, it is clearly a dick move. Clearly the main purpose is the later resale of the claimed NFTs.</p>
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Just realized that one of the guys shamelessly snatching dozens of copies of the free <a href="https://twitter.com/hashtag/OBJKT4OBJKT?src=hash&amp;ref_src=twsrc%5Etfw">#OBJKT4OBJKT</a> pieces was @sirboomcat aka tz1MHVtpYFsW7VDH1rhbhK3Krad14n6Ww8RD.<br><br>The hint is his own NFT, <a href="https://t.co/pZCSOvGdPg">https://t.co/pZCSOvGdPg</a>, which he minted for this reply here: <a href="https://t.co/UQOmiyxl5o">https://t.co/UQOmiyxl5o</a><br><br>1/2 <a href="https://t.co/DsEBrBLSA2">pic.twitter.com/DsEBrBLSA2</a></p>&mdash; Django BRRRRiꜩ 🌮 (@djangobits) <a href="https://twitter.com/djangobits/status/1376278372712595464?ref_src=twsrc%5Etfw">March 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<p></p>
 <p>Copyminting is another huge issue, where someone mints an NFT/piece/artwork that is not originally theirs. Some solutions to this problem are being discussed <a href='https://github.com/hicetnunc2000/hicetnunc/issues/433'>here</a>.</p>
 
 <h2><a href='hDAO'>hDAO and the hDAO feed</a></h2>
