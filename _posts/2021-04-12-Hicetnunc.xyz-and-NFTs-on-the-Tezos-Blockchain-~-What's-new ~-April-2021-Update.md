@@ -15,7 +15,7 @@ This will be a loaded article, so hold on to your NFTs as we dive into all the r
 3. <a href='#Templates'>HTML/SVG/P5JS/and other upload Templates</a>
 4. <a href='#OBJKT4OBJKT'>OBJKT4OBJKT Event</a>
 5. <a href='#Copyminters'>Copyminters and Hoarders</a>
-6. <a href='#hDAO'>The hDAO feed</a>
+6. <a href='#HDAO'>The hDAO feed</a>
 7. <a href='#Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a>
 8. <a href='#Tezos'>Tezos to the moon</a>
 9. <a href='Presstube'>Pricing your NFTs adequately and the Presstube Method</a>
@@ -88,7 +88,7 @@ One common feature of copyminters is that they usually get caught very quickly a
 This is why I believe that we have to address this problem at the root - which is by preventing those first sales to be successful. A mechanism I have in mind for that is to use an escrow smart contract that acts a proxy for all sales by minters who have no sales history yet and who have not yet built up a network of trust.
 </blockquote>
 
-<h2><a href='hDAO'>hDAO and the hDAO feed</a></h2>
+<h2><a href='HDAO'>hDAO and the hDAO feed</a></h2>
 <p>You might've noticed already that every NFT on hicetnunc has a little circle underneath it, in the lower right corner. The same circle can be found on the NFT page itself, underneath the OBJKT number, and also in the drop down menu. This circle isn't just some aesthetical UI fluff but it can actually be clicked. Clicking it underneath an NFT will trigger your Tezos wallet, clicking it in the hamburger menu takes you to the hDAO feed.</p>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/hdao_underneath_NFT.png" alt="" /></span>
