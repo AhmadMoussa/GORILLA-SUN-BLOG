@@ -54,7 +54,7 @@ Since it's launch, hicetnunc's UI has undergone a number of changes and revision
 <p>This button introduced another problem, that caused a number of users quite the frustration. If an NFT were to sell all of it's remaining editions, the button would show 'not for sale'. This, however, didn't mean that the button was not able to be clicked. </p>
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Yes, i&#39;ll wait a bit before swapping, I just gave 20tez to someone who took 31 of my early freebies</p>&mdash; Patrick Tresset etc. (@patricktresset) <a href="https://twitter.com/patricktresset/status/1376163365312200706?ref_src=twsrc%5Etfw">March 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</p>
+<p></p>
 <p>This has now been fixed by showing all open offers for an NFT in it's collectors tab, with the respective price and the wallet address of the seller.  </p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/secondary_market.png" alt="" /></span>
 
