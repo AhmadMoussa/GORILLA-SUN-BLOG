@@ -141,14 +141,14 @@ I'm not certain how many people are aware of the hDAO as of now, or if they're a
 <h2><a href='Companion'>Companion sites and art reviews</a></h2>
 <h3>Companion Sites</h3>
 <p>Companion sites are a number of websites that allow you to explore NFTs on hicetnunc in a different manner:</p>
-<ul class="icons">
+<ul>
 <li>1. Tile Grid of OBJKTs based on visual similarity: https://here-or-there.glitch.me/ </li>
 <li>2. Live Feed of transactions on hicetnunc: https://objkts.xyz/ </li>
 <li>3. Tag Discovery Tool: https://projects.stroep.nl/hicetnunc/#discover </li>
-  </ul>
+</ul>
 <h3>NFT/Art Reviews</h3>
-<p>Articles that showcase artworks on hicetnunc</p>
-<ul class="icons">
+<p>Articles that showcase artworks on hicetnunc:</p>
+<ul>
 <li>1. Poptwig: https://medium.com/poptwig </li>
 <li>2. Artnome: https://www.artnome.com/news/2021/3/21/hic-et-nunc-revives-the-true-spirit-of-web-art-through-nfts </li>
 <li>3. VerticalCrypto: https://twitter.com/verticalcrypto/status/1382730395930755076 </li>
@@ -156,8 +156,10 @@ I'm not certain how many people are aware of the hDAO as of now, or if they're a
 <p>Shoot me a message for additions to these lists, I know I missed a lot!</p>
 
 <h2><a href='Other'>Other Interesting Articles, Resources and Stuff(s)</a></h2>
-1. How to host your own IPFS node: https://twitter.com/antic/status/1374417104489697283
-2. Add your personal info to your hicetnunc profile: https://twitter.com/quasimondo/status/1375788135171428356
-3. https://www.plummerfernandez.com/works/not-another-jpeg/
-4. https://www.salon.com/2021/04/08/why-would-anyone-buy-crypto-art--let-alone-spend-millions-on-whats-essentially-a-link-to-a-jpeg_partner/
+<ul>
+<li>How to host your own IPFS node: https://twitter.com/antic/status/1374417104489697283</li>
+<li>Add your personal info to your hicetnunc profile: https://twitter.com/quasimondo/status/1375788135171428356</li>
+<li>https://www.plummerfernandez.com/works/not-another-jpeg/</li>
+<li>https://www.salon.com/2021/04/08/why-would-anyone-buy-crypto-art--let-alone-spend-millions-on-whats-essentially-a-link-to-a-jpeg_partner/</li>
+</ul>
  
