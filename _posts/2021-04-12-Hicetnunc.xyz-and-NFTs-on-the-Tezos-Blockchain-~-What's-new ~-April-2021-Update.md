@@ -12,7 +12,7 @@ This will be a loaded article, so hold on to your NFTs as we dive into all the r
 
 1. <a href='#UI'>UI/UX Changes</a>
 2. <a href='#Secondary'>The Secondary Market Launches</a>
-3. <a href='#Templates'>HTML/P5JS/and other upload Templates</a>
+3. <a href='#Templates'>HTML/SVG/P5JS/and other upload Templates</a>
 4. <a href='#hDAO'>The hDAO feed</a>
 5. <a href='#OBJKT4OBJKT'>OBJKT4OBJKT Event</a>
 6. <a href='#Copyminters'>Copyminters and Hoarders</a>
@@ -60,8 +60,8 @@ Since it's launch, hicetnunc's UI has undergone a number of changes and revision
 
 <p>Lessons learned, always check the price befor hitting the confirm button in your wallet!</p>
 
-<h2><a href='Templates'>HTML/P5JS/and other upload Templates</a></h2>
-<p>What first started as html encapsulated in an svg file, has become another avant garde feature of hicetnunc. Data formats such as html, svg, p5js, pdf are now supported by hicetnunc and can be minted as NFTs. This was pioneered by a number of Twitter users in parallel, a super insightiful article by Twitter user @tarwin can be found <a href='https://tarwin.medium.com/hit-et-nunc-advanced-svg-nfts-a6040262f4d5'>here</a>.  You can find the respective templates for each supported format <a href='https://github.com/hicetnunc2000/hicetnunc/tree/main/templates'>here</a>. You'll have to replace certain parts of the templates with your own code, replace the default thumbnail.png / thumbnail.gif with your own and zip all files. This zip file will be what you upload at mint time. Amazing Right?</p>
+<h2><a href='Templates'>HTML/SVG/P5JS/and other upload Templates</a></h2>
+<p>What first started as html encapsulated in an svg file, has become another avant garde feature of hicetnunc. Data formats such as html, svg, p5js, pdf are now supported by hicetnunc and can be minted as NFTs. This was pioneered by a number of Twitter users in parallel, a super insightiful article by Twitter user <a href='https://twitter.com/tarwin'>@tarwin</a> can be found <a href='https://tarwin.medium.com/hit-et-nunc-advanced-svg-nfts-a6040262f4d5'>here</a>.  You can find the respective templates for each supported format <a href='https://github.com/hicetnunc2000/hicetnunc/tree/main/templates'>here</a>. You'll have to replace certain parts of the templates with your own code, replace the default thumbnail.png / thumbnail.gif with your own and zip all files. This zip file will be what you upload at mint time. Amazing Right?</p>
 
 <p>And here's an example of what a minted interactive p5js sketch looks like. Go ahead and hover over the NFT:</p>
 <iframe src="https://www.hicetnunc.xyz/objkt/27560" width="100%" height="1000"></iframe>
