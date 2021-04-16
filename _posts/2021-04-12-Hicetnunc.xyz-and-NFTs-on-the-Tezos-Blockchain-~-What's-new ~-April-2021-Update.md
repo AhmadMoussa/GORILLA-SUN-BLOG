@@ -140,26 +140,24 @@ I'm not certain how many people are aware of the hDAO as of now, or if they're a
 <p></p>
 <h2><a href='Companion'>Companion sites and art reviews</a></h2>
 <h3>Companion Sites</h3>
-<p>Companion sites are a number of websites that allow you to explore NFTs on hicetnunc in a different manner:</p>
 <ul>
-<li>Tile Grid of OBJKTs based on visual similarity: https://here-or-there.glitch.me/ </li>
-<li>Live Feed of transactions on hicetnunc: https://objkts.xyz/ </li>
-<li>Tag Discovery Tool: https://projects.stroep.nl/hicetnunc/#discover </li>
+<li>Tile Grid of OBJKTs based on visual similarity: <a href='https://here-or-there.glitch.me/'> https://here-or-there.glitch.me/ </a></li>
+<li>Live Feed of transactions on hicetnunc: <a href='https://objkts.xyz/ '> https://objkts.xyz/ </a> </li>
+<li>Tag Discovery Tool: <a href='https://projects.stroep.nl/hicetnunc/#discover'> https://projects.stroep.nl/hicetnunc/#discover </a> </li>
 </ul>
-<h3>NFT/Art Reviews</h3>
-<p>Articles that showcase artworks on hicetnunc:</p>
+<h3>NFT Art Reviews</h3>
 <ul>
-<li>Poptwig: https://medium.com/poptwig </li>
-<li>Artnome: https://www.artnome.com/news/2021/3/21/hic-et-nunc-revives-the-true-spirit-of-web-art-through-nfts </li>
-<li>VerticalCrypto: https://twitter.com/verticalcrypto/status/1382730395930755076 </li>
+<li>Poptwig: <a href='https://medium.com/poptwig'> https://medium.com/poptwig </a></li>
+<li>Artnome: <a href='https://www.artnome.com/news/2021/3/21/hic-et-nunc-revives-the-true-spirit-of-web-art-through-nfts'> https://www.artnome.com/news/2021/3/21/hic-et-nunc-revives-the-true-spirit-of-web-art-through-nfts </a></li>
+<li>VerticalCrypto:  <a href='https://twitter.com/verticalcrypto/status/1382730395930755076'> https://twitter.com/verticalcrypto/status/1382730395930755076 </a></li>
 </ul>
 
 <p>Shoot me a message for additions to these lists, I know I missed a lot!</p>
 
 <h2><a href='Other'>Other Interesting Articles, Resources and Stuff(s)</a></h2>
 <ul>
-<li>How to host your own IPFS node: https://twitter.com/antic/status/1374417104489697283</li>
-<li>Add your personal info to your hicetnunc profile: https://twitter.com/quasimondo/status/1375788135171428356</li>
-<li>https://www.plummerfernandez.com/works/not-another-jpeg/</li>
-<li>https://www.salon.com/2021/04/08/why-would-anyone-buy-crypto-art--let-alone-spend-millions-on-whats-essentially-a-link-to-a-jpeg_partner/</li>
+<li>How to host your own IPFS node: <a href='https://twitter.com/antic/status/1374417104489697283'> https://twitter.com/antic/status/1374417104489697283 </a></li>
+<li>Add your personal info to your hicetnunc profile: <a href='https://twitter.com/quasimondo/status/1375788135171428356'>https://twitter.com/quasimondo/status/1375788135171428356 </a></li>
+<li><a href='https://www.plummerfernandez.com/works/not-another-jpeg/'>https://www.plummerfernandez.com/works/not-another-jpeg/</a></li>
+<li><a href='https://www.salon.com/2021/04/08/why-would-anyone-buy-crypto-art--let-alone-spend-millions-on-whats-essentially-a-link-to-a-jpeg_partner/'>https://www.salon.com/2021/04/08/why-would-anyone-buy-crypto-art--let-alone-spend-millions-on-whats-essentially-a-link-to-a-jpeg_partner/</a></li>
 </ul>
