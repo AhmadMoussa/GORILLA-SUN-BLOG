@@ -158,3 +158,4 @@ There also have been regular livestreams and 'campfire chats' between involved m
 2. Add your personal info to your hicetnunc profile: https://twitter.com/quasimondo/status/1375788135171428356
 3. https://www.plummerfernandez.com/works/not-another-jpeg/
 4. https://www.salon.com/2021/04/08/why-would-anyone-buy-crypto-art--let-alone-spend-millions-on-whats-essentially-a-link-to-a-jpeg_partner/
+ 
