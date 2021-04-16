@@ -123,12 +123,10 @@ I'm not certain how many people are aware of the hDAO as of now, or if they're a
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Largest spike in new users on <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> since I started collecting some data about the smart contract usage two days ago <a href="https://t.co/jQVBEmqh8h">pic.twitter.com/jQVBEmqh8h</a></p>&mdash; Ricky Esclapon (@Esclaponr) <a href="https://twitter.com/Esclaponr/status/1374910647956344834?ref_src=twsrc%5Etfw">March 25, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p></p>
 
-<p>Up to date graphs can be found in this repo <a href='https://github.com/ries9112/NFTs-hicetnunc'>here</a>. Alternatively you can also purchase these live updating graphs as NFTs <a href='https://www.hicetnunc.xyz/tz/tz1c2iwyckUCcicx2qxqtwLEartYFEHg1pvB'>here</a> if you'd like to support @Esclaponr.</p> 
-
-<p>It's safe to say that the Tezos ecosystem is brimming with life more than it ever has before.</p>
+<p>Up to date graphs can be found in this repo <a href='https://github.com/ries9112/NFTs-hicetnunc'>here</a>. Alternatively you can also purchase these live updating graphs as NFTs <a href='https://www.hicetnunc.xyz/tz/tz1c2iwyckUCcicx2qxqtwLEartYFEHg1pvB'>here</a> if you'd like to support @Esclaponr. It's safe to say that the Tezos ecosystem is brimming with life more than it ever has before.</p>
 
 <h2><a name='Presstube'>Pricing things adequately and the 'Presstube' method</a></h2>
-It's still not very clear to creators how to number editions and price their NFTs adequately, and what combinations thereof will help them maximising sales. After experimenting, some hicetnunc users have come up with creative strategies for selling their NFTs, one of them being the 'Presstube' method.
+<p>It's still not very clear to creators how to number editions and price their NFTs adequately, and what combinations thereof will help them maximising sales. After experimenting, some hicetnunc users have come up with creative strategies for selling their NFTs, one of them being the 'Presstube' method.</p>
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">I didn’t coin it so it’s marginally embarrassing every time I see it called that 😝 but...<br><br>The practice of pricing editions so that they begin accessible (even sometimes free) and then the price steps up as editions sell<br><br>Jury’s still out on whether it’s a good idea though! Ymmv</p>&mdash; James Paterson (@presstube) <a href="https://twitter.com/presstube/status/1378701285101305863?ref_src=twsrc%5Etfw">April 4, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p></p>
@@ -143,18 +141,17 @@ It's still not very clear to creators how to number editions and price their NFT
 <h2><a href='Companion'>Companion sites and art reviews</a></h2>
 <h3>Companion Sites</h3>
 <p>Companion sites are a number of websites that allow you to explore NFTs on hicetnunc in a different manner:</p>
-1. Tile Grid of OBJKTs based on visual similarity: https://here-or-there.glitch.me/
-2. Live Feed of transactions on hicetnunc: https://objkts.xyz/
-3. Tag Discovery Tool: https://projects.stroep.nl/hicetnunc/#discover
-
+<ul class="icons">
+<li>1. Tile Grid of OBJKTs based on visual similarity: https://here-or-there.glitch.me/ </li>
+<li>2. Live Feed of transactions on hicetnunc: https://objkts.xyz/ </li>
+<li>3. Tag Discovery Tool: https://projects.stroep.nl/hicetnunc/#discover </li>
+  </ul>
 <h3>NFT/Art Reviews</h3>
 <p>Articles that showcase artworks on hicetnunc</p>
-<p>
-1. Poptwig: https://medium.com/poptwig
-2. Artnome: https://www.artnome.com/news/2021/3/21/hic-et-nunc-revives-the-true-spirit-of-web-art-through-nfts
-3. VerticalCrypto: https://twitter.com/verticalcrypto/status/1382730395930755076
-
-</p>
+<ul class="icons">
+<li>1. Poptwig: https://medium.com/poptwig </li>
+<li>2. Artnome: https://www.artnome.com/news/2021/3/21/hic-et-nunc-revives-the-true-spirit-of-web-art-through-nfts </li>
+<li>3. VerticalCrypto: https://twitter.com/verticalcrypto/status/1382730395930755076 </li>
 
 <p>Shoot me a message for additions to these lists, I know I missed a lot!</p>
 
