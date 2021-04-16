@@ -88,7 +88,7 @@ One common feature of copyminters is that they usually get caught very quickly a
 This is why I believe that we have to address this problem at the root - which is by preventing those first sales to be successful. A mechanism I have in mind for that is to use an escrow smart contract that acts a proxy for all sales by minters who have no sales history yet and who have not yet built up a network of trust.
 </blockquote>
 
-<h2><a href='HDAO'>hDAO and the hDAO feed</a></h2>
+<h2><a name='HDAO'>hDAO and the hDAO feed</a></h2>
 <p>You might've noticed already that every NFT on hicetnunc has a little circle underneath it, in the lower right corner. The same circle can be found on the NFT page itself, underneath the OBJKT number, and also in the drop down menu. This circle isn't just some aesthetical UI fluff but it can actually be clicked. Clicking it underneath an NFT will trigger your Tezos wallet, clicking it in the hamburger menu takes you to the hDAO feed.</p>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/hdao_underneath_NFT.png" alt="" /></span>
