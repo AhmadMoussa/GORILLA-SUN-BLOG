@@ -5,7 +5,7 @@ categories:
   - p5js
 description: Only a month has passed, however a lot has changed in the Tezos NFT world. Hicetnunc.xyz has become a lot slicker since it's launch roughly 2 months ago.
 thumbnail_path: 2021-04-12-hicetnunc.png
-published: false
+published: true
 ---
 
 This will be a loaded article, so hold on to your NFTs as we dive into all the recent developments of the past month! Here's a quick overview, if you're interested in reading up on something in particular:
@@ -26,8 +26,7 @@ This will be a loaded article, so hold on to your NFTs as we dive into all the r
 
 
 <h2><a name='UI'>UI/UX Changes</a></h2>
-Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. The minting procedure is still pretty much the same as described in my tutorial <a href='https://gorillasun.de/blog/Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz'>here</a>, however there is no need to sync before every action you do on the website. Once you connect your wallet and grant permission it'll stay synced with your wallet address, and it'll show it to in the top right corner next to the drop down 'hamburger' menu. The sync button still exists however, you simply click the drop down  menu in the top right corner, and where it previously showed your wallet address it'll show an 'unsync' button. Click it and it'll disconnect your current wallet address. 'unsync' becomes 'sync' and clicking the latter will ask you again to grant permission, now you can choose a different wallet address.
-
+Since it's launch, hicetnunc's UI has undergone a number of changes and revisions. The overall minting procedure is still pretty much the same as it was before, the biggest change being that there is no need to explicitely 'sync' before every action you do on the website. Once you connect your wallet and grant permission it'll stay synced with your wallet address, and it'll show it to in the top right corner next to the drop down 'hamburger' menu. The sync button still exists however, you simply click the drop down  menu in the top right corner, and where it previously showed your wallet address it'll show an 'unsync' button. Click it and it'll disconnect your current wallet address. 'unsync' becomes 'sync' and clicking the latter will ask you again to grant permission, now you can choose a different wallet address.
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/sync.png" alt="" /></span>
 
@@ -46,16 +45,15 @@ Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. The
 <p>If you're still confused about how to mint NFTs on hicetnunc.xyz then this Video series should clear up all remaining uncertainties:</p>
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Celebrating more than 10K minted objects on <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> with three video tutorials on how to get started creating <a href="https://twitter.com/hashtag/NFTs?src=hash&amp;ref_src=twsrc%5Etfw">#NFTs</a> on the platform🤍<br>Thanks to <a href="https://twitter.com/presstube?ref_src=twsrc%5Etfw">@presstube</a> for the video tutorials👇🤖<br> <br>1/ Set up a <a href="https://twitter.com/tezos?ref_src=twsrc%5Etfw">@tezos</a> wallet with <a href="https://twitter.com/TempleWallet?ref_src=twsrc%5Etfw">@TempleWallet</a> and apply for some tez w/ <a href="https://twitter.com/tezosnftfaucet?ref_src=twsrc%5Etfw">@tezosnftfaucet</a> <a href="https://t.co/64zGXQCTEQ">pic.twitter.com/64zGXQCTEQ</a></p>&mdash; verticalcryptoart (@verticalcrypto) <a href="https://twitter.com/verticalcrypto/status/1374349022245359627?ref_src=twsrc%5Etfw">March 23, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p></p>
+<p>Alternatively you can read up on it in my tutorial <a href='https://gorillasun.de/blog/Getting-started-with-Tezos-and-minting-on-hicetnunc.xyz'>here</a></p>
 
 <p>Another change that I noticed just now, is that it now neatly arranges your creations</p>
 
 <h2><a name='Secondary'>The Secondary Market</a></h2>
-<p>On the topic of royalties, you can now not only collect, but also re-sell previously acquired OBJKTs in your collection! This feature was rolled out quietly throughout the month an had some issues at first. The UI worked in such a manner that if someone were to offer up an NFT for sale that they've collected, while the original creator still had remaining editions of said NFT up for sale, they would essentially supersede the original creator with their offer, since the 'click to collect' button would have to be shared. This was problematic, because if someone were to re-sell 1 edition of an NFT for 200tez, whereas the original creator still had dozens of the same NFT up for sale at a much lower price, these would then essentially be blocked until someone bought the NFT offered for 200tez.</p>
-
+<p>You can now not only collect, but also re-sell previously acquired OBJKTs in your collection! This feature was rolled out quietly throughout the month an had some issues at first. The UI worked in such a manner that if someone were to offer up an NFT for sale that they've collected, while the original creator still had remaining editions of said NFT up for sale, they would essentially supersede the original creator with their offer, since the 'click to collect' button would have to be shared. This was problematic, because if someone were to re-sell 1 edition of an NFT for 100tez, when the original creator still had dozens of the same NFT up for sale at a much lower price, these would then essentially be blocked until someone bought the NFT offered for 100tez.</p>
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Some people might not have realized it yet: the secondary market on <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> is open now.<br><br>Yes, you can sell any NFT you collected. The only problem is that the UI has not noticed that yet.<br><br>So if the first number before the &quot;/&quot; is &gt; 0, try clicking &quot;not for sale&quot;. <a href="https://t.co/lY9pr6UsvU">pic.twitter.com/lY9pr6UsvU</a></p>&mdash; Mario Klingemann (@quasimondo) <a href="https://twitter.com/quasimondo/status/1376098068425289730?ref_src=twsrc%5Etfw">March 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-  
 <p>This button introduced another problem, that caused a number of users quite the frustration. If an NFT were to sell all of it's remaining editions, the button would show 'not for sale'. This, however, didn't mean that the button was not able to be clicked. </p>
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Yes, i&#39;ll wait a bit before swapping, I just gave 20tez to someone who took 31 of my early freebies</p>&mdash; Patrick Tresset etc. (@patricktresset) <a href="https://twitter.com/patricktresset/status/1376163365312200706?ref_src=twsrc%5Etfw">March 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -63,10 +61,12 @@ Since it's launch, Hicetnunc.xyz has undergone a number of major UI changes. The
 <p>This has now been fixed by showing all open offers for an NFT in it's collectors tab, with the respective price and the wallet address of the seller.  </p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-12-Hicetnunc.xyz-and-NFTs-on-the-Tezos-Blockchain-~-What's-new ~-April-2021-Update/secondary_market.png" alt="" /></span>
 
-<h2><a href='Templates'>HTML/P5JS/and other upload Templates</a></h2>
-<p>What first started as html encapsulated in an svg file, has become another avant garde feature of hicetnunc. Data formats such as html, svg, p5js, pdf are now supported by hicetnunc and can be minted as NFTs. This was pioneered by a number of Twitter users in parallel, some super insightiful articles by Twitter user @tarwin can be found here.  You can find the respective templates for them <a href='https://github.com/hicetnunc2000/hicetnunc/tree/main/templates'>here</a>. You'll have to replace certain parts of the templates with your own code, replace the default thumbnail.png / thumbnail.gif with your own and zip all files. This zip file will be what you upload at mint time. Amazing Right?</p>
+<p>Lessons learned, always check the price befor hitting the confirm button in your wallet!</p>
 
-<p>Here's an example of what a minted interactive p5js sketch looks like. Hover over the NFT:</p>
+<h2><a href='Templates'>HTML/P5JS/and other upload Templates</a></h2>
+<p>What first started as html encapsulated in an svg file, has become another avant garde feature of hicetnunc. Data formats such as html, svg, p5js, pdf are now supported by hicetnunc and can be minted as NFTs. This was pioneered by a number of Twitter users in parallel, a super insightiful article by Twitter user @tarwin can be found <a href='https://tarwin.medium.com/hit-et-nunc-advanced-svg-nfts-a6040262f4d5'>here</a>.  You can find the respective templates for each supported format <a href='https://github.com/hicetnunc2000/hicetnunc/tree/main/templates'>here</a>. You'll have to replace certain parts of the templates with your own code, replace the default thumbnail.png / thumbnail.gif with your own and zip all files. This zip file will be what you upload at mint time. Amazing Right?</p>
+
+<p>And here's an example of what a minted interactive p5js sketch looks like. Go ahead and hover over the NFT:</p>
 <iframe src="https://www.hicetnunc.xyz/objkt/27560" width="100%" height="1000"></iframe>
 
 <p>Maybe the next cool thing could be a convenient and customizable iframe embed code? That could allow creators to display and sell their creations easily from their own website.</p>
