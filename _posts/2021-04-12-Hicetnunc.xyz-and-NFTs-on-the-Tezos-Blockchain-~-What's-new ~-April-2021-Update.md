@@ -147,17 +147,17 @@ I'm not certain how many people are aware of the hDAO as of now, or if they're a
 </ul>
 <h3>NFT Art Reviews</h3>
 <ul>
-<li>Poptwig: <a href='https://medium.com/poptwig'> https://medium.com/poptwig </a></li>
-<li>Artnome: <a href='https://www.artnome.com/news/2021/3/21/hic-et-nunc-revives-the-true-spirit-of-web-art-through-nfts'> https://www.artnome.com/news/2021/3/21/hic-et-nunc-revives-the-true-spirit-of-web-art-through-nfts </a></li>
-<li>VerticalCrypto:  <a href='https://twitter.com/verticalcrypto/status/1382730395930755076'> https://twitter.com/verticalcrypto/status/1382730395930755076 </a></li>
+<li><a href='https://medium.com/poptwig'>Pop twig: a zine devoted to aiding the discovery of art on hic et nunc </a></li>
+<li>Artnome: <a href='https://www.artnome.com/news/2021/3/21/hic-et-nunc-revives-the-true-spirit-of-web-art-through-nfts'> hic et nunc revives the true spirit of web art through nfts </a></li>
+<li><a href='https://twitter.com/verticalcrypto/status/1382730395930755076'>VerticalCrypto</a></li>
 </ul>
 
 <p>Shoot me a message for additions to these lists, I know I missed a lot!</p>
 
 <h2><a href='Other'>Other Interesting Articles, Resources and Stuff(s)</a></h2>
 <ul>
-<li>How to host your own IPFS node: <a href='https://twitter.com/antic/status/1374417104489697283'> https://twitter.com/antic/status/1374417104489697283 </a></li>
-<li>Add your personal info to your hicetnunc profile: <a href='https://twitter.com/quasimondo/status/1375788135171428356'>https://twitter.com/quasimondo/status/1375788135171428356 </a></li>
-<li><a href='https://www.plummerfernandez.com/works/not-another-jpeg/'>https://www.plummerfernandez.com/works/not-another-jpeg/</a></li>
-<li><a href='https://www.salon.com/2021/04/08/why-would-anyone-buy-crypto-art--let-alone-spend-millions-on-whats-essentially-a-link-to-a-jpeg_partner/'>https://www.salon.com/2021/04/08/why-would-anyone-buy-crypto-art--let-alone-spend-millions-on-whats-essentially-a-link-to-a-jpeg_partner/</a></li>
+<li><a href='https://twitter.com/antic/status/1374417104489697283'>How to host your own IPFS node</a></li>
+<li><a href='https://twitter.com/quasimondo/status/1375788135171428356'>Add your personal info to your hicetnunc profile</a></li>
+<li><a href='https://www.plummerfernandez.com/works/not-another-jpeg/'>Not another jpeg</a></li>
+<li><a href='https://www.salon.com/2021/04/08/why-would-anyone-buy-crypto-art--let-alone-spend-millions-on-whats-essentially-a-link-to-a-jpeg_partner/'>Why would anyone buy crypto art let alone spend millions on what's essentially a link to a jpeg</a></li>
 </ul>
