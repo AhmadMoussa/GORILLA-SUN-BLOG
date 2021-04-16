@@ -116,6 +116,7 @@ I'm not certain how many people are aware of the hDAO as of now, or if they're a
 <p>The NFT activity on the Tezos blockchain has catapulted the number of contract calls, surpassing previous all-time highs:</p>
 <blockquote class="reddit-card" data-card-created="1618482286"><a href="https://www.reddit.com/r/tezos/comments/mpi9c0/tezos_contract_calls_april_12/">Tezos contract calls / April 12</a> from <a href="http://www.reddit.com/r/tezos">r/tezos</a></blockquote>
 <script async src="//embed.redditmedia.com/widgets/platform.js" charset="UTF-8"></script>
+<p></p>
 
 <p>Hicetnunc is also still growing at a very fast rate, as of writing this post we've already surpassed 30k minted NFTs. Twitter user @Esclaponr shows some stats he has aggregated regarding the growth and activity on hicetnunc:</p>
 <div style='width: 100%'>
