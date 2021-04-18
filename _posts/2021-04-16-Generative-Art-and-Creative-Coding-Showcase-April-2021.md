@@ -29,3 +29,6 @@ Sun 08 -
 
 Kd Trees - 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Sorry generative stick little dudes, I discovered kd-tree algorithm and want to explore more on it.<br><br>Bouncing balls in a kd-tree subdivision. <a href="https://t.co/k9D4LlRGge">pic.twitter.com/k9D4LlRGge</a></p>&mdash; Nicolas Daniel (@nicolasdnl) <a href="https://twitter.com/nicolasdnl/status/1093944434616602624?ref_src=twsrc%5Etfw">February 8, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Chipped Flow Field -
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Just shared an easy tool to make an auto-updating digital frame for <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> and ethereum-based art.<br><br>Just paste in some addresses and you get a URL you can display on a digital frame, TV, new tab default, etc.<a href="https://t.co/RiKuKdB70L">https://t.co/RiKuKdB70L</a></p>&mdash; shahruz (@shahruz) <a href="https://twitter.com/shahruz/status/1383596317293776903?ref_src=twsrc%5Etfw">April 18, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
