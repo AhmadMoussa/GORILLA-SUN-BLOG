@@ -65,3 +65,7 @@ This one's not as tricky as the previous one. Again, in addition to checking tha
 
 <h2>Within a circle with a sliced off sector</h2>
 
+<h2>Moving point within a slice of increasing size</h2>
+
+
+
