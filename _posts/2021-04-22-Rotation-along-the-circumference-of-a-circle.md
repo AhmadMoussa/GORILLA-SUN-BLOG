@@ -1,5 +1,5 @@
 ---
-title: Rotation and positioning points on the circumference of a circle in P5JS
+title: Rotation and Circular positioning
 author: Ahmad Moussa
 categories:
   - p5js
@@ -10,15 +10,12 @@ published: true
 
 <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/xUOwGnC7Jqlgj7FvSE" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
-<p>If you haven't already read my previous post on sine functions, go check it out after reading this one.</p>
+<h2>Rotating and positioning element along the circumference of a circle</h2>
+<p>So far, in most of my blog posts we've been dealing with arrangement of elements on a grid, however, creating circular motion should be another weapon in your creative coding arsenal. This light blog post explains how to achieve it in P5JS in a number of different ways. Starting with the simplest form: rotating a point around a circle.</p>
 
-<p>How to create circular motion should be another weapon in your creative coding arsenal, this blog post will explains how to achieve it in P5JS in a number of different ways. Starting with the simplest form: rotating a point around a circle.</p>
+<p>To create a rotating point, we usually need 3 parameters: the center of the circle around which we are rotating, the radius, and the angle. To make this point actually move around the circle, the parameter for the angle needs to be a linearly increasing parameter, which, as always, is time in form of the millis() function. The snippet of code that follows the comment defines the rotating point:</p>
 
-<p>To create a rotating point, we usually need 3 parameters: the center of the circle around which we are rotating, the radius, and the angle. The angle in our case will simply be a linearly increasing parameter, which is as always: Time.</p>
-
-
-<pre><code>
-function setup() {
+<pre><code>function setup() {
   createCanvas(400, 400);
   centerX = width/2
   centerY = height/2
@@ -36,11 +33,23 @@ function draw() {
         centerX + radius * sin(millis()/1000),
     centerY + radius * cos(millis()/1000)
   )   
+  // end of what you should replace
 }
 </code></pre>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/Simple.gif" alt="" /></span>
 <p></p>
+
+<p>If you're not very familiar with sine and cosine I recommend reading up on them in one of my previous blog posts that explains them in a little more detail <a href=https://gorillasun.de/blog/Continuous-oscillating-motion-in-P5JS-with-Sine-functions>here</a>. However, all you need to know is that given a center point and a radius, you can draw a point on the circle defined by this center and radius using sine and cosine of a specific angle.</p>
+<pre><code>// ----
+point(centerX + radius * sin(0), centerX + radius * cos(0))
+  point(centerX + radius * sin(HALF_PI), centerX + radius * cos(HALF_PI))
+  point(centerX + radius * sin(PI), centerX + radius * cos(PI))
+  point(centerX + radius * sin(PI+QUARTER_PI), centerX + radius * cos(PI+QUARTER_PI))
+</pre></code>
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/sin_n_cos.png" alt="" /></span>
+
 <p>And this is kind of already the basis for a lot of other things that you can do. For example, what would you have to do to have a 3rd point rotate around the already rotating point? The snippet I provided already has the answer to it!</p>
 
 <pre><code>//--------
