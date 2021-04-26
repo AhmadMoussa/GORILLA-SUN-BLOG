@@ -68,7 +68,7 @@ function draw() {
 }
 </code></pre>
 
-<p>Very simple, yet very powerful!<p>
+<p>You need to be mindful about the speed of the new point, here I'm dividing the new point's time by 500. If both were in sync we wouldn't observe an additional orbiting motion. Very simple, yet very powerful!<p>
 
 <h2>Positioning items around a circle</h2>
 
@@ -98,7 +98,38 @@ function draw() {
 }
 </code></pre>
 
-<p>In this manner we simply divide 2xPI by the number of points and multiply by the number of the current point. If you prefer doing this in degrees, P5JS has a function that allows you to set this.</p>
+<p>In this manner we simply divide 2xPI by the number of points and multiply by the number of the current point. If you prefer doing this in degrees, P5JS has a function that allows you to set this. This concept also applies if you want to position certain elements along the arc of a circle, for example fanning out a number of lines:</p>
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/fan.png" alt="" /></span>
+
+<pre><code>
+function setup() {
+  createCanvas(400, 400);
+  centerX = width / 2
+  centerY = height / 2
+  radius = 100
+}
+
+function draw() {
+  background(220);
+  stroke(0)
+  strokeWeight(2)
+  noFill()
+  ellipse(200,200,radius*2)
+  strokeWeight(10)
+  point(centerX, centerY)
+  strokeWeight(10)
+  stroke(255, 0, 0)
+  strokeWeight(2)
+  
+  for(i = 0; i < 20; i++){
+    line(centerX,centerY,
+        centerX+100*sin(HALF_PI+HALF_PI/20*i),
+         centerY+100*cos(HALF_PI+HALF_PI/20*i))
+  }
+  stroke(255, 0, 255)
+}
+</code></pre>
 
 <h2>Rotation in the WEBGL mode</h2>
 
