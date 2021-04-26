@@ -111,8 +111,6 @@ The definition of cosine and sine for arbitrary angles is just that—a definiti
 
 <p>In this manner we simply divide 2xPI by the number of points and multiply by the number of the current point. If you prefer doing this in degrees, P5JS has a function that allows you to set this. This concept also applies if you want to position certain elements along the arc of a circle, for example fanning out a number of lines:</p>
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/fan.png" alt="" /></span>
-
 <pre><code>// ------
 strokeWeight(2)
 for(i = 0; i < 20; i++){
@@ -122,11 +120,15 @@ for(i = 0; i < 20; i++){
   }
 </code></pre>
 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/fan.png" alt="" /></span>
+
 <p>As you can see P5JS also conveniently provides pre-defined constant that define different portions of PI (QUARTER_PI, HALF_PI, PI and TWO_PI).</p>
 
 <h2>Rotation in the WEBGL mode</h2>
 
-<p>Alternatively, you could simply achieve rotation by using the WEBGL mode that provides a conveninent rotate function. This is quite fun and very easy, but allows you to create incredible cool sketches.</p>
+<p>Alternatively, you could simply achieve rotation by using the WEBGL mode that provides a conveninent rotate function. This is quite fun and very easy, but allows you to create incredible cool sketches. I'm only going to brush briefly over 3D rotation, and is a topic that requires much more exploration in future blog posts:</p>
+
+
 
 
 
