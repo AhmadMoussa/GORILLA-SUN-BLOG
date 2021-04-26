@@ -1,5 +1,5 @@
 ---
-title: Rotation and Circular positioning
+title: Rotation and Circular Positioning
 author: Ahmad Moussa
 categories:
   - p5js
@@ -10,7 +10,7 @@ published: true
 
 <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/xUOwGnC7Jqlgj7FvSE" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
-<h2>Rotating and positioning element along the circumference of a circle</h2>
+<h2>Rotating and positioning elements along the circumference of a circle</h2>
 <p>So far, in most of my blog posts we've been dealing with arrangement of elements on a grid, however, creating circular motion should be another weapon in your creative coding arsenal. This light blog post explains how to achieve it in P5JS in a number of different ways. Starting with the simplest form: rotating a point around a circle.</p>
 
 <p>To create a rotating point, we usually need 3 parameters: the center of the circle around which we are rotating, the radius, and the angle. To make this point actually move around the circle, the parameter for the angle needs to be a linearly increasing parameter, which, as always, is time in form of the millis() function. The snippet of code that follows the comment defines the rotating point:</p>
@@ -40,7 +40,7 @@ function draw() {
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/Simple.gif" alt="" /></span>
 <p></p>
 
-<p>If you're not very familiar with sine and cosine I recommend reading up on them in one of my previous blog posts that explains them in a little more detail <a href=https://gorillasun.de/blog/Continuous-oscillating-motion-in-P5JS-with-Sine-functions>here</a>. However, all you need to know is that given a center point and a radius, you can draw a point on the circle defined by this center and radius using sine and cosine of a specific angle.</p>
+<p>If you're not very familiar with sine and cosine I recommend reading up on them in one of my previous blog posts that explains them in a little more detail <a href='https://gorillasun.de/blog/Continuous-oscillating-motion-in-P5JS-with-Sine-functions'>here</a>. In simple terms, all you need to know is that given a center point and a radius, you can draw a point on the circle (defined by this center and radius) using the sine and cosine functions for a specific angle.</p>
 <pre><code>// ----
 point(centerX + radius * cos(0), centerX + radius * sin(0))
   point(centerX + radius * cos(HALF_PI), centerX + radius * sin(HALF_PI))
@@ -54,11 +54,11 @@ point(centerX + radius * cos(0), centerX + radius * sin(0))
 
 <blockquote>Sine: The trigonometric function that is equal to the ratio of the side opposite a given angle (in a right-angled triangle) to the hypotenuse.</blockquote>
 
-<p>In this case we already have the angle, and the hypotenuse, which will allow us to find the opposite side. Since we're dealing with ratios here, we still need to multiply by the radius of the circle (the hypotenuse), to find the exact position and add an offset, which is the center of the circle. This gives us one of the coordinates for our point, we need to repeat the same thing for the cosine. Putting them together will allow us to rotate a point around a circle.<p> 
+<p>In this case we already have the angle (we simply chose one), and the hypotenuse (the radius), which will allow us to find the opposite side. Since we're dealing with ratios here, we still need to multiply by the radius of the circle (the hypotenuse), to find the exact position and add an offset, which is the center of the circle. This gives us one of the coordinates for our point, we repeat the same thing for the cosine. Putting them together will allow us to rotate a point around a circle.<p> 
   
 <p>This animation from wikipedia was too compelling not to include, as it perfectly exemplifies what we're doing:</p>
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/Circle_sin_cos.png" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/Circle_cos_sin.gif" alt="" /></span>
 
   
 <p>Great, now you might be either satisfied that you can position something on a circle, OR you might be still curious as to how we found out that we can do such positioning with sine and cosine. I'd like to include this excerpt from <a href='https://www.quora.com/profile/Robert-Cruikshank-2'>Robert Cruikshank</a>' Quora Answer:</p>
