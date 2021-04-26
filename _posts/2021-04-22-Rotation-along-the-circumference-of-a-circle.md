@@ -46,7 +46,7 @@ point(centerX + radius * cos(0), centerX + radius * sin(0))
   point(centerX + radius * cos(HALF_PI), centerX + radius * sin(HALF_PI))
   point(centerX + radius * cos(PI), centerX + radius * sin(PI))
   point(centerX + radius * cos(PI+QUARTER_PI), centerX + radius * sin(PI+QUARTER_PI))
-</pre></code>
+</code></pre>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/sin_n_cos.png" alt="" /></span>
 
