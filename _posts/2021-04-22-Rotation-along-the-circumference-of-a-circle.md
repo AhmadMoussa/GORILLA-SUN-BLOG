@@ -53,7 +53,7 @@ point(centerX + radius * cos(0), centerX + radius * sin(0))
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/sin_n_cos.png" alt="" /></span>
 <p></p>
 
-<h2>Intuition and Math behind rotational</p2>
+<h2>Intuition and Math behind rotational</h2>
 <p>You might ask now for a more detailed definition of sin() and cosine(), and how they allow you to find points on a circle. Essentially it has something to do with triangles, angles and ratios. First we should look at the definition of sine as a trigonometric function:</p>
 
 <blockquote>Sine: The trigonometric function that is equal to the ratio of the side opposite a given angle (in a right-angled triangle) to the hypotenuse.</blockquote>
