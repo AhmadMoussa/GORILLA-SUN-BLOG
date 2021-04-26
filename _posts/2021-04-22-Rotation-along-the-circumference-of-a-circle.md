@@ -68,7 +68,31 @@ Very simple, yet very powerful!
 
 <h2>Positioning items around a circle</h2>
 
-Let's go back a little and see how to position an arbitrary number of points around a circle in an equidistant manner.
+Let's go back a little and see how to position an arbitrary number of points around a circle in an equidistant manner. The circumference of a full circle can be expressed in either 2xPI RADIANS or 360 Degrees. Positioning an arbitrary number of points around a circle requires splitting 2xPI evenly among them.
+<pre><code>function setup() {
+  createCanvas(400, 400);
+  centerX = width / 2
+  centerY = height / 2
+  radius = 100
+}
+
+function draw() {
+  background(220);
+  stroke(0)
+  point(centerX, centerY)
+  strokeWeight(10)
+  stroke(255, 0, 0)
+  numPoints = 5
+  for (i = 0; i < numPoints; i++) {
+    point(
+      centerX + radius * sin(2 * PI / numPoints * i + millis() / 1000),
+      centerY + radius * cos(2 * PI / numPoints * i + millis() / 1000)
+    )
+  }
+  stroke(255, 0, 255)
+}
+</pre></code>
+In this manner we simply divide 2xPI by the number of points and multiply by the number of the current point. If you prefer doing this in degrees, P5JS has a function that allows you to set this.
 
 <h2>Rotation in the WEBGL mode</h2>
 
