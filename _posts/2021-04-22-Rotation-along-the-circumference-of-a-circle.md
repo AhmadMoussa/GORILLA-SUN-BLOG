@@ -8,11 +8,11 @@ thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
 
-If you haven't alraedy read my previous post on sine functions, go check it out after reading this one.
+<p>If you haven't already read my previous post on sine functions, go check it out after reading this one.</p>
 
-How to create circular motion should be another weapon in your creative coding arsenal, this blog post will explains how to achieve it in P5JS in a number of different ways. Starting with the simplest form: rotating a point around a circle.
+<p>How to create circular motion should be another weapon in your creative coding arsenal, this blog post will explains how to achieve it in P5JS in a number of different ways. Starting with the simplest form: rotating a point around a circle.</p>
 
-To create a rotating point, we usually need 3 parameters: the center of the circle around which we are rotating, the radius, and the angle. The angle in our case will simply be a linearly increasing parameter, which is as always: Time.
+<p>To create a rotating point, we usually need 3 parameters: the center of the circle around which we are rotating, the radius, and the angle. The angle in our case will simply be a linearly increasing parameter, which is as always: Time.</p>
 
 
 <pre><code>
@@ -36,9 +36,9 @@ function draw() {
 }
 </pre></code>
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/Simple.png" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/Simple.gif" alt="" /></span>
 
-And this is kind of already the basis for a lot of other things that you can do. For example, what would you have to do to have a 3rd point rotate around the already rotating point? The snippet I provided already has the answer to it!
+<p>And this is kind of already the basis for a lot of other things that you can do. For example, what would you have to do to have a 3rd point rotate around the already rotating point? The snippet I provided already has the answer to it!</p>
 
 <pre><code>
 function setup() {
@@ -66,7 +66,7 @@ function draw() {
 }
 </pre></code>
 
-Very simple, yet very powerful!
+<p>Very simple, yet very powerful!<p>
 
 <h2>Positioning items around a circle</h2>
 
