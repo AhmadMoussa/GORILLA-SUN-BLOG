@@ -36,11 +36,13 @@ function draw() {
   // end of what you should replace
 }
 </code></pre>
+<p></p>
+<p>The coordinates of the rotating point are defined in terms of sin() and cos(), plugging time into the two functions representing the angle(divided by some arbitrary value to slow down the animation), the visualization that we obtain looks like this:</p>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/Simple.gif" alt="" /></span>
 <p></p>
 
-<p>If you're not very familiar with sine and cosine I recommend reading up on them in one of my previous blog posts that explains them in a little more detail <a href='https://gorillasun.de/blog/Continuous-oscillating-motion-in-P5JS-with-Sine-functions'>here</a>. In simple terms, all you need to know is that given a center point and a radius, you can draw a point on the circle (defined by this center and radius) using the sine and cosine functions for a specific angle.</p>
+<p>Now, If you're not very familiar with sine and cosine I recommend reading up on them in one of my previous blog posts that explains them in a little more detail <a href='https://gorillasun.de/blog/Continuous-oscillating-motion-in-P5JS-with-Sine-functions'>here</a>. In simple terms, all you need to know is that given a center point and a radius, you can draw a point on the circle (defined by this center and radius) using the sine and cosine functions for a specific angle.</p>
 <pre><code>// ----
 point(centerX + radius * cos(0), centerX + radius * sin(0))
   point(centerX + radius * cos(HALF_PI), centerX + radius * sin(HALF_PI))
@@ -49,19 +51,21 @@ point(centerX + radius * cos(0), centerX + radius * sin(0))
 </code></pre>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/sin_n_cos.png" alt="" /></span>
+<p></p>
 
+<h2>Intuition and Math behind rotational</p2>
 <p>You might ask now for a more detailed definition of sin() and cosine(), and how they allow you to find points on a circle. Essentially it has something to do with triangles, angles and ratios. First we should look at the definition of sine as a trigonometric function:</p>
 
 <blockquote>Sine: The trigonometric function that is equal to the ratio of the side opposite a given angle (in a right-angled triangle) to the hypotenuse.</blockquote>
 
-<p>In this case we already have the angle (we simply chose one), and the hypotenuse (the radius), which will allow us to find the opposite side. Since we're dealing with ratios here, we still need to multiply by the radius of the circle (the hypotenuse), to find the exact position and add an offset, which is the center of the circle. This gives us one of the coordinates for our point, we repeat the same thing for the cosine. Putting them together will allow us to rotate a point around a circle.<p> 
+<p>In this case we already have the angle (we simply choose one, depending where we want to position the point on the circle), and the hypotenuse (the radius), which will allow us to find the opposite side. Since we're dealing with ratios here, we still need to multiply by the radius, to find the exact position and add an offset, which is the center of the circle. This gives us one of the coordinates for our point, we repeat the same thing for the cosine. Putting them together will allow us to rotate a point around a circle.<p> 
   
-<p>This animation from wikipedia was too compelling not to include, as it perfectly exemplifies what we're doing:</p>
+
+<p>To explain it in another way, we're calculating the vertical offset from the horizontal line that cuts the circle in two parts, as well as the horizontal offset from the vertical line that cuts the circle in two equal parts, and draw a point at these coordinates. This animation from wikipedia was too compelling not to include, as it perfectly exemplifies what is going on:</p>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/Circle_cos_sin.gif" alt="" /></span>
-
-  
-<p>Great, now you might be either satisfied that you can position something on a circle, OR you might be still curious as to how we found out that we can do such positioning with sine and cosine. I'd like to include this excerpt from <a href='https://www.quora.com/profile/Robert-Cruikshank-2'>Robert Cruikshank</a>' Quora Answer:</p>
+ 
+<p>Great, now you might be either satisfied that you can position something on a circle, OR you might be more confused and still curious as to how we found out that we can do such positioning with sine and cosine. I'd like to include this excerpt from <a href='https://www.quora.com/profile/Robert-Cruikshank-2'>Robert Cruikshank</a>'s Quora Answer:</p>
 
 <blockquote>
 Always remember: mathematics is part discovery, part invention, and part convention.
@@ -71,8 +75,10 @@ Given the Pythagorean theorem and the definition of a circle, one can discover (
 The definition of cosine and sine for arbitrary angles is just that—a definition, an invention. We chose it that way because it is useful. Likewise, I always get school kids arguing with me that 1^0 should be 0, not 1. I explain to them that they CAN define 1^0 to be 0, it’s just that the math they get will be less streamlined, more clunky, the rules for exponents will have exceptions, etc.
 </blockquote>
 
+<p>If all of this is still hazy, then I recommend playing around with sin() and cos() to internalize their behaviour, soon enough you'll have an intuitive understanding, and when you do, I recommend approaching the math behind it again and I promise that it will feel much easier.</p> 
 
-<p>And this is kind of already the basis for a lot of other things that you can do. For example, what would you have to do to have a 3rd point rotate around the already rotating point? The snippet I provided already has the answer to it!</p>
+<h2>Applications</h2>
+<p>This is kind of the basis for a lot of other things that you can do. For example, what would you have to do to have a 3rd point rotate around the already rotating point? The snippet I provided already has the answer to it!</p>
 
 <pre><code>//--------
   point(
