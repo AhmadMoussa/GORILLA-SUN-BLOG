@@ -8,6 +8,8 @@ thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
 
+<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/frithtCeJwLsOYm3K8" width="100%" height="100%" style="position:absolute pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+
 <p>If you haven't already read my previous post on sine functions, go check it out after reading this one.</p>
 
 <p>How to create circular motion should be another weapon in your creative coding arsenal, this blog post will explains how to achieve it in P5JS in a number of different ways. Starting with the simplest form: rotating a point around a circle.</p>
