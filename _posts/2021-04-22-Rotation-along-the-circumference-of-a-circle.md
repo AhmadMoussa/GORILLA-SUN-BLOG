@@ -30,8 +30,8 @@ function draw() {
   stroke(255,0,0)
   // for what follows simply replace this with the provided snippet
   point(
-        centerX + radius * sin(millis()/1000),
-    centerY + radius * cos(millis()/1000)
+        centerX + radius * cos(millis()/1000),
+    centerY + radius * sin(millis()/1000)
   )   
   // end of what you should replace
 }
@@ -42,13 +42,27 @@ function draw() {
 
 <p>If you're not very familiar with sine and cosine I recommend reading up on them in one of my previous blog posts that explains them in a little more detail <a href=https://gorillasun.de/blog/Continuous-oscillating-motion-in-P5JS-with-Sine-functions>here</a>. However, all you need to know is that given a center point and a radius, you can draw a point on the circle defined by this center and radius using sine and cosine of a specific angle.</p>
 <pre><code>// ----
-point(centerX + radius * sin(0), centerX + radius * cos(0))
-  point(centerX + radius * sin(HALF_PI), centerX + radius * cos(HALF_PI))
-  point(centerX + radius * sin(PI), centerX + radius * cos(PI))
-  point(centerX + radius * sin(PI+QUARTER_PI), centerX + radius * cos(PI+QUARTER_PI))
+point(centerX + radius * cos(0), centerX + radius * sin(0))
+  point(centerX + radius * cos(HALF_PI), centerX + radius * sin(HALF_PI))
+  point(centerX + radius * cos(PI), centerX + radius * sin(PI))
+  point(centerX + radius * cos(PI+QUARTER_PI), centerX + radius * sin(PI+QUARTER_PI))
 </pre></code>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/sin_n_cos.png" alt="" /></span>
+
+<p>You might ask now for a more detailed definition of sin() and cosine(), and how they allow you to find points on a circle. Essentially it has something to do with triangles and ratios. First we should look at the definition of sine as a trigonometric function:</p>
+
+<blockquote>Sine: The trigonometric function that is equal to the ratio of the side opposite a given angle (in a right-angled triangle) to the hypotenuse.</blockquote>
+
+
+<blockquote>
+Always remember: mathematics is part discovery, part invention, and part convention.
+
+Given the Pythagorean theorem and the definition of a circle, one can discover (and prove) that the ratio of circumference to diameter is π.
+
+The definition of cosine and sine for arbitrary angles is just that—a definition, an invention. We chose it that way because it is useful. Likewise, I always get school kids arguing with me that 1^0 should be 0, not 1. I explain to them that they CAN define 1^0 to be 0, it’s just that the math they get will be less streamlined, more clunky, the rules for exponents will have exceptions, etc.
+</blockquote>
+
 
 <p>And this is kind of already the basis for a lot of other things that you can do. For example, what would you have to do to have a 3rd point rotate around the already rotating point? The snippet I provided already has the answer to it!</p>
 
