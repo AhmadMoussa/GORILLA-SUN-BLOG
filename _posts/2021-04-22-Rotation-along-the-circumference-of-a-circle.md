@@ -50,10 +50,18 @@ point(centerX + radius * cos(0), centerX + radius * sin(0))
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/sin_n_cos.png" alt="" /></span>
 
-<p>You might ask now for a more detailed definition of sin() and cosine(), and how they allow you to find points on a circle. Essentially it has something to do with triangles and ratios. First we should look at the definition of sine as a trigonometric function:</p>
+<p>You might ask now for a more detailed definition of sin() and cosine(), and how they allow you to find points on a circle. Essentially it has something to do with triangles, angles and ratios. First we should look at the definition of sine as a trigonometric function:</p>
 
 <blockquote>Sine: The trigonometric function that is equal to the ratio of the side opposite a given angle (in a right-angled triangle) to the hypotenuse.</blockquote>
 
+<p>In this case we already have the angle, and the hypotenuse, which will allow us to find the opposite side. Since we're dealing with ratios here, we still need to multiply by the radius of the circle (the hypotenuse), to find the exact position and add an offset, which is the center of the circle. This gives us one of the coordinates for our point, we need to repeat the same thing for the cosine. Putting them together will allow us to rotate a point around a circle.<p> 
+  
+<p>This animation from wikipedia was too compelling not to include, as it perfectly exemplifies what we're doing:</p>
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/Circle_sin_cos.png" alt="" /></span>
+
+  
+<p>Great, now you might be either satisfied that you can position something on a circle, OR you might be still curious as to how we found out that we can do such positioning with sine and cosine. I'd like to include this excerpt from <a href='https://www.quora.com/profile/Robert-Cruikshank-2'>Robert Cruikshank</a>' Quora Answer:</p>
 
 <blockquote>
 Always remember: mathematics is part discovery, part invention, and part convention.
