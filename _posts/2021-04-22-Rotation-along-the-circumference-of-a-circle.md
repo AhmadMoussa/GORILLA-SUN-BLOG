@@ -31,6 +31,7 @@ function draw() {
   point(centerX, centerY)
   strokeWeight(10)
   stroke(255,0,0)
+  // for what follows simply replace this with the provided snippet
   point(
         centerX + radius * sin(millis()/1000),
     centerY + radius * cos(millis()/1000)
@@ -42,20 +43,7 @@ function draw() {
 <p></p>
 <p>And this is kind of already the basis for a lot of other things that you can do. For example, what would you have to do to have a 3rd point rotate around the already rotating point? The snippet I provided already has the answer to it!</p>
 
-<pre><code>
-function setup() {
-  createCanvas(400, 400);
-  centerX = width/2
-  centerY = height/2
-  radius = 100
-}
-
-function draw() {
-  background(220);
-  stroke(0)
-  point(centerX, centerY)
-  strokeWeight(10)
-  stroke(255,0,0)
+<pre><code>//--------
   point(
         centerX + radius * sin(millis()/1000),
     centerY + radius * cos(millis()/1000)
@@ -65,7 +53,7 @@ function draw() {
         centerX + radius * sin(millis()/1000) + radius/2 * sin(millis()/500),
     centerY + radius * cos(millis()/1000) + radius/2 * cos(millis()/500)
   )
-}
+
 </code></pre>
 
 <p>You need to be mindful about the speed of the new point, here I'm dividing the new point's time by 500. If both were in sync we wouldn't observe an additional orbiting motion. Very simple, yet very powerful!<p>
@@ -74,62 +62,30 @@ function draw() {
 
 <p>Let's go back a little and see how to position an arbitrary number of points around a circle in an equidistant manner. The circumference of a full circle can be expressed in either 2xPI RADIANS or 360 Degrees. Positioning an arbitrary number of points around a circle requires splitting 2xPI evenly among them.</p>
 
-<pre><code>function setup() {
-  createCanvas(400, 400);
-  centerX = width / 2
-  centerY = height / 2
-  radius = 100
-}
-
-function draw() {
-  background(220);
-  stroke(0)
-  point(centerX, centerY)
-  strokeWeight(10)
-  stroke(255, 0, 0)
-  numPoints = 5
+<pre><code>numPoints = 5
   for (i = 0; i < numPoints; i++) {
     point(
       centerX + radius * sin(2 * PI / numPoints * i + millis() / 1000),
       centerY + radius * cos(2 * PI / numPoints * i + millis() / 1000)
     )
   }
-  stroke(255, 0, 255)
-}
+
 </code></pre>
 
 <p>In this manner we simply divide 2xPI by the number of points and multiply by the number of the current point. If you prefer doing this in degrees, P5JS has a function that allows you to set this. This concept also applies if you want to position certain elements along the arc of a circle, for example fanning out a number of lines:</p>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/fan.png" alt="" /></span>
 
-<pre><code>
-function setup() {
-  createCanvas(400, 400);
-  centerX = width / 2
-  centerY = height / 2
-  radius = 100
-}
-
-function draw() {
-  background(220);
-  stroke(0)
-  strokeWeight(2)
-  noFill()
-  ellipse(200,200,radius*2)
-  strokeWeight(10)
-  point(centerX, centerY)
-  strokeWeight(10)
-  stroke(255, 0, 0)
-  strokeWeight(2)
-  
-  for(i = 0; i < 20; i++){
+<pre><code>// ------
+strokeWeight(2)
+for(i = 0; i < 20; i++){
     line(centerX,centerY,
         centerX+100*sin(HALF_PI+HALF_PI/20*i),
          centerY+100*cos(HALF_PI+HALF_PI/20*i))
   }
-  stroke(255, 0, 255)
-}
 </code></pre>
+
+<p>As you can see P5JS also conveniently provides pre-defined constant that define different portions of PI (QUARTER_PI, HALF_PI, PI and TWO_PI).</p>
 
 <h2>Rotation in the WEBGL mode</h2>
 
