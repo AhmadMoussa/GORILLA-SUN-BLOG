@@ -126,7 +126,37 @@ for(i = 0; i < 20; i++){
 
 <h2>Rotation in the WEBGL mode</h2>
 
-<p>Alternatively, you could simply achieve rotation by using the WEBGL mode that provides a conveninent rotate function. This is quite fun and very easy, but allows you to create incredible cool sketches. I'm only going to brush briefly over 3D rotation, and is a topic that requires much more exploration in future blog posts:</p>
+<p>Alternatively, you could simply achieve rotation by using the WEBGL mode that provides a conveninent rotate function. This is quite fun and very easy, but allows you to create incredible cool sketches. I'm only going to brush briefly over 3D rotation, and is a topic that requires much more exploration in future blog posts. I'll showcase a simple sketch, that looks very impressive:</p>
+
+<pre><code>
+function setup() {
+  createCanvas(500, 500, WEBGL);
+}
+
+function draw() {
+  noFill();
+  background(255);
+  orbitControl();
+  stroke(0);
+  strokeWeight(1)
+
+  for(x = 0; x<3; x++){
+    rotateY(millis() / 4000 + 0.1*sin(millis()/10000));
+    rotateX(millis() / 4000);
+    torus(160-x*60, 1, 3,3);
+  }
+  rotateZ(millis() / 8000);
+  sphere(8)
+  translate(-25,45,0)
+  sphere(2)
+  translate(0,-90,0)
+  sphere(2)
+  translate(75,45,0)
+  sphere(2)
+}
+</code></pre>
+<p></p>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/3Drotation.gif" alt="" /></span>
 
 
 
