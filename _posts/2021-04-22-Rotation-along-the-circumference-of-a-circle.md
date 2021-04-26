@@ -36,7 +36,7 @@ function draw() {
     centerY + radius * cos(millis()/1000)
   )   
 }
-</pre></code>
+</code></pre>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-22-Rotation-along-the-circumference-of-a-circle/Simple.gif" alt="" /></span>
 <p></p>
@@ -66,7 +66,7 @@ function draw() {
     centerY + radius * cos(millis()/1000) + radius/2 * cos(millis()/500)
   )
 }
-</pre></code>
+</code></pre>
 
 <p>Very simple, yet very powerful!<p>
 
@@ -96,7 +96,7 @@ function draw() {
   }
   stroke(255, 0, 255)
 }
-</pre></code>
+</code></pre>
 
 <p>In this manner we simply divide 2xPI by the number of points and multiply by the number of the current point. If you prefer doing this in degrees, P5JS has a function that allows you to set this.</p>
 
