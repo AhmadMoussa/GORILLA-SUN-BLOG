@@ -11,6 +11,8 @@ published: false
 1. <a href='#Galleries'>Galleries</a>
 2. <a href='#OBJKT4OBJKT2'>OBJKT4OBJKT2</a>
 3. <a href='#hDAO'>hDAO</a>
+4. <a href='#Ubisoft'>Ubisoft becomes a validation node</a>
+https://www.gamesindustry.biz/articles/2021-04-20-ubisoft-joins-tezos-blockchain-ecosystem
 
 
 5. <a href='#OBJKT4OBJKT'>OBJKT4OBJKT Event</a>
