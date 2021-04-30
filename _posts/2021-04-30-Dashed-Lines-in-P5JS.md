@@ -88,7 +88,61 @@ At this point we encounter our first problem, how do we split up a segment of fi
 In actuality, we have to consider two cases, the segment and space length either add up exactly n times to fill out the segment, or they simply don't. If they do add up, great!
 
 If they don't, we'll have to write some code to handle that case. Let's first have a look at what it looks like without handling that case: 
+<pre><code>
 
+class SlopeLine {
+  constructor(x1, y1, x2, y2, segmentLength, spaceLength) {
+    this.x1 = x1;
+    this.y1 = y1;
+    this.x2 = x2;
+    this.y2 = y2;
+    this.segmentLength = segmentLength;
+    this.spaceLength = spaceLength;
+
+    // Calculate length
+    this.L = sqrt(
+      pow((this.x1 - this.x2), 2) +
+      pow((this.y1 - this.y2), 2));
+
+    // calculate angle
+    this.S = atan2(this.y2 - this.y1, this.x2 - this.x1)
+    
+    // calculate number of segments
+    this.numS = this.L / (this.segmentLength+this.spaceLength)
+    console.log(this.numS)
+  }
+
+  display() {
+     for(let i = 0; i < this.numS; i++){
+       console.log(i)
+       line(
+         this.x1 + (this.segmentLength + this.spaceLength)*i*cos(this.S),
+         this.y1 + (this.segmentLength + this.spaceLength)*i*sin(this.S),
+         this.x1 + (this.segmentLength+ this.spaceLength)*(i+1)*cos(this.S)-this.spaceLength*cos(this.S),
+         this.y1 + (this.segmentLength+ this.spaceLength)*(i+1)*sin(this.S)-this.spaceLength*sin(this.S),
+           )
+     }
+  }
+}
+
+function setup() {
+  createCanvas(400, 400);
+  sl = new SlopeLine(100, 200, 300, 200, 18,15);
+}
+
+function draw() {
+  background(220);
+  stroke(0)
+  strokeWeight(3);
+  sl.display();
+  
+  // Additionally  we're gonna draw two red points to see where the line should start and end
+  strokeWeight(5);
+  stroke(255,0,0)
+  point(100,200);
+  point(300,200);
+}
+</code></pre>
 
 
 1. Does it add up exactly if we discard the final trailing space?
