@@ -5,13 +5,12 @@ categories:
   - p5js
 description: Achieving dashed lines in P5JS was more difficult than I thought it would be, here's a tutorial on how to do it.
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: false
+published: true
 ---
 
 Drawing a line in P5JS is very easy and can be done with a single line of code, into which you pass the coordinates of the starting point and the end point. 
 
-<pre><code>
-line(0,0,100,100)
+<pre><code>line(0,0,100,100)
 </code></pre>
 
 Drawing a dashed line in P5JS is also relatively easy, however requires a somewhat of a hack to be achieved.
@@ -144,7 +143,11 @@ function draw() {
   }
 }
 </code></pre>
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS.md/dashed dirty2.png" alt="" /></span>
+
 Here we're actually drawing a couple of lines with the dash length and in-between spacing randomized. The red points show where the line start and where it should end. You can see that in some cases the last dash protrudes further than the second red dot. My OCD thinks that this looks very bad. Let's also seee what it looks like if we spread these lines on an arc:
+
 
 <pre><code>function setup() {
   createCanvas(400, 400);
@@ -180,10 +183,12 @@ function draw() {
 }
 </code></pre>
 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS.md/dashed dirty.png" alt="" /></span>
+
 <h2>Fixing the trailing dashes</h2>
 This was genuinely a headache to fix. A first thought was to simply check if the length of n * (segment length + space length) exceeds the length of the segment, and then discard the last dash. But that turned out to be quite ugly as well:
 
-Image goes here discarded
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS.md/discarded.png" alt="" /></span>
 
 We'll have to make a check just for the last dash, this can be done by finding the total length of all segments and spaces:
 <pre><code>
@@ -193,6 +198,8 @@ var check = sqrt(
     )
 </code></pre>
 Notice that we're casting 'this.numS' to an integer, this was maybe the one thing that I was stuck on for a while. We're casting to an integer to be able to draw an exact number of segments and spaces. We're also adding 1 to the number of segments because we're stopping the previous for loop at 'this.numS-1'. Then we also subtract one length of a spacing, since we only care about where the dash ends, not where the dash and it's following space end. If we now draw a green point at this position, we obtain:
+
+
 <pre><code>
 stroke(0,255,0)
       strokeWeight(5)
@@ -206,6 +213,9 @@ stroke(0,255,0)
         this.spaceLength*sin(this.S)
       )
 </code></pre>
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS.md/green dot.png" alt="" /></span>
+
 Next we just need to check if the length of the last dash exceeds the total length of the line or not, and draw the lines accordingly:
 <pre><code>stroke(255,255,0)
 strokeWeight(3)
@@ -226,6 +236,7 @@ if(check<this.L){
 }
 </code></pre>
 Here you can see in yellow the final dash segments and the green point indicates where the segment would have ended otherwise. Is this a good solution? Probably not, but it works for now.
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS.md/Fixed.png" alt="" /></span>
 
 <h2>Putting it all together</h2>
 
