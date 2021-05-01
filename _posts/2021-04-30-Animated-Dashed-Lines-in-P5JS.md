@@ -723,3 +723,27 @@ function draw() {
 
 As sanity check, it works fine with any kind of slanted line as well:
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Circular Final.gif" alt="" /></span>
+
+<h2>Reversing the movement</h2>
+Ok, one absolutely last thing will be reversing the movement to go in the other direction. We need to modify the move function one last time
+
+<pre><code>
+move(rate) {
+    if(rate>0){
+        this.beginningLength += rate
+        if (this.beginningLength >= this.segmentLength + this.spaceLength) {
+          this.beginningLength = 0;
+        }
+
+        this.difference = (this.segmentLength + this.spaceLength)-this.beginningLength
+    }else if(rate<0 ){
+        this.beginningLength += rate
+        if (this.beginningLength <= -this.segmentLength - this.spaceLength) {
+          this.beginningLength = 0;
+        }
+        this.difference = (this.segmentLength + this.spaceLength)-this.beginningLength
+    }
+  }
+</code></pre>
+
+This works, but again we will have to make checks for the lines that protrude outside the boundaries of the red dots.
