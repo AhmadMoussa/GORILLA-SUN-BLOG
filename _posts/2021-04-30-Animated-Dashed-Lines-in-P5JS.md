@@ -334,11 +334,11 @@ function draw() {
 This works, and it even works for any numbers that you give as parameters for segment length and spacing length. Except for negative numbers, which don't make sense to begin with.
 
 <h2>Animating the dashes</h2>
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Dashed Final.gif" alt="" /></span>
 Next we'll want to look into conveying motion with the dashes, which is a little tricky but actually easier than you might think. We want them to flow from the start of the line towards the end, where they seemingly disappear and reappear at the beginning of the line. Since we already wrote solid code, it won't take many modifications to achieve this effect. First, we'll have to create a parameter called 'this.beginning', such that the class now becomes:
 
-<pre><code>
-
-class SlopeLine {
+<pre><code>class SlopeLine {
   constructor(x1, y1, x2, y2, segmentLength, spaceLength) {
     this.x1 = x1;
     this.y1 = y1;
@@ -353,19 +353,14 @@ class SlopeLine {
       pow((this.y1 - this.y2), 2));
     console.log(this.L)
 
-    // calculate angle
+    // Calculate angle
     this.S = atan2(this.y2 - this.y1, this.x2 - this.x1)
     
-    // calculate number of segments
+    // Calculate number of segments
     this.numS = this.L / (this.segmentLength+this.spaceLength)
     console.log(this.numS)
-    
-    // calculate length of tail
-    this.tailL = this.L % (this.segmentLength+this.spaceLength)
-    
+  
     this.beginningLength = 0;
-    this.tailLength = this.tailL;
-    
   }
   
   move(rate){
@@ -375,22 +370,25 @@ class SlopeLine {
     }
   }
   
-  
-
   display() {
      for(let i = 0; i < this.numS-1; i++){
-       //console.log(i)
        line(
-         this.x1 + (this.segmentLength + this.spaceLength)*i*cos(this.S) + this.beginningLength*cos(this.S),
-         this.y1 + (this.segmentLength + this.spaceLength)*i*sin(this.S) + this.beginningLength*sin(this.S),
-         this.x1 + (this.segmentLength+ this.spaceLength)*(i+1)*cos(this.S)-this.spaceLength*cos(this.S) + this.beginningLength*cos(this.S),
-         this.y1 + (this.segmentLength+ this.spaceLength)*(i+1)*sin(this.S)-this.spaceLength*sin(this.S) + this.beginningLength*sin(this.S)
+         this.x1 + (this.segmentLength + this.spaceLength)*i*cos(this.S) 
+            + this.beginningLength*cos(this.S),
+         this.y1 + (this.segmentLength + this.spaceLength)*i*sin(this.S) 
+            + this.beginningLength*sin(this.S),
+         this.x1 + (this.segmentLength+ this.spaceLength)*(i+1)*cos(this.S)
+            -this.spaceLength*cos(this.S) + this.beginningLength*cos(this.S),
+         this.y1 + (this.segmentLength+ this.spaceLength)*(i+1)*sin(this.S)
+            -this.spaceLength*sin(this.S) + this.beginningLength*sin(this.S)
            )
      }
     
     var check = sqrt(
-      pow((this.segmentLength + this.spaceLength)*(int(this.numS)+1)*sin(this.S)-this.spaceLength*sin(this.S)+ this.beginningLength*sin(this.S), 2 ) 
-      + pow((this.segmentLength + this.spaceLength)*(int(this.numS)+1)*cos(this.S)-this.spaceLength*cos(this.S)+ this.beginningLength*cos(this.S),2)
+      pow((this.segmentLength + this.spaceLength)*(int(this.numS)+1)*sin(this.S)
+          -this.spaceLength*sin(this.S)+ this.beginningLength*sin(this.S), 2) 
+      + pow((this.segmentLength + this.spaceLength)*(int(this.numS)+1)*cos(this.S)
+      +   -this.spaceLength*cos(this.S)+ this.beginningLength*cos(this.S), 2)
     )
     
     stroke(0,255,0)
@@ -421,7 +419,7 @@ class SlopeLine {
          this.x2,
          this.y2
            )
-             }
+    }
   }
 }
 
@@ -452,8 +450,10 @@ function draw() {
 }
 </code></pre>
 
-We need to draw the line that goes from the first line point to the beginning of the space preceding the first dash. This simulates as if the dashed line is continuously appearing from the left side, and already makes the animation look much less jumpy:
-<pre><code>
+And we end up with something similar to this:
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Animation Attempt 1.gif" alt="" /></span>
+Watching this go on for a little while, you cans ee how unsatisfying it to see the first dash of each line pop up out of seemingly nowhere. We need to draw the line that goes from the first red point to the beginning of the space preceding the first dash. This simulates as if the dashed line is continuously appearing from the left side, and already makes the animation look much less jumpy:
+<pre><code>// Add this to beginning of display function
 if(this.beginningLength > this.spaceLength){
        stroke(255,0,255)
        line(this.x1, this.y1,
@@ -462,7 +462,8 @@ if(this.beginningLength > this.spaceLength){
            )
      }
 </code></pre>
-
+Now we have something that looks like this:
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Animation Attempt 2.gif" alt="" /></span>
 And the last thing that we need to do is make it such that the newly protruding last dash gets truncated. Since the protruding last dash will be 
 
 <pre><code>
@@ -587,12 +588,13 @@ function draw() {
   //noLoop()
 }
 </code></pre>
-
+And we finally end up with this:
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Dashed Final.gif" alt="" /></span>
 Now the protruding dash doesn't appear anymorer but we have a weird behaviour where the last dash simply disappears. We don't want that.
 
 <h2>Final Result</h2>
 
-
+The final code goes here:
 <pre><code>class SlopeLine {
   constructor(x1, y1, x2, y2, segmentLength, spaceLength) {
     this.x1 = x1;
@@ -716,3 +718,6 @@ function draw() {
   //noLoop()
 }
 </code></pre>
+
+As sanity check, it works fine with any kind of slanted line as well:
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Circular Final.gif" alt="" /></span>
