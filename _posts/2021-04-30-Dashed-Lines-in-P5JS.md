@@ -321,3 +321,387 @@ function draw() {
 </code></pre>
 
 This works, and it even works for any numbers that you give as parameters for segment length and spacing length. Except for negative numbers, which don't make sense to begin with.
+
+<h2>Animating the dashes</h2>
+Next we'll want to look into conveying motion with the dashes, which is a little tricky but actually easier than you might think. We want them to flow from the start of the line towards the end, where they seemingly disappear and reappear at the beginning of the line. Since we already wrote solid code, it won't take many modifications to achieve this effect. First, we'll have to create a parameter called 'this.beginning', such that the class now becomes:
+
+<pre><code>
+
+class SlopeLine {
+  constructor(x1, y1, x2, y2, segmentLength, spaceLength) {
+    this.x1 = x1;
+    this.y1 = y1;
+    this.x2 = x2;
+    this.y2 = y2;
+    this.segmentLength = segmentLength;
+    this.spaceLength = spaceLength;
+
+    // Calculate length
+    this.L = sqrt(
+      pow((this.x1 - this.x2), 2) +
+      pow((this.y1 - this.y2), 2));
+    console.log(this.L)
+
+    // calculate angle
+    this.S = atan2(this.y2 - this.y1, this.x2 - this.x1)
+    
+    // calculate number of segments
+    this.numS = this.L / (this.segmentLength+this.spaceLength)
+    console.log(this.numS)
+    
+    // calculate length of tail
+    this.tailL = this.L % (this.segmentLength+this.spaceLength)
+    
+    this.beginningLength = 0;
+    this.tailLength = this.tailL;
+    
+  }
+  
+  move(rate){
+    this.beginningLength += rate
+    if(this.beginningLength>this.segmentLength+this.spaceLength){
+      this.beginningLength = 0;
+    }
+  }
+  
+  
+
+  display() {
+     for(let i = 0; i < this.numS-1; i++){
+       //console.log(i)
+       line(
+         this.x1 + (this.segmentLength + this.spaceLength)*i*cos(this.S) + this.beginningLength*cos(this.S),
+         this.y1 + (this.segmentLength + this.spaceLength)*i*sin(this.S) + this.beginningLength*sin(this.S),
+         this.x1 + (this.segmentLength+ this.spaceLength)*(i+1)*cos(this.S)-this.spaceLength*cos(this.S) + this.beginningLength*cos(this.S),
+         this.y1 + (this.segmentLength+ this.spaceLength)*(i+1)*sin(this.S)-this.spaceLength*sin(this.S) + this.beginningLength*sin(this.S)
+           )
+     }
+    
+    var check = sqrt(
+      pow((this.segmentLength + this.spaceLength)*(int(this.numS)+1)*sin(this.S)-this.spaceLength*sin(this.S)+ this.beginningLength*sin(this.S), 2 ) 
+      + pow((this.segmentLength + this.spaceLength)*(int(this.numS)+1)*cos(this.S)-this.spaceLength*cos(this.S)+ this.beginningLength*cos(this.S),2)
+    )
+    
+    stroke(0,255,0)
+      strokeWeight(5)
+      point(this.x1 +
+        (this.segmentLength+ this.spaceLength)*
+        (int(this.numS)+1)*cos(this.S)-
+        this.spaceLength*cos(this.S)+ this.beginningLength*cos(this.S),
+        
+         this.y1+(this.segmentLength + this.spaceLength)*
+        (int(this.numS)+1)*sin(this.S)-
+        this.spaceLength*sin(this.S)+ this.beginningLength*sin(this.S)
+      )
+    
+    stroke(255,255,0)
+      strokeWeight(3)
+    if(check<this.L){
+      line(
+         this.x1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*cos(this.S)+ this.beginningLength*cos(this.S),
+         this.y1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*sin(this.S)+ this.beginningLength*sin(this.S),
+         this.x1 + (this.segmentLength+ this.spaceLength)*((int(this.numS))+1)*cos(this.S)-this.spaceLength*cos(this.S)+ this.beginningLength*cos(this.S),
+         this.y1 + (this.segmentLength+ this.spaceLength)*((int(this.numS))+1)*sin(this.S)-this.spaceLength*sin(this.S)+ this.beginningLength*sin(this.S)
+           )
+    }else if(check>this.L){
+      line(
+         this.x1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*cos(this.S)+ this.beginningLength*cos(this.S),
+         this.y1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*sin(this.S)+ this.beginningLength*sin(this.S),
+         this.x2,
+         this.y2
+           )
+             }
+  }
+}
+
+function setup() {
+  createCanvas(400, 400);
+  
+  sls = [];
+  for(i = 0; i < 20; i++){
+    sls.push(new SlopeLine(100, 100+10*i, 300, 100+10*i, random(1,35),random(1,35)));
+  }
+}
+
+function draw() {
+  background(220);
+
+  for(i = 0; i < 20; i++){
+    stroke(0)
+    strokeWeight(3);
+    sls[i].display();
+    sls[i].move(0.2)
+  
+    // Additionally  we're gonna draw two red points to see where the line should start and end
+    strokeWeight(5);
+    stroke(255,0,0)
+    point(100,100+i*10);
+    point(300,100+i*10);
+  }
+}
+</code></pre>
+
+We need to draw the line that goes from the first line point to the beginning of the space preceding the first dash. This simulates as if the dashed line is continuously appearing from the left side, and already makes the animation look much less jumpy:
+<pre><code>
+if(this.beginningLength > this.spaceLength){
+       stroke(255,0,255)
+       line(this.x1, this.y1,
+       this.x1 + (this.beginningLength-this.spaceLength)*cos(this.S),
+       this.y1+ (this.beginningLength-this.spaceLength)*sin(this.S)
+           )
+     }
+</code></pre>
+
+And the last thing that we need to do is make it such that the newly protruding last dash gets truncated. Since the protruding last dash will be 
+
+<pre><code>
+class SlopeLine {
+  constructor(x1, y1, x2, y2, segmentLength, spaceLength) {
+    this.x1 = x1;
+    this.y1 = y1;
+    this.x2 = x2;
+    this.y2 = y2;
+    this.segmentLength = segmentLength;
+    this.spaceLength = spaceLength;
+
+    // Calculate length
+    this.L = sqrt(
+      pow((this.x1 - this.x2), 2) +
+      pow((this.y1 - this.y2), 2));
+    console.log(this.L)
+
+    // calculate angle
+    this.S = atan2(this.y2 - this.y1, this.x2 - this.x1)
+
+    // calculate number of segments
+    this.numS = this.L / (this.segmentLength + this.spaceLength)
+    console.log(this.numS)
+
+    // calculate length of tail
+    this.tailL = this.L % (this.segmentLength + this.spaceLength)
+
+    this.beginningLength = 0;
+    this.tailLength = this.tailL;
+    this.difference = (this.segmentLength + this.spaceLength)
+
+  }
+
+  move(rate) {
+    this.beginningLength += rate
+    if (this.beginningLength >= this.segmentLength + this.spaceLength) {
+      this.beginningLength = 0;
+    }
+    
+    this.difference = (this.segmentLength + this.spaceLength)-this.beginningLength
+  }
+
+
+
+  display() {
+    if (this.beginningLength > this.spaceLength) {
+      stroke(255, 0, 255)
+      line(this.x1, this.y1, this.x1 + (this.beginningLength - this.spaceLength) * cos(this.S), this.y1 + (this.beginningLength - this.spaceLength) * sin(this.S))
+    }
+
+    stroke(0)
+    for (let i = 0; i < this.numS; i++) {
+      var distCheck = sqrt(pow((this.segmentLength + this.spaceLength) * (i + 1) * cos(this.S) - this.spaceLength * cos(this.S) + this.beginningLength * cos(this.S), 2) + pow((this.segmentLength + this.spaceLength) * (i + 1) * sin(this.S) - this.spaceLength * sin(this.S) + this.beginningLength * sin(this.S), 2))
+
+      //console.log(i)
+      if (distCheck <= this.L) {
+        //console.log(i)
+        line(
+          this.x1 + (this.segmentLength + this.spaceLength) * i * cos(this.S) + this.beginningLength * cos(this.S),
+          this.y1 + (this.segmentLength + this.spaceLength) * i * sin(this.S) + this.beginningLength * sin(this.S),
+          this.x1 + (this.segmentLength + this.spaceLength) * (i + 1) * cos(this.S) - this.spaceLength * cos(this.S) + this.beginningLength * cos(this.S),
+          this.y1 + (this.segmentLength + this.spaceLength) * (i + 1) * sin(this.S) - this.spaceLength * sin(this.S) + this.beginningLength * sin(this.S)
+        )
+      } else {
+
+        var distCheck = sqrt(pow(this.x1 + (this.segmentLength + this.spaceLength) * i * cos(this.S) + this.beginningLength * cos(this.S), 2) + pow(this.y1 + (this.segmentLength + this.spaceLength) * i * sin(this.S) + this.beginningLength * sin(this.S), 2))
+        if (distCheck < this.L) {
+          line(
+            this.x1 + (this.segmentLength + this.spaceLength) * i * cos(this.S) + this.beginningLength * cos(this.S),
+            this.y1 + (this.segmentLength + this.spaceLength) * i * sin(this.S) + this.beginningLength * sin(this.S),
+            this.x2, this.y2
+          )
+        } else {
+  
+
+        }
+      }
+    }
+
+    var check = sqrt(
+      pow((this.segmentLength + this.spaceLength) * (int(this.numS) + 1) * sin(this.S) - this.spaceLength * sin(this.S) + this.beginningLength * sin(this.S), 2) +
+      pow((this.segmentLength + this.spaceLength) * (int(this.numS) + 1) * cos(this.S) - this.spaceLength * cos(this.S) + this.beginningLength * cos(this.S), 2)
+    )
+
+    stroke(0, 255, 0)
+    strokeWeight(5)
+
+
+    stroke(0, 0, 0)
+    strokeWeight(3)
+
+
+  }
+}
+
+function setup() {
+  createCanvas(400, 400);
+
+  sls = [];
+  for (i = 0; i < 20; i++) {
+    sls.push(new SlopeLine(100, 100 + 10 * i, 300, 100 + 10 * i, random(1, 35), random(1, 35)));
+  }
+}
+
+function draw() {
+  background(220);
+
+  for (i = 0; i < 20; i++) {
+    stroke(0)
+    strokeWeight(3);
+    sls[i].display();
+    sls[i].move(0.2)
+
+    // Additionally  we're gonna draw two red points to see where the line should start and end
+    strokeWeight(5);
+    stroke(255, 0, 0)
+    point(100, 100 + i * 10);
+    point(300, 100 + i * 10);
+  }
+
+  //noLoop()
+}
+</code></pre>
+
+Now the protruding dash doesn't appear anymorer but we have a weird behaviour where the last dash simply disappears. We don't want that.
+
+<h2>Final Result</h2>
+
+
+<pre><code>class SlopeLine {
+  constructor(x1, y1, x2, y2, segmentLength, spaceLength) {
+    this.x1 = x1;
+    this.y1 = y1;
+    this.x2 = x2;
+    this.y2 = y2;
+    this.segmentLength = segmentLength;
+    this.spaceLength = spaceLength;
+
+    // Calculate length
+    this.L = sqrt(
+      pow((this.x1 - this.x2), 2) +
+      pow((this.y1 - this.y2), 2));
+    console.log(this.L)
+
+    // calculate angle
+    this.S = atan2(this.y2 - this.y1, this.x2 - this.x1)
+
+    // calculate number of segments
+    this.numS = this.L / (this.segmentLength + this.spaceLength)
+    console.log(this.numS)
+
+    // calculate length of tail
+    this.tailL = this.L % (this.segmentLength + this.spaceLength)
+
+    this.beginningLength = 0;
+    this.tailLength = this.tailL;
+    this.difference = (this.segmentLength + this.spaceLength)
+
+  }
+
+  move(rate) {
+    this.beginningLength += rate
+    if (this.beginningLength >= this.segmentLength + this.spaceLength) {
+      this.beginningLength = 0;
+    }
+    
+    this.difference = (this.segmentLength + this.spaceLength)-this.beginningLength
+  }
+
+
+  display() {
+    if (this.beginningLength > this.spaceLength) {
+      stroke(255, 0, 255)
+      line(this.x1, 
+           this.y1, 
+           this.x1 + (this.beginningLength - this.spaceLength) * cos(this.S), 
+           this.y1 + (this.beginningLength - this.spaceLength) * sin(this.S)
+          )      
+    }
+  
+
+    stroke(0)
+    for (let i = 0; i < this.numS; i++) {
+      stroke(0)
+      var distCheck = sqrt(
+        pow(
+          (this.segmentLength + this.spaceLength) * (i + 1) 
+          * cos(this.S) - this.spaceLength * cos(this.S) 
+          + this.beginningLength * cos(this.S), 2) 
+        + pow((this.segmentLength + this.spaceLength) * (i + 1) 
+          * sin(this.S) - this.spaceLength * sin(this.S) 
+              + this.beginningLength * sin(this.S), 2))
+
+      //console.log(i)
+      if (distCheck <= this.L) {
+        //console.log(i)
+        line(
+          this.x1 + (this.segmentLength + this.spaceLength) * i * cos(this.S) + this.beginningLength * cos(this.S),
+          this.y1 + (this.segmentLength + this.spaceLength) * i * sin(this.S) + this.beginningLength * sin(this.S),
+          this.x1 + (this.segmentLength + this.spaceLength) * (i + 1) * cos(this.S) - this.spaceLength * cos(this.S) + this.beginningLength * cos(this.S),
+          this.y1 + (this.segmentLength + this.spaceLength) * (i + 1) * sin(this.S) - this.spaceLength * sin(this.S) + this.beginningLength * sin(this.S)
+        )
+      } else {
+
+        stroke(255,255,0)
+        var distCheck = 
+            sqrt(
+              pow((this.segmentLength + this.spaceLength) * i 
+                  * cos(this.S) + this.beginningLength * cos(this.S), 2) 
+              + pow((this.segmentLength + this.spaceLength) * i 
+                    * sin(this.S) + this.beginningLength * sin(this.S), 2))
+       
+        if (distCheck  < this.L) {
+          line(
+            this.x1 + (this.segmentLength + this.spaceLength) * i * cos(this.S) + this.beginningLength * cos(this.S),
+            this.y1 + (this.segmentLength + this.spaceLength) * i * sin(this.S) + this.beginningLength * sin(this.S),
+            this.x2, this.y2
+          )
+        }
+      }
+    }
+  }
+}
+
+function setup() {
+  createCanvas(400, 400);
+
+  sls = [];
+  for (i = 0; i < 20; i++) {
+    sls.push(new SlopeLine(100, 100 + 10 * i, 300, 100 + 10 * i, random(1, 35), random(1, 35)));
+  }
+}
+
+function draw() {
+  background(220);
+
+  for (i = 0; i < 20; i++) {
+    stroke(0)
+    strokeWeight(3);
+    sls[i].display();
+    sls[i].move(0.2)
+
+    // Additionally  we're gonna draw two red points to see where the line should start and end
+    strokeWeight(5);
+    stroke(255, 0, 0)
+    point(100, 100 + i * 10);
+    point(300, 100 + i * 10);
+  }
+
+  //noLoop()
+}
+</code></pre>
