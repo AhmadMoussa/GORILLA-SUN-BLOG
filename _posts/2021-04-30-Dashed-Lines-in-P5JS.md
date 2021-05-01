@@ -75,7 +75,7 @@ function draw() {
 
 Not very impressive yet, because it's essentially just doing the same thing that you could do with the line() function. But I thought that it was cool to see what it takes to simply draw a line.
 
-<h2>Dashed Style</h2>
+<h2>Dashed Lines</h2>
 Now we'll tackle the main problem, achieving the dashed line style. Similarly to drawingContext hack, we want to be able to have variable dash lengths and variable length dash gaps. We'll need to first figure out the overall length of the line.
 
 Next we'll have to split up the line into segments of a specific length, with spaces in between, also of a specific length.
@@ -144,7 +144,6 @@ function draw() {
   }
 }
 </code></pre>
-
 Here we're actually drawing a couple of lines with the dash length and in-between spacing randomized. The red points show where the line start and where it should end. You can see that in some cases the last dash protrudes further than the second red dot. My OCD thinks that this looks very bad. Let's also seee what it looks like if we spread these lines on an arc:
 
 <pre><code>function setup() {
@@ -181,12 +180,52 @@ function draw() {
 }
 </code></pre>
 
-1. Does it add up exactly if we discard the final trailing space?
-2. If not, by how much do we need to truncate the final 'solid' segment?
+<h2>Fixing the trailing dashes</h2>
+This was genuinely a headache to fix. A first thought was to simply check if the length of n * (segment length + space length) exceeds the length of the segment, and then discard the last dash. But that turned out to be quite ugly as well:
 
-add up we'll make it so that the number of segments and spaces always overshoots the length of the line. If they don't, we have to look at another set of cases:
+Image goes here discarded
 
-
+We'll have to make a check just for the last dash, this can be done by finding the total length of all segments and spaces:
+<pre><code>
+var check = sqrt(
+      pow((this.segmentLength + this.spaceLength)*(int(this.numS)+1)*sin(this.S)-this.spaceLength*sin(this.S), 2 ) 
+      + pow((this.segmentLength + this.spaceLength)*(int(this.numS)+1)*cos(this.S)-this.spaceLength*cos(this.S), 2)
+    )
+</code></pre>
+Notice that we're casting 'this.numS' to an integer, this was maybe the one thing that I was stuck on for a while. We're casting to an integer to be able to draw an exact number of segments and spaces. We're also adding 1 to the number of segments because we're stopping the previous for loop at 'this.numS-1'. Then we also subtract one length of a spacing, since we only care about where the dash ends, not where the dash and it's following space end. If we now draw a green point at this position, we obtain:
+<pre><code>
+stroke(0,255,0)
+      strokeWeight(5)
+      point(this.x1 +
+        (this.segmentLength+ this.spaceLength)*
+        (int(this.numS)+1)*cos(this.S)-
+        this.spaceLength*cos(this.S),
+        
+         this.y1+(this.segmentLength + this.spaceLength)*
+        (int(this.numS)+1)*sin(this.S)-
+        this.spaceLength*sin(this.S)
+      )
+</code></pre>
+Next we just need to check if the length of the last dash exceeds the total length of the line or not, and draw the lines accordingly:
+<pre><code>stroke(255,255,0)
+strokeWeight(3)
+if(check<this.L){
+  line(
+     this.x1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*cos(this.S),
+     this.y1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*sin(this.S),
+     this.x1 + (this.segmentLength+ this.spaceLength)*((int(this.numS))+1)*cos(this.S)-this.spaceLength*cos(this.S),
+     this.y1 + (this.segmentLength+ this.spaceLength)*((int(this.numS))+1)*sin(this.S)-this.spaceLength*sin(this.S)
+       )
+}else if(check>this.L){
+  line(
+     this.x1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*cos(this.S),
+     this.y1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*sin(this.S),
+     this.x2,
+     this.y2
+  )
+}
+</code></pre>
+Here you can see in yellow the final dash segments and the green point indicates where the segment would have ended otherwise. Is this a good solution? Probably not, but it works for now.
 
 <h2>Putting it all together</h2>
 
@@ -248,34 +287,19 @@ add up we'll make it so that the number of segments and spaces always overshoots
       strokeWeight(3)
     if(check<this.L){
       line(
-         this.x1 + (this.segmentLength + this.spaceLength)*(int(this.numS)-1)*cos(this.S),
-         this.y1 + (this.segmentLength + this.spaceLength)*(int(this.numS)-1)*sin(this.S),
-         this.x1 + (this.segmentLength+ this.spaceLength)*((int(this.numS)))*cos(this.S)-this.spaceLength*cos(this.S),
-         this.y1 + (this.segmentLength+ this.spaceLength)*((int(this.numS)))*sin(this.S)-this.spaceLength*sin(this.S)
-           )
-      
-      line(
          this.x1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*cos(this.S),
          this.y1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*sin(this.S),
          this.x1 + (this.segmentLength+ this.spaceLength)*((int(this.numS))+1)*cos(this.S)-this.spaceLength*cos(this.S),
          this.y1 + (this.segmentLength+ this.spaceLength)*((int(this.numS))+1)*sin(this.S)-this.spaceLength*sin(this.S)
            )
     }else if(check>=this.L){
-             line(
-         this.x1 + (this.segmentLength + this.spaceLength)*(int(this.numS)-1)*cos(this.S),
-         this.y1 + (this.segmentLength + this.spaceLength)*(int(this.numS)-1)*sin(this.S),
-         this.x1 + (this.segmentLength+ this.spaceLength)*((int(this.numS)))*cos(this.S)-this.spaceLength*cos(this.S),
-         this.y1 + (this.segmentLength+ this.spaceLength)*((int(this.numS)))*sin(this.S)-this.spaceLength*sin(this.S)
-           )
-      
       line(
          this.x1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*cos(this.S),
          this.y1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*sin(this.S),
          this.x2,
          this.y2
            )
-             }
-    
+     }
   }
 }
 
@@ -295,3 +319,5 @@ function draw() {
   point(300,100);
 }
 </code></pre>
+
+This works, and it even works for any numbers that you give as parameters for segment length and spacing length. Except for negative numbers, which don't make sense to begin with.
