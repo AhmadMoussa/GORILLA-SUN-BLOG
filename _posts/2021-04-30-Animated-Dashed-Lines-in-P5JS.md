@@ -5,8 +5,10 @@ categories:
   - p5js
 description: Achieving dashed lines in P5JS was more difficult than I thought it would be, here's a tutorial on how to do it.
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: true
+published: false
 ---
+
+Okay, so this is a long one. Drawing animated dashed lines
 
 Drawing a line in P5JS is very easy and can be done with a single line of code, into which you pass the coordinates of the starting point and the end point. 
 
