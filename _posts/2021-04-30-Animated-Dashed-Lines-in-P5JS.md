@@ -16,19 +16,22 @@ Okay, so this is a long one. Drawing dashed lines in P5 from scratch and animati
 4. <a href='#4'>Pumping forward Animation</a>
 5. <a href='#5'>Reverse Speed</a>
 
-<h2 name='1'>Dashed Lines with drawingcontext</h2>
-Drawing a line in P5JS is very easy and can be done with a single line of code, into which you pass the coordinates of the starting point and the end point. 
+<h2><a name='1'>Dashed Lines with drawingcontext</a></h2>
+Drawing a line in P5JS is very easy and can be done with a single line of code. You simply need to know the coordinates of the starting point and the end point:
 
 <pre><code>line(0,0,100,100)
 </code></pre>
 
 Drawing a dashed line in P5JS is also relatively easy, however requires you to invoke the 'drawingContext' as pointed out in this Github <a href='https://github.com/processing/p5.js/issues/3336'>issue</a>:
 <pre><code>drawingContext.setLineDash([5, 15]);
+line(0,0,100,100)
 </code></pre>
 
-Drawing custom dashed lines, from scratch that have an animated behaviour, requires a lot of code. What follows is my attempt at making animated dashed lines in P5JS, but is no way the optimal approach to doing so. Again we will heavily rely on Object Oriented programming by modeling the dahsed line as an Object and giving it behaviour through functions and parameters.
+The setLineDash() function receives an array of two parameters which specify the length of the dashes that will make up your line and the spacing in between these dashes. If you simply want to draw dashed or dotted lines this might be sufficient for you. However I wanted a little more comlpex behaviour from my lines.
 
-<h2>Drawing a line between two points</h2>
+<h2><a name='2'>Drawing a line between two points</a></h2>
+
+Drawing custom dashed lines from scratch, that have an animated behaviour, requires quite a little bit of code. What follows is my attempt at making animated dashed lines in P5JS, but is no way the optimal approach to doing so. Again we will heavily rely on Object Oriented programming by modeling the dahsed line as an Object and giving it behaviour through functions and parameters.
 First order of business will be drawing a line manually between two sets of coordinates. This involves finding the angle that the line forms with the x axis, which can be done with the following formula:
 <pre><code>
 // slope of line going from point (x1,y1) to point (x2,y2)
