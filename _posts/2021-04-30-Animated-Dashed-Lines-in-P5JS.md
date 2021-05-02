@@ -8,17 +8,13 @@ thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: false
 ---
 
-Okay, so this is a long one. Drawing animated dashed lines
-
-Drawing a line in P5JS is very easy and can be done with a single line of code, into which you pass the coordinates of the starting point and the end point. 
+Okay, so this is a long one. Drawing dashed lines in P5 from scratch and animating them was a tough one, but I'm super happy with my results and stoked to share the code in this post. Drawing a line in P5JS is very easy and can be done with a single line of code, into which you pass the coordinates of the starting point and the end point. 
 
 <pre><code>line(0,0,100,100)
 </code></pre>
 
-Drawing a dashed line in P5JS is also relatively easy, however requires a somewhat of a hack to be achieved.
-
-<pre><code>
-
+Drawing a dashed line in P5JS is also relatively easy, however requires you to invoke the 'drawingContext' as pointed out in this Github <a href='https://github.com/processing/p5.js/issues/3336'>issue</a>:
+<pre><code>drawingContext.setLineDash([5, 15]);
 </code></pre>
 
 Drawing custom dashed lines, from scratch that have an animated behaviour, requires a lot of code. What follows is my attempt at making animated dashed lines in P5JS, but is no way the optimal approach to doing so. Again we will heavily rely on Object Oriented programming by modeling the dahsed line as an Object and giving it behaviour through functions and parameters.
