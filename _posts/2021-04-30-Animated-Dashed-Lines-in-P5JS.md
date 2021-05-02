@@ -5,10 +5,19 @@ categories:
   - p5js
 description: Achieving dashed lines in P5JS was more difficult than I thought it would be, here's a tutorial on how to do it.
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: false
+published: true
 ---
 
-Okay, so this is a long one. Drawing dashed lines in P5 from scratch and animating them was a tough one, but I'm super happy with my results and stoked to share the code in this post. Drawing a line in P5JS is very easy and can be done with a single line of code, into which you pass the coordinates of the starting point and the end point. 
+Okay, so this is a long one. Drawing dashed lines in P5 from scratch and animating them was a tough one, but I'm super happy with my results and stoked to share the code in this post, especially with the insights I've gained from writing this code. I highly recommend attempting to make what you see above from scratch on your own, and then come back when you hit a roadblock, otherwise enjoy the post! Let's go:
+
+1. <a href='#1'>Dashed Lines with the drawingcontext</a>
+2. <a href='#2'>Dashed Line from Scratch</a>
+3. <a href='#3'>Fixing the final protruding dash</a>
+4. <a href='#4'>Pumping forward Animation</a>
+5. <a href='#5'>Reverse Speed</a>
+
+<h2 name='1'>Dashed Lines with drawingcontext</h2>
+Drawing a line in P5JS is very easy and can be done with a single line of code, into which you pass the coordinates of the starting point and the end point. 
 
 <pre><code>line(0,0,100,100)
 </code></pre>
