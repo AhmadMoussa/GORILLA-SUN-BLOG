@@ -7,7 +7,7 @@ description: Achieving dashed lines in P5JS was more difficult than I thought it
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Rainbow Tunnel.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/cut.gif" alt="" /></span>
 
 Okay, so this is a long one. Drawing dashed lines in P5 from scratch and animating them was a tough one, but I'm super happy with my results and stoked to share the code in this post, especially with the insights I've gained from writing this code. I highly recommend attempting to make what you see above from scratch on your own, and then come back when you hit a roadblock, otherwise enjoy the post! Let's go:
 
