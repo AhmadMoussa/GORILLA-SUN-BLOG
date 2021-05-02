@@ -7,6 +7,7 @@ description: Achieving dashed lines in P5JS was more difficult than I thought it
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Rainbow Tunnel.gif" alt="" /></span>
 
 Okay, so this is a long one. Drawing dashed lines in P5 from scratch and animating them was a tough one, but I'm super happy with my results and stoked to share the code in this post, especially with the insights I've gained from writing this code. I highly recommend attempting to make what you see above from scratch on your own, and then come back when you hit a roadblock, otherwise enjoy the post! Let's go:
 
@@ -15,8 +16,10 @@ Okay, so this is a long one. Drawing dashed lines in P5 from scratch and animati
 3. <a href='#3'>Adding the dashed line style</a>
 4. <a href='#4'>Fixing the final protruding dash</a>
 5. <a href='#5'>Code for static dashed lines</a>
-6. <a href='#6'>Pumping forward Animation</a>
-7. <a href='#7'>Reverse Speed</a>
+6. <a href='#6'>Pumping forward animation</a>
+7. <a href='#7'>Cleaning up the animation</a>
+8. <a href='#8'>Final code for animation</a>
+9. <a href='#9'>Reverse Speed</a>
 
 <h2><a name='1'>Dashed lines with the drawingcontext</a></h2>
 Drawing a line in P5JS is very easy and can be done with a single line of code. You simply need to know the coordinates of the starting point and the end point:
@@ -247,7 +250,7 @@ Here you can see in yellow the final dash segments and the green point indicates
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Fixed.png" alt="" /></span>
 
 <h2><a name='5'>Code for static dashed lines</a></h2>
-
+If we combine everything we have so far, our class will look like this:
 <pre><code>class DashLine {
   constructor(x1, y1, x2, y2, segmentLength, spaceLength) {
     this.x1 = x1;
@@ -324,29 +327,38 @@ Here you can see in yellow the final dash segments and the green point indicates
 
 function setup() {
   createCanvas(400, 400);
-  sl = new DashLine(100, 200, 300, 100, random(2,35),random(2,35));
+  
+  dls = [];
+  for(i = 0; i < 20; i++){
+    dls.push(new DashLine(100, 100+10*i, 300, 100+10*i, random(1,35),random(1,35)));
+  }
 }
 
 function draw() {
   background(220);
-  stroke(0)
-  strokeWeight(3);
-  sl.display();
-  strokeWeight(5);
-  stroke(255,0,0)
-  point(100,200);
-  point(300,100);
+
+  for(i = 0; i < 20; i++){
+    stroke(0)
+    strokeWeight(3);
+    dls[i].display();
+  
+    // Additionally  we're gonna draw two red points to see where the line should start and end
+    strokeWeight(5);
+    stroke(255,0,0)
+    point(100,100+i*10);
+    point(300,100+i*10);
+  }
 }
 </code></pre>
 
 This works, and it even works for any numbers that you give as parameters for segment length and spacing length. Except for negative numbers, which don't make sense to begin with and can be checked for in the constructor.
 
-<h2><a name='5'>Animating the dashes</a></h2>
+<h2><a name='5'>Pumping forward animation</a></h2>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Dashed Final.gif" alt="" /></span>
-Next we'll want to look into conveying motion with the dashes, which is a little tricky but actually easier than you might think. We want them to flow from the start of the line towards the end, where they seemingly disappear and reappear at the beginning of the line. Since we already wrote solid code, it won't take many modifications to achieve this effect. First, we'll have to create a parameter called 'this.beginning', such that the class now becomes:
+Next we'll want to look into conveying motion with the dashes, which is a little tricky but actually easier than you might think. We want them to flow from the start of the line towards the end, where they seemingly disappear and reappear at the beginning of the line. Since we already wrote solid code, it won't take many modifications to achieve this effect. First, we'll have to create a parameter called 'this.beginningLength', which stores the amount of displacement from the intial point. The class now becomes:
 
-<pre><code>class SlopeLine {
+<pre><code>class AnimatedLine {
   constructor(x1, y1, x2, y2, segmentLength, spaceLength) {
     this.x1 = x1;
     this.y1 = y1;
@@ -379,7 +391,7 @@ Next we'll want to look into conveying motion with the dashes, which is a little
   }
   
   display() {
-     for(let i = 0; i < this.numS-1; i++){
+     for(let i = 0; i < this.numS; i++){
        line(
          this.x1 + (this.segmentLength + this.spaceLength)*i*cos(this.S) 
             + this.beginningLength*cos(this.S),
@@ -398,45 +410,15 @@ Next we'll want to look into conveying motion with the dashes, which is a little
       + pow((this.segmentLength + this.spaceLength)*(int(this.numS)+1)*cos(this.S)
       +   -this.spaceLength*cos(this.S)+ this.beginningLength*cos(this.S), 2)
     )
-    
-    stroke(0,255,0)
-      strokeWeight(5)
-      point(this.x1 +
-        (this.segmentLength+ this.spaceLength)*
-        (int(this.numS)+1)*cos(this.S)-
-        this.spaceLength*cos(this.S)+ this.beginningLength*cos(this.S),
-        
-         this.y1+(this.segmentLength + this.spaceLength)*
-        (int(this.numS)+1)*sin(this.S)-
-        this.spaceLength*sin(this.S)+ this.beginningLength*sin(this.S)
-      )
-    
-    stroke(255,255,0)
-      strokeWeight(3)
-    if(check<this.L){
-      line(
-         this.x1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*cos(this.S)+ this.beginningLength*cos(this.S),
-         this.y1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*sin(this.S)+ this.beginningLength*sin(this.S),
-         this.x1 + (this.segmentLength+ this.spaceLength)*((int(this.numS))+1)*cos(this.S)-this.spaceLength*cos(this.S)+ this.beginningLength*cos(this.S),
-         this.y1 + (this.segmentLength+ this.spaceLength)*((int(this.numS))+1)*sin(this.S)-this.spaceLength*sin(this.S)+ this.beginningLength*sin(this.S)
-           )
-    }else if(check>this.L){
-      line(
-         this.x1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*cos(this.S)+ this.beginningLength*cos(this.S),
-         this.y1 + (this.segmentLength + this.spaceLength)*(int(this.numS))*sin(this.S)+ this.beginningLength*sin(this.S),
-         this.x2,
-         this.y2
-           )
-    }
   }
 }
 
 function setup() {
   createCanvas(400, 400);
   
-  sls = [];
+  als = [];
   for(i = 0; i < 20; i++){
-    sls.push(new SlopeLine(100, 100+10*i, 300, 100+10*i, random(1,35),random(1,35)));
+    als.push(new AnimatedLine(100, 100+10*i, 300, 100+10*i, random(1,35),random(1,35)));
   }
 }
 
@@ -446,8 +428,8 @@ function draw() {
   for(i = 0; i < 20; i++){
     stroke(0)
     strokeWeight(3);
-    sls[i].display();
-    sls[i].move(0.2)
+    als[i].display();
+    als[i].move(0.2)
   
     // Additionally  we're gonna draw two red points to see where the line should start and end
     strokeWeight(5);
@@ -460,7 +442,14 @@ function draw() {
 
 And we end up with something similar to this:
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Animation Attempt 1.gif" alt="" /></span>
-Watching this go on for a little while, you cans ee how unsatisfying it to see the first dash of each line pop up out of seemingly nowhere. We need to draw the line that goes from the first red point to the beginning of the space preceding the first dash. This simulates as if the dashed line is continuously appearing from the left side, and already makes the animation look much less jumpy:
+
+The most important new addition is the move() function, which displaces the beginningLength parameter, which is what's pushing forward the dashed line. Once the beginningLength parameter is larger or equal to the length of a dash and a gap we reset it. The beginningLength parameter will be included in the calculation of the position of each dash. 
+
+Watching this go on for a little while, you can see how unsatisfying it is to see the first dash of each line pop up out of seemingly nowhere, and equivalently we again have a problem of a protruding final dash. 
+
+<h2><a name='#7'>Cleaning up the animation</a></h2>
+
+We need to draw the line that goes from the first red point to the beginning of the space preceding the first dash. This simulates as if the dashed line is continuously appearing from the left side, and already makes the animation look much less jumpy:
 <pre><code>// Add this to beginning of display function
 if(this.beginningLength > this.spaceLength){
        stroke(255,0,255)
@@ -471,11 +460,12 @@ if(this.beginningLength > this.spaceLength){
      }
 </code></pre>
 Now we have something that looks like this:
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Animation Attempt 2.gif" alt="" /></span>
-And the last thing that we need to do is make it such that the newly protruding last dash gets truncated. Since the protruding last dash will be 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Animation Attempt First dash fixed.gif" alt="" /></span>
+
+Now to the truncation of the newly protruding last dash. One step towards a solution will be checking if any of the drawn dashes exceed the total length of our line, if they do, we simply don't draw them: 
 
 <pre><code>
-class SlopeLine {
+class AnimatedLine {
   constructor(x1, y1, x2, y2, segmentLength, spaceLength) {
     this.x1 = x1;
     this.y1 = y1;
@@ -495,7 +485,6 @@ class SlopeLine {
 
     // calculate number of segments
     this.numS = this.L / (this.segmentLength + this.spaceLength)
-    console.log(this.numS)
 
     // calculate length of tail
     this.tailL = this.L % (this.segmentLength + this.spaceLength)
@@ -516,64 +505,52 @@ class SlopeLine {
   }
 
 
-
   display() {
     if (this.beginningLength > this.spaceLength) {
       stroke(255, 0, 255)
-      line(this.x1, this.y1, this.x1 + (this.beginningLength - this.spaceLength) * cos(this.S), this.y1 + (this.beginningLength - this.spaceLength) * sin(this.S))
+      line(this.x1, this.y1, 
+           this.x1 + (this.beginningLength - this.spaceLength) * cos(this.S), 
+           this.y1 + (this.beginningLength - this.spaceLength) * sin(this.S))
     }
 
     stroke(0)
     for (let i = 0; i < this.numS; i++) {
-      var distCheck = sqrt(pow((this.segmentLength + this.spaceLength) * (i + 1) * cos(this.S) - this.spaceLength * cos(this.S) + this.beginningLength * cos(this.S), 2) + pow((this.segmentLength + this.spaceLength) * (i + 1) * sin(this.S) - this.spaceLength * sin(this.S) + this.beginningLength * sin(this.S), 2))
+      
+      // check if dash segment exceeds total line length
+      var distCheck = sqrt(
+        pow((this.segmentLength + this.spaceLength) * (i + 1) 
+            * cos(this.S) - this.spaceLength * cos(this.S) 
+            + this.beginningLength * cos(this.S), 2) 
+        + pow((this.segmentLength + this.spaceLength) * (i + 1) 
+              * sin(this.S) - this.spaceLength * sin(this.S) 
+              + this.beginningLength * sin(this.S), 2)
+      )
 
-      //console.log(i)
+      // if it does, we simply don't draw it
       if (distCheck <= this.L) {
-        //console.log(i)
         line(
-          this.x1 + (this.segmentLength + this.spaceLength) * i * cos(this.S) + this.beginningLength * cos(this.S),
-          this.y1 + (this.segmentLength + this.spaceLength) * i * sin(this.S) + this.beginningLength * sin(this.S),
-          this.x1 + (this.segmentLength + this.spaceLength) * (i + 1) * cos(this.S) - this.spaceLength * cos(this.S) + this.beginningLength * cos(this.S),
-          this.y1 + (this.segmentLength + this.spaceLength) * (i + 1) * sin(this.S) - this.spaceLength * sin(this.S) + this.beginningLength * sin(this.S)
+          this.x1 + (this.segmentLength + this.spaceLength) * i 
+              * cos(this.S) + this.beginningLength * cos(this.S),
+          this.y1 + (this.segmentLength + this.spaceLength) * i 
+              * sin(this.S) + this.beginningLength * sin(this.S),
+          this.x1 + (this.segmentLength + this.spaceLength) * (i + 1) 
+              * cos(this.S) - this.spaceLength * cos(this.S) 
+              + this.beginningLength * cos(this.S),
+          this.y1 + (this.segmentLength + this.spaceLength) * (i + 1) 
+              * sin(this.S) - this.spaceLength * sin(this.S) 
+              + this.beginningLength * sin(this.S)
         )
-      } else {
-
-        var distCheck = sqrt(pow(this.x1 + (this.segmentLength + this.spaceLength) * i * cos(this.S) + this.beginningLength * cos(this.S), 2) + pow(this.y1 + (this.segmentLength + this.spaceLength) * i * sin(this.S) + this.beginningLength * sin(this.S), 2))
-        if (distCheck < this.L) {
-          line(
-            this.x1 + (this.segmentLength + this.spaceLength) * i * cos(this.S) + this.beginningLength * cos(this.S),
-            this.y1 + (this.segmentLength + this.spaceLength) * i * sin(this.S) + this.beginningLength * sin(this.S),
-            this.x2, this.y2
-          )
-        } else {
-  
-
-        }
       }
     }
-
-    var check = sqrt(
-      pow((this.segmentLength + this.spaceLength) * (int(this.numS) + 1) * sin(this.S) - this.spaceLength * sin(this.S) + this.beginningLength * sin(this.S), 2) +
-      pow((this.segmentLength + this.spaceLength) * (int(this.numS) + 1) * cos(this.S) - this.spaceLength * cos(this.S) + this.beginningLength * cos(this.S), 2)
-    )
-
-    stroke(0, 255, 0)
-    strokeWeight(5)
-
-
-    stroke(0, 0, 0)
-    strokeWeight(3)
-
-
   }
 }
 
 function setup() {
   createCanvas(400, 400);
 
-  sls = [];
+  als = [];
   for (i = 0; i < 20; i++) {
-    sls.push(new SlopeLine(100, 100 + 10 * i, 300, 100 + 10 * i, random(1, 35), random(1, 35)));
+    als.push(new AnimatedLine(100, 100 + 10 * i, 300, 100 + 10 * i, random(1, 35), random(1, 35)));
   }
 }
 
@@ -583,27 +560,25 @@ function draw() {
   for (i = 0; i < 20; i++) {
     stroke(0)
     strokeWeight(3);
-    sls[i].display();
-    sls[i].move(0.2)
+    als[i].display();
+    als[i].move(0.2)
 
-    // Additionally  we're gonna draw two red points to see where the line should start and end
     strokeWeight(5);
     stroke(255, 0, 0)
     point(100, 100 + i * 10);
     point(300, 100 + i * 10);
   }
-
-  //noLoop()
 }
 </code></pre>
-And we finally end up with this:
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Dashed Final.gif" alt="" /></span>
-Now the protruding dash doesn't appear anymorer but we have a weird behaviour where the last dash simply disappears. We don't want that.
 
-<h2>Final Result</h2>
+And we end up with this:
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Animation Attempt Disappearing Last Dash.gif" alt="" /></span>
+Now the protruding dash doesn't appear anymorer but we have a weird behaviour where the last dash simply disappears. We don't want that, we can fix it with an additional check and mirroring the beginningLength dash, since their lengths are proportional.
 
-The final code goes here:
-<pre><code>class SlopeLine {
+<h2><a name='#8'>Final code for animation</a></h2>
+
+And the final code goes here:
+<pre><code>class AnimatedLine {
   constructor(x1, y1, x2, y2, segmentLength, spaceLength) {
     this.x1 = x1;
     this.y1 = y1;
@@ -623,15 +598,8 @@ The final code goes here:
 
     // calculate number of segments
     this.numS = this.L / (this.segmentLength + this.spaceLength)
-    console.log(this.numS)
-
-    // calculate length of tail
-    this.tailL = this.L % (this.segmentLength + this.spaceLength)
 
     this.beginningLength = 0;
-    this.tailLength = this.tailL;
-    this.difference = (this.segmentLength + this.spaceLength)
-
   }
 
   move(rate) {
@@ -639,8 +607,6 @@ The final code goes here:
     if (this.beginningLength >= this.segmentLength + this.spaceLength) {
       this.beginningLength = 0;
     }
-    
-    this.difference = (this.segmentLength + this.spaceLength)-this.beginningLength
   }
 
 
@@ -654,8 +620,6 @@ The final code goes here:
           )      
     }
   
-
-    stroke(0)
     for (let i = 0; i < this.numS; i++) {
       stroke(0)
       var distCheck = sqrt(
@@ -667,14 +631,18 @@ The final code goes here:
           * sin(this.S) - this.spaceLength * sin(this.S) 
               + this.beginningLength * sin(this.S), 2))
 
-      //console.log(i)
       if (distCheck <= this.L) {
-        //console.log(i)
         line(
-          this.x1 + (this.segmentLength + this.spaceLength) * i * cos(this.S) + this.beginningLength * cos(this.S),
-          this.y1 + (this.segmentLength + this.spaceLength) * i * sin(this.S) + this.beginningLength * sin(this.S),
-          this.x1 + (this.segmentLength + this.spaceLength) * (i + 1) * cos(this.S) - this.spaceLength * cos(this.S) + this.beginningLength * cos(this.S),
-          this.y1 + (this.segmentLength + this.spaceLength) * (i + 1) * sin(this.S) - this.spaceLength * sin(this.S) + this.beginningLength * sin(this.S)
+          this.x1 + (this.segmentLength + this.spaceLength) * i 
+              * cos(this.S) + this.beginningLength * cos(this.S),
+          this.y1 + (this.segmentLength + this.spaceLength) * i 
+              * sin(this.S) + this.beginningLength * sin(this.S),
+          this.x1 + (this.segmentLength + this.spaceLength) * (i + 1) 
+              * cos(this.S) - this.spaceLength * cos(this.S)
+              + this.beginningLength * cos(this.S),
+          this.y1 + (this.segmentLength + this.spaceLength) * (i + 1) 
+              * sin(this.S) - this.spaceLength * sin(this.S) 
+              + this.beginningLength * sin(this.S)
         )
       } else {
 
@@ -688,8 +656,10 @@ The final code goes here:
        
         if (distCheck  < this.L) {
           line(
-            this.x1 + (this.segmentLength + this.spaceLength) * i * cos(this.S) + this.beginningLength * cos(this.S),
-            this.y1 + (this.segmentLength + this.spaceLength) * i * sin(this.S) + this.beginningLength * sin(this.S),
+            this.x1 + (this.segmentLength + this.spaceLength) * i 
+                * cos(this.S) + this.beginningLength * cos(this.S),
+            this.y1 + (this.segmentLength + this.spaceLength) * i 
+                * sin(this.S) + this.beginningLength * sin(this.S),
             this.x2, this.y2
           )
         }
@@ -701,9 +671,9 @@ The final code goes here:
 function setup() {
   createCanvas(400, 400);
 
-  sls = [];
+  als = [];
   for (i = 0; i < 20; i++) {
-    sls.push(new SlopeLine(100, 100 + 10 * i, 300, 100 + 10 * i, random(1, 35), random(1, 35)));
+    als.push(new AnimatedLine(100, 100 + 10 * i, 300, 100 + 10 * i, random(1, 35), random(1, 35)));
   }
 }
 
@@ -713,43 +683,40 @@ function draw() {
   for (i = 0; i < 20; i++) {
     stroke(0)
     strokeWeight(3);
-    sls[i].display();
-    sls[i].move(0.2)
+    als[i].display();
+    als[i].move(0.2)
 
-    // Additionally  we're gonna draw two red points to see where the line should start and end
     strokeWeight(5);
     stroke(255, 0, 0)
     point(100, 100 + i * 10);
     point(300, 100 + i * 10);
   }
-
-  //noLoop()
 }
 </code></pre>
 
-As sanity check, it works fine with any kind of slanted line as well:
+As sanity check, it works fine with any kind of slanted lines as well:
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Circular Final.gif" alt="" /></span>
 
-<h2>Reversing the movement</h2>
-Ok, one absolutely last thing will be reversing the movement to go in the other direction. We need to modify the move function one last time
+<h2><a name='9'>Reverse speed</a></h2>
+One final addendum would be reversing the movement to go in the other direction. Sometimes I surprise myself with the code I write, what we have was solid enough that a simple change was all we needed to handle the reverse movement. We simply add a function that handles negative rates passed to the move function. In this case the beginningLength begins from (segmentLength + spaceLength) and decreases gradually, and is reset when it becomes 0. The code looks like this:
 
-<pre><code>
-move(rate) {
-    if(rate>0){
-        this.beginningLength += rate
-        if (this.beginningLength >= this.segmentLength + this.spaceLength) {
-          this.beginningLength = 0;
-        }
+<pre><code>move(rate) {
+    if(rate<0){
+      this.moveReverse(rate);
+    }else{
+      this.beginningLength += rate
+      if (this.beginningLength >= this.segmentLength + this.spaceLength) {
+        this.beginningLength = 0;
+      }
+    }
+  }
 
-        this.difference = (this.segmentLength + this.spaceLength)-this.beginningLength
-    }else if(rate<0 ){
-        this.beginningLength += rate
-        if (this.beginningLength <= -this.segmentLength - this.spaceLength) {
-          this.beginningLength = 0;
-        }
-        this.difference = (this.segmentLength + this.spaceLength)-this.beginningLength
+  moveReverse(rate) {
+    this.beginningLength += rate
+    if (this.beginningLength <= 0) {
+      this.beginningLength = this.segmentLength + this.spaceLength;
     }
   }
 </code></pre>
 
-This works, but again we will have to make checks for the lines that protrude outside the boundaries of the red dots.
+And this should be a wrap. Now you can go ahead and use these dashed lines for your own sketches or build upon them! Happy creative coding!
