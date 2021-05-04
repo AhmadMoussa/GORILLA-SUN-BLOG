@@ -8,24 +8,36 @@ thumbnail_path: 2021-04-12-hicetnunc.png
 published: false
 ---
 
+Another update from me on everything hicetnunc and tezos in the past couple of weeks since my last post. Time in crypto space sure goes by fast, and many things might have flewn under your radar, hence I've tried my best again at scouring Twitter to piece together all the details:
+
 1. <a href='#Galleries'>Galleries</a>
-2. <a href='#OBJKT4OBJKT2'>OBJKT4OBJKT2</a>
-3. <a href='#hDAO'>hDAO</a>
-4. <a href='#Ubisoft'>Ubisoft becomes a validation node</a>
-https://www.gamesindustry.biz/articles/2021-04-20-ubisoft-joins-tezos-blockchain-ecosystem
+2. <a href='#Community'>Community</a>
+3. <a href='#OBJKT4OBJKT2'>OBJKT4OBJKT2</a>
+4. <a href='#hDAO'>hDAO developments, new functions and other tokens</a>
+5. <a href='#Companion'>New companion tools and and websites</a>
+6. <a href='#Tezos'>Tezos</a>
 
 
-5. <a href='#OBJKT4OBJKT'>OBJKT4OBJKT Event</a>
-6. <a href='#Copyminters'>Copyminters and Hoarders</a>
-7. <a href='#HDAO'>The hDAO feed</a>
-8. <a href='#Kalamint'>A new challenger arrives: Kalamint ~ Punc vs. Boutique</a>
-9. <a href='#Tezos'>Tezos to the moon</a>
-10. <a href='#Presstube'>Pricing your NFTs adequately and the Presstube Method</a>
-11. <a href='#Livestream'>Weekly Livestreams</a>
-12. <a href='#Companion'>List of Companion sites and NFT reviews</a>
-13. <a href='#Other'>Other interesting Articles, Resources and Stuff(s)</a>
+<h2><a name='Galleries'>Galleries and the FEN</a></h2>
+
+“The FEN” is a series of coordinated CryptoArt drops to encourage artists and collectors to transition their NFTs to a low-energy consumption blockchain. 
+
+Joannie Lemercier and Juliette explain that the motivation behind #theFEN is twofold: at it's core it is an innitiative to transition art galleries and exhibitions to a digital venue, many of which had to be cancelled due to the ongoing pandemic, and secondly it is an attempt at converting and bringing over artists, that haven't necessarily been involved with the crypto space, to join HEN.
+
+Very recently and probably most known to the crypto space through his article on the impact of PoW blockchains on the environment Memo Akten aka  has also joined #theFEN
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Friends, I&#39;m very happy &amp; excited to say that I&#39;m taking part in this wonderful initiative led by <a href="https://twitter.com/jbibasse?ref_src=twsrc%5Etfw">@jbibasse</a> &amp; <a href="https://twitter.com/JoanieLemercier?ref_src=twsrc%5Etfw">@JoanieLemercier</a> with many friends, and I&#39;m looking forward to joining the wonderful artist-community-led <a href="https://twitter.com/hashtag/opensource?src=hash&amp;ref_src=twsrc%5Etfw">#opensource</a> <a href="https://twitter.com/hashtag/cleannft?src=hash&amp;ref_src=twsrc%5Etfw">#cleannft</a> non-platform <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> for <a href="https://twitter.com/hashtag/TheFen?src=hash&amp;ref_src=twsrc%5Etfw">#TheFen</a> <a href="https://t.co/LT5xgR1sTP">https://t.co/LT5xgR1sTP</a></p>&mdash; MΞMO AKTEN (@memotv) <a href="https://twitter.com/memotv/status/1386714411679748113?ref_src=twsrc%5Etfw">April 26, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+I was honestly delighted to see Dave White aka @beesandbombs and Zach Lieberman also join hicetnunc, both of them being big influences on me to pick up creative coding.
+
+<h2><a name='Community'>Community Stats</a></h2>
+The hicetnunc community is ever growing
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;Here and Now&quot; (aka &#39;Hic Et Nunc&#39;, aka &#39;HEN&#39;, aka <a href="https://t.co/LaPeEKM6q2">https://t.co/LaPeEKM6q2</a>) Daily NFT sales since launch. At this pace, we&#39;re just weeks away from it becoming the leading NFT marketplace; not just the leading NFT marketplace on Tezos, but the leading NFT marketplace period! <a href="https://twitter.com/hashtag/Tezos?src=hash&amp;ref_src=twsrc%5Etfw">#Tezos</a> <a href="https://t.co/Y972TrUYc7">pic.twitter.com/Y972TrUYc7</a></p>&mdash; Kevin Mehrabi (@KMehrabi) <a href="https://twitter.com/KMehrabi/status/1382933163014455296?ref_src=twsrc%5Etfw">April 16, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2><a name='OBJKT4OBJKT2'>OBJKT4OBJKT2</a></h2>
+We've also had a crazy, crazy and fingerhurting, 'click to collect' clicking weekend with the second installment of OBJKT4OBJKT.
+
+
 
 https://twitter.com/KMehrabi/status/1383126124448813058
 
@@ -38,3 +50,5 @@ Liquidity with quipuswap
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">“Without appropriate interventions and feasible policies, the intensive Bitcoin blockchain operation in China can quickly grow as a threat that could potentially undermine the emission reduction effort taken place in the country” <a href="https://t.co/diMlHpPGmk">https://t.co/diMlHpPGmk</a></p>&mdash; Will Geary (@wgeary) <a href="https://twitter.com/wgeary/status/1383385336907108359?ref_src=twsrc%5Etfw">April 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Just shared an easy tool to make an auto-updating digital frame for <a href="https://twitter.com/hicetnunc2000?ref_src=twsrc%5Etfw">@hicetnunc2000</a> and ethereum-based art.<br><br>Just paste in some addresses and you get a URL you can display on a digital frame, TV, new tab default, etc.<a href="https://t.co/RiKuKdB70L">https://t.co/RiKuKdB70L</a></p>&mdash; shahruz (@shahruz) <a href="https://twitter.com/shahruz/status/1383596317293776903?ref_src=twsrc%5Etfw">April 18, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+https://www.gamesindustry.biz/articles/2021-04-20-ubisoft-joins-tezos-blockchain-ecosystem
