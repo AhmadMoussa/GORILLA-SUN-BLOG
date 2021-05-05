@@ -12,8 +12,8 @@ Another update from me on everything hicetnunc and tezos in the past couple of w
 
 1. <a href='#Galleries'>Galleries</a>
 2. <a href='#Community'>Community</a>
-3. <a href='#OBJKT4OBJKT2'>OBJKT4OBJKT2</a>
-4. <a href='#hDAO'>hDAO developments, new functions and other tokens</a>
+3. <a href='#hDAO'>hDAO developments, new functions and other tokens</a>
+4. <a href='#OBJKT4OBJKT2'>OBJKT4OBJKT2</a>
 5. <a href='#Companion'>New companion tools and and websites</a>
 6. <a href='#Tezos'>Tezos</a>
 
@@ -33,6 +33,9 @@ I was honestly delighted to see Dave White aka @beesandbombs and Zach Lieberman 
 The hicetnunc community is ever growing
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;Here and Now&quot; (aka &#39;Hic Et Nunc&#39;, aka &#39;HEN&#39;, aka <a href="https://t.co/LaPeEKM6q2">https://t.co/LaPeEKM6q2</a>) Daily NFT sales since launch. At this pace, we&#39;re just weeks away from it becoming the leading NFT marketplace; not just the leading NFT marketplace on Tezos, but the leading NFT marketplace period! <a href="https://twitter.com/hashtag/Tezos?src=hash&amp;ref_src=twsrc%5Etfw">#Tezos</a> <a href="https://t.co/Y972TrUYc7">pic.twitter.com/Y972TrUYc7</a></p>&mdash; Kevin Mehrabi (@KMehrabi) <a href="https://twitter.com/KMehrabi/status/1382933163014455296?ref_src=twsrc%5Etfw">April 16, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2><a name='hDAO'>hDAO, the hottest Tezos token</a></h2>
+At the time of writing, hDAO is arguably the most valuable Tezos governance token, it is however still hazy as to what it's ultimate function will be. 
 
 <h2><a name='OBJKT4OBJKT2'>OBJKT4OBJKT2</a></h2>
 We've also had a crazy, crazy and fingerhurting, 'click to collect' clicking weekend with the second installment of OBJKT4OBJKT.
