@@ -40,7 +40,9 @@ At the time of writing, hDAO is arguably the most valuable Tezos governance toke
 <h2><a name='OBJKT4OBJKT2'>OBJKT4OBJKT2</a></h2>
 We've also had a crazy, crazy and fingerhurting, 'click to collect' clicking weekend with the second installment of OBJKT4OBJKT.
 
-
+1. hDAO informative github page https://github.com/hicetnunc2000/hicetnunc/wiki/hDAO
+2. More about quipuswap https://xtz.news/defi-news/quipuswap/decentralized-exchange-quipuswap-is-live-on-tezos/
+3. Google colab to obtain the XTZ price of any Tezos token https://colab.research.google.com/github/ztepler/quipuswap-tezos-analysis-colab/blob/main/QuipuSwap_Tezos_Pool_Analysis.ipynb#scrollTo=9i1bHlGHare1
 
 https://twitter.com/KMehrabi/status/1383126124448813058
 
