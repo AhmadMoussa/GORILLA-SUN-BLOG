@@ -35,7 +35,15 @@ The hicetnunc community is ever growing
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;Here and Now&quot; (aka &#39;Hic Et Nunc&#39;, aka &#39;HEN&#39;, aka <a href="https://t.co/LaPeEKM6q2">https://t.co/LaPeEKM6q2</a>) Daily NFT sales since launch. At this pace, we&#39;re just weeks away from it becoming the leading NFT marketplace; not just the leading NFT marketplace on Tezos, but the leading NFT marketplace period! <a href="https://twitter.com/hashtag/Tezos?src=hash&amp;ref_src=twsrc%5Etfw">#Tezos</a> <a href="https://t.co/Y972TrUYc7">pic.twitter.com/Y972TrUYc7</a></p>&mdash; Kevin Mehrabi (@KMehrabi) <a href="https://twitter.com/KMehrabi/status/1382933163014455296?ref_src=twsrc%5Etfw">April 16, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <h2><a name='hDAO'>hDAO, the hottest Tezos token</a></h2>
-At the time of writing, hDAO is arguably the most valuable Tezos governance token, it is however still hazy as to what it's ultimate function will be. 
+At the time of writing, hDAO is arguably the most valuable Tezos governance token, it is however still hazy as to what it's ultimate function will be. You might even have some hDAO tied to your wallet address, if you've been active on hicetnunc in the first 40 days of it's launch and have successfully completed a purchase or sold some NFTs for some amount of xtz. During that period an equal amount of hDAO was awarded to the seller and purchaser of the transaction depending on the amount of xtz involved in the transaction, say you collected an NFT from someone for 1tez, then each of you would have received 0.5 hDAO. After this initial 40 day period no more hDAO was handed out and it's total supply is limited to 650 000.
+
+What is a governance token?
+
+There are several ways to check how much hDAO you currently hold: your temple wallet, your hicetnunc profile or on quipuswap.
+
+In my previous post, I talked a little about the hDAO feed and it's upvoting functionality, however it seems that hDAO will have a much larger purpose in the coming weeks
+
+
 
 <h2><a name='OBJKT4OBJKT2'>OBJKT4OBJKT2</a></h2>
 We've also had a crazy, crazy and fingerhurting, 'click to collect' clicking weekend with the second installment of OBJKT4OBJKT.
