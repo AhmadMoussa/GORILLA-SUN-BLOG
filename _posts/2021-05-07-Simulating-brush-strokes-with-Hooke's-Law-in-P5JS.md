@@ -104,21 +104,20 @@ function draw() {
 }
 </code></pre>
 
+It might not be very obvious from the gif, but it's remarkable if you try it yourself.
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step2.gif" alt="" /></span>
 
-In the third part of the tutorial, we begin making some changes to make the drawn circles look more like strokes, rather than just circles. Generally, in chinese, japanese and korean calligraphy, symbols can be drawn in different styles and different speeds, where the seed at which the calligraphy is made is a characteristic feature. When drawn slow, strokes tend to be thicker and heavier, when drawn faster, less pressure is put on the strokes and they tend to be thinner. This is what BUN tries to achieve in this part of the tutorial, drawn circles should be smaller (thinner), in the middle portion of the stroke, the start and end points of the stroke should be thicker, as more pressure is put on the brush.
+In the third part of the tutorial, we begin making some changes to make the drawn circles look more like strokes, rather than just circles. Generally, in chinese, japanese and korean calligraphy, symbols can be drawn in different styles and different speeds, where the speed at which the calligraphy is made is a characteristic feature. When drawn slow, strokes tend to be thicker and heavier; when drawn faster, less pressure is put on the strokes and they tend to be thinner. This is what BUN tries to achieve in this part of the tutorial, drawn circles should be smaller (thinner), in the middle portion of the stroke, the start and end points of the stroke should be thicker, as more pressure is put on the brush.
 
 This behaviour can be simulated by calculating the stroke thickness as a function of the velocity. Essentially, the faster we are drawing, the higher the velocity, the thinner is our stroke.
-<pre><code>    v += sqrt( vx*vx + vy*vy ) - v;  // ADD
-v *= 0.6;  // ADD</code></pre>
+<pre><code>v += sqrt( vx*vx + vy*vy ) - v;
+v *= 0.6;</code></pre>
 
 We also need to ensure a minimum width of 1, so that the stroke doesn't completely vanish.
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step3.gif" alt="" /></span>
 
-In part 4, we actually make the stroke look much more like a stroke than just ellipses. I'm actually getting more and more impressed by how this works. Here, instead of drawing searate circles, we'll draw lines between the points where we would have drawn circles instead, this can be done by simply adding an intermediary variable that stores the previous circles coordinates.
+In part 4, we actually make the stroke look much more like a stroke than just ellipses. It's actually very impressive how stacking these simple rules allow us to simulate such complex behaviour. Here, instead of drawing separate circles, we'll draw lines between the points where we would have drawn circles instead, this can be done by simply adding an intermediary variable that stores the previous circles coordinates.
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step4.gif" alt="" /></span>
-
-
 
 However you can see that the different line segments that make up the stroke can look a little discontinuous and jagged when drawn at higher speeds. Part 5 tries to ammend this by splitting up the line segments into multiple smaller chunks to smooth these portions.
 <pre><code>for( let i = 0; i < splitNum; ++i ) {  // ADD
@@ -126,16 +125,72 @@ However you can see that the different line segments that make up the stroke can
       oldY = y;
       x += vx/splitNum;  // AMEND: vx -> vx/splitNum
       y += vy/splitNum;  // AMEND: vy -> vy/splitNum
-      oldR += (r-oldR)/splitNum;  // ADD
+      oldR += (r-oldR)/splitNum;  
       if(oldR < 1) { oldR = 1; }  // AMEND: r -> oldR
       strokeWeight( oldR );  // AMEND: r -> oldR
       line( x, y, oldX, oldY );
-    }  // ADD
+}
 </code></pre>
-Where you can choose a value for the 'splitNum' parameter.
+Where you can choose a value for the 'splitNum' parameter, that determines into how many subsegments you want to split your lines.
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step5.gif" alt="" /></span>
 
-We could already stop here, but the last part will put a finishing touch on our brush strokes and make them look much more realistic. In part 6 we draw multiple lines offset from each by a tiny amount and make them have variable thickness
+We could already stop here, but the last part will put a finishing touch on our brush strokes and make them look much more realistic. In part 6 we draw multiple lines offset from each by a tiny amount and make them have variable thickness:
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step6.gif" alt="" /></span>
 
+The final code will look like this:
+<pre><code>
+function setup() {
+  createCanvas(1000, 1000);
+}
 
+// brushSize simply is the thikness of the brush stroke
+let brushSize = 40;
+let f = 0.5;
+let spring = 0.4;
+let friction = 0.45;
+let v = 0.5;
+let r = 0;
+let vx = 0;
+let vy = 0;
+let splitNum = 100;
+let diff = 8;
+function draw() {
+  if(mouseIsPressed) {
+    if(!f) {
+      f = true;
+      x = mouseX;
+      y = mouseY;
+    }
+    vx += ( mouseX - x ) * spring;
+    vy += ( mouseY - y ) * spring;
+    vx *= friction;
+    vy *= friction;
+    
+    v += sqrt( vx*vx + vy*vy ) - v;
+    v *= 0.6;
+    
+    oldR = r;
+    r = brushSize - v;
+    
+    for( let i = 0; i < splitNum; ++i ) {
+      oldX = x;
+      oldY = y;
+      x += vx / splitNum;
+      y += vy / splitNum;
+      oldR += ( r - oldR ) / splitNum;
+      if(oldR < 1) { oldR = 1; }
+      strokeWeight( oldR+diff );  // AMEND: oldR -> oldR+diff
+      line( x, y, oldX, oldY );
+      strokeWeight( oldR );  // ADD
+      line( x+diff*1.5, y+diff*2, oldX+diff*2, oldY+diff*2 );  // ADD
+      line( x-diff, y-diff, oldX-diff, oldY-diff );  // ADD
+    }
+    
+  } else if(f) {
+    vx = vy = 0;
+    f = false;
+  }
+}
+</code></pre>
+
+And this is about it! Many thanks to BUN for sharing his code, and I recommend giving him a follow on OpenProcessing or on Twitter to keep up with his creations! There are actually many different algorithms for simulating brush strokes, which I might cover when I learn more about them! Cheers, if you enjoyed this post consider giving me a follow on Twitter and sharing this, until next time!
