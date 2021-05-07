@@ -30,7 +30,7 @@ function draw() {
 }
 </code></pre>
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Kanji.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step1.gif" alt="" /></span>
 
 The second step will actually improve the drawing behaviour significantly by implementing Hooke's Law. Essentially, we're not drawing the ellipses at the exact mouse coordinates anymore, but are applying a number of modifiers to them. It will almost feel like the drawn ellipses are dragged behind the mouse cursor, as if they were attached to a spring, and once you stop moving the cursor, it will actually overshoot and then snap back ellastically to a resting position.
 I'm not a physics whizz, but I will try my best at explaining the concept. 
