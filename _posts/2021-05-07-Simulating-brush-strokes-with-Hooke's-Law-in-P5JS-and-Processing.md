@@ -193,4 +193,4 @@ function draw() {
 }
 </code></pre>
 
-And this is about it! Many thanks to BUN for sharing his code, and I recommend giving him a follow on OpenProcessing or on Twitter to keep up with his creations! There are actually many different algorithms for simulating brush strokes, which I might cover when I learn more about them! Cheers, if you enjoyed this post consider giving me a follow on Twitter and sharing this, until next time!
+And this is about it! Many thanks to BUN for sharing his code, and I recommend giving him a follow on <a href='https://openprocessing.org/user/187469?view=sketches'>OpenProcessing</a> or on <a href='https://twitter.com/BUN_information'>Twitter</a> to keep up with his creations! There are actually many different algorithms for simulating brush strokes, which I might cover when I learn more about them! Cheers, if you enjoyed this post consider giving me a follow on Twitter and sharing this, until next time!
