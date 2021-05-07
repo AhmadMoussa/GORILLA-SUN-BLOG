@@ -30,6 +30,8 @@ function draw() {
 }
 </code></pre>
 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Kanji.gif" alt="" /></span>
+
 The second step will actually improve the drawing behaviour significantly by implementing Hooke's Law. Essentially, we're not drawing the ellipses at the exact mouse coordinates anymore, but are applying a number of modifiers to them. It will almost feel like the drawn ellipses are dragged behind the mouse cursor, as if they were attached to a spring, and once you stop moving the cursor, it will actually overshoot and then snap back ellastically to a resting position.
 I'm not a physics whizz, but I will try my best at explaining the concept. 
 
@@ -48,6 +50,8 @@ vy += ( mouseY - y ) * spring;
 </code></pre>
 
 Now, we would end up with a very erratic behaviour, where the spring seems to never come to a stop, and keeps oscillating around the cursor's rest position:
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step2wrong.gif" alt="" /></span>
 
 This is because we ignored one variable that occurs in the physical world: friction. Friction, like the spring parameter, is a variable between 0 and 1, where values closer to 1 designated less friction and values closer to zero designate more friction. We simply multiply our velocity by this friction parameter. And we will obtain a nice behaviour. The code should look like this now:
 <pre><code>function setup() {
@@ -107,6 +111,8 @@ function draw() {
 }
 </code></pre>
 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step2.gif" alt="" /></span>
+
 In the third part of the tutorial, we begin making some changes to make the drawn circles look more like strokes, rather than just circles. Generally, in chinese, japanese and korean calligraphy, symbols can be drawn in different styles and different speeds, where the seed at which the calligraphy is made is a characteristic feature. When drawn slow, strokes tend to be thicker and heavier, when drawn faster, less pressure is put on the strokes and they tend to be thinner. This is what BUN tries to achieve in this part of the tutorial, drawn circles should be smaller (thinner), in the middle portion of the stroke, the start and end points of the stroke should be thicker, as more pressure is put on the brush.
 
 This behaviour can be simulated by calculating the stroke thickness as a function of the velocity. Essentially, the faster we are drawing, the higher the velocity, the thinner is our stroke.
@@ -114,8 +120,12 @@ This behaviour can be simulated by calculating the stroke thickness as a functio
 v *= 0.6;  // ADD</code></pre>
 
 We also need to ensure a minimum width of 1, so that the stroke doesn't completely vanish.
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step3.gif" alt="" /></span>
 
 In part 4, we actually make the stroke look much more like a stroke than just ellipses. I'm actually getting more and more impressed by how this works. Here, instead of drawing searate circles, we'll draw lines between the points where we would have drawn circles instead, this can be done by simply adding an intermediary variable that stores the previous circles coordinates.
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step4.gif" alt="" /></span>
+
+
 
 However you can see that the different line segments that make up the stroke can look a little discontinuous and jagged when drawn at higher speeds. Part 5 tries to ammend this by splitting up the line segments into multiple smaller chunks to smooth these portions.
 <pre><code>for( let i = 0; i < splitNum; ++i ) {  // ADD
@@ -130,7 +140,9 @@ However you can see that the different line segments that make up the stroke can
     }  // ADD
 </code></pre>
 Where you can choose a value for the 'splitNum' parameter.
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step5.gif" alt="" /></span>
 
+We could already stop here, but the last part will put a finishing touch on our brush strokes and make them look much more realistic. In part 6 we draw multiple lines offset from each by a tiny amount and make them have variable thickness
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step6.gif" alt="" /></span>
 
-We could already stop here, but the last part will put a finishing touch on our brush strokes and make them look much more realistic. In part 6 we draw multiple lines offset from each by a tiny amount and make them have variable thikness
 
