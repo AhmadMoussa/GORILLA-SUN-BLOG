@@ -12,7 +12,11 @@ published: true
 One continuous big source of inspiration for me has been Processing's <a href='https://openprocessing.org/browse/#'>Discover Tab</a>, where you can browse sketches from different users and see what they have come up with.
 Recently one in particular caught my eye, that allows you to draw brush strokes in a style reminiscent of the far east. The behaviour of these brush strokes felt very fluid and responsive, so I dug little deeper and had a look at the code (you can view the code for every sketch on there!).
 
-The <a href='https://openprocessing.org/sketch/755877'>sketch</a> was made by Twitter user <a href='https://twitter.com/BUN_information'>@BUN_information</a>, and has even made a very nice tutorial for his code <a href='https://openprocessing.org/sketch/793375'>here</a>. This blog post's purpose is to explain and adapt this code for p5js. BUN divides his tutorial into 6 parts, where each part introduces new behaviour and comlexity to the brush stroke. The first part is very simple, we simply draw circles at the cursor's location and go from there:
+The <a href='https://openprocessing.org/sketch/755877'>sketch</a> was made by Twitter user <a href='https://twitter.com/BUN_information'>@BUN_information</a>, and has even made a very nice tutorial for his code <a href='https://openprocessing.org/sketch/793375'>here</a>. 
+
+<blockquote class="twitter-tweet tw-align-center"><p lang="ja" dir="ltr">OpenProcessing<a href="https://t.co/pQxLY5e50H">https://t.co/pQxLY5e50H</a><br><br>GitHub<a href="https://t.co/DZBU9LhTue">https://t.co/DZBU9LhTue</a><br><br>「解説書くならせっかくだし」と思ってOpenProcessingのTutorial Modeを使ってみたけど…<br>油断するとすーぐ文章長くなりがち。そして解説になってない。英語も正しいかどうか怪しい。<br>いいよもう。ふーんだ。<a href="https://twitter.com/hashtag/Processing?src=hash&amp;ref_src=twsrc%5Etfw">#Processing</a> <a href="https://t.co/nRRqkppCIy">https://t.co/nRRqkppCIy</a> <a href="https://t.co/kmg5xdplHs">pic.twitter.com/kmg5xdplHs</a></p>&mdash; BUN (@BUN_information) <a href="https://twitter.com/BUN_information/status/1195300719231791104?ref_src=twsrc%5Etfw">November 15, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+This blog post's purpose is to explain and adapt this code for p5js. BUN divides his tutorial into 6 parts, where each part introduces new behaviour and comlexity to the brush stroke. The first part is very simple, we simply draw circles at the cursor's location and go from there:
 
 <pre><code>function setup() {
   createCanvas(400, 400);
