@@ -12,9 +12,7 @@ published: true
 One continuous big source of inspiration for me has been Processing's <a href='https://openprocessing.org/browse/#'>Discover Tab</a>, where you can browse sketches from different users and see what they have come up with.
 Recently one in particular caught my eye, that allows you to draw brush strokes in a style reminiscent of the far east. The behaviour of these brush strokes felt very fluid and responsive, so I dug little deeper and had a look at the code (you can view the code for every sketch on there!).
 
-The <a href='https://openprocessing.org/sketch/755877'>sketch</a> was made by Twitter user <a href='https://twitter.com/BUN_information'>@BUN_information</a>, and has even made a very nice tutorial for his code <a href='https://openprocessing.org/sketch/793375'>here</a>. This blog post's purpose is to explain and adapt this code for p5js.
-
-BUN divides his tutorial into 6 parts, where each part introduces new behaviour to the brush stroke. The first part is very simple, we simply draw circles at the cursor location:
+The <a href='https://openprocessing.org/sketch/755877'>sketch</a> was made by Twitter user <a href='https://twitter.com/BUN_information'>@BUN_information</a>, and has even made a very nice tutorial for his code <a href='https://openprocessing.org/sketch/793375'>here</a>. This blog post's purpose is to explain and adapt this code for p5js. BUN divides his tutorial into 6 parts, where each part introduces new behaviour and comlexity to the brush stroke. The first part is very simple, we simply draw circles at the cursor's location and go from there:
 
 <pre><code>function setup() {
   createCanvas(400, 400);
@@ -32,25 +30,20 @@ function draw() {
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step1.gif" alt="" /></span>
 
-The second step will actually improve the drawing behaviour significantly by implementing Hooke's Law. Essentially, we're not drawing the ellipses at the exact mouse coordinates anymore, but are applying a number of modifiers to them. It will almost feel like the drawn ellipses are dragged behind the mouse cursor, as if they were attached to a spring, and once you stop moving the cursor, it will actually overshoot and then snap back ellastically to a resting position.
-I'm not a physics whizz, but I will try my best at explaining the concept. 
+The second step will actually improve the drawing behaviour significantly by implementing Hooke's Law. Essentially, we're not drawing the ellipses at the exact mouse coordinates anymore, but are applying a modifiers to the coordinates. It will almost feel like the drawn ellipses are dragged behind the mouse cursor, as if they were attached to a spring, and once you stop moving the cursor, it will actually overshoot and then snap back ellastically to a resting position. I'm not a physics whizz, but I will try my best at explaining the concept. 
 
-Picture an imaginary spring, where one end is attached to the circle that we're drawing, and the other end is connected to your cursor. This spring has an ellastic behaviour, when you begin dragging one end, the other end, to which our circle is attached, will start dragging behind it. The faster you drag one end the more this spring will be stretched out and the harder the snap-back when you come to a rest. The trick here is to somehow simulate this behaviour, and it can be done with Hooke's Law.
+Picture an imaginary spring, where one end is attached to the circle that we're drawing, and the other end is connected to your cursor. This spring has an ellastic behaviour, when you begin dragging one end, meanwhile the other end, to which our circle is attached, will start dragging behind it. The faster you drag one end the more this spring will be stretched out and the harder the snap-back will be when you come to a rest. The trick here is to somehow simulate this behaviour, and it can be done with Hooke's Law.
 
 Hooke's Law states that the force F by which a spring is displaced can be calculated with the following formula:
 <pre><code>F = k*x</code></pre>
-where x is the amount of displacement since the beginning of dragging the spring, and k is a parameter characteristic of the spring. We can actually choose this parameter, which simply signifies the elasticity of the spring.
+Where x is the amount of displacement from the beginning of dragging the spring, and k is a parameter characteristic of the spring. We can actually choose this parameter, which simply signifies the elasticity of the spring. In BUN's code, we first calculate the velocity of our cursor while it is moving (velocity being a vector quantity that defines the distance traveled over some period of time). 
 
-In BUN's code, the first thing is the caculation of the velocity of our cursor when it is moving, where velocity is a vector quantity that defines the distance traveled over some period of time. 
-The amount of displacement is simply the distance between the moment we pressed the mouse to where we moved the mouse, and will be the x parameter in Hooke's formula. For now well simply choose k to be 0.5 for a balanced behaviour (k should be between 0 and 1).
-
-One thing to note here, is that we need to calculate the formula for both x and y coordinates, since we're moving on a 2D plane:
+The amount of displacement is simply the distance between the moment we pressed the mouse to where we moved the mouse, and will be the x parameter in Hooke's formula. For now well simply choose k to be 0.5 for a balanced behaviour (k should be between 0 and 1). One thing to note here, is that we need to calculate the formula for both x and y coordinates, since we're moving on a 2D plane:
 <pre><code>vx += ( mouseX - x ) * spring;
 vy += ( mouseY - y ) * spring;
 </code></pre>
 
 Now, we would end up with a very erratic behaviour, where the spring seems to never come to a stop, and keeps oscillating around the cursor's rest position:
-
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Step2wrong.gif" alt="" /></span>
 
 This is because we ignored one variable that occurs in the physical world: friction. Friction, like the spring parameter, is a variable between 0 and 1, where values closer to 1 designated less friction and values closer to zero designate more friction. We simply multiply our velocity by this friction parameter. And we will obtain a nice behaviour. The code should look like this now:
