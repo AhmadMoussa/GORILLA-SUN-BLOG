@@ -130,3 +130,6 @@ However you can see that the different line segments that make up the stroke can
 </code></pre>
 Where you can choose a value for the 'splitNum' parameter.
 
+
+We could already stop here, but the last part will put a finishing touch on our brush strokes and make them look much more realistic. In part 6 we draw multiple lines offset from each by a tiny amount and make them have variable thikness
+
