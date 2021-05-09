@@ -1,5 +1,5 @@
 ---
-title: Perlin Noise 1: Generative Mountainscapes in P5JS and Processing
+title: Perlin Noise Generative Mountainscapes in P5JS and Processing
 author: Ahmad Moussa
 categories:
   - p5js
