@@ -17,9 +17,9 @@ Whilst drawing freehand on a paper, it's only natural to utilize smooth curves i
 The special thing that will, hopefully, set this tutorial apart from already existing tutorials, is that it will exemplify how to use Perlin Noise in  a number of specific scenarios. Where we'll start gentle and then iteratively increase the difficulty.
 
 <h2>P5's noise() function</h2>
-The noise() function is actually a little tricky to figure out by just messing around with it, since you can use it in a number of ways. Similarly to the random() function, you have to feed the function some number and we can expect it to return to us a different number, that behaves like Perlin Noise.
+The noise() function is actually a little tricky to figure out by just messing around with it, since you can use it in a number of different ways. The random() function in P5JS accepts a specific range and returns a random number within this range. The noise() function however can accept 1, 2 or 3 numbers as input arguments. 
 
-Let's begin with a simple example, similar to the example shown in the Coding Train's video:
+Let's begin with a simple example, similar to the example shown in the Coding Train's video, where we modulate the position of a circle with the output of the noise() function:
 <pre><code>
 function setup() {
   createCanvas(400, 400);
@@ -27,16 +27,21 @@ function setup() {
 
 function draw() {
   background(220);
-  var n = noise(millis()/2000)
+  var n = noise(millis()/1000)
+  n = map(n, 0, 1, -100,100)
   ellipse(width/2 + n, height/2, 20)
 }
 </code></pre>
 
+Things to consider here:
+1. The input value to the noise function is not a range between two numbers but rather a linearly increasing parameter, such as millis(), frameCount or simply a counter that you update each drawloop
+2. the returned value from the noise() function is always in the range of 0 and 1, that means that we have to scale it accordingly to invoke an observable movement to the ellipse we're drawing
+3. To do this scaling we can use the map() function, which simply remaps from one range to another. Her the initial range was between 0 and 1, and we would like it to be between -100 and 100 to make the ellipse move from side to side.
 
+This is a very basic example of what you can do with Perlin Noise, next we'll look at something more interesting.
 
-
-
-2D perlin noise that is animated:
+<h2>2D Perlin Noise</h2>
+As said, the noise() function accepts 1, 2 or 3 input parameters. The example above illustrated 1 dimensional perlin noise behaviour when modulated with time. Next well have a look at 2 dimensional perlin noise, and see how the noise() function reacts to different input parameters. In the following example we'll draw a grid of rectangles to the canvas, where each rectangle is colored based on the
 function setup() {
   createCanvas(200, 200);
 }
