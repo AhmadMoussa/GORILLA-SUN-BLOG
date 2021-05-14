@@ -5,7 +5,7 @@ categories:
   - p5js
 description: The Perlin noise generator in p5js is a fantastic feature that allows us to code up a plethora of fantastic sketches, here's a rundown of how it works as well as some examples.
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: false
+published: true
 ---
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/3D_color_noise_fine.gif" alt="" /></span>
 
@@ -81,6 +81,12 @@ var n = noise(i*0.005+t,j*0.005+t)
 // after the nested loop
 t += 0.05
 </code></pre>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/infinite_scroll_perlin_noise_x_and_y.gif" alt="" /></span>
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/infinite_scroll_perlin_noise_x_only.gif" alt="" /></span>
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/infinite_scroll_perlin_noise_y_only.gif" alt="" /></span>
+
 
 If we were to multiply or divide it we would obtain a zoom out / zoom in effect respectively. For zooming out:
 <pre><code>
@@ -89,6 +95,7 @@ var n = noise(i*0.005*t,j*0.005*t)
 // after the nested loop
 t += 0.05
 </code></pre>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/zoom_out_multiplication.gif" alt="" /></span>
 
 For zooming in:
 <pre><code>
@@ -97,6 +104,7 @@ var n = noise(i*0.005/t,j*0.005/t)
 // after the nested loop
 t += 0.05
 </code></pre>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/zoom_in_division.gif" alt="" /></span>
 
 Naturally, you can get more creative by plugging in different functions into the noise() function.
 
@@ -122,6 +130,7 @@ function draw() {
   }
 }
 </code></pre>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/3d_noise.gif" alt="" /></span>
   
   
 <pre><code>
@@ -129,7 +138,7 @@ function setup() {
   createCanvas(200, 200);
 }
 let t = 0
-let rez = 0.005
+let rez = 0.05
 function draw() {
   background(220);
   noStroke();
@@ -139,13 +148,13 @@ function draw() {
       var n1 = noise(j*rez, t, i*rez)
       var n2 = noise(t,j*rez,i*rez)
       fill(n*255, n1*255, n2*255)
-      //fill(random(0,255))
       rect(i,j,3)
     }
     t += 0.0003
   }
 }
 </code></pre>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/3D_color_noise.gif" alt="" /></span>
 
 Or a chromatic wash like this:
 <pre><code>
@@ -153,3 +162,5 @@ var n1 = noise(i*rez,j*rez, t)
 var n2 = noise(i*rez-t,j*rez, t)
 var n3 = noise(i*rez+t,j*rez, t)
 </code></pre>
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/chromatic_wash.gif" alt="" /></span>
