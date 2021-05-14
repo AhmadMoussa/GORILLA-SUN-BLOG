@@ -143,7 +143,12 @@ function draw() {
     }
     t += 0.0003
   }
-
-  //noLoop()
 }
+</code></pre>
+
+Or a chromatic wash like this:
+<pre><code>
+var n1 = noise(i*rez,j*rez, t)
+var n2 = noise(i*rez-t,j*rez, t)
+var n3 = noise(i*rez+t,j*rez, t)
 </code></pre>
