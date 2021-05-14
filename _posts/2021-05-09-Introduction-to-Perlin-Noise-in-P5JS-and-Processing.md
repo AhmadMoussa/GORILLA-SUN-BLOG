@@ -7,6 +7,7 @@ description: The Perlin noise generator in p5js is a fantastic feature that allo
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: false
 ---
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/3D_color_noise_fine.gif" alt="" /></span>
 
 I'm super excited about this blog post, because it's the start of a series of posts on Perlin Noise. A wonderful tool to have in your arsenal.
 
