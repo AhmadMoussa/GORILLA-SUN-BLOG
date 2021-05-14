@@ -99,8 +99,8 @@ t += 0.05
 
 Naturally, you can get more creative by plugging in different functions into the noise() function.
 
-<h2>3D Perlin Noise<h2>
-The little tricks we did above are neat, but what if we want to modulate the noise texture itself with time? That where 3D noise comes into play.
+<h2>3D Perlin Noise</h2>
+The little tricks we did above are neat, but what if we want to modulate the noise texture itself with time? That where 3D noise comes into play, here we keep the position of the perlin space the same, but modulate the z axis with the 3rd parameter. This allows us to obtain a wobbly texture that goes back and forth:
 
 <pre><code>function setup() {
   createCanvas(200, 200);
