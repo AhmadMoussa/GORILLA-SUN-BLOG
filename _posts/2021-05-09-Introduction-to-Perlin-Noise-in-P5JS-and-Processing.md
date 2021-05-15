@@ -107,7 +107,6 @@ If we were to multiply or divide it we would obtain a zoom out / zoom in effect 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/zoom_out_multiplication.gif" alt="" /></span>
 </div>
 <div class="col-6 col-12-small">
-For zooming in:
 <pre><code>var n = noise(i*0.005/t,j*0.005/t)
 </code></pre>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/zoom_in_division.gif" alt="" /></span>
