@@ -83,14 +83,13 @@ t += 0.05
 </code></pre>
 <div class="row">
 <div class="col-6 col-12-small">
-	<p>Incrementing x and y coordinates allows us to fly over the Noise Landscape with our canvas:</p>
+	<p>Incrementing the x and y coordinates every draw loop, allows us to shift the noise landscape. This makes it seem as if we were flying above a landscape:</p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/infinite_scroll_perlin_noise_x_and_y.gif" alt="" /></span>
     </div>
 <div class="col-6 col-12-small">
-	<p>If we were to increment the x axis we scroll sideways:</p>
+<pre><code>var n = noise(i*0.005+t,j*0.005)</code></pre>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/infinite_scroll_perlin_noise_x_only.gif" alt="" /></span>
-
-<p>Incrementing the y axis we scroll upwards:</p>
+<pre><code>var n = noise(i*0.005,j*0.005+t)</code></pre>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/infinite_scroll_perlin_noise_y_only.gif" alt="" /></span>
 
 </div>
