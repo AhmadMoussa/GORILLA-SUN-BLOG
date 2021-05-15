@@ -21,8 +21,7 @@ The special thing that will, hopefully, set this tutorial apart from already exi
 The noise() function is actually a little tricky to figure out by just messing around with it, since you can use it in a number of different ways. The random() function in P5JS accepts a specific range and returns a random number within this range. The noise() function however can accept 1, 2 or 3 numbers as input arguments. 
 
 Let's begin with a simple example, similar to the example shown in the Coding Train's video, where we modulate the position of a circle with the output of the noise() function:
-<pre><code>
-function setup() {
+<pre><code>function setup() {
   createCanvas(400, 400);
 }
 
@@ -75,11 +74,15 @@ var n = noise(i*0.005,j*0.005)
 And we should obtain a canvas that looks like it has a cloudy/milky texture to it, which is the desired effect and what 2D perlin noise looks like. Depnding on your use case you might want to use a different scale, 0.05 also looks good in this case. But remember that it also depends on the stride at which we're drawing our rectangles to the canvas.
 
 Another cool thing about this is that 2D Perlin Noise is an infinite space, such that if we were to increment the input coordinates at each time step, we can obtain an infinitly scrolliing effect:
-<pre><code>
-// inside the nested loop
-var n = noise(i*0.005+t,j*0.005+t)
-// after the nested loop
-t += 0.05
+<pre><code>//in the draw loop
+for(i = 0; i < height; i+=3){
+    for(j = 0; j < width; j+=3){
+      var n = noise(i*0.005 + t,j*0.005+t)
+      fill(n*255)
+      rect(i,j,3)
+    }
+  }
+t+=0.05
 </code></pre>
 <div class="row">
 <div class="col-6 col-12-small">
