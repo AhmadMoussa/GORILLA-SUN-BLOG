@@ -105,9 +105,12 @@ If we were to multiply or divide it we would obtain a zoom out / zoom in effect 
 var n = noise(i*0.005*t,j*0.005*t)
 // after the nested loop
 t += 0.05
+<div class="row">
+<div class="col-6 col-12-small">
 </code></pre>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/zoom_out_multiplication.gif" alt="" /></span>
-
+</div>
+<div class="col-6 col-12-small">
 For zooming in:
 <pre><code>
 // inside the nested loop
@@ -116,7 +119,7 @@ var n = noise(i*0.005/t,j*0.005/t)
 t += 0.05
 </code></pre>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/zoom_in_division.gif" alt="" /></span>
-
+</div>
 Naturally, you can get more creative by plugging in different functions into the noise() function.
 
 <h2>3D Perlin Noise</h2>
