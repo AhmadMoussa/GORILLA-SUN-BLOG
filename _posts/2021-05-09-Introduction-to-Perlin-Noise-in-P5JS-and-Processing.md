@@ -149,8 +149,7 @@ function draw() {
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/3d_noise.gif" alt="" /></span>
   
 We can also leverage this to obtain some color in our sketch, we simply create three different noise variables and plug their result into the respective r, g and b inputs of the fill() method:
-<pre><code>
-let t = 0
+<pre><code>let t = 0
 let rez = 0.05
 function draw() {
   background(220);
@@ -170,8 +169,7 @@ function draw() {
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/3D_color_noise.gif" alt="" /></span>
 
 And to wrap up, you could also get creative with a chromatic wash like this:
-<pre><code>
-var n1 = noise(i*rez,j*rez, t)
+<pre><code>var n1 = noise(i*rez,j*rez, t)
 var n2 = noise(i*rez-t,j*rez, t)
 var n3 = noise(i*rez+t,j*rez, t)
 </code></pre>
