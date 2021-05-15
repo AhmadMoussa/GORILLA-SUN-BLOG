@@ -84,11 +84,15 @@ t += 0.05
 <div class="row">
 			<div class="col-6 col-12-small">
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/infinite_scroll_perlin_noise_x_and_y.gif" alt="" /></span>
+				
+Incrementing x and y coordinates allows us to fly over the Noise Landscape with our canvas.
       </div>
 <div class="col-6 col-12-small">
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/infinite_scroll_perlin_noise_x_only.gif" alt="" /></span>
+	If we were to increment the x axis we scroll sideways.
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/infinite_scroll_perlin_noise_y_only.gif" alt="" /></span>
+Incrementing the y axis we scroll upwards.
 </div>
 </div>
 
