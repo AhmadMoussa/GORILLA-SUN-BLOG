@@ -36,7 +36,7 @@ function draw() {
 Things to consider here:
 1. The input value to the noise function is not a range between two numbers but rather a linearly increasing parameter, such as millis(), frameCount or simply a counter that you update each drawloop
 2. the returned value from the noise() function is always in the range of 0 and 1, that means that we have to scale it accordingly to invoke an observable movement to the ellipse we're drawing
-3. To do this scaling we can use the map() function, which simply remaps from one range to another. Her the initial range was between 0 and 1, and we would like it to be between -100 and 100 to make the ellipse move from side to side.
+3. To do this scaling we can use the map() function, which simply remaps from one range to another. Here the initial range was between 0 and 1, and we would like it to be between -100 and 100 to make the ellipse move from side to side.
 
 This is a very basic example of what you can do with Perlin Noise, next we'll look at something more interesting.
 
