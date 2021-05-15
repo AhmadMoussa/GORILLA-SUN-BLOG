@@ -112,6 +112,7 @@ For zooming in:
 </code></pre>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/zoom_in_division.gif" alt="" /></span>
 </div>
+</div>
 Naturally, you can get more creative by plugging in different functions into the noise() function.
 
 <h2>3D Perlin Noise</h2>
