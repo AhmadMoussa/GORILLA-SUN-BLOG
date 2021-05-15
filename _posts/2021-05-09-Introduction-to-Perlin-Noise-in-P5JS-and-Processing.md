@@ -11,11 +11,11 @@ published: true
 
 I'm super excited about this blog post, because it's the start of a series of posts on Perlin Noise, which is a wonderful tool to have in your arsenal.
 
-With perlin noise we can create smooth and interesting shapes that we wouldn't otherwise be able to make. This series will focus on Perlin Noise, particularly in combination with the curveVertex() function in P5JS, which we will make heavy use of. When starting out in creative coding, it might be difficult to move away from circular and rectangular shapes, as these seem to be the most natural things to code up. 
+With perlin noise we can create smooth and interesting shapes that we wouldn't otherwise be able to make. This series will focus on Perlin Noise, particularly in combination with the curveVertex() function, which we will make heavy use of. When starting out in creative coding, it might be difficult to move away from circular and rectangular shapes, as these seem to be the most natural things to code up. 
 
 Whilst drawing freehand on a paper, it's only natural to utilize smooth curves instead of hard edges and perfect circles. Perlin noise allows us to explore this venue through code. In p5js we can invoke perlin noise through the noise() function, which works fundamentally different than the random() function. We'll discuss the  difference between them in a bit. There already are great resources that explain Perlin Noise in great detail, such as this <a href='https://genekogan.com/code/p5js-perlin-noise/'>writeup</a> by Gene Kogan (I also recommend checking out his <a href='https://genekogan.com/'>website</a>. Especially if you want to get into AI art). As well as Daniel Schiffman aka the <a href='https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw'>Coding Train</a>'s introductory <a href='https://www.youtube.com/watch?v=8ZEMLCnn8v0&ab_channel=TheCodingTrain'>video on Perlin Noise</a>.
 
-The special thing that will, hopefully, set this tutorial apart from already existing tutorials, is that it will exemplify how to use Perlin Noise in  a number of specific scenarios. Where we'll start gentle and then iteratively increase the difficulty.
+The special thing that will, hopefully, set this tutorial apart from already existing tutorials, is that it will exemplify how to use Perlin Noise in a number of specific scenarios. Where we'll start gentle and then iteratively increase the difficulty.
 
 <h2>P5's noise() function</h2>
 The noise() function is actually a little tricky to figure out by just messing around with it, since you can use it in a number of different ways. The random() function in P5JS accepts a specific range and returns a random number within this range. The noise() function however can accept 1, 2 or 3 numbers as input arguments. 
@@ -81,11 +81,16 @@ var n = noise(i*0.005+t,j*0.005+t)
 // after the nested loop
 t += 0.05
 </code></pre>
+<div class="row">
+			<div class="col-6 col-12-small">
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/infinite_scroll_perlin_noise_x_and_y.gif" alt="" /></span>
-
+      </div>
+<div class="col-6 col-12-small">
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/infinite_scroll_perlin_noise_x_only.gif" alt="" /></span>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/infinite_scroll_perlin_noise_y_only.gif" alt="" /></span>
+</div>
+</div>
 
 
 If we were to multiply or divide it we would obtain a zoom out / zoom in effect respectively. For zooming out:
