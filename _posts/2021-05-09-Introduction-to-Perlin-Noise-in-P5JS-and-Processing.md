@@ -43,8 +43,7 @@ This is a very basic example of what you can do with Perlin Noise, next we'll lo
 <h2>2D Perlin Noise</h2>
 As said, the noise() function accepts 1, 2 or 3 input parameters. The example above illustrated 1 dimensional perlin noise behaviour when modulated with time. Next well have a look at 2 dimensional perlin noise, and see how the noise() function reacts to different input parameters. In the following example we'll draw a relatively fine grid of rectangles to the canvas, where each rectangle is colored based on a value returned by the noise function. The input to the noise function will simply be the coordinates of the rectangle on the canvas (we could also do this on a pixel level but then things would be very slow). The code looks as follows:
 
-<pre><code>
-function setup() {
+<pre><code>function setup() {
   createCanvas(200, 200);
 }
 
@@ -61,17 +60,29 @@ function draw() {
   noLoop()
 }
 </code></pre>
-Now we're going to something that doesn't look very good, or anything like Perlin noise. That because we missed an important detail, the steps between our coordinates are to large and we need to scale them down to get a finer result. The official reference states:
+Now we obtain something that doesn't look very good, or anything like Perlin noise:
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/perlin_noise_high_detail.gif" alt="" /></span>
+That's because we missed an important detail, the steps between our coordinates are too large and we need to scale them down to get a finer result. The official reference states:
 
 <blockquote>
 Another way to adjust the character of the resulting sequence is the scale of the input coordinates. As the function works within an infinite space the value of the coordinates doesn't matter as such, only the distance between successive coordinates does (eg. when using noise() within a loop). As a general rule the smaller the difference between coordinates, the smoother the resulting noise sequence will be. Steps of 0.005-0.03 work best for most applications, but this will differ depending on use.
 </blockquote>
 
 Hence we can simply multiply or divide the input coordinates by a number:
-<pre><code>
-var n = noise(i*0.005,j*0.005)
+<pre><code>var n = noise(i*0.005,j*0.005)
 </code></pre>
-And we should obtain a canvas that looks like it has a cloudy/milky texture to it, which is the desired effect and what 2D perlin noise looks like. Depnding on your use case you might want to use a different scale, 0.05 also looks good in this case. But remember that it also depends on the stride at which we're drawing our rectangles to the canvas.
+And we should obtain a canvas that looks like it has a cloudy/milky texture to it, which is the desired effect and what 2D perlin noise looks like:
+
+<div class="row">
+<div class="col-6 col-12-small">
+	<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/perlin_noise_0.005.png" alt="" /></span>
+</div>
+
+<div class="col-6 col-12-small">
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/perlin_noise_0.05.png" alt="" /></span>
+</div>
+</div>
+Depending on your use case you might want to use a different scale, 0.05 also looks good in this case (image on the right). But remember that it also depends on the stride at which we're drawing our rectangles to the canvas.
 
 Another cool thing about this is that 2D Perlin Noise is an infinite space, such that if we were to increment the input coordinates at each time step, we can obtain an infinitly scrolling effect:
 <pre><code>//in the draw loop
