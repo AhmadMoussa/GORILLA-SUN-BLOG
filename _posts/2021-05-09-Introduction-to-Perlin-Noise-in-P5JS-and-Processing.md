@@ -126,7 +126,7 @@ If we were to multiply or divide it we would obtain a zoom out / zoom in effect 
 Naturally, you can get more creative by plugging in different functions into the noise() function.
 
 <h2>3D Perlin Noise</h2>
-The little tricks we did above are neat, but what if we want to modulate the noise texture itself with time? That where 3D noise comes into play, here we keep the position of the perlin space the same, but modulate the z axis with the 3rd parameter. This allows us to obtain a wobbly texture that goes back and forth:
+The little tricks we did above are neat, but what if we want to modulate the noise texture itself with time? That's where the 3rd parameter comes into play, here we keep the position of the perlin space the same, but modulate the color of each square via the 3rd parameter, in this sense the 3rd parameter is the z axis and is manifests itself as a change of color of each rectangle. This allows us to obtain a wobbly texture that seems to wobble back and forth:
 
 <pre><code>function setup() {
   createCanvas(200, 200);
@@ -140,7 +140,6 @@ function draw() {
     for(j = 0; j < width; j+=3){
       var n = noise(i*rez,j*rez, t)
       fill(n*255)
-      //fill(random(0,255))
       rect(i,j,3)
     }
     t += 0.0003
@@ -149,11 +148,8 @@ function draw() {
 </code></pre>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/3d_noise.gif" alt="" /></span>
   
-  
+We can also leverage this to obtain some color in our sketch, we simply create three different noise variables and plug their result into the respective r, g and b inputs of the fill() method:
 <pre><code>
-function setup() {
-  createCanvas(200, 200);
-}
 let t = 0
 let rez = 0.05
 function draw() {
@@ -173,7 +169,7 @@ function draw() {
 </code></pre>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/3D_color_noise.gif" alt="" /></span>
 
-Or a chromatic wash like this:
+And to wrap up, you could also get creative with a chromatic wash like this:
 <pre><code>
 var n1 = noise(i*rez,j*rez, t)
 var n2 = noise(i*rez-t,j*rez, t)
@@ -181,3 +177,5 @@ var n3 = noise(i*rez+t,j*rez, t)
 </code></pre>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-09-Introduction-to-Perlin-Noise-in-P5JS-and-Processing/chromatic_wash.gif" alt="" /></span>
+
+And that's about it, in the next tutorial we'll have a look at making smooth curves with perlin noise and the curveVertex() function.
