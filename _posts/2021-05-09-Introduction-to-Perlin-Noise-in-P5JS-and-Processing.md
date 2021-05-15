@@ -73,7 +73,7 @@ var n = noise(i*0.005,j*0.005)
 </code></pre>
 And we should obtain a canvas that looks like it has a cloudy/milky texture to it, which is the desired effect and what 2D perlin noise looks like. Depnding on your use case you might want to use a different scale, 0.05 also looks good in this case. But remember that it also depends on the stride at which we're drawing our rectangles to the canvas.
 
-Another cool thing about this is that 2D Perlin Noise is an infinite space, such that if we were to increment the input coordinates at each time step, we can obtain an infinitly scrolliing effect:
+Another cool thing about this is that 2D Perlin Noise is an infinite space, such that if we were to increment the input coordinates at each time step, we can obtain an infinitly scrolling effect:
 <pre><code>//in the draw loop
 for(i = 0; i < height; i+=3){
     for(j = 0; j < width; j+=3){
@@ -99,7 +99,7 @@ t+=0.05
 </div>
 
 
-If we were to multiply or divide it we would obtain a zoom out / zoom in effect respectively. For zooming out:
+If we were to multiply or divide it we would obtain a zoom out / zoom in effect respectively. For zooming out and zooming in respectively:
 <div class="row">
 <div class="col-6 col-12-small">
 <pre><code>var n = noise(i*0.005*t,j*0.005*t)
