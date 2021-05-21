@@ -39,3 +39,31 @@ function draw() {
   t += 0.01;
 }
 </code></pre>
+
+
+<pre><code>
+function setup() {
+  createCanvas(301, 301);
+  t = rez = c = n = 0.02;
+  strokeWeight(3);
+}
+function draw() {
+  background(0);
+  noStroke();
+  for (i = 0; i < height; i += 3) {
+    for (j = 0; j < width; j += 3) {
+      n = noise(i * rez, j * rez + t);
+       if(n > 0.5){
+               fill(0);
+       }else{
+         fill(127.5*127.5*sin(i*0.02+millis()/1000),
+              127.5*127.5*cos(j*0.02+millis()/1000),
+              127.5)
+       }
+      rect(i, j, 3);
+
+    }
+  }
+  t += 0.08;
+}
+</code></pre>
