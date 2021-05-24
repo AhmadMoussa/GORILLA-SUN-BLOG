@@ -16,7 +16,7 @@ We've already had a look at scrolling perlin noise across the canvas by increasi
 <pre><code>
 function setup() {
   createCanvas(301, 301);
-  t = rez = c = n = 0.005;
+  t = rez = c = n = 0.008;
   strokeWeight(3);
 }
 function draw() {
