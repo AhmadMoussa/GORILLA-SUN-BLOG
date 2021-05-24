@@ -40,7 +40,7 @@ function draw() {
 }
 </code></pre>
 
-
+## Landscape
 <pre><code>
 function setup() {
   createCanvas(301, 301);
@@ -65,5 +65,33 @@ function draw() {
     }
   }
   t += 0.08;
+}
+</code></pre>
+
+## Truchet Tiling
+<pre><code>
+function setup() {
+  createCanvas(301, 301);
+  t = rez = c = n = 0.02;
+  strokeWeight(2);
+}
+
+
+function draw() {
+  background(0);
+  //noStroke();
+  stroke(255)
+  for (i = 0; i < height; i += 10) {
+    for (j = 0; j < width; j += 10) {
+      n = noise(i * rez, j * rez + t);
+      if(n > 0.5){
+        
+        line(i,j,i+10,j+10)
+      }else{
+        line(i+10,j,i,j+10)
+      }
+    }
+  }
+  t += 0.01;
 }
 </code></pre>
