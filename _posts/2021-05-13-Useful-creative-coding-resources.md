@@ -12,4 +12,3 @@ published: false
 2. Chromatic motion blur: https://ippsketch.com/posts/chromatic-motion-blur/
 3. Perfect Loops: https://bleuje.github.io/tutorial2/
 4. Creative coding techniques and algorithms: https://www.notion.so/Creative-coding-algorithms-techniques-c5550ef2f7574126bdc77b09ed76651b
-5. Noise Taxonomy: https://web.stanford.edu/~hyatt4/content/research/school_projects/CS448X/Categories.html
