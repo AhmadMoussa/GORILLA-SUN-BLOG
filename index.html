@@ -13,24 +13,23 @@ meta: A blog to nerd out about computers and music
 			<p>and this is the <strong>gorilla sun</strong> blog</p>
 		</header>
 		<p>
-		A blog about music making, creative coding and everything to keep you out of that creative rut! Scroll down to check out some recent blog posts!
+		A blog about creative coding, music making and everything to keep you out of that creative rut! Scroll down to check out some recent blog posts!
 		</p>
 
 	</div>
-	 <span class="image object"> 
+	 <span class="image object">
 		<!--<img src="https://gorillasun.de/assets/images/about/avatar.png" alt="" />-->
-		
-<iframe style="width: 100%; height: 100%; overflow: auto;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/B03YdYwCa"></iframe> 
-<!-- <iframe style="width: 100%; height: 100%; overflow: auto;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/SAG4nok1h"></iframe>-->
+
+<iframe style="width: 100%; height: 100%; overflow: auto;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/AhmadMoussa/embed/B03YdYwCa"></iframe>
 
 	</span>
 </section>
 <section>
-	<h2> Recent Blog Posts </h2>
+	<h1> Recent Blog Posts </h1>
 	<!--
 	<div id='articles' class="posts">
 {% for post in site.posts limit:2 %}
-	
+
 	<article>
 		<a href="https://gorillasun.de{{ post.url }}" class="image"><img src="https://gorillasun.de/thumbnails/{{ post.thumbnail_path }}" alt="" /></a>
 		<a href="https://gorillasun.de{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
@@ -47,7 +46,7 @@ meta: A blog to nerd out about computers and music
 	<div class="row gtr-200">
 			<div class="col-8 col-12-medium">
 				<!--
-				{% assign postsByMonth = 
+				{% assign postsByMonth =
 					site.posts | group_by_exp:"post", "post.date | date: '%Y, %b'" %}
 
 					{% for month in postsByMonth limit:5%}
@@ -59,7 +58,7 @@ meta: A blog to nerd out about computers and music
 					    </ul>
 					{% endfor %}
 				-->
-				{% assign postsByMonth = 
+				{% assign postsByMonth =
 				site.posts | group_by_exp:"post", "post.date | date: '%B %Y'" %}
 
 				{% for month in postsByMonth %}
@@ -72,36 +71,119 @@ meta: A blog to nerd out about computers and music
 				{% endfor %}
 			</div>
 			<div class="col-4 col-12-medium">
+				<div class='box'>
 				<h3>What are my blog posts about?</h3>
 				<p>A lot of different things actually! From creative ways of making music to coding visual sketches for your music, the occasional VST plugin review as well as analyses of specific artists' workflows.</p>
-				<h4>For a complete list of all the blog posts I've ever written, visit the Archive</h4>
+				<h4>Update: 05/25/2021</h4>
+				<p>Recently I have also ventured into the interesting world of decentralized blockchain technology, and have been experimenting with minting interactive p5js sketches on hicetnunc.xyz. Hence some more recent articles on that!</p>
+				<h4>For a complete list of all the blog posts I've ever written, you can visit the Archive</h4>
 				<ul class="actions">
 					<li><a href="https://gorillasun.de/archive.html" class="button">Visit the Archive</a></li>
 				</ul>
+				</div>
 			</div>
 		</div>
-	
+
 </section>
 
 
 <section>
-	<h2 id="elements">Music</h2>
+
+	<h1 >Music</h1>
+
 		<div class="row gtr-200">
 			<div class="col-6 col-12-medium">
-				<iframe src="https://open.spotify.com/embed/artist/7HnPKqvpn1g0CCJnAVOufm" width="100%" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+				<h3>A selection of Instrumental Shorts</h3>
+				<iframe src="https://open.spotify.com/embed/artist/7HnPKqvpn1g0CCJnAVOufm" width="100%" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 			</div>
+
 			<div class="col-6 col-12-medium">
-				<p>
-					I create short instrumental guitar compositions as well as upbeat electronic music which is not extremely genre specific. You can find my music on most major streaming services as well as bandcamp. Everything I make off of streaming services gets invested back into my music making. Everything I make off of bandcamp goes to some Lebanese charity once it's a considerable sum.
+				<h3>My musical goals</h3>
+				<div class='box'>
+
+				<ul>
+				<li><p>
+					I create short instrumental guitar compositions as well as upbeat electronic music which is not extremely genre specific.
+
+					You can find my music on most major <a href='https://open.spotify.com/artist/7HnPKqvpn1g0CCJnAVOufm?si=COb6lE6pQL2uvoDRc1OPMg'> streaming services </a> as well as <a href='https://gorillasun1.bandcamp.com/'>bandcamp</a>.
+</p></li>
+<li><p>
+					Everything I make off of streaming services gets invested back into my music making. Everything I make off of bandcamp goes to some Lebanese charity once it's a considerable sum (So far I have raised an outstanding sum of 25$).
+				</p></li>
+				</ul>
+			</div>
+			</div>
+		</div>
+</section>
+
+<section>
+<h1>Back to the Prop</h1>
+<div class="row gtr-200">
+	<div class="col-6 col-12-medium">
+		<h3>Machine Learning a la Carte</h3>
+		<iframe src="https://back2theprop.com" width="100%" height="400"></iframe>
+		</div>
+		<div class="col-6 col-12-medium">
+		<h3>Soft Launch</h3>
+			<div class='box'>
+				<ul>
+					<li><p>
+					I'm happy to announce that my co-conspirator Wiem and I have finally launched our project <a href='https://back2theprop.com'>Back to the Prop</a>.
+					</p></li>
+					<li><p>
+						The site is dedicated to explaining concepts in Machine Learning, Deep Learning and AI in general, in a simple and understandable manner to the layman. I recommend you scroll through the preview attached here, and see if there's articles that might interest you!
+						</p></li>
+				</ul>
+			</div>
+		</div>
+
+</section>
+
+<section>
+<h1>Research</h1>
+<div class="row gtr-200">
+	<div class="col-6 col-12-medium">
+		<h3>Publications</h3>
+		<div class='box'>
+			<ul>
+				<li><p><a href='https://www.researchgate.net/publication/340694067_Audio_Translation_with_Conditional_Generative_Adversarial_Networks'>Audio Translation with Conditional Generative Adversarial Networks ICAIIC 2020 - IEEE</a></p></li>
+				<li><p><a href='https://www.researchgate.net/publication/350579749_Generation_and_Extraction_of_Color_Palettes_with_Adversarial_Variational_Auto_Encoders'>Generation and Extraction of Color Palettes with Adversarial Variational Autoencoders ICICT 2021 - Springer</a></p></li>
+				<li><p><a href='https://www.researchgate.net/publication/350579846_Drum_Sample_Synthesis_with_Variational_Autoencoders'>Master Thesis - Drum Sample Synthesis with Variational Autoencoders</a></p></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-6 col-12-medium">
+			<h3>Research Interests</h3>
+			<div class='box'>
+				<ul>
+
+				<li><p>
+				If you've somehow found me for my research, it's probably best to connect with me on <a href='https://www.researchgate.net/profile/Ahmad-Moussa-4'>ResearchGate</a>. The code for my publications can be found on my <a href='https://github.com/AhmadMoussa'>Github</a>.
+				</p></li>
+				<li><p>
+					My research interests revolve around applications of Deep Learning for the synthesis of Sounds, which has become an increasingly popular topic in recent years.
+				</p></li>
+
+			</ul>
+				</div>
+	</div>
+
+
+</section>
+
+<section>
+	<h2 id="elements">News and Updates</h2>
+		<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+				<h3>News Letter</h3>
+				<div class='box'>
+			<p>
+					If you enjoy the the content on this website, consider subscribing to my mailing list to receive the occasional update and/or whenever a new blog is up. I promise, you won't receive spam from me... I genuinenly don't have the time for that 🤣. Otherwise another great way to stay in touch would be following me on Twitter:
+
 				</p>
-			</div>
-		</div>
-</section>
+	</div>
 
-<section>
-	<h2 id="elements">Contact</h2>
-		<div class="row gtr-200">
-			<div class="col-6 col-12-medium">
+				<div class='box'>
 				<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 									<style type="text/css">
 										#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
@@ -109,11 +191,11 @@ meta: A blog to nerd out about computers and music
 										   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 									</style>
 									<div id="mc_embed_signup">
-										
-										<h3>Subscribe to my mailing List!</h3>
-										
 
-										<form method="post" action="https://gorillasun.us1.list-manage.com/subscribe/post?u=2ec45cad93e090c190c03f02d&amp;id=f34e6ff990" 
+
+
+
+										<form method="post" action="https://gorillasun.us1.list-manage.com/subscribe/post?u=2ec45cad93e090c190c03f02d&amp;id=f34e6ff990"
 										      id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 											<div class="row gtr-uniform">
 												<div class="col-6 col-12-xsmall">
@@ -122,7 +204,7 @@ meta: A blog to nerd out about computers and music
 												<div class="col-6 col-12-xsmall">
 													<input type="text" name="LNAME" id="mce-LNAME" value="" placeholder="Last Name" />
 												</div>
-												<div class="col-6 col-12-small">
+												<div class="col-12 col-12-small">
 													<input type="email" name="EMAIL" id="mce-EMAIL" value="" placeholder="Email" required>
 												</div>
 												<div class="col-6 col-12-small">
@@ -132,23 +214,36 @@ meta: A blog to nerd out about computers and music
 												<div id="mce-responses" class="clear">
 													<div class="response" id="mce-error-response" style="display:none"></div>
 													<div class="response" id="mce-success-response" style="display:none"></div>
-												</div> 
+												</div>
 												<!-- Break -->
-												<div class="col-12">
-													<ul class="actions">
+												<div class='col12'>
+													<ul class="actions fit">
 														<li><input input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="primary" /></li>
 													</ul>
-												</div>
+													</div>
 											</div>
 										</form>
 									</div>
 									<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-									
+									</div>
+
+
 			</div>
 			<div class="col-6 col-12-medium">
-				<p>
-					If you enjoy the the content on this website, consider subscribing to my mailing list to receive the occasional update and/or whenever a new blog is up. I promise, you won't receive spam from me... I genuinenly don't have the time for that 🤣.
-				</p>
+				<h3>Follow me on Twitter &nbsp; <a href="https://twitter.com/intent/tweet?button_hashtag=gorillasu&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="small" data-show-count="true">Tweet #gorillasu</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</h3>
+
+				<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Working on a new sketch <a href="https://twitter.com/hashtag/p5js?src=hash&amp;ref_src=twsrc%5Etfw">#p5js</a> <a href="https://twitter.com/hashtag/creativecoding?src=hash&amp;ref_src=twsrc%5Etfw">#creativecoding</a> <a href="https://t.co/l1ivRtIw8a">pic.twitter.com/l1ivRtIw8a</a></p>&mdash; Gorilla Sun (@gorillasu) <a href="https://twitter.com/gorillasu/status/1395253865545568257?ref_src=twsrc%5Etfw">May 20, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
 			</div>
 		</div>
+</section>
+
+<section>
+	<h2>Contact</h2>
+	<div class='box'>
+	The easiest way to get in touch with me is by DM-ing me on Twitter or any other of my social media accounts. For more formal inquiries, shoot an email to gorillasuncontact@gmail.com , I will be happy to reply asap! :)
+	</div>
 </section>

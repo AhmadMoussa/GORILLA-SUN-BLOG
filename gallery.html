@@ -16,18 +16,130 @@ meta: A blog to nerd out about computers and music
 		</h3>
 	</div>
 
+<h2>Moon</h2>
 	<div class="row gtr-200">
-		<div class="col-6 col-12-medium">
-        		<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/DSCN7857.JPG" alt="image" /></span>
-			<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/DSCN7458.JPG" alt="image" /></span>
-			
+		<div class="col-6 col-12-small">
+        		<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Moon/2.png" alt="image" /></span>
     		</div>
-		<div class="col-6 col-12-medium">
-        		<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/DSCN7858.JPG" alt="image" /></span>
-			<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/DSCN7431.JPG" alt="image" /></span>
+				<div class="col-3 col-12-small">
+		        		<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Moon/5.png" alt="image" /></span>
+								<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Moon/3.png" alt="image" /></span>
+
+		  </div>
+			<div class="col-3 col-12-small">
+		      <span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Moon/4.png" alt="image" /></span>
+					<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Moon/1.png" alt="image" /></span>
+		 </div>
+</div>
+
+<h2>Stencil</h2>
+	<div class="row gtr-200">
+		<div class="col-6 col-12-small">
+        		<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Stencil/2.png" alt="image" /></span>
     		</div>
-	</div>
-	
-	<iframe style="width: 100%; height: 100%; overflow: auto;"  scrolling="no" frameborder="0"  src="https://editor.p5js.org/AhmadMoussa/embed/dCISy_I0s"></iframe>
-	
+				<div class="col-3 col-12-small">
+		        		<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Stencil/5.png" alt="image" /></span>
+								<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Stencil/3.png" alt="image" /></span>
+
+		  </div>
+			<div class="col-3 col-12-small">
+		      <span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Stencil/4.png" alt="image" /></span>
+					<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Stencil/1.png" alt="image" /></span>
+		 </div>
+</div>
+
+<div class="row gtr-200">
+			<div class="col-3 col-12-small">
+								<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Stencil/8.png" alt="image" /></span>
+					 			<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Stencil/9.png" alt="image" /></span>
+			 </div>
+			 <div class="col-3 col-12-small">
+							<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Stencil/6.png" alt="image" /></span>
+							<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Stencil/7.png" alt="image" /></span>
+			 </div>
+
+	 <div class="col-6 col-12-small">
+
+<pre style='overflow:auto; height:500px;'><code>//specify list of colors to color points
+listOfColors = [255];
+
+let cX = cY = L = V = 250;
+function setup() {
+ createCanvas(500, 500);
+ r = 200;
+
+ segs = [];
+ segsW = [];
+ segsC = [];
+ for (l = 0; l < L + 1; l++) {
+   row = [];
+   rowW = [];
+   rowC = [];
+   for (s = 1; s < V + 1; s++) {
+     if (random(1) > 0.65) {
+       row.push(1);
+     } else {
+       row.push(0);
+     }
+     rowW.push(random(0.1, 1.9));
+     rowC.push(random(listOfColors));
+   }
+   segs.push(row);
+   segsW.push(rowW);
+   segsC.push(rowC);
+ }
+}
+
+function draw() {
+ background(0);
+ noFill();
+ for (l = 0; l < L + 1; l++) {
+   // get distance between two points
+   var len = sqrt(
+     pow(r * cos((PI / L) * l) - r * cos((-PI / L) * l), 2) +
+       pow(r * sin((PI / L) * l) - r * sin((-PI / L) * l), 2)
+   );
+
+   for (s = 1; s < V + 1; s++) {
+     var n = noise(
+       (cX + r * cos((PI / L) * l)) * 0.2 + millis() / 2000,
+       (cY + r * sin((PI / L) * l) * 0.2 - (len / V) * s) * 0.0002 +
+         millis() / 3000
+     );
+     n = map(n, 0, 1, -30, 30);
+     if (s == 0 || s == V) {n = 0}
+     point(
+       cX + r * cos((PI / L) * l) + n,
+       cY + r * sin((PI / L) * l) - (len / V) * s + n
+     );
+     if (segs[l][s]) {
+       strokeWeight(segsW[l][s]);
+       stroke(segsC[l][s]);
+     }
+   }
+   point(cX + r * cos((-PI / L) * l), cY + r * sin((-PI / L) * l));
+ }
+ noLoop();
+}
+</code></pre>
+
+			 </div>
+</div>
+
+<h2>Sand Paper</h2>
+	<div class="row gtr-200">
+		<div class="col-6 col-12-small">
+        		<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Point Study/Gradient Noise.png" alt="image" /></span>
+    		</div>
+				<div class="col-3 col-12-small">
+		        		<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Point Study/Gradual Descending Texture.png" alt="image" /></span>
+								<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Point Study/Sand Paper Interesting.png" alt="image" /></span>
+
+		  </div>
+			<div class="col-3 col-12-small">
+		      <span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Point Study/Sand Paper Heavy.png" alt="image" /></span>
+					<span class='image fit'><img src="{{ site.url }}/assets/images/gallery/Point Study/Sand Paper Light.png" alt="image" /></span>
+		 </div>
+</div>
+
 </section>
