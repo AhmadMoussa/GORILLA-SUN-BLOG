@@ -13,13 +13,63 @@ This is the second part of the explorative series on Perlin Noise in P5JS and Pr
 We've already had a look at scrolling perlin noise across the canvas by increasing one or multiple noise parameters over time. However, creativity doesn't stop there!
 
 <h2>Quantizing the noise values</h2>
-I'm not sure if this specific technique has a name, but it essentially consists of quantizing the value from the nosie() function. When we feed grid coordinates (scaled by some scale parameter), the noise() function returns smooth and continuous values that resemble a landscape. We can use this to create interesting patterns in combination with quantization. Think about it like a real lanscape, where we shave off mountain tops that are higher that a very specific altitude, and flatten everything around it. A simple example:
-
-
+I'm not sure if this specific technique has a name, but it essentially consists of quantizing the value from the nosie() function. When we feed grid coordinates (scaled by some scale parameter), the noise() function returns smooth and continuous values that resemble a landscape. We can use this to create interesting patterns in combination with quantization. Think about it like a real lanscape, where we shave off mountain tops that are higher that a very specific altitude, and flatten everything around it. The formal definition of quantization is:
 
 <blockquote>
   Quantization is the process of constraining an input from a continuous or otherwise large set of values (such as the real numbers) to a discrete set (such as the integers).
 </blockquote>
+
+A simple cisual example in code:
+
+<pre><code>
+function setup() {
+  createCanvas(301, 301);
+  t = rez = c = n = 0.008;
+  strokeWeight(3);
+}
+function draw() {
+  background(0);
+  noStroke();
+  for (i = 0; i < height; i += 3) {
+    for (j = 0; j < width; j += 3) {
+      n = noise(i * rez, j * rez);
+      
+      //uncomment the next line to see difference between noise() and random()
+      //n = random()
+      if(n>0.6){
+      fill(255);
+      }else{
+        fill(0);
+      }
+      rect(i, j, 3);
+    }
+  }
+  noLoop()
+}
+</code></pre>
+
+This allows us to obtain these blob like separation between the black and white areas:
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/perlin 1.png" alt="" /></span>
+
+        </div>
+  <div class="col-6 col-12-medium">
+    <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/perlin 2.png" alt="" /></span>
+        </div>
+</div>
+
+If we were to replace the noise() function with random, we would get something that is much more similar to static noise:
+  <div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/noise 1.png" alt="" /></span>
+
+        </div>
+  <div class="col-6 col-12-medium">
+    <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/noise 2.png" alt="" /></span>
+        </div>
+</div>
+
 
 <pre><code>
 function setup() {
