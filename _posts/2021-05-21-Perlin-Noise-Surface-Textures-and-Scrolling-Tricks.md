@@ -144,7 +144,7 @@ if(n > 0.5){
 
 ## Truchet Tiling
 
-We can also mess around with simple truchet tiling
+We can also mess around with simple truchet tiling, where the angle of the line is determined by the value of the noise at that particular point:
 <pre><code>
 function setup() {
   createCanvas(301, 301);
@@ -172,7 +172,7 @@ function draw() {
 </code></pre>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Perlin Truchet Tiling.gif" alt="" /></span>
 
-We can get more creative with this:
+We can get more creative with this by offsetting the tiles differently:
 
 <pre><code>
 if(n > 0.5){
@@ -234,6 +234,12 @@ function draw() {
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/cartridge.png" alt="" /></span>
 
+Alternatively we can also animate this and add more variation:
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Corrupt Datastream.gif" alt="" /></span>
+
+
+<!--
 Or we can make it interactive with mouse interaction, the possibilities are essentially limitless:
 <pre><code>
 function setup() {
@@ -304,3 +310,4 @@ function draw() {
 }
 
 </code></pre>
+-->
