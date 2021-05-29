@@ -40,7 +40,7 @@ function draw() {
 }
 </code></pre>
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Simple-quantized.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Simple Quantized.gif" alt="" /></span>
 
 ## Landscape
 
@@ -96,7 +96,7 @@ function draw() {
 }
 
 </code></pre>
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Perlin-Landscape.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Perlin Landscape.gif" alt="" /></span>
 
 ## Landscape + Tiling
 <pre><code>
@@ -126,7 +126,7 @@ function draw() {
 }
 </code></pre>
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/quantized-interesting.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/quantized interesting.gif" alt="" /></span>
 
 <pre><code>
 if(n > 0.5){
@@ -140,7 +140,7 @@ if(n > 0.5){
  }
 <code><pre>
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/quantized-interesting-2.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/quantized interesting 2.gif" alt="" /></span>
 
 ## Truchet Tiling
 
@@ -170,7 +170,7 @@ function draw() {
   t += 0.01;
 }
 </code></pre>
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Perlin-Truchet-Tiling.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Perlin Truchet Tiling.gif" alt="" /></span>
 
 We can get more creative with this:
 
@@ -182,7 +182,7 @@ if(n > 0.5){
 }
 </code></pre>
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Perlin-Truchet-Tiling-2.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Perlin Truchet Tiling 2.gif" alt="" /></span>
 
 Equivalently we can add more conditional statements to make this texture more interesting, and don't necessarily have to animate it:
 
