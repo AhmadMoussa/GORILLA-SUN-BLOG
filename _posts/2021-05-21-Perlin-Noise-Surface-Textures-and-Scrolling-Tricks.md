@@ -13,6 +13,14 @@ This is the second part of the explorative series on Perlin Noise in P5JS and Pr
 We've already had a look at scrolling perlin noise across the canvas by increasing one or multiple noise parameters over time. However, creativity doesn't stop there!
 
 <h2>Quantizing the noise values</h2>
+I'm not sure if this specific technique has a name, but it essentially consists of quantizing the value from the nosie() function. When we feed grid coordinates (scaled by some scale parameter), the noise() function returns smooth and continuous values that resemble a landscape. We can use this to create interesting patterns in combination with quantization. Think about it like a real lanscape, where we shave off mountain tops that are higher that a very specific altitude, and flatten everything around it. A simple example:
+
+
+
+<blockquote>
+  Quantization is the process of constraining an input from a continuous or otherwise large set of values (such as the real numbers) to a discrete set (such as the integers).
+</blockquote>
+
 <pre><code>
 function setup() {
   createCanvas(301, 301);
