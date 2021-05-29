@@ -238,6 +238,7 @@ Alternatively we can also animate this and add more variation:
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Corrupt Datastream.gif" alt="" /></span>
 
+And this is it for this article! If you'd like to support my blog while purchasing some of my sketches, you can do so now by purchasing them on hicetnunc.xyz <a href='https://www.hicetnunc.xyz/tz/tz1hXx6tvTV3kzxpBR6E4hDYcxdgcRGHUTFj'> here </a>.
 
 <!--
 Or we can make it interactive with mouse interaction, the possibilities are essentially limitless:
