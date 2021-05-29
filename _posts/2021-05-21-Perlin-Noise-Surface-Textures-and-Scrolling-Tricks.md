@@ -40,7 +40,7 @@ function draw() {
 }
 </code></pre>
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Simple Quantized.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Simple quantized.gif" alt="" /></span>
 
 ## Landscape
 
@@ -138,7 +138,7 @@ if(n > 0.5){
         127.5*127.5*cos(j*0.02+millis()/3000),
         127.5)
  }
-<code><pre>
+</code></pre>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/quantized interesting 2.gif" alt="" /></span>
 
