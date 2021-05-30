@@ -8,6 +8,9 @@ thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Perlin Landscape.gif" alt="" /></span>
+
+
 This is the second part of the explorative series on Perlin Noise in P5JS and Processing, and focuses on applying Perlin Noise to a 2 dimensional grid of items on the canvas and how we can obtain interesting surfaces and textures in this manner.
 
 We've already had a look at scrolling perlin noise across the canvas by increasing one or multiple noise parameters over time. However, creativity doesn't stop there!
@@ -70,6 +73,7 @@ If we were to replace the noise() function with random, we would get something t
         </div>
 </div>
 
+Obviously, we are not limited to quantizing to only two distinct values, we could quantize to an arbitrary amount of values. Here I'm using ternary conditional statements:
 
 <pre><code>
 function setup() {
