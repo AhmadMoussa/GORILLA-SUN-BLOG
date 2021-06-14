@@ -9,6 +9,9 @@ published: true
 ---
 Part three of the explorative series on things you can do with Perlin Noise in p5js. In this blog we'll have a look at making smooth curves with the curveVertex() function. We'll also be recreating Joy Division's famous album 'Unknown Pleasures'!
 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-11-Smooth-curves-with-Perlin-Noise-in-P5JS-and_Processing/Uknown_pleasures.png" alt="" /></span>
+
+
 First let's simply draw a line with the curveVertex() function in p5js. We can do this by invoking the beginShape() statement before the for loop, step through several positions with the loop and then end the shape with the endShape() function call. There's probably a thousand different ways you could do this, but here's my favorite:
 
 <pre><code>
