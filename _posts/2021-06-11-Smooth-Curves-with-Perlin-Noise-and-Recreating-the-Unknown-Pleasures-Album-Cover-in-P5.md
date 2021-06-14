@@ -37,8 +37,7 @@ We get something that looks pretty much like a simple line, however ours is made
 Next let's add some Perlin noise to deform this line. We'll want to offset the y positions of the points that make up our line. An important detail we have to consider here, is what we feed to the noise function as input and how we scale it. Remember that the noise functions returns smoother noise the closer the inputs are to each other.
 
 Our line is drawn by incrementing by 10 in the loop, let's see what that would look like:
-<pre><code>
-beginShape();
+<pre><code>beginShape();
 for (i = xOff; i < width-xOff; i+=10) {
   curveVertex(i,height/2+noise(i)*50)
 }
@@ -62,8 +61,7 @@ endShape();
 This might not be the absolute best way to do it, as the deforming noise needs to be scaled inversely proportional to the it's distance from the center. Also notice that we changed the scaling factor and the number of steps of our for loop. However, you'll have to play with these yourself to find a look that you like.
 
 Next up is repeating this pattern several times, which can be done by wrapping it in another loop:
-<pre><code>
-for(n = 0; n<height; n+=10){
+<pre><code>for(n = 0; n<height; n+=10){
   beginShape();
   for (i = xOff; i < width-xOff; i+=25) {
     var d = dist(i,n,width/2,n)
