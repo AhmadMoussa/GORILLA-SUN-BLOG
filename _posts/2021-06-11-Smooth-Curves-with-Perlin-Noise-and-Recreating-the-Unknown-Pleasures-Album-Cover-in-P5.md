@@ -14,8 +14,7 @@ Part three of the explorative series on things you can do with Perlin Noise in p
 
 First let's simply draw a line with the curveVertex() function in p5js. We can do this by invoking the beginShape() statement before the for loop, step through several positions with the loop and then end the shape with the endShape() function call. There's probably a thousand different ways you could do this, but here's my favorite:
 
-<pre><code>
-function setup() {
+<pre><code>function setup() {
   windowSize = min(windowWidth,windowHeight)
   createCanvas(windowSize, windowSize);
   xOff = 50
@@ -46,8 +45,7 @@ endShape();
 
 This looks decent, minus the white regions. Call noFill() in the setup function to get rid of those. We also need to multiply the noise by some number to make visible (remember noise returns a value between 0 and 1). Next we'll want to have the deformation at the center to be much more prominent than that towards the edges of the line. We can do this by scaling the deformation with respect to it's distance to the center:
 
-<pre><code>
-beginShape();
+<pre><code>beginShape();
 for (i = xOff; i < width-xOff; i+=25) {
   var d = dist(i,height/2,width/2,height/2)
   curveVertex(i,
@@ -74,16 +72,14 @@ endShape();
 
 You'll notice that the pattern is the same from top to bottom, which is not what we want, we much rather want it to be different on every individual line. This is simply remedied by plugging the outer loop parameter into the noise() function alongside the inner loops iterating variable:
 
-<pre><code>
-curveVertex(i, n-noise(n + i*0.08)*(100-d))
+<pre><code>curveVertex(i, n-noise(n + i*0.08)*(100-d))
 </code></pre>
 
 At this point we might want to bring back the fill of the shape:
 
 
 The final code of the sketch will look like this:
-<pre><code>
-function setup() {
+<pre><code>function setup() {
   w = min(windowWidth,windowHeight)
   createCanvas(w, w);
 }
@@ -110,9 +106,8 @@ And this will work for every canvas size. Might not be exactly the same as the a
 
 
 
-
-<pre><code>
-function setup() {
+<!--
+<pre><code>function setup() {
   windowSize = min(windowWidth,windowHeight)
   createCanvas(windowSize, windowSize);
 }
@@ -150,3 +145,4 @@ function draw() {
 }
 
 </code></pre>
+-->
