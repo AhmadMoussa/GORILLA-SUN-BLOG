@@ -31,6 +31,8 @@ function draw() {
 }
 </code></pre>
 We get something that looks pretty much like a simple line, however ours is made up of several small segments.
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-11-Smooth-curves-with-Perlin-Noise-in-P5JS-and_Processing/example0.png" alt="" /></span>
+
 
 Next let's add some Perlin noise to deform this line. We'll want to offset the y positions of the points that make up our line. An important detail we have to consider here, is what we feed to the noise function as input and how we scale it. Remember that the noise functions returns smoother noise the closer the inputs are to each other.
 
@@ -42,6 +44,7 @@ for (i = xOff; i < width-xOff; i+=10) {
 }
 endShape();
 </code></pre>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-11-Smooth-curves-with-Perlin-Noise-in-P5JS-and_Processing/example1.png" alt="" /></span>
 
 This looks decent, minus the white regions. Call noFill() in the setup function to get rid of those. We also need to multiply the noise by some number to make visible (remember noise returns a value between 0 and 1). Next we'll want to have the deformation at the center to be much more prominent than that towards the edges of the line. We can do this by scaling the deformation with respect to it's distance to the center:
 
@@ -53,29 +56,35 @@ for (i = xOff; i < width-xOff; i+=25) {
 }
 endShape();
 </code></pre>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-11-Smooth-curves-with-Perlin-Noise-in-P5JS-and_Processing/example3.png" alt="" /></span>
+
 
 This might not be the absolute best way to do it, as the deforming noise needs to be scaled inversely proportional to the it's distance from the center. Also notice that we changed the scaling factor and the number of steps of our for loop. However, you'll have to play with these yourself to find a look that you like.
 
 Next up is repeating this pattern several times, which can be done by wrapping it in another loop:
 <pre><code>
 for(n = 0; n<height; n+=10){
-beginShape();
-for (i = xOff; i < width-xOff; i+=25) {
-  var d = dist(i,n,width/2,n)
-  curveVertex(i,
-              n-noise(i*0.08)*(100-d))
-}
-endShape();
-}
+  beginShape();
+  for (i = xOff; i < width-xOff; i+=25) {
+    var d = dist(i,n,width/2,n)
+    curveVertex(i,
+                n-noise(i*0.08)*(100-d))
+  }
+  endShape();
+  }
 }
 </code></pre>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-11-Smooth-curves-with-Perlin-Noise-in-P5JS-and_Processing/example4.png" alt="" /></span>
+
 
 You'll notice that the pattern is the same from top to bottom, which is not what we want, we much rather want it to be different on every individual line. This is simply remedied by plugging the outer loop parameter into the noise() function alongside the inner loops iterating variable:
 
 <pre><code>curveVertex(i, n-noise(n + i*0.08)*(100-d))
 </code></pre>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-11-Smooth-curves-with-Perlin-Noise-in-P5JS-and_Processing/example5.png" alt="" /></span>
 
 At this point we might want to bring back the fill of the shape:
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-11-Smooth-curves-with-Perlin-Noise-in-P5JS-and_Processing/example6.png" alt="" /></span>
 
 
 The final code of the sketch will look like this:
@@ -100,6 +109,7 @@ function draw() {
 }
 
 </code></pre>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-11-Smooth-curves-with-Perlin-Noise-in-P5JS-and_Processing/final.png" alt="" /></span>
 
 And this will work for every canvas size. Might not be exactly the same as the album cover, but the minor modifications to make it more similar are very easy to make!
 
