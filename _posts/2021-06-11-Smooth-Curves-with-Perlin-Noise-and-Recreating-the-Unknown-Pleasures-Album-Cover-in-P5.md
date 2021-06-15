@@ -7,12 +7,23 @@ description: In this part of the perlin noise tutorial series we will have a loo
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
-Part three of the explorative series on things you can do with Perlin Noise in p5js. In this blog we'll have a look at making smooth curves with the curveVertex() function. We'll also be recreating Joy Division's famous album 'Unknown Pleasures'!
+This is part three of the explorative series on Perlin Noise in p5js (and processing). In this blog post we'll have a look at making smooth curves with the curveVertex() function. We'll also be recreating Joy Division's famous album cover for 'Unknown Pleasures'!
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-11-Smooth-curves-with-Perlin-Noise-in-P5JS-and_Processing/uknown_pleasures.png" alt="" /></span>
 
+Before starting the technical aspect of this blog post, it might be interesting to have a look at the story behind the album cover, which I find quite interesting. The original album cover was designed by <a href='https://en.wikipedia.org/wiki/Peter_Saville_(graphic_designer)'>Peter Saville</a>. The image originates from The Cambridge Encyclopedia of Astronomy and represented radio waves from pulsar CP1919, and underwent some stylistic changes:
 
-First let's simply draw a line with the curveVertex() function in p5js. We can do this by invoking the beginShape() statement before the for loop, step through several positions with the loop and then end the shape with the endShape() function call. There's probably a thousand different ways you could do this, but here's my favorite:
+<blockquote>Saville reversed the image from black-on-white to white-on-black, against the band's stated preference for the original. "I was afraid it might look a little cheap. I was convinced that it was just sexier in black" since it represented a signal from space.</blockquote>
+
+I think it's quite awesome that the cover holds a meaning beyond that of simply being a token for Joy Division's music. A little more about what CP1919 is:
+
+<blockquote>In simple terms, the image is a “stacked plot” of the radio emissions given out by a pulsar, a “rotating neutron star”. Originally named CP 1919, the pulsar was discovered in November 1967 by student Jocelyn Bell Burnell and her supervisor Antony Hewish at Cambridge University. As the star turns, it emits electromagnetic radiation in a beam like a lighthouse, which can be picked up by radio telescopes. Each line on the image is an individual pulse. They’re not exactly the same each time as the long distance the beam travels introduces interference.</blockquote>
+
+
+<h2>The curveVertex() function</h2>
+If you're not familiar with the curveVertex() function, it simply allows you to connect a number of coordinates, and rather than doing so with jagged line segments, it will draw a continuously smooth line through all the coordinates (maybe I will write a post about it in detail in the future). Before we start calling the curveVertex function a number of times, we'll have to indicate that we are drawing a new shape by calling beginShape() and conclude with endShape() after we have gone over all our coordinate points. The next example will make this much clearer.
+
+First let's simply draw a line with the curveVertex() function in p5js. We can do this by invoking the beginShape() statement before the for loop, step through several positions with the loop and then end the shape with the endShape() function call. There's probably a thousand different ways you could do this, and here's mine:
 
 <pre><code>function setup() {
   windowSize = min(windowWidth,windowHeight)
@@ -30,11 +41,12 @@ function draw() {
   endShape();
 }
 </code></pre>
+
 We get something that looks pretty much like a simple line, however ours is made up of several small segments.
+
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-11-Smooth-curves-with-Perlin-Noise-in-P5JS-and_Processing/example0.png" alt="" /></span>
 
-
-Next let's add some Perlin noise to deform this line. We'll want to offset the y positions of the points that make up our line. An important detail we have to consider here, is what we feed to the noise function as input and how we scale it. Remember that the noise functions returns smoother noise the closer the inputs are to each other.
+Next let's add some Perlin noise to deform this line. We'll want to offset the y positions of the points that make up our line. An important detail we have to consider here, is what we feed to the noise function as input and how we scale it. Remember that the noise function returns smoother noise the closer the inputs are to each other.
 
 Our line is drawn by incrementing by 10 in the loop, let's see what that would look like:
 <pre><code>beginShape();
