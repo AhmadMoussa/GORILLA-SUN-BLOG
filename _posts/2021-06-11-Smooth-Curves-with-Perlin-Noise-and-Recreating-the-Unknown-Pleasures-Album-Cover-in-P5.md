@@ -21,7 +21,7 @@ I also think that it's quite awesome that the artwork holds a meaning beyond tha
 
 This is a great source of inspiration: data visualization as an artform! Next we'll get into recreating this album cover!
 
-<h2>The curveVertex() function</h2>
+<h2>The Sketch</h2>
 If you're not familiar with the curveVertex() function, it simply allows you to connect a number of coordinates, and rather than doing so with jagged line segments, it will draw a continuously smooth line through all the coordinates (maybe I will write a post about it in detail in the future). Before we start calling the curveVertex function a number of times, we'll have to indicate that we are drawing a new shape by calling beginShape() and conclude with endShape() after we have gone over all our coordinate points. The next example will make this much clearer.
 
 First let's simply draw a line with the curveVertex() function in p5js. We can do this by invoking the beginShape() statement before the for loop, step through several positions with the loop and then end the shape with the endShape() function call. There's probably a thousand different ways you could do this, and here's mine:
