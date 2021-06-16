@@ -10,7 +10,12 @@ thumbnail_path: 2021-02-12-Making-an-animated-GIF-from-a-sequence-of-frames-with
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l0HlvFUHvDB16UOwU" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/cyberwar-l0HlvFUHvDB16UOwU">via GIPHY</a></p>
   
 <div class='box'>
-  <strong>Update 06-16-2021: Title changed from 'Making an animated GIf from a sequence of frames with FFMPEG' to 'Converting Frames into a GIF using FFMPEG'. Fixed typos, added subheadings and line breaks. Added significantly more info and other useful FFMPEG commands.
+  <strong>Update 06-16-2021: 
+    <ul>
+      <li>Title changed from 'Making an animated GIf from a sequence of frames with FFMPEG' to 'Converting Frames into a GIF using FFMPEG'.</li>
+      <li>Fixed typos, added subheadings and line breaks. </li>
+      <li>Added significantly more info and other useful FFMPEG commands.</li>
+    </ul>
   </strong> 
 </div>  
   
