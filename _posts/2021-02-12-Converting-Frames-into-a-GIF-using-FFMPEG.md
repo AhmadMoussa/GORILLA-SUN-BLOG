@@ -1,5 +1,5 @@
 ---
-title: Making an animated GIF from a sequence of frames with FFMPEG
+title: Converting Frames into a GIF using FFMPEG
 author: Ahmad Moussa
 description: Combining a number of individual frames can be tricky if you haven't done it before, in this article we show how to accomplish it with FFMPEG.
 thumbnail_path: 2021-02-12-Making-an-animated-GIF-from-a-sequence-of-frames-with-FFMPEG.png
@@ -10,9 +10,8 @@ thumbnail_path: 2021-02-12-Making-an-animated-GIF-from-a-sequence-of-frames-with
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l0HlvFUHvDB16UOwU" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/cyberwar-l0HlvFUHvDB16UOwU">via GIPHY</a></p>
   
 <div class='box'>
-    <strong>Update 06-16-2021:
-      </strong> 
-  <p>Title changed from 'Making an animated GIf from a sequence of frames with FFMPEG' to 'Converting Frames into a GIF using FFMPEG'. Fixed typos, added subheadings and line breaks. Added significantly more info.</p>
+  <strong>Update 06-16-2021: Title changed from 'Making an animated GIf from a sequence of frames with FFMPEG' to 'Converting Frames into a GIF using FFMPEG'. Fixed typos, added subheadings and line breaks. Added significantly more info and other useful FFMPEG commands.
+  </strong> 
 </div>  
   
 <p>Gifs are cool, but making them can be tricky. In the past 2 years I've had to make a lot of powerpoints for university presentations, and I've always wanted to make them the best they could possible be, aesthetically and information wise. And what's better than having a lot of cool images and graphs in your presentation? Visualizing processes with animated gifs. Since the focus of my studies were neural networks which involved training them, I would most often want to visualize this learning process by drawing a sample output from my model at every learning iteration (epoch), which in turn would allow me to qualitatively assess how well it was performing. This usually made me end up with a folder on my desktop that held hundreds to thousands of images. Including this sequence of frames as an animated GIF in your powerpoint is very impressive, and usually gives a lot of insight on the training process that you wouldn't usually see if you only inspected single frames.</p>
