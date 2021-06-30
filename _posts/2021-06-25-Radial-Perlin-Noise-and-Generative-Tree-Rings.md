@@ -10,6 +10,9 @@ published: true
 
 This is the 4th installment in the explorative series on Perlin Noise, If you haven't done so yet, or have no idea what Perlin Noise is, go have a look at the previous posts in this series. Otherwise, read onward!
 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/treerings.png" alt="" /></span>
+
+
 This post is inspired by a sketch I've stumbled across by chance on reddit by reddit user <a href='https://www.reddit.com/user/TheFoolVoyager/'>u/TheFoolVoyager</a>. The sketch consisted of beautiful generative tree rings that looked like diagrams from an old science book.
 
 Even though I was unable to exactly recreate the same sketch, I was able to code up some generative tree rings that I like just as much. This was also only possible by using perlin noise, you see, not only can we create smooth curves along a line with Perlin Noise but also along the circumference of a circle! (I am not certain however if the correct term for it is Radial Perlin Noise, leave a comment/shoot a message to discuss terminology!)
