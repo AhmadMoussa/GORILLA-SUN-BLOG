@@ -13,17 +13,18 @@ This is the 4th installment in the explorative series on Perlin Noise, If you ha
 <div class="row gtr-200">
 			<div class="col-6 col-12-medium">
               <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/treering1.jpg" alt="" /></span>
-        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/treering3.jpg" alt="" /></span>
-
       </div>
       <div class="col-6 col-12-medium">
         <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/treering2.jpg" alt="" /></span>
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/treering4.jpg" alt="" /></span>
 
       </div>
 </div>
+<p></p>
 This post is inspired by a sketch I've stumbled across by chance on reddit by reddit user <a href='https://www.reddit.com/user/TheFoolVoyager/'>u/TheFoolVoyager</a>. The sketch consisted of beautiful generative tree rings that looked like diagrams from an old science book.
 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/reddit.jpg" alt="" /></span>
+
+<p></p>
 Even though I was unable to exactly recreate the same sketch, I was able to code up some generative tree rings that I like just as much. This was also only possible by using perlin noise, you see, not only can we create smooth curves along a line with Perlin Noise but also along the circumference of a circle! (I am not certain however if the correct term for it is Radial Perlin Noise, leave a comment/shoot a message to discuss terminology!)
 
 The very first thing we'll want to do, is create a blob using Perlin Noise and work our way up from there!
@@ -145,6 +146,7 @@ function draw() {
 }
 </code></pre>
 
+<h2>Towards multiple Tree Rings</h2>
 Next up, we'll want to draw several rings, that incrementally get larger outwards. We can do this by wrapping our code that we've written so far inside another loop, and introducing two new parameters called radius and numRings:
 
 <pre><code>
