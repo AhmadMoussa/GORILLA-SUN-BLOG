@@ -50,6 +50,9 @@ function draw() {
 
 The snippet above is my favorite way of doing so. We can simply loop from 0 to 2xPI (conveniently we can use the constant TAU which is equivalent to 2xPI). The value by which we increment determines how spaced out the points along the circle are, this will be important later on. We also use a strokeWeight of 4 to make the points a little bit more visible.
 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/circle.png" alt="" /></span>
+
+
 Next we'll want to slightly displace these points with Perlin Noise:
 <pre><code>let scale = 10;
 let resolution = 0.05;
@@ -67,9 +70,28 @@ function draw() {
   }
 }
 </code></pre>
-We can do so by invoking the noise() function and mapping it to a specific range. The map() function comes in handy in this case, we simply map from the [0-1] range (that is the usual output range of the noise() function), to a specific range that we can control with the scale variable that we declare at the top.
+We can do so by invoking the noise() function and mapping it to a specific range. The map() function comes in handy in this case, we simply map from the [0-1] range (that is the usual output range of the noise() function), to a specific range that we can control with the scale variable that we declare at the top. Here are scales 10 and 50:
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+              <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/scale10.png" alt="" /></span>
+      </div>
+      <div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/scale50.png" alt="" /></span>
 
-We also want a resolution variable, that scales the input to the noise() function, remember, the finer the distance between the points we feed to the noise() function, the smoother the output values! This is one of the awesome properties of this function!
+      </div>
+</div>
+<p></p>
+We also want a resolution variable, that scales the input to the noise() function, remember, the finer the distance between the points we feed to the noise() function, the smoother the output values! This is one of the awesome properties of this function! Here are resolution 0.05 and 0.002 (which has the nicest shape so far):
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+              <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/scale10resolution0.05.png" alt="" /></span>
+      </div>
+      <div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/scale50resolution0.002.png" alt="" /></span>
+
+      </div>
+</div>
+<p></p>
 
 Also note that we need to feed the exact coordinates of the points into the noise function. The best way to understand this, is by imagining that our perfect circle consists of thin aluminium foil, and the Perlin Noise is a rugged surface that lays underneath this circular slice of aluminium foil. We then proceed to press our aluminium foil circle onto this surface, assuming it's shape. Now, if we scrape off our circle it will be far from perfect anymore. I hope this made sense, it's how I like to think about it.
 
@@ -93,7 +115,7 @@ function draw() {
 }
 </code></pre>
 
-Now we already have some pretty solid code, doesn't look very impressive but the rest isn't much more difficult than this! Next up we'll actually work towards the blob shape, this can be done with our good old friend the curveVertex() function that we've already used in the previous post on smooth curves. We simply call beginShape() before the loop and then endShape(CLOSE) after and outside the loop. We will simply feed the same coordinates that we're feeding to point() to the curveVertex() function:
+Now we already have some pretty solid code! Doesn't look very impressive yet, but the rest isn't much more difficult than this! Next up we'll actually work towards the blob shape, this can be done with our good old friend the curveVertex() function that we've already used in the previous post on smooth curves. We simply call beginShape() before the loop and then endShape(CLOSE) after and outside the loop. We will simply feed the same coordinates that we're feeding to point() to the curveVertex() function:
 
 <pre><code>let scale = 50;
 let resolution = 0.002;
@@ -117,7 +139,16 @@ function draw() {
 </code></pre>
 
 We get something like this:
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+              <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/blob1.png" alt="" /></span>
+      </div>
+      <div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/blob2.png" alt="" /></span>
 
+      </div>
+</div>
+<p></p>
 Next we'll want to change some stylistic things such as the fill of the shape and the weight of the stroke, and move these to the setup function, since we don't need to call them every draw loop:
 
 <pre><code>function setup() {
@@ -145,6 +176,17 @@ function draw() {
   noLoop();
 }
 </code></pre>
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+              <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/blobslim1.png" alt="" /></span>
+      </div>
+      <div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/blobslim2.png" alt="" /></span>
+
+      </div>
+</div>
+<p></p>
+Looks much better like this!
 
 <h2>Towards multiple Tree Rings</h2>
 Next up, we'll want to draw several rings, that incrementally get larger outwards. We can do this by wrapping our code that we've written so far inside another loop, and introducing two new parameters called radius and numRings:
@@ -181,7 +223,16 @@ function draw() {
   noLoop();
 }
 </code></pre>
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+              <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/rings1.png" alt="" /></span>
+      </div>
+      <div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/rings2.png" alt="" /></span>
 
+      </div>
+</div>
+<p></p>
 In this manner we can control the overall radius of the blob shape and how many rings we want to have inside of this shape, conveniently with two parameters! This is already a very interesting shape, with which we can do a plethora of things. At this point we'll want to stylistically work towards making it look more like actual tree rings!
 
 First, we'll want to have the rings randomly disconnect and rejoin again, and we can do this with a simple conditional statement:
@@ -225,12 +276,22 @@ function draw() {
 
 This conditional statement is triggered by the random() function, which returns a random float between 0 and 1), and if this number is larger than a specific threshold (0.8 here, tune to taste), we will call the endShape() function followed by the beginShape() function again. This will randomly end the current ring and begin drawing it again. We get something that looks like this:
 
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+              <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/disconnectedrings1.png" alt="" /></span>
+      </div>
+      <div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/disconnectedrings2.png" alt="" /></span>
+
+      </div>
+</div>
+<p></p>
+
 Our rings are starting to look a lot more like tree rings and/or fingerprints actually, but we can do better! What if we were to reduce this threshold the further we move outwards with our rings? Or alternatively we could modulate this threshold with a sine wave! Takes only a minimal modification to achieve fascinating new results!
-<pre><code>
-function setup() {
+<pre><code>function setup() {
   createCanvas(400, 400);
-  background(0);
-  stroke(255);
+  background(255);
+  stroke(20);
   strokeWeight(1);
   noFill();
 }
@@ -252,7 +313,7 @@ function draw() {
 
       curveVertex(x + n, y + n);
 
-      if(random()>0.75-0.25*sin(a+r/10)){
+      if(random()>0.75-0.25*sin(r)){
         endShape();
         beginShape();
       }
@@ -262,5 +323,6 @@ function draw() {
   noLoop();
 }
 </code></pre>
-
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/fingerprint.png" alt="" /></span>
+<p></p>
 And this is about it, in this manner I've already given you the keys to the Lamborghini and the generative tree rings are only a step away! Feel free to experiment with this and send your creations my way! If you enjoyed this blog post, feel free to follow me on my social media where I post all of my creations!
