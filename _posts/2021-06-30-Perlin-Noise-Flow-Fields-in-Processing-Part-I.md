@@ -5,14 +5,24 @@ categories:
   - p5js
 description: This blog post will explain how to code up a Flow Field in Processing.
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: true
+published: false
 ---
 
+1. <a href='#intro'>Introduction</a>
+2. <a href='#what'>What are Flow Fields?</a>
+3. <a href='#make'>Making a Flow Field</a>
+4. <a href='#ga'>The GridAngle Object</a>
+5. <a href='#al'>Array Lists in Java</a>
+6. <a href='#populate'>Populating the Grid</a>
+7. <a href='#draw'>Drawing the Grid</a>
+
+
+<h2><a name='intro'>Introduction</a></h2>
 This is the 5-th and final part of the explorative series on Perlin Noise, where I explain how to code up a Flow Field, and this time we'll take a step away from P5JS and do it in Processing. Technically, all of this is possible and maybe easier to program in P5 but for efficiency reasons Processing is the framework of choice. This post might end up being a little bit lengthy and tough, but is definitely worth the trouble.
 
 The code outlined in this post is loosely based on <a href='https://tylerxhobbs.com'>Tyler Hobbs</a> pseudocode on flow fields in his excellent <a href='https://tylerxhobbs.com/essays/2020/flow-fields'>essay</a> on them, which I recommend reading and maybe even taking at stab at implementing the pseudocode outlined in it, before following this tutorial. Naturally, my code is probably different, and merely shows a rough idea of what you can do with flow fields. Also note that the code shown here is far from optimal and equivalently is not the only way to create flow fields, but gives a basic idea about the steps involved in making one.
 
-<h2>What are flow fields?</h2>
+<h2><a name='what'>What are Flow Fields?</a></h2>
 <a href='https://www.quora.com/What-is-a-flow-field-in-fluid-mechanics'>Flow Fields</a> are a concept borrowed from fluid mechanics, and essentially simulate the behaviour of some substance (that has certain properties) over a surface or within a volume. Flow Fields have a special place in creative coding, and allow you to create mesmerizing generative artworks that wouldn't otherwise be possible. Tyler Hobbs, for instance, is a true master at them, and to quote him:
 
 <blockquote>It's entirely possible that I've used them in more programs than any other person alive.</blockquote>
@@ -21,7 +31,10 @@ The code outlined in this post is loosely based on <a href='https://tylerxhobbs.
 
 Other artists that have also created fantastic artworks with flow fields are:
 
+<h2><a name='make'>Making a Flow Field</a></h2>
 Making a flow field essentially consists of two parts, firstly creating a grid of angles, and secondly drawing flow lines whose curvature is guided by this grid. This will make more sense in a second. Since this is a little bit loaded we'll split these two parts up into separate blog posts. The grid in this one, and the flow lines in the next one.
+
+There are a lot of different ways to program a flow field
 
 <h2>Creating a Grid of Angles</h2>
 The very first thing we'll want to do is create a custom class for our the angles in our grid. This will make things more convenient for us later on.
