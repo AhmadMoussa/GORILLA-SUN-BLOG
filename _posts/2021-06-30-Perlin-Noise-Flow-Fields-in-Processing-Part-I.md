@@ -13,8 +13,11 @@ This is the 5-th and final part of the explorative series on Perlin Noise, where
 The code outlined in this post is loosely based on <a href=https://tylerxhobbs.com>Tyler Hobbs'</a> pseudocode on flow fields in his excellent <a href='https://tylerxhobbs.com/essays/2020/flow-fields'>essay</a> on them, which I recommend reading and maybe even taking at stab at implementing the pseudocode outlined in it, before following this tutorial. Naturally, my code is probably different, and merely shows a rough idea of what you can do with flow fields. Also note that the code shown here is far from optimal and equivalently is not the only way to create flow fields, but gives a basic idea about the steps involved in making one.
 
 <h2>What are flow fields?</h2>
-<a href=https://www.quora.com/What-is-a-flow-field-in-fluid-mechanics>Flow Fields</a> are a concept borrowed from fluid mechanics, and essentially simulate the behaviour of some substance (that has certain properties) over a surface or within a volume. For example, how certain types of liquids behave flows behave. Flow Fields have a special place in creative coding, and allow you to create mesmerizing generative artworks that wouldn't otherwise be possible. Tyler Hobbs is a true master at them, and he says himself that he might have used flow fields more than any other person.
+<a href=https://www.quora.com/What-is-a-flow-field-in-fluid-mechanics>Flow Fields</a> are a concept borrowed from fluid mechanics, and essentially simulate the behaviour of some substance (that has certain properties) over a surface or within a volume. Flow Fields have a special place in creative coding, and allow you to create mesmerizing generative artworks that wouldn't otherwise be possible. Tyler Hobbs, for instance, is a true master at them, and to quote him:
 
+<blockquote>It's entirely possible that I've used them in more programs than any other person alive.</blockquote>
+
+<blockquote class="twitter-tweet tw-align-center"><p lang="es" dir="ltr">ECTOGENESIS, 2019 <a href="https://t.co/zFFqtaO570">pic.twitter.com/zFFqtaO570</a></p>&mdash; Tyler Hobbs (@tylerxhobbs) <a href="https://twitter.com/tylerxhobbs/status/1401555981402771456?ref_src=twsrc%5Etfw">June 6, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Other artists that have also created fantastic artworks with flow fields are:
 
