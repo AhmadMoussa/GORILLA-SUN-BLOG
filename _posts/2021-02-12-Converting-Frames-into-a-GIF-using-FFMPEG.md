@@ -9,7 +9,7 @@ published: true
 
 <section>
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l0HlvFUHvDB16UOwU" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-  
+<p></p>
 <div class='box'>
   <strong>Update 06/16/2021: 
     <ul>
@@ -21,14 +21,14 @@ published: true
 </div>
 
   
-  <!--
+<!--
 <h2>Why are GIFs so popular?</h2>
 <p>If you're reading this, then you've probably used a GIF before.</p> 
   
 <p>GIFs have become incredibly popular in recent years, to such an extent that GIFs have earned their didcated integration in most modern messaging and social media apps. And deserrvedly so, sometimes a GIF can express that you wouldn't otherwise be able to express with words. Very often, a well timed GIF in a heated whatsapp conversation can be incredibly funny. Other times, a GIF of an iconic scene from a beloved movie or series can encapsulate a specific feeling incredibly well. GIFs also play an integral role in meme culture, but more to that later!</p>
  
 <h2>What are GIFs... like actually? </h2>
-   -->
+-->
 <p>Gifs are cool, but making them can be tricky. In the past 2 years I've had to make a lot of powerpoint presentations for univeristy, and I've always wanted to make them the best they could possible be, aesthetically and information wise. And what's better than having a lot of cool images and graphs in your presentation? Visualizing processes with animated gifs. 
   
 Since the focus of my studies were neural networks which involved training them, I would most often want to visualize this learning process by drawing a sample output from my model at every learning iteration (epoch), which in turn would allow me to qualitatively assess how well it was performing. This usually made me end up with a folder on my desktop that held hundreds to thousands of images. Including this sequence of frames as an animated GIF in your powerpoint is very impressive, and usually gives a lot of insight on the training process that you wouldn't usually see if you only inspected single frames.</p>
