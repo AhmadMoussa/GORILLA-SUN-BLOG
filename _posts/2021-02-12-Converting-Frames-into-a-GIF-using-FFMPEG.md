@@ -10,14 +10,20 @@ published: true
 <section>
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l0HlvFUHvDB16UOwU" width="100%" height="100%" style="position:absolute; pointer-events:null;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/cyberwar-l0HlvFUHvDB16UOwU">via GIPHY</a></p>
   
-<div class='box'>
-  <strong>Update 06-16-2021: 
-- Title changed from 'Making an animated GIF from a sequence of frames with FFMPEG'
+
+  <strong>Update 06/16/2021: 
+    <ul>
+      <li>
+- Title changed from 'Making an animated GIF from a sequence of frames with FFMPEG'</li>
+      <li>
 - Fixed typos, added subheadings and line breaks.
+        </li>
+      <li>
 - Rewrote sections and added significantly more info and other useful FFMPEG commands.
-   
+        </li>
+   </ul>
   </strong> 
-</div>  
+
   
   <!--
 <h2>Why are GIFs so popular?</h2>
