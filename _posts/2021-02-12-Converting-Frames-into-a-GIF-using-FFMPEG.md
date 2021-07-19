@@ -28,6 +28,7 @@ published: true
 5. <a href='#Install'>Installing FFMPEG</a>
 6. <a href='#Useful'>Other useful commands!</a>
   
+<p></p>
 <!--
 <h2>Why are GIFs so popular?</h2>
 <p>If you're reading this, then you've probably used a GIF before.</p> 
