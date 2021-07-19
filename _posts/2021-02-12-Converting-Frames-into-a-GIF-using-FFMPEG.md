@@ -13,14 +13,9 @@ published: true
 
   <strong>Update 06/16/2021: 
     <ul>
-      <li>
-- Title changed from 'Making an animated GIF from a sequence of frames with FFMPEG'</li>
-      <li>
-- Fixed typos, added subheadings and line breaks.
-        </li>
-      <li>
-- Rewrote sections and added significantly more info and other useful FFMPEG commands.
-        </li>
+      <li>Title changed from 'Making an animated GIF from a sequence of frames with FFMPEG'</li>
+      <li>Fixed typos, added subheadings and line breaks.</li>
+      <li>Rewrote sections and added significantly more info and other useful FFMPEG commands.</li>
    </ul>
   </strong> 
 
