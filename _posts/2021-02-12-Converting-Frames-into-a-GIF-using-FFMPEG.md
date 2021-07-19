@@ -21,6 +21,13 @@ published: true
 </div>
 
   
+1. <a href='#Intro'>Intro and why GIFs are useful</a>
+2. <a href='#What'>What are GIFs actually?</a>
+3. <a href='#GIFscc'>GIFs for Creative Coding</a>
+4. <a href='#FFMPEG'>What's FFMPEG?</a>
+5. <a href='#Install'>Installing FFMPEG</a>
+6. <a href='#Useful'>Other useful commands!</a>
+  
 <!--
 <h2>Why are GIFs so popular?</h2>
 <p>If you're reading this, then you've probably used a GIF before.</p> 
@@ -29,9 +36,9 @@ published: true
  
 <h2>What are GIFs... like actually? </h2>
 -->
-<p>Gifs are cool, but making them can be tricky. In the past 2 years I've had to make a lot of powerpoint presentations for univeristy, and I've always wanted to make them the best they could possible be, aesthetically and information wise. And what's better than having a lot of cool images and graphs in your presentation? Visualizing processes with animated gifs. 
+<p>Gifs are cool, but making them can be tricky. In the past 2 years I've had to make a lot of powerpoint presentations for univeristy, and I've always wanted to make them the best they could possible be, aesthetically and information wise. And what's better than having a lot of cool images and graphs in your presentation? Visualizing processes with animated gifs.</p>
   
-Since the focus of my studies were neural networks which involved training them, I would most often want to visualize this learning process by drawing a sample output from my model at every learning iteration (epoch), which in turn would allow me to qualitatively assess how well it was performing. This usually made me end up with a folder on my desktop that held hundreds to thousands of images. Including this sequence of frames as an animated GIF in your powerpoint is very impressive, and usually gives a lot of insight on the training process that you wouldn't usually see if you only inspected single frames.</p>
+<p>Since the focus of my studies were neural networks which involved training them, I would most often want to visualize this learning process by drawing a sample output from my model at every learning iteration (epoch), which in turn would allow me to qualitatively assess how well it was performing. This usually made me end up with a folder on my desktop that held hundreds to thousands of images. Including this sequence of frames as an animated GIF in your powerpoint is very impressive, and usually gives a lot of insight on the training process that you wouldn't usually see if you only inspected single frames.</p>
 
 <h2>GIFs from p5js and processing</h2>
 <p>Naturally, making gifs from a sequence of frames is not only useful academically, but can also be used for other purposes. Since I couldn't figure out how to capture a gif directly from the P5JS web editor of my canvas, I resorted to downloading individual frames and then concatenating them into a gif. Now the problem with gifs is that there has to be some compression algorithm involved that reduces the overall size of the final gif. Digital images can already take up a significant amount of space on your hard disk, depending on the resolution and encoding format, however it usually is the case that there is not a lot of change between two consecutive frames, for example, the backdrop of a scene doesn't always change significantly, only the main object that's moving. In this case it would be very wasteful to not encode some shared information jointly between different frames.</p>
