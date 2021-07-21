@@ -23,12 +23,12 @@ This is the 5-th and final part of the explorative series on Perlin Noise, where
 
 <div class="row gtr-200">
 			<div class="col-6 col-12-medium">
-        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I.md/f1.png" alt="" /></span>
-        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I.md/f3.png" alt="" /></span>
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I/f1.png" alt="" /></span>
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I/f3.png" alt="" /></span>
       </div>
       <div class="col-6 col-12-medium">
-        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I.md/f2.png" alt="" /></span>
-        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I.md/f4.png" alt="" /></span>
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I/f2.png" alt="" /></span>
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I/f4.png" alt="" /></span>
       </div>
 </div>
 
@@ -48,10 +48,10 @@ Making a flow field essentially consists of two parts, firstly creating a grid o
 
 <div class="row gtr-200">
 			<div class="col-6 col-12-medium">
-              <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I.md/grid.png" alt="" /></span>
+              <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I/grid.png" alt="" /></span>
       </div>
       <div class="col-6 col-12-medium">
-        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I.md/flow.png" alt="" /></span>
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I/flow.png" alt="" /></span>
       </div>
 </div>
 
