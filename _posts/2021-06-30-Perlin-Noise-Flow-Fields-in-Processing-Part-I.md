@@ -101,7 +101,7 @@ Take a second and read through the code. Here the class simply consists of a pos
 
 Now that we have created this GridAngle class, we'll actually want to create some instances of it and store them somehow in a gridlike manner. This will require us to store our instances in an array, which is a little bit tricky in Java. Generally when creating an array in Java, you need to know it's size beforehand, to allocate the appropriate amount of space in memory. This won't work for us, since we want to have a grid that can have a different number of items depending on the parameters.
 
-<h2><a name='al'>Array Lists in Java</al></h2>
+<h2><a name='al'>Array Lists in Java</a></h2>
 However there is a way, using something called an ArrayList! It's essentially an array like data-structure in java, that allows easy addition and manipulation of items within it. Maybe the scariest thing about it is the way it's instantiated:
 
 <pre><code>final ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt; vectors 
