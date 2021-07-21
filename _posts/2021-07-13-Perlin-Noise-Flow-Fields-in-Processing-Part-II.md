@@ -56,7 +56,7 @@ float segmentLength = 2;
 
 These'll make more sense in a second. We'll start by creating three loops, the first one specifying how many times we would like to extend our flowline (hence determining the overall length of it) and then a nested loop that goes over all the GridAngles in our ArrayList:
 
-<pre><code>for (int n = 0; n<lineLength; n++) {
+<pre><code>for (int n = 0; n&lt;lineLength; n++) {
    for (int x = 0; x&lt;grid.size(); x++) {
      for (int y = 0; y&lt;grid.get(0).size(); y++) {
      }
@@ -66,7 +66,7 @@ These'll make more sense in a second. We'll start by creating three loops, the f
 
 Next we want to find the closest point, that's where our previously declared variables come into play:
 
-<pre><code>for (int n = 0; n<50; n++) {
+<pre><code>for (int n = 0; n&lt;lineLength; n++) {
     for (int x = 0; x&lt;grid.size(); x++) {
       for (int y = 0; y&lt;grid.get(0).size(); y++) {
         tempGA = grid.get(x).get(y);
@@ -82,9 +82,9 @@ Next we want to find the closest point, that's where our previously declared var
   }
 </code></pre>
 
-Our nested loop will essentially go over all the points in the grid storing them in tempFA, then calculating the distance between that point and our start point / previous point that extended the flow line. If that distance is smaller than what is previously stored in the minDist variable, we'll overwrite that and also store the indices of that point in the array. This is quite expensive but allows us to find the closest point to the end of the line.
+Our nested loop will essentially go over all the points in the grid storing them in tempGA, then calculating the distance between that point and our start point / previous point that extended the flow line. If that distance is smaller than what is previously stored in the minDist variable, we'll overwrite that and also store the indices of that point in the array. This is quite expensive but allows us to find the closest point to the end of the line.
 
-Once we've found that point we need to reset minDist to some large value and extend our flowline:
+Once we've found that point we need to reset minDist to some large value and extend our flowline. Float.MAX_VALUE essentially sets the variable minDist to the largest possible value that fits into a float, we could equivalently set it to some number like 99999.9, the only thing that matters here is that it's larger than the most distant point in the grid:
 <pre><code>minDist = Float.MAX_VALUE;
 float angle = grid.get(nearestX).get(nearestY).angle;
 
@@ -154,7 +154,33 @@ void drawFlowLine() {
 }
 </code></pre>
 
-But first let's play a little bit with the parameters and generate some flow fields!
+Now to actually draw the Flow Field we need to call this function in the draw loop, which is going to end up looking something like this:
+
+<pre><code>final int numLines = 200; //number of flow lines we'll draw
+void draw() {
+  background(220);
+  // We don't need to draw the grid anymore
+  /*
+  for (int x = 0; x<grid.size(); x++) {
+    for (int y = 0; y<grid.get(0).size(); y++) {
+      grid.get(x).get(y).display();
+    }
+  }
+  */
+  
+  for (int n = 0; n < numLines; n++) {
+    drawFlowLine();
+  }
+  
+  noLoop(); // noneed to loop
+}
+</code></pre>
+
+And we'll obtain a flow field like this:
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/flow.png" alt="" /></span>
+
+This doesn't look very nice, we can do much better by playing a little bit with the parameters and generating some more flow fields!
+
 <h2><a name='hp'>Choosing Hyper-Parameters</a></h2>
 One last thing we want to do, to make it look nice, is span the grid of angles such that it begins outside of the canvas and ends outside of the canvas. For this we can simply modify the loops in the createGrid function as such:
 
@@ -166,6 +192,61 @@ One last thing we want to do, to make it look nice, is span the grid of angles s
 }
 </code></pre>
 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/flow2.png" alt="" /></span>
+
+Next, let's crank up the number of flowlines with the numLine parameter to 500, 1000, 2000 and 5000 respectively:
+
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f500.png" alt="" /></span>
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f1000.png" alt="" /></span>
+      </div>
+      <div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f2000.png" alt="" /></span>
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f5000.png" alt="" /></span>
+      </div>
+</div>
+
+The lines are too squiggly for my taste, we can fix that by reducing the rez parameter that controls overall angles of the grid given by the Perlin Noise. Reducing it to 0.003 and 0.001 makes it look a lot less jagged:
+
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f5000rez003.png" alt="" /></span>
+       
+      </div>
+      <div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f5000rez001.png" alt="" /></span>
+      </div>
+</div>
+
+Also reducing the the spacing between the grid angles will make it look a lot more dense. A spacing of 10 and 5 respectively (note that this makes it way slower since there's more grid angles it has to check):
+
+
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f5000rez001sp10.png" alt="" /></span>
+       
+      </div>
+      <div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f5000rez001sp5.png" alt="" /></span>
+      </div>
+</div>
+
+
+We could also control the length by which the line gets extended each iteration. A length of 5 and 1 respectively:
+
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f5000rez001sl5.png" alt="" /></span>
+       
+      </div>
+      <div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f5000rez001sl1.png" alt="" /></span>
+      </div>
+</div>
+
+
+And that's just some of the results you can get with the code we wrote. Feel free to mess around, modify, deconstruct the code in any way, shape or form you like, and send your results my way! Hope you enjoyed! And maybe share it with a friend, it helps a lot!
 
 
 
