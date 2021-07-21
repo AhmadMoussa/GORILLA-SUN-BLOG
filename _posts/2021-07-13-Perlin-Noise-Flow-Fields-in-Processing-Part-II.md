@@ -144,11 +144,6 @@ void drawFlowLine() {
     vec = new PVector(vec.x + segmentLength*cos(angle),
                       vec.y + segmentLength*sin(angle));
     curveVertex(vec.x, vec.y);
-
-    if ((float)random(1.0)>1) {
-      endShape();
-      beginShape();
-    }
   }
   endShape();
 }
