@@ -211,9 +211,8 @@ class GridAngle {
 
 void createGrid() {
   for (int x = xOff; x<width-xOff; x+=spacing) {
-    ArrayList<GridAngle> row  = new ArrayList<GridAngle>();
+    ArrayList&lt;GridAngle&gt; row  = new ArrayList&lt;GridAngle&gt;();
     for (int y = yOff; y<width-yOff; y+=spacing) {
-
       float angle = map(noise(x*rez, y*rez), 0.0, 1.0, 0.0, TAU);
 
       row.add(new GridAngle(x, y, spacing/2, angle));
@@ -229,8 +228,8 @@ void setup(){
 
 void draw() {
   background(220);
-  for (int x = 0; x<grid.size(); x++) {
-    for (int y = 0; y<grid.get(0).size(); y++) {
+  for (int x = 0; x&lt;grid.size(); x++) {
+    for (int y = 0; y&lt;grid.get(0).size(); y++) {
       grid.get(x).get(y).display();
     }
   }
