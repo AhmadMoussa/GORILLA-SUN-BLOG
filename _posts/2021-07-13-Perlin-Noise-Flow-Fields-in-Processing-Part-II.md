@@ -181,8 +181,7 @@ One last thing we want to do, to make it look nice, is span the grid of angles s
 
 <pre><code>void createGrid() {
   for (int x = -xOff; x&lt;width+xOff; x+=spacing) {
-    for (int y = -yOff; y&lt;width+yOff; y+=spacing) {
-    }
+    for (int y = -yOff; y&lt;width+yOff; y+=spacing) {}
   }
 }
 </code></pre>
