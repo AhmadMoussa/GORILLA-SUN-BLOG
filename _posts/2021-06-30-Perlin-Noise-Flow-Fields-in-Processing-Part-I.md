@@ -97,7 +97,9 @@ This class doesn't do anything yet, but simply serves as an example of the synta
 }
 </code></pre>
 
-Take a second and read through the code. Now that we have created this GridAngle class, we'll actually want to create some instances of it and store them somehow in a gridlike manner. This will require us to store our instances in an array, which is a little bit tricky in Java. Generally when creating an array in Java, you need to know it's size beforehand, to allocate the appropriate amount of space in memory. This won't work for us, since we want to have a grid that can have a different number of items depending on the parameters.
+Take a second and read through the code. Here the class simply consists of a position and an angle. Processing's vector class 'PVector' will help us when drawing the the flowlines through the grid, and also allows us to visualize the grid.
+
+Now that we have created this GridAngle class, we'll actually want to create some instances of it and store them somehow in a gridlike manner. This will require us to store our instances in an array, which is a little bit tricky in Java. Generally when creating an array in Java, you need to know it's size beforehand, to allocate the appropriate amount of space in memory. This won't work for us, since we want to have a grid that can have a different number of items depending on the parameters.
 
 <h2>Array Lists in Java</h2>
 However there is a way, using something called an ArrayList! It's essentially an array like data-structure in java, that allows easy addition and manipulation of items within it. Maybe the scariest thing about it is the way it's instantiated:
@@ -109,7 +111,7 @@ final ArrayList<ArrayList<GridAngle>> vectors
 
 Let's go through this step by step! The final keyword here is similar to the 'const' keyword in javascript that declares a constant. Don't worry, this won't mean that we can't modify our ArrayList anymore, simply that we can't reassign its reference. A more elaborate discussion can be found <a href='https://stackoverflow.com/questions/10750791/what-is-the-sense-of-final-arraylist'>here</a>.
 
-Next up, ArrayLists can only hold one data type, which needs to be specified in the space between arrow brackets, so for example, if we were to create an ArrayList of integers, we would do it as follows:
+Next up, ArrayLists can only hold one data type, which needs to be specified in the space between the arrow brackets, so for example, if we were to create an ArrayList of integers, we would do it as follows:
 
 <pre><code>
 ArrayList<int> numbers = new ArrayList<int>();
