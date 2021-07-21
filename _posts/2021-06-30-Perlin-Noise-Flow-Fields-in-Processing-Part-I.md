@@ -104,9 +104,8 @@ Now that we have created this GridAngle class, we'll actually want to create som
 <h2>Array Lists in Java</h2>
 However there is a way, using something called an ArrayList! It's essentially an array like data-structure in java, that allows easy addition and manipulation of items within it. Maybe the scariest thing about it is the way it's instantiated:
 
-<pre><code>
-final ArrayList<ArrayList<GridAngle>> vectors
-  = new ArrayList<ArrayList<GridAngle>>();
+<pre><code>final ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt; vectors 
+	= new ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt;();
 </code></pre>
 
 Let's go through this step by step! The final keyword here is similar to the 'const' keyword in javascript that declares a constant. Don't worry, this won't mean that we can't modify our ArrayList anymore, simply that we can't reassign its reference. A more elaborate discussion can be found <a href='https://stackoverflow.com/questions/10750791/what-is-the-sense-of-final-arraylist'>here</a>.
@@ -114,19 +113,19 @@ Let's go through this step by step! The final keyword here is similar to the 'co
 Next up, ArrayLists can only hold one data type, which needs to be specified in the space between the arrow brackets, so for example, if we were to create an ArrayList of integers, we would do it as follows:
 
 <pre><code>
-ArrayList<int> numbers = new ArrayList<int>();
+ArrayList&lt;int&gt; numbers = new ArrayList&lt;int&gt;();
 </code></pre>
 
 This means we can create an arraylist of arbitrary data types, even ones we create ourselves, such as the GridAngle class we created earlier:
 
 <pre><code>
-ArrayList<GridAngle> gridangles = new ArrayList<GridAngle>();
+ArrayList&lt;GridAngle&gt; gridangles = new ArrayList&lt;GridAngle&gt;();
 </code></pre>
 
 To make this a nested ArrayList we can do something like this:
 
-<pre><code>
-ArrayList<ArrayList<GridAngle>> gridangles = new ArrayList<ArrayList<GridAngle>>();
+<pre><code>ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt; gridangles 
+	= new ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt;();
 </code></pre>
 
 Makes sense right?
