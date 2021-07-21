@@ -5,7 +5,7 @@ categories:
   - p5js
 description: Part 2 of creating perlin noise flow fields in Processing.
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: false
+published: true
 ---
 
 In this part of the tutorial we'll tackle drawing the flow lines that go through the flow field.
