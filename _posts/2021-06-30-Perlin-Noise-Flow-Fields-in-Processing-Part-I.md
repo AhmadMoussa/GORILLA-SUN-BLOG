@@ -139,9 +139,9 @@ final float rez = 0.0005;
 
 The function that fills our ArrayList will look as follows, and this is actually where we'll make use of Perlin Noise:
 <pre><code>void createGrid() {
-  for (int x = xOff; x<width-xOff; x+=spacing) {
-    ArrayList<GridAngle> row  = new ArrayList<GridAngle>();
-    for (int y = yOff; y<width-yOff; y+=spacing) {
+  for (int x = xOff; x&lt;width-xOff; x+=spacing) {
+    ArrayList&lt;GridAngle&gt; row  = new ArrayList&lt;GridAngle&gt;();
+    for (int y = yOff; y&lt;width-yOff; y+=spacing) {
       float angle = map(noise(x*rez, y*rez), 0.0, 1.0, 0.0, TAU);
 
       row.add(new GridAngle(x, y, 5, angle));
@@ -164,8 +164,8 @@ Later on we won't need to visualize this grid anymore, but for now it's interest
 
 void draw() {
   background(220);
-  for (int x = 0; x<vectors.size(); x++) {
-    for (int y = 0; y<vectors.get(0).size(); y++) {
+  for (int x = 0; x&lt;vectors.size(); x++) {
+    for (int y = 0; y&lt;vectors.get(0).size(); y++) {
       vectors.get(x).get(y).display();
 
       ga.display();
@@ -180,7 +180,7 @@ And you should see something like this:
 Which almost looks like an optical illusion, the dashes seem to shift whenever you let your eyes wander over it. Great, this concludes the first part of the tutorial, and in the next part we'll cover how to draw the flowlines using this grid!
 
 The entire code should look something like this:
-<pre><code>final ArrayList<ArrayList<GridAngle>> grid = new ArrayList<ArrayList<GridAngle>>();
+<pre><code>final ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt; grid = new ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt;();
 
 final int xOff = 50;
 final int yOff = 50;
