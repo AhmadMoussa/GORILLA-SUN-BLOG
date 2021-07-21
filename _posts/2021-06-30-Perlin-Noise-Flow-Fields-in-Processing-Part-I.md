@@ -5,7 +5,7 @@ categories:
   - p5js
 description: This blog post will explain how to code up a Flow Field in Processing.
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: false
+published: true
 ---
 
 1. <a href='#intro'>Introduction</a>
