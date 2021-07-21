@@ -62,8 +62,8 @@ These'll make more sense in a second. We'll start by creating three loops, the f
 
 <pre><code>
 for (int n = 0; n<lineLength; n++) {
-   for (int x = 0; x<grid.size(); x++) {
-     for (int y = 0; y<grid.get(0).size(); y++) {
+   for (int x = 0; x&lt;grid.size(); x++) {
+     for (int y = 0; y&lt;grid.get(0).size(); y++) {
      }
    }
  }
@@ -73,12 +73,12 @@ Next we want to find the closest point, that's where our previously declared var
 
 <pre><code>
 for (int n = 0; n<50; n++) {
-    for (int x = 0; x<grid.size(); x++) {
-      for (int y = 0; y<grid.get(0).size(); y++) {
+    for (int x = 0; x&lt;grid.size(); x++) {
+      for (int y = 0; y&lt;grid.get(0).size(); y++) {
         tempFA = grid.get(x).get(y);
         dist = (float)dist(vec.x, vec.y, tempFA.x, tempFA.y);
 
-        if (dist<minDist) {
+        if (dist &lt; minDist) {
           minDist = dist;
           nearestX = x;
           nearestY = y;
