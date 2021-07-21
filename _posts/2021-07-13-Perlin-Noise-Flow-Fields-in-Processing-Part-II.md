@@ -237,11 +237,11 @@ We could also control the length by which the line gets extended each iteration.
 
 <div class="row gtr-200">
 			<div class="col-6 col-12-medium">
-        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f5000rez001sl5.png" alt="" /></span>
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f5000rez001sp5sl5.png" alt="" /></span>
        
       </div>
       <div class="col-6 col-12-medium">
-        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f5000rez001sl1.png" alt="" /></span>
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/f5000rez001sp5sl1.png" alt="" /></span>
       </div>
 </div>
 
