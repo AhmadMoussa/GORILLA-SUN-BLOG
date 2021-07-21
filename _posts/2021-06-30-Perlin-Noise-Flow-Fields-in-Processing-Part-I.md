@@ -57,7 +57,7 @@ Making a flow field essentially consists of two parts, firstly creating a grid o
 
 The flow lines here look a bit weird, but we'll make them look much nicer along the way.
 
-<h2>Creating a Grid of Angles</h2>
+<h2><a name='ga'>Creating a Grid of Angles</a></h2>
 The very first thing we'll want to do is create a custom class for the angles in our grid. This will make things more convenient for us later on.
 
 If you're not used to Java syntax this might be a little confusing at first, especially if you're used to javascript (and/or python) which is very permissive with it's variable types. Generally, in java you need to specify the type of a variable when you first create it, and mixing between different variable types can lead to odd errors and unexpected behaviour that can take some time to debug. Let's start with a simple class in java:
@@ -101,7 +101,7 @@ Take a second and read through the code. Here the class simply consists of a pos
 
 Now that we have created this GridAngle class, we'll actually want to create some instances of it and store them somehow in a gridlike manner. This will require us to store our instances in an array, which is a little bit tricky in Java. Generally when creating an array in Java, you need to know it's size beforehand, to allocate the appropriate amount of space in memory. This won't work for us, since we want to have a grid that can have a different number of items depending on the parameters.
 
-<h2>Array Lists in Java</h2>
+<h2><a name='al'>Array Lists in Java</al></h2>
 However there is a way, using something called an ArrayList! It's essentially an array like data-structure in java, that allows easy addition and manipulation of items within it. Maybe the scariest thing about it is the way it's instantiated:
 
 <pre><code>final ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt; vectors 
@@ -120,7 +120,7 @@ This means we can create an arraylist of arbitrary data types, even ones we crea
 <pre><code>ArrayList&lt;GridAngle&gt; gridangles = new ArrayList&lt;GridAngle&gt;();
 </code></pre>
 
-To make this a nested ArrayList we can do something like this:
+To make this a nested ArrayList we simply create an Array List that can hold other Array Lists:
 
 <pre><code>ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt; gridangles 
 			= new ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt;();
@@ -128,11 +128,10 @@ To make this a nested ArrayList we can do something like this:
 
 Makes sense right?
 
-<h2>Populating the Grid</h2>
+<h2><a name='populate'>Populating the Grid</a></h2>
 In addition to that we'll also need a couple of other parameters and a function that actually fills this ArrayList:
 
-<pre><code>
-final int xOff = 50;
+<pre><code>final int xOff = 50;
 final int yOff = 50;
 final int spacing = 10;
 final float rez = 0.0005;
@@ -143,7 +142,6 @@ The function that fills our ArrayList will look as follows, and this is actually
   for (int x = xOff; x<width-xOff; x+=spacing) {
     ArrayList<GridAngle> row  = new ArrayList<GridAngle>();
     for (int y = yOff; y<width-yOff; y+=spacing) {
-
       float angle = map(noise(x*rez, y*rez), 0.0, 1.0, 0.0, TAU);
 
       row.add(new GridAngle(x, y, 5, angle));
@@ -155,11 +153,9 @@ The function that fills our ArrayList will look as follows, and this is actually
 
 Nothing special here: a nested loop to populate the nested ArrayList, the noise function to which we feed the x and y coordinates of each grid angle, multiplied by the resolution factor, and we map it to the [0,TAU] range to get an angle that is somewhere between 0 and 360 degrees.
 
-<h2>Visualizing the Grid</h2>
+<h2><a name='draw'>Drawing the Grid</a></h2>
 
 Later on we won't need to visualize this grid anymore, but for now it's interesting to see what it looks like. This boils down to looping over our nested array list and invoking the display function that we have created earlier as a part of the GridAngle class:
-
-
 
 <pre><code>void setup(){
   size(600,600);
