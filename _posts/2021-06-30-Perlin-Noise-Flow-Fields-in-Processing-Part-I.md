@@ -175,11 +175,11 @@ void draw() {
 </code></pre>
 
 And you should see something like this:
-
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I/gridx.png" alt="" /></span>
 
 Which almost looks like an optical illusion, the dashes seem to shift whenever you let your eyes wander over it. Great, this concludes the first part of the tutorial, and in the next part we'll cover how to draw the flowlines using this grid!
 
-The entire code should look something like this:
+The entire code for reference:
 <pre><code>final ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt; grid = new ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt;();
 
 final int xOff = 50;
