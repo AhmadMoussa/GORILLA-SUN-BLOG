@@ -10,7 +10,7 @@ published: true
 
 1. <a href='#intro'>Introduction</a>
 2. <a href='#what'>What are Flow Fields?</a>
-3. <a href='#make'>Making a Flow Field</a>
+3. <a href='#make'>Components of a Flow Field</a>
 4. <a href='#ga'>The GridAngle Object</a>
 5. <a href='#al'>Array Lists in Java</a>
 6. <a href='#populate'>Populating the Grid</a>
@@ -43,7 +43,7 @@ The code outlined in this post is loosely based on <a href='https://tylerxhobbs.
 
 Other artists that have also created fantastic artworks with flow fields are:
 
-<h2><a name='make'>Making a Flow Field</a></h2>
+<h2><a name='make'>Components of a Flow Field</a></h2>
 Making a flow field essentially consists of two parts, firstly creating a grid of angles, and secondly drawing flow lines whose curvature is guided by this grid. This will make more sense in a second. Since this is a little bit loaded we'll split these two parts up into separate blog posts. The grid in this one, and the flow lines in the next one.
 
 <div class="row gtr-200">
@@ -55,10 +55,10 @@ Making a flow field essentially consists of two parts, firstly creating a grid o
       </div>
 </div>
 
-The flow lines look a bit weird, but we'll make them look much nicer along the way.
+The flow lines here look a bit weird, but we'll make them look much nicer along the way.
 
 <h2>Creating a Grid of Angles</h2>
-The very first thing we'll want to do is create a custom class for our the angles in our grid. This will make things more convenient for us later on.
+The very first thing we'll want to do is create a custom class for the angles in our grid. This will make things more convenient for us later on.
 
 If you're not used to Java syntax this might be a little confusing at first, especially if you're used to javascript (and/or python) which is very permissive with it's variable types. Generally, in java you need to specify the type of a variable when you first create it, and mixing between different variable types can lead to odd errors and unexpected behaviour that can take some time to debug. Let's start with a simple class in java:
 
