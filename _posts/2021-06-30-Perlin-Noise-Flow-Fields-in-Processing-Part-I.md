@@ -7,6 +7,7 @@ description: This blog post will explain how to code up a Flow Field in Processi
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I/fieldColorDashedShort58.png" alt="" /></span>
 
 1. <a href='#intro'>Introduction</a>
 2. <a href='#what'>What are Flow Fields?</a>
