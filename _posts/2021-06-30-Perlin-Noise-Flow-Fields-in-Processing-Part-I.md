@@ -42,8 +42,6 @@ The code outlined in this post is loosely based on <a href='https://tylerxhobbs.
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="es" dir="ltr">ECTOGENESIS, 2019 <a href="https://t.co/zFFqtaO570">pic.twitter.com/zFFqtaO570</a></p>&mdash; Tyler Hobbs (@tylerxhobbs) <a href="https://twitter.com/tylerxhobbs/status/1401555981402771456?ref_src=twsrc%5Etfw">June 6, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Other artists that have also created fantastic artworks with flow fields are:
-
 <h2><a name='make'>Components of a Flow Field</a></h2>
 Making a flow field essentially consists of two parts, firstly creating a grid of angles, and secondly drawing flow lines whose curvature is guided by this grid. This will make more sense in a second. Since this is a little bit loaded we'll split these two parts up into separate blog posts. The grid in this one, and the flow lines in the next one.
 
