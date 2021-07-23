@@ -8,6 +8,9 @@ thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/fieldColorDashedShort59.png" alt="" /></span>
+
+
 In this part of the tutorial we'll tackle drawing the flow lines that go through the flow field.
 
 1. <a href='#start'>Selecting a starting Point</a>
