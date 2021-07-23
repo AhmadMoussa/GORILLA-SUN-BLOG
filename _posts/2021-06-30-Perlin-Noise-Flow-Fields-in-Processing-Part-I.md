@@ -61,8 +61,7 @@ The very first thing we'll want to do is create a custom class for the angles in
 
 If you're not used to Java syntax this might be a little confusing at first, especially if you're used to javascript (and/or python) which is very permissive with it's variable types. Generally, in java you need to specify the type of a variable when you first create it, and mixing between different variable types can lead to odd errors and unexpected behaviour that can take some time to debug. Let's start with a simple class in java:
 
-<pre><code>
-class GridAngle {
+<pre><code>class GridAngle {
   int x, y;
   GridAngle(int x_, int y_){
     x = x_;
