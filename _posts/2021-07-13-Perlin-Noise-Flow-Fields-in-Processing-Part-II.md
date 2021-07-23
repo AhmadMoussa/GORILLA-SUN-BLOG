@@ -255,8 +255,7 @@ And that's just some of the results you can get with the code we wrote. Feel fre
 
 The entire code:
 
-<pre><code>
-final ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt; grid = new ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt;();
+<pre><code>final ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt; grid = new ArrayList&lt;ArrayList&lt;GridAngle&gt;&gt;();
 
 final int xOff = 100;
 final int yOff = 100;
@@ -333,9 +332,9 @@ void drawFlowLine() {
 
 
 void createGrid() {
-  for (int x = -xOff; x<width+xOff; x+=spacing) {
+  for (int x = -xOff; x&lt;width+xOff; x+=spacing) {
     ArrayList&lt;GridAngle&gt; row  = new ArrayList&lt;GridAngle&gt;();
-    for (int y = -yOff; y<width+yOff; y+=spacing) {
+    for (int y = -yOff; y&lt;width+yOff; y+=spacing) {
       float angle = map(noise(x*rez, y*rez), 0.0, 1.0, 0.0, TAU);
 
       row.add(new GridAngle(x, y, spacing/2, angle));
@@ -365,8 +364,3 @@ void draw() {
   noLoop();
 }
 </code></pre>
-
-
-
-
-
