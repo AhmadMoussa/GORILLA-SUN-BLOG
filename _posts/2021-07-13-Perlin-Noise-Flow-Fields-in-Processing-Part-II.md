@@ -8,7 +8,15 @@ thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/fieldColorDashedShort59.png" alt="" /></span>
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/fieldColorDashedShort61.png" alt="" /></span>
+       
+      </div>
+      <div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/fieldColorDashedShort62.png" alt="" /></span>
+      </div>
+</div>
 
 
 In this part of the tutorial we'll tackle drawing the flow lines that go through the flow field.
@@ -101,7 +109,7 @@ Here it's super important that you overwrite the vec variable, since it'll have 
 
 As you probably can see, there's a lot of room for improvement, but first let's draw the Flow-Field and see what it looks like!
 
-<h2><a name='hp'>Drawing the Flow-Field</a></h2>
+<h2><a name='draw'>Drawing the Flow-Field</a></h2>
 Everything discussed above can be neatly combined as a function:
 
 <pre><code>// stylistic parameters controlling the line length
