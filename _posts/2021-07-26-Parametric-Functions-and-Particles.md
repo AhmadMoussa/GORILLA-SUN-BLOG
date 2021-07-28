@@ -22,8 +22,7 @@ Creating shapes that are made out of small particles has become an integral part
 
 Drawing a circle in p5js or processing is very simple, we already have an inbuilt function for that: ellipse(x,y,size). Which will basically draw a circle at the specified x and y coordinates, with a specific size. But what if we wanted to draw a circle while only using the point function, such that the circle is made out of many small dots? We can do that with a little trigonometry! I have already shown this in my Generative Tree Rings post, but this trick has become pretty much standard in my toolkit, looping with a for loop from 0 to TAU:
 
-<pre><code>
-numDivs = 20;
+<pre><code>numDivs = 20;
 radius = 100;
 
 translate(width/2, height/2);
@@ -40,8 +39,7 @@ Here we're incrementing from 0 to TAU by a specific number of chunks, which we c
 
 This is neat, but the circle looks dull, visually there is nothing interesting about it, even if we crank up the number of points. What we could do, is randomize the size of the points that make up the circle:
 
-<pre><code>
-numDivs = 20;
+<pre><code>numDivs = 20;
 radius = 100;
 
 translate(width/2, height/2);
@@ -55,8 +53,7 @@ for(a = 0; a<TAU; a+=TAU/numDivs){
 
 Without the noLoop() statement this doesn't work very well, the dots just keep flickering spastically. We could determine a random size for each dot prior to drawing them and store that information somehow. We could do this in the setup function:
 
-<pre><code>
-function setup(){
+<pre><code>function setup(){
   createCanvas(400, 400);
   numDivs = 20;
   radius = 100;
@@ -70,8 +67,7 @@ function setup(){
 
 This is pretty straightforward in javascript (a little bit trickier in processing/java). We basically use the same loop that we use for drawing the points and populate and array with random values. We'll use the array as follows in the draw loop:
 
-<pre><code>
-function draw(){
+<pre><code>function draw(){
   background(220);
   translate(width/2, height/2);
 
