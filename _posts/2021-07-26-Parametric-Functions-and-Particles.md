@@ -26,7 +26,7 @@ Drawing a circle in p5js or processing is very simple, we already have an inbuil
 radius = 100;
 
 translate(width/2, height/2);
-for(a = 0; a<TAU; a+=TAU/numDivs){
+for(a = 0; a&lt;TAU; a+=TAU/numDivs){
   x = radius*cos(a);
   y = radius*sin(a);
   point(x, y);
@@ -43,7 +43,7 @@ This is neat, but the circle looks dull, visually there is nothing interesting a
 radius = 100;
 
 translate(width/2, height/2);
-for(a = 0; a<TAU; a+=TAU/numDivs){
+for(a = 0; a&lt;TAU; a+=TAU/numDivs){
   x = radius*cos(a);
   y = radius*sin(a);
   strokeWeight(random(5));
@@ -59,7 +59,7 @@ Without the noLoop() statement this doesn't work very well, the dots just keep f
   radius = 100;
 
   sizes = []
-  for(a = 0; a<TAU; a+=TAU/numDivs){
+  for(a = 0; a&lt;TAU; a+=TAU/numDivs){
     sizes.push(random(0.5,5))
   }
 }
@@ -71,7 +71,7 @@ This is pretty straightforward in javascript (a little bit trickier in processin
   background(220);
   translate(width/2, height/2);
 
-  for(n = 0; n<numDivs; n++){
+  for(n = 0; n&lt;numDivs; n++){
     a = TAU/numDivs * n
     x = radius*cos(a);
     y = radius*sin(a);
@@ -108,7 +108,7 @@ Alrighty, frameCount it is, the code to animate the circle will then be:
   radius = 100;
 
   sizes = []
-  for(a = 0; a<TAU; a+=TAU/numDivs){
+  for(a = 0; a&lt;TAU; a+=TAU/numDivs){
     sizes.push(random(0.5,5))
   }
 
@@ -122,7 +122,7 @@ function draw(){
 
   t = frameCount/FPS; //divide frameCount by FPS
 
-  for(n = 0; n<numDivs; n++){
+  for(n = 0; n&lt;numDivs; n++){
 
     // add t to angle and divide to slow down the movement
     a = TAU/numDivs * n + t/2
