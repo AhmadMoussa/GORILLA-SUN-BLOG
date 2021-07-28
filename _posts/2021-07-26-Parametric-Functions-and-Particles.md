@@ -97,7 +97,7 @@ Obviously there's a lot more that we can do to make this more interesting. We co
 
 This requires a variable that is linearly increasing every draw loop, for which we have 3 options:
 <ol>
-<li>Time since start of the sketchin milliseconds via the millis() function</li>
+<li>Time since start of the sketch in milliseconds via the millis() function</li>
 <li>The number of frames since beginning of the sketch via the frameCount variable</li>
 <li>Our own variable that we increment every draw loop</li>
 </ol>
