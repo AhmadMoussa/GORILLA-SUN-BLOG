@@ -192,7 +192,7 @@ r = radius + radi[n]*20 + 50*sin(a*ratio)
 A little trick to make the particles look a little better is making the background slightly transparent by setting it's alpha value to something less than 255. Depending on that value, it'll look as if there is a little bit of motion blur on the particles, giving them a trail:
 
 <pre><code>background(220,50);
-<code></pre>
+</code></pre>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/smooth.gif" alt="" /></span>
 
