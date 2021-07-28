@@ -138,10 +138,17 @@ function draw(){
 
 We'll essentially store the frameCount divided by the the frameRate in a variable t (t for time), and add that variable to the angle of each point. This makes each point slowly rotate around the circle.
 
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/rotation1.gif" alt="" /></span>
+
 This is already more interesting than before, but it's still a little boring. All the points are moving at the same speed, it would be much more interesting to have each point move at it's own pace:
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/randomized speed.gif" alt="" /></span>
 
 We can achieve this with another array that we fill in the setup function with different random numbers, and then divide the variable t by them. One downside of this is that it becomes much more difficult to make a perfect loop, but it looks already more interesting. Another thing we can do to make it look a little better, is vary the radius of each point slightly, such that they're not all moving on the same ring:
 
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/rotation2.gif" alt="" /></span>
 
 <h2>Playing with Trigonometry</h2>
 
@@ -150,6 +157,8 @@ Next we can do, is play with the trigonometry that determines the position of th
 <pre><code>x = r*cos(a);
 y = r*sin(a)*cos(a);
 </code></pre>
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/lemniscate.gif" alt="" /></span>
 
 Or we could modulate the radius of the points with a sine function and obtain the function that specifies a Limacon:
 
@@ -160,14 +169,31 @@ x = r*cos(a);
 y = r*sin(a);
 </code></pre>
 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/limacon.gif" alt="" /></span>
+
 Or you could draw a flowers with an arbitrary number of petals,  by modulating the radius of the points:
 
 <pre><code>ratio = 3 //change number for different number of petals
 r = radius + radi[n]*20 + 50*sin(a*ratio)
 </code></pre>
 
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/flower5.gif" alt="" /></span>
+       
+      </div>
+      <div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/flower3.gif" alt="" /></span>
+      </div>
+</div>
+
+
 <h2>Making the animation smoother</h2>
 A little trick to make the particles look a little better is making the background slightly transparent by setting it's alpha value to something less than 255. Depending on that value, it'll look as if there is a little bit of motion blur on the particles, giving them a trail:
 
 <pre><code>background(220,50);
 <code></pre>
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/smooth.gif" alt="" /></span>
+
+However this comes with the caveat that the first couple of frames have a faded color, which you will have to take into consideration when making GIFs. 
