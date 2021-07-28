@@ -102,9 +102,7 @@ The millis() function, as well as incrementing your own variable are useful for 
 
 Alrighty, frameCount it is, the code to animate the circle will then be:
 
-<pre><code>
-
-function setup(){
+<pre><code>function setup(){
   createCanvas(400,400)
   numDivs = 500;
   radius = 100;
@@ -149,15 +147,13 @@ We can achieve this with another array that we fill in the setup function with d
 
 Next we can do, is play with the trigonometry that determines the position of the points, for example we can modulate the y coordinates with another cosine function, such as follows, and obtain the Lemniscate of Gerono, aka the infinity symbol:
 
-<pre><code>
-x = r*cos(a);
+<pre><code>x = r*cos(a);
 y = r*sin(a)*cos(a);
 </code></pre>
 
 Or we could modulate the radius of the points with a sine function and obtain the function that specifies a Limacon:
 
-<pre><code>
-a = TAU/numDivs * n + t/speed[n]
+<pre><code>a = TAU/numDivs * n + t/speed[n]
 r = radius + radi[n]*20
 r = (r*1/3 + r*sin(a)) // this line makes the magic happen
 x = r*cos(a);
@@ -166,14 +162,12 @@ y = r*sin(a);
 
 Or you could draw a flowers with an arbitrary number of petals,  by modulating the radius of the points:
 
-<pre><code>
-ratio = 3 //change number for different number of petals
+<pre><code>ratio = 3 //change number for different number of petals
 r = radius + radi[n]*20 + 50*sin(a*ratio)
 </code></pre>
 
 <h2>Making the animation smoother</h2>
 A little trick to make the particles look a little better is making the background slightly transparent by setting it's alpha value to something less than 255. Depending on that value, it'll look as if there is a little bit of motion blur on the particles, giving them a trail:
 
-<pre><code>
-background(220,50);
+<pre><code>background(220,50);
 <code></pre>
