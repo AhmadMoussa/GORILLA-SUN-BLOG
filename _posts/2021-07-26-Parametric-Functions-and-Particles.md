@@ -8,6 +8,16 @@ thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
 
+<div class="row gtr-200">
+			<div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/lemniscateColor.gif" alt="" /></span>
+       
+      </div>
+      <div class="col-6 col-12-medium">
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/galactic disc.gif" alt="" /></span>
+      </div>
+</div>
+
 Creating shapes that are made out of small particles has become an integral part of my sketches, and is something that can be easily combined with parametric functions, that describe specific shapes. Constituting shapes out of smaller components looks visually very impressive, it gives things an almost organic feeling, similar to nature where things are made out of atoms.
 
 Drawing a circle in p5js or processing is very simple, we already have an inbuilt function for that: ellipse(x,y,size). Which will basically draw a circle at the specified x and y coordinates, with a specific size. But what if we wanted to draw a circle while only using the point function, such that the circle is made out of many small dots? We can do that with a little trigonometry! I have already shown this in my Generative Tree Rings post, but this trick has become pretty much standard in my toolkit, looping with a for loop from 0 to TAU:
@@ -23,6 +33,8 @@ for(a = 0; a<TAU; a+=TAU/numDivs){
   point(x, y);
 }
 </code></pre>
+
+ <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/circle.png" alt="" /></span>
 
 Here we're incrementing from 0 to TAU by a specific number of chunks, which we can conveniently specify with the numDivs parameter. I like designating the loop variable with the letter a, standing for 'angle'. If you need a little refresher on trigonometry, fret not, I got you covered with this post . Here the x and y coordinates of the point on the circle can be determined with the sin() and cos() functions, to which we will give the angle as input. Since the angle is incremented in chunks, we'll get a number of points equal to the numDivs paramter, that are equally distributed around the circle. Try it for yourself and change the numDivs parameter!
 
@@ -75,9 +87,10 @@ function draw(){
 </code></pre>
 
 Here we need to make a little modification to the for loop, where we iterate from 0 to numDivs and calculate the angle inside the loop. Then before drawing the point we get access the array with n. This will ensure that we always get the same strokeWeight for each point. We obtain something like this:
+ <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/randomized1.png" alt="" /></span>
 
 Now crank up the number of points to something like 500. This gives a really nice effect, where the circle almost looks like it's drawn with ink:
-
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/randomized2.png" alt="" /></span>
 <h2>Adding Motion</h2>
 
 Obviously there's a lot more that we can do to make this more interesting. We could let those points slowly rotate around the circle, such as in the following gif:
