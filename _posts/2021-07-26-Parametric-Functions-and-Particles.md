@@ -14,7 +14,7 @@ published: true
        
       </div>
       <div class="col-6 col-12-medium">
-        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/galactic disc.gif" alt="" /></span>
+        <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/galactic disc2.gif" alt="" /></span>
       </div>
 </div>
 
