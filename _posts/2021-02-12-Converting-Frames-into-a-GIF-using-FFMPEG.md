@@ -3,7 +3,7 @@ title: Converting Frames into a GIF using FFMPEG
 author: Ahmad Moussa
 description: Combining a number of individual frames can be tricky if you haven't done it before, in this article we show how to accomplish it with FFMPEG.
 thumbnail_path: 2021-02-12-Making-an-animated-GIF-from-a-sequence-of-frames-with-FFMPEG.png
-published: false
+published: true
 ---
 
 1. <a href='#Intro'>Intro and why GIFs are useful</a>
