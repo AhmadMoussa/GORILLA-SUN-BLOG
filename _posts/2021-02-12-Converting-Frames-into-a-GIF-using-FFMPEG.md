@@ -6,12 +6,6 @@ thumbnail_path: 2021-02-12-Making-an-animated-GIF-from-a-sequence-of-frames-with
 published: true
 ---
 
-1. <a href='#Intro'>Intro and why GIFs are useful</a>
-2. <a href='#What'>What are GIFs actually?</a>
-3. <a href='#GIFscc'>GIFs for Creative Coding</a>
-4. <a href='#FFMPEG'>What's FFMPEG?</a>
-5. <a href='#Install'>Installing FFMPEG</a>
-6. <a href='#Useful'>Other useful commands!</a>
 
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l0HlvFUHvDB16UOwU" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 <p></p>
@@ -26,7 +20,13 @@ published: true
   </strong> 
 </div>
 
-  
+1. <a href='#Intro'>Intro and why GIFs are useful</a>
+2. <a href='#What'>What are GIFs actually?</a>
+3. <a href='#GIFscc'>GIFs for Creative Coding</a>
+4. <a href='#FFMPEG'>What's FFMPEG?</a>
+5. <a href='#Install'>Installing FFMPEG</a>
+6. <a href='#Useful'>Other useful commands!</a>
+
 
   
 <p></p>
