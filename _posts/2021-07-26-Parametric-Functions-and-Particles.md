@@ -18,9 +18,14 @@ published: true
       </div>
 </div>
 
-Creating shapes that are made out of small particles has become an integral part of my sketches, and is something that can be easily combined with parametric functions, that describe specific shapes. Constituting shapes out of smaller components looks visually very impressive, it gives things an almost organic feeling, similar to nature where things are made out of atoms.
+Creating shapes that are made out of small particles, has become an integral part of my sketches, and is something that can be easily combined with parametric functions. Constituting shapes out of smaller components looks visually very impressive, it gives things an almost organic feeling, similar to nature where things are usually made out of smaller parts (fractals however, are topic for another day).
 
-Drawing a circle in p5js or processing is very simple, we already have an inbuilt function for that: ellipse(x,y,size). Which will basically draw a circle at the specified x and y coordinates, with a specific size. But what if we wanted to draw a circle while only using the point function, such that the circle is made out of many small dots? We can do that with a little trigonometry! I have already shown this in my Generative Tree Rings post, but this trick has become pretty much standard in my toolkit, looping with a for loop from 0 to TAU:
+For our purposes, we'll start with a very simple exercise: drawing a circle to the canvas. In p5js, or alternatively processing, this is very simple. We are provided with an inbuilt function for that: ellipse(x,y,size). Which will basically draw a circle at the specified x and y coordinates, and with a specific size. 
+
+Now, what if we want to draw a circle without this function, such that the circle is made up of many small points? As always, we can achieve this with a little trigonometry! Let's dive into the code!
+
+<h2>Drawing a Circle... with many Points!</h2>
+I have already shown this in my Generative Tree Rings post, but this trick has become pretty much standard in my toolkit, where we loop with a for loop from 0 to TAU:
 
 <pre><code>numDivs = 20;
 radius = 100;
@@ -33,7 +38,7 @@ for(a = 0; a&lt;TAU; a+=TAU/numDivs){
 }
 </code></pre>
 
- <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/circle.png" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/circle.png" alt="" /></span>
 
 Here we're incrementing from 0 to TAU by a specific number of chunks, which we can conveniently specify with the numDivs parameter. I like designating the loop variable with the letter a, standing for 'angle'. If you need a little refresher on trigonometry, fret not, I got you covered with this post . Here the x and y coordinates of the point on the circle can be determined with the sin() and cos() functions, to which we will give the angle as input. Since the angle is incremented in chunks, we'll get a number of points equal to the numDivs paramter, that are equally distributed around the circle. Try it for yourself and change the numDivs parameter!
 
@@ -91,6 +96,8 @@ Now crank up the number of points to something like 500. This gives a really nic
 
 Obviously there's a lot more that we can do to make this more interesting. We could let those points slowly rotate around the circle, such as in the following gif:
 
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/rotation1.gif" alt="" /></span>
+
 This requires a variable that is linearly increasing every draw loop, for which we have 3 options:
 <ol>
 <li>Time since start of the sketch in milliseconds via the millis() function</li>
@@ -139,7 +146,7 @@ function draw(){
 We'll essentially store the frameCount divided by the the frameRate in a variable t (t for time), and add that variable to the angle of each point. This makes each point slowly rotate around the circle.
 
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/rotation1.gif" alt="" /></span>
+
 
 This is already more interesting than before, but it's still a little boring. All the points are moving at the same speed, it would be much more interesting to have each point move at it's own pace:
 
