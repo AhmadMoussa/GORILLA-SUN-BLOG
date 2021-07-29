@@ -18,14 +18,18 @@ published: true
       </div>
 </div>
 
-Creating shapes that are made out of small particles, has become an integral part of my sketches, and is something that can be easily combined with parametric functions. Constituting shapes out of smaller components looks visually very impressive, it gives things an almost organic feeling, similar to nature where things are usually made out of smaller parts (fractals however, are topic for another day).
+Creating shapes that are made out of small particles, has become an integral part of my sketches, and is something that can be easily combined with parametric functions. Constituting shapes out of smaller components looks visually very impressive, it gives things an almost organic feel, similar to nature where things are usually made out of smaller parts (fractals however, are topic for another day).
 
-For our purposes, we'll start with a very simple exercise: drawing a circle to the canvas. In p5js, or alternatively processing, this is very simple. We are provided with an inbuilt function for that: ellipse(x,y,size). Which will basically draw a circle at the specified x and y coordinates, and with a specific size. 
+For our purposes, we'll start with a very simple exercise: drawing a circle to the canvas. In p5js, or alternatively processing, this is very simple. We are already provided with an inbuilt function for that: ellipse(x,y,size). Which will basically draw a circle at the specified x and y coordinates, and with a specific size. 
 
 Now, what if we want to draw a circle without this function, such that the circle is made up of many small points? As always, we can achieve this with a little trigonometry! Let's dive into the code!
 
-<h2>Drawing a Circle... with many Points!</h2>
-I have already shown this in my Generative Tree Rings post, but this trick has become pretty much standard in my toolkit, where we loop with a for loop from 0 to TAU:
+1. <a href='#draw'>Drawing a Circle... with many Points!</a>
+2. <a href='#motion'>Adding Motion</a>
+3. <a href='#parametric'>Parametric Functions</a>
+
+<h2><a name='draw'>Drawing a Circle... with many Points!</a></h2>
+I have already shown this in my <a href='https://gorillasun.de/blog/Radial-Perlin-Noise-and-Generative-Tree-Rings'>Generative Tree Rings post</a>, but this trick has become pretty much standard in my toolkit, where we loop with a for loop from 0 to TAU:
 
 <pre><code>numDivs = 20;
 radius = 100;
@@ -40,9 +44,9 @@ for(a = 0; a&lt;TAU; a+=TAU/numDivs){
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/circle.png" alt="" /></span>
 
-Here we're incrementing from 0 to TAU by a specific number of chunks, which we can conveniently specify with the numDivs parameter. I like designating the loop variable with the letter a, standing for 'angle'. If you need a little refresher on trigonometry, fret not, I got you covered with this post . Here the x and y coordinates of the point on the circle can be determined with the sin() and cos() functions, to which we will give the angle as input. Since the angle is incremented in chunks, we'll get a number of points equal to the numDivs paramter, that are equally distributed around the circle. Try it for yourself and change the numDivs parameter!
+Here we're incrementing from 0 to TAU by a specific number of chunks, which we can conveniently specify with the numDivs parameter. I like designating the loop variable with the letter a, standing for 'angle'. If you need a little refresher on trigonometry, fret not, I got you covered with <a href='https://gorillasun.de/blog/Rotation-along-the-circumference-of-a-circle'>one of my previous posts</a>. Here the x and y coordinates of the point on the circle can be determined with the sin() and cos() functions, to which we will give the angle as input. Since the angle is incremented in chunks, we'll get a number of points equal to the numDivs paramter, that are equally distributed around the circle. Try it for yourself and change the numDivs parameter!
 
-This is neat, but the circle looks dull, visually there is nothing interesting about it, even if we crank up the number of points. What we could do, is randomize the size of the points that make up the circle:
+Neat, but still looks quite boring. Visually there is nothing interesting about it, even if we crank up the number of points. What we could do, is randomize the size of the points that make up the circle:
 
 <pre><code>numDivs = 20;
 radius = 100;
@@ -56,7 +60,7 @@ for(a = 0; a&lt;TAU; a+=TAU/numDivs){
 }
 </code></pre>
 
-Without the noLoop() statement this doesn't work very well, the dots just keep flickering spastically. We could determine a random size for each dot prior to drawing them and store that information somehow. We could do this in the setup function:
+Without the noLoop() statement this doesn't work very well, the dots just keep flickering spastically. We could determine a random size for each dot prior to drawing them and store that information somehow. We can do this in the setup function:
 
 <pre><code>function setup(){
   createCanvas(400, 400);
@@ -70,7 +74,7 @@ Without the noLoop() statement this doesn't work very well, the dots just keep f
 }
 </code></pre>
 
-This is pretty straightforward in javascript (a little bit trickier in processing/java). We basically use the same loop that we use for drawing the points and populate and array with random values. We'll use the array as follows in the draw loop:
+This is pretty straightforward in javascript (a little bit trickier in processing/java). We basically use the same loop that we use for drawing the points and populate an array with random values. We'll use the array as follows in the draw loop:
 
 <pre><code>function draw(){
   background(220);
@@ -87,13 +91,14 @@ This is pretty straightforward in javascript (a little bit trickier in processin
 }
 </code></pre>
 
-Here we need to make a little modification to the for loop, where we iterate from 0 to numDivs and calculate the angle inside the loop. Then before drawing the point we get access the array with n. This will ensure that we always get the same strokeWeight for each point. We obtain something like this:
+Here we need to make a little modification to the for loop, where we iterate from 0 to numDivs and calculate the angle inside the loop. Then before drawing the point we can access the array with n. This will ensure that we always get the same strokeWeight for each point. We obtain something like this:
  <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/randomized1.png" alt="" /></span>
 
 Now crank up the number of points to something like 500. This gives a really nice effect, where the circle almost looks like it's drawn with ink:
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/randomized2.png" alt="" /></span>
-<h2>Adding Motion</h2>
 
+
+<h2><a name='motion'>Adding Motion</a></h2>
 Obviously there's a lot more that we can do to make this more interesting. We could let those points slowly rotate around the circle, such as in the following gif:
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/rotation1.gif" alt="" /></span>
@@ -146,8 +151,6 @@ function draw(){
 We'll essentially store the frameCount divided by the the frameRate in a variable t (t for time), and add that variable to the angle of each point. This makes each point slowly rotate around the circle.
 
 
-
-
 This is already more interesting than before, but it's still a little boring. All the points are moving at the same speed, it would be much more interesting to have each point move at it's own pace:
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/randomized speed.gif" alt="" /></span>
@@ -157,9 +160,8 @@ We can achieve this with another array that we fill in the setup function with d
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/rotation2.gif" alt="" /></span>
 
-<h2>Playing with Trigonometry</h2>
-
-Next we can do, is play with the trigonometry that determines the position of the points, for example we can modulate the y coordinates with another cosine function, such as follows, and obtain the Lemniscate of Gerono, aka the infinity symbol:
+<h2><a name='parametric'>Parametric Functions</a></h2>
+Next we can do, is play with the trigonometry that determines the position of the points, and plug in different parametric functions instead of the circle. For example we can modulate the y coordinates with another cosine function, such as in the following, and obtain the Lemniscate of Gerono, aka the infinity symbol:
 
 <pre><code>x = r*cos(a);
 y = r*sin(a)*cos(a);
