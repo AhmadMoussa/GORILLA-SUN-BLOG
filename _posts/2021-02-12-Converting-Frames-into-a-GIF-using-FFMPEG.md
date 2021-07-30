@@ -1,9 +1,9 @@
 ---
-title: Converting Frames into a GIF using FFMPEG
+title: Making GIFs in P5JS and Processing
 author: Ahmad Moussa
 description: Combining a number of individual frames can be tricky if you haven't done it before, in this article we show how to accomplish it with FFMPEG.
 thumbnail_path: 2021-02-12-Making-an-animated-GIF-from-a-sequence-of-frames-with-FFMPEG.png
-published: true
+published: false
 ---
 
 
@@ -20,7 +20,7 @@ published: true
   </strong> 
 </div>
 
-1. <a href='#Intro'>Intro and why GIFs are useful</a>
+1. <a href='#Intro'>GIFs. GIFs. GIFS</a>
 2. <a href='#What'>What are GIFs actually?</a>
 3. <a href='#GIFscc'>GIFs for Creative Coding</a>
 4. <a href='#FFMPEG'>What's FFMPEG?</a>
@@ -30,20 +30,53 @@ published: true
 
   
 <p></p>
-<!--
-<h2>Why are GIFs so popular?</h2>
-<p>If you're reading this, then you've probably used a GIF before.</p> 
+
+<h2><a name='intro'>GIFs. GIFs. GIFS</a></h2>
+<p>If you've been on the Internet in the past decade or so, then you've probably used a GIF before.</p> 
   
-<p>GIFs have become incredibly popular in recent years, to such an extent that GIFs have earned their didcated integration in most modern messaging and social media apps. And deserrvedly so, sometimes a GIF can express that you wouldn't otherwise be able to express with words. Very often, a well timed GIF in a heated whatsapp conversation can be incredibly funny. Other times, a GIF of an iconic scene from a beloved movie or series can encapsulate a specific feeling incredibly well. GIFs also play an integral role in meme culture, but more to that later!</p>
+<p>GIFs have become incredibly popular in recent years, to such an extent that GIFs have earned their didcated integration in most modern messaging and social media apps. And deserrvedly so, sometimes a GIF can express that you wouldn't otherwise be able to express with words. </p>
+  
+<p>Very often, a well timed GIF in a heated whatsapp conversation can be incredibly funny. Other times, a GIF of an iconic scene from a beloved movie or series can encapsulate a specific feeling incredibly well. GIFs also play an integral role in meme culture, but more to that on another day!</p>
  
+ 
+<!--
 <h2>What are GIFs... like actually? </h2>
--->
+
 <p>Gifs are cool, but making them can be tricky. In the past 2 years I've had to make a lot of powerpoint presentations for univeristy, and I've always wanted to make them the best they could possible be, aesthetically and information wise. And what's better than having a lot of cool images and graphs in your presentation? Visualizing processes with animated gifs.</p>
   
 <p>Since the focus of my studies were neural networks which involved training them, I would most often want to visualize this learning process by drawing a sample output from my model at every learning iteration (epoch), which in turn would allow me to qualitatively assess how well it was performing. This usually made me end up with a folder on my desktop that held hundreds to thousands of images. Including this sequence of frames as an animated GIF in your powerpoint is very impressive, and usually gives a lot of insight on the training process that you wouldn't usually see if you only inspected single frames.</p>
 
+
 <h2>GIFs from p5js and processing</h2>
 <p>Naturally, making gifs from a sequence of frames is not only useful academically, but can also be used for other purposes. Since I couldn't figure out how to capture a gif directly from the P5JS web editor of my canvas, I resorted to downloading individual frames and then concatenating them into a gif. Now the problem with gifs is that there has to be some compression algorithm involved that reduces the overall size of the final gif. Digital images can already take up a significant amount of space on your hard disk, depending on the resolution and encoding format, however it usually is the case that there is not a lot of change between two consecutive frames, for example, the backdrop of a scene doesn't always change significantly, only the main object that's moving. In this case it would be very wasteful to not encode some shared information jointly between different frames.</p>
+
+-->
+
+<h2>Sketches as GIFs</h2>
+Making GIFs out of your creative coding sketches can be tedious, but there are a number of tools that come in handy for this task. The real hard part is making them smaller than 15mb such that they're upload-able to Twitter (where most of the cool creative coding folks are nowadays). More on that in a bit.
+
+We have a number of options to succesfully create a GIF from our p5js and processing sketches. Usually we'll first have to extract and save individual frames from our animation and then convert them into a complete GIF. We'll tackle these two steps one at a time!
+
+<h2><a name='frames'>Saving Individual Frames</a></h2>
+
+In processing, saving an indivdiual frame is very straight forward. We can simply call the save("title.png"); function in the draw loop, and an image will appear in the corresponding sketch folder. Obviously, we'll have to pass a different name for each frame, otherwise we would be overwriting the same file over and over again. We can do this with the help of a counter that gets incremented every draw loop:
+
+<pre><code>int counter = 0;
+void draw(){
+   counter++;
+   save(counter + ".png");
+}
+</code></pre>
+
+Notice that in java it will implicitely cast the counter integer to a string. 
+
+In p5js it is a little bit trickier, but we have a couple of options here, in no particular order:
+
+<ul>
+  <li>Making use of the saveCanvas function. Golan Levin has a fantastic <a href='https://github.com/golanlevin/LoopTemplates/blob/master/animgif_p5js/sketch.js'>loop template</a> for this purpose (among others)</li>
+  <li>Using CCapture, to export the frames. For this one, Jeff++ has made a fantastic loop template and in depth explanation for this which can be found <a href='https://ippsketch.com/posts/making-gifs-with-p5js/'>here</a></li>
+  <li>If you're lazy like me, you can use the createLoop package, which can be found <a href='https://www.npmjs.com/package/p5.createloop'>here</a></li>
+</ul>
 
 <h2>FFMPEG</h2>
 
