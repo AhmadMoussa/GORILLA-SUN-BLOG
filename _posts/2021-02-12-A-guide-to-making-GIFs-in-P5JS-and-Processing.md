@@ -93,22 +93,22 @@ Jeff's template is fantastic and can also be configured to work with the process
 This one doesn't give you the individual frames per se, but directly creates a GIF underneath the P5JS canvas, which you can then save to your device. Since a GIF is merely a concatenation of frames, you could then load that GIF into your editor of choice to make some changes, or manipulate it with a command line tool like FFMPEG.
 
 The createLoop package can be used as follows in your sketch, where you'll have to add a new script tag in the html file, and a single line in the setup function of your sketch. The html:
-<pre><code><!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"&gt;&lt;/script&gt;
     
-    <!-- The createloop tag -->
-    <script src="https://unpkg.com/p5.createloop@0.2.8/dist/p5.createloop.js"></script>
+    &lt;!-- The createloop tag --&gt;
+    &lt;script src="https://unpkg.com/p5.createloop@0.2.8/dist/p5.createloop.js">&lt;/script&gt;
     
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <meta charset="utf-8" />
-  </head>
-  <body>
-    <script src="sketch.js"></script>
-  </body>
-</html>
+    &lt;link rel="stylesheet" type="text/css" href="style.css" /&gt;
+    &lt;meta charset="utf-8" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;script src="sketch.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 
 And your setup function will look as follows:
