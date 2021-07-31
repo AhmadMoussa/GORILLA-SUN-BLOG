@@ -1,9 +1,9 @@
 ---
-title: Making GIFs in P5JS and Processing
+title: A guide to making GIFs in P5JS and Processing
 author: Ahmad Moussa
-description: Combining a number of individual frames can be tricky if you haven't done it before, in this article we show how to accomplish it with FFMPEG.
+description: This article is a run down of all the possible ways you can turn your sketch into a GIF.
 thumbnail_path: 2021-02-12-Making-an-animated-GIF-from-a-sequence-of-frames-with-FFMPEG.png
-published: false
+published: true
 ---
 
 
@@ -21,8 +21,7 @@ published: false
 </div>
 
 1. <a href='#Intro'>GIFs. GIFs. GIFS</a>
-2. <a href='#What'>What are GIFs actually?</a>
-3. <a href='#GIFscc'>GIFs for Creative Coding</a>
+3. <a href='#GIFscc'>Sharing your Sketches as GIFs</a>
 4. <a href='#FFMPEG'>What's FFMPEG?</a>
 5. <a href='#Install'>Installing FFMPEG</a>
 6. <a href='#Useful'>Other useful commands!</a>
@@ -74,9 +73,54 @@ In p5js it is a little bit trickier, but we have a couple of options here, in no
 
 <ul>
   <li>Making use of the saveCanvas function. Golan Levin has a fantastic <a href='https://github.com/golanlevin/LoopTemplates/blob/master/animgif_p5js/sketch.js'>loop template</a> for this purpose (among others)</li>
-  <li>Using CCapture, to export the frames. For this one, Jeff++ has made a fantastic loop template and in depth explanation for this which can be found <a href='https://ippsketch.com/posts/making-gifs-with-p5js/'>here</a></li>
+  <li>Using CCapture, to export the frames. For this one, Jeff++ has made a fantastic loop template and in depth explanation for this which can be found <a href='https://github.com/ippsketch/p5js-animation-to-png-template'>here</a> and an in depth explanation <a href='https://ippsketch.com/posts/making-gifs-with-p5js/'>here</a></li>
   <li>If you're lazy like me, you can use the createLoop package, which can be found <a href='https://www.npmjs.com/package/p5.createloop'>here</a></li>
 </ul>
+
+<h3>The saveCanvas() function</h3>
+Golan Levin's template works well, however you might have to rate limit the frame rate of your sketches for this to work well. Running your sketch at full 50-60FPS, and trying to save each individual frame in quick succession might be taxing on your browser. I've tried with chrome and microsoft edge and in both cases they tried to throttle these quick downloads, making it such that many frames were missing in the final output folder.
+
+After some help from the birbs nest discord it seems that setting the FPS via the frameRate() command to something low like 1-5 frames per second, makes it much more consistent and reliable. However it takes a tad bit longer that way.
+
+<h3>Saving frames with CCapture</h3>
+CCapture is a javascript library for capturing canvas based animations, such as the P5JS canvas for example. The library can be found <a href='https://github.com/spite/ccapture.js/'>here</a>
+
+Jeff's template is fantastic and can also be configured to work with the processing editor in the P5JS mode. After running your sketch and setting the parameters in the code, you'll receive a .tar file that holds all the frames that you require to make your GIF.
+
+<h3>Using the createLoop package</h3>
+This one doesn't give you the individual frames per se, but directly creates a GIF underneath the P5JS canvas, which you can then save to your device. Since a GIF is merely a concatenation of frames, you could then load that GIF into your editor of choice to make some changes, or manipulate it with a command line tool like FFMPEG.
+
+The createLoop package can be used as follows in your sketch, where you'll have to add a new script tag in the html file, and a single line in the setup function of your sketch. The html:
+<pre><code><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    
+    <!-- The createloop tag -->
+    <script src="https://unpkg.com/p5.createloop@0.2.8/dist/p5.createloop.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script src="sketch.js"></script>
+  </body>
+</html>
+</code></pre>
+
+And your setup function will look as follows:
+<pre><code>
+function setup() {
+    createCanvas(400, 400)
+    /*
+      here goes other stuff
+    */
+    createLoop({duration:3, gif:true})
+}
+</code></pre>
+
+Note that the createLoop() function has a number of different options, a rundown of which you can find in the documentation <a href='https://www.npmjs.com/package/p5.createloop'>here</a>.
 
 <h2>FFMPEG</h2>
 
