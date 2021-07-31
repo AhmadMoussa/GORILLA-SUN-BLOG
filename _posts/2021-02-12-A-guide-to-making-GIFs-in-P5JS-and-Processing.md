@@ -58,7 +58,7 @@ We have a number of options to succesfully create a GIF from our p5js and proces
 
 <h2><a name='frames'>Saving Individual Frames</a></h2>
 
-<h3>In Processing</h3>
+<h3>In Processing:</h3>
 In processing, saving an indivdiual frame is very straight forward. We can simply call the save("title.png"); function in the draw loop, and an image will appear in the corresponding sketch folder. Obviously, we'll have to pass a different name for each frame, otherwise we would be overwriting the same file over and over again. We can do this with the help of a counter that gets incremented every draw loop:
 
 <pre><code>int counter = 0;
@@ -70,7 +70,7 @@ void draw(){
 
 Notice that in java it will implicitely cast the counter integer to a string. 
 
-<h3>In P5</h3>
+<h3>In P5JS:</h3>
 In p5js it's a little bit trickier, but we have a couple of options here, in no particular order:
 
 <ul>
@@ -80,21 +80,20 @@ In p5js it's a little bit trickier, but we have a couple of options here, in no 
 </ul>
 
 <h3>The saveCanvas() function</h3>
-Golan Levin's template works well, however you might have to rate limit the frame rate of your sketches for this to work well. Running your sketch at full 50-60FPS, and trying to save each individual frame in quick succession might be taxing on your browser. I've tried with chrome and microsoft edge and in both cases they tried to throttle these quick downloads, making it such that many frames were missing in the final output folder.
+Golan Levin's template works well, however you might have to rate limit the frame rate of your sketches for this to work well. In other words, running your sketch at full 50-60FPS, and trying to save each individual frame in quick succession might be taxing on your browser. I've tried with chrome and microsoft edge and in both cases they tried to throttle these quick downloads, making it such that many frames were missing in the final output folder.
 
 After some help from the birbs nest discord it seems that setting the FPS via the frameRate() command to something low like 1-5 frames per second, makes it much more consistent and reliable. However it takes a tad bit longer that way.
 
 <h3>Saving frames with CCapture</h3>
-CCapture is a javascript library for capturing canvas based animations, such as the P5JS canvas for example. The library can be found <a href='https://github.com/spite/ccapture.js/'>here</a>
+CCapture is a javascript library for capturing canvas based animations, such as the P5JS canvas for example. The library can be found <a href='https://github.com/spite/ccapture.js/'>here</a>.
 
-Jeff's template is fantastic and can also be configured to work with the processing editor in the P5JS mode. After running your sketch and setting the parameters in the code, you'll receive a .tar file that holds all the frames that you require to make your GIF.
+Jeff's a href='https://github.com/ippsketch/p5js-animation-to-png-template'>template</a> is simply fantastic and all you basically need. After running your sketch and setting the parameters in the code, you'll receive a .tar file that holds all the frames that you require to make your GIF.
 
 <h3>Using the createLoop package</h3>
 This one doesn't give you the individual frames per se, but directly creates a GIF underneath the P5JS canvas, which you can then save to your device. Since a GIF is merely a concatenation of frames, you could then load that GIF into your editor of choice to make some changes, or manipulate it with a command line tool like FFMPEG.
 
 The createLoop package can be used as follows in your sketch, where you'll have to add a new script tag in the html file, and a single line in the setup function of your sketch. The html:
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+<pre><code>&lt;html&gt;
   &lt;head&gt;
     &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"&gt;&lt;/script&gt;
     &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"&gt;&lt;/script&gt;
@@ -102,8 +101,6 @@ The createLoop package can be used as follows in your sketch, where you'll have 
     &lt;!-- The createloop tag --&gt;
     &lt;script src="https://unpkg.com/p5.createloop@0.2.8/dist/p5.createloop.js">&lt;/script&gt;
     
-    &lt;link rel="stylesheet" type="text/css" href="style.css" /&gt;
-    &lt;meta charset="utf-8" /&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;script src="sketch.js"&gt;&lt;/script&gt;
@@ -112,17 +109,21 @@ The createLoop package can be used as follows in your sketch, where you'll have 
 </code></pre>
 
 And your setup function will look as follows:
-<pre><code>
-function setup() {
+<pre><code>function setup() {
     createCanvas(400, 400)
     /*
-      here goes other stuff
+      other stuff you want to do in the setup function
     */
+    
+    FPS = 50
+    frameRate(FPS)
     createLoop({duration:3, gif:true})
 }
 </code></pre>
 
-Note that the createLoop() function has a number of different options, a rundown of which you can find in the documentation <a href='https://www.npmjs.com/package/p5.createloop'>here</a>.
+The createLoop function will automatically render your GIF at the frame rate given to the frameRate() function. Also note that the createLoop() function has a number of other options, a rundown of which you can find in the documentation <a href='https://www.npmjs.com/package/p5.createloop'>here</a>. 
+
+One downside that I want to note, is that when you try to create large GIFs with createLoop(), for example a 10 second GIF at 50 FPS, will take significant a significant amount of time. And there is no indication of progress, however it's still being worked on and might be my go to way to do it in the future.
 
 <h2>FFMPEG</h2>
 
