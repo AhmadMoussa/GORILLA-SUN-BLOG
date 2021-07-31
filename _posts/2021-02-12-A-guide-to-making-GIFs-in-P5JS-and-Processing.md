@@ -58,18 +58,20 @@ We have a number of options to succesfully create a GIF from our p5js and proces
 
 <h2><a name='frames'>Saving Individual Frames</a></h2>
 
+<h3>In Processing</h3>
 In processing, saving an indivdiual frame is very straight forward. We can simply call the save("title.png"); function in the draw loop, and an image will appear in the corresponding sketch folder. Obviously, we'll have to pass a different name for each frame, otherwise we would be overwriting the same file over and over again. We can do this with the help of a counter that gets incremented every draw loop:
 
 <pre><code>int counter = 0;
 void draw(){
-   counter++;
    save(counter + ".png");
+   counter++;
 }
 </code></pre>
 
 Notice that in java it will implicitely cast the counter integer to a string. 
 
-In p5js it is a little bit trickier, but we have a couple of options here, in no particular order:
+<h3>In P5</h3>
+In p5js it's a little bit trickier, but we have a couple of options here, in no particular order:
 
 <ul>
   <li>Making use of the saveCanvas function. Golan Levin has a fantastic <a href='https://github.com/golanlevin/LoopTemplates/blob/master/animgif_p5js/sketch.js'>loop template</a> for this purpose (among others)</li>
