@@ -133,6 +133,25 @@ Next up, concatenating your frames into an actual GIF!
 
 <h2><a name='gif'>Converting a Series of Frames into a GIF</a></h2>
 
+For concatenating individual frames into a GIF we got another slew of different ways to do it. We'll go over them by category:
+
+
+
+<h3>Command Line Tools</h3>
+
+The two big contenders in this category are FFMPEG and ImageMagick, which can best be described as "Image Processing and Management" tools, and they can both be used as command line interfaces. It's also very likely that you've used one or the other before, hidden underneath the hood of some other image processing software. Personally I haven't used ImageMagick before, but I can vouch for FFMPEG. I haven't been in a "media convertion" situation where FFMPEG didn't have a command that solved my issue.
+
+I've got a full blog post for each one of these in the works, but for now I'll provide installation instructions and a quick command for each one of them:
+1. FFMPEG 
+2. ImageMagick
+3. Gifski
+
+Online:
+1. ezgif
+
+Software:
+
+
 <h2>FFMPEG</h2>
 
 <p>In this post we will mainly focus on using FFMPEG for creating a GIF from a sequence of individual frames. FFMPEG stands for Fast Forward MPEG and is designed to be an open source command-line tool for video and audio handling. In other terms, it allows us to convert video and audio media from any format to any other format. For example, it allows us to convert mp4 videos to the avi format, or wav audio files to mp3, etc. and additionally has a plethora of options to choose from, which allows us to exactly encode data in the exact format that we desire. I often use it to convert m4a audio recordings from my phone to mp3 recordings, which can then be imported in Ableton Live.</p>
