@@ -21,11 +21,9 @@ published: true
 </div>
 
 1. <a href='#turn'>Turning your sketches into GIFs</a>
-3. <a href='#frames'>Exporting your Sketches as a Series of Individual Frames</a>
-    - <a href='#framesPro'>In Processing</a>
-    - <a href='#framesP5'>In P5JS</a>
-5. <a href='#Install'>Installing FFMPEG</a>
-6. <a href='#Useful'>Other useful commands!</a>
+2. <a href='#frames'>Exporting your Sketches as a Series of Individual Frames</a>
+3. <a href='#gif'>Converting a Series of Frames into a GIF</a>
+4. <a href='#Useful'>Other useful commands!</a>
   
 <p></p>
 
@@ -93,7 +91,7 @@ After some help from the birbs nest discord it seems that setting the FPS via th
 <h3>Saving frames with CCapture</h3>
 CCapture is a javascript library for capturing canvas based animations, such as the P5JS canvas for example. The library can be found <a href='https://github.com/spite/ccapture.js/'>here</a>.
 
-Jeff's a href='https://github.com/ippsketch/p5js-animation-to-png-template'>template</a> is simply fantastic and all you basically need. After running your sketch and setting the parameters in the code, you'll receive a .tar file that holds all the frames that you require to make your GIF.
+Jeff's <a href='https://github.com/ippsketch/p5js-animation-to-png-template'>template</a> is simply fantastic and everything you basically need. After running your sketch and setting the parameters in the code, you'll receive a .tar file that holds all the frames that you require to make your GIF.
 
 <h3>Using the createLoop package</h3>
 This one doesn't give you the individual frames per se, but directly creates a GIF underneath the P5JS canvas, which you can then save to your device. Since a GIF is merely a concatenation of frames, you could then load that GIF into your editor of choice to make some changes, or manipulate it with a command line tool like FFMPEG.
@@ -129,7 +127,11 @@ And your setup function will look as follows:
 
 The createLoop function will automatically render your GIF at the frame rate given to the frameRate() function. Also note that the createLoop() function has a number of other options, a rundown of which you can find in the documentation <a href='https://www.npmjs.com/package/p5.createloop'>here</a>. 
 
-One downside that I want to note, is that when you try to create large GIFs with createLoop(), for example a 10 second GIF at 50 FPS, will take significant a significant amount of time. And there is no indication of progress, however it's still being worked on and might be my go to way to do it in the future.
+One downside that I want to point out, is that when you try to create large GIFs with createLoop(), for example a 10 second GIF at 50 FPS, it will take a significant amount of time. And there is no indication of progress. However it's still being worked on, and might be my go to way in the future.
+
+Next up, concatenating your frames into an actual GIF!
+
+<h2><a name='gif'>Converting a Series of Frames into a GIF</a></h2>
 
 <h2>FFMPEG</h2>
 
@@ -138,6 +140,8 @@ One downside that I want to note, is that when you try to create large GIFs with
 <h2>Installation</h2>
 
 <p>Simply head over to <a href='https://ffmpeg.org/download.html'> https://ffmpeg.org/download.html </a> to download the latest version and follow the <a href='https://www.wikihow.com/Install-FFmpeg-on-Windows'> WikiHow </a> steps on how to install it. There would be no point in me repeating the steps here as the WikiHow tutorial already does a great job at it. However the trickiest part of installing FFMPEG might be adding the exectuable to your Path. This step is necessary since FFMPEG only comes as source code, and adding it to your path will allow you to use FFMPEG from the command line from any directory.</p>
+
+
 
 <h2>Using FFMPEG</h2>
 
