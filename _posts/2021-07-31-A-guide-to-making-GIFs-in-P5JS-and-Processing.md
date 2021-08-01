@@ -21,9 +21,11 @@ published: true
 </div>
 
 1. <a href='#turn'>Turning your sketches into GIFs</a>
-2. <a href='#frames'>Exporting your Sketches as a Series of Individual Frames</a>
-3. <a href='#Install'>Installing FFMPEG</a>
-4. <a href='#Useful'>Other useful commands!</a>
+3. <a href='#frames'>Exporting your Sketches as a Series of Individual Frames</a>
+    - <a href='framesPro'>In Processing</a>
+    - <a href='framesP5'>In P5JS</a>
+5. <a href='#Install'>Installing FFMPEG</a>
+6. <a href='#Useful'>Other useful commands!</a>
   
 <p></p>
 
@@ -48,21 +50,21 @@ published: true
 -->
 
 <h2><a name='intro'>Why make GIFs from your sketches?</a></h2>
-You spent hours coding up a nice sketch in P5JS or in Processing, ironed out those last few bugs, and made it run smoothly at a crispy 50FPS... but now what?
+You spent hours coding up a nice sketch in P5JS or Processing, ironed out those last few bugs, and made it run smoothly at a crispy 50FPS... but now what?
 
 Share it on Twitter, of course!
 
 Wait a second... how do you actually do that?
 
-Making GIFs out of your creative coding sketches can be tricky and tedious. If you haven't done it before. But there are a number of tools and tricks that can make our life easier in this regard. 
+Making GIFs out of your creative coding sketches can be tricky and tedious. If you haven't done it before. But there are a number of tools and tricks that can make our life easier in this regard, which we'll go over in this blog post. 
 
 Actually, the really hard part is making your GIFs smaller than 15mb. Screw you Twitter. But fret not, everything in due time. Let's take this one step at a time.
 
-<h2><a name='frames'>Exporting your sketches as a series of individual frames</a></h2>
+<h2><a name='frames'></a>Exporting your Sketches as a Series of Individual Frames</h2>
 
-We have a number of options to succesfully create a GIF from our p5js and processing sketches. Usually we'll first have to extract and save individual frames from our animation and then convert them into a complete GIF. We'll tackle these two steps, one at a time!
+Generally the first step is to extract individual frames from  we'll first have to extract and save individual frames from our animation and then convert them into a complete GIF. We'll tackle these two steps, one at a time!
 
-<h3>In Processing:</h3>
+<h3><a name='framesPro'></a>In Processing:</h3>
 In processing, saving an indivdiual frame is very straight forward. We can simply call the save("frame.png"); function in the draw loop, and an image will appear in the corresponding sketch folder. Obviously, we'll have to pass a different name for each frame, otherwise we would be overwriting the same file over and over again. We can do this with the help of a counter that gets incremented every draw loop:
 
 <pre><code>int counter = 0;
@@ -74,7 +76,7 @@ void draw(){
 
 Notice that in java it will implicitely cast the counter integer to a string. 
 
-<h3>In P5JS:</h3>
+<h3><a name='framesP5'></a>In P5JS:</h3>
 In p5js it's a little bit trickier, but we have a couple of options here, in no particular order:
 
 <ul>
