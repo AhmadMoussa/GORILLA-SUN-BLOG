@@ -139,12 +139,24 @@ For concatenating individual frames into a GIF we got another slew of different 
 
 <h3>Command Line Tools</h3>
 
-The two big contenders in this category are FFMPEG and ImageMagick, which can best be described as "Image Processing and Management" tools, and they can both be used as command line interfaces. It's also very likely that you've used one or the other before, hidden underneath the hood of some other image processing software. Personally I haven't used ImageMagick before, but I can vouch for FFMPEG. I haven't been in a "media convertion" situation where FFMPEG didn't have a command that solved my issue.
+The two big contenders in this category are FFMPEG and ImageMagick, which can best be described as "Image Processing and Management" tools, and they can both be used as command line interfaces. 
 
-I've got a full blog post for each one of these in the works, but for now I'll provide installation instructions and a quick command for each one of them:
-1. FFMPEG 
-2. ImageMagick
-3. Gifski
+It's also very likely that you've used one or the other before, hidden underneath the hood of some other image processing software. Personally I haven't used ImageMagick before, but I can vouch for FFMPEG. I haven't been in a "media convertion" situation where FFMPEG didn't have a command that solved my issue.
+
+I've got a full blog post for each one of these in the works, but for now I'll provide quick instructions and a quick command for each one of them.
+
+<h3>FFMPEG</h3>
+FFMPEG can be downloaded from <a rel="nofollow" href='https://ffmpeg.org/download.html' > here </a>, installation instructions can conveniently be found on <a rel='nofollow' href='https://www.wikihow.com/Install-FFmpeg-on-Windows'> WikiHow</a>. 
+
+A quick command to turn frames into a gif would be:
+<pre><code>ffmpeg -i %d.jpg output.gif
+</code></pre>
+
+Yes, it's as simple as that with ffmpeg. Obviously this is just the tip of the iceberg, and there's many, MANY more things you can do with it. I'll cover these in detail in a future post.
+
+<h3>ImageMagick</h3>
+
+
 
 Online:
 1. ezgif
