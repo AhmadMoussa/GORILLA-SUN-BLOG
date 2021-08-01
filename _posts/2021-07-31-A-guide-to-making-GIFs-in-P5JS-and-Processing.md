@@ -3,7 +3,7 @@ title: A guide to making GIFs in P5JS and Processing
 author: Ahmad Moussa
 description: This article is a run down of all the possible ways you can turn your sketch into a GIF.
 thumbnail_path: 2021-02-12-Making-an-animated-GIF-from-a-sequence-of-frames-with-FFMPEG.png
-published: true
+published: false
 ---
 
 
