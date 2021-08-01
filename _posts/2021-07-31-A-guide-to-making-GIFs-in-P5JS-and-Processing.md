@@ -20,16 +20,14 @@ published: true
   </strong> 
 </div>
 
-1. <a href='#Intro'>GIFs. GIFs. GIFS</a>
-3. <a href='#GIFscc'>Sharing your Sketches as GIFs</a>
-4. <a href='#FFMPEG'>What's FFMPEG?</a>
-5. <a href='#Install'>Installing FFMPEG</a>
-6. <a href='#Useful'>Other useful commands!</a>
-
-
+1. <a href='#turn'>Turning your sketches into GIFs</a>
+2. <a href='#frames'>Exporting your Sketches as a Series of Individual Frames</a>
+3. <a href='#Install'>Installing FFMPEG</a>
+4. <a href='#Useful'>Other useful commands!</a>
   
 <p></p>
 
+<!--
 <h2><a name='intro'>GIFs. GIFs. GIFS</a></h2>
 <p>If you've been on the Internet in the past decade or so, then you've probably used a GIF before.</p> 
   
@@ -37,8 +35,6 @@ published: true
   
 <p>Very often, a well timed GIF in a heated whatsapp conversation can be incredibly funny. Other times, a GIF of an iconic scene from a beloved movie or series can encapsulate a specific feeling incredibly well. GIFs also play an integral role in meme culture, but more to that on another day!</p>
  
- 
-<!--
 <h2>What are GIFs... like actually? </h2>
 
 <p>Gifs are cool, but making them can be tricky. In the past 2 years I've had to make a lot of powerpoint presentations for univeristy, and I've always wanted to make them the best they could possible be, aesthetically and information wise. And what's better than having a lot of cool images and graphs in your presentation? Visualizing processes with animated gifs.</p>
@@ -51,15 +47,23 @@ published: true
 
 -->
 
-<h2>Sketches as GIFs</h2>
-Making GIFs out of your creative coding sketches can be tedious, but there are a number of tools that come in handy for this task. The real hard part is making them smaller than 15mb such that they're upload-able to Twitter (where most of the cool creative coding folks are nowadays). More on that in a bit.
+<h2><a name='intro'>Why make GIFs from your sketches?</a></h2>
+You spent hours coding up a nice sketch in P5JS or in Processing, ironed out those last few bugs, and made it run smoothly at a crispy 50FPS... but now what?
 
-We have a number of options to succesfully create a GIF from our p5js and processing sketches. Usually we'll first have to extract and save individual frames from our animation and then convert them into a complete GIF. We'll tackle these two steps one at a time!
+Share it on Twitter, of course!
 
-<h2><a name='frames'>Saving Individual Frames</a></h2>
+Wait a second... how do you actually do that?
+
+Making GIFs out of your creative coding sketches can be tricky and tedious. If you haven't done it before. But there are a number of tools and tricks that can make our life easier in this regard. 
+
+Actually, the really hard part is making your GIFs smaller than 15mb. Screw you Twitter. But fret not, everything in due time. Let's take this one step at a time.
+
+<h2><a name='frames'>Exporting your sketches as a series of individual frames</a></h2>
+
+We have a number of options to succesfully create a GIF from our p5js and processing sketches. Usually we'll first have to extract and save individual frames from our animation and then convert them into a complete GIF. We'll tackle these two steps, one at a time!
 
 <h3>In Processing:</h3>
-In processing, saving an indivdiual frame is very straight forward. We can simply call the save("title.png"); function in the draw loop, and an image will appear in the corresponding sketch folder. Obviously, we'll have to pass a different name for each frame, otherwise we would be overwriting the same file over and over again. We can do this with the help of a counter that gets incremented every draw loop:
+In processing, saving an indivdiual frame is very straight forward. We can simply call the save("frame.png"); function in the draw loop, and an image will appear in the corresponding sketch folder. Obviously, we'll have to pass a different name for each frame, otherwise we would be overwriting the same file over and over again. We can do this with the help of a counter that gets incremented every draw loop:
 
 <pre><code>int counter = 0;
 void draw(){
