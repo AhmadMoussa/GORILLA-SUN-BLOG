@@ -22,8 +22,8 @@ published: true
 
 1. <a href='#turn'>Turning your sketches into GIFs</a>
 3. <a href='#frames'>Exporting your Sketches as a Series of Individual Frames</a>
-    - <a href='framesPro'>In Processing</a>
-    - <a href='framesP5'>In P5JS</a>
+    - <a href='#framesPro'>In Processing</a>
+    - <a href='#framesP5'>In P5JS</a>
 5. <a href='#Install'>Installing FFMPEG</a>
 6. <a href='#Useful'>Other useful commands!</a>
   
