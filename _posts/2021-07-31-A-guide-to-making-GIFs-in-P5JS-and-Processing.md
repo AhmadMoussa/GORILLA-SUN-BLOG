@@ -10,6 +10,7 @@ published: true
 <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l0HlvFUHvDB16UOwU" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 <p></p>
   
+  <!--
 <div class='box'>
   <strong>Update 06/16/2021: 
     <ul>
@@ -19,11 +20,11 @@ published: true
    </ul>
   </strong> 
 </div>
+-->
 
 1. <a href='#turn'>Turning your sketches into GIFs</a>
 2. <a href='#frames'>Exporting your Sketches as a Series of Individual Frames</a>
 3. <a href='#gif'>Converting a Series of Frames into a GIF</a>
-4. <a href='#Useful'>Other useful commands!</a>
   
 <p></p>
 
@@ -47,7 +48,7 @@ published: true
 
 -->
 
-<h2><a name='intro'>Why make GIFs from your sketches?</a></h2>
+<h2><a name='intro'>Turning your sketches into GIFs</a></h2>
 You spent hours coding up a nice sketch in P5JS or Processing, ironed out those last few bugs, and made it run smoothly at a crispy 50FPS... but now what?
 
 Share it on Twitter, of course!
