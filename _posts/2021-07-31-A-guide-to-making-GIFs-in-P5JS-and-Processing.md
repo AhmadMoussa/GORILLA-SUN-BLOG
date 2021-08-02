@@ -164,6 +164,7 @@ Neat! Hereby we've covered the two most famous command line interfaces for image
 Ezgif.com is a simple online GIF maker and toolset for basic animated GIF editing. Granted, I've never used it to convert frames to a GIF, but it's definitely something you can do, if you don't want to bother installing anything on your device. It also has a number of other features, one of which, that I use myself a lot, is the GIF compressor/optimizer, I've almost always been able to shave a couple of megabytes from my GIFs using it.
 
 You can create your GIF on the <a rel='nofollow' href='https://ezgif.com/maker'>GIF maker</a> tab, where you simply upload your frames:
+
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-31-A-guide-to-making-GIFs-in-P5JS-and-Processing/ezgif.png" alt="" /></span>
 
 Naturally, there is a slew of similar websites, but I don't think any of them is as easy to use as ezgif.
@@ -173,10 +174,13 @@ Leaving the best for last, a wonderful little software called ScreenToGif. One o
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-31-A-guide-to-making-GIFs-in-P5JS-and-Processing/screentogif.png" alt="" /></span>
 
-However, it also has a very polished 'editor' section, which allows you to edit each individual frame of your sequence, and select from a plethora of different export options. It's what I'm currently using to make my GIFs, never has making GIFs been easier.
+However, it also has a very polished 'editor' section, which allows you to edit each individual frame of your sequence, and select from a plethora of different export options. It's what I'm currently using to make my GIFs, never has making GIFs been easier:
+
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-07-31-A-guide-to-making-GIFs-in-P5JS-and-Processing/screentogif2.png" alt="" /></span>
 
 You could simply record your sketch's canvas with ScreenToGif's recording window, which is fine for WIP stuff, however the recommended way of doing it is first exporting the individual frames of your gif one by one and then loading them into the editor. 
+
+And that's a wrap! If there's any other methods you'd like me to add in the future let me know in the comments. If there's any parts you'd like me to elaborate on, also let me know in the comments. Otherwise, cheers and happy sketching!
 
 
 
