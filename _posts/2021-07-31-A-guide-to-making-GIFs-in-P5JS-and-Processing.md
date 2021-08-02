@@ -171,6 +171,9 @@ Leaving the best for last, a wonderful little software called ScreenToGif. One o
 
 However, it also has a very polished 'editor' section, which allows you to edit each individual frame of your sequence, and select from a plethora of different export options. It's what I'm currently using to make my GIFs, never has making GIFs been easier.
 
+You could simply record your sketch's canvas with ScreenToGif's recording window, which is fine for WIP stuff, however the recommended way of doing it is first exporting the individual frames of your gif one by one and then loading them into the editor. 
+
+
 
 <!--
 <h2>FFMPEG</h2>
