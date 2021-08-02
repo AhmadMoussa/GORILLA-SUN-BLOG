@@ -133,12 +133,9 @@ Next up, concatenating your frames into an actual GIF!
 
 <h2><a name='gif'>Converting a Series of Frames into a GIF</a></h2>
 
-For concatenating individual frames into a GIF we got another slew of different ways to do it. We'll go over them by category:
+For concatenating individual frames into a GIF we got another slew of different ways to do it. We'll first have a look at two famous CLI (command line interface) tools, namely FFMPEG and ImageMagick. And then we'll have a look at some other online and offline options like ezgif and ScreenToGif
 
-
-
-<h3>Command Line Tools</h3>
-
+<h2>Command Line Interface Tools</h2>
 The two big contenders in this category are FFMPEG and ImageMagick, which can best be described as "Image Processing and Management" tools, and they can both be used as command line interfaces. 
 
 It's also very likely that you've used one or the other before, hidden underneath the hood of some other image processing software. Personally I haven't used ImageMagick before, but I can vouch for FFMPEG. I haven't been in a "media convertion" situation where FFMPEG didn't have a command that solved my issue.
@@ -155,15 +152,27 @@ A quick command to turn frames into a gif would be:
 Yes, it's as simple as that with ffmpeg. Obviously this is just the tip of the iceberg, and there's many, MANY more things you can do with it. I'll cover these in detail in a future post.
 
 <h3>ImageMagick</h3>
+For our purposes, ImageMagick and FFMPEG are interchangeable, they'll both let you create GIFs from a sequence of frames among other things. ImageMagick is very simple to <a rel='nofollow' href='https://imagemagick.org/script/download.php'>install</a> (simply download the executable and make sure that the 'add PATH' checkbox is checked). A simple command to convert our frames into a GIF would be:
+
+<pre><code>magick convert *.png output.gif
+</code></pre>
+
+Neat! Hereby we've covered the two most famous command line interfaces for image processing. Another noteworthy mention here is <a rel='nofollow' href='https://gif.ski/'>gifski</a>, another CLI tool. However at this point I'm not certain if it has any advantages over ffmpeg or ImageMagick.
+
+<h3>EZGIF</h3>
+Ezgif.com is a simple online GIF maker and toolset for basic animated GIF editing. Granted, I've never used it to convert frames to a GIF, but it's definitely something you can do, if you don't want to bother installing anything on your device. It also has a number of other features, one of which, that I use myself a lot, is the GIF compressor/optimizer, I've almost always been able to shave a couple of megabytes from my GIFs using it.
+
+You can create your GIF on the <a rel='nofollow' href='https://ezgif.com/maker'>GIF maker</a> tab, where you simply upload your frames.
+
+Naturally, there is a slew of similar websites, but I don't think any of them is as easy to use as ezgif.
+
+<h3>ScreenToGif</h3>
+Leaving the best for last, a wonderful little software called ScreenToGif. One of the main features of ScreenToGif is it's ability to capture a portion of your screen and export it as an animated GIf. This feature alone is already reason enough to download it.
+
+However, it also has a very polished 'editor' section, which allows you to edit each individual frame of your sequence, and select from a plethora of different export options. It's what I'm currently using to make my GIFs, never has making GIFs been easier.
 
 
-
-Online:
-1. ezgif
-
-Software:
-
-
+<!--
 <h2>FFMPEG</h2>
 
 <p>In this post we will mainly focus on using FFMPEG for creating a GIF from a sequence of individual frames. FFMPEG stands for Fast Forward MPEG and is designed to be an open source command-line tool for video and audio handling. In other terms, it allows us to convert video and audio media from any format to any other format. For example, it allows us to convert mp4 videos to the avi format, or wav audio files to mp3, etc. and additionally has a plethora of options to choose from, which allows us to exactly encode data in the exact format that we desire. I often use it to convert m4a audio recordings from my phone to mp3 recordings, which can then be imported in Ableton Live.</p>
@@ -190,3 +199,4 @@ Software:
 
 <p>This will drastically affect the quality of the .gif and not have a size as small as the .mp4, but will do the job. Credit where credit is due, the command is explained in detail in <a href='https://superuser.com/a/556031' target="_blank" rel="noopener noreferrer">this StackExchange answer</a></p>
 
+-->
