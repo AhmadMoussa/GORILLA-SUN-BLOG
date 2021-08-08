@@ -8,7 +8,7 @@ thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
 
-<h2>Adding a slider to your sketch</h2>
+<h2>Adding sliders to your sketches</h2>
 Creating a slider in p5js is straightforward:
 
 <pre><code>let slider;
@@ -28,7 +28,7 @@ The createSlider function requires 4 input values: min, max, value and step.
 <li><strong>Step:</strong> the value by which the slider is incremented or decremented when you drag it right or left. Basically it determines the spacing between ticks that the slider will snap to. Make sure that this value is smaller than the difference between the Min and Max value, otherwise the slider isn't usable. If set to 0 the slider will move continuously from left to right.</li>
 </ul>
 
-<h2>Getting the slider value</h2>
+<h2>Getting slider values</h2>
 Getting the slider value can be done as follows:
 
 <pre><code>let val = slider.value();
