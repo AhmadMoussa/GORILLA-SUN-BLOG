@@ -43,24 +43,26 @@ If done in the draw loop, the variable 'val' will always contain the value to wh
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay>
-let slider;
 function setup() {
+  createCanvas(windowWidth, windowHeight)
   slider = createSlider(0, 255, 100,50);
   slider.position(10, 10);
   slider.style('width', '80px');
 	
   slider2 = createSlider(0, 1, 0.5,0.1);
-  slider2.position(10, 20);
+  slider2.position(10, 25);
   slider2.style('width', '80px');
 	
   slider3 = createSlider(0, 100, 50,10);
-  slider3.position(10, 30);
+  slider3.position(10, 40);
   slider3.style('width', '80px');
 }
 
 function draw() {
   let val = slider.value();
-  background(val);
+  let val1 = slider1.value();
+  let val2 = slider2.value();
+  background(val,val1,val2);
 }
 </script>
 
