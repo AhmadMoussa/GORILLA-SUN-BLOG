@@ -45,9 +45,9 @@ If done in the draw loop, the variable 'val' will always contain the value to wh
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay>
 function setup() {
   createCanvas(windowWidth, windowHeight)
-  slider = createSlider(0, 255, 100,50);
-  slider.position(10, 10);
-  slider.style('width', '80px');
+  slider1 = createSlider(0, 255, 100,50);
+  slider1.position(10, 10);
+  slider1.style('width', '80px');
 	
   slider2 = createSlider(0, 1, 0.5,0.1);
   slider2.position(10, 25);
@@ -59,10 +59,10 @@ function setup() {
 }
 
 function draw() {
-  let val = slider.value();
   let val1 = slider1.value();
   let val2 = slider2.value();
-  background(val,val1,val2);
+  let val3 = slider3.value();
+  background(val1,val2,val3);
 }
 </script>
 
