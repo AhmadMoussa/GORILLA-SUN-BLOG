@@ -34,39 +34,39 @@ The createSlider function requires 4 input values: min, max, value and step.
 <h2>Getting the slider value</h2>
 Getting the slider value can be done as follows:
 
-
-
 <pre><code>
 let val = slider.value();
 </code></pre>
 
 If done in the draw loop, the variable 'val' will always contain the value to which the slider is set. Here are some examples of sliders:
 
-<div class="row gtr-200">
-			<div class="col-4 col-12-medium">
-          <iframe src="https://preview.p5js.org/AhmadMoussa/embed/guMmjYvT4"></iframe>
-      </div>
-      <div class="col-4 col-12-medium">
-          <iframe src="https://preview.p5js.org/AhmadMoussa/embed/guMmjYvT4"></iframe>
-      </div>
-      <div class="col-4 col-12-medium">
-          <iframe src="https://preview.p5js.org/AhmadMoussa/embed/guMmjYvT4"></iframe>
-      </div>
-</div>
-
-
-<h2>Styling your slider</h2>
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 
 <script type="text/p5" data-p5-version="1.4.0">
+let slider;
 function setup() {
-  createCanvas(100, 100);
+  slider = createSlider(0, 255, 100,50);
+  slider.position(10, 10);
+  slider.style('width', '80px');
+	
+  slider2 = createSlider(0, 1, 0.5,0.1);
+  slider2.position(10, 20);
+  slider2.style('width', '80px');
+	
+  slider3 = createSlider(0, 100, 50,10);
+  slider3.position(10, 30);
+  slider3.style('width', '80px');
 }
 
 function draw() {
-  background(255, 0, 200);
+  let val = slider.value();
+  background(val);
 }
 </script>
+
+
+<h2>Styling your slider</h2>
+
 
 <h2>Updating slider position on window Resize</h2>
 
