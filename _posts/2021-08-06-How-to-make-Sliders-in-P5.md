@@ -34,8 +34,7 @@ The createSlider function requires 4 input values: min, max, value and step.
 <h2>Getting the slider value</h2>
 Getting the slider value can be done as follows:
 
-<pre><code>
-let val = slider.value();
+<pre><code>let val = slider.value();
 </code></pre>
 
 If done in the draw loop, the variable 'val' will always contain the value to which the slider is set. Here are some examples of sliders:
