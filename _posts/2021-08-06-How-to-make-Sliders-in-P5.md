@@ -5,7 +5,7 @@ categories:
   - p5js
 description: Sliders are a wonderful tool to add some interactivity to your sketches. Here's everything you need to know.
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: false
+published: true
 ---
 
 <h2>Adding a slider to your sketch</h2>
