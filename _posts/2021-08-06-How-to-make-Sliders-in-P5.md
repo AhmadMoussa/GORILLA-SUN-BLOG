@@ -42,15 +42,15 @@ If done in the draw loop, the variable 'val' will always contain the value to wh
 function setup() {
   createCanvas(windowWidth, windowHeight)
   slider1 = createSlider(0, 255, 127,1);
-  slider1.position(10, 10);
+  slider1.position(10, windowHeight/4);
   slider1.style('width', '80px');
 	
   slider2 = createSlider(0, 255, 127,1);
-  slider2.position(10, 25);
+  slider2.position(10, windowHeight/2);
   slider2.style('width', '80px');
 	
   slider3 = createSlider(0, 255, 127,2);
-  slider3.position(10, 40);
+  slider3.position(10, windowHeight/4*3);
   slider3.style('width', '80px');
 }
 
@@ -64,7 +64,6 @@ function draw() {
 <p></p>
 <h2>Styling your slider</h2>
 The default slider style doesn't look very nice but we can change that
-
 
 <h2>Updating slider position on window Resize</h2>
 
