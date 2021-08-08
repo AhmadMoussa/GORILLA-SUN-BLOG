@@ -63,7 +63,16 @@ function draw() {
 </script>
 <p></p>
 <h2>Styling your slider</h2>
-The default slider style doesn't look very nice but we can change that
+The default slider style doesn't look very nice but we can easily remedy that by using Daniel Stern's awesome <a href='http://danielstern.ca/range.css/?ref=css-tricks#/'>website</a>. It lets you customize your sliders simply by dragging other sliders that specify different attributes like color and size of the various parts of your slider.
+
+Then you simply copy paste the generated css code into the style.css file of your sketch that is referenced in the index.html of your sketch. Make sure that you add a class of your own for the generated css code:
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-06-How-to-make-Sliders-in-P5/sliderStyle1.png" alt="" /></span>
+<p></p>
+And to add the class to a specific slider you need to call this function:
+<pre><code>slider.addClass("mySliderStyle");
+</code></pre>
+
+
 
 <h2>Updating slider position on window Resize</h2>
 
