@@ -61,7 +61,7 @@ function draw() {
   background(val1,val2,val3);
 }
 </script>
-
+<p></p>
 <h2>Styling your slider</h2>
 The default slider style doesn't look very nice but we can change that
 
