@@ -57,7 +57,8 @@ If done in the draw loop, the variable 'val' will always contain the value to wh
 
 <h2>Styling your slider</h2>
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script type="text/p5">
+
+<script type="text/p5" data-p5-version="1.4.0">
 function setup() {
   createCanvas(100, 100);
 }
