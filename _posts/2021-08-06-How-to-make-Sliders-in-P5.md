@@ -32,9 +32,28 @@ The createSlider function requires 4 input values: min, max, value and step.
 
 
 <h2>Getting the slider value</h2>
+Getting the slider value can be done as follows:
 
 
-<iframe src="https://preview.p5js.org/AhmadMoussa/embed/guMmjYvT4"></iframe>
+
+<pre><code>
+let val = slider.value();
+</code></pre>
+
+If done in the draw loop, the variable 'val' will always contain the value to which the slider is set. Here are some examples of sliders:
+
+<div class="row gtr-200">
+			<div class="col-4 col-12-medium">
+          <iframe src="https://preview.p5js.org/AhmadMoussa/embed/guMmjYvT4"></iframe>
+      </div>
+      <div class="col-4 col-12-medium">
+          <iframe src="https://preview.p5js.org/AhmadMoussa/embed/guMmjYvT4"></iframe>
+      </div>
+      <div class="col-4 col-12-medium">
+          <iframe src="https://preview.p5js.org/AhmadMoussa/embed/guMmjYvT4"></iframe>
+      </div>
+</div>
+
 
 <h2>Styling your slider</h2>
 
