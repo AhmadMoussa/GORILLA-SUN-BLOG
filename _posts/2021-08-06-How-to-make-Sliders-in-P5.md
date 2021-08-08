@@ -42,7 +42,7 @@ If done in the draw loop, the variable 'val' will always contain the value to wh
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 
-<script type="text/p5" data-p5-version="1.4.0">
+<script type="text/p5" data-p5-version="1.2.0">
 let slider;
 function setup() {
   slider = createSlider(0, 255, 100,50);
