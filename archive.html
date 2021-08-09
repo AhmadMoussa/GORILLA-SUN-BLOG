@@ -33,17 +33,17 @@ meta: A blog to nerd out about computers and music
 <div class="row gtr-200">
 	{% for post in site.posts %}
 	<div class="col-4 col-12-medium">
-        	<span class="image fit"><img src="https://gorillasun.de/assets/images/thumbnails/{{post.thumbnail_path}}" alt="" /></span>
+        	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
 		<a href="https://gorillasun.de{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
         </div>
 	{% continue %}
 	<div class="col-4 col-12-medium">
-        	<span class="image fit"><img src="https://gorillasun.de/assets/images/thumbnails/{{post.thumbnail_path}}" alt="" /></span>
+        	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
 		<a href="https://gorillasun.de{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
       	</div>
 	{% continue %}
 	<div class="col-4 col-12-medium">
-        	<span class="image fit"><img src="https://gorillasun.de/assets/images/thumbnails/{{post.thumbnail_path}}" alt="" /></span>
+        	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
 		<a href="https://gorillasun.de{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
       	</div>
 	{% endfor %}
