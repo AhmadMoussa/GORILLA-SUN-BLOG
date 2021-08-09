@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: Modulating the height and width of rectangle objects, arranged in a grid-like manner, with respect to their x and y coordinates allows you to create interesting patterns, this blog post explains how to achieve this effect.
-thumbnail_path: 2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines.png
+thumbnail_path: https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/color.gif
 published: true
 ---
 <div class="box alt">
