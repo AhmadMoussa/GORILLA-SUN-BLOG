@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: Achieving dashed lines in P5JS was more difficult than I thought it would be, here's a tutorial on how to do it.
-thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
+thumbnail_path: https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/cut.gif
 published: true
 ---
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/cut.gif" alt="" /></span>
