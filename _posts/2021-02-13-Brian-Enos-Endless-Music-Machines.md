@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - music
 description: The idea of procedurally generated music is interesting, in this article we have a look at how Brian Eno sparked this idea into life and how he approached it, as well as how you can start making something similar.
-thumbnail_path: 2021-02-13-Brian-Eno's-Endless-Music-Machines.png
+thumbnail_path: https://media.giphy.com/media/3o7TKUfKeHBXXxAZtS/giphy.gif
 ---
 
 <blockquote>“One of my long-term interests has been the invention of ‘machines’ and ‘systems’ that could produce musical and visual experiences… [T]he point of them was to make music with materials and processes I specified, but in combinations and interactions that I did not.” — From “Generative Music” in A Year With Swollen Appendices</blockquote>
