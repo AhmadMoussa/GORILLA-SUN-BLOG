@@ -31,22 +31,37 @@ meta: A blog to nerd out about computers and music
 -->
 
 <div class="row gtr-200">
-	{% for post in site.posts %}
+	
 	<div class="col-4 col-12-medium">
+		{% for post in site.posts %}
         	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
 		<a href="https://gorillasun.de{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
+		{% continue %}
+		{% continue %}
+		{% endfor %}
         </div>
-	{% continue %}
+	
+	
 	<div class="col-4 col-12-medium">
+		{% for post in site.posts %}
+		{% continue %}
         	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
 		<a href="https://gorillasun.de{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
+		{% continue %}
+		{% endfor %}
       	</div>
-	{% continue %}
+	
+	
 	<div class="col-4 col-12-medium">
+		{% for post in site.posts %}
+		{% continue %}
+		{% continue %}
         	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
 		<a href="https://gorillasun.de{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
+		{% continue %}
+		{% endfor %}
       	</div>
-	{% endfor %}
+	
 </div>
 
 </section>
