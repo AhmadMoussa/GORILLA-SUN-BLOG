@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: Sometimes problems can be much more difficult than they appear to be.
-thumbnail_path: 2021-02-17-Linear-Interpolation-in-p5js.png
+thumbnail_path: https://media.giphy.com/media/VR4Xdxj5MXDna/giphy.gif
 published: true
 ---
 
