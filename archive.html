@@ -54,26 +54,29 @@ meta: A blog to nerd out about computers and music
 
 	<div class="col-4 col-12-medium">
 		{% for post in site.posts %}
+		{% assign remainder = forloop.index | modulo: 3 %}
+		{% if remainder == 0 %}
         	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
 		<a href="https://gorillasun.de{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
-		{% continue %}
-		{% continue %}
+		{% endif %}
 		{% endfor %}
         </div>
 	<div class="col-4 col-12-medium">
 		{% for post in site.posts %}
-		{% continue %}
+		{% assign remainder = forloop.index | modulo: 3 %}
+		{% if remainder == 1 %}
         	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
 		<a href="https://gorillasun.de{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
-		{% continue %}
+		{% endif %}
 		{% endfor %}
         </div>
 	<div class="col-4 col-12-medium">
 		{% for post in site.posts %}
-		{% continue %}
-		{% continue %}
+		{% assign remainder = forloop.index | modulo: 3 %}
+		{% if remainder == 2 %}
         	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
 		<a href="https://gorillasun.de{{ post.url }}"><h3 >{{post.title}}</h3><h4>Upload date: {{ post.date | date: "%b %-d, %Y" }}</h4></a>
+		{% endif %}
 		{% endfor %}
         </div>
 </div>
