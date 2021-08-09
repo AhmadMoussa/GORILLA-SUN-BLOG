@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: This is one of my favorite things I've made with perlin noise so far, generative tree rings.
-thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
+thumbnail_path: https://gorillasun.de/assets/images/2021-06-25-Radial-Perlin-Noise-and-Generative-Tree-Rings/treering2.jpg
 published: true
 ---
 
