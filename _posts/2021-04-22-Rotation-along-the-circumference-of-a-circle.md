@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: This blog post explains how to rotate objects around a circle. It also discusses how to position items equidistantly around a circle.
-thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
+thumbnail_path: https://giphy.com/embed/xUOwGnC7Jqlgj7FvSE
 published: true
 ---
 
