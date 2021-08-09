@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: This is one of my favorite tricks. Albeit being very simple, visually it looks very impressive.
-thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
+thumbnail_path: https://gorillasun.de/assets/images/2021-07-26-Parametric-Functions-and-Particles/galactic disc2.gif
 published: true
 ---
 
