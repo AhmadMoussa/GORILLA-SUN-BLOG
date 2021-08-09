@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: In this part of the explorative series on Perlin Noise, we will have a look at scrolling Perlin noise across the canvas, quantizing it and obtaining interesting surface textures with it.
-thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
+thumbnail_path: https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Corrupt Datastream.gif
 published: true
 ---
 
