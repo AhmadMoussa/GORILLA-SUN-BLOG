@@ -66,14 +66,47 @@ function draw() {
 The default slider style doesn't look very nice but we can easily remedy that by using Daniel Stern's awesome <a href='http://danielstern.ca/range.css/?ref=css-tricks#/'>website</a>. It lets you customize your sliders simply by dragging other sliders that specify different attributes like color and size of the various parts of your slider.
 
 Then you simply copy paste the generated css code into the style.css file of your sketch that is referenced in the index.html of your sketch. Make sure that you add a class of your own for the generated css code:
+<p></p>
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-06-How-to-make-Sliders-in-P5/sliderStyle1.png" alt="" /></span>
 <p></p>
 And to add the class to a specific slider you need to call this function:
 <pre><code>slider.addClass("mySliderStyle");
 </code></pre>
 
-
-
 <h2>Updating slider position on window Resize</h2>
+When we want our sketches to be responsive we usually also include the windowResized() function, that triggers when the window containing our sketch is resized. The windowResized will usually look something like this:
+
+<pre><code>function windowResized(){
+	resizeCanvas(windowWidth, windowHeight);
+}
+</code></pre>
+
+Inside the windowResized() function we're calling the resizeCanvas() function and giving it as inputs the new dimensions of the screen. If you were to do this, while there is a slider on your canvas that you created earlier, you'll notice that it's going to remain in it's previous position and not update along with the new screen dimensions. You'll have to update the slider position manually, this involves deleting the slider and then creating it again:
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay>let slider;
+
+function makeSldr(){
+	slider = createSlider(0, 255, 127,1);
+  	slider.position(width-90, 10);
+  	slider.style('width', '80px');
+}
+
+function setup(){
+	createCanvas(windowWidth, windowHeight)
+	makeSldr()
+}
+
+function windowResized(){
+	resizeCanvas(windowWidth, windowHeight);
+	slider.remove()
+	makeSldr()
+}
+
+function draw(){
+  background(0)
+}
+</script>
+<p></p>
 
 <h2>Multiple Sliders</h2>
