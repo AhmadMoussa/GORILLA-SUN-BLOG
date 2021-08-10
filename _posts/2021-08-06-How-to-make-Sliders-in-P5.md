@@ -82,9 +82,7 @@ When we want our sketches to be responsive we usually also include the windowRes
 </code></pre>
 
 Inside the windowResized() function we're calling the resizeCanvas() function and giving it as inputs the new dimensions of the screen. If you were to do this, while there is a slider on your canvas that you created earlier, you'll notice that it's going to remain in it's previous position and not update along with the new screen dimensions. You'll have to update the slider position manually, this involves deleting the slider and then creating it again:
-<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-
-<script type="text/p5" data-p5-version="1.2.0" data-autoplay>let slider;
+<pre><code>let slider;
 
 function makeSldr(){
 	slider = createSlider(0, 255, 127,1);
@@ -106,7 +104,9 @@ function windowResized(){
 function draw(){
   background(0)
 }
-</script>
+</code></pre>
 <p></p>
+Here we're removing the slider element from the DOM via the remove() function, and then re-adding it to the canvas with the helper function that we created. Try it out for yourself <a href='https://editor.p5js.org/AhmadMoussa/sketches/vInrssviE'>here</a>. Try commenting out the slider.remove() line and notice the difference.
 
 <h2>Multiple Sliders</h2>
+Sometimes you'll want to manage multiple parameters at the same time, which can get quite ahiry
