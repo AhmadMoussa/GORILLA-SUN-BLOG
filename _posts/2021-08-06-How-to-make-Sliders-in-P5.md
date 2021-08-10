@@ -109,4 +109,62 @@ function draw(){
 Here we're removing the slider element from the DOM via the remove() function, and then re-adding it to the canvas with the helper function that we created. Try it out for yourself <a href='https://editor.p5js.org/AhmadMoussa/sketches/vInrssviE'>here</a>. Try commenting out the slider.remove() line and notice the difference.
 
 <h2>Multiple Sliders</h2>
-Sometimes you'll want to manage multiple parameters at the same time, which can get quite ahiry
+Sometimes you'll want to manage multiple parameters at the same time, with multiple sliders and you'd like to stay in the right place when resizing the canvas. That can get very hairy very quickly. Another problem that we run into when removing the slider from the DOM and re-creating it is that it's default value is reset. This is not good, ideally we want to have the current position of the slider persist while resizing the canvas. One solution would be to create slider handler class in which we wrap the slider and can store the updated slider value:
+
+<pre><code>let numSliders = 5;
+let sliders = [];
+
+
+function sliderHandler(minV, maxV, dflt, step, posX, posY, s){
+    this.minV = minV;
+    this.maxV = maxV;
+    this.dflt = dflt;
+    this.step = step;
+  
+    this.posX = posX;
+    this.posY = posY;
+    this.s = s;
+  
+  this.slider;
+  this.updatePosition = function(x,y){
+    this.posX = x;
+    this.posY = y;
+  }
+  
+  this.makeSlider = function(){
+    this.slider = createSlider(this.minV, this.maxV, this.dflt, this.step);
+    this.slider.position(this.posX, this.posY);
+    this.slider.style('width', s+'px');
+  }
+  
+  this.removeSlider = function(){
+    this.slider.remove()
+  }
+}
+
+function setup(){
+	createCanvas(windowWidth, windowHeight)
+	
+    numSliders = 5;
+    for(n = 0; n<numSliders; n++){
+      sliders.push(new sliderHandler(0, 255, 127, 1, windowWidth-90, 20*n, 80))
+      sliders[n].makeSlider();
+    }
+}
+
+function windowResized(){
+	resizeCanvas(windowWidth, windowHeight);
+	for(n = 0; n<numSliders; n++){
+      sliders[n].removeSlider();
+      sliders[n].updatePosition(windowWidth-90,20*n);
+      sliders[n].makeSlider();
+    }
+}
+
+function draw(){
+  background(0)
+  for(n = 0; n<numSliders; n++){
+    sliders[n].dflt = sliders[n].slider.value()
+  }
+}
+</code></pre>
