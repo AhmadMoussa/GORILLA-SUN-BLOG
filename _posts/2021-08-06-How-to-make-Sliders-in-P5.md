@@ -110,7 +110,7 @@ Here we're removing the slider element from the DOM via the remove() function, a
 
 <h2>Multiple Sliders</h2>
 Sometimes you'll want to manage multiple parameters at the same time, with multiple sliders and you'd like to stay in the right place when resizing the canvas. That can get very hairy very quickly. Another problem that we run into when removing the slider from the DOM and re-creating it is that it's default value is reset. This is not good, ideally we want to have the current position of the slider persist while resizing the canvas. One solution would be to create slider handler class in which we wrap the slider and can store the updated slider value:
-
+<p></p>
 <pre><code>let numSliders = 5;
 let sliders = [];
 
