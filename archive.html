@@ -60,12 +60,12 @@ permalink: /posts/
 		{% for post in site.posts %}
 		{% assign remainder = forloop.index | modulo: 3 %}
 		{% if remainder == 1 %}
-		<div class='box'>
 		<a href="https://gorillasun.de{{ post.url }}">
-			<h4>{{post.title}} - {{ post.date | date_to_long_string  }}</h4>
-        	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
+			<div class='box' style='max-height: 20px;'>
+				<h4>{{post.title}} - {{ post.date | date_to_long_string  }}</h4>
+        			<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
+			</div>
 		</a>
-		</div>
 		{% endif %}
 		{% endfor %}
         </div>
@@ -73,12 +73,12 @@ permalink: /posts/
 		{% for post in site.posts %}
 		{% assign remainder = forloop.index | modulo: 3 %}
 		{% if remainder == 2 %}
-		<div class='box'>
 		<a href="https://gorillasun.de{{ post.url }}">
-			<h4>{{post.title}} - {{ post.date | date_to_long_string}}</h4>
-        	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
-		</a>
+			<div class='box' style='max-height: 20px;'>
+				<h4>{{post.title}} - {{ post.date | date_to_long_string  }}</h4>
+        			<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
 			</div>
+		</a>
 		{% endif %}
 		{% endfor %}
         </div>
@@ -86,13 +86,12 @@ permalink: /posts/
 		{% for post in site.posts %}
 		{% assign remainder = forloop.index | modulo: 3 %}
 		{% if remainder == 0 %}
-		<div class='box'>
 		<a href="https://gorillasun.de{{ post.url }}">
-			<h4>{{post.title}} - {{ post.date | date_to_long_string}}</h4>
-        	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
-			</a>
-		
-		</div>
+			<div class='box' style='max-height: 20px;'>
+				<h4>{{post.title}} - {{ post.date | date_to_long_string  }}</h4>
+        			<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
+			</div>
+		</a>
 		{% endif %}
 		{% endfor %}
         </div>
