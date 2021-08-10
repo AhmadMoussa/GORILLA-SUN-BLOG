@@ -62,7 +62,7 @@ permalink: /posts/
 		{% if remainder == 1 %}
 		<a href="https://gorillasun.de{{ post.url }}">
         	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
-		<p>{{post.title}}</p><p>{{ post.date | date_to_long_string  }}</p></a>
+		<h3>{{post.title}}</h3><h4>{{ post.date | date_to_long_string  }}</h4></a>
 		{% endif %}
 		{% endfor %}
         </div>
@@ -72,7 +72,7 @@ permalink: /posts/
 		{% if remainder == 2 %}
 		<a href="https://gorillasun.de{{ post.url }}">
         	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
-		<p >{{post.title}}</p><p>{{ post.date | date_to_long_string  }}</p></a>
+		<h3>{{post.title}}</h3><h4>{{ post.date | date_to_long_string}}</h4></a>
 		{% endif %}
 		{% endfor %}
         </div>
@@ -82,7 +82,7 @@ permalink: /posts/
 		{% if remainder == 0 %}
 		<a href="https://gorillasun.de{{ post.url }}">
         	<span class="image fit"><img src="{{post.thumbnail_path}}" alt="" /></span>
-		<p>{{post.title}}</p><p>{{ post.date | date_to_long_string  }}</p></a>
+		<h3>{{post.title}}</h3><h4>{{ post.date | date_to_long_string}}</h4></a>
 		{% endif %}
 		{% endfor %}
         </div>
