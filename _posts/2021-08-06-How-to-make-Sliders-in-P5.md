@@ -81,7 +81,6 @@ However you can also style your slider entirely by using the style() function. H
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay>
 let sliderN = 50;
-
 function setup() {
   noCanvas();
   for (let i = 0; i < sliderN; i++) {
