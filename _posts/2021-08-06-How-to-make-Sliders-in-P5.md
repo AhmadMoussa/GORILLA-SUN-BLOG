@@ -79,7 +79,7 @@ And to add the class to a specific slider you need to call this function:
 However you can also style your slider entirely by using the style() function. Here's a great example by <a href='https://twitter.com/aparrish?lang=en'>Allison Parrish</a>:
 <p></p>
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="400" data-height="600">
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="400" data-height="500">
 let sliderN = 50;
 function setup() {
   noCanvas();
