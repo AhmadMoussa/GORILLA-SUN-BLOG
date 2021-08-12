@@ -76,7 +76,7 @@ And to add the class to a specific slider you need to call this function:
 </code></pre>
 
 <h2>Styling your slider programmatically</h2>
-However you can also style your slider entirely by using the style() function. Here's a great example by <a href='https://twitter.com/aparrish?lang=en'>Allison Parrish</h2>:
+However you can also style your slider entirely by using the style() function. Here's a great example by <a href='https://twitter.com/aparrish?lang=en'>Allison Parrish</a>:
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay>
 let sliderN = 50;
 
@@ -97,6 +97,8 @@ function draw() {
   background(220);
 }
 </script>
+	
+The style function is super useful in this case, where it let's us set any style keyword directly.
 
 
 <h2>Updating slider position on window Resize</h2>
