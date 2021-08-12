@@ -28,6 +28,8 @@ The createSlider function requires 4 input values: min, max, value and step.
 <li><strong>Step:</strong> the value by which the slider is incremented or decremented when you drag it right or left. Basically it determines the spacing between ticks that the slider will snap to. Make sure that this value is smaller than the difference between the Min and Max value, otherwise the slider isn't usable. If set to 0 the slider will move continuously from left to right.</li>
 </ul>
 
+The two other lines underneath it specify it's position and it's style.
+
 <h2>Getting slider values</h2>
 Getting the slider value can be done as follows:
 
@@ -73,6 +75,30 @@ And to add the class to a specific slider you need to call this function:
 <pre><code>slider.addClass("mySliderStyle");
 </code></pre>
 
+<h2>Styling your slider programmatically</h2>
+However you can also style your slider entirely by using the style() function. Here's a great example by <a href='https://twitter.com/aparrish?lang=en'>Allison Parrish</h2>:
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay>
+let sliderN = 50;
+
+function setup() {
+  noCanvas();
+  for (let i = 0; i < sliderN; i++) {
+    let d = createDiv();
+    d.style('padding-left: 50px;');
+    d.style('transform-origin: 0 50% 0');
+    d.style('transform: rotate(' + (((360 / sliderN) * i)) + 'deg);');
+    d.position(200, 200);
+    let s = createSlider(-1, 1, 0, 0);
+    d.child(s);  
+  }
+}
+
+function draw() {
+  background(220);
+}
+</script>
+
+
 <h2>Updating slider position on window Resize</h2>
 When we want our sketches to be responsive we usually also include the windowResized() function, that triggers when the window containing our sketch is resized. The windowResized will usually look something like this:
 
@@ -81,7 +107,7 @@ When we want our sketches to be responsive we usually also include the windowRes
 }
 </code></pre>
 
-Inside the windowResized() function we're calling the resizeCanvas() function and giving it as inputs the new dimensions of the screen. If you were to do this, while there is a slider on your canvas that you created earlier, you'll notice that it's going to remain in it's previous position and not update along with the new screen dimensions. You'll have to update the slider position manually, this involves deleting the slider and then creating it again:
+Inside the windowResized() function we're calling the resizeCanvas() function and giving it as inputs the new dimensions of the screen. If you were to do this, while there is a slider on your canvas that you created earlier, you'll notice that it's going to remain in it's previous position and not update along with the new screen dimensions (happens when you click the minimize button in your browser for example). You'll have to update the slider position manually, this involves deleting the slider and then creating it again:
 <pre><code>let slider;
 
 function makeSldr(){
@@ -106,14 +132,13 @@ function draw(){
 }
 </code></pre>
 <p></p>
-Here we're removing the slider element from the DOM via the remove() function, and then re-adding it to the canvas with the helper function that we created. Try it out for yourself <a href='https://editor.p5js.org/AhmadMoussa/sketches/vInrssviE'>here</a>. Try commenting out the slider.remove() line and notice the difference.
+Here we're removing the slider element from the DOM via the remove() function, and then re-adding it to the canvas with the helper function that we created. Try it out for yourself <a href='https://editor.p5js.org/AhmadMoussa/sketches/vInrssviE'>here</a> (try in present mode). Try commenting out the slider.remove() line and notice the difference.
 
 <h2>Multiple Sliders</h2>
-Sometimes you'll want to manage multiple parameters at the same time, with multiple sliders and you'd like to stay in the right place when resizing the canvas. That can get very hairy very quickly. Another problem that we run into when removing the slider from the DOM and re-creating it is that it's default value is reset. This is not good, ideally we want to have the current position of the slider persist while resizing the canvas. One solution would be to create slider handler class in which we wrap the slider and can store the updated slider value:
+Sometimes you'll want to manage multiple parameters at the same time, with multiple sliders and you'd like them to stay in the right place when resizing the canvas. That can get very hairy very quickly. Another problem that we run into when removing the slider from the DOM and re-creating it is that it's default value is reset. This is not good, ideally we want to have the current position of the slider persist while resizing the canvas. One solution would be to create slider handler class in which we wrap the slider and can store the updated slider value:
 <p></p>
 <pre><code>let numSliders = 5;
 let sliders = [];
-
 
 function sliderHandler(minV, maxV, dflt, step, posX, posY, s){
     this.minV = minV;
@@ -169,4 +194,4 @@ function draw(){
 }
 </code></pre>
 
-something
+I'm not certain this is the best way to do it, but it does the job. If you have any other suggestions to improve this post, let me know in the comments! Otherwise cheers and happy sketching!
