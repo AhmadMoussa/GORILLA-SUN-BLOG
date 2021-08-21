@@ -157,3 +157,43 @@ function draw() {
 </script>
 <p></p>
 
+<h2>Adding Color</h2>
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="400" data-height="400">
+  function setup() {
+  w = min(windowWidth, windowHeight);
+  createCanvas(w, w);
+  strokeWeight(4);
+
+  off = 50;
+  spc = 10;
+
+  noFill();
+  frameRate(50)
+}
+
+function draw() {
+  background(0);
+  t = frameCount / 20;
+
+  for (x = off; x < w - off; x += spc) {
+    for (y = off; y < w - off; y += spc) {
+      d = dist(x, y, w / 2,w/2 );
+
+      sinin = t + d / 20;
+      
+      stroke(
+        127.5 + 127.5 * sin(sinin),
+        127.5 + 127.5 * cos(sinin),
+        127.5 - 127.5 * cos(sinin)
+      );
+      
+      strokeWeight(5 + 5 * sin(sinin));
+  
+      ((x / spc) % 2 == 0)?((y / spc) % 2 == 0)?point(x,y):ellipse(x,y,5):((y / spc) % 2 == 0)?ellipse(x, y, 5):point(x,y)
+    }
+  }
+}
+</script>
+<p></p>
+
