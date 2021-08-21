@@ -21,7 +21,7 @@ In this blog post we'll recreate my Processing 20-th anniversary fundraiser sket
 6. <a href='#transparency'>Background Transparency Trick</a>
 
 
-<h2><a name='grid'>Creating a Grid</h2>
+<h2><a name='grid'></a>Creating a Grid</h2>
 
 The great Persian Polymath Al-Khawarizmi once said: 'Grids are awesome'! well maybe he didn't, but you can't prove that. That doesn't change the fact that grids are awesome. We'll start off by coding up a grid which we'll base our code on in later steps:
   
@@ -43,7 +43,7 @@ for (x = off; x < w - off; x += spc) {
 }
 </code></pre>
 
-<h2><a name='alternate'>Alternating Points and Circles</h2>
+<h2><a name='alternate'></a>Alternating Points and Circles</h2>
 
 The next step would be alternating between points and circles in our grid, this isn't necessary, we could perfectly do with just points, or circles, but it adds an interesting texture. It's also a little tricky to make the grid alternate between two different shapes. We can do that with if and else statements that check if the current coordinates are even or odd:
   
@@ -89,7 +89,7 @@ Alternatively, we could compress the entire if statement block into a one liner 
 <pre><code>((x / spc) % 2 == 0)?((y / spc) % 2 == 0)?point(x,y):ellipse(x,y,5):((y / spc) % 2 == 0)?ellipse(x, y, 5):point(x,y)
 </code></pre>
 
-<h2><a name='animate'>Animating the Grid</h2>
+<h2><a name='animate'></a>Animating the Grid</h2>
 We can make this grid much more interesting if we add some motion to it, which will give us something that is very similar to some of my <a href='https://gorillasun.de/blog/Sketch-from-Scratch-1-Colorful-checkerboard-in-P5JS'>earliest sketches from this year</a>. We'll be modulating the strokeWeight of the draw points and circles with a sine function that takes as input their x and y coordinates, allowing us to obtain very interesting patterns:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
@@ -136,7 +136,7 @@ function draw() {
 
 The important line here is strokeWeight(4 + 4&#42;sin(x/20+y/20+t)) which is doing all the heavy lifting. Here we're dividing by an arbitrary number to attenuate the effect of plugging in the x and y coordinates into the sine function. Try changing the numbers. Also try plugging in different combinations of x and y like x&#42;y for example and see what patterns you get!
 
-<h2><a name='distance'>Distance Fields</h2>
+<h2><a name='distance'></a>Distance Fields</h2>
 In addition to plugging a specific value or coordinate into the modulating sine function, we could plug in a distance. For example, the distance of each point to the center of the sketch:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
@@ -172,7 +172,7 @@ function draw() {
 </script>
 <p></p>
 
-<h2><a name='color'>Adding Color</h2>
+<h2><a name='color'></a>Adding Color</h2>
 Instead of using premade color palettes, I enjoy plugging sinusoidal color into the RGB components of the stroke and fill functions. My current favorite palette is the following:
 
 <pre><code>stroke(
@@ -223,7 +223,7 @@ function draw() {
 </script>
 <p></p>
 
-<h2><a name='transparency'>Background Transparency Trick</h2>
+<h2><a name='transparency'></a>Background Transparency Trick</h2>
 Here's a trick that I heavily use for my sketches, exploiting the transparency of the background color, for some pseudo motion blur:
 
 <pre><code>background(0,0,0,20)
