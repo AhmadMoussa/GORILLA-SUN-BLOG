@@ -123,7 +123,7 @@ function draw() {
 
 The important line here is strokeWeight(4 + 4&#42;sin(x/20+y/20+t)) which is doing all the heavy lifting. Here we're dividing by an arbitrary number to attenuate the effect of plugging in the x and y coordinates into the sine function. Try changing the numbers. Also try plugging in different combinations of x and y like x&#42;y for example and see what patterns you get!
 
-<h2>Modulating with respect to another coordinate</h2>
+<h2>Distance Fields</h2>
 In addition to plugging a specific value or coordinate into the modulating sine function, we could plug in a distance. For example, the distance of each point to the center of the sketch:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
