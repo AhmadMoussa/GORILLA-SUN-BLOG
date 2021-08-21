@@ -73,8 +73,7 @@ function draw() {
 <p></p>
 
 Alternatively, you could compress the entire if statement block into a one liner with ternary operators:
-<pre><code>
-((x / spc) % 2 == 0)?((y / spc) % 2 == 0)?point(x,y):ellipse(x,y,5):((y / spc) % 2 == 0)?ellipse(x, y, 5):point(x,y)
+<pre><code>((x / spc) % 2 == 0)?((y / spc) % 2 == 0)?point(x,y):ellipse(x,y,5):((y / spc) % 2 == 0)?ellipse(x, y, 5):point(x,y)
 </code></pre>
 
 <h2>Animating the Grid</h2>
