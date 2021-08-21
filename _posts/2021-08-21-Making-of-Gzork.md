@@ -159,6 +159,17 @@ function draw() {
 <p></p>
 
 <h2>Adding Color</h2>
+Instead of using premade color palettes, I enjoy plugging sinusoidal color into the RGB components of the stroke and fill functions. My current favorite palette is the following:
+
+<pre><code>stroke(
+        127.5 + 127.5 * sin(sinin),
+        127.5 + 127.5 * cos(sinin),
+        127.5 - 127.5 * cos(sinin)
+      );
+</code></pre>
+
+This eesentially bounces the RGB values in a very specific way between 0 and 255, generating pink, purple and green colors, that gradually interleave:
+
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="400" data-height="400">
   function setup() {
