@@ -100,7 +100,7 @@ function draw() {
   for (x = off; x < w - off; x += spc) {
     for (y = off; y < w - off; y += spc) {
 
-      strokeWeight()
+      strokeWeight(4 + 4*sin(x/20+y/20+t))
       if ((x / spc) % 2 == 0) {
         if ((y / spc) % 2 == 0) {
           point(x, y);
