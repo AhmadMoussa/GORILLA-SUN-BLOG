@@ -172,6 +172,20 @@ function draw() {
 </script>
 <p></p>
 
+Equivalently you could add the distance to multiple points, in as follows:
+
+<pre><code>d1 = dist(x, y, w / 2,w/2 );
+d2 = dist(x, y, 100, 100);
+
+sinin = t + d1 / 20 + d2/20;
+</code></pre>
+
+Plug this into the sketch and see what you get! Lastly you could also make the distance point be the location of the mouse coordinates:
+<pre><code>d1 = dist(x, y, mouseX, mouseY);
+
+sinin = t + d1 / 20 + d2/20;
+</code></pre>
+
 <h2><a name='color'></a>Adding Color</h2>
 Instead of using premade color palettes, I enjoy plugging sinusoidal color into the RGB components of the stroke and fill functions. My current favorite palette is the following:
 
@@ -182,7 +196,7 @@ Instead of using premade color palettes, I enjoy plugging sinusoidal color into 
 );
 </code></pre>
 
-This eesentially bounces the RGB values in a very specific way between 0 and 255, generating pink, purple and green colors, that gradually interleave:
+This essentially bounces the RGB values in a very specific way between 0 and 255, generating pink, purple and green colors, that gradually interleave:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -223,13 +237,15 @@ function draw() {
 </script>
 <p></p>
 
+Go ahead and try plugging in different things in each one of the sine and cosine functions to see if you get a result that you like!
+
 <h2><a name='transparency'></a>Background Transparency Trick</h2>
 Here's a trick that I heavily use for my sketches, exploiting the transparency of the background color, for some pseudo motion blur:
 
 <pre><code>background(0,0,0,20)
 </code></pre>
 
-The transparency component also has a range that goes from 0 to 255. The lower you set it the more transparent the background. It's effect is hard to describe, but essentially it makes moxing shapes drawn to the canvas have colored smudgy trails. I also enjoy dark blue backgrounds over just plain black:
+The transparency component also has a range that goes from 0 to 255. The lower you set it the more transparent the background. It's effect is hard to describe, but essentially it makes moxing shapes drawn to the canvas have colored smudgy trails. In other words, it takes stuff drawn to the canvas a little while before it disappears again. I also enjoy dark blue backgrounds over just plain black, since it visually works with the sinusoidal color palette:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -269,3 +285,4 @@ function draw() {
 }
 </script>
 <p></p>
+And that's a wrap! If you enjoyed this post share it or leave me a nice comment! If you have questions also leave me a comment! Otherwise come join me on Twitter for more updates!
