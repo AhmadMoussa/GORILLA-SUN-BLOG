@@ -35,7 +35,7 @@ for (x = off; x < w - off; x += spc) {
 <h2>Alternating Points and Circles</h2>
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script type="text/p5" data-p5-version="1.2.0" data-preview-width="350" data-height="400">
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
 function setup() {
   w = min(windowWidth, windowHeight);
   createCanvas(w, w);
