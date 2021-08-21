@@ -42,11 +42,10 @@ function setup() {
   spc = 10;
 
   noFill();
-  frameRate(50)
 }
 
 function draw() {
-  background(0, 0, 100, 20);
+  background(220);
 
   for (x = off; x < w - off; x += spc) {
     for (y = off; y < w - off; y += spc) {
@@ -93,9 +92,9 @@ function setup() {
 }
 
 function draw() {
-  background(0, 0, 100, 20);
+  background(220);
 
-  t = frameCount
+  t = frameCount/20
 
   for (x = off; x < w - off; x += spc) {
     for (y = off; y < w - off; y += spc) {
@@ -140,14 +139,14 @@ In addition to plugging a specific value or coordinate into the modulating sine 
 }
 
 function draw() {
-  background(0, 0, 100, 20);
+  background(220);
   t = frameCount / 20;
 
   for (x = off; x < w - off; x += spc) {
     for (y = off; y < w - off; y += spc) {
       d = dist(x, y, w / 2,w/2 );
 
-      sinin = t*2 + d / 20;
+      sinin = t + d / 20;
       sinin = sinin/1.5
   
       sinCombine = (sin(sinin) + cos(sinin*3))/2
