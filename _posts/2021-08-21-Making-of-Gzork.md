@@ -7,8 +7,10 @@ description: recreating my sketch titled Gzork
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-21-Making-of-Gzork/Gzork2.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-21-12-Making-of-Gzork/Gzork2.gif" alt="" /></span>
 
+
+In this blog post we'll recreate my Processing 20-th anniversary fundraiser sketch, step-by-step.
 <h2>Creating a Grid</h2>
 
 <pre><code>
@@ -162,10 +164,10 @@ function draw() {
 Instead of using premade color palettes, I enjoy plugging sinusoidal color into the RGB components of the stroke and fill functions. My current favorite palette is the following:
 
 <pre><code>stroke(
-        127.5 + 127.5 * sin(sinin),
-        127.5 + 127.5 * cos(sinin),
-        127.5 - 127.5 * cos(sinin)
-      );
+  127.5 + 127.5 * sin(sinin),
+  127.5 + 127.5 * cos(sinin),
+  127.5 - 127.5 * cos(sinin)
+);
 </code></pre>
 
 This eesentially bounces the RGB values in a very specific way between 0 and 255, generating pink, purple and green colors, that gradually interleave:
@@ -212,8 +214,7 @@ function draw() {
 <h2>Background Transparency Trick</h2>
 Here's a trick that I heavily use for my sketches, exploiting the transparency of the background color, for some pseudo motion blur:
 
-<pre><code>
-background(0,0,0,20)
+<pre><code>background(0,0,0,20)
 </code></pre>
 
 The transparency component also has a range that goes from 0 to 255. The lower you set it the more transparent the background. It's effect is hard to describe, but essentially it makes moxing shapes drawn to the canvas have colored smudgy trails. I also enjoy dark blue backgrounds over just plain black:
