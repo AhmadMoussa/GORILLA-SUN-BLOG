@@ -7,6 +7,7 @@ description: recreating my sketch titled Gzork
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-21-Making-of-Gzork/Gzork2.gif" alt="" /></span>
 
 <h2>Creating a Grid</h2>
 
