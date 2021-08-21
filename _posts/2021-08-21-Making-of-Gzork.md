@@ -8,7 +8,7 @@ thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: true
 ---
 
-<h2>Making a Grid</h2>
+<h2>Creating a Grid</h2>
 
 <pre><code>
 function setup(){
