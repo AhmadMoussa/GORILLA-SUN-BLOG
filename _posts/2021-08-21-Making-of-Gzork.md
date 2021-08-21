@@ -35,7 +35,7 @@ for (x = off; x < w - off; x += spc) {
 <h2>Alternating Points and Circles</h2>
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="400" data-height="400">
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
 function setup() {
   w = min(windowWidth, windowHeight);
   createCanvas(w, w);
@@ -80,7 +80,7 @@ Alternatively, you could compress the entire if statement block into a one liner
 We can make this grid much more interesting if we add some motion to it, which will give us something that is very similar to some of my earliest sketches from this year. We'll be modulating the strokeWeight of the draw points and circles with a sine function that takes as input their x and y coordinates, allowing us to obtain very interesting patterns:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="400" data-height="400">
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
 function setup() {
   w = min(windowWidth, windowHeight);
   createCanvas(w, w);
@@ -127,7 +127,7 @@ The important line here is strokeWeight(4 + 4&#42;sin(x/20+y/20+t)) which is doi
 In addition to plugging a specific value or coordinate into the modulating sine function, we could plug in a distance. For example, the distance of each point to the center of the sketch:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="400" data-height="400">
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
   function setup() {
   w = min(windowWidth, windowHeight);
   createCanvas(w, w);
@@ -172,7 +172,7 @@ Instead of using premade color palettes, I enjoy plugging sinusoidal color into 
 This eesentially bounces the RGB values in a very specific way between 0 and 255, generating pink, purple and green colors, that gradually interleave:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="400" data-height="400">
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
   function setup() {
   w = min(windowWidth, windowHeight);
   createCanvas(w, w);
@@ -219,7 +219,7 @@ Here's a trick that I heavily use for my sketches, exploiting the transparency o
 The transparency component also has a range that goes from 0 to 255. The lower you set it the more transparent the background. It's effect is hard to describe, but essentially it makes moxing shapes drawn to the canvas have colored smudgy trails. I also enjoy dark blue backgrounds over just plain black:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="400" data-height="400">
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
   function setup() {
   w = min(windowWidth, windowHeight);
   createCanvas(w, w);
