@@ -147,10 +147,8 @@ function draw() {
       d = dist(x, y, w / 2,w/2 );
 
       sinin = t + d / 20;
-      sinin = sinin/1.5
   
-      sinCombine = (sin(sinin) + cos(sinin*3))/2
-      strokeWeight(5 + 5 * sinCombine);
+      strokeWeight(5 + 5 * sin(sinin));
       
       ((x / spc) % 2 == 0)?((y / spc) % 2 == 0)?point(x,y):ellipse(x,y,5):((y / spc) % 2 == 0)?ellipse(x, y, 5):point(x,y)
     }
