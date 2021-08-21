@@ -23,6 +23,8 @@ In this blog post we'll recreate my Processing 20-th anniversary fundraiser sket
 
 <h2><a name='grid'>Creating a Grid</h2>
 
+The great Persian Polymath Al-Khawarizmi once said: 'Grids are awesome'! well maybe he didn't, but you can't prove that. That doesn't change the fact that grids are awesome. We'll start off by coding up a grid which we'll base our code on in later steps:
+  
 <pre><code>function setup(){
   w = min(windowWidth, windowHeight);
   createCanvas(w, w);
@@ -43,6 +45,8 @@ for (x = off; x < w - off; x += spc) {
 
 <h2><a name='alternate'>Alternating Points and Circles</h2>
 
+The next step would be alternating between points and circles in our grid, this isn't necessary, we could perfectly do with just points, or circles, but it adds an interesting texture. It's also a little tricky to make the grid alternate between two different shapes. We can do that with if and else statements that check if the current coordinates are even or odd:
+  
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
 function setup() {
@@ -81,12 +85,12 @@ function draw() {
 </script>
 <p></p>
 
-Alternatively, you could compress the entire if statement block into a one liner with ternary operators:
+Alternatively, we could compress the entire if statement block into a one liner with ternary operators:
 <pre><code>((x / spc) % 2 == 0)?((y / spc) % 2 == 0)?point(x,y):ellipse(x,y,5):((y / spc) % 2 == 0)?ellipse(x, y, 5):point(x,y)
 </code></pre>
 
 <h2><a name='animate'>Animating the Grid</h2>
-We can make this grid much more interesting if we add some motion to it, which will give us something that is very similar to some of my earliest sketches from this year. We'll be modulating the strokeWeight of the draw points and circles with a sine function that takes as input their x and y coordinates, allowing us to obtain very interesting patterns:
+We can make this grid much more interesting if we add some motion to it, which will give us something that is very similar to some of my <a href='https://gorillasun.de/blog/Sketch-from-Scratch-1-Colorful-checkerboard-in-P5JS'>earliest sketches from this year</a>. We'll be modulating the strokeWeight of the draw points and circles with a sine function that takes as input their x and y coordinates, allowing us to obtain very interesting patterns:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
