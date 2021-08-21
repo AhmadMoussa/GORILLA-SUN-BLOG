@@ -119,3 +119,44 @@ function draw() {
 }
 </script>
 <p></p>
+
+The important line here is strokeWeight(4 + 4&#42;sin(x/20+y/20+t)) which is doing all the heavy lifting. Here we're dividing by an arbitrary number to attenuate the effect of plugging in the x and y coordinates into the sine function. Try changing the numbers. Also try plugging in different combinations of x and y like x&#42;y for example and see what patterns you get!
+
+<h2>Modulating with respect to another coordinate</h2>
+In addition to plugging a specific value or coordinate into the modulating sine function, we could plug in a distance. For example, the distance of each point to the center of the sketch:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="400" data-height="400">
+  function setup() {
+  w = min(windowWidth, windowHeight);
+  createCanvas(w, w);
+  strokeWeight(4);
+
+  off = 50;
+  spc = 10;
+
+  noFill();
+  frameRate(50)
+}
+
+function draw() {
+  background(0, 0, 100, 20);
+  t = frameCount / 20;
+
+  for (x = off; x < w - off; x += spc) {
+    for (y = off; y < w - off; y += spc) {
+      d = dist(x, y, w / 2,w/2 );
+
+      sinin = t*2 + d / 20;
+      sinin = sinin/1.5
+  
+      sinCombine = (sin(sinin) + cos(sinin*3))/2
+      strokeWeight(5 + 5 * sinCombine);
+      
+      ((x / spc) % 2 == 0)?((y / spc) % 2 == 0)?point(x,y):ellipse(x,y,5):((y / spc) % 2 == 0)?ellipse(x, y, 5):point(x,y)
+    }
+  }
+}
+</script>
+<p></p>
+
