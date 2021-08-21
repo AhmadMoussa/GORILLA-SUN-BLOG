@@ -32,7 +32,7 @@ for (x = off; x < w - off; x += spc) {
 <h2>Alternating Points and Circles</h2>
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script type="text/p5" data-p5-version="1.2.0" data-autoplay>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="400" data-height="400">
 function setup() {
   w = min(windowWidth, windowHeight);
   createCanvas(w, w);
@@ -79,7 +79,7 @@ Alternatively, you could compress the entire if statement block into a one liner
 We can make this grid much more interesting if we add some motion to it, which will give us something that is very similar to some of my earliest sketches from this year. We'll be modulating the strokeWeight of the draw points and circles with a sine function that takes as input their x and y coordinates, allowing us to obtain very interesting patterns:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script type="text/p5" data-p5-version="1.2.0" data-autoplay>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="400" data-height="400">
 function setup() {
   w = min(windowWidth, windowHeight);
   createCanvas(w, w);
