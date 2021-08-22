@@ -29,19 +29,21 @@ The great Persian Polymath Al-Khawarizmi once said: 'Grids are awesome'! well ma
   w = min(windowWidth, windowHeight);
   createCanvas(w, w);
   strokeWeight(4);
-  off = 50
-  spc = 10
+  off = 50;
+  spc = 10;
 }
 
 function draw(){
-    background(220)
-for (x = off; x < w - off; x += spc) {
-   for (y = off; y < w - off; y += spc) {
+  background(220)
+  for (x = off; x < w - off; x += spc) {
+    for (y = off; y < w - off; y += spc) {
       point(x,y)
-   }
- }
+    }
+  }
 }
 </code></pre>
+
+We have some boiler-plate stuff in the setup function, where we check for the dimensions of the containing window. We check if the height or the width of the window is smaller, to make sure that our sketch is always a square no matter the size of the containing window. Then we declare two variables off (for offset), and spc (for spacing) that let us manage how our grid looks. The offset specifies how large the margins are with regard to the top, bottom and sides of our sketch, determining where ou grid actually starts and ends. The spacing variable simply tells out how spaced out the points in the grid are. The two variables come into action in the draw loop. This is my preffered way of making grids nowadays.
 
 <h2><a name='alternate'></a>Alternating Points and Circles</h2>
 
