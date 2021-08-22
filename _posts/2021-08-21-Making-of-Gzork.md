@@ -43,7 +43,9 @@ function draw(){
 }
 </code></pre>
 
-We have some boiler-plate stuff in the setup function, where we check for the dimensions of the containing window. We check if the height or the width of the window is smaller, to make sure that our sketch is always a square no matter the size of the containing window. Then we declare two variables off (for offset), and spc (for spacing) that let us manage how our grid looks. The offset specifies how large the margins are with regard to the top, bottom and sides of our sketch, determining where ou grid actually starts and ends. The spacing variable simply tells out how spaced out the points in the grid are. The two variables come into action in the draw loop. This is my preffered way of making grids nowadays.
+We have some boiler-plate stuff in the setup function, where we check for the dimensions of the containing window. We check if the height or the width of the window is smaller, to make sure that our sketch is always a square no matter the size of the containing window. Then we declare two variables off (for offset), and spc (for spacing) that let us manage how our grid looks. 
+
+The offset specifies how large the margins are with regard to the top, bottom and sides of our sketch, determining where ou grid actually starts and ends. The spacing variable simply tells out how spaced out the points in the grid are. The two variables come into action in the draw loop. This is my preffered way of making grids nowadays.
 
 <h2><a name='alternate'></a>Alternating Points and Circles</h2>
 
