@@ -1,5 +1,5 @@
 ---
-title:A simple guide to using ffmpeg
+title: A simple guide to using ffmpeg
 author: Ahmad Moussa
 categories:
   - p5js
