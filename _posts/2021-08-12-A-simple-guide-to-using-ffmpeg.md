@@ -4,13 +4,19 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: ffmpeg is an amazing tool, that will make your life so much easier as a creative
-thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
+thumbnail_path: https://media.giphy.com/media/tGiJyldyNUJXO/giphy.gif?cid=ecf05e47xxf9duke1suqh8gs3vbp28xssx1mse2k10bxgu4k&rid=giphy.gif&ct=g
 published: false
 ---
 
-'This file format is not supported!'  If the answer is yes, then this blog post is for you. If the answer is no, then this blog post is still very much for you!
+<div style="width:100%;height:0;padding-bottom:76%;position:relative;"><iframe src="https://giphy.com/embed/tGiJyldyNUJXO" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
-Being a creative of any sort in this digital age, requires you to juggle a variety of different file formats across different platforms. On top of that, platforms such as Twitter have very strict format rules for things you want to upload, this makes it crucial to have an easy way to manage and convert different files to different formats at will.
+'This file format is not supported!'  
+
+If you've ever received a notification like this, and you create content on a regular basis, then this blog post is probably for you!
+
+In this blog post I'll gently introduce you to ffmpeg and how it can help you with editing your files.
+
+Being a creative of any sort in this digital age, requires you to juggle a variety of different file formats across different platforms. On top of that, platforms (such as Twitter) have very strict format rules for things you want to upload, this makes it crucial to have an easy way to manage and convert different files to different formats at will.
 
 <h2>What's ffmpeg and what can we do with it?</h2>
 Simply put, ffmpeg is an open source video and audio processing tool. With it you can convert between different encoding formats, in addition to editing video and audio files in a number of ways. It is mainly designed to be a command-line interface (CLI) that you execute from your terminal, however it can also be integrated as a part of other software.
