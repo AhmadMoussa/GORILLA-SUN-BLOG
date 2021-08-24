@@ -28,7 +28,7 @@ In this blog post I'll gently introduce you to ffmpeg and how it can help you wi
 <h2><a name='ffmpeg'></a>What's ffmpeg?</h2>
 Simply put, ffmpeg is an open source video and audio processing tool. With it you can convert between different encoding formats, in addition to editing video and audio files in a number of ways. It is mainly designed to be a command-line interface (CLI) that you execute from your terminal, however it can also be integrated as a part of other software.
 
-Know those fancy apps on your phone, that help you format your videos for IG? A lot of them probably use ffmpeg in the background. Can't blame them though, why reinvent the wheel when ffmpeg exist? It's super fast and gets the job done, save very exceptional cases.
+Know those fancy apps on your phone, that help you format your videos for IG? A lot of them probably use ffmpeg in the background. Can't blame them though, why reinvent the wheel when ffmpeg exists? It's super fast and gets the job done, save very exceptional cases.
 
 How can WE use ffmpeg? Well, for example, you were just about to upload a GIF file to some website when it notifies you that this file format is not supported. With ffmpeg we could easily convert this GIF file into an mp4 file, or a mov file, or an avi file, etc...
 
