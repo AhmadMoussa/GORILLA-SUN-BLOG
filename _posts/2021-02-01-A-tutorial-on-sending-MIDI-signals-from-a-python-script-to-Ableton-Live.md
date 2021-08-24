@@ -6,7 +6,7 @@ categories:
 description: Sending MIDI signals from an external python script to Ableton is easy but requires a little bit of setup, which I'll guide you through in this blog post.
 thumbnail_path: https://media.giphy.com/media/HUlRqqImjJAHP7jtfa/giphy.gif
 ---
-<div style="width:100%;height:0;padding-bottom:82%;position:relative;"><iframe src="https://giphy.com/embed/HUlRqqImjJAHP7jtfa" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+<div style="width:100%;height:0;padding-bottom:82%;position:relative;"><iframe src="https://giphy.com/embed/HUlRqqImjJAHP7jtfa" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
 
 <p>Over two years ago, I saw Andrew Huang's video on creating music from a video of fireworks. He used a software that essentially took the pixel values of a video and converted them to midi signals that were sent to his modular synth. Since I had no modular synth (and I still don't have one), but had Ableton Live, I wanted to build somthing similar. However I had no idea how to send external triggers to Ableton or how it could receive them. I honestly didn't know where to begin with, and info on this seemed very sparse on the internet. But after a little digging I was able to piece together all the components that I needed. After that I created a github repository that guides one through the necessary steps to have a python script trigger a synth in Ableton. Which is to date my most starred github repository. It's only appropriate that I revisit it and write a more detailed blog post about it. Let's get started! </p>
 
