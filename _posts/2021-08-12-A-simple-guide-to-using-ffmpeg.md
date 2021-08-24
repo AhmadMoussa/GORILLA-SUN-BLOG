@@ -9,11 +9,12 @@ published: true
 ---
 
 
+<span class="image fit"><img src="https://media.giphy.com/media/tGiJyldyNUJXO/giphy.gif?cid=ecf05e47xxf9duke1suqh8gs3vbp28xssx1mse2k10bxgu4k&rid=giphy.gif&ct=g" alt="" /></span>
+
 "This file format is not supported!" If you've ever received a notification like this, and you create content on a regular basis, then this blog post is probably for you!
 
 Being a creative of any sort in this digital age, requires you to juggle a variety of different file formats across different platforms. On top of that, platforms (such as Twitter) have very strict format rules for things you want to upload, this makes it crucial to have an easy way to manage and convert different files to different formats at will.
 
-<span class="image right"><img src="https://media.giphy.com/media/tGiJyldyNUJXO/giphy.gif?cid=ecf05e47xxf9duke1suqh8gs3vbp28xssx1mse2k10bxgu4k&rid=giphy.gif&ct=g" alt="" /></span>
 
 In this blog post I'll gently introduce you to ffmpeg and how it can help you with converting and editing your files!
 
