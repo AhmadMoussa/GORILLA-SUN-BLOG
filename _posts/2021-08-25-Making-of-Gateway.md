@@ -352,7 +352,7 @@ function draw() {
   background(220);
   translate(w / 2, w / 2);
 
-  for(n = 0; n<N; n++){
+  for(n = 0; n &lt; N; n++){
 
 
     for (a = 0; a < TAU; a += TAU / div) {
@@ -370,7 +370,7 @@ function draw() {
       dWeight = map(d, 0, rMax, 5, 0)
       strokeWeight(dWeight)
 
-      if(d < 10){
+      if(d 	&lt; 10){
         dWeight = map(d, 0, 10, 0, 5)
         strokeWeight(dWeight)
       }
@@ -420,7 +420,7 @@ strokeLength = dWeight*maxStrokeLength
 
 
 minDist = 10;
-if (d < minDist) {
+if (d &lt; minDist) {
   dWeight = map(d, 0, minDist, 0, 1);
   strokeWeight(dWeight*maxStrokeWeight);
   strokeLength = dWeight*maxStrokeLength
@@ -434,7 +434,7 @@ function setup() {
   w = min(windowWidth, windowHeight);
   createCanvas(w, w);
   strokeWeight(4);
-
+  
   completionPercentages = [];
   for (n = 0; n < N; n++) {
     rateOffset = map(n, 0, N, 0, 1);
