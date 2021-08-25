@@ -5,7 +5,7 @@ categories:
   - p5js
 description: recreating beesandbombs' sketch with my own twist
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: true
+published: false
 ---
 
 This sketch is based on a sketch from Dave Whyte aka beesandbombs, that I discovered through the concinnus Twitter bot. Aesthetically the sketch is very simple, but geometrically there's a lot going on. After pondering for a while I found that recreating it was quite tricky. But here's my attempt at it:
