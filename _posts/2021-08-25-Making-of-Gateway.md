@@ -1,5 +1,5 @@
 ---
-title: Making of: Gateway - Recreating a beesandbombs Sketch
+title: Making of&#58; Gateway - Recreating a beesandbombs Sketch
 author: Ahmad Moussa
 categories:
   - p5js
