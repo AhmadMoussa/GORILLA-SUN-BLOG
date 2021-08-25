@@ -5,7 +5,7 @@ categories:
   - p5js
 description: recreating beesandbombs' sketch with my own twist
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: true
+published: false
 ---
 
 <h2>Hacking a Beesandbombs Sketch</h2>
@@ -193,7 +193,7 @@ function draw() {
 <p></p>
 We're kind of halfway there already. Well not really, but for the impatient amongst you, we are :).
 
-<h2><a name='hex'></a>Pseudo Hexagons</a> Pseudo Hexagons</h2>
+<h2><a name='hex'></a>Pseudo Hexagons</h2>
 It would be quite easy to simply draw expanding hexagonal shapes now, but since there are gaps in between we'll have to think of something else. To achieve the lines I used vectors! We'll want to draw two lines that are oriented towards the two adjacent corners/points in the hexagon:
 
 <pre><code>//vector that defines the position of the point to the right
