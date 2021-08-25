@@ -5,7 +5,7 @@ categories:
   - p5js
 description: recreating beesandbombs' sketch with my own twist
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: false
+published: true
 ---
 
 <h2>Hacking a Beesandbombs Sketch</h2>
