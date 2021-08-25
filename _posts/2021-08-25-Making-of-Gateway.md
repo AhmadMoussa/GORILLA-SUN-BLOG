@@ -41,8 +41,7 @@ The best way to describe the sketch would be: "infinitely expanding hexagonal pa
 The first thing we'll start with is creating a set of points that seemingly appear in the center of the sketch, and then disappear at some distance from the center. And then re-appear and disappear again and again.
 
 As always, let's start with some boiler plate stuff:
-<pre><code>
-function setup() {
+<pre><code>function setup() {
   w = min(windowWidth, windowHeight)
   createCanvas(w, w);
   strokeWeight(4)
@@ -52,7 +51,6 @@ function draw(){
   background(220);
   translate(w/2,w/2)
 }
-
 </code></pre>
 
 Here we're just setting up our canvas in the setup function, to make it fill the size it has available, and in the draw function we're making use of the translate function. This will basically shift the origin of the sketch towards the center of the canvas. So basically, the (0,0) coordinate is now located at the center of the canvas, which will make dealing with coordinates a little easier along the way.
@@ -89,16 +87,14 @@ Pretty straight forward so far. Notice how I wrote the for loop that draws the p
 
 Now for the looping aspect of these points. We'll have to gradually increase the radius of the drawn points until a certain limit, and then make them jump back towards the origin and repeat. We'll need a couple of things for that:
 
-<pre><code>
-let rMax = 150
+<pre><code>let rMax = 150
 let completionPercentage = 0
 let rate = 0.003
 </code></pre>
 
 A maximum radius 'rMax', a variable that tracks how far along the way we already are, and a rate that specifies how fast we are moving. Then we'll actually have to increment and reset the completion percentage:
 
-<pre><code>
-completionPercentage += rate
+<pre><code>completionPercentage += rate
 if(completionPercentage > 1){
   completionPercentage = 0
 }
@@ -147,8 +143,7 @@ Try changing the rMax and rate variables!
 <h2><a name='mult'></a>Multiple Sets of Looping Points</h2>
 Next, we'll want to have multiple set of points looping, that are differently offset from each other. We'll need to wrap the code we've written so far in another loop, and make some modifications. I'm not certain if beesandbombs does it like that (they probably don't), but I found that making use of some extra memory makes this pretty easy. We'll create an array in the setup function that'll hold the offset of the points:
 
-<pre><code>
-completionPercentages = []
+<pre><code>completionPercentages = []
 for(n = 0; n<N; n++){
    rateOffset = map(n,0,N,0,1)
    completionPercentages.push(rateOffset)
@@ -209,8 +204,7 @@ We're kind of halfway there already. Well not really, but for the impatient amon
 <h2><a name='hex'></a>Pseudo Hexagons</a> Pseudo Hexagons</h2>
 It would be quite easy to simply draw expanding hexagonal shapes now, but since there are gaps in between we'll have to think of something else. To achieve the lines I used vectors! We'll want to draw two lines that are oriented towards the two adjacent corners/points in the hexagon:
 
-<pre><code>
-//vector that defines the position of the point to the right
+<pre><code>//vector that defines the position of the point to the right
 vRight = createVector(
          radius * cos(a + TAU/div),
          radius * sin(a + TAU/div)
@@ -317,16 +311,14 @@ Doesn't look very pretty yet, but we're basically 90% done at this point. The ha
 
 Yet again, we recurr to one of my favorite tricks: the Distance to the center! We'll essentially want to shrink the lines, the further they are from the center. Very simply we can do this with the inbuilt dist function:
 
-<pre><code>
-d = dist(x,y,0,0)
+<pre><code>d = dist(x,y,0,0)
 dWeight = map(d, 0, rMax, 5, 0)
 strokeWeight(dWeight)
 </code></pre>
 
 We'll add this little snippet before we draw the points and lines, and we'll get smoothly fading lines! But you'll notice that we also don't want them to immediately pop out of nothingness in the center. We'll have to add another short if statement to remedy that:
 
-<pre><code>
-maxStrokeWeight = 5
+<pre><code>maxStrokeWeight = 5
 
 d = dist(x,y,0,0)
 dWeight = map(d, 0, rMax, maxStrokeWeight, 0)
