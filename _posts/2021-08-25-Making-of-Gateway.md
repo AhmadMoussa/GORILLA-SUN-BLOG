@@ -10,7 +10,11 @@ published: true
 
 <h2>Hacking a Beesandbombs Sketch</h2>
 
-This sketch is based on a sketch from Dave Whyte aka beesandbombs, that I discovered through the concinnus Twitter bot. Aesthetically the sketch is very simple, but geometrically there's a lot going on. After pondering for a while I found that recreating it was quite tricky. But here's my attempt at it:
+Everything that follows is inspired by a sketch from <a href='https://twitter.com/beesandbombs'>Dave Whyte (aka Beesandbombs)</a>, that I discovered through the <a href='https://twitter.com/concinnus'>Concinnus Twitter bot</a>. Aesthetically the sketch is very simple, but geometrically there's a lot going on. After pondering for a while I found that recreating it was quite tricky.
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Discovery 35919 <a href="https://twitter.com/hashtag/gif?src=hash&amp;ref_src=twsrc%5Etfw">#gif</a> <a href="https://twitter.com/hashtag/abstract?src=hash&amp;ref_src=twsrc%5Etfw">#abstract</a> <a href="https://twitter.com/hashtag/design?src=hash&amp;ref_src=twsrc%5Etfw">#design</a> <a href="https://twitter.com/hashtag/geometry?src=hash&amp;ref_src=twsrc%5Etfw">#geometry</a> <a href="https://twitter.com/hashtag/generative?src=hash&amp;ref_src=twsrc%5Etfw">#generative</a> <a href="https://twitter.com/hashtag/retro?src=hash&amp;ref_src=twsrc%5Etfw">#retro</a> <a href="https://twitter.com/hashtag/digitalart?src=hash&amp;ref_src=twsrc%5Etfw">#digitalart</a> (via <a href="https://twitter.com/beesandbombs?ref_src=twsrc%5Etfw">@beesandbombs</a>) <a href="https://t.co/6kBMs5nf94">pic.twitter.com/6kBMs5nf94</a></p>&mdash; CONCINNUS (@concinnus) <a href="https://twitter.com/concinnus/status/1406552419522297858?ref_src=twsrc%5Etfw">June 20, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+This blog post will explain how I recreated it, however no guarantee that this is how it was done originally. For our purposes we'll be using p5js.
 
 1. <a href='#equi'>Equidistant Points on a Circle</a>
 2. <a href='#loop'>Infinitely Looping Points</a>
@@ -22,7 +26,7 @@ This sketch is based on a sketch from Dave Whyte aka beesandbombs, that I discov
 
 
 <h2><a name='equi'></a>Equidistant points on a circle</h2>
-The best way to describe it would be infinitely expanding hexagonal patterns that fade into existence and then disapear after their lifespan expires.
+The best way to describe the sketch would be: "infinitely expanding hexagonal patterns that fade into existence and then disapear after their lifespan expires". We'll break the sketch up into digestible portions and work from there!
 
 The first thing we'll start with is creating a set of points that seemingly appear in the center of the sketch, and then disappear at some distance from the center. And then re-appear and disappear again and again.
 
