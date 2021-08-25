@@ -1,25 +1,27 @@
 ---
-title: Making of&#58; Gateway 
+title: Making of&#58; Gateway
 author: Ahmad Moussa
 categories:
   - p5js
 description: recreating beesandbombs' sketch with my own twist
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: true
+published: false
 ---
 
 <h2>Hacking a Beesandbombs Sketch</h2>
 
 This sketch is based on a sketch from Dave Whyte aka beesandbombs, that I discovered through the concinnus Twitter bot. Aesthetically the sketch is very simple, but geometrically there's a lot going on. After pondering for a while I found that recreating it was quite tricky. But here's my attempt at it:
 
-1. <a href='#grid'>Creating a Grid</a>
-2. <a href='#alternate'>Alternating Points and Circles</a>
-3. <a href='#animate'>Animating the Grid</a>
-4. <a href='#distance'>Distance Fields</a>
-5. <a href='#color'>Adding Color</a>
-6. <a href='#transparency'>Background Transparency Trick</a>
+1. <a href='#equi'>Equidistant Points on a Circle</a>
+2. <a href='#loop'>Infinitely Looping Points</a>
+3. <a href='#mult'>Multiple Sets of Looping Points</a>
+4. <a href='#hex'>Pseudo Hexagons</a>
+5. <a href='#fade'>Fading Strokes in and out</a>
+6. <a href='#offset'>Offsetting every other loop</a>
+7. <a href='#aesthetic'>Aesthetic Touches</a>
 
-<h2>Drawing equidistant points on a circle</h2>
+
+<h2><a name='equi'></a>Equidistant points on a circle</h2>
 The best way to describe it would be infinitely expanding hexagonal patterns that fade into existence and then disapear after their lifespan expires.
 
 The first thing we'll start with is creating a set of points that seemingly appear in the center of the sketch, and then disappear at some distance from the center. And then re-appear and disappear again and again.
@@ -69,7 +71,7 @@ function draw(){
 
 Pretty straight forward so far. Notice how I wrote the for loop that draws the points. Changing the div parameter allows us to draw a different number of points, that are always placed equidistantly from each other. Try it!
 
-<h2>Looping points</h2>
+<h2><a name='loop'></a>Infinitely Looping Points</h2>
 
 Now for the looping aspect of these points. We'll have to gradually increase the radius of the drawn points until a certain limit, and then make them jump back towards the origin and repeat. We'll need a couple of things for that:
 
@@ -128,7 +130,7 @@ function draw() {
 
 Try changing the rMax and rate variables!
 
-<h2>Multiple sets of looping points</h2>
+<h2><a name='mult'></a>Multiple Sets of Looping Points</h2>
 Next, we'll want to have multiple set of points looping, that are differently offset from each other. We'll need to wrap the code we've written so far in another loop, and make some modifications. I'm not certain if beesandbombs does it like that (they probably don't), but I found that making use of some extra memory makes this pretty easy. We'll create an array in the setup function that'll hold the offset of the points:
 
 <pre><code>
@@ -190,7 +192,7 @@ function draw() {
 
 We're kind of halfway there already. Well not really, but for the impatient amongst you, we are :).
 
-<h2>Drawing Pseudo Hexagons</h2>
+<h2><a name='hex'></a>Pseudo Hexagons</a> Pseudo Hexagons</h2>
 It would be quite easy to simply draw expanding hexagonal shapes now, but since there are gaps in between we'll have to think of something else. To achieve the lines I used vectors! We'll want to draw two lines that are oriented towards the two adjacent corners/points in the hexagon:
 
 <pre><code>
@@ -297,7 +299,7 @@ function draw() {
 
 Doesn't look very pretty yet, but we're basically 90% done at this point. The hardest part is behind us.
 
-<h2>Fading the lines</h2>
+<h2><a name='fade'></a>Fading Strokes in and out</h2>
 
 Yet again, we recurr to one of my favorite tricks: the Distance to the center! We'll essentially want to shrink the lines, the further they are from the center. Very simply we can do this with the inbuilt dist function:
 
@@ -521,3 +523,6 @@ function draw() {
 
 
 </script>
+
+
+<h2><a href='aesthetic'></a>Aesthetic Touches</h2>
