@@ -10,9 +10,11 @@ published: true
 
 <h2>Hacking a Beesandbombs Sketch</h2>
 
-Everything that follows is inspired by a sketch from <a href='https://twitter.com/beesandbombs'>Dave Whyte (aka Beesandbombs)</a>, that I discovered through the <a href='https://twitter.com/concinnus'>Concinnus Twitter bot</a>. Aesthetically the sketch is very simple, but geometrically there's a lot going on. After pondering for a while I found that recreating it was quite tricky.
+Everything that follows is inspired by a sketch from <a href='https://twitter.com/beesandbombs'>Dave Whyte (aka Beesandbombs)</a>, that I discovered through the <a href='https://twitter.com/concinnus'>Concinnus Twitter bot</a>. Aesthetically the sketch is very simple, but geometrically there's a lot going on:
        
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Discovery 35919 <a href="https://twitter.com/hashtag/gif?src=hash&amp;ref_src=twsrc%5Etfw">#gif</a> <a href="https://twitter.com/hashtag/abstract?src=hash&amp;ref_src=twsrc%5Etfw">#abstract</a> <a href="https://twitter.com/hashtag/design?src=hash&amp;ref_src=twsrc%5Etfw">#design</a> <a href="https://twitter.com/hashtag/geometry?src=hash&amp;ref_src=twsrc%5Etfw">#geometry</a> <a href="https://twitter.com/hashtag/generative?src=hash&amp;ref_src=twsrc%5Etfw">#generative</a> <a href="https://twitter.com/hashtag/retro?src=hash&amp;ref_src=twsrc%5Etfw">#retro</a> <a href="https://twitter.com/hashtag/digitalart?src=hash&amp;ref_src=twsrc%5Etfw">#digitalart</a> (via <a href="https://twitter.com/beesandbombs?ref_src=twsrc%5Etfw">@beesandbombs</a>) <a href="https://t.co/6kBMs5nf94">pic.twitter.com/6kBMs5nf94</a></p>&mdash; CONCINNUS (@concinnus) <a href="https://twitter.com/concinnus/status/1406552419522297858?ref_src=twsrc%5Etfw">June 20, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p></p>
 
 In this blog post we'll recreate the sketch using p5js, we won't be doing an exact replica, but put our own spin on it. Quick index goes here:
 
@@ -127,7 +129,7 @@ function draw() {
   }
 }
 </script>
-
+<p></p>
 Try changing the rMax and rate variables!
 
 <h2><a name='mult'></a>Multiple Sets of Looping Points</h2>
@@ -188,7 +190,7 @@ function draw() {
   }
 }
 </script>
-
+<p></p>
 We're kind of halfway there already. Well not really, but for the impatient amongst you, we are :).
 
 <h2><a name='hex'></a>Pseudo Hexagons</a> Pseudo Hexagons</h2>
@@ -519,6 +521,6 @@ function draw() {
 
 
 </script>
-
+<p></p>
 
 <h2><a href='aesthetic'></a>Aesthetic Touches</h2>
