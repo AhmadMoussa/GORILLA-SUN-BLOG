@@ -10,21 +10,11 @@ published: true
 
 <h2>Hacking a Beesandbombs Sketch</h2>
 
-<div class="row gtr-200">
-			<div class="col-6 col-12-medium">
-        Everything that follows is inspired by a sketch from <a href='https://twitter.com/beesandbombs'>Dave Whyte (aka Beesandbombs)</a>, that I discovered through the <a href='https://twitter.com/concinnus'>Concinnus Twitter bot</a>. Aesthetically the sketch is very simple, but geometrically there's a lot going on. After pondering for a while I found that recreating it was quite tricky.
+Everything that follows is inspired by a sketch from <a href='https://twitter.com/beesandbombs'>Dave Whyte (aka Beesandbombs)</a>, that I discovered through the <a href='https://twitter.com/concinnus'>Concinnus Twitter bot</a>. Aesthetically the sketch is very simple, but geometrically there's a lot going on. After pondering for a while I found that recreating it was quite tricky.
        
-      </div>
-      <div class="col-6 col-12-medium">
-       <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Discovery 35919 <a href="https://twitter.com/hashtag/gif?src=hash&amp;ref_src=twsrc%5Etfw">#gif</a> <a href="https://twitter.com/hashtag/abstract?src=hash&amp;ref_src=twsrc%5Etfw">#abstract</a> <a href="https://twitter.com/hashtag/design?src=hash&amp;ref_src=twsrc%5Etfw">#design</a> <a href="https://twitter.com/hashtag/geometry?src=hash&amp;ref_src=twsrc%5Etfw">#geometry</a> <a href="https://twitter.com/hashtag/generative?src=hash&amp;ref_src=twsrc%5Etfw">#generative</a> <a href="https://twitter.com/hashtag/retro?src=hash&amp;ref_src=twsrc%5Etfw">#retro</a> <a href="https://twitter.com/hashtag/digitalart?src=hash&amp;ref_src=twsrc%5Etfw">#digitalart</a> (via <a href="https://twitter.com/beesandbombs?ref_src=twsrc%5Etfw">@beesandbombs</a>) <a href="https://t.co/6kBMs5nf94">pic.twitter.com/6kBMs5nf94</a></p>&mdash; CONCINNUS (@concinnus) <a href="https://twitter.com/concinnus/status/1406552419522297858?ref_src=twsrc%5Etfw">June 20, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
-</div>
+<blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Discovery 35919 <a href="https://twitter.com/hashtag/gif?src=hash&amp;ref_src=twsrc%5Etfw">#gif</a> <a href="https://twitter.com/hashtag/abstract?src=hash&amp;ref_src=twsrc%5Etfw">#abstract</a> <a href="https://twitter.com/hashtag/design?src=hash&amp;ref_src=twsrc%5Etfw">#design</a> <a href="https://twitter.com/hashtag/geometry?src=hash&amp;ref_src=twsrc%5Etfw">#geometry</a> <a href="https://twitter.com/hashtag/generative?src=hash&amp;ref_src=twsrc%5Etfw">#generative</a> <a href="https://twitter.com/hashtag/retro?src=hash&amp;ref_src=twsrc%5Etfw">#retro</a> <a href="https://twitter.com/hashtag/digitalart?src=hash&amp;ref_src=twsrc%5Etfw">#digitalart</a> (via <a href="https://twitter.com/beesandbombs?ref_src=twsrc%5Etfw">@beesandbombs</a>) <a href="https://t.co/6kBMs5nf94">pic.twitter.com/6kBMs5nf94</a></p>&mdash; CONCINNUS (@concinnus) <a href="https://twitter.com/concinnus/status/1406552419522297858?ref_src=twsrc%5Etfw">June 20, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
-
-
-
-This blog post will explain how I recreated it, however no guarantee that this is how it was done originally. For our purposes we'll be using p5js.
+In this blog post we'll recreate the sketch using p5js, we won't be doing an exact replica, but put our own spin on it. Quick index goes here:
 
 1. <a href='#equi'>Equidistant Points on a Circle</a>
 2. <a href='#loop'>Infinitely Looping Points</a>
