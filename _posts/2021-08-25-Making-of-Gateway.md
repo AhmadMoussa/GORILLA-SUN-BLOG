@@ -32,7 +32,7 @@ In this blog post we'll recreate the sketch using p5js, we won't be doing an exa
 The first thing we'll start with is creating a set of points that seemingly appear in the center of the sketch, and then disappear at some distance from the center. And then re-appear and disappear again and again.
 
 As always, let's start with some boiler plate stuff:
-<pre><code>function setup() {
+<pre class="javascript"><code>function setup() {
   w = min(windowWidth, windowHeight)
   createCanvas(w, w);
   strokeWeight(4)
@@ -87,7 +87,7 @@ let rate = 0.003;
 
 A maximum radius 'rMax', a variable that tracks how far along the way we already are, and a rate that specifies how fast we are moving. Then we'll actually have to increment and reset the completion percentage:
 
-<pre><code>completionPercentage += rate;
+<pre class="javascript"><code>completionPercentage += rate;
 if (completionPercentage &gt; 1){
   completionPercentage = 0;
 }
@@ -198,7 +198,7 @@ We're kind of halfway there already. Well not really, but for the impatient amon
 <h2><a name='hex'></a>Pseudo Hexagons</h2>
 It would be quite easy to simply draw expanding hexagonal shapes now, but since there are gaps in between the lines, we'll have to think of something else. To achieve the lines I used vectors! We'll want to draw two lines that are oriented towards the two adjacent corners/points in the hexagon:
 
-<pre><code>//vector that defines the position of the point to the right
+<pre class="javascript"><code>//vector that defines the position of the point to the right
 vRight = createVector(
     radius * cos(a + TAU/div),
     radius * sin(a + TAU/div)
@@ -304,14 +304,14 @@ Doesn't look very pretty yet, but we're basically 90% done at this point. The ha
 <h2><a name='fade'></a>Fading Strokes in and out</h2>
 Yet again, we recurr to one of my favorite tricks: the Distance to the center! We'll essentially want to shrink the lines, the further they are from the center. Very simply we can do this with the inbuilt dist function:
 
-<pre><code>d = dist(x, y, 0, 0);
+<pre class="javascript"><code>d = dist(x, y, 0, 0);
 dWeight = map(d, 0, rMax, 5, 0);
 strokeWeight(dWeight);
 </code></pre>
 
 We'll add this little snippet before we draw the points and lines, and we'll get smoothly fading lines! But you'll notice that we also don't want them to immediately pop out of nothingness in the center. We'll have to add another short if statement to remedy that:
 
-<pre><code>maxStrokeWeight = 5;
+<pre class="javascript"><code>maxStrokeWeight = 5;
 
 d = dist(x, y, 0, 0);
 dWeight = map(d, 0, rMax, maxStrokeWeight, 0);
@@ -328,6 +328,16 @@ We'll set an arbitrary distance, in which the strokeWeight will be grown from 0 
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+let N = 3
+
+let div = 6;
+let radius = 100;
+
+let rMax = 150;
+
+let completionPercentage = 0;
+let rate = 0.0005;
+  
 function setup() {
   w = min(windowWidth, windowHeight);
   createCanvas(w, w);
@@ -340,15 +350,6 @@ function setup() {
   }
 }
 
-let N = 3
-
-let div = 6;
-let radius = 100;
-
-let rMax = 150;
-
-let completionPercentage = 0;
-let rate = 0.0005;
 function draw() {
   background(220);
   translate(w / 2, w / 2);
@@ -411,7 +412,7 @@ function draw() {
 
 Finally, we want to repeat the same steps for the strokeLength of the drawn lines! We can use the same code for the length of the strokes:
 
-<pre><code>maxStrokeWeight = 5;
+<pre class="javascript"><code>maxStrokeWeight = 5;
 maxStrokeLength = 10
 
 d = dist(x, y, 0, 0);
@@ -432,6 +433,16 @@ And the entire code would look something like this:
   
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+let N = 3;
+
+let div = 6;
+let radius = 100;
+
+let rMax = 150;
+
+let completionPercentage = 0;
+let rate = 0.0005;
+  
 function setup() {
   w = min(windowWidth, windowHeight);
   createCanvas(w, w);
@@ -444,15 +455,6 @@ function setup() {
   }
 }
 
-let N = 3;
-
-let div = 6;
-let radius = 100;
-
-let rMax = 150;
-
-let completionPercentage = 0;
-let rate = 0.0005;
 function draw() {
   background(220);
   translate(w / 2, w / 2);
