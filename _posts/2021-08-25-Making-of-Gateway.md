@@ -138,7 +138,7 @@ Try changing the rMax and rate variables!
 Next, we'll want to have multiple sets of points looping, that are differently offset from each other. We'll need to wrap the code we've written so far in another loop, and make some modifications. I'm not certain if beesandbombs does it like that (they probably don't), but I found that making use of some extra memory makes this pretty easy. We'll create an array in the setup function that'll hold the offset of the points:
 
 <pre><code>completionPercentages = [];
-for(n = 0; n &#lt; N; n++){
+for(n = 0; n &lt; N; n++){
    rateOffset = map(n, 0, N, 0, 1);
    completionPercentages.push(rateOffset);
 }
