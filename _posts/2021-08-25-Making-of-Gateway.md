@@ -61,7 +61,7 @@ let radius = 100
 function draw(){
   background(220);
   translate(w/2,w/2)
-  for(a = 0; a &lt; TAU; a += TAU/div){
+  for(a = 0; a < TAU; a += TAU/div){
 
     x = radius*cos(a)
     y = radius*sin(a)
@@ -86,7 +86,7 @@ let rate = 0.003
 A maximum radius 'rMax', a variable that tracks how far along the way we already are, and a rate that specifies how fast we are moving. Then we'll actually have to increment and reset the completion percentage:
 
 <pre><code>completionPercentage += rate;
-if(completionPercentage > 1){
+if (completionPercentage &gt; 1){
   completionPercentage = 0;
 }
 
@@ -128,6 +128,7 @@ function draw() {
   }
 }
 </script>
+  
 <p></p>
 Try changing the rMax and rate variables!
 
