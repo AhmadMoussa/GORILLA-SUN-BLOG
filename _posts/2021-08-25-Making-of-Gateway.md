@@ -5,8 +5,10 @@ categories:
   - p5js
 description: recreating beesandbombs' sketch with my own twist
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: false
+published: true
 ---
+
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif" alt="" /></span>
 
 <h2>Hacking a Beesandbombs Sketch</h2>
 
