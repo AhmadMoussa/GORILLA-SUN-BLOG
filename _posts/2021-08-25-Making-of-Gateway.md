@@ -47,6 +47,7 @@ function draw(){
 Here we're just setting up our canvas in the setup function, to make it fill the size it has available, and in the draw function we're making use of the translate function. This will basically shift the origin of the sketch towards the center of the canvas. So basically, the (0,0) coordinate is now located at the center of the canvas, which will make dealing with coordinates a little bit easier along the way.
 
 The next step will be drawing 6 points, that are located equidistantly on a circle. Basically we'll draw the corners of a hexagon:
+
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
 function setup() {
@@ -60,7 +61,7 @@ let radius = 100
 function draw(){
   background(220);
   translate(w/2,w/2)
-  for(a = 0; a<TAU; a+=TAU/div){
+  for(a = 0; a &lt; TAU; a += TAU/div){
 
     x = radius*cos(a)
     y = radius*sin(a)
