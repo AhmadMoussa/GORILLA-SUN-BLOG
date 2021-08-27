@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: recreating beesandbombs' sketch with my own twist
-thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
+thumbnail_path: https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif
 published: true
 ---
 
