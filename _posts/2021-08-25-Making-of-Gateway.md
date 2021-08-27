@@ -358,7 +358,7 @@ function draw() {
   background(220);
   translate(w / 2, w / 2);
 
-  for(n = 0; n &lt; N; n++){
+  for(n = 0; n < N; n++){
     for (a = 0; a < TAU; a += TAU / div) {
       completionPercentages[n] += rate;
       if (completionPercentages[n] > 1) {
