@@ -531,8 +531,7 @@ function draw() {
 
 Observing the original sketch closely, we can see that every other loop is angle a little differently. To be precise it's offset by PI/2. We can achieve this effect in our code by simply checking if the loop index is even or odd, and then add this offset to the angle:
   
-<pre><code>
-for (n = 0; n < N; n++) {
+<pre class='javascript'><code>for (n = 0; n < N; n++) {
   if(n%2==0){
     shift = PI/2
   }else{
