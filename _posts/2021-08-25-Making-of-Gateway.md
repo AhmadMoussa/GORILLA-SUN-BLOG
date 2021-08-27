@@ -647,8 +647,7 @@ And that's pretty much the entire logic behind the sketch! Last thing we're goin
 
 Yet again, we're going to use our trusty background transparency trick for some pseudo motion blur. We'll also color the background in bright red to make our sketch extra spicy:
 
-<pre><code>
-background(255,0,0,80);
+<pre><code>background(255,0,0,80);
 </code></pre>
 
 And in practice this would look like this:
