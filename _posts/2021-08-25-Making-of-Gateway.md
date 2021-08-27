@@ -526,5 +526,228 @@ function draw() {
 }
 </script>
 <p></p>
+  
+<h2><a name='offset'></a>Offsetting every other loop</h2>
 
-<h2><a href='aesthetic'></a>Aesthetic Touches</h2>
+Observing the original sketch closely, we can see that every other loop is angle a little differently. To be precise it's offset by PI/2. We can achieve this effect in our code by simply checking if the loop index is even or odd, and then add this offset to the angle:
+  
+<pre><code>
+for (n = 0; n < N; n++) {
+  if(n%2==0){
+    shift = PI/2
+  }else{
+    shift = 0
+  }
+  for (a = shift; a &lt; TAU+shift; a += TAU / div) {
+  }  
+}
+</code></pre>
+
+Let's also crank up the number of hexagons:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+let N = 6;
+
+let div = 6;
+let radius = 100;
+
+let rMax = 120;
+
+let completionPercentage = 0;
+let rate = 0.0005;
+  
+function setup() {
+  w = min(windowWidth, windowHeight);
+  createCanvas(w, w);
+  strokeWeight(4);
+  
+  completionPercentages = [];
+  for (n = 0; n < N; n++) {
+    rateOffset = map(n, 0, N, 0, 1);
+    completionPercentages.push(rateOffset);
+  }
+}
+
+shift = 0
+function draw() {
+  background(220);
+  translate(w / 2, w / 2);
+
+  
+  for (n = 0; n < N; n++) {
+    if(n%2==0){
+      shift = PI/2
+    }else{
+      shift = 0
+    }
+    for (a = shift; a < TAU+shift; a += TAU / div) {
+      completionPercentages[n] += rate;
+      if (completionPercentages[n] > 1) {
+        completionPercentages[n] = 0;
+      }
+
+      radius = map(completionPercentages[n], 0, 1, 0, rMax);
+
+      x = radius * cos(a);
+      y = radius * sin(a);
+
+      maxStrokeWeight = 5;
+      maxStrokeLength = 10;
+
+      d = dist(x, y, 0, 0);
+      dWeight = map(d, 0, rMax, 1, 0);
+      strokeWeight(dWeight*maxStrokeWeight);
+      strokeLength = dWeight*maxStrokeLength;
+
+      minDist = 10;
+      if (d < minDist) {
+        dWeight = map(d, 0, minDist, 0, 1);
+        strokeWeight(dWeight*maxStrokeWeight);
+        strokeLength = dWeight*maxStrokeLength;
+      }
+                      
+      point(x, y);
+
+      vRight = createVector(
+        radius * cos(a + TAU / div),
+        radius * sin(a + TAU / div)
+      );
+
+      angleRight = atan2(vRight.x - x, vRight.y - y);
+
+      vecRight = createVector(
+        x + strokeLength * sin(angleRight),
+        y + strokeLength * cos(angleRight)
+      );
+
+      line(x, y, vecRight.x, vecRight.y);
+
+      vLeft = createVector(
+        radius * cos(a - TAU / div),
+        radius * sin(a - TAU / div)
+      );
+
+      angleLeft = atan2(vLeft.x - x, vLeft.y - y);
+
+      vecLeft = createVector(
+        x + strokeLength * sin(angleLeft),
+        y + strokeLength * cos(angleLeft)
+      );
+
+      line(x, y, vecLeft.x, vecLeft.y);
+    }
+  }
+}
+</script>
+
+<p></p>
+And that's pretty much the entire logic behind the sketch! Last thing we're going to is add a couple of aethetic touches!
+
+<h2><a name='aesthetic'></a>Aesthetic Touches</h2>
+
+Yet again, we're going to use our trusty background transparency trick for some pseudo motion blur. We'll also color the background in bright red to make our sketch extra spicy:
+
+<pre><code>
+background(255,0,0,80);
+</code></pre>
+
+And in practice this would look like this:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+let N = 6;
+
+let div = 6;
+let radius = 100;
+
+let rMax = 120;
+
+let completionPercentage = 0;
+let rate = 0.0005;
+  
+function setup() {
+  w = min(windowWidth, windowHeight);
+  createCanvas(w, w);
+  strokeWeight(4);
+  
+  completionPercentages = [];
+  for (n = 0; n < N; n++) {
+    rateOffset = map(n, 0, N, 0, 1);
+    completionPercentages.push(rateOffset);
+  }
+}
+
+shift = 0
+function draw() {
+  background(255,0,0,80);
+  translate(w / 2, w / 2);
+  
+  for (n = 0; n < N; n++) {
+    if(n%2==0){
+      shift = PI/2;
+    }else{
+      shift = 0;
+    }
+    for (a = shift; a < TAU+shift; a += TAU / div) {
+      completionPercentages[n] += rate;
+      if (completionPercentages[n] > 1) {
+        completionPercentages[n] = 0;
+      }
+
+      radius = map(completionPercentages[n], 0, 1, 0, rMax);
+
+      x = radius * cos(a);
+      y = radius * sin(a);
+
+      maxStrokeWeight = 5;
+      maxStrokeLength = 10;
+
+      d = dist(x, y, 0, 0);
+      dWeight = map(d, 0, rMax, 1, 0);
+      strokeWeight(dWeight*maxStrokeWeight);
+      strokeLength = dWeight*maxStrokeLength;
+
+      minDist = 10;
+      if (d < minDist) {
+        dWeight = map(d, 0, minDist, 0, 1);
+        strokeWeight(dWeight*maxStrokeWeight);
+        strokeLength = dWeight*maxStrokeLength;
+      }
+                      
+      point(x, y);
+
+      vRight = createVector(
+        radius * cos(a + TAU / div),
+        radius * sin(a + TAU / div)
+      );
+
+      angleRight = atan2(vRight.x - x, vRight.y - y);
+
+      vecRight = createVector(
+        x + strokeLength * sin(angleRight),
+        y + strokeLength * cos(angleRight)
+      );
+
+      line(x, y, vecRight.x, vecRight.y);
+
+      vLeft = createVector(
+        radius * cos(a - TAU / div),
+        radius * sin(a - TAU / div)
+      );
+
+      angleLeft = atan2(vLeft.x - x, vLeft.y - y);
+
+      vecLeft = createVector(
+        x + strokeLength * sin(angleLeft),
+        y + strokeLength * cos(angleLeft)
+      );
+
+      line(x, y, vecLeft.x, vecLeft.y);
+    }
+  }
+}
+</script>
+
+<p></p>
+And that's a wrap, if you enjoyed this tutorial, share it with your friends! It really helps, it's basically telling google that this post is useful! Anyway, cheers! And happy sketching!
