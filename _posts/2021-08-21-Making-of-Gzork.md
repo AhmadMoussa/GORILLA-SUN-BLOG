@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: recreating my sketch titled Gzork
-thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
+thumbnail_path: https://gorillasun.de/assets/images/2021-21-12-Making-of-Gzork/Gzork2.gif
 published: true
 ---
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-21-12-Making-of-Gzork/Gzork2.gif" alt="" /></span>
