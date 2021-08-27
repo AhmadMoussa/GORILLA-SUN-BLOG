@@ -31,7 +31,7 @@ We'll be using p5js to recreate the sketch, and put our own spin on it. We'll br
 <h2><a name='equi'></a>Equidistant points on a circle</h2>
 The first thing we'll start with, is creating a set of points that seemingly appear in the center of the sketch, and then disappear at some distance from the center. And then re-appear and disappear again and again.
 
-As always, let's start with some boiler plate stuff:
+As always, let's start with some boilerplate stuff:
 <pre class="javascript"><code>function setup() {
   w = min(windowWidth, windowHeight)
   createCanvas(w, w);
