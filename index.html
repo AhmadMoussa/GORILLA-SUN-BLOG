@@ -62,7 +62,7 @@ permalink:
 				{% assign postsByMonth =
 				site.posts | group_by_exp:"post", "post.date | date: '%B %Y'" %}
 
-				{% for month in postsByMonth %}
+				{% for month in postsByMonth limit:2 %}
 				  <h3>{{ month.name }}</h3>
 				    <ul style="list-style-type:none;">
 				      {% for post in month.items %}
