@@ -46,20 +46,8 @@ permalink:
 
 	<div class="row gtr-200">
 			<div class="col-6 col-12-medium">
-					<h2> Recent Blog Posts </h2>
-				<!--
-				{% assign postsByMonth =
-					site.posts | group_by_exp:"post", "post.date | date: '%Y, %b'" %}
-
-					{% for month in postsByMonth limit:5%}
-					  <h3>{{ month.name }}</h3>
-					    <ul>
-					      {% for post in month.items %}
-						<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-					      {% endfor %}
-					    </ul>
-					{% endfor %}
-				-->
+				<h2> Recent Blog Posts </h2>
+	
 				{% assign postsByMonth =
 				site.posts | group_by_exp:"post", "post.date | date: '%B %Y'" %}
 
@@ -185,19 +173,23 @@ A site dedicated to explaining concepts in Machine Learning, Deep Learning and A
 										<form method="post" action="https://gorillasun.us1.list-manage.com/subscribe/post?u=2ec45cad93e090c190c03f02d&amp;id=f34e6ff990"
 										      id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 											<div class="row gtr-uniform">
+												<!--
 												<div class="col-6 col-12-xsmall">
 													<input type="text" name="FNAME" id="mce-FNAME" value="" placeholder="First Name" />
 												</div>
 												<div class="col-6 col-12-xsmall">
 													<input type="text" name="LNAME" id="mce-LNAME" value="" placeholder="Last Name" />
 												</div>
+												-->
 												<div class="col-12 col-12-small">
 													<input type="email" name="EMAIL" id="mce-EMAIL" value="" placeholder="Email" required>
 												</div>
+												<!--
 												<div class="col-6 col-12-small">
 													<input type="checkbox" id="demo-human" name="demo-human" required>
 													<label for="demo-human">I am a human</label>
 												</div>
+-->
 												<div id="mce-responses" class="clear">
 													<div class="response" id="mce-error-response" style="display:none"></div>
 													<div class="response" id="mce-success-response" style="display:none"></div>
