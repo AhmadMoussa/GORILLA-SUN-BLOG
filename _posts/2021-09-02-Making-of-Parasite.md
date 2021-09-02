@@ -5,13 +5,10 @@ categories:
   - p5js
 description: In this post I show you how to make my sketch parasite
 thumbnail_path: https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif
-published: true
+published: false
 ---
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Parasite/parasite.gif" alt="" /></span>
-
-<h2>Hacking a Beesandbombs Sketch</h2>
-We'll be using p5js to recreate the sketch, and put our own spin on it. We'll break the sketch up into digestible portions and work from there! Quick index goes here:
 
 1. <a href='#diag'>Points along the Diagonal</a>
 2. <a href='#wiggle'>Making the Points Wiggle</a>
@@ -35,7 +32,6 @@ function draw(){
 </code></pre>
 
 Very basic stuff here, we're setting up the canvas to take as much space as it has available, and ensure that it is always square in shape by setting both it's width and height to the smaller one of the two by using the min() function.
-
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -257,6 +253,7 @@ for(a = 0 ; a< TAU; a+=TAU/3){
 </code></pre>
 
 We're also going to make these points spin in the following manner:
+
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
 function setup() {
