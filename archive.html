@@ -114,7 +114,8 @@ permalink: /posts/
 					<a href="https://gorillasun.de{{ post.url }}">
 						<h4>{{post.title}}</h4>
 					</a>
-					{{ post.date | date_to_long_string }}
+					{{ post.date | "%m/%d/%Y" }}
+					<br/>
 					{{ post.description }}
 				</div>
 			</div>
@@ -133,7 +134,8 @@ permalink: /posts/
 					<a href="https://gorillasun.de{{ post.url }}">
 						<h4>{{post.title}}</h4>
 					</a>
-					{{ post.date | date_to_long_string }}
+					{{ post.date | "%m/%d/%Y" }}
+					<br/>
 					{{ post.description }}
 					
 				</div>
