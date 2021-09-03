@@ -3,7 +3,7 @@ title: Making of&#58; Gzork
 author: Ahmad Moussa
 categories:
   - p5js
-description: recreating my sketch titled Gzork
+description: Step-by-step guide to coding up my processing 20-th anniversary fundraiser sketch "Gzork"
 thumbnail_path: https://gorillasun.de/assets/images/2021-21-12-Making-of-Gzork/Gzork2.gif
 published: true
 ---
