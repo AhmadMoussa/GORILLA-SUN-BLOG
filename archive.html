@@ -107,7 +107,7 @@ permalink: /posts/
 	
 {% for month in postsByMonth %}
 <h2>{{ month.name }}</h2>
-<br/>
+<hr class="major"/>
 {% for post in month.items %}
 	<div class="col-6 col-12-medium">
 			<span class="image left" style="margin: 0 0 0 0;"><img src="{{post.thumbnail_path}}" alt="" /></span>
