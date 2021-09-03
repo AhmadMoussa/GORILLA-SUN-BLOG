@@ -117,8 +117,8 @@ permalink: /posts/
 					<strong>{{ post.date | date: "%m/%d/%Y" }}</strong>
 					<br/>
 					{{ post.description }}
-					{% if post.tags.size > 0 %}
-					  Tag{% if post.tags.size > 1 %}s{% endif %}:
+					{% if post.categories.size > 0 %}
+					  Tag{% if post.categories.size > 1 %}s{% endif %}:
 					  {{ post.categories | sort | join: ", " }}
 					{% endif %}
 				</div>
@@ -141,8 +141,8 @@ permalink: /posts/
 					<strong>{{ post.date | date: "%m/%d/%Y" }}</strong>
 					<br/>
 					{{ post.description }}
-					{% if post.tags.size > 0 %}
-					  Tag{% if post.tags.size > 1 %}s{% endif %}:
+					{% if post.categories.size > 0 %}
+					  Tag{% if post.categories.size > 1 %}s{% endif %}:
 					  {{ post.categories | sort | join: ", " }}
 					{% endif %}
 				</div>
