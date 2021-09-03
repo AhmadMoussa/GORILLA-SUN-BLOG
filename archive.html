@@ -105,9 +105,9 @@ permalink: /posts/
 <div class="row gtr-200">
 {% assign postsByMonth = site.posts | group_by_exp:"post", "post.date | date: '%B %Y'" %}	
 	
-{% for month in postsByMonth limit:2 %}
+{% for month in postsByMonth %}
 <h2>{{ month.name }}</h2>
-
+<br/>
 {% for post in month.items %}
 	<div class="col-6 col-12-medium">
 			<span class="image left" style="margin: 0 0 0 0;"><img src="{{post.thumbnail_path}}" alt="" /></span>
