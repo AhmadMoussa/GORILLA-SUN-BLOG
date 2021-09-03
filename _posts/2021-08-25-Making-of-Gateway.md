@@ -3,7 +3,7 @@ title: Making of&#58; Gateway
 author: Ahmad Moussa
 categories:
   - p5js
-description: An in depth tutorial on recreating beesandbombs' hexagonal sketch
+description: An in depth tutorial on recreating a beesandbombs' sketch
 thumbnail_path: https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif
 published: true
 ---
