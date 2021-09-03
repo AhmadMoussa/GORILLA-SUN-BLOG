@@ -106,10 +106,10 @@ permalink: /posts/
 		
 		{% for post in site.posts %}
 			<a href="https://gorillasun.de{{ post.url }}">
-				<div class="col-4 col-12-medium">
+				<div class="col-6 col-12-medium">
 					<span class="image fit" ><img src="{{post.thumbnail_path}}" alt="" /></span>
 				</div>
-				<div class="col-4 col-12-medium">
+				<div class="col-6 col-12-medium">
 						<h4>{{post.title}} - {{ post.date | date_to_long_string  }}</h4>
 				</div>
 			</a>
