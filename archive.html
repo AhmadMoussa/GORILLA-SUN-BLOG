@@ -105,43 +105,36 @@ permalink: /posts/
 <div class="row gtr-200">
 
 	<div class="col-6 col-12-medium">
-		{% for post in site.posts %}
-			{% assign remainder = forloop.index | modulo: 2 %}
-			{% if remainder == 0 %}
-			<div class='box'>	
-				<div class="row gtr-200">
-					<div class="col-6 col-12-small">
-							<span class="image fit" ><img src="{{post.thumbnail_path}}" alt="" /></span>
-					</div>
-					<div class="col-6 col-12-small">
-						<a href="https://gorillasun.de{{ post.url }}">
-							<h4>{{post.title}} - {{ post.date | date_to_long_string  }}</h4>
-						</a>
-					</div>
+		<div class='box'>	
+			<div class="row gtr-200">
+				<div class="col-6 col-12-small">
+						<span class="image fit" ><img src="{{post.thumbnail_path}}" alt="" /></span>
+				</div>
+				<div class="col-6 col-12-small">
+					<a href="https://gorillasun.de{{ post.url }}">
+						<h4>{{post.title}} - {{ post.date | date_to_long_string  }}</h4>
+					</a>
 				</div>
 			</div>
-			{% endif %}
-		{% endfor %}
+		</div>
 	</div>
 	
+	{% continue %}
+	
 	<div class="col-6 col-12-medium">
-		{% for post in site.posts %}
-			{% assign remainder = forloop.index | modulo: 2 %}
-			{% if remainder == 1 %}
-			<div class='box'>	
-				<div class="row gtr-200">
-					<div class="col-6 col-12-small">
-							<span class="image fit" ><img src="{{post.thumbnail_path}}" alt="" /></span>
-					</div>
-					<div class="col-6 col-12-small">
-						<a href="https://gorillasun.de{{ post.url }}">
-							<h4>{{post.title}} - {{ post.date | date_to_long_string  }}</h4>
-						</a>
-					</div>
+		<div class='box'>	
+			<div class="row gtr-200">
+				<div class="col-6 col-12-small">
+						<span class="image fit" ><img src="{{post.thumbnail_path}}" alt="" /></span>
+				</div>
+				<div class="col-6 col-12-small">
+					<a href="https://gorillasun.de{{ post.url }}">
+						<h4>{{post.title}} - {{ post.date | date_to_long_string  }}</h4>
+					</a>
 				</div>
 			</div>
-			{% endif %}
-		{% endfor %}
+		</div>
 	</div>
 </div>
+{% endfor %}
 </section>
