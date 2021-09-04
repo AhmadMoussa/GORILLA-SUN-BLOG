@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: This blog post will explain how to code up a Flow Field in Processing.
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/fieldColorDashedShortnu.png
+thumbnail_path: https://media.giphy.com/media/3o6Mb4Uq17JV4euF8Y/giphy.mp4?cid=ecf05e479zx85f37aub7sa6knjve1wv4is66sq2iuqpqrbwe&rid=giphy.mp4&ct=g
 published: true
 ---
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I/fieldColorDashedShort58.png" alt="" /></span>
