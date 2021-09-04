@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
   - tutorial
-description: An in depth tutorial on recreating a beesandbombs' sketch
+description: Join me in this article, an in depth tutorial on recreating a beesandbombs' sketch! We'll have a closer look at seamlessly looping points and creating infinitely expanding patterns. We'll do this using p5js and make heavy use of the map function!
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/Gateway.mp4
 published: true
 ---
