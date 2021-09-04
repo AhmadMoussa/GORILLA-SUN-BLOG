@@ -5,7 +5,7 @@ categories:
   - p5js
   - tutorial
 description: Step-by-step guide to coding up a sketch that I submitted for processing's 20-th anniversary fundraiser. "Gzork"
-thumbnail_path: https://gorillasun.de/assets/images/2021-21-12-Making-of-Gzork/Gzork2.gif
+thumbnail_path: https://gorillasun.de/assets/images/thumbnails/gzork.mp4
 published: true
 ---
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-21-12-Making-of-Gzork/Gzork2.gif" alt="" /></span>
