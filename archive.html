@@ -150,11 +150,13 @@ permalink: /posts/
 {% for post in site.posts %}
 	
 	<div class="col-6 col-12-medium">
+		<a href="https://gorillasun.de{{ post.url }}" class="image">
 		<span class="image left" style="margin: 0 0 0 0;">
 			<video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; " draggable="true">
 				<source src="{{ post.thumbnail_path }}" type="video/mp4">
 			</video>	
 		</span>
+		</a>
 
 		<a href="https://gorillasun.de{{ post.url }}">
 			<h4 style="margin: 0.5em 0 0 0;">{{post.title}}</h4>
@@ -167,11 +169,13 @@ permalink: /posts/
 	{% continue %}
 	
 	<div class="col-6 col-12-medium">
+		<a href="https://gorillasun.de{{ post.url }}" class="image">
 		<span class="image left" style="margin: 0 0 0 0;">
 			<video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em;" draggable="true">
 				<source src="{{ post.thumbnail_path }}" type="video/mp4">
 			</video>	
 		</span>	
+		</a>
 
 
 		<a href="https://gorillasun.de{{ post.url }}">
