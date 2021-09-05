@@ -170,7 +170,7 @@ permalink: /posts/
 	<div class="col-6 col-12-medium">
 		{% for post in site.posts %}
 			{% assign remainder = forloop.index | modulo: 2 %}
-			{% if remainder == 0 %}
+			{% if remainder == 1 %}
 				<div class="image left" style="margin: 0 0 0 0;">
 					<video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; " draggable="true">
 						<source src="{{ post.thumbnail_path }}" type="video/mp4">
