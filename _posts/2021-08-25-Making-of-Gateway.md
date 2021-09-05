@@ -9,7 +9,7 @@ thumbnail_path: https://gorillasun.de/assets/images/thumbnails/Gateway.mp4
 published: true
 ---
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.webm" alt="" /></span>
 
 <h2>Hacking a Beesandbombs Sketch</h2>
 
