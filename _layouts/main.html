@@ -119,6 +119,13 @@
 			<script src="https://gorillasun.de/assets/js/main.js"></script>
 			<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101299145);</script>
 			<script async src="//static.getclicky.com/js"></script>
+		<script>
+			for (video of document.getElementsByTagName("video")) {
+			     video.setAttribute("playsinline", "");
+			     video.setAttribute("muted", "");
+			     video.play();
+			}
+		</script>
 
 	</body>
 </html>
