@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: This is one of my favorite tricks. Albeit being very simple, visually it looks very impressive.
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/galacticdisc.mp4
+thumbnail_path: https://gorillasun.de/assets/images/thumbnails/galacticdisc.webm
 published: true
 ---
 
