@@ -5,11 +5,11 @@ categories:
   - p5js
   - tutorial
 description: Join me in this article, an in depth tutorial on recreating a beesandbombs' sketch! We'll have a closer look at seamlessly looping points and creating infinitely expanding patterns. We'll do this using p5js and make heavy use of the map function!
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/Gateway.mp4
+thumbnail_path: https://gorillasun.de/assets/images/thumbnails/gateway.webm
 published: true
 ---
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.webm" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/Gateway.webm" alt="" /></span>
 
 <h2>Hacking a Beesandbombs Sketch</h2>
 
