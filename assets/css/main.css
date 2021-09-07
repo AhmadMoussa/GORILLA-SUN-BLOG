@@ -1193,6 +1193,12 @@ input[type="radio"] + label:before {
     border-radius: 0;
     padding: 0; }
 
+.boxtoo {
+  border-radius: 0.375em;
+  border: solid 1px rgba(210, 215, 217, 0.75);
+  margin-bottom: 2em;
+  padding: 0.5em; }
+
 /* Icon */
 .icon {
   text-decoration: none;
