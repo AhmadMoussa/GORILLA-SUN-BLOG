@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: Sliders are a wonderful tool to add some interactivity to your sketches. Here's everything you need to know.
-thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
+thumbnail_path: https://gorillasun.de/assets/images/thumbnails/giphy.webm
 published: true
 ---
 
