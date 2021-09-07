@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - P5JS
 description: Delve with me into the wonderful world of P5JS. Procedural and generative art are becoming a lot more popular these days, so why not learn how to make some?
-thumbnail_path: https://gorillasun.de/assets/images/2021-01-26-Sketch-from-Scratch-1-Colorful-checkerboard-in-P5JS/out.gif
+thumbnail_path: https://gorillasun.de/assets/images/thumbnails/first.webm
 published: true
 ---
 
