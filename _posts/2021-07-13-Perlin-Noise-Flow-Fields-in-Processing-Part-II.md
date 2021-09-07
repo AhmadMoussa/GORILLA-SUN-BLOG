@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: Part 2 of creating perlin noise flow fields in Processing.
-thumbnail_path: https://gorillasun.de/assets/images/2021-07-13-Perlin-Noise-Flow-Fields-in-Processing-Part-II/fieldColorDashedShort62.png
+thumbnail_path: https://gorillasun.de/assets/images/thumbnails/flowfield22.webm
 published: true
 ---
 
