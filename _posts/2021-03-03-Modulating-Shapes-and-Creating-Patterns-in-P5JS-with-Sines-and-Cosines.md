@@ -1,5 +1,5 @@
 ---
-title: Modulating Shapes and Creating Patterns in P5JS with Sines and Cosines
+title: Creating Patterns with Grids and Sine Waves in P5
 author: Ahmad Moussa
 categories:
   - p5js
