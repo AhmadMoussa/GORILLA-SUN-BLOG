@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - cryptoart
 description: This blog post shows you how to get started with tezos and minting your first NFT on hicetnunc.
-thumbnail_path: https://media.giphy.com/media/4GRj3pwoAJSwg/giphy.gif
+thumbnail_path: https://gorillasun.de/assets/images/thumbnails/donald.webm
 published: true
 ---
 
