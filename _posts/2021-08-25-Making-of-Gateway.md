@@ -5,7 +5,7 @@ categories:
   - p5js
   - tutorial
 description: An in depth tutorial on recreating a beesandbombs' sketch! We'll have a closer look at seamlessly looping points and creating infinitely expanding patterns!
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/Gateway.webm
+thumbnail_path: https://gorillasun.de/assets/images/thumbnails/Gateway.gif
 published: true
 ---
 
