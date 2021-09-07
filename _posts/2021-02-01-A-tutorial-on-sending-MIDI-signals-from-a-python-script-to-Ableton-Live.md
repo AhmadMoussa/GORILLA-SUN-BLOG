@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - ableton
 description: Sending MIDI signals from an external python script to Ableton is easy but requires a little bit of setup, which I'll guide you through in this blog post.
-thumbnail_path: https://media.giphy.com/media/HUlRqqImjJAHP7jtfa/giphy.gif
+thumbnail_path: https://gorillasun.de/assets/images/thumbnails/MIDI.webm
 ---
 <div style="width:100%;height:0;padding-bottom:82%;position:relative;"><iframe src="https://giphy.com/embed/HUlRqqImjJAHP7jtfa" width="100%" height="100%" style="position:absolute; pointer-events:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
 
