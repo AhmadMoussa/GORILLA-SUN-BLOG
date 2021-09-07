@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - ableton
 description: Writing interesting chord progressions can be difficult, but arming yourself with a little bit of music theory and creativity you'll be able to break out of any type musical rut.
-thumbnail_path: https://media.giphy.com/media/QuP0gQGacZPocuGvaw/giphy.gif
+thumbnail_path: https://gorillasun.de/assets/images/thumbnails/chords.webm
 ---
 <span class="image left"><img src="https://gorillasun.de/assets/images/thumbnails/2021-02-05-10-tips-to-spice-up-your-chord-progressions.png" alt="" /></span>
 
