@@ -7,7 +7,7 @@ description: The idea of procedurally generated music is interesting, in this ar
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/musicmachine.webm
 ---
 
-<img class="image right" src="https://gorillasun.de/assets/images/thumbnails/musicmachine.webm"></img>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/thumbnails/musicmachine.webm" alt="" /></span>
 
 <blockquote>“One of my long-term interests has been the invention of ‘machines’ and ‘systems’ that could produce musical and visual experiences… [T]he point of them was to make music with materials and processes I specified, but in combinations and interactions that I did not.” — From “Generative Music” in A Year With Swollen Appendices</blockquote>
 
