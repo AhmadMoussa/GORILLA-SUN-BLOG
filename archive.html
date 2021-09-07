@@ -159,7 +159,7 @@ permalink: /posts/
 		</a>
 		<strong>{{ post.date | date: "%m/%d/%Y" }}</strong>
 		<br/>
-		{{ post.description }}
+		<div style="text-overflow: ellipsis;">{{ post.description }}</div>
 	</div>
 	
 {% continue%}
@@ -175,7 +175,7 @@ permalink: /posts/
 		</a>
 		<strong>{{ post.date | date: "%m/%d/%Y" }}</strong>
 		<br/>
-		{{ post.description }}
+		<div style="text-overflow: ellipsis;">{{ post.description }}</div>
 	</div>
 </div>
 {% endfor %}
