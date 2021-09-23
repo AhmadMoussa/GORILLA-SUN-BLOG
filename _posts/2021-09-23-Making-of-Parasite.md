@@ -621,5 +621,79 @@ function draw() {
   }
 }
 </script>
-
 <p></p>
+
+
+<h2><a name='perlinnoiseloop'></a>Squiggly Perlin Noise Movement</h2>
+One last thing I'd like to touch upon is how you could add a little more interesting motion to the sketch. It's a very simple modification:
+
+<pre><code>angleOffset = noise(x1/50)*TAU
+for (a = t + angleOffset; a < TAU + t + angleOffset; a += div) {
+// ... 
+}
+</code></pre>
+
+We simply add this additional modifier to the loop that determines the angle of rotation of the wireframe joints. What are we actually doing here? We are taking the variable x1 of each point and feed it to the noise function. The noise function gives an output in the range [0, 1] which we multiply by TAU to get a meaningful angle. And since x1 is oscillating between two values over and over again, this additionaly noisy value that we add to the angle also loops seamlessly!
+
+The entire code would look like what follows:
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  w = min(windowWidth, windowHeight);
+  createCanvas(w, w);
+
+  off = 50;
+  spc = 15;
+  strokeWeight(4);
+}
+
+prevx1 = 0;
+prevx2 = 0;
+prevrad = 0;
+function draw() {
+  background(255,0,0,80);
+
+  t = frameCount / 50;
+  for (x = off; x < w - off; x += spc) {
+    modifier = x * 5;
+    offsetAmount = 50;
+
+    x1 = x + offsetAmount * sin(modifier + t);
+    x2 = x - offsetAmount * sin(modifier + t);
+
+    d = dist(x1, x2, w / 2, w / 2);
+    dmap = map(d, 0, w / 2 + off / 2, 1, 0);
+    strokeWeight(dmap * 30);
+
+    x1 = x + offsetAmount * sin(modifier + t) * dmap;
+    x2 = x - offsetAmount * sin(modifier + t) * dmap;
+
+    point(x1, x2);
+
+    rad = 40 * dmap;
+    div = TAU / 4;
+    
+    angleOffset = noise(x1*0.01)*TAU
+    for (a = t + angleOffset; a < TAU + t + angleOffset; a += div) {
+      strokeWeight(5 * dmap);
+      px = x1 + rad * cos(a);
+      py = x2 + rad * sin(a);
+
+      point(px, py);
+
+      prevx = x1 + rad * cos(a + div);
+      prevy = x2 + rad * sin(a + div);
+
+      strokeWeight(1);
+      line(px, py, prevx, prevy);
+    }
+
+    prevx1 = x1;
+    prevx2 = x2;
+    prevrad = rad;
+  }
+}
+</script>
+<p></p>
+
+And that's pretty much everything that went into making this little squiggly sketch. If you enjoyed reading this, considering sharing this tutorial with your friends! Otherwise, happy sketching and cheers!
