@@ -55,10 +55,10 @@ function draw(){
 </script>
 <p></p>
 
-Points along the diagonal can simply be drawn with a single for loop. The points' x and y coordinates will both be set to the value of x. Also as usual, we have an offset parameter 'off' and a spacing parameter 'spc' that we declare in the setup function to control how our for loop behaves. Try changing them and see how the drawn points appear!
+Points along the diagonal can simply be drawn with a single for loop. The points' x and y coordinates will both be set to the value of x. Also as usual, we have an offset parameter 'off' and a spacing parameter 'spc' that we declare in the setup function to determine from where to where our for loop spans. Try changing them and see how the drawn points appear!
 
 <h2><a name='wiggle'></a>Making the points wiggle</h2>
-Wiggling can generally be achieved with a sine wave, which we'll use to oscillate the position of the points:
+Wiggling motion can generally be achieved with a sine wave, which we'll use to oscillate the position of the points:
 
 <pre><code>t = frameCount/50;
 
@@ -237,9 +237,7 @@ function draw(){
 We simply recalculate x1 and x2 but also multiply by the dmap parameter. Since it is in the range of [0 - 1], if it closer to the center the value will be closer to 1 and we're oscillating the point near it's max offset amount. If it's closer to 0, we're moving the point side to side only at a fraction of it's max range.
 
 <h2><a name='joints'></a>Positioning Wireframe Joints</h2>
-Calling it a wireframe is a generous description. Since we're essentially still in 2D this part of the sketch will simply give the illusion of being 3D.
-
-For now we'll simply position some dots equidistantly on a circle that spans around each of the dots that we've already positioned so far:
+Calling it a wireframe is a generous description. Since we're essentially still in 2D this part of the sketch will simply give the illusion of being 3D. For now we'll simply position some dots equidistantly on a circle that spans around each of the dots that we've already positioned so far:
 
 <pre><code>rad = 40*dmap;
 strokeWeight(5*dmap)
@@ -299,13 +297,12 @@ function draw(){
 </script>
 <p></p>
 
-Neat right? We already have some very interesting motion going on!
+Neat right? We already have some very interesting motion going on! Here we simply plugged the frameCount value into the loop that determines the angle of the little points around the larger points, hence making them rotate.
 
 <h2><a name='connections'></a>Drawing the wireframe connections</h2>
 First we'll draw the lines that connect the rotating points:
 
-<pre><code>
-rad = 40*dmap;
+<pre><code>rad = 40*dmap;
 for(a = t; a< TAU+t; a+=TAU/3){
   strokeWeight(5*dmap)
   px = x1 + rad*cos(a);
@@ -323,8 +320,7 @@ for(a = t; a< TAU+t; a+=TAU/3){
 
 We can simply do so by offsetting the angle and drawing a line between these two points. More neatly we can write it like this:
 
-<pre><code>
-rad = 40*dmap;
+<pre><code>rad = 40*dmap;
 div = TAU/3
 for(a = t; a< TAU+t; a+=div){
   strokeWeight(5*dmap)
@@ -636,6 +632,7 @@ for (a = t + angleOffset; a < TAU + t + angleOffset; a += div) {
 We simply add this additional modifier to the loop that determines the angle of rotation of the wireframe joints. What are we actually doing here? We are taking the variable x1 of each point and feed it to the noise function. The noise function gives an output in the range [0, 1] which we multiply by TAU to get a meaningful angle. And since x1 is oscillating between two values over and over again, this additionaly noisy value that we add to the angle also loops seamlessly!
 
 The entire code would look like what follows:
+
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
 function setup() {
