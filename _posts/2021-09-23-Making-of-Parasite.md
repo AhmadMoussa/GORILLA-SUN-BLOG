@@ -7,14 +7,12 @@ description: A step-by-step tutorial to recreating my parasite sketch, which inv
 thumbnail_path: https://gorillasun.de/assets/images/gifs/parasite/parasite.mp4
 published: true
 ---
-
-<p></p>
-
 <div class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
   <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
     <source src="https://gorillasun.de/assets/images/gifs/parasite/parasite.mp4" type="video/mp4">
   </video>	
 </div>
+<p></p>
 
 1. <a href='#diag'>Points along the Diagonal</a>
 2. <a href='#wiggle'>Making the Points Wiggle</a>
