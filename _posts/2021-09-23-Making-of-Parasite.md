@@ -3,7 +3,7 @@ title: Making of&#58; Parasite
 author: Ahmad Moussa
 categories:
   - p5js
-description: In this post I show you how to make my sketch parasite
+description: A step-by-step tutorial to recreating my parasite sketch, which involves coding all kinds of squiggly movement!
 thumbnail_path: https://gorillasun.de/assets/images/gifs/parasite/parasite.mp4
 published: true
 ---
