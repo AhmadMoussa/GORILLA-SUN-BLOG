@@ -4,11 +4,11 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: In this post I show you how to make my sketch parasite
-thumbnail_path: https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif
+thumbnail_path: https://gorillasun.de/assets/images/gifs/parasite/parasite.mp4
 published: true
 ---
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Parasite/parasite.gif" alt="" /></span>
+<span class="image fit"><img src="https://gorillasun.de/assets/images/gifs/parasite/parasite.mp4" alt="" /></span>
 
 1. <a href='#diag'>Points along the Diagonal</a>
 2. <a href='#wiggle'>Making the Points Wiggle</a>
