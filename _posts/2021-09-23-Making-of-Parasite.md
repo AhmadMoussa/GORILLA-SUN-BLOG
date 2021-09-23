@@ -17,6 +17,7 @@ published: true
 5. <a href='#fade'>Fading Strokes in and out</a>
 6. <a href='#offset'>Offsetting every other loop</a>
 7. <a href='#aesthetic'>Aesthetic Touches</a>
+8. <a href='#prln'>Squiggly Perlin Noise Movement</a>
 
 <h2><a name='equi'></a>Points along the Diagonal</h2>
 As always, let's start with some boilerplate stuff:
@@ -620,7 +621,7 @@ function draw() {
 <p></p>
 
 
-<h2><a name='perlinnoiseloop'></a>Squiggly Perlin Noise Movement</h2>
+<h2><a name='equi'></a>Squiggly Perlin Noise Movement</h2>
 One last thing I'd like to touch upon is how you could add a little more interesting motion to the sketch. It's a very simple modification:
 
 <pre><code>angleOffset = noise(x1/50)*TAU
@@ -693,4 +694,4 @@ function draw() {
 </script>
 <p></p>
 
-And that's pretty much everything that went into making this little squiggly sketch. If you enjoyed reading this, considering sharing this tutorial with your friends! Otherwise, happy sketching and cheers!
+And that's pretty much everything that went into making this little squiggly sketch. There are a few more things that I did for my Centripede sketches that differentiate it from this (which I probably will talk about in a future blog post), but roughly, it's this code that I built upon. If you enjoyed reading this, considering sharing this tutorial with your friends! Otherwise, happy sketching and cheers!
