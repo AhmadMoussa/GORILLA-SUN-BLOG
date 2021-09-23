@@ -12,6 +12,7 @@ published: true
   <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
     <source src="https://gorillasun.de/assets/images/gifs/parasite/parasite.mp4" type="video/mp4">
   </video>	
+
 </span>
 
 1. <a href='#diag'>Points along the Diagonal</a>
