@@ -5,7 +5,7 @@ categories:
   - p5js
 description: In this post I show you how to make my sketch parasite
 thumbnail_path: https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif
-published: false
+published: true
 ---
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Parasite/parasite.gif" alt="" /></span>
