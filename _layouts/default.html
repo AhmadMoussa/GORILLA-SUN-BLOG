@@ -78,12 +78,12 @@
 
 									<p></p>
 
-									<div class="row">
+									<div class="row gtr-100">
 										
-										<div class="col-4">
+										<div class="col-6 col-12-medium">
 											{% if page.previous.url %}
 											<ul class="actions">
-												<li><a href="{{page.previous.url}}" class="button">Next: {{page.previous.title}}</a></li>
+												<li><a href="{{page.previous.url}}" class="button">Previous: {{page.previous.title}}</a></li>
 											</ul>
 											{% endif %}
 											
@@ -92,14 +92,13 @@
 												
 											
 										</div>
-										<div class="col-4">
-										</div>
-										<div class="col-4" style='text-align: right;'>
-											<div class="box">
-												{% if page.next.url %}
-													<a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
-												{% endif %}
-											</div>
+									
+										<div class="col-6 col-12-medium" style='text-align: right;'>
+											{% if page.previous.url %}
+											<ul class="actions">
+												<li><a href="{{page.next.url}}" class="button">Next: {{page.next.title}}</a></li>
+											</ul>
+											{% endif %}
 										</div>
 									</div>
 
