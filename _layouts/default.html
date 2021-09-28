@@ -78,32 +78,17 @@
 
 									<p></p>
 
-									<div class="row gtr-100">
-										
-										<div class="col-4">
-											{% if page.previous.url %}
-											<ul class="actions">
-												<li><a href="{{page.previous.url}}" class="button">Previous: {{page.previous.title}}</a></li>
-											</ul>
-											{% endif %}
-											
-												
-											<!-- <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a> -->
-												
-											
-										</div>
-										
-										<div class="col-4">
-										</div>
 									
-										<div class="col-4">
+										<ul class="actions fit">
 											{% if page.previous.url %}
-											<ul class="actions">
-												<li><a href="{{page.next.url}}" class="button">Next: {{page.next.title}}</a></li>
-											</ul>
+												<li><a href="{{page.previous.url}}" class="button fit">Previous: {{page.previous.title}}</a></li>
 											{% endif %}
-										</div>
-									</div>
+									
+											{% if page.previous.url %}
+												<li><a href="{{page.next.url}}" class="button fit">Next: {{page.next.title}}</a></li>
+											{% endif %}
+										</ul>
+								
 
 									<p></p>
 									
