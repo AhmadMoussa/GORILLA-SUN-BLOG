@@ -18,12 +18,12 @@ published: true
 2. <a href='#wiggle'>Making the Points Wiggle</a>
 3. <a href='#size'>Varying point Size</a>
 4. <a href='#atten'>Attenuating the Movement</a>
-5. <a href='#fade'>Fading Strokes in and out</a>
-6. <a href='#offset'>Offsetting every other loop</a>
-7. <a href='#aesthetic'>Aesthetic Touches</a>
+5. <a href='#joints'>Positioning Wireframe Joints</a>
+6. <a href='#draw'>Drawing the wireframe connections</a>
+7. <a href='#final'>Final Touches</a>
 8. <a href='#prln'>Squiggly Perlin Noise Movement</a>
 
-<h2><a name='equi'></a>Points along the Diagonal</h2>
+<h2><a name='diag'></a>Points along the Diagonal</h2>
 As always, let's start with some boilerplate stuff:
 
 <pre class="javascript"><code>function setup() {
@@ -304,7 +304,7 @@ function draw(){
 
 Neat right? We already have some very interesting motion going on! Here we simply plugged the frameCount value into the loop that determines the angle of the little points around the larger points, hence making them rotate.
 
-<h2><a name='connections'></a>Drawing the wireframe connections</h2>
+<h2><a name='draw'></a>Drawing the wireframe connections</h2>
 First we'll draw the lines that connect the rotating points:
 
 <pre><code>rad = 40*dmap;
@@ -625,7 +625,7 @@ function draw() {
 <p></p>
 
 
-<h2><a name='equi'></a>Squiggly Perlin Noise Movement</h2>
+<h2><a name='prln'></a>Squiggly Perlin Noise Movement</h2>
 One last thing I'd like to touch upon is how you could add a little more interesting motion to the sketch. It's a very simple modification:
 
 <pre><code>angleOffset = noise(x1/50)*TAU
