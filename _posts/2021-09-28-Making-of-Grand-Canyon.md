@@ -634,10 +634,6 @@ function setup() {
     row[randomRowIndex] = 1;
     bools.push(row);
   }
-
-  strokeWeight(1);
-  frameRate(25);
-  createLoop({ duration: 8, gif: true });
 }
 
 function redrawGrid(t) {
