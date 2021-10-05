@@ -700,12 +700,7 @@ function draw() {
       }
     }
   }
-
-  t = t;
-  noiseMax = 5;
-  x = map(cos(t), -1, 1, 0, noiseMax);
-  y = map(sin(t), -1, 1, 0, noiseMax);
-  n = noise(x, y);
+  
   redrawGrid(t);
   //noLoop();
 }
