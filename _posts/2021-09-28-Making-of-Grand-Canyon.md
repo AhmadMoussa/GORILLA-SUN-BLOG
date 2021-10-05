@@ -5,7 +5,7 @@ categories:
   - p5js
 description: An aesthetically minimalistic sketch that is based on a boolean grid and perlin noise
 thumbnail_path: https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif
-published: false
+published: true
 ---
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Parasite/parasite.gif" alt="" /></span>
@@ -478,6 +478,7 @@ function draw() {
         point(i * spacing + padding, j * spacing + padding);
 
         if(random()>0.9 && !below && j>0){
+          strokeWeight(1.5)
           line(i * spacing + padding, j * spacing + padding,
               i * spacing + padding, (j-1) * spacing + padding)
         }
@@ -582,6 +583,7 @@ function draw() {
         point(i * spacing + padding, j * spacing + padding);
 
         if(random()>0.9 && !below && j>0){
+          strokeWeight(1.5)
           line(i * spacing + padding, j * spacing + padding,
               i * spacing + padding, (j-1) * spacing + padding)
         }
@@ -589,9 +591,11 @@ function draw() {
     }
   }
 
-  t =frameCount/50
+  t =frameCount/100
   redrawGrid(t)
   //noLoop();
 }
 </script>
 <p></p>
+
+
