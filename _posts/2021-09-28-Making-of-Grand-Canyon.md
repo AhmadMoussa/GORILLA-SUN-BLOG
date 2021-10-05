@@ -415,3 +415,187 @@ function draw() {
 }
 </script>
 <p></p>
+
+
+<h2>Animating the rain drops</h2>
+
+First we'll want to comment out the noLoop() statement in our code. Then we'll want to add a background(255) to the top of the draw loop. If we ran our sketch this way, you'll notice that the location of the rain drops will be randomized each frame, making it appear as if they are falling with a high speed. You'll also notice that the randomly placed rectangles (boulders), will jump around erratically, to fix that we can simply replace the random() statement in the if condition with noise(), for some pseudo persistence:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  w = min(windowWidth, windowHeight);
+  wx = w * 1;
+  wy = w * 1;
+  createCanvas(wx, wy);
+
+  padding = 30;
+  spacing = 5;
+
+  bools = [];
+  for (x = padding; x < wx - padding; x += spacing) {
+    row = [];
+    for (y = padding; y < wy - padding; y += spacing) {
+      row.push(0);
+    }
+    randomRowIndex = int(noise(x*0.01,y*0.01)*row.length);
+    row[randomRowIndex] = 1;
+    bools.push(row);
+  }
+
+  strokeWeight(1)
+}
+
+prevI = 0
+prevJ = 0
+function draw() {
+  background(255)
+  for (i = 0; i < bools.length; i++) {
+    below = false
+    for (j = 0; j < bools[0].length; j++) {
+
+      if(bools[i][j]){
+        below=true
+        if(i>0){
+          strokeWeight(2)
+          line((i-1) * spacing + padding,
+               j * spacing + padding,
+              i * spacing + padding,
+               j * spacing + padding)
+
+          line((i-1) * spacing + padding,
+               j * spacing + padding,
+              prevI * spacing + padding,
+               prevJ * spacing + padding)
+        }
+        prevI = i
+        prevJ = j
+
+        if(noise(i,j)>0.7){
+          rect( (i-1) * spacing + padding,
+               j * spacing + padding, spacing)
+        }
+      }else{
+        strokeWeight(1)
+        point(i * spacing + padding, j * spacing + padding);
+
+        if(random()>0.9 && !below && j>0){
+          line(i * spacing + padding, j * spacing + padding,
+              i * spacing + padding, (j-1) * spacing + padding)
+        }
+      }
+    }
+  }
+
+  //noLoop();
+}
+</script>
+<p></p>
+  
+Next we'd like to animate the mountainscae, such that perlin noise path slides from right to left, as if we were somehow sitting inside of a car filming the view of distant mountains. Take a moment to think how you could achieve this.
+
+We've basically written our sketch in two parts, one that draws a boolean grid, where some entries are set to true, and another part that draws based on those locations. What if we were to redraw the underlying boolean grid and move those true entries by one spot to the left? Let's wrap the code that generates the grid in a function:
+
+<pre><code>function redrawGrid(t){
+  bools = [];
+  for (x = padding; x < wx - padding; x += spacing) {
+    row = [];
+    for (y = padding; y < wy - padding; y += spacing) {
+      row.push(0);
+    }
+    randomRowIndex = int(noise(x*0.01+t,y*0.01)*row.length);
+    row[randomRowIndex] = 1;
+    bools.push(row);
+  }
+}
+</code></pre>
+
+The function also takes as input a variable t that stands for time (or basically any other parameter that increases over time), this variable will be fed into the noise function's first input. Now we simply need to call this redrawGrid() function at the bottom of the draw loop:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  w = min(windowWidth, windowHeight);
+  wx = w * 1;
+  wy = w * 1;
+  createCanvas(wx, wy);
+
+  padding = 30;
+  spacing = 5;
+
+  bools = [];
+  for (x = padding; x < wx - padding; x += spacing) {
+    row = [];
+    for (y = padding; y < wy - padding; y += spacing) {
+      row.push(0);
+    }
+    randomRowIndex = int(noise(x*0.01,y*0.01)*row.length);
+    row[randomRowIndex] = 1;
+    bools.push(row);
+  }
+
+  strokeWeight(1)
+}
+
+function redrawGrid(t){
+  bools = [];
+  for (x = padding; x < wx - padding; x += spacing) {
+    row = [];
+    for (y = padding; y < wy - padding; y += spacing) {
+      row.push(0);
+    }
+    randomRowIndex = int(noise(x*0.01+t,y*0.01)*row.length);
+    row[randomRowIndex] = 1;
+    bools.push(row);
+  }
+}
+
+prevI = 0
+prevJ = 0
+function draw() {
+  background(255)
+  for (i = 0; i < bools.length; i++) {
+    below = false
+    for (j = 0; j < bools[0].length; j++) {
+
+      if(bools[i][j]){
+        below=true
+        if(i>0){
+          strokeWeight(2)
+          line((i-1) * spacing + padding,
+               j * spacing + padding,
+              i * spacing + padding,
+               j * spacing + padding)
+
+          line((i-1) * spacing + padding,
+               j * spacing + padding,
+              prevI * spacing + padding,
+               prevJ * spacing + padding)
+        }
+        prevI = i
+        prevJ = j
+
+        if(noise(i,j)>0.7){
+          rect( (i-1) * spacing + padding,
+               j * spacing + padding, spacing)
+        }
+      }else{
+        strokeWeight(1)
+        point(i * spacing + padding, j * spacing + padding);
+
+        if(random()>0.9 && !below && j>0){
+          line(i * spacing + padding, j * spacing + padding,
+              i * spacing + padding, (j-1) * spacing + padding)
+        }
+      }
+    }
+  }
+
+  t =frameCount/50
+  redrawGrid(t)
+  //noLoop();
+}
+</script>
+<p></p>
+  
+
