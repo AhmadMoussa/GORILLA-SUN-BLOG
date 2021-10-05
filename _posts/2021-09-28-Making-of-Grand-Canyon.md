@@ -617,11 +617,11 @@ This could probably be done in a more elaborate manner, but this little modifica
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
 function setup() {
   w = min(windowWidth, windowHeight);
-  wx = w * 0.8;
-  wy = w * 0.8;
+  wx = w * 1;
+  wy = w * 1;
   createCanvas(wx, wy);
 
-  padding = 50;
+  padding = 20;
   spacing = 5;
 
   bools = [];
