@@ -5,7 +5,7 @@ categories:
   - p5js
 description: An aesthetically minimalistic sketch that is based on a boolean grid and perlin noise
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/loopscape.mp4
-published: false
+published: true
 ---
 
 <div class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
