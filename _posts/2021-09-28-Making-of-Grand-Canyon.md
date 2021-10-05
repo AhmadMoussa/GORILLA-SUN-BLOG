@@ -5,13 +5,11 @@ categories:
   - p5js
 description: An aesthetically minimalistic sketch that is based on a boolean grid and perlin noise
 thumbnail_path: https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif
-published: false
+published: true
 ---
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Parasite/parasite.gif" alt="" /></span>
 
-<h2>Hacking a Beesandbombs Sketch</h2>
-We'll be using p5js to recreate the sketch, and put our own spin on it. We'll break the sketch up into digestible portions and work from there! Quick index goes here:
 
 1. <a href='#diag'>A Boolean Grid</a>
 2. <a href='#wiggle'>Adjustable canvas size</a>
