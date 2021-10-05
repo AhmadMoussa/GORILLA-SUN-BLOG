@@ -5,19 +5,21 @@ categories:
   - p5js
 description: An aesthetically minimalistic sketch that is based on a boolean grid and perlin noise
 thumbnail_path: https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif
-published: false
+published: true
 ---
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Parasite/parasite.gif" alt="" /></span>
+<div class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+    <source src="https://gorillasun.de/assets/images/thumbnails/loopscape.mp4" type="video/mp4">
+  </video>	
+</div>
 
 
 1. <a href='#diag'>A Boolean Grid</a>
 2. <a href='#wiggle'>Adjustable canvas size</a>
 3. <a href='#size'>Drawing the Grid</a>
-4. <a href='#atten'>Attenuating the Movement</a>
-5. <a href='#fade'>Fading Strokes in and out</a>
-6. <a href='#offset'>Offsetting every other loop</a>
-7. <a href='#aesthetic'>Aesthetic Touches</a>
+4. <a href='#atten'>Adding Detail</a>
+5. <a href='#fade'>Animating the mountains</a>
 
 
 <h2>A Boolean Grid</h2>
