@@ -14,15 +14,17 @@ published: false
   </video>	
 </div>
 
+This time around we'll code up the cute minimalistic sketch above! We'll have a look at some useful concepts upon which you can build a variety of different sketches. Quick index goes here:
 
-1. <a href='#diag'>A Boolean Grid</a>
-2. <a href='#wiggle'>Adjustable canvas size</a>
-3. <a href='#size'>Drawing the Grid</a>
-4. <a href='#atten'>Adding Detail</a>
-5. <a href='#fade'>Animating the mountains</a>
+1. <a href='#bool'>A Boolean Grid</a>
+2. <a href='#adjust'>Adjustable canvas size</a>
+3. <a href='#draw'>Drawing the Grid</a>
+4. <a href='#path'>Drawing a Connected Path</a>
+5. <a href='#detail'>Adding Detail</a>
+6. <a href='#animate'>Animating the Sketch</a>
 
 
-<h2>A Boolean Grid</h2>
+<h2><a name='bool'></a>A Boolean Grid</h2>
 We'll start off with creating a boolean grid. This won't make much sense at this point, but it's essentially what the entire sketch builds upon. In a nutshell, the grid will determine the positions into which we're allowed to draw:
 
 <pre><code>function setup() {
@@ -45,7 +47,7 @@ We'll start off with creating a boolean grid. This won't make much sense at this
 
 At this point I've covered grids countless times in my blog posts, and yet again we'll make use of one! Here we're creating a 2D array that we fill with zeroes. It's size in width and height are determined by the parameters that we specify beforehand: padding and spacing. I used to call these 'off' and 'spc' previously, but for sake of clarity these make a lot more sense. Padding is essentially the horizontal and vertical distance between the border of the canvas and the grid itself. Spacing is simply the distance between points in the grid.
 
-<h2>Adjustable canvas size</h2>
+<h2><a name='adjust'></a>Adjustable canvas size</h2>
 Before we go any further into the details of this sketch, I'd like to make an adjustment to the manner in which we create the grid. What if we would like to have a grid that is not square in shape? For instance we would like to have a wide aspect ratio or have a canvas with a portrait aspect ratio?
 
 We could do something like this:
@@ -102,7 +104,7 @@ function setup() {
 
 This doesn't draw anything yet but bear with me!
 
-<h2>Drawing the Grid</h2>
+<h2><a name='draw'></a>Drawing the Grid</h2>
 Now we've got the boolean grid, but we're not storing the location of the dots anywhere, we can however make use of the padding and spacing parameters as well as the dimensions of the grid to determine the positions:
 
 <pre><code>function draw(){
@@ -147,7 +149,7 @@ function draw(){
 </script>
 <p></p>
 
-<h2>Drawing a connected path through this grid</h2>
+<h2><a name='path'></a>Drawing a Connected Path</h2>
 The next thing we'd like to do, is drawing a connected path horizontally through this grid. We can do this by setting a random entry in each column to be true and then connecting these entries with lines. First things first, how do we set a random value in each column to true? We could do this during setup:
 
 <pre><code>bools = []
@@ -201,7 +203,7 @@ function draw() {
 </script>
 <p></p>
 
-Looks good! Next we'll want to connect these grid locations with a line:
+Looks good! Next we'll want to connect these grid locations with a line. For this we need to remember the location of the previous true entry in the grid, we can do this with some spare variables prevI and prevJ: 
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -326,7 +328,7 @@ function draw() {
 
 This looks much better. Also notice that I adjusted the strokeWeight of the line and the points as well as the spacing in between them. This way things look much neater, to me at least. Feel free to make some changes and @ me on Twitter!
 
-<h2>Adding Details</h2>
+<h2><a name='detail'></a>Adding Detail</h2>
 
 This is actually already the bulk of this sketch, but we can add a couple of ornaments to make things a little bit more interesting. For example adding a little rectangle here and there that looks like a boulder:
 
@@ -417,7 +419,7 @@ function draw() {
 <p></p>
 
 
-<h2>Animating the rain drops</h2>
+<h2><a name='animate'></a>Animating the Sketch</h2>
 
 First we'll want to comment out the noLoop() statement in our code. Then we'll want to add a background(255) to the top of the draw loop. If we ran our sketch this way, you'll notice that the location of the rain drops will be randomized each frame, making it appear as if they are falling with a high speed. You'll also notice that the randomly placed rectangles (boulders), will jump around erratically, to fix that we can simply replace the random() statement in the if condition with noise(), for some pseudo persistence:
 
@@ -600,4 +602,113 @@ function draw() {
 </script>
 <p></p>
 
+<h2><a name='loop'></a>Perfect Loop</h2>
+
+Well this is not a perfect loop per se, and it doesn't look perfect every time we run the sketch, but to some extent we can loop the horizontally scrolling slice by periodically resetting the increasing parameter fed to the noise function:
+
+<pre><code>randomRowIndex = int(
+  noise(((x + t * 100) % (wx - padding)) * 0.01, y * 0.01) * row.length
+);
+</code></pre>
+
+This could probably be done in a more elaborate manner, but this little modification is already doing a lot, and might be sufficient if you want to export a perfect loop. Just gotta rerun the sketch a couple of times:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  w = min(windowWidth, windowHeight);
+  wx = w * 0.8;
+  wy = w * 0.8;
+  createCanvas(wx, wy);
+
+  padding = 50;
+  spacing = 5;
+
+  bools = [];
+  for (x = padding; x < wx - padding; x += spacing) {
+    row = [];
+    for (y = padding; y < wy - padding; y += spacing) {
+      row.push(0);
+    }
+    randomRowIndex = int(noise(x * 0.01, y * 0.01) * row.length);
+    row[randomRowIndex] = 1;
+    bools.push(row);
+  }
+
+  strokeWeight(1);
+  frameRate(25);
+  createLoop({ duration: 8, gif: true });
+}
+
+function redrawGrid(t) {
+  bools = [];
+  for (x = padding; x < wx - padding; x += spacing) {
+    row = [];
+    for (y = padding; y < wy - padding; y += spacing) {
+      row.push(0);
+    }
+
+    randomRowIndex = int(
+      noise(((x + t * 100) % (wx - padding)) * 0.01, y * 0.01) * row.length
+    );
+    row[randomRowIndex] = 1;
+    bools.push(row);
+  }
+}
+
+prevI = 0;
+prevJ = 0;
+function draw() {
+  background(255);
+  t = frameCount / 50;
+
+  for (i = 0; i < bools.length; i++) {
+    below = false;
+    for (j = 0; j < bools[0].length; j++) {
+      if (bools[i][j]) {
+        below = true;
+        if (i > 0) {
+          strokeWeight(2);
+          line(
+            (i - 1) * spacing + padding,
+            j * spacing + padding,
+            i * spacing + padding,
+            j * spacing + padding
+          );
+
+          line(
+            (i - 1) * spacing + padding,
+            j * spacing + padding,
+            prevI * spacing + padding,
+            prevJ * spacing + padding
+          );
+        }
+        prevI = i;
+        prevJ = j;
+      } else {
+        strokeWeight(1);
+        point(i * spacing + padding, j * spacing + padding);
+
+        if (random() > 0.9 && !below && j > 0) {
+          line(
+            i * spacing + padding,
+            j * spacing + padding,
+            i * spacing + padding,
+            (j - 1) * spacing + padding
+          );
+        }
+      }
+    }
+  }
+
+  t = t;
+  noiseMax = 5;
+  x = map(cos(t), -1, 1, 0, noiseMax);
+  y = map(sin(t), -1, 1, 0, noiseMax);
+  n = noise(x, y);
+  redrawGrid(t);
+  //noLoop();
+}
+</script>
+<p></p>
 
