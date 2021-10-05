@@ -22,7 +22,7 @@ This time around we'll code up the cute minimalistic sketch above! We'll have a 
 4. <a href='#path'>Drawing a Connected Path</a>
 5. <a href='#detail'>Adding Detail</a>
 6. <a href='#animate'>Animating the Sketch</a>
-
+7. <a href='#loop'>Perfect Loop?</a>
 
 <h2><a name='bool'></a>A Boolean Grid</h2>
 We'll start off with creating a boolean grid. This won't make much sense at this point, but it's essentially what the entire sketch builds upon. In a nutshell, the grid will determine the positions into which we're allowed to draw:
