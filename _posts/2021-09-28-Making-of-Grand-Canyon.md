@@ -703,3 +703,120 @@ function draw() {
 </script>
 <p></p>
 
+
+A more elaborate way to do this would be by treating the grid drawn to the canvas as a sliding window that moves over a looping, much wider grid! 
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  w = min(windowWidth, windowHeight);
+  wx = w * 1;
+  wy = w * 0.8;
+  createCanvas(wx, wy);
+
+  padding = 20;
+  spacing = 5;
+
+  bools = [];
+  for (x = padding; x < wx - padding; x += spacing) {
+    row = [];
+    for (y = padding; y < wy - padding; y += spacing) {
+      row.push(0);
+    }
+    randomRowIndex = int(noise(x * 0.01, y * 0.01) * row.length);
+    row[randomRowIndex] = 1;
+    bools.push(row);
+  }
+
+  len = bools.length;
+  noiseArray = [];
+  fillNoiseArray();
+  
+  frameRate(25)
+  //createLoop({duration:12, gif:true})
+}
+
+function fillNoiseArray() {
+  for (x = padding; x < wx * 4; x += spacing) {
+    for (y = padding; y < wy - padding; y += spacing) {}
+
+    n = int(noise(x * 0.01, y * 0.01) * row.length);
+
+    noiseArray.push(n);
+
+    if (x > wx*2 && n == noiseArray[0]) {
+      break;
+    }
+  }
+}
+
+offset = 0;
+function redrawGrid(t) {
+  bools = [];
+  for (x = offset; x < len + offset; x++) {
+    row = [];
+    for (y = padding; y < wy - padding; y += spacing) {
+      row.push(0);
+    }
+
+    rowIndex = noiseArray[x%noiseArray.length];
+    row[rowIndex] = 1;
+    bools.push(row);
+  }
+
+  offset++;
+  text(bools.length, 10, 10);
+}
+
+prevI = 0;
+prevJ = 0;
+function draw() {
+  background(255);
+  t = frameCount / 50;
+
+  for (i = 0; i < bools.length; i++) {
+    below = false;
+    for (j = 0; j < bools[0].length; j++) {
+      if (bools[i][j]) {
+        below = true;
+        if (i > 0) {
+          strokeWeight(2);
+          line(
+            (i - 1) * spacing + padding,
+            j * spacing + padding,
+            i * spacing + padding,
+            j * spacing + padding
+          );
+
+          line(
+            (i - 1) * spacing + padding,
+            j * spacing + padding,
+            prevI * spacing + padding,
+            prevJ * spacing + padding
+          );
+        }
+        prevI = i;
+        prevJ = j;
+      } else {
+        strokeWeight(1);
+        point(i * spacing + padding, j * spacing + padding);
+
+        if (random() > 0.9 && !below && j > 0) {
+          line(
+            i * spacing + padding,
+            j * spacing + padding,
+            i * spacing + padding,
+            (j - 1) * spacing + padding
+          );
+        }
+      }
+    }
+  }
+
+  redrawGrid(t);
+  //noLoop();
+}
+</script>
+<p></p>
+  
+
