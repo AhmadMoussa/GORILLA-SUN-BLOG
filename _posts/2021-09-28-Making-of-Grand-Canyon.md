@@ -711,7 +711,7 @@ Here, we're treating the grid drawn to the canvas as a sliding window that moves
 function setup() {
   w = min(windowWidth, windowHeight);
   wx = w * 1;
-  wy = w * 0.8;
+  wy = w * 1;
   createCanvas(wx, wy);
 
   padding = 20;
@@ -733,7 +733,6 @@ function setup() {
   fillNoiseArray();
   
   frameRate(25)
-  //createLoop({duration:12, gif:true})
 }
 
 function fillNoiseArray() {
