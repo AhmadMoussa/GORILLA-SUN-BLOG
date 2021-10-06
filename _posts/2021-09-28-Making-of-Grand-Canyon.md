@@ -261,8 +261,7 @@ function draw() {
 
 Now you see, this doesn't look that nice to be honest. The peaks and troughs are all over the place. It would look much nicer if this path was a little smoother and controlled. We could do this by replacing the random selection of the row index with perlin noise:
 
-<pre><code>
-rez = 0.01
+<pre><code>rez = 0.01
 randomRowIndex = int(noise(x*rez,y*rez)*row.length);
 </code></pre>
 
@@ -332,21 +331,21 @@ This looks much better. Also notice that I adjusted the strokeWeight of the line
 
 This is actually already the bulk of this sketch, but we can add a couple of ornaments to make things a little bit more interesting. For example adding a little rectangle here and there that looks like a boulder:
 
-<pre><code>
-if(random()>0.9){
+<pre><code>if(random()>0.9){
   rect( (i-1) * spacing + padding,
         j * spacing + padding, spacing)
 }
 </code></pre>
 
 And some rain drops coming from the sky above the mountains. For this we'll need to check if we already drew the horizontal line, if we did we toggle the boolean variable 'below' to stop drawing rain drops:
-<pre><code>
-if(random()>0.9 && !below && j>0){
+
+<pre><code>if(random()>0.9 && !below && j>0){
   line(i * spacing + padding, j * spacing + padding,
       i * spacing + padding, (j-1) * spacing + padding)
 }
 </code></pre>
 
+And the code goes here:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -418,6 +417,7 @@ function draw() {
 </script>
 <p></p>
 
+This already makes for some nice little images, but we can take this further!
 
 <h2><a name='animate'></a>Animating the Sketch</h2>
 
@@ -495,7 +495,7 @@ function draw() {
 </script>
 <p></p>
   
-Next we'd like to animate the mountainscae, such that perlin noise path slides from right to left, as if we were somehow sitting inside of a car filming the view of distant mountains. Take a moment to think how you could achieve this.
+Next we'd like to animate the mountainscae, such that perlin noise path slides from right to left, as if we were somehow sitting inside of a car filming the view of the distant mountains. Take a moment to think how you could achieve this.
 
 We've basically written our sketch in two parts, one that draws a boolean grid, where some entries are set to true, and another part that draws based on those locations. What if we were to redraw the underlying boolean grid and move those true entries by one spot to the left? Let's wrap the code that generates the grid in a function:
 
