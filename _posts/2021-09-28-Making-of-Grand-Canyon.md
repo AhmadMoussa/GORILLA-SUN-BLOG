@@ -48,7 +48,7 @@ We'll start off with creating a boolean grid. This won't make much sense at this
 At this point I've covered grids countless times in my blog posts, and yet again we'll make use of one! Here we're creating a 2D array that we fill with zeroes. It's size in width and height are determined by the parameters that we specify beforehand: padding and spacing. I used to call these 'off' and 'spc' previously, but for sake of clarity these make a lot more sense. Padding is essentially the horizontal and vertical distance between the border of the canvas and the grid itself. Spacing is simply the distance between points in the grid.
 
 <h2><a name='adjust'></a>Adjustable canvas size</h2>
-Before we go any further into the details of this sketch, I'd like to make an adjustment to the manner in which we create the grid. What if we would like to have a grid that is not square in shape? For instance we would like to have a wide aspect ratio or have a canvas with a portrait aspect ratio?
+Before we go any further into the details of this sketch, I'd like to make an adjustment to the manner in which we create the grid. What if we would like to have a grid that is not square in shape? For instance we would like to have a wide aspect ratio or portrait aspect ratio?
 
 We could do something like this:
 <pre><code>w = min(windowWidth, windowHeight)
@@ -65,7 +65,7 @@ wy = w*0.9
 createCanvas(wx, wy);
 </code></pre>
 
-Neat right? I've been using this trick to have differently size images when posting to Twitter! And naturally we'll need to account for the different width and height of the canvas and modify the loop that creates the boolean grid:
+Neat right? I've been using this trick to get differently sized images when posting to Twitter! And naturally we'll need to account for the different width and height of the canvas and modify the loop that creates the boolean grid:
 
 <pre><code>bools = []
 for(x = padding; x<wx-padding; x+=spacing){
