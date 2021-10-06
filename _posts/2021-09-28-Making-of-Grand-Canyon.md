@@ -602,16 +602,17 @@ function draw() {
 </script>
 <p></p>
 
-<h2><a name='loop'></a>Perfect Loop</h2>
+This is awesome, now we have an endlessly looping mini mountainscape!
 
-Well this is not a perfect loop per se, and it doesn't look perfect every time we run the sketch, but to some extent we can loop the horizontally scrolling slice by periodically resetting the increasing parameter fed to the noise function:
+<h2><a name='loop'></a>Perfectly Looping Canyon</h2>
+The last thing I wanted to tackle, is making a perfectly loopable mountainscape. We can do so to some extent we can loop the horizontally scrolling slice by periodically resetting the increasing parameter fed to the noise function:
 
 <pre><code>randomRowIndex = int(
   noise(((x + t * 100) % (wx - padding)) * 0.01, y * 0.01) * row.length
 );
 </code></pre>
 
-This little hack is doing a lot, and might be sufficient if you want to export a perfect loop. You would just have to rerun the sketch a couple of times until the break off point is seamless. In other scenarios that one ridge is very prominent:
+This little hack is doing a lot, and might be sufficient if you want to export a perfect loop. You would just have to rerun the sketch a couple of times until the break off point is seamless. In other scenarios that one cut-off ridge might be very prominent:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -703,8 +704,10 @@ function draw() {
 </script>
 <p></p>
 
-If you're someone like me, the previous solution will not satisfy you. The next version below is the final version, where the loop is seamless every time.
-Here, we're treating the grid drawn to the canvas as a sliding window that moves over a looping, much wider grid! This wider grid is determined before anything gets drawn to the screen, and the column indexes of the true entries are stored in an array called 'noiseArray'. The fascinating thing about making a GIF from this is that takes the viewer quite a while to figure out if the GIF is a perfect loop or not, and probably has to make a mental note of some landmark to see if it comes around again. The code goes here:
+If you're someone like me, the previous solution will not satisfy you. Below is the code for a version, where the loop is seamless every time.
+Here, we're treating the grid drawn to the canvas as a sliding window that moves over a looping, much wider grid! This wider grid is determined before anything gets drawn to the screen, and the column indexes of the true entries are stored in an array called 'noiseArray'. 
+
+The fascinating thing about making a GIF from this is that takes the viewer quite a while to figure out if the GIF is a perfect loop or not, and probably has to make a mental note of some landmark to see if it comes around again. The code goes here:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -814,4 +817,4 @@ function draw() {
 </script>
 <p></p>
   
-
+And that's pretty much a wrap. Simple sketch, with lots of interesting concepts under the hood. If this tutorial sparks any inspiration and you end making some sketch inspired by this, please @ me on Twitter (@gorillasu). Otherwise, if you enjoyed this post share it with a friend, it helps out a bunch! That's it, cheers, see you in the next one! 😊
