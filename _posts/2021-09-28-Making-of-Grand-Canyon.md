@@ -5,7 +5,7 @@ categories:
   - p5js
 description: An aesthetically minimalistic sketch that is based on a boolean grid and perlin noise
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/loopscape.mp4
-published: false
+published: true
 ---
 
 <div class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
@@ -611,7 +611,7 @@ Well this is not a perfect loop per se, and it doesn't look perfect every time w
 );
 </code></pre>
 
-This could probably be done in a more elaborate manner, but this little modification is already doing a lot, and might be sufficient if you want to export a perfect loop. Just gotta rerun the sketch a couple of times:
+This little hack is doing a lot, and might be sufficient if you want to export a perfect loop. You would just have to rerun the sketch a couple of times until the break off point is seamless. In other scenarios that one ridge is very prominent:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -703,8 +703,8 @@ function draw() {
 </script>
 <p></p>
 
-
-A more elaborate way to do this would be by treating the grid drawn to the canvas as a sliding window that moves over a looping, much wider grid! 
+If you're someone like me, the previous solution will not satisfy you. The next version below is the final version, where the loop is seamless every time.
+Here, we're treating the grid drawn to the canvas as a sliding window that moves over a looping, much wider grid! This wider grid is determined before anything gets drawn to the screen, and the column indexes of the true entries are stored in an array called 'noiseArray'. The fascinating thing about making a GIF from this is that takes the viewer quite a while to figure out if the GIF is a perfect loop or not, and probably has to make a mental note of some landmark to see if it comes around again. The code goes here:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -738,10 +738,7 @@ function setup() {
 
 function fillNoiseArray() {
   for (x = padding; x < wx * 4; x += spacing) {
-    for (y = padding; y < wy - padding; y += spacing) {}
-
-    n = int(noise(x * 0.01, y * 0.01) * row.length);
-
+    n = int(noise(x * 0.01, y * 0.01) * bools[0].length);
     noiseArray.push(n);
 
     if (x > wx*2 && n == noiseArray[0]) {
@@ -814,7 +811,6 @@ function draw() {
   }
 
   redrawGrid(t);
-  //noLoop();
 }
 </script>
 <p></p>
