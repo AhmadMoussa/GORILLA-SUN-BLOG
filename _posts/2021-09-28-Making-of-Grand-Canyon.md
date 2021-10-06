@@ -704,8 +704,9 @@ function draw() {
 </script>
 <p></p>
 
-If you're someone like me, the previous solution will not satisfy you. Below is the code for a version, where the loop is seamless every time.
-Here, we're treating the grid drawn to the canvas as a sliding window that moves over a looping, much wider grid! This wider grid is determined before anything gets drawn to the screen, and the column indexes of the true entries are stored in an array called 'noiseArray'. 
+If you're someone like me, the previous solution will not satisfy you. Below is the code for a version, where the loop is seamless every time. Here, we're treating the grid drawn to the canvas as a sliding window that moves over a looping, much wider grid! This wider grid is determined before anything gets drawn to the screen, and the column indexes of the true entries are stored in an array called 'noiseArray'.
+
+How do we ensure that this noiseArray loops back around? After generating a number of column indexes that is larger than the number of columns currently shown on canvas, we check if we encounter a column index that matches up with the first entry in the array. The smoothness properties of the perlin noise we're using should ensure that this is a smooth transition.
 
 The fascinating thing about making a GIF from this is that takes the viewer quite a while to figure out if the GIF is a perfect loop or not, and probably has to make a mental note of some landmark to see if it comes around again. The code goes here:
 
@@ -714,7 +715,7 @@ The fascinating thing about making a GIF from this is that takes the viewer quit
 function setup() {
   w = min(windowWidth, windowHeight);
   wx = w * 1;
-  wy = w * 1;
+  wy = w * 0.6;
   createCanvas(wx, wy);
 
   padding = 20;
@@ -736,16 +737,20 @@ function setup() {
   fillNoiseArray();
   
   frameRate(25)
+  //createLoop({duration:15, gif:true})
 }
 
 function fillNoiseArray() {
-  for (x = padding; x < wx * 4; x += spacing) {
-    n = int(noise(x * 0.01, y * 0.01) * bools[0].length);
+  while (true) {
+    n = int(noise(x * 0.01) * bools[0].length);
+
     noiseArray.push(n);
 
     if (x > wx*2 && n == noiseArray[0]) {
       break;
     }
+    
+    x+=spacing
   }
 }
 
@@ -758,13 +763,23 @@ function redrawGrid(t) {
       row.push(0);
     }
 
+    if(x%noiseArray.length == 0){
+      stroke(255,0,0)
+      ellipse(wx-padding,noiseArray[0]*spacing + padding,10)
+  
+    }
     rowIndex = noiseArray[x%noiseArray.length];
     row[rowIndex] = 1;
     bools.push(row);
   }
 
   offset++;
-  text(bools.length, 10, 10);
+  //text(bools.length, 10, 10);
+  stroke(0)
+  text(noiseArray[0] + " " 
+       + noiseArray[noiseArray.length-1] + " " 
+       + noiseArray.length + " "
+       + x%noiseArray.length,wx-padding*4,10)
 }
 
 prevI = 0;
@@ -801,6 +816,7 @@ function draw() {
         point(i * spacing + padding, j * spacing + padding);
 
         if (random() > 0.9 && !below && j > 0) {
+          strokeWeight(1.2)
           line(
             i * spacing + padding,
             j * spacing + padding,
@@ -816,5 +832,131 @@ function draw() {
 }
 </script>
 <p></p>
+  
+Nevermind the debug information in the corner. I essentially shows the index of the first entry, the last, the length of the noise array as well as the current position. The red circle appears when it loops back around. Messing a little with the code, this can also lead to some interesting results as follows:
+  
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  w = min(windowWidth, windowHeight);
+  wx = w * 1;
+  wy = w * 0.6;
+  createCanvas(wx, wy);
+
+  padding = 20;
+  spacing = 5;
+
+  bools = [];
+  for (x = padding; x < wx - padding; x += spacing) {
+    row = [];
+    for (y = padding; y < wy - padding; y += spacing) {
+      row.push(0);
+    }
+    randomRowIndex = int(noise(x * 0.01, y * 0.01) * row.length);
+    row[randomRowIndex] = 1;
+    bools.push(row);
+  }
+
+  len = bools.length;
+  noiseArray = [];
+  fillNoiseArray();
+  
+  frameRate(25)
+  //createLoop({duration:15, gif:true})
+}
+
+function fillNoiseArray() {
+  while (true) {
+    n = int(noise(x * 0.01) * bools[0].length);
+
+    noiseArray.push(n);
+
+    if (x > wx && n == noiseArray[0]) {
+      break;
+    }
+    
+    x+=spacing
+  }
+}
+
+offset = 0;
+function redrawGrid(t) {
+  bools = [];
+  for (x = offset; x < len + offset; x++) {
+    row = [];
+    for (y = padding; y < wy - padding; y += spacing) {
+      row.push(0);
+    }
+
+    if(x%noiseArray.length == 0){
+      stroke(255,0,0)
+      ellipse(wx-padding,noiseArray[0]*spacing + padding,10)
+  
+    }
+    rowIndex = noiseArray[x%noiseArray.length];
+    row[rowIndex] = 1;
+    bools.push(row);
+  }
+
+  offset++;
+  //text(bools.length, 10, 10);
+  stroke(0)
+  text(noiseArray[0] + " " 
+       + noiseArray[noiseArray.length-1] + " " 
+       + noiseArray.length + " "
+       + x%noiseArray.length,wx-padding*4,10)
+}
+
+prevI = 0;
+prevJ = 0;
+function draw() {
+  background(255);
+  t = frameCount / 50;
+
+  for (i = 0; i < bools.length; i++) {
+    below = false;
+    for (j = 0; j < bools[0].length; j++) {
+      if (bools[i][j]) {
+        below = true;
+        if (i > 0) {
+          strokeWeight(2);
+          line(
+            (i - 1) * spacing + padding,
+            j * spacing + padding,
+            i * spacing + padding,
+            j * spacing + padding
+          );
+
+          line(
+            (i - 1) * spacing + padding,
+            j * spacing + padding,
+            prevI * spacing + padding,
+            prevJ * spacing + padding
+          );
+        }
+        prevI = i;
+        prevJ = j;
+      } else {
+        strokeWeight(1);
+        point(i * spacing + padding, j * spacing + padding);
+
+        if (random() > 0.9 && !below && j > 0) {
+          strokeWeight(1.2)
+          line(
+            i * spacing + padding,
+            j * spacing + padding,
+            i * spacing + padding,
+            (j - 1) * spacing + padding
+          );
+        }
+      }
+    }
+  }
+
+  redrawGrid(t);
+}
+</script>
+<p></p>
+  
   
 And that's pretty much a wrap. Simple sketch, with lots of interesting concepts under the hood. If this tutorial sparks any inspiration and you end making some sketch inspired by this, please @ me on Twitter (@gorillasu). Otherwise, if you enjoyed this post share it with a friend, it helps out a bunch! That's it, cheers, see you in the next one! 😊
