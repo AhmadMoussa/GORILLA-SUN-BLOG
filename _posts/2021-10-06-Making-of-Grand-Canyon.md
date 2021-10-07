@@ -1,5 +1,5 @@
 ---
-title: Making of&#58; Grand Canyon
+title: "Making of: Grand Canyon"
 author: Ahmad Moussa
 categories:
   - p5js
