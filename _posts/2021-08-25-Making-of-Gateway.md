@@ -1,5 +1,5 @@
 ---
-title: Making of&#58; Gateway
+title: "Making of: Gateway"
 author: Ahmad Moussa
 categories:
   - p5js
