@@ -1,5 +1,5 @@
 ---
-title: Making of&#58; Gzork
+title: "Making of: Gzork"
 author: Ahmad Moussa
 categories:
   - p5js
