@@ -1,5 +1,5 @@
 ---
-title: Making of&#58; Parasite
+title: "Making of: Parasite"
 author: Ahmad Moussa
 categories:
   - p5js
