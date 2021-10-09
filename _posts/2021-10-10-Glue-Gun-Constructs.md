@@ -13,6 +13,6 @@ exclude_rss: true
 
 <div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
   <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
-    <source src="https://gorillasun.de/assets/images/noncomputer/part1.mp4" type="video/mp4">
+    <source src="https://gorillasun.de/assets/images/noncomputer/output.mp4" type="video/mp4">
   </video>	
 </div>
