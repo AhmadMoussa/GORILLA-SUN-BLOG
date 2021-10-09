@@ -21,13 +21,13 @@ exclude_rss: true
 </div>
 
 <div class="row gtr-50">
-	<div class="col-8 col-12-medium">
+	<div class="col-6 col-12-medium">
 		<h2><a name='makeshift workshop'></a>Process</h2>
 		
 		Well basically, armed with a Glue Gun and some stuff I found in the garage/garden I just started glueing stuff together!
 	</div>
 
-	<div class="col-4 col-12-medium">
+	<div class="col-6 col-12-medium">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img src="https://gorillasun.de/assets/images/noncomputer/2.png" alt="">	
 		</span>
