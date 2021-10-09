@@ -5,7 +5,7 @@ categories:
   - p5js
 description: This one's quite an odd one, where we'll make some figurines with scrap and a glue gun
 thumbnail_path: https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif
-published: true
+published: false
 exclude_rss: true
 ---
 
@@ -23,9 +23,12 @@ exclude_rss: true
   </video>	
 </div>
 
+
+<h2><a name='process'></a>Process</h2>
+
 <div class="row gtr-50">
 	<div class="col-6 col-12-medium">
-		<h2><a name='makeshift workshop'></a>Process</h2>
+		
 		
 		Well basically, armed with a Glue Gun and some stuff I found in the garage/garden I just started glueing stuff together!
 	</div>
