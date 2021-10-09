@@ -11,8 +11,11 @@ exclude_rss: true
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Parasite/parasite.gif" alt="" /></span>
 
-<h2>Stop Motion Thingy</h2>
-<p>I first had an idea of recording the process as a stop motion video, but that turned out to be quite difficult to set up and edit! Here's a little video of what I had in mind, I'm definitely going to return to this idea at some point in the future:</p>
+<h2>Initial Idea: Stop Motion Thingy</h2>
+
+<p>My first idea was making a stop motion video. It sounded like a fun idea, so I set up my camera (Nikon COOLPIX B700) in a corner of the room and had a desk lamp light the surface that I was filming. Then I edited a cut out all the parts where my hands were showing.</p>
+
+<p>Stop motion turns out to be quite difficult to record and edit! (I really don't have the patience for editing :P) Here's a little video of what I had in mind. But I'm certainly going to attempt this idea again at some point in the future (after thinking through my set up a little more).</p>
 
 <div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
   <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
