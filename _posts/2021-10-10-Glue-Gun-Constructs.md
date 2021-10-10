@@ -17,6 +17,7 @@ For this challenge I channeled my inner child and glue gunned together these lit
   </video>	
 </div>
 
+<p></p>
 
 <h2>Initial Idea: Stop Motion</h2>
 
@@ -30,6 +31,7 @@ For this challenge I channeled my inner child and glue gunned together these lit
 
 <p>Stop motion turns out to be quite difficult to record and edit! (I really don't have the patience for editing:P). But I'm certainly going to attempt this idea again at some point in the future (after thinking through my set up a little more).</p>
 
+<p></p>
 
 <h2><a name='process'></a>Process</h2>
 Here are some pics from the process! 
@@ -56,6 +58,8 @@ Here are some pics from the process!
 
 	</div>
 </div>
+
+<p></p>
 
 <h2><a name='constructs'></a>Constructs</h2>
 
