@@ -6,7 +6,7 @@ categories:
 description: This one's quite an odd one, where we'll make some figurines with scrap and a glue gun
 thumbnail_path: https://gorillasun.de/assets/images/noncomputer/creatures.mp4
 published: true
-exclude_rss: true
+exclude_rss: false
 ---
 <div class='box'>
 <i>This blog post serves as submission to <a href='https://twitter.com/sableRaph'>Raphaël de Courville</a>'s weekly creative coding challenge! You might ask:  'Where is the code?', and well, this week's topic was 'Non-computer' so I stepped away from the keyboard for a bit and did something a little different!</i>
