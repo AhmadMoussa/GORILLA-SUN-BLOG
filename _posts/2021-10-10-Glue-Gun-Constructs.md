@@ -8,6 +8,9 @@ thumbnail_path: https://gorillasun.de/assets/images/noncomputer/creatures.mp4
 published: true
 exclude_rss: true
 ---
+<div class='box'>
+<i>This blog post serves as submission to <a href='https://twitter.com/sableRaph'>Raphaël de Courville</a>'s weekly creative coding challenge. 'Where is the code?' you ask? This week's topic was 'Non-computer' so I stepped away from the keyboard a little and did something a little different!</i>
+</div>
 
 For this challenge I channeled my inner child and glue gunned together these little 'constructs'. Made from scrap I ramsacked from the garage, and some stuff I found in the garden. I'm not going to lie, but it was a lot of fun making these!
 
@@ -63,7 +66,7 @@ Here are some pics from the process!
 
 <h2><a name='constructs'></a>Constructs</h2>
 
-I really like the look of the filaments of the glue, hence I didn't remove them.
+I really like the look of the filaments of the glue, hence I didn't remove them:
 
 <div class="row gtr-50">
 	<div class="col-6 col-12-medium">
