@@ -9,19 +9,14 @@ published: true
 exclude_rss: true
 ---
 
-<div class="row gtr-50">
-	<div class="col-6 col-12-medium">
-		For this challenge I channeled my inner child and glue gunned together these little 'constructs'. Made from scrap I ramsacked from the garage, and some stuff I found in the garden. I'm not going to lie, but it was a lot of fun making these!
-	</div>
+For this challenge I channeled my inner child and glue gunned together these little 'constructs'. Made from scrap I ramsacked from the garage, and some stuff I found in the garden. I'm not going to lie, but it was a lot of fun making these!
 
-	<div class="col-6 col-12-medium">
-		<div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
-		  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
-		    <source src="https://gorillasun.de/assets/images/noncomputer/creatures.mp4" type="video/mp4">
-		  </video>	
-		</div>
-	</div>
+<div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
+  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+    <source src="https://gorillasun.de/assets/images/noncomputer/creatures.mp4" type="video/mp4">
+  </video>	
 </div>
+
 
 <h2>Initial Idea: Stop Motion</h2>
 
@@ -37,12 +32,9 @@ exclude_rss: true
 
 
 <h2><a name='process'></a>Process</h2>
+Here are some pics from the process! 
 
 <div class="row gtr-50">
-	<div class="col-6 col-12-medium">
-		Armed with a Glue Gun and some scrap I found in the garage/garden I just started glueing stuff together!
-	</div>
-
 	<div class="col-6 col-12-medium">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img src="https://gorillasun.de/assets/images/noncomputer/2.png" alt="">	
@@ -51,7 +43,9 @@ exclude_rss: true
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img src="https://gorillasun.de/assets/images/noncomputer/3.png" alt="">	
 		</span>
-		
+	</div>
+
+	<div class="col-6 col-12-medium">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img src="https://gorillasun.de/assets/images/noncomputer/7.png" alt="">	
 		</span>
@@ -65,7 +59,7 @@ exclude_rss: true
 
 <h2><a name='constructs'></a>Constructs</h2>
 
-I really like the look of the filaments of the glue. Hence I didn't remove them.
+I really like the look of the filaments of the glue, hence I didn't remove them.
 
 <div class="row gtr-50">
 	<div class="col-6 col-12-medium">
