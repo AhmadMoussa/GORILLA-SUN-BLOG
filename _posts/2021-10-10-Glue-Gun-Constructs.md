@@ -5,7 +5,7 @@ categories:
   - p5js
 description: This one's quite an odd one, where we'll make some figurines with scrap and a glue gun
 thumbnail_path: https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif
-published: false
+published: true
 exclude_rss: true
 ---
 
@@ -49,6 +49,27 @@ exclude_rss: true
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img src="https://gorillasun.de/assets/images/noncomputer/8.png" alt="">	
 		</span>
+
+	</div>
+</div>
+
+<h2><a name='process'></a>Process</h2>
+
+<div class="row gtr-50">
+	<div class="col-6 col-12-medium">
+		<div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
+  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+    <source src="https://gorillasun.de/assets/images/noncomputer/creature1safe.mp4" type="video/mp4">
+  </video>	
+</div>
+	</div>
+
+	<div class="col-6 col-12-medium">
+		<div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
+  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+    <source src="https://gorillasun.de/assets/images/noncomputer/creature2safe.mp4" type="video/mp4">
+  </video>	
+</div>
 
 	</div>
 </div>
