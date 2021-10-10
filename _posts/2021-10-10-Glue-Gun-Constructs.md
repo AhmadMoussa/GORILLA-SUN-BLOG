@@ -23,6 +23,8 @@ exclude_rss: true
   </video>	
 </div>
 
+<hr class="major"/>
+
 
 <h2><a name='process'></a>Process</h2>
 
@@ -53,23 +55,24 @@ exclude_rss: true
 	</div>
 </div>
 
-<h2><a name='process'></a>Process</h2>
+<h2><a name='constructs'></a>Constructs</h2>
+
+I really like the look of the filaments of the glue. Hence I didn't remove them.
 
 <div class="row gtr-50">
 	<div class="col-6 col-12-medium">
 		<div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
-  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
-    <source src="https://gorillasun.de/assets/images/noncomputer/creature1safe.mp4" type="video/mp4">
-  </video>	
-</div>
+		  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+		    <source src="https://gorillasun.de/assets/images/noncomputer/creature1safe.mp4" type="video/mp4">
+		  </video>	
+		</div>
 	</div>
 
 	<div class="col-6 col-12-medium">
 		<div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
-  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
-    <source src="https://gorillasun.de/assets/images/noncomputer/creature2safe.mp4" type="video/mp4">
-  </video>	
-</div>
-
+		  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+		    <source src="https://gorillasun.de/assets/images/noncomputer/creature2safe.mp4" type="video/mp4">
+		  </video>	
+		</div>
 	</div>
 </div>
