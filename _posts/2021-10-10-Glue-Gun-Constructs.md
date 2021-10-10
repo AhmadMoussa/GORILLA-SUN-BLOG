@@ -9,7 +9,7 @@ published: true
 exclude_rss: true
 ---
 <div class='box'>
-<i>This blog post serves as submission to <a href='https://twitter.com/sableRaph'>Raphaël de Courville</a>'s weekly creative coding challenge. 'Where is the code?' you ask? This week's topic was 'Non-computer' so I stepped away from the keyboard a little and did something a little different!</i>
+<i>This blog post serves as submission to <a href='https://twitter.com/sableRaph'>Raphaël de Courville</a>'s weekly creative coding challenge! You might ask:  'Where is the code?', and well, this week's topic was 'Non-computer' so I stepped away from the keyboard for a bit and did something a little different!</i>
 </div>
 
 For this challenge I channeled my inner child and glue gunned together these little 'constructs'. Made from scrap I ramsacked from the garage, and some stuff I found in the garden. I'm not going to lie, but it was a lot of fun making these!
@@ -37,7 +37,7 @@ For this challenge I channeled my inner child and glue gunned together these lit
 <p></p>
 
 <h2><a name='process'></a>Process</h2>
-Here are some pics from the process! 
+Here are some pics from the process that I screen grabbed from the videos. They have a certain cozy feel to them. Otherwise there isn't much to document here, you basically put some glue on something and then stick another thing onto it and hold it for a couple of seconds.
 
 <div class="row gtr-50">
 	<div class="col-6 col-12-medium">
@@ -66,7 +66,7 @@ Here are some pics from the process!
 
 <h2><a name='constructs'></a>Constructs</h2>
 
-I really like the look of the filaments of the glue, hence I didn't remove them:
+Here are the two 'chestnut men' that I came up with. I really like the look of the filaments of the glue, hence I didn't remove it. Gives it sort of a wild look:
 
 <div class="row gtr-50">
 	<div class="col-6 col-12-medium">
@@ -85,3 +85,6 @@ I really like the look of the filaments of the glue, hence I didn't remove them:
 		</div>
 	</div>
 </div>
+<p></p>
+
+And that's a wrap, hope you enjoyed! Honk Honk!
