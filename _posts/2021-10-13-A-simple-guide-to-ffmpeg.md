@@ -116,20 +116,33 @@ Optionally you may also add the framerate flag to the command, otherwise the def
 
 
 
+<h2><a name='scalecrop'></a>Scaling and Cropping/video</h2>
+<h3>Cropping</h3>
+The best run-down of cropping with ffmpeg, I've found to be <a href='https://video.stackexchange.com/a/4571'>this stackexchange answer</a>.
+
+The command that allows you to crop a file is the following:
+
+<pre><code>ffmpeg -i in.mp4 -vf crop="out_w:out_h:x:y" out.mp4
+</code></pre>
+
+Here we're using the vf flag, which stands for 'video filter', basically applying a video filter to the output stream. This flag is followed by 'crop', which tells FFmpeg that we're using the crop video filter, and we also need to pass some parameters to this cropping filter.
+
+Here the parameters 'out_w' and 'out_h' stand for the width and height of the area that you want to crop out, and equivalently 'x' and 'y' represent the coordinates of the top left corner of the cropping area. Essentially you're recording a rectangular area of the input video, and you're positioning this rectangular area with the parameters passed to the filter.
+
+<h3>Scaling and Resizing</h3>
+In a similar manner we can resize an input stream as follows:
+
+<pre><code>ffmpeg -i in.mp4 -vf scale="out_w:-1" out.mp4
+</code></pre>
+
+Here we use the 'scale' video filter. To the scale video filter we pass two arguments: a width and a height. In this case we're choosing a specific output width 'out_w' and set the output height to '-1'. -1 essentially tells ffmpeg to calculate the correct output height, such that the output video has the same aspect ratio as the input video. Of course you can also do this the other way around '-1:out_h' as well. Or set both width and height to different values.
 
 
 
 
 
 
-<h2><a name='size'></a>Reducing the size of gifs</h2>
-This isn't a single command per se, but we'll have a look at different strategies that can potentially reduce the size of your gif files.
 
-I'd like to give a shout-out to two superb posts on the topic of quality and size of gif files with FFmpeg, this <a href='http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html'>one</a> as well as this <a href='https://cassidy.codes/blog/2017/04/25/ffmpeg-frames-to-gif-optimization/'>one</a>. 
-
-The topic of gifs, compression and size/quality tradeoffs are a can of worms, that better be opened in a separate post, but for the sake of this section let's have a look at some ways to reduce the file size of gifs. 
-
-One quick and dirty trick that I like a lot, is simply scaling the resolution of gif files down. This tends to have a dramatic effect on the quality of the gif
 
 
 
@@ -167,6 +180,13 @@ A summary of the aforementioned commands and what they do:
 
 
 
+
+<h2><a name='size'></a>Reducing the size of gifs</h2>
+This isn't a single command per se, but we'll have a quick look at some strategies that can potentially reduce the size of your gif files. I'd like to give a shout-out to two superb posts on the topic of quality and size of gif files with FFmpeg, this <a href='http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html'>one</a> as well as this <a href='https://cassidy.codes/blog/2017/04/25/ffmpeg-frames-to-gif-optimization/'>one</a>. 
+
+The topic of gifs, compression and size/quality tradeoffs are a can of worms, that better be opened in a separate future post, but for the sake of this section let's have a look at some ways to reduce the file size of gifs. 
+
+One quick and dirty trick that I like a lot, is simply scaling the resolution of gif files down (which we have covered above). This tends to have a dramatic effect on the quality of the gif, but sometimes I just can't be bothered when my GIF file size is just barely above the 15mb size limit of Twitter. Shaving off those 1-2mbs can usually be achieved by scaling down around 10%.
 
 
 
