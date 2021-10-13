@@ -164,7 +164,7 @@ Which essentially allows you to truncate the duration of a gif or video file, by
 
 
 <h2><a name='shorten'>9.</a> Converting to a web safe format</h2>
-Displaying full size GIFs on your website is a bad idea. Their size is huge, and if things don't load quickly, it makes an immediate bad impression. A couple of weeks ago I decided to really clean up my blog and compress my GIFs into much more manageable file format like MP4. It worked like a charm, but then I opened my blog on my phone to see how it looks, and it turns out that certain browsers only support certain types of pixel formats.
+Displaying full size GIFs on your website is a bad idea. Their size is huge, and if things don't load quickly, it makes an immediate bad impression. A couple of weeks ago I decided to really clean up my blog and compress my GIFs into a much more manageable file format like MP4. It worked like a charm, but then I opened my blog on my phone to see how it looks, and it turns out that certain browsers only support certain types of pixel formats.
 
 This was a problem that actually drove me a little bit mad for a while, since I couldn't pinpoint what the issue was for a while, until I stumbled upon <a href="https://sidneyliebrand.io/blog/converting-gif-to-web-safe-video-formats-using-ffmpeg">this blog post</a> by Sidney Liebrand, that explains a little what web safe formats are, and provides an FFmpeg command to convert to an appropriate MP4 version:
 
@@ -185,6 +185,18 @@ To display your video on your website, and have it behave like a gif in disguise
 </code></pre>
 
 This is also very useful for perfectly looping GIFs. The 'loop' statement allows for seamless transitions from end to start.
+
+
+
+
+
+
+
+
+
+
+<h2><a name='multiple'>10.</a> Converting multiple files in a directory</h2>
+
 
 
 <!-- I think this should be it's own blog post "Dithering with FFmpeg" and another about "Motion Blur" with FFmpeg
@@ -258,6 +270,12 @@ A summary of the aforementioned commands and what they do:
 			<tr>
 				<td>Trim duration</td>
 				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i input.gif -ss 00:00:00 -to 00:00:03 output.gif</code></pre></td>
+				<!-- <td>Trims duration of input stream based on start and stop time stamps.</td> -->
+			</tr>
+			
+			<tr>
+				<td>Web Safe</td>
+				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i file.gif -movflags +faststart -pix_fmt yuv420p -vf scale="trunc(iw/2)*2:trunc(ih/2)*2" file.mp4</code></pre></td>
 				<!-- <td>Trims duration of input stream based on start and stop time stamps.</td> -->
 			</tr>
 			
