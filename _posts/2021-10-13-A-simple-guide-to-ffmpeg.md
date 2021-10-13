@@ -32,6 +32,9 @@ In this blog post I'll gently introduce you to ffmpeg and how it can help you wi
 11. <a href='#websafe'>Converting to a web safe video format</a>
 12. <a href='#multiple'>Converting multiple files in a directory</a>
 
+<h3><a href='#cheatsheet'>Cheat Sheet</a></h3>
+
+
 <h2><a name='ffmpeg'></a>What's ffmpeg?</h2>
 Simply put, FFmpeg is an open source video and audio processing tool. It allows you to convert between different encoding formats, in addition to editing video and audio files in a number of ways. It's mainly designed to be a command-line interface (CLI) that you execute from your terminal (this is how we'll be using it in this blog post), however it can also be integrated as a part of other software.
 
@@ -80,7 +83,18 @@ Say you have a video file that you'd like to turn into a GIF with a framerate of
 
 Another command that I
 
+
+
+
+
+
 <hr class='major'/>
+
+
+
+
+
+
 
 <h2><a name='frames'></a>Converting a series of frames into a gif/video</h2>
 One super useful command that I often require for my p5js sketches, is collating/combining a sequence of frames into a video/gif:
@@ -100,8 +114,61 @@ Optionally you may also add the framerate flag to the command, otherwise the def
 </code></pre>
 
 
+
+
+
+
+
+
+
+
 <h2><a name='size'></a>Reducing the size of gifs</h2>
-This isn't a single command per se, but we'll have a look at different commands that can potentially reduce the size of your gif files:
+This isn't a single command per se, but we'll have a look at different strategies that can potentially reduce the size of your gif files.
+
+I'd like to give a shout-out to two superb posts on the topic of quality and size of gif files with FFmpeg, this <a href='http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html'>one</a> as well as this <a href='https://cassidy.codes/blog/2017/04/25/ffmpeg-frames-to-gif-optimization/'>one</a>. 
+
+The topic of gifs, compression and size/quality tradeoffs are a can of worms, that better be opened in a separate post, but for the sake of this section let's have a look at some ways to reduce the file size of gifs. 
+
+One quick and dirty trick that I like a lot, is simply scaling the resolution of gif files down. This tends to have a dramatic effect on the quality of the gif
+
+
+
+
+<!-- I think this should be it's own blog post "Dithering with FFmpeg" and another about "Motion Blur" with FFmpeg
+<h3>Palettegen and Paletteuse</h3>
+This is essentially a combination of two commands, one that will extract a color palette from the input video, and another that will reduce the number of colors in a given video to only use the colors in a given palette. Why does this reduce the size of a gif file? Usually the less colors a video/gif file has, the less amount of storage is needed for it to be stored.
+
+The first command makes use of the 'vf' flag, which stands for 'video filter', and uses the palettegen filter, where 'palettegen' stands for palette generate: 
+
+<pre><code>ffmpeg -i file.mp4 -vf palettegen palette.png
+</code></pre>
+
+As you might have guessed already, this will extract a representative color from the input video and saves it as a png file. Additionally, the number of colors in this palette can be specified with the 'max-colors' flag. Next we'll want to apply this extracted palette to the original video:
+
+<pre><code>
+ffmpeg -i file.mp4 -i palette.png -filter_complex paletteuse file.gif
+</code></pre>
+-->
+
+
+
+The vf flag actually invokes the filtergraph that allows you to chain several video filter operations together. Outside their use for reducing the size of gif and video files, I think that they can also be used for stylistic and artistic pruposes as well.
+
+
+
+
+
+
+
+
+<h2><a name='cheatsheet'></a>Cheat Sheet</h2>
+A summary of the aforementioned commands and what they do:
+
+
+
+
+
+
 
 
 <h2>End notes</h2>
