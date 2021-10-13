@@ -160,6 +160,33 @@ Which essentially allows you to truncate the duration of a gif or video file, by
 
 
 
+
+
+
+<h2><a name='shorten'>9.</a> Converting to a web safe format</h2>
+Displaying full size GIFs on your website is a bad idea. Their size is huge, and if things don't load quickly, it makes an immediate bad impression. A couple of weeks ago I decided to really clean up my blog and compress my GIFs into much more manageable file format like MP4. It worked like a charm, but then I opened my blog on my phone to see how it looks, and it turns out that certain browsers only support certain types of pixel formats.
+
+This was a problem that actually drove me a little bit mad for a while, since I couldn't pinpoint what the issue was for a while, until I stumbled upon <a href="https://sidneyliebrand.io/blog/converting-gif-to-web-safe-video-formats-using-ffmpeg">this blog post</a> by Sidney Liebrand, that explains a little what web safe formats are, and provides an FFmpeg command to convert to an appropriate MP4 version:
+
+<pre><code>ffmpeg -i file.gif -movflags +faststart -pix_fmt yuv420p -vf scale="trunc(iw/2)*2:trunc(ih/2)*2" file.mp4
+</code></pre>
+
+The moveflags option is not necessary, but is nice to have, since it'll automatically make your video run once it starts loading. The yuv420p  pixel format is necessary for your video to be displayed in certain browsers. And an additional necessity of this pixel format is that the video needs to be resized such that it's width and height are divisible by 2. The <a href='https://trac.ffmpeg.org/wiki/Encode/H.264'>FFmpeg documentation</a> offers a little explanation on this:
+
+<blockquote>
+Encoding for dumb players
+You may need to use -vf format=yuv420p (or the alias -pix_fmt yuv420p) for your output to work in QuickTime and most other players. These players only support the YUV planar color space with 4:2:0 chroma subsampling for H.264 video. Otherwise, depending on your source, ffmpeg may output to a pixel format that may be incompatible with these players.
+</blockquote>
+
+To actually display that video on your 
+
+<pre><code>
+<video autoplay="" loop="" muted="" playsinline="" draggable="true">
+	<source src="path/to/video" type="video/mp4">
+</video>
+</code></pre>
+
+
 <!-- I think this should be it's own blog post "Dithering with FFmpeg" and another about "Motion Blur" with FFmpeg
 <h3>Palettegen and Paletteuse</h3>
 This is essentially a combination of two commands, one that will extract a color palette from the input video, and another that will reduce the number of colors in a given video to only use the colors in a given palette. Why does this reduce the size of a gif file? Usually the less colors a video/gif file has, the less amount of storage is needed for it to be stored.
