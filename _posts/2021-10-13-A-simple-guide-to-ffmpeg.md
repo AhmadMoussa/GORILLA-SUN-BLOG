@@ -243,7 +243,6 @@ A summary of the aforementioned commands and what they do:
 			<tr>
 				<th>Use case</th>
 				<th>Command</th>
-				<th>Description</th>
 			</tr>
 		</thead>
 		<tbody>
