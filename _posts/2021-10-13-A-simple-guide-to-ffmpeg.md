@@ -190,6 +190,25 @@ The vf flag actually invokes the filtergraph that allows you to chain several vi
 <h2><a name='cheatsheet'></a>Cheat Sheet</h2>
 A summary of the aforementioned commands and what they do:
 
+<div class="row gtr-50">
+		<div class="col-4 col-12-medium">
+      <h3>Conversion</h3>
+      <h3>Sequence of frames to GIF</h3>
+      <h3>Scaling/Resizing</h3>
+      <h3>Cropping</h3>
+      <h3>Trim duration</h3>
+      <h3>Trim exact frames</h3>
+    </div>
+    <div class="col-8 col-12-medium">
+      <pre><code>ffmpeg -i input.mp4 output.gif</code></pre>
+      <pre><code>ffmpeg -i frame%d.png output.gif</code></pre>
+      <pre><code>ffmpeg -i in.mp4 -vf scale="out_w:-1" out.mp4</code></pre>
+      <pre><code>ffmpeg -i in.mp4 -vf crop="out_w:out_h:x:y" out.mp4</code></pre>
+      <pre><code>ffmpeg -i input.gif -ss 00:00:00 -to 00:00:03 output.gif</code></pre>
+      <pre><code>ffmpeg -ss 5.32 -i input.mp4 -c:v libx264 -c:a aac -frames:v 60 out.mp4</code></pre>
+    </div>
+</div>
+  
 
 <h3>Conversion</h3>
 <pre><code>ffmpeg -i input.mp4 output.gif</code></pre>
