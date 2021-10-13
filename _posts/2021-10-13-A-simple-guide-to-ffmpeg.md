@@ -284,17 +284,17 @@ A summary of the aforementioned commands and what they do:
 			<tr>
 				<td>Web Safe</td>
 				<td><pre style="margin: 0 0 0 0;"><code>ffmpeg -i file.gif -movflags +faststart -pix_fmt yuv420p \
-				-vf scale="trunc(iw/2)*2:trunc(ih/2)*2" file.mp4</code></pre></td>
+-vf scale="trunc(iw/2)*2:trunc(ih/2)*2" file.mp4</code></pre></td>
 				<!-- <td>Trims duration of input stream based on start and stop time stamps.</td> -->
 			</tr>
 			
 			<tr>
 				<td>Multiple Files</td>
 				<td>
-					Windows <pre style="margin: 0 0 0 0;"><code>FOR /F "tokens=*" %G IN ('dir /b *.flac') \ 
-										DO ffmpeg -i "%G" -acodec mp3 "%~nG.mp3"</code></pre>
+					Windows &nbsp;<pre style="margin: 0 0 0 0;"><code>FOR /F "tokens=*" %G IN ('dir /b *.flac') \ 
+DO ffmpeg -i "%G" -acodec mp3 "%~nG.mp3"</code></pre>
 					<br/>
-					MacOs & Linux <pre style="margin: 0 0.5em 0 0;"><code>for i in *.avi; do ffmpeg -i "$i" "${i%.*}.mp4"; done</code></pre>
+					MacOs & Linux &nbsp;<pre style="margin: 0 0.5em 0 0;"><code>for i in *.avi; do ffmpeg -i "$i" "${i%.*}.mp4"; done</code></pre>
 				</td>
 				<!-- <td>Trims duration of input stream based on start and stop time stamps.</td> -->
 			</tr>
