@@ -179,8 +179,7 @@ You may need to use -vf format=yuv420p (or the alias -pix_fmt yuv420p) for your 
 
 To display your video on your website, and have it behave like a gif in disguise, is with the following html snippet:
 
-<pre><code>
-&lt;video autoplay="" loop="" muted="" playsinline="" draggable="true"&gt;
+<pre><code>&lt;video autoplay="" loop="" muted="" playsinline="" draggable="true"&gt;
 	&lt;source src="path/to/video" type="video/mp4"&gt;
 &lt;/video&gt;
 </code></pre>
