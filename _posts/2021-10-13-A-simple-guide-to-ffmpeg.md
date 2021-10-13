@@ -80,6 +80,8 @@ Say you have a video file that you'd like to turn into a GIF with a framerate of
 
 Another command that I
 
+<hr class='major'/>
+
 <h2><a name='frames'></a>Converting a series of frames into a gif/video</h2>
 One super useful command that I often require for my p5js sketches, is collating/combining a sequence of frames into a video/gif:
 
