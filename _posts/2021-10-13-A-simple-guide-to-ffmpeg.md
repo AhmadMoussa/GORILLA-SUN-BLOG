@@ -5,7 +5,7 @@ categories:
   - p5js
 description: ffmpeg is an amazing tool, that will make your life so much easier as a creative coder, andin general as a person that has to deal with media files on a regular basis. This blog post can be considered as a primer on using FFmpeg, and showcases some of it's capabilities.
 thumbnail_path: https://media.giphy.com/media/tGiJyldyNUJXO/giphy.gif?cid=ecf05e47xxf9duke1suqh8gs3vbp28xssx1mse2k10bxgu4k&rid=giphy.gif&ct=g
-published: true
+published: false
 ---
 
 <span class="image fit"><img src="https://media.giphy.com/media/tGiJyldyNUJXO/giphy.gif?cid=ecf05e47xxf9duke1suqh8gs3vbp28xssx1mse2k10bxgu4k&rid=giphy.gif&ct=g" alt="" /></span>
