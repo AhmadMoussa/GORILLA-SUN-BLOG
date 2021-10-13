@@ -193,9 +193,18 @@ This is also very useful for perfectly looping GIFs. The 'loop' statement allows
 
 
 
-
-
 <h2><a name='multiple'>10.</a> Converting multiple files in a directory</h2>
+This isn't really a command specific to ffmpeg, but neat to have in your inventory. Let's assume we have a folder full of gif files that we'd like to convert to mp4 files, and we don't want to tediously do this file by file. We can do this with some additional syntax as follows: 
+
+<h3>On windows</h3>
+<pre><code>FOR /F "tokens=*" %G IN ('dir /b *.gif') DO ffmpeg -i "%G" "%~nG.mp4"
+</code></pre>
+
+And for macOS as well as Linux:
+
+<h3>On macOS and Linux</h3>
+<pre><code>for i in *.gif; do ffmpeg -i "$i" "${i%.*}.mp4"; done
+</code></pre>
 
 
 
@@ -213,12 +222,11 @@ As you might have guessed already, this will extract a representative color from
 <pre><code>
 ffmpeg -i file.mp4 -i palette.png -filter_complex paletteuse file.gif
 </code></pre>
--->
-
 
 
 The vf flag actually invokes the filtergraph that allows you to chain several video filter operations together. Outside their use for reducing the size of gif and video files, I think that they can also be used for stylistic and artistic pruposes as well.
 
+-->
 
 
 
@@ -275,7 +283,7 @@ A summary of the aforementioned commands and what they do:
 			
 			<tr>
 				<td>Web Safe</td>
-				<td><pre style="margin: 0 0 0 0; max-width: fit-content;"><code>ffmpeg -i file.gif -movflags +faststart -pix_fmt yuv420p -vf scale="trunc(iw/2)*2:trunc(ih/2)*2" file.mp4</code></pre></td>
+				<td><pre style="margin: 0 0 0 0; max-width: 500px;"><code>ffmpeg -i file.gif -movflags +faststart -pix_fmt yuv420p -vf scale="trunc(iw/2)*2:trunc(ih/2)*2" file.mp4</code></pre></td>
 				<!-- <td>Trims duration of input stream based on start and stop time stamps.</td> -->
 			</tr>
 			
