@@ -275,7 +275,7 @@ A summary of the aforementioned commands and what they do:
 			
 			<tr>
 				<td>Web Safe</td>
-				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i file.gif -movflags +faststart -pix_fmt yuv420p -vf scale="trunc(iw/2)*2:trunc(ih/2)*2" file.mp4</code></pre></td>
+				<td><pre style="margin: 0 0 0 0; max-width: 180px;"><code>ffmpeg -i file.gif -movflags +faststart -pix_fmt yuv420p -vf scale="trunc(iw/2)*2:trunc(ih/2)*2" file.mp4</code></pre></td>
 				<!-- <td>Trims duration of input stream based on start and stop time stamps.</td> -->
 			</tr>
 			
