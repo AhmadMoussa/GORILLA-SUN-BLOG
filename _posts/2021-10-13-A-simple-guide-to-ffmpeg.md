@@ -171,20 +171,21 @@ This was a problem that actually drove me a little bit mad for a while, since I 
 <pre><code>ffmpeg -i file.gif -movflags +faststart -pix_fmt yuv420p -vf scale="trunc(iw/2)*2:trunc(ih/2)*2" file.mp4
 </code></pre>
 
-The moveflags option is not necessary, but is nice to have, since it'll automatically make your video run once it starts loading. The yuv420p  pixel format is necessary for your video to be displayed in certain browsers. And an additional necessity of this pixel format is that the video needs to be resized such that it's width and height are divisible by 2. The <a href='https://trac.ffmpeg.org/wiki/Encode/H.264'>FFmpeg documentation</a> offers a little explanation on this:
+The moveflags option is not necessary, but is nice to have, since it'll automatically make your video run once it starts loading. The yuv420p  pixel format is necessary for your video to be displayed in certain browsers. And an additional necessity of this pixel format is that the video needs to be resized such that it's width and height are divisible by 2. The <a href='https://trac.ffmpeg.org/wiki/Encode/H.264'>FFmpeg documentation</a> offers a little explanation on this in a note called 'encoding for dumb players':
 
 <blockquote>
-Encoding for dumb players
 You may need to use -vf format=yuv420p (or the alias -pix_fmt yuv420p) for your output to work in QuickTime and most other players. These players only support the YUV planar color space with 4:2:0 chroma subsampling for H.264 video. Otherwise, depending on your source, ffmpeg may output to a pixel format that may be incompatible with these players.
 </blockquote>
 
-To actually display that video on your 
+To display your video on your website, and have it behave like a gif in disguise, is with the following html snippet:
 
 <pre><code>
-<video autoplay="" loop="" muted="" playsinline="" draggable="true">
-	<source src="path/to/video" type="video/mp4">
-</video>
+&lt;video autoplay="" loop="" muted="" playsinline="" draggable="true"&gt;
+	&lt;source src="path/to/video" type="video/mp4"&gt;
+&lt;/video&gt;
 </code></pre>
+
+This is also very useful for perfectly looping GIFs. The 'loop' statement allows for seamless transitions from end to start.
 
 
 <!-- I think this should be it's own blog post "Dithering with FFmpeg" and another about "Motion Blur" with FFmpeg
