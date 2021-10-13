@@ -5,7 +5,7 @@ categories:
   - p5js
 description: ffmpeg is an amazing tool, that will make your life so much easier as a creative coder, andin general as a person that has to deal with media files on a regular basis. This blog post can be considered as a primer on using FFmpeg, and showcases some of it's capabilities.
 thumbnail_path: https://media.giphy.com/media/tGiJyldyNUJXO/giphy.gif?cid=ecf05e47xxf9duke1suqh8gs3vbp28xssx1mse2k10bxgu4k&rid=giphy.gif&ct=g
-published: false
+published: true
 exclude_rss: true
 ---
 
@@ -18,13 +18,19 @@ Being a creative of any sort in this digital age, requires you to juggle a varie
 
 In this blog post I'll gently introduce you to ffmpeg and how it can help you with converting and editing your files!
 
+<h3>Getting started with FFmpeg</h3>
 1. <a href='#ffmpeg'>What is FFmpeg?</a>
-2. <a href='#install'>Installing ffmpeg</a>
-3. <a href='#syntax'>ffmpeg command syntax</a>
-4. <a href='#convert'>Converting Files with ffmpeg</a>
-5. <a href='#option'>ffmpeg options</a>
-6. <a href='#frames'>Collating frames into a GIF</a>
-7. <a href='#size'>Reducing file sizes</a>
+2. <a href='#install'>Installing FFmpeg</a>
+3. <a href='#syntax'>FFmpeg command syntax</a>
+5. <a href='#convert'>File conversion example</a>
+6. <a href='#option'>Command Options</a>
+
+<h3>Generally useful FFmpeg commands</h3>
+8. <a href='#frames'>Collating frames into a GIF</a>
+9. <a href='#reduce'>Reducing file sizes</a>
+10. <a href='#scalecrop'>Scaling and Cropping</a>
+11. <a href='#websafe'>Converting to a web safe video format</a>
+12. <a href='#multiple'>Converting multiple files in a directory</a>
 
 <h2><a name='ffmpeg'></a>What's ffmpeg?</h2>
 Simply put, FFmpeg is an open source video and audio processing tool. It allows you to convert between different encoding formats, in addition to editing video and audio files in a number of ways. It's mainly designed to be a command-line interface (CLI) that you execute from your terminal (this is how we'll be using it in this blog post), however it can also be integrated as a part of other software.
@@ -51,18 +57,18 @@ FFmpeg commands essentially always consists of two parts, an input stream and an
 For each one of these streams we can specify a number of conversion options that, in addition to converting between two formats, allow us to manipulate specific properties of the file. For example, you want the output file to have a secific frame rate, this could then be specified as an option. As you might've noticed, there are options that are applied specifically to the input stream, others specifically to the output stream, and others to the entire command.
 
 <h2><a name='convert'></a>Converting files with ffmpeg</h2>
-The simplest and quintessential ffmpeg command would be the simple conversion command. It would look as follows:
+The simplest and quintessential ffmpeg command would be the simple conversion command. It goes as shown:
 <pre><code>ffmpeg -i input.mp4 output.gif
 </code></pre>
 
-In this case we would be converting an mp4 file into a gif file. Notice the statement preceding the input file '-i', this is called an option in ffmpeg (or alternatively a flag), and specifies that what follows is the input file. There are many such options in ffmpeg, each of which has it's own purpose.
+In this case we would be converting an mp4 file into a gif file. Notice the statement preceding the input file '-i', this is how an option is specified FFmpeg (I also often call them flags). Here we're telling FFmpeg that what follows is the input file. There are many such options in ffmpeg, each of which has it's own purpose.
 
-ffmpeg also allows you to convert audio files! I often record my guitar with my samsung phone. It's recording app stores these files in the m4a format, which isn't supported by sound editing applications and DAWs like Ableton Live. A much more sensible format would be MP3 or WAV:
+Aside videos and gifs, FFmpeg also allows you to convert audio files! I often record my guitar with my samsung phone. It's recording app stores these files in the m4a format, which isn't supported by sound editing applications and DAWs like Ableton Live. A much more sensible format would be MP3 or WAV:
 
 <pre><code>ffmpeg -i recording.m4a output.wav
 </code></pre>
 
-Same command as before, only thing that changed are the file types!
+Same command as before, only thing that changed are the file types! FFmpeg will automatically handle the conversion between differen file types.
 
 <h2><a name='option'></a>ffmpeg options</h2>
 To see useful options that are avaiable in ffmpeg, you can simply type in 'ffmpeg -h' and it will print a relatively long list of different options as well as a description of what they do. If you want to see more or ALL options you can type in 'ffmpeg -h long' and 'ffmpeg -h full' respectively. Let's have a look at some of them:
@@ -75,9 +81,28 @@ Say you have a video file that you'd like to turn into a GIF with a framerate of
 Another command that I
 
 <h2><a name='frames'></a>Converting a series of frames into a gif/video</h2>
-One super useful command that I often require for my p5js sketches, is collating a sequence of frames into a video/gif:
+One super useful command that I often require for my p5js sketches, is collating/combining a sequence of frames into a video/gif:
 
-<pre><code>ffmpeg -i %03d.png output.gif
+<pre><code>ffmpeg -i frame%d.png output.gif
 </code></pre>
 
+<a href='https://trac.ffmpeg.org/wiki/Slideshow'>(FYI this is also sometimes called a slideshow, for googling purposes)</a>. 
+
+By manner of using a percentage sign '%' in the input file stream, FFmpeg understands that it should be looking for multiple files that need to be processed. If you've exported them from p5js or processing, usually you'll already have them appropriately named and numbered, generally in a sequential order, something like: frame1.png, frame2.png, frame3.png, ...
+
+Here the '%d' signifies that FFmpeg should expect a sequentially increasing number in this position of the file name. You can learn more about these patterns in <a href='http://ffmpeg.org/ffmpeg-all.html#image2-1'>this section</a> of the official documentation. 
+
+Optionally you may also add the framerate flag to the command, otherwise the default framerate will be 25 fps. And if for any reason whatsoever, you need to convert a single image into a video or gif, you can also do that:
+
+<pre><code>ffmpeg -i img.png output.gif
+</code></pre>
+
+
 <h2><a name='size'></a>Reducing the size of gifs</h2>
+This isn't a single command per se, but we'll have a look at different commands that can potentially reduce the size of your gif files:
+
+
+<h2>End notes</h2>
+If you've made it this far, I sincerely hope this run down of FFmpeg was useful and learned something new! I'm planning on making another blog post about FFmpeg, where we'll use it for creative purposes and video effects, rather than just using it as a tool for conversion operations.
+
+If you've enjoyed this blog post consider sharing it with a friend! Otherwise subscribe to newsletter or come and say hi on Twitter! Cheers, happy sketching!
