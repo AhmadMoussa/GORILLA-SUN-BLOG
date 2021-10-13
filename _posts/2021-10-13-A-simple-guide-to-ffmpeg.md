@@ -35,7 +35,7 @@ In this blog post I'll gently introduce you to ffmpeg and how it can help you wi
 <h3><a href='#cheatsheet'>Cheat Sheet</a></h3>
 
 
-<h2><a name='ffmpeg'>1.</a> What's ffmpeg?</h2>
+<h2><a name='ffmpeg'>1.1</a> What's ffmpeg?</h2>
 Simply put, FFmpeg is an open source video and audio processing tool. It allows you to convert between different encoding formats, in addition to editing video and audio files in a number of ways. It's mainly designed to be a command-line interface (CLI) that you execute from your terminal (this is how we'll be using it in this blog post), however it can also be integrated as a part of other software.
 
 Know those fancy apps on your phone, that help you format your videos for IG? A lot of them probably use FFmpeg in the background. Can't blame them though, why reinvent the wheel when FFmpeg exists? It's super fast and versatile.
@@ -44,12 +44,12 @@ How can WE use FFmpeg? Well, for example, you were just about to upload a GIF fi
 
 Video file too long? No problem we can trim it with FFmpeg. Video file size too large? No problem we can reduce it's size with ffmpeg. You get the idea! In the rest of this blog post I'll run over the most useful FFmpeg commands (especially for creatives).
 
-<h2><a name='install'></a>Installing FFmpeg</h2>
+<h2><a name='install'>1.2</a> Installing FFmpeg</h2>
 Maybe the hardest part about using FFmpeg is installing it. This will vary on the operating system that you currently have.
 
 On windows (what I'm using), you'll need to make sure that you create a new environment variable, such that you can FFmpeg from your terminal now matter what file you open the terminal from.
 
-<h2><a name='syntax'></a>ffmpeg command syntax</h2>
+<h2><a name='syntax'>1.3</a> FFmpeg command syntax</h2>
 Before you have a heart attack, writing FFmpeg commands is actually super easy, but to elucidate how these commands are composed we'll have to have a look at the general FFmpeg command syntax:
 <pre><code>ffmpeg [global_options] {[input_file_options] -i input_url} ...
  {[output_file_options] output_url} ...
@@ -59,7 +59,7 @@ FFmpeg commands essentially always consists of two parts, an input stream and an
 
 For each one of these streams we can specify a number of conversion options that, in addition to converting between two formats, allow us to manipulate specific properties of the file. For example, you want the output file to have a secific frame rate, this could then be specified as an option. As you might've noticed, there are options that are applied specifically to the input stream, others specifically to the output stream, and others to the entire command.
 
-<h2><a name='convert'></a>Converting files with ffmpeg</h2>
+<h2><a name='convert'>1.4</a> Converting files with ffmpeg</h2>
 The simplest and quintessential ffmpeg command would be the simple conversion command. It goes as shown:
 <pre><code>ffmpeg -i input.mp4 output.gif
 </code></pre>
@@ -73,7 +73,7 @@ Aside videos and gifs, FFmpeg also allows you to convert audio files! I often re
 
 Same command as before, only thing that changed are the file types! FFmpeg will automatically handle the conversion between differen file types.
 
-<h2><a name='option'></a>ffmpeg options</h2>
+<h2><a name='option'>1.5</a> FFmpeg options</h2>
 To see useful options that are avaiable in ffmpeg, you can simply type in 'ffmpeg -h' and it will print a relatively long list of different options as well as a description of what they do. If you want to see more or ALL options you can type in 'ffmpeg -h long' and 'ffmpeg -h full' respectively. Let's have a look at some of them:
 
 <pre><code>ffmpeg -i input.mp4 -r 25 output.gif
@@ -96,7 +96,7 @@ Another command that I
 
 
 
-<h2><a name='frames'></a>Converting a series of frames into a gif/video</h2>
+<h2><a name='frames'>2.1</a> Converting a series of frames into a gif/video</h2>
 One super useful command that I often require for my p5js sketches, is collating/combining a sequence of frames into a video/gif:
 
 <pre><code>ffmpeg -i frame%d.png output.gif
@@ -116,7 +116,7 @@ Optionally you may also add the framerate flag to the command, otherwise the def
 
 
 
-<h2><a name='scalecrop'></a>Scaling and Cropping/video</h2>
+<h2><a name='scalecrop'>2.2</a> Scaling and Cropping/video</h2>
 <h3>Cropping</h3>
 The best run-down of cropping with ffmpeg, I've found to be <a href='https://video.stackexchange.com/a/4571'>this stackexchange answer</a>.
 
