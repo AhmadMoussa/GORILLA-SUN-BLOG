@@ -202,11 +202,29 @@ A summary of the aforementioned commands and what they do:
 		<tbody>
 			<tr>
 				<td>Conversion</td>
-				<td><pre><code>ffmpeg -i input.mp4 output.gif</code></pre></td>
+				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i input.mp4 output.gif</code></pre></td>
 			</tr>
 			<tr>
 				<td>Frames to GIF</td>
-				<td><pre><code>ffmpeg -i frame%d.png output.gif</code></pre></td>
+				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i frame%d.png output.gif</code></pre></td>
+			</tr>
+			
+			<tr>
+				<td>Scaling/Resizing</td>
+				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i in.mp4 -vf scale="out_w:-1" out.mp4</code></pre></td>
+			</tr>
+			<tr>
+				<td>Cropping</td>
+				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i in.mp4 -vf crop="out_w:out_h:x:y" out.mp4</code></pre></td>
+			</tr>
+			
+			<tr>
+				<td>Trim duration</td>
+				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i input.gif -ss 00:00:00 -to 00:00:03 output.gif</code></pre></td>
+			</tr>
+			<tr>
+				<td>Trim exact frames</td>
+				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -ss 5.32 -i input.mp4 -c:v libx264 -c:a aac -frames:v 60 out.mp4</code></pre></td>
 			</tr>
 			
 		</tbody>
