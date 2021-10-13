@@ -22,20 +22,20 @@ In this blog post I'll gently introduce you to ffmpeg and how it can help you wi
 1. <a href='#ffmpeg'>What is FFmpeg?</a>
 2. <a href='#install'>Installing FFmpeg</a>
 3. <a href='#syntax'>FFmpeg command syntax</a>
-5. <a href='#convert'>File conversion example</a>
-6. <a href='#option'>Command Options</a>
+4. <a href='#convert'>File conversion example</a>
+5. <a href='#option'>Command Options</a>
 
 <h3>Generally useful FFmpeg commands</h3>
-8. <a href='#frames'>Collating frames into a GIF</a>
-9. <a href='#reduce'>Reducing file sizes</a>
-10. <a href='#scalecrop'>Scaling and Cropping</a>
-11. <a href='#websafe'>Converting to a web safe video format</a>
-12. <a href='#multiple'>Converting multiple files in a directory</a>
+1. <a href='#frames'>Collating frames into a GIF</a>
+2. <a href='#reduce'>Reducing file sizes</a>
+3. <a href='#scalecrop'>Cropping and Resizing</a>
+4. <a href='#websafe'>Converting to a web safe video format</a>
+5. <a href='#multiple'>Converting multiple files in a directory</a>
 
 <h3><a href='#cheatsheet'>Cheat Sheet</a></h3>
 
 
-<h2><a name='ffmpeg'></a>What's ffmpeg?</h2>
+<h2><a name='ffmpeg'>1.</a> What's ffmpeg?</h2>
 Simply put, FFmpeg is an open source video and audio processing tool. It allows you to convert between different encoding formats, in addition to editing video and audio files in a number of ways. It's mainly designed to be a command-line interface (CLI) that you execute from your terminal (this is how we'll be using it in this blog post), however it can also be integrated as a part of other software.
 
 Know those fancy apps on your phone, that help you format your videos for IG? A lot of them probably use FFmpeg in the background. Can't blame them though, why reinvent the wheel when FFmpeg exists? It's super fast and versatile.
