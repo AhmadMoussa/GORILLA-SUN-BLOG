@@ -190,6 +190,30 @@ The vf flag actually invokes the filtergraph that allows you to chain several vi
 <h2><a name='cheatsheet'></a>Cheat Sheet</h2>
 A summary of the aforementioned commands and what they do:
 
+<div class="table-wrapper">
+	<table>
+		<thead>
+			<tr>
+				<th>Use case</th>
+				<th>Command</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Conversion</th>
+				<th><pre><code>ffmpeg -i input.mp4 output.gif</code></pre></th>
+			</tr>
+			<tr>
+				<th>Frames to GIF</th>
+				<th><pre><code>ffmpeg -i frame%d.png output.gif</code></pre></th>
+			</tr>
+			
+		</tbody>
+		<tfoot>
+		</tfoot>
+	</table>
+</div>
+
 <div class="row gtr-50">
 		<div class="col-4 col-12-medium">
       <h3>Conversion</h3>
