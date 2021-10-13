@@ -196,16 +196,17 @@ A summary of the aforementioned commands and what they do:
 			<tr>
 				<th>Use case</th>
 				<th>Command</th>
+				<th>Notes</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<th>Conversion</th>
-				<th><pre><code>ffmpeg -i input.mp4 output.gif</code></pre></th>
+				<td>Conversion</td>
+				<td><pre><code>ffmpeg -i input.mp4 output.gif</code></pre></td>
 			</tr>
 			<tr>
-				<th>Frames to GIF</th>
-				<th><pre><code>ffmpeg -i frame%d.png output.gif</code></pre></th>
+				<td>Frames to GIF</td>
+				<td><pre><code>ffmpeg -i frame%d.png output.gif</code></pre></td>
 			</tr>
 			
 		</tbody>
