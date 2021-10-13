@@ -222,57 +222,12 @@ A summary of the aforementioned commands and what they do:
 				<td>Trim duration</td>
 				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i input.gif -ss 00:00:00 -to 00:00:03 output.gif</code></pre></td>
 			</tr>
-			<tr>
-				<td>Trim exact frames</td>
-				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -ss 5.32 -i input.mp4 -c:v libx264 -c:a aac -frames:v 60 out.mp4</code></pre></td>
-			</tr>
 			
 		</tbody>
 		<tfoot>
 		</tfoot>
 	</table>
 </div>
-
-<div class="row gtr-50">
-		<div class="col-4 col-12-medium">
-      <h3>Conversion</h3>
-      <h3>Sequence of frames to GIF</h3>
-      <h3>Scaling/Resizing</h3>
-      <h3>Cropping</h3>
-      <h3>Trim duration</h3>
-      <h3>Trim exact frames</h3>
-    </div>
-    <div class="col-8 col-12-medium">
-      <pre><code>ffmpeg -i input.mp4 output.gif</code></pre>
-      <pre><code>ffmpeg -i frame%d.png output.gif</code></pre>
-      <pre><code>ffmpeg -i in.mp4 -vf scale="out_w:-1" out.mp4</code></pre>
-      <pre><code>ffmpeg -i in.mp4 -vf crop="out_w:out_h:x:y" out.mp4</code></pre>
-      <pre><code>ffmpeg -i input.gif -ss 00:00:00 -to 00:00:03 output.gif</code></pre>
-      <pre><code>ffmpeg -ss 5.32 -i input.mp4 -c:v libx264 -c:a aac -frames:v 60 out.mp4</code></pre>
-    </div>
-</div>
-  
-
-<h3>Conversion</h3>
-<pre><code>ffmpeg -i input.mp4 output.gif</code></pre>
-
-<h3>Sequence of frames to GIF</h3>
-<pre><code>ffmpeg -i frame%d.png output.gif</code></pre>
-
-<h3>Scaling/Resizing</h3>
-<pre><code>ffmpeg -i in.mp4 -vf scale="out_w:-1" out.mp4</code></pre>
-
-<h3>Cropping</h3>
-<pre><code>ffmpeg -i in.mp4 -vf crop="out_w:out_h:x:y" out.mp4</code></pre>
-
-<h3>Trim duration</h3>
-<pre><code>ffmpeg -i input.gif -ss 00:00:00 -to 00:00:03 output.gif</code></pre>
-
-<h3>Trim exact frames</h3>
-<pre><code>ffmpeg -ss 5.32 -i input.mp4 -c:v libx264 -c:a aac -frames:v 60 out.mp4</code></pre>
-
-
-
 
 
 <h2><a name='size'></a>Reducing the size of gifs</h2>
