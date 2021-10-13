@@ -196,31 +196,42 @@ A summary of the aforementioned commands and what they do:
 			<tr>
 				<th>Use case</th>
 				<th>Command</th>
-				<th>Notes</th>
+				<th>Description</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td>Conversion</td>
-				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i input.mp4 output.gif</code></pre></td>
+				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i input.gif output.mp4</code></pre></td>
+				<td>Basic example of an FFmpeg conversion command.</td>
 			</tr>
 			<tr>
 				<td>Frames to GIF</td>
 				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i frame%d.png output.gif</code></pre></td>
+				<td>Combine frames into a GIF.</td>
+			</tr>
+			
+			<tr>
+				<td>GIF to frames</td>
+				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i input.gif frame%d.png</code></pre></td>
+				<td>Split a GIF into it's constituent frames.</td>
 			</tr>
 			
 			<tr>
 				<td>Scaling/Resizing</td>
 				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i in.mp4 -vf scale="out_w:-1" out.mp4</code></pre></td>
+				<td>Resizes input stream. -1 keeps the aspect ratio along that axis.</td>
 			</tr>
 			<tr>
 				<td>Cropping</td>
 				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i in.mp4 -vf crop="out_w:out_h:x:y" out.mp4</code></pre></td>
+				<td>Crops out rectangular area from input stream.</td>
 			</tr>
 			
 			<tr>
 				<td>Trim duration</td>
 				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i input.gif -ss 00:00:00 -to 00:00:03 output.gif</code></pre></td>
+				<td>Trims duration of input stream based on start and stop time stamps.</td>
 			</tr>
 			
 		</tbody>
