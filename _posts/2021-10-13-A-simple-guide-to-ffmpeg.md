@@ -37,7 +37,7 @@ In this blog post I'll gently introduce you to ffmpeg and how it can help you wi
 12. <a href='#size'>Reducing the size of your gifs</a>
 13. <a href='#end'>End Notes</a>
 
-<br/>
+<p></p>
 
 <h2><a name='start'></a><a name='ffmpeg'>1.1</a> What's ffmpeg?</h2>
 Simply put, FFmpeg is an open source video and audio processing tool. It allows you to convert between different encoding formats, in addition to editing video and audio files in a number of ways. It's mainly designed to be a command-line interface (CLI) that you execute from your terminal (this is how we'll be using it in this blog post), however it can also be integrated as a part of other software.
@@ -48,7 +48,7 @@ How can WE use FFmpeg? Well, for example, you were just about to upload a GIF fi
 
 Video file too long? No problem we can trim it with FFmpeg. Video file size too large? No problem we can reduce it's size with ffmpeg. You get the idea! In the rest of this blog post I'll run over the most useful FFmpeg commands (especially for creatives).
 
-<br/>
+<p></p>
 
 <h2><a name='syntax'>1.2</a> FFmpeg command syntax</h2>
 Before you have a heart attack, writing FFmpeg commands is actually super easy, but to elucidate how these commands are composed we'll have to have a look at the general FFmpeg command syntax:
@@ -60,7 +60,7 @@ FFmpeg commands essentially always consists of two parts, an input stream and an
 
 For each one of these streams we can specify a number of conversion options that, in addition to converting between two formats, allow us to manipulate specific properties of the file. For example, you want the output file to have a secific frame rate, this could then be specified as an option. As you might've noticed, there are options that are applied specifically to the input stream, others specifically to the output stream, and others to the entire command.
 
-<br/>
+<p></p>
 
 <h2><a name='convert'>1.3</a> Converting files with ffmpeg</h2>
 The simplest and quintessential ffmpeg command would be the simple conversion command. It goes as shown:
@@ -76,7 +76,7 @@ Aside videos and gifs, FFmpeg also allows you to convert audio files! I often re
 
 Same command as before, only thing that changed are the file types! FFmpeg will automatically handle the conversion between differen file types.
 
-<br/>
+<p></p>
 
 <h2><a name='option'>1.4</a> FFmpeg options</h2>
 You can think about options as modifiers, that depending on their function, will somehow change the output and purpose of your command. To see a list of options that are avaiable in FFmpeg, you can simply type in 'ffmpeg -h', hit enter and it will print a relatively long list of different options as well as a description of what they do. If you want to see more or ALL options you can type in 'ffmpeg -h long' and 'ffmpeg -h full' respectively. 
@@ -90,7 +90,7 @@ Say you have a video file that you'd like to turn into a GIF with a framerate of
 
 Framerate would be one of many things that we could modify through an additional flag, and this will make much more sense in the coming next sections. If you'd like to read up on specific options and what they do, then FFmpeg has a wonderfully detailed documentation about all of them <a href='https://www.ffmpeg.org/ffmpeg.html#Options'>here</a>.
 
-<br/>
+<p></p>
 
 
 
@@ -124,7 +124,7 @@ And if for any reason whatsoever, you need to convert a single image into a vide
 <pre><code>ffmpeg -i img.png output.gif
 </code></pre>
 
-<br/>
+<p></p>
 
 
 <h2><a name='scalecrop'>2.2</a> Cropping and Resizing</h2>
@@ -148,7 +148,7 @@ In a similar manner we can resize an input stream as follows:
 
 Here we use the 'scale' video filter. To the scale video filter we pass two arguments: a width and a height. In this case we're choosing a specific output width 'out_w' and set the output height to '-1'. -1 essentially tells ffmpeg to calculate the correct output height, such that the output video has the same aspect ratio as the input video. Of course you can also do this the other way around '-1:out_h' as well. Or set both width and height to different values.
 
-<br/>
+<p></p>
 
 
 
@@ -164,7 +164,7 @@ Another command that I've found useful a couple of times:
 
 Which essentially allows you to truncate the duration of a gif or video file, by setting a specific start and end time stamp in seconds. Trimming the video based on exact frames is a little bit more complicated, and is elucidated in <a href='https://superuser.com/a/459488'>this stackexchange answer</a>.
 
-<br/>
+<p></p>
 
 
 
@@ -194,7 +194,7 @@ To display your video on your website, and have it behave like a gif in disguise
 
 This is also very useful for perfectly looping GIFs. The 'loop' statement allows for seamless transitions from end to start.
 
-<br/>
+<p></p>
 
 
 
@@ -211,7 +211,7 @@ And for macOS as well as Linux:
 <pre><code>for i in *.gif; do ffmpeg -i "$i" "${i%.*}.mp4"; done
 </code></pre>
 
-<br/>
+<p></p>
 
 <!-- I think this should be it's own blog post "Dithering with FFmpeg" and another about "Motion Blur" with FFmpeg
 <h3>Palettegen and Paletteuse</h3>
@@ -242,7 +242,7 @@ Here's a good <a href='https://www.youtube.com/watch?v=r1AtmY-RMyQ&ab_channel=Tr
 
 And here's a good <a href='https://www.youtube.com/watch?v=H1o6MWnmwpY&ab_channel=RickMakes'>guide</a> on installing FFmpeg on macOs.
 
-<br/>
+<p></p>
 
 
 <h2><a name='cheatsheet'>3.2</a> Cheat Sheet</h2>
@@ -325,7 +325,7 @@ DO ffmpeg -i "%G" -acodec mp3 "%~nG.mp3"</code></pre>
 	</table>
 </div>
 
-<br/>
+<p></p>
 
 <h2><a name='size'>3.3</a> Reducing the size of gifs</h2>
 This isn't a single command per se, but we'll have a quick look at some strategies that can potentially reduce the size of your gif files. I'd like to give a shout-out to two superb posts on the topic of quality and size of gif files with FFmpeg, this <a href='http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html'>one</a> as well as this <a href='https://cassidy.codes/blog/2017/04/25/ffmpeg-frames-to-gif-optimization/'>one</a>. 
@@ -334,7 +334,7 @@ The topic of gifs, compression and size/quality tradeoffs are a can of worms, th
 
 One quick and dirty trick that I like a lot, is simply scaling the resolution of gif files down (which we have covered above). This tends to have a dramatic effect on the quality of the gif, but sometimes I just can't be bothered when my GIF file size is just barely above the 15mb size limit of Twitter. Shaving off those 1-2mbs can usually be achieved by scaling down around 10%.
 
-<br/>
+<p></p>
 
 
 
