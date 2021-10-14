@@ -344,4 +344,4 @@ One quick and dirty trick that I like a lot, is simply scaling the resolution of
 <h2><a name='endnotes'>3.4</a> End notes</h2>
 If you've made it this far, I sincerely hope this run down of FFmpeg was useful and you learned something new! I'm planning on making another blog post about FFmpeg, where we'll use it for creative purposes and video effects, rather than just using it as a tool for conversion operations.
 
-If you've enjoyed this blog post consider sharing it with a friend! Otherwise subscribe to newsletter or come and say hi on Twitter! Cheers, happy sketching!
+If you've enjoyed this blog post consider sharing it with a friend! Otherwise subscribe to the newsletter for the occasional update or come and say hi on Twitter! Cheers, and happy sketching!
