@@ -196,13 +196,11 @@ This is also very useful for perfectly looping GIFs. The 'loop' statement allows
 
 
 <h2><a name='multiple'>2.5</a> Converting multiple files in a directory</h2>
-This isn't really a command specific to ffmpeg, but something I've found to come in handy in a couple of situations. Let's assume we have a folder full of files that we'd like to process in some manner, and we don't want to tediously type out an FFmpeg command for each one. We can accomplish this with some additional syntax as follows: 
+This isn't really a command specific to ffmpeg, but something I've found to come in handy in a couple of situations. Let's assume we have a folder full of files that we'd like to process in some manner, and we don't want to tediously type out an FFmpeg command for each one. We can accomplish this on windows with some additional syntax as follows: 
 
-<h3>On windows</h3>
 <pre><code>FOR /F "tokens=*" %G IN ('dir /b *.gif') DO ffmpeg -i "%G" "%~nG.mp4"
 </code></pre>
 
-<h3>On macOS and Linux</h3>
 And for macOS as well as Linux:
 <pre><code>for i in *.gif; do ffmpeg -i "$i" "${i%.*}.mp4"; done
 </code></pre>
