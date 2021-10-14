@@ -24,7 +24,6 @@ In this blog post I'll gently introduce you to ffmpeg and how it can help you wi
 3. <a href='#syntax'>FFmpeg command syntax</a>
 4. <a href='#convert'>File conversion example</a>
 5. <a href='#option'>Command Options</a>
-	
 <h3><a href='#useful'>Generally useful FFmpeg commands</a></h3>
 6. <a href='#frames'>Collating frames into a GIF</a>
 7. <a href='#scalecrop'>Cropping and Resizing</a>
