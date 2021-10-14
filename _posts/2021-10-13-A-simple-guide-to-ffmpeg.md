@@ -19,18 +19,18 @@ Being a creative of any sort in this digital age, requires you to juggle a varie
 In this blog post I'll gently introduce you to ffmpeg and how it can help you with converting and editing your files!
 
 <h3>Getting started with FFmpeg</h3>
-1. <a href='#ffmpeg'>What is FFmpeg?</a>
-2. <a href='#install'>Installing FFmpeg</a>
-3. <a href='#syntax'>FFmpeg command syntax</a>
-4. <a href='#convert'>File conversion example</a>
-5. <a href='#option'>Command Options</a>
+1\. <a href='#ffmpeg'>What is FFmpeg?</a>
+2\. <a href='#install'>Installing FFmpeg</a>
+3\. <a href='#syntax'>FFmpeg command syntax</a>
+4\. <a href='#convert'>File conversion example</a>
+5\. <a href='#option'>Command Options</a>
 
 <h3>Generally useful FFmpeg commands</h3>
-6. <a href='#frames'>Collating frames into a GIF</a>
-7. <a href='#scalecrop'>Cropping and Resizing</a>
-8. <a href='#shorten'>Shorten duration</a>
-9. <a href='#websafe'>Converting to a web safe video format</a>
-10. <a href='#multiple'>Converting multiple files in a directory</a>
+6\. <a href='#frames'>Collating frames into a GIF</a>
+7\. <a href='#scalecrop'>Cropping and Resizing</a>
+8\. <a href='#shorten'>Shorten duration</a>
+9\. <a href='#websafe'>Converting to a web safe video format</a>
+10\. <a href='#multiple'>Converting multiple files in a directory</a>
 
 
 <h3><a href='#cheatsheet'>Cheat Sheet</a></h3>
@@ -103,13 +103,16 @@ One super useful command that I often require for my p5js sketches, is collating
 <pre><code>ffmpeg -i frame%d.png output.gif
 </code></pre>
 
-<a href='https://trac.ffmpeg.org/wiki/Slideshow'>(FYI this is also sometimes called a slideshow, for googling purposes)</a>. 
-
 By manner of using a percentage sign '%' in the input file stream, FFmpeg understands that it should be looking for multiple files that need to be processed. If you've exported them from p5js or processing, usually you'll already have them appropriately named and numbered, generally in a sequential order, something like: frame1.png, frame2.png, frame3.png, ...
 
-Here the '%d' signifies that FFmpeg should expect a sequentially increasing number in this position of the file name. You can learn more about these patterns in <a href='http://ffmpeg.org/ffmpeg-all.html#image2-1'>this section</a> of the official documentation. 
+Here the '%d' signifies that FFmpeg should expect a sequentially increasing number in this position of the file name. You can learn more about these patterns in <a href='http://ffmpeg.org/ffmpeg-all.html#image2-1'>this section</a> of the official documentation. <a href='https://trac.ffmpeg.org/wiki/Slideshow'>(FYI tFFmpeg calls this a slideshow if it's unrelated images, for googling purposes)</a>. 
 
-Optionally you may also add the framerate flag to the command, otherwise the default framerate will be 25 fps. And if for any reason whatsoever, you need to convert a single image into a video or gif, you can also do that:
+Optionally you may also add the framerate flag to the command, otherwise the default framerate will be 25 fps. Naturally, you can also split up a gif into it's constituent frames by reversing the command:
+
+<pre><code>ffmpeg -i  output.gif frame%d.png
+</code></pre>
+
+And if for any reason whatsoever, you need to convert a single image into a video or gif, you can also do that:
 
 <pre><code>ffmpeg -i img.png output.gif
 </code></pre>
@@ -137,8 +140,6 @@ In a similar manner we can resize an input stream as follows:
 </code></pre>
 
 Here we use the 'scale' video filter. To the scale video filter we pass two arguments: a width and a height. In this case we're choosing a specific output width 'out_w' and set the output height to '-1'. -1 essentially tells ffmpeg to calculate the correct output height, such that the output video has the same aspect ratio as the input video. Of course you can also do this the other way around '-1:out_h' as well. Or set both width and height to different values.
-
-
 
 
 
@@ -194,15 +195,14 @@ This is also very useful for perfectly looping GIFs. The 'loop' statement allows
 
 
 <h2><a name='multiple'>10.</a> Converting multiple files in a directory</h2>
-This isn't really a command specific to ffmpeg, but neat to have in your inventory. Let's assume we have a folder full of gif files that we'd like to convert to mp4 files, and we don't want to tediously do this file by file. We can do this with some additional syntax as follows: 
+This isn't really a command specific to ffmpeg, but something I've found to come in handy in a couple of situations. Let's assume we have a folder full of files that we'd like to process in some manner, and we don't want to tediously type out an FFmpeg command for each one. We can accomplish this with some additional syntax as follows: 
 
 <h3>On windows</h3>
 <pre><code>FOR /F "tokens=*" %G IN ('dir /b *.gif') DO ffmpeg -i "%G" "%~nG.mp4"
 </code></pre>
 
-And for macOS as well as Linux:
-
 <h3>On macOS and Linux</h3>
+And for macOS as well as Linux:
 <pre><code>for i in *.gif; do ffmpeg -i "$i" "${i%.*}.mp4"; done
 </code></pre>
 
@@ -235,7 +235,7 @@ The vf flag actually invokes the filtergraph that allows you to chain several vi
 
 
 <h2><a name='cheatsheet'></a>Cheat Sheet</h2>
-A summary of the aforementioned commands and what they do:
+I'll be honest with you, the hardest part about ffmpeg commands is remembering them. Therefore I've made a little cheat sheet of the aforementioned commands and what they do:
 
 <div class="table-wrapper">
 	<table>
