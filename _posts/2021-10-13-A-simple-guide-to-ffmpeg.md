@@ -18,14 +18,14 @@ Being a creative of any sort in this digital age, requires you to juggle a varie
 
 In this blog post I'll gently introduce you to ffmpeg and how it can help you with converting and editing your files!
 
-<h3><a href='#start'>Getting started with FFmpeg</h3>
+<h3><a href='#start'>Getting started with FFmpeg</a></h3>
 1. <a href='#ffmpeg'>What is FFmpeg?</a>
 2. <a href='#install'>Installing FFmpeg</a>
 3. <a href='#syntax'>FFmpeg command syntax</a>
 4. <a href='#convert'>File conversion example</a>
 5. <a href='#option'>Command Options</a>
 
-<h3><a href='#useful'>Generally useful FFmpeg commands</h3>
+<h3><a href='#useful'>Generally useful FFmpeg commands</a></h3>
 {:start="6"}
 6. <a href='#frames'>Collating frames into a GIF</a>
 7. <a href='#scalecrop'>Cropping and Resizing</a>
@@ -33,7 +33,7 @@ In this blog post I'll gently introduce you to ffmpeg and how it can help you wi
 9. <a href='#websafe'>Converting to a web safe video format</a>
 10. <a href='#multiple'>Converting multiple files in a directory</a>
 
-<h3><a href='#additional'>Additional Information</h3>
+<h3><a href='#additional'>Additional Information</a></h3>
 11. <a href='#cheatsheet'>Cheat Sheet</a>
 12. <a href='#size'></a>
 13. <a href='#end'>Cheat Sheet</a>
