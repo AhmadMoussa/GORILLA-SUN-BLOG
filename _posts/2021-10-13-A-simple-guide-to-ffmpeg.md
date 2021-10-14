@@ -8,9 +8,10 @@ thumbnail_path: https://media.giphy.com/media/tGiJyldyNUJXO/giphy.gif?cid=ecf05e
 published: true
 exclude_rss: true
 ---
-
+<!--
 <span class="image fit"><img src="https://media.giphy.com/media/tGiJyldyNUJXO/giphy.gif?cid=ecf05e47xxf9duke1suqh8gs3vbp28xssx1mse2k10bxgu4k&rid=giphy.gif&ct=g" alt="" /></span>
-<p></p>
+-->
+
 
 "This file format is not supported!" If you've ever received a notification like this, and you create content on a regular basis, then this blog post is probably for you!
 
