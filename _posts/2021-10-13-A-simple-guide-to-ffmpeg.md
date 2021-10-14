@@ -121,11 +121,11 @@ And if for any reason whatsoever, you need to convert a single image into a vide
 
 
 
-<h2><a name='scalecrop'>2.2</a> Scaling and Cropping/video</h2>
-<h3>Cropping</h3>
-The best run-down of cropping with ffmpeg, I've found to be <a href='https://video.stackexchange.com/a/4571'>this stackexchange answer</a>.
+<h2><a name='scalecrop'>2.2</a> Cropping and Resizing</h2>
+Cropping and resizing files are two things you've probably had to do at some point, and found them to be quite tedious, either using some software that isn't very versatile, or online editors that are incredibly tedious to navigate. Well, fret not, FFmpeg has your back yet again.
 
-The command that allows you to crop a file is the following:
+<h3>Cropping</h3>
+For a good run-down on croppping with FFmpeg, I've foun <a href='https://video.stackexchange.com/a/4571'>this stackexchange answer</a> to be the best. The command for cropping a file is the following:
 
 <pre><code>ffmpeg -i in.mp4 -vf crop="out_w:out_h:x:y" out.mp4
 </code></pre>
