@@ -66,7 +66,7 @@ The simplest and quintessential ffmpeg command would be the simple conversion co
 <pre><code>ffmpeg -i input.mp4 output.gif
 </code></pre>
 
-In this case we would be converting an mp4 file into a gif file. Notice the statement preceding the input file '-i', this is how an option is specified FFmpeg (I also often call them flags). Here we're telling FFmpeg that what follows is the input file. There are many such options in ffmpeg, each of which has it's own purpose.
+In this case we would be converting an mp4 file into a gif file. Notice the statement preceding the input file '-i', this is how an option is specified FFmpeg (also often called flags). Here we're telling FFmpeg that what follows is the input file. There are many such options in ffmpeg, each of which have their own purpose.
 
 Aside videos and gifs, FFmpeg also allows you to convert audio files! I often record my guitar with my samsung phone. It's recording app stores these files in the m4a format, which isn't supported by sound editing applications and DAWs like Ableton Live. A much more sensible format would be MP3 or WAV:
 
@@ -76,7 +76,7 @@ Aside videos and gifs, FFmpeg also allows you to convert audio files! I often re
 Same command as before, only thing that changed are the file types! FFmpeg will automatically handle the conversion between differen file types.
 
 <h2><a name='option'>5.</a> FFmpeg options</h2>
-To see useful options that are avaiable in ffmpeg, you can simply type in 'ffmpeg -h' and it will print a relatively long list of different options as well as a description of what they do. If you want to see more or ALL options you can type in 'ffmpeg -h long' and 'ffmpeg -h full' respectively. Let's have a look at some of them:
+To see useful options that are avaiable in FFmpeg, you can simply type in 'ffmpeg -h' and it will print a relatively long list of different options as well as a description of what they do. If you want to see more or ALL options you can type in 'ffmpeg -h long' and 'ffmpeg -h full' respectively. Let's have a look at some of them:
 
 <pre><code>ffmpeg -i input.mp4 -r 25 output.gif
 </code></pre>
@@ -247,6 +247,16 @@ I'll be honest with you, the hardest part about ffmpeg commands is remembering t
 			</tr>
 		</thead>
 		<tbody>
+			<tr>
+				<td>Help</td>
+				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -h</code></pre></td>
+				<!-- <td>Basic example of an FFmpeg conversion command.</td> -->
+			</tr>
+			<tr>
+				<td>Inspect File</td>
+				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i filename.gif -hide_banner</code></pre></td>
+				<!-- <td>Basic example of an FFmpeg conversion command.</td> -->
+			</tr>
 			<tr>
 				<td>Conversion</td>
 				<td><pre style="margin: 0 0 0 0"><code>ffmpeg -i input.gif output.mp4</code></pre></td>
