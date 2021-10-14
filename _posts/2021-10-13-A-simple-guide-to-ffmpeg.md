@@ -73,14 +73,17 @@ Aside videos and gifs, FFmpeg also allows you to convert audio files! I often re
 Same command as before, only thing that changed are the file types! FFmpeg will automatically handle the conversion between differen file types.
 
 <h2><a name='option'>1.4</a> FFmpeg options</h2>
-To see useful options that are avaiable in FFmpeg, you can simply type in 'ffmpeg -h' and it will print a relatively long list of different options as well as a description of what they do. If you want to see more or ALL options you can type in 'ffmpeg -h long' and 'ffmpeg -h full' respectively. Let's have a look at some of them:
+You can think about options as modifiers, that depending on their function, will somehow change the output and purpose of your command. To see a list of options that are avaiable in FFmpeg, you can simply type in 'ffmpeg -h', hit enter and it will print a relatively long list of different options as well as a description of what they do. If you want to see more or ALL options you can type in 'ffmpeg -h long' and 'ffmpeg -h full' respectively. 
 
-<pre><code>ffmpeg -i input.mp4 -r 25 output.gif
+Let's have a look at some of them:
+
+<pre><code>ffmpeg -i input.mp4 -r 25 output.mp4
 </code></pre>
 
-Say you have a video file that you'd like to turn into a GIF with a framerate of 25 fps. To achieve that, you'd add the '-r' flag in front of the output file name, along with the rate you'd like to set it to.
+Say you have a video file that you'd like to turn into a GIF with a framerate of 25 fps. To achieve that, you'd add the '-r' flag in front of the output file name, along with the rate you'd like to set it to. 
 
-Another command that I
+Framerate would be one of many things that we could modify through an additional flag, and this will make much more sense in the coming next sections. If you'd like to read up on specific options and what they do, then FFmpeg has a wonderfully detailed documentation about all of them <a href='https://www.ffmpeg.org/ffmpeg.html#Options'>here</a>.
+
 
 
 
