@@ -18,14 +18,14 @@ Being a creative of any sort in this digital age, requires you to juggle a varie
 
 In this blog post I'll gently introduce you to ffmpeg and how it can help you with converting and editing your files!
 
-<h3>Getting started with FFmpeg</h3>
+<h3><a href='#start'>Getting started with FFmpeg</h3>
 1. <a href='#ffmpeg'>What is FFmpeg?</a>
 2. <a href='#install'>Installing FFmpeg</a>
 3. <a href='#syntax'>FFmpeg command syntax</a>
 4. <a href='#convert'>File conversion example</a>
 5. <a href='#option'>Command Options</a>
 
-<h3>Generally useful FFmpeg commands</h3>
+<h3><a href='#useful'>Generally useful FFmpeg commands</h3>
 {:start="6"}
 6. <a href='#frames'>Collating frames into a GIF</a>
 7. <a href='#scalecrop'>Cropping and Resizing</a>
@@ -33,11 +33,13 @@ In this blog post I'll gently introduce you to ffmpeg and how it can help you wi
 9. <a href='#websafe'>Converting to a web safe video format</a>
 10. <a href='#multiple'>Converting multiple files in a directory</a>
 
+<h3><a href='#additional'>Additional Information</h3>
+11. <a href='#cheatsheet'>Cheat Sheet</a>
+12. <a href='#size'></a>
+13. <a href='#end'>Cheat Sheet</a>
 
-<h3><a href='#cheatsheet'>Cheat Sheet</a></h3>
 
-
-<h2><a name='ffmpeg'>1.</a> What's ffmpeg?</h2>
+<h2><a name='start'></a><a name='ffmpeg'>1.</a> What's ffmpeg?</h2>
 Simply put, FFmpeg is an open source video and audio processing tool. It allows you to convert between different encoding formats, in addition to editing video and audio files in a number of ways. It's mainly designed to be a command-line interface (CLI) that you execute from your terminal (this is how we'll be using it in this blog post), however it can also be integrated as a part of other software.
 
 Know those fancy apps on your phone, that help you format your videos for IG? A lot of them probably use FFmpeg in the background. Can't blame them though, why reinvent the wheel when FFmpeg exists? It's super fast and versatile.
@@ -98,7 +100,7 @@ Another command that I
 
 
 
-<h2><a name='frames'>6.</a> Converting a series of frames into a gif/video</h2>
+<h2><a name='useful'></a><a name='frames'>6.</a> Converting a series of frames into a gif/video</h2>
 One super useful command that I often require for my p5js sketches, is collating/combining a sequence of frames into a video/gif:
 
 <pre><code>ffmpeg -i frame%d.png output.gif
@@ -235,7 +237,7 @@ The vf flag actually invokes the filtergraph that allows you to chain several vi
 
 
 
-<h2><a name='cheatsheet'></a>Cheat Sheet</h2>
+<h2><a name='additional'></a><a name='cheatsheet'></a>Cheat Sheet</h2>
 I'll be honest with you, the hardest part about ffmpeg commands is remembering them. Therefore I've made a little cheat sheet of the aforementioned commands and what they do:
 
 <div class="table-wrapper">
@@ -316,7 +318,7 @@ One quick and dirty trick that I like a lot, is simply scaling the resolution of
 
 
 
-<h2>End notes</h2>
-If you've made it this far, I sincerely hope this run down of FFmpeg was useful and learned something new! I'm planning on making another blog post about FFmpeg, where we'll use it for creative purposes and video effects, rather than just using it as a tool for conversion operations.
+<h2><a name='endnotes'></a>End notes</h2>
+If you've made it this far, I sincerely hope this run down of FFmpeg was useful and you learned something new! I'm planning on making another blog post about FFmpeg, where we'll use it for creative purposes and video effects, rather than just using it as a tool for conversion operations.
 
 If you've enjoyed this blog post consider sharing it with a friend! Otherwise subscribe to newsletter or come and say hi on Twitter! Cheers, happy sketching!
