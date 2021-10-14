@@ -27,7 +27,7 @@ In this blog post I'll gently introduce you to ffmpeg and how it can help you wi
 <h3><a href='#useful'>Generally useful FFmpeg commands</a></h3>
 5. <a href='#frames'>Collating frames into a GIF</a>
 6. <a href='#scalecrop'>Cropping and Resizing</a>
-7. <a href='#shorten'>Shorten duration</a>
+7. <a href='#shorten'>Trimming Videos</a>
 8. <a href='#websafe'>Converting to a web safe video format</a>
 9. <a href='#multiple'>Converting multiple files in a directory</a>
 	
@@ -149,7 +149,7 @@ Here we use the 'scale' video filter. To the scale video filter we pass two argu
 
 
 
-<h2><a name='shorten'>2.3</a> Shorten Length</h2>
+<h2><a name='shorten'>2.3</a> Trimming Videos</h2>
 
 Another command that I've found useful a couple of times:
 
