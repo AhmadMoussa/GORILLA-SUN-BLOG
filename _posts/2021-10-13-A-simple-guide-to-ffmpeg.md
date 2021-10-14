@@ -119,7 +119,7 @@ Optionally you may also add the framerate flag to the command, otherwise the def
 <pre><code>ffmpeg -i  output.gif frame%d.png
 </code></pre>
 
-And if for any reason whatsoever, you need to convert a single image into a video or gif, you can also do that:
+And if for any unorthodox reason whatsoever, you need to convert a single image into a video or gif, you can also do that:
 
 <pre><code>ffmpeg -i img.png output.gif
 </code></pre>
