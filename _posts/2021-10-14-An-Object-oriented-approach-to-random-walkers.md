@@ -456,6 +456,7 @@ Modifying the advance function to return the current position just add a return 
 </code></pre>
 
 And our code will behave as follows:
+
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
 function spawnWalker(x, y) {
