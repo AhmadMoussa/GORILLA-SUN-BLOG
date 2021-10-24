@@ -5,7 +5,7 @@ categories:
   - p5js
 description: An aesthetically minimalistic sketch that is based on a boolean grid and perlin noise
 thumbnail_path: https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif
-published: true
+published: false
 exclude_rss: true
 ---
 
