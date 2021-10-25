@@ -11,19 +11,28 @@ exclude_rss: true
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Parasite/parasite.gif" alt="" /></span>
 
-1. <a href='#diag'>A Boolean Grid</a>
-2. <a href='#wiggle'>Adjustable canvas size</a>
-3. <a href='#size'>Drawing the Grid</a>
-4. <a href='#atten'>Attenuating the Movement</a>
-5. <a href='#fade'>Fading Strokes in and out</a>
-6. <a href='#offset'>Offsetting every other loop</a>
-7. <a href='#aesthetic'>Aesthetic Touches</a>
+Today we'll take a stab at a rather popular algorithmic problem in creative coding: the random walk! Before we get into the nitty gritty, here's a quick index:
 
-<h2>One Grid, many walkers</h2>
-This one's quite interesting, from a 'design pattern' point of view. As always, this isn't by any means a new idea or concept, that I bred in the depth of my subconsciousness while meditating, but rather a very "popular" algorithmic problem, to say the least.
+<h3>Discussion</h3>
+1. <a href='#inspiration'>Inspiration</a>
+2. <a href='#description'>A Closer Look</a>
+3. <a href='#strategizing'>Strategizing</a>
+4. <a href='#OOP'>An OOP solution</a>
+
+<h3>Getting our hands dirty</h3>
+5. <a href='#grid'>The Grid</a>
+6. <a href='#randomwalker'>The Random Walker Class</a>
+7. <a href='#path'>Remembering and Drawing a Path</a>
+8. <a href='#broken'>Animating a Broken Random Walker</a>
+9. <a href='#gridhandler'>The gridHandler Class</a>
+10. <a href='#ironing'>Ironing out some Bugs</a>
+11. <a href='#backtrack'>The Backtracking Logic</a>
 
 
-<h2>Inspiration</h2>
+
+
+
+<h2><a name='inspiration'></a>Inspiration</h2>
 The work that inspired this blog post is predominantly <a href=''>Kjetil Golid</a>'s work:
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Each line segment is given a behavior upon creation: Move randomly, or move in a straight line when possible. The interplay between the two behaviors create some intriguing patterns. <a href="https://t.co/ar6MvTd5F9">pic.twitter.com/ar6MvTd5F9</a></p>&mdash; Kjetil Golid (@kGolid) <a href="https://twitter.com/kGolid/status/1413272810324176896?ref_src=twsrc%5Etfw">July 8, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
