@@ -15,9 +15,9 @@ Today we'll take a stab at a rather popular algorithmic problem in creative codi
 
 <h3>Discussion</h3>
 1. <a href='#inspiration'>Inspiration</a>
-2. <a href='#description'>A Closer Look</a>
-3. <a href='#strategizing'>Strategizing</a>
-4. <a href='#OOP'>An OOP solution</a>
+2. <a href='#inspect'>A Closer Look</a>
+3. <a href='#strategizing'>The General Strategy</a>
+4. <a href='#OOP'>Thinking in OOP</a>
 
 <h3>Getting our hands dirty</h3>
 5. <a href='#grid'>The Grid</a>
@@ -43,7 +43,7 @@ I was immediately inspired to attempt a recreation of the sketch, and figure out
 
 And as is often the case with creative coding sketches, this is again one of those problems that looks like a fun challenge when observed shallowly, but hides <a href='https://en.wikipedia.org/wiki/Self-avoiding_walk'>a monstrum of a mathematical problem</a> (graph theory to be precise) underneath. We'll brush aside this apparent simplicity for now, and tackle the task at hand with all sincerity, as always. Let's first talk through what we're trying to accomplish!
 
-<h2>What's the task, chief?</h2>
+<h2><a name='inspect'></a>A Closer Look</h2>
 We begin with an empty grid. To be precise, this is a grid of empty positions, that will be the foundation of everything that follows. It'll serve as the structure within which our random walkers are allowed to move. The positions that constitute the grid thus can either be occupied or vacant, depending on it having been traversed or not.
 
 The entities that will now interact, move, traverse and populate these empty positions in the grid, are called <a href='https://en.wikipedia.org/wiki/Random_walk'>'random walkers'</a>. And as the name suggests, these walkers will be navigating our grid in a random manner.
@@ -64,7 +64,7 @@ Our approach, similar to what Kjetil does in his artwork, is that when the rando
 
 
 
-<h2>Modeling the Problem</h2>
+<h2><a name='strategizing'></a>The general Strategy</h2>
 
 Similarly to the sketch "Grand Canyon" in one of my previous blog posts, the grid will be made of a 2D array of boolean values. Why booleans? Essentially, we'll denote grid positions that are empty by "True" in as "Yes, true, this position is empty", and "False" positions as occupied, in as "Nope, false, no free spot here".
 
@@ -74,7 +74,7 @@ Now, here's where it gets interesting. Assume we add a second random walker the 
 
 How do we model this problem? What is the grid in relationship to the random walkers? Take a second to think about how you would solve this! Or maybe even take a couple of minutes, and try to come up with your own code that satisfies everything that's been discussed so far!
 
-<h2>Thinking in OOP</h2>
+<h2><a name='OOP'></a>Thinking in OOP</h2>
 Add diagram here
 
 Well this is where Object Oriented Programming, or for short OOP, comes to our rescue. We'll split up the different parts of our code into different objects, each of which will deal with an individual problem. Essentially, we'll be separating our concerns.
@@ -89,7 +89,8 @@ And lastly, we'll also have an entity that takes care of communicating and sched
 Not that it really matters for what we're going to do, but the <a href='https://www.toptal.com/javascript/es6-class-chaos-keeps-js-developer-up'>intricacies of OOP in Javascript are quite interesting</a>.
 
 
-<h2>The grid</h2>
+
+<h2><a name='grid'></a>The grid</h2>
 For the remainder, I'll assume that you are familiar with javascript syntax. We'll begin with a grid. But this time we'll wrap our 2D boolean array inside of a function, that has a couple of properties and other functionality:
 
 <pre><code>function makeGrid(w, h, spacing, offset){
@@ -266,7 +267,7 @@ Take a sec to see what we did here. Maybe looks like a lot, but we're checking i
 }
 </code></pre>
 
-<h2>Remembering and drawing a path</h2>
+<h2><a name='path'></a>Remembering and drawing a path</h2>
 An important part of the random walk logic is now complete. Now we'll have to actually show the path of the random walker through the grid. For this we'll need to be able to actually remember the positions that were previously occupied. We can do this by adding every position taken to an array:
 
 <pre><code>
@@ -307,7 +308,17 @@ Having this trace of the path, we can now add a function that draws this path:
 
 Notice that we also need to multiply with the correct spacing and add an offset to get the correct position on the grid. This is far from complete, but for now let's start putting stuff together such that we can see what it looks like.
 
-<h2>A broken random walker</h2>
+
+
+
+
+
+
+
+
+
+
+<h2><a name='broken'></a>A broken random walker</h2>
 
 Throwing together
 
@@ -432,6 +443,14 @@ function draw() {
 
 Running this, you already see something go on... which is still quite far from being. Fret not, we'll fix it in a second. For now it's working correctly with the code we wrote. The random walker moves along the grid, and stays confined to the grid. Now why is crossing paths with itself? Simply because we are not setting the grid positions to False once the random walker traverses them. This is where the gridHandler comes into play.
 
+
+
+
+
+
+
+
+<h2><a name='gridhandler'></a>The gridHandler Class</h2>
 Essentially, we'll create a third object that will take care of communicating between the random walkers and the grid. It probably isn't a good idea to allow the random walker itself to modify the grid. For this sketch you could very well do it, but from a design pattern point of view, it's quite messy. Having an central authority that takes care of exchanges is just easier to manage and makes it easier to track if something goes wrong:
 
 <pre><code>
@@ -612,6 +631,19 @@ function draw() {
 
 Now it behaves much more the way we intended. Try rerunning the sketch a couple of times to see how it behaves and ends in a error. We'll get to that in a second. Try adding a couple more random walkers at different positions! What we have so far is already really great, now we just need to think about the backtracking logic!
 
+
+
+
+
+
+
+
+
+
+
+
+
+<h2><a name='ironing'></a>Ironing out some Bugs</h2>
 
 But first let's fix that error from before, we'll wrap two parts of our code in if coditions:
 <pre><code>opts = this.getOptions(grid);
@@ -808,7 +840,7 @@ function draw() {
 </script>
 <p></p>
 
-<h2>Backtracking</h2>
+<h2><a name='backtrack'></a>Backtracking</h2>
 When do we actually need to backtrack? When we get stuck. When do we get stuck? When we have no options to advance the walker. We'll add an else statement in our advance function, that will return to a previous position in our path that still has options available to it:
 
 <pre><code>if(choice){
