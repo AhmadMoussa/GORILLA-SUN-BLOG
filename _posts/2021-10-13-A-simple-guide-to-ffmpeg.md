@@ -4,13 +4,17 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: ffmpeg is an amazing tool, that will make your life so much easier as a creative coder. This blog post can be considered as a primer on using FFmpeg, and showcases some of it's capabilities.
-thumbnail_path: https://media.giphy.com/media/tGiJyldyNUJXO/giphy.gif?cid=ecf05e47xxf9duke1suqh8gs3vbp28xssx1mse2k10bxgu4k&rid=giphy.gif&ct=g
+thumbnail_path: https://media.giphy.com/media/ZgSDX7fstahz8kbhzZ/giphy.mp4
 published: true
 exclude_rss: true
 ---
-<!--
-<span class="image fit"><img src="https://media.giphy.com/media/tGiJyldyNUJXO/giphy.gif?cid=ecf05e47xxf9duke1suqh8gs3vbp28xssx1mse2k10bxgu4k&rid=giphy.gif&ct=g" alt="" /></span>
--->
+
+<div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
+  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+    <source src="https://media.giphy.com/media/ZgSDX7fstahz8kbhzZ/giphy.mp4" type="video/mp4">
+  </video>	
+</div>
+
 
 
 "This file format is not supported!" If you've ever received a notification like this, and you create content on a regular basis, then this blog post is probably for you!
