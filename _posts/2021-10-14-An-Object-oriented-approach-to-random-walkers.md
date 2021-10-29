@@ -204,8 +204,8 @@ function draw() {
 For starters, let's make a super simple walker:
 
 <pre><code>function spawnWalker(x, y, col){
-this.currX = x
-this.currY = y
+    this.currX = x
+    this.currY = y
 }
 </code></pre>
 
@@ -273,11 +273,10 @@ Take a sec to see what we did here. Maybe looks like a lot, but we're checking i
 }
 </code></pre>
 
-<h2><a name='path'></a>Remembering and drawing a path</h2>
-An important part of the random walk logic is now complete. Now we'll have to actually show the path of the random walker through the grid. For this we'll need to be able to actually remember the positions that were previously occupied. We can do this by adding every position taken to an array:
+<h2><a name='path'></a>Remembering and Drawing a Path</h2>
+An important part of the random walk logic is now complete. Next we'll have to show the path of the random walker through the grid. For this we'll need to be able to actually remember the positions that were previously occupied. We can do this by adding every position taken to an array:
 
-<pre><code>
-function spawnWalker(x, y){
+<pre><code>function spawnWalker(x, y){
   this.currX = x
   this.currY = y
 
@@ -302,7 +301,7 @@ function spawnWalker(x, y){
 }
 </code></pre>
 
-Having this trace of the path, we can now add a function that draws this path:
+Having a trace of this path stored, we can now add a function that draws it:
 
 <pre><code>this.display = function(spacing, offset){
   for(let n = 0; n<this.path.length-1; n++){
@@ -326,7 +325,7 @@ Notice that we also need to multiply with the correct spacing and add an offset 
 
 <h2><a name='broken'></a>A broken random walker</h2>
 
-Throwing together
+Throwing together what we have so far, we end up with:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -447,7 +446,7 @@ function draw() {
 </script>
 <p></p>
 
-Running this, you already see something go on... which is still quite far from being. Fret not, we'll fix it in a second. For now it's working correctly with the code we wrote. The random walker moves along the grid, and stays confined to the grid. Now why is crossing paths with itself? Simply because we are not setting the grid positions to False once the random walker traverses them. This is where the gridHandler comes into play.
+Running this, you already see something going on... mmm, you could call this a random walk (I guess). Fret not, we'll fix it in a second. For now it's working correctly with the code we wrote. The random walker moves along the grid, and stays confined to the grid. Why is crossing paths with itself though? Simply because we are not setting the grid positions to False once the random walker traverses them. This is where the gridHandler comes into play.
 
 
 
@@ -457,10 +456,9 @@ Running this, you already see something go on... which is still quite far from b
 
 
 <h2><a name='gridhandler'></a>The gridHandler Class</h2>
-Essentially, we'll create a third object that will take care of communicating between the random walkers and the grid. It probably isn't a good idea to allow the random walker itself to modify the grid. For this sketch you could very well do it, but from a design pattern point of view, it's quite messy. Having an central authority that takes care of exchanges is just easier to manage and makes it easier to track if something goes wrong:
+Essentially, we'll create a third object that will take care of communicating between the random walkers and the grid. It probably isn't a good idea to allow the random walker itself to modify the grid. For this sketch you could very well do it, but from a design pattern point of view, it's quite messy. Having a central authority that takes care of exchanges is just easier to manage and makes it easier to track if something goes wrong:
 
-<pre><code>
-function gridHandler(grid, randomWalkers){
+<pre><code>function gridHandler(grid, randomWalkers){
   this.grid = grid // the grid
   this.randomWalkers = [...randomWalkers]  // an array of random walkers
 
@@ -1217,3 +1215,175 @@ And those ugly lines can then be fixed by a simple condition in the display func
     );
 }
 </code></pre>
+
+The final code would then look like:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function spawnWalker(x, y) {
+  this.currX = x;
+  this.currY = y;
+
+  this.spacing = spacing;
+  this.offset = offset;
+
+  this.path = []; // this will help remember the path
+  this.drawnPath = [];
+
+  this.advance = function (grid) {
+
+    // move and update position
+    opts = this.getOptions(grid);
+    choice = random(opts);
+
+    if(choice){
+      // add current position to the path array
+      this.path.push({ dx: this.currX, dy: this.currY });
+      this.drawnPath.push({ dx: this.currX, dy: this.currY });
+
+      this.currX = choice.dx;
+      this.currY = choice.dy;
+
+      return {dx: this.currX, dy: this.currY}
+    }else{
+      backtracked = this.path.pop()
+
+      this.currX = backtracked.dx
+      this.currY = backtracked.dy
+    }
+  };
+
+  this.getOptions = function (grid) {
+
+    options = [];
+    if (this.currX > 0) {
+      if (grid[this.currX - 1][this.currY]) {
+        options.push({ dx: this.currX - 1, dy: this.currY });
+      }
+    }
+
+    if (this.currY > 0) {
+      if (grid[this.currX][this.currY - 1]) {
+        options.push({ dx: this.currX, dy: this.currY - 1 });
+      }
+    }
+
+    if (this.currX < grid.length - 1) {
+      if (grid[this.currX + 1][this.currY]) {
+        options.push({ dx: this.currX + 1, dy: this.currY });
+      }
+    }
+
+    if (this.currY < grid[0].length - 1) {
+      if (grid[this.currX][this.currY + 1]) {
+        options.push({ dx: this.currX, dy: this.currY + 1 });
+      }
+    }
+
+    return options;
+  };
+  this.display = function (g) {
+    for (let n = 0; n < this.drawnPath.length - 1; n++) {
+      if(dist(this.drawnPath[n].dx * this.spacing + this.offset,
+      this.drawnPath[n].dy * this.spacing + this.offset,
+      this.drawnPath[n + 1].dx * this.spacing + this.offset,
+      this.drawnPath[n + 1].dy * this.spacing + this.offset)<this.spacing+0.1){
+    line(
+      this.drawnPath[n].dx * this.spacing + this.offset,
+      this.drawnPath[n].dy * this.spacing + this.offset,
+      this.drawnPath[n + 1].dx * this.spacing + this.offset,
+      this.drawnPath[n + 1].dy * this.spacing + this.offset
+    );
+}
+    }
+  };
+}
+
+function makeGrid(w, h, spacing, offset) {
+  this.w = w;
+  this.h = h;
+  this.spacing = spacing;
+  this.offset = offset;
+  this.grid = [];
+
+  this.initGrid = function () {
+    for (let x = this.offset; x < this.w - this.offset; x += this.spacing) {
+      row = [];
+      for (let y = this.offset; y < this.h - this.offset; y += this.spacing) {
+        row.push(1);
+      }
+      this.grid.push(row);
+    }
+  };
+
+  this.display = function () {
+    strokeWeight(2);
+    for (let i = 0; i < this.grid.length; i++) {
+      for (let j = 0; j < this.grid[0].length; j++) {
+        if (this.grid[i][j]) {
+          point(i * this.spacing + this.offset, j * this.spacing + this.offset);
+        }
+      }
+    }
+  };
+}
+
+function gridHandler(grid, randomWalkers){
+  this.grid = grid // the grid
+  this.randomWalkers = [...randomWalkers]  // an array of random walkers
+
+  // go through and set their starting positions in the grid to false
+  for(let n = 0; n<this.randomWalkers.length; n++){
+      this.grid.grid[randomWalkers[n].currX][randomWalkers[n].currY] = 0
+  }
+
+  // advance entire board state
+  // checks off cells that have paths in them
+  this.advanceGrid = function(){
+
+    // go through all the random walkers and advance each one individually
+    for(let n = 0; n<this.randomWalkers.length; n++){
+      toCheck = this.randomWalkers[n].advance(this.grid.grid)
+
+      if(toCheck){
+        this.grid.grid[toCheck.dx][toCheck.dy] = 0
+      }
+    }
+  }
+
+  this.display = function(){
+    this.grid.display()
+    for(let n = 0; n<this.randomWalkers.length; n++){
+      this.randomWalkers[n].display()
+    }
+  }
+}
+
+function setup() {
+  w = min(windowWidth, windowHeight);
+  wx = w;
+  wy = w;
+  createCanvas(wx, wy);
+
+  spacing = 8
+  offset = 8
+
+  g = new makeGrid(wx, wy, spacing, offset);
+  g.initGrid();
+
+  r = new spawnWalker(0,0, spacing, offset)
+  r2 = new spawnWalker(20,0, spacing, offset)
+
+  h = new gridHandler(g, [r,r2])
+}
+
+function draw() {
+  background(255);
+  stroke(0);
+  h.display()
+  h.advanceGrid()
+}
+</script>
+<p></p>
+
+And hereby we stand at the end of this long tutorial! If you find any typos and/orinaccuracies let me know in the comment box below! Otherwise, happy sketching! And make sure to share this post with a friend, it helps out tremendously!
