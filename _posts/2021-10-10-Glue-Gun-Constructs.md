@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: This one's quite an odd one, where we'll make some figurines with scrap and a glue gun
-thumbnail_path: https://gorillasun.de/assets/images/noncomputer/creatures.mp4
+thumbnail_path: https://gorillasun.de/assets/images/noncomputer/outputCreatures.mp4
 published: true
 exclude_rss: false
 ---
