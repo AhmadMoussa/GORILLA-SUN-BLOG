@@ -9,15 +9,15 @@ published: true
 exclude_rss: true
 ---
 
-<span class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
+<div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
   <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
     <source src="https://gorillasun.de/assets/images/gifs/random_walkers/out.mp4" type="video/mp4">
   </video>	
-</span>
+</div>
 
 Today we'll take a stab at a rather popular algorithmic problem in creative coding: the random walk! Before we get into the nitty gritty, here's a quick index:
 
-<section>
+
 <h3>Discussion</h3>
 1. <a href='#inspiration'>Inspiration</a>
 2. <a href='#inspect'>A Closer Look</a>
@@ -32,9 +32,6 @@ Today we'll take a stab at a rather popular algorithmic problem in creative codi
 9. <a href='#gridhandler'>The gridHandler Class</a>
 10. <a href='#ironing'>Ironing out some Bugs</a>
 11. <a href='#backtrack'>The Backtracking Logic</a>
-</section>
-
-
 
 
 <h2><a name='inspiration'></a>Inspiration</h2>
@@ -63,11 +60,11 @@ As opposed to Daniel Shiffman's strategy in his <a href='https://www.youtube.com
 
 Our approach, similar to what Kjetil does in his artwork, is that when the random walker reaches a dead end, it won't backtrack and erase that path. But rather, it will find a previous position that lies within it's path and that has adjacent vacant positions still. But more to that in a bit, let's first discuss how one would go about implementing this. Consider the code presented my take on it, which is merely <i>one</i> way to go about this.
 
-
-
-
-
-
+<div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
+  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+    <source src="https://gorillasun.de/assets/images/gifs/random_walkers/out2.mp4" type="video/mp4">
+  </video>	
+</div>
 
 <h2><a name='strategizing'></a>The general Strategy</h2>
 
