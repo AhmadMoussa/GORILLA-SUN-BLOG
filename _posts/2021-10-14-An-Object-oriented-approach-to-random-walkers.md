@@ -97,7 +97,7 @@ Not that it really matters for what we're going to do, but the <a href='https://
 
 
 <h2><a name='grid'></a>The grid</h2>
-For the remainder, I'll assume that you are familiar with javascript syntax. We'll begin with a grid. But this time we'll wrap our 2D boolean array inside of a function, that has a couple of properties and other functionality:
+We'll begin with a grid! This time however, we'll wrap our 2D boolean array inside of a function, that has a couple of properties and other functionality:
 
 <pre><code>function makeGrid(w, h, spacing, offset){
   this.w = w
