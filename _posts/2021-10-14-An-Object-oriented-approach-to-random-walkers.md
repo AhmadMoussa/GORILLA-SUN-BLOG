@@ -3,7 +3,7 @@ title: Random Walkers
 author: Ahmad Moussa
 categories:
   - p5js
-description: A closer look at random walker
+description: A closer look at random walkers, and how to make them explore and traverse an underlying grid, in p5js.
 thumbnail_path: https://gorillasun.de/assets/images/gifs/random_walkers/out2.mp4
 published: true
 exclude_rss: true
