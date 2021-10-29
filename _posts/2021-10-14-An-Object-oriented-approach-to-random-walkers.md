@@ -14,6 +14,7 @@ exclude_rss: true
     <source src="https://gorillasun.de/assets/images/gifs/random_walkers/out.mp4" type="video/mp4">
   </video>	
 </div>
+<p></p>
 
 Today we'll take a stab at a rather popular algorithmic problem in creative coding: the random walk! Before we get into the nitty gritty, here's a quick index:
 
@@ -65,7 +66,7 @@ Our approach, similar to what Kjetil does in his artwork, is that when the rando
     <source src="https://gorillasun.de/assets/images/gifs/random_walkers/out2.mp4" type="video/mp4">
   </video>	
 </div>
-
+<p></p>
 <h2><a name='strategizing'></a>The general Strategy</h2>
 
 Similarly to the sketch "Grand Canyon" in one of my previous blog posts, the grid will be made of a 2D array of boolean values. Why booleans? Essentially, we'll denote grid positions that are empty by "True" in as "Yes, true, this position is empty", and "False" positions as occupied, in as "Nope, false, no free spot here".
@@ -77,8 +78,6 @@ Now, here's where it gets interesting. Assume we add a second random walker the 
 How do we model this problem? What is the grid in relationship to the random walkers? Take a second to think about how you would solve this! Or maybe even take a couple of minutes, and try to come up with your own code that satisfies everything that's been discussed so far!
 
 <h2><a name='OOP'></a>Thinking in OOP</h2>
-Add diagram here
-
 Well this is where Object Oriented Programming, or for short OOP, comes to our rescue. We'll split up the different parts of our code into different objects, each of which will deal with an individual problem. Essentially, we'll be separating our concerns.
 
 The solution that I came up with, would essentially treat the boolean grid as a shared resource, which will be visible to each random walker when they advance their position. The grid thus will be a single object accessible to all random walkers, which in turn don't need to communicate with each other, and don't have to communicate. They can simply know valid vacant positions through the current state of the grid.
