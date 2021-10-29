@@ -3,7 +3,7 @@ title: A simple guide to FFmpeg
 author: Ahmad Moussa
 categories:
   - p5js
-description: ffmpeg is an amazing tool, that will make your life so much easier as a creative coder. This blog post can be considered as a primer on using FFmpeg, and showcases some of it's capabilities.
+description: FFmpeg is an essential tool for creative coders. Here's a primer on using FFmpeg, and showcase of some of it's capabilities.
 thumbnail_path: https://media.giphy.com/media/ZgSDX7fstahz8kbhzZ/giphy.mp4
 published: true
 exclude_rss: true
