@@ -42,7 +42,7 @@ The work that inspired this blog post is predominantly <a href=''>Kjetil Golid</
 
 The first time I saw this, I was quite impressed by the unique style, and the variety of the generated patterns. I haven't seen anything quite like it on Twitter before. Kjetil's other works are also very refreshing and polished in general.
 
-I was immediately inspired to attempt a recreation of the sketch, and figure out the code behind it. A while later I also noticed works from Clay Heaton, ruudotorg and vrnv as well as many others that have attempted something similar.
+I was immediately inspired to attempt a recreation of the sketch, and figure out the code behind it. A while later I also noticed many other works that have attempted something similar via random walks.
 
 And as is often the case with creative coding sketches, this is again one of those problems that looks like a fun challenge when observed shallowly, but hides <a href='https://en.wikipedia.org/wiki/Self-avoiding_walk'>a monstrum of a mathematical problem</a> (graph theory to be precise) underneath. We'll brush aside this apparent simplicity for now, and tackle the task at hand with all sincerity, as always. Let's first talk through what we're trying to accomplish!
 
