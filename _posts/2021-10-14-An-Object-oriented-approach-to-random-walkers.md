@@ -4,12 +4,16 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: A closer look at random walker
-thumbnail_path: https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif
+thumbnail_path: https://gorillasun.de/assets/images/gifs/random_walkers/out2.mp4
 published: true
 exclude_rss: true
 ---
 
-<span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Parasite/parasite.gif" alt="" /></span>
+<span class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
+  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+    <source src="https://gorillasun.de/assets/images/gifs/random_walkers/out.mp4" type="video/mp4">
+  </video>	
+</span>
 
 Today we'll take a stab at a rather popular algorithmic problem in creative coding: the random walk! Before we get into the nitty gritty, here's a quick index:
 
