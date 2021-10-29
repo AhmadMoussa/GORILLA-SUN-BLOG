@@ -66,7 +66,7 @@ Our approach, similar to what Kjetil does in his artwork, is that when the rando
 
 <div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
   <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
-    <source src="https://gorillasun.de/assets/images/gifs/random_walkers/out2.mp4" type="video/mp4">
+    <source src="https://gorillasun.de/assets/images/gifs/random_walkers/out3.mp4" type="video/mp4">
   </video>	
 </div>
 <p></p>
