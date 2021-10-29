@@ -39,6 +39,7 @@ Today we'll take a stab at a rather popular algorithmic problem in creative codi
 The work that inspired this blog post is predominantly <a href=''>Kjetil Golid</a>'s work:
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Each line segment is given a behavior upon creation: Move randomly, or move in a straight line when possible. The interplay between the two behaviors create some intriguing patterns. <a href="https://t.co/ar6MvTd5F9">pic.twitter.com/ar6MvTd5F9</a></p>&mdash; Kjetil Golid (@kGolid) <a href="https://twitter.com/kGolid/status/1413272810324176896?ref_src=twsrc%5Etfw">July 8, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p></p>
 
 The first time I saw this, I was quite impressed by the unique style, and the variety of the generated patterns. I haven't seen anything quite like it on Twitter before. Kjetil's other works are also very refreshing and polished in general.
 
@@ -47,6 +48,8 @@ I was immediately inspired to attempt a recreation of the sketch, and figure out
 And as is often the case with creative coding sketches, this is again one of those problems that looks like a fun challenge when observed shallowly, but hides <a href='https://en.wikipedia.org/wiki/Self-avoiding_walk'>a monstrum of a mathematical problem</a> (graph theory to be precise) underneath. We'll brush aside this apparent simplicity for now, and tackle the task at hand with all sincerity, as always. Let's first talk through what we're trying to accomplish!
 
 <h2><a name='inspect'></a>A Closer Look</h2>
+To start things off, let's briefly describe the task at hand. 
+
 We begin with an empty grid. To be precise, this is a grid of empty positions, that will be the foundation of everything that follows. It'll serve as the structure within which our random walkers are allowed to move. The positions that constitute the grid thus can either be occupied or vacant, depending on it having been traversed or not.
 
 The entities that will now interact, move, traverse and populate these empty positions in the grid, are called <a href='https://en.wikipedia.org/wiki/Random_walk'>'random walkers'</a>. And as the name suggests, these walkers will be navigating our grid in a random manner.
@@ -57,7 +60,7 @@ From the new position, we'll repeat this process, where we'll have at least thre
 
 There's many ways to get out of this state, a popular solution being the backtracking algorithm. As it's name suggests, the backtracking algorithm sets in motion a number of steps to revert to a previous state where the random walker wasn't stuck and resume from there.
 
-As opposed to Daniel Shiffman's strategy in his <a href='https://www.youtube.com/watch?v=m6-cm6GZ1iw&ab_channel=TheCodingTrain'>video on self-avoiding walks (which is, btw, an awesome video that you should watch right now)</a>, we're approaching this in a little bit of a simpler manner. Dan's way tries to fit one single path to the entire grid, such that this path fills out all possible positions in this grid. As he mentions towards the end of his video, this is computationally quite difficult to achieve in a brute force manner. Basically, you could be waiting for years in front of your screen, waiting for the random walker to fill out the entire grid, when the grid has a moderate size.
+As opposed to Daniel Shiffman's strategy in his <a href='https://www.youtube.com/watch?v=m6-cm6GZ1iw&ab_channel=TheCodingTrain'>video on self-avoiding walks (which is, btw, an instrumetnal watch on this topic)</a>, we're approaching this in a little bit of a simpler manner. Dan's way tries to fit one single path to the entire grid, such that this path fills out all possible positions in this grid. As he mentions towards the end of his video, this is computationally quite difficult to achieve in a brute force manner. Basically, you could be waiting for years in front of your screen, waiting for the random walker to fill out the entire grid, when the grid has a moderate size.
 
 Our approach, similar to what Kjetil does in his artwork, is that when the random walker reaches a dead end, it won't backtrack and erase that path. But rather, it will find a previous position that lies within it's path and that has adjacent vacant positions still. But more to that in a bit, let's first discuss how one would go about implementing this. Consider the code presented my take on it, which is merely <i>one</i> way to go about this.
 
