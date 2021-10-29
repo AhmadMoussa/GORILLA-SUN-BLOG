@@ -1,9 +1,9 @@
 ---
-title: Making of&#58; Grand Canyon
+title: Random Walkers
 author: Ahmad Moussa
 categories:
   - p5js
-description: An aesthetically minimalistic sketch that is based on a boolean grid and perlin noise
+description: A closer look at random walker
 thumbnail_path: https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif
 published: true
 exclude_rss: true
@@ -13,6 +13,7 @@ exclude_rss: true
 
 Today we'll take a stab at a rather popular algorithmic problem in creative coding: the random walk! Before we get into the nitty gritty, here's a quick index:
 
+<section>
 <h3>Discussion</h3>
 1. <a href='#inspiration'>Inspiration</a>
 2. <a href='#inspect'>A Closer Look</a>
@@ -27,7 +28,7 @@ Today we'll take a stab at a rather popular algorithmic problem in creative codi
 9. <a href='#gridhandler'>The gridHandler Class</a>
 10. <a href='#ironing'>Ironing out some Bugs</a>
 11. <a href='#backtrack'>The Backtracking Logic</a>
-
+</section>
 
 
 
