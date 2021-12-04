@@ -1,0 +1,108 @@
+palette = ["#f2eb8a", "#fed000", "#fc8405", "#ed361a", "#e2f0f3", "#b3dce0", "#4464a1", "#203051", "#ffc5c7", "#f398c3", "#cf3895", "#6d358a", "#06b4b0", "#4b8a5f"]
+
+palette = ["#0a0a0a", "#f7f3f2", "#0077e1", "#f5d216", "#fc3503"];
+
+function setup() {
+  w= min(windowWidth, windowHeight)
+  wx = w
+  wy = w
+  createCanvas(wx, wy);
+  
+  padding = -100;
+  spacing = 41;
+  strokeJoin(ROUND)
+  strokeCap(ROUND)
+}
+
+function drawHex(posX, posY, rad){
+  strokeWeight(2)
+  stroke(random(palette))
+  stroke("#ffe819")
+  //drawingContext.setLineDash([random(5), random(5)])
+  //strokeCap(SQUARE)
+   div = TAU/6
+   ofst = PI/2
+  count = 0
+   for(a = ofst; a<TAU+ofst; a+=div){
+       x = posX + rad*cos(a)
+       y = posY + rad*sin(a)
+     
+       
+      
+       if(count%2==0){
+         //line(x, y, posX, posY)
+       }
+     
+       if(count%2 == 0){
+         x1 = posX + rad*cos(a+div)
+         y1 = posY + rad*sin(a+div)
+         
+         x2 = posX + rad*cos(a-div)
+         y2 = posY + rad*sin(a-div)
+         
+         midX1 = (x + x1)/2
+         midY1 = (y + y1)/2
+         
+         midX2 = (x + x2)/2
+         midY2 = (y + y2)/2
+         
+         line(x, y, midX1, midY1)
+         line(x, y, midX2, midY2)
+         
+         midX3 = (posX + x)/2
+         midY3 = (posY + y)/2
+         
+         line(midX3, midY3, midX1, midY1)
+         
+         //line(midX3, midY3, midX2, midY2)
+         line(posX, posY, midX3, midY3)
+         
+       }
+       //line(x1, y1, x2, y2)
+     count++
+   } 
+  
+  noFill()
+  fill(0)
+  ellipse(posX,posY,10)
+  noFill()
+}
+
+function draw() {
+  blendMode(BLEND)
+  col = "#fdebd3"
+  background(0)
+  fill(0)
+  stroke(0)
+  t = frameCount/50
+  sizeMod = 1.2
+  
+  for(i = padding; i < wx - padding; i+=spacing){
+    
+    counter = 0
+    for(j = padding; j < wy - padding; j+=spacing){
+      if(j%2 == 0){
+        drawHex(i+spacing/2, j-counter*(spacing/4), spacing/sizeMod)
+        
+      }else{
+        drawHex(i, j-spacing/8-counter*(spacing/4), spacing/sizeMod) 
+        counter++
+      }
+      //console.log(counter)
+    }
+    
+  }
+  
+  noStroke()
+  
+  borderSize = 0
+
+  
+  noStroke()
+  fill(0)
+  rect(0,0,borderSize,wy)
+  rect(0,0,wx,borderSize)
+  rect(wx-borderSize,0,borderSize,wy)
+  rect(0,wy-borderSize,wx,borderSize)
+  noLoop()
+}
