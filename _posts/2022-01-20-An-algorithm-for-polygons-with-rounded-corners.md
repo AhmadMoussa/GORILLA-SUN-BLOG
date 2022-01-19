@@ -5,16 +5,9 @@ categories:
   - p5js
 description: this blog post describes an approach to turn pointy polygons into smooth shapes with round corners
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: false
+published: true
 exclude_rss: true
 ---
-
-<!--
-<p>
-  When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
-  \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
-</p>
--->
 
 <h2>Shapes with rounded corners</h2>
 
@@ -158,18 +151,31 @@ function toVec(p1, p2, v) {
 </script>
 <p></p>
 
-Now we have converted our 3 points into vector form. Now we can compute the intermediary angle between the two vectors!
+Now that we have converted our 3 points into vector form, we can compute the intermediary angle between the two vectors!
 
-<h2>Intermediary Angle</h2>
+<h2>Finding the angle using the cross product</h2>
 
 Getting the halfway angle is probably the trickiest part of the procedure. It is important to mention here that the order of the points is crucial! When dealing with a closed polygonal shape the order of the points is such that the formed angle is pointing inwards. Given 3 points the formed angle is ambiguous, in the previous example the angle forms an acute wedge but could equivalently be interpreted as an obtuse fan. Keep this in mind for now, it will be relevant in a bit!
 
-The next part of blindman67's code was a little tricky to decipher, and will require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors.
+The next part of blindman67's code was a little tricky to decipher, and will require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors. Essentially, we will be exploiting the cross product of the two vectors to find the value of the angle between them.
 
 What the cross product actually represents algebraically, is a bit outside of the scope of this post. A perfect resource for understanding it can be found in the form of <a href="https://www.youtube.com/watch?v=eu6i7WJeinw&ab_channel=3Blue1Brown">this video</a> by <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a> (and I think there is no need for me to introduce the channel XD).
 
 The important part here is how the cross product can help us find the angle between two vectors. Generally the formula for finding the cross product is the multiplying the magnitudes of the two vectors at hand with the sine of the angle that they form. More concretely:
 
+<p>\Vert BA \Vert * \Vert BC \Vert * sin( \Theta )\ <p>
+
+This means that, finding the cross product requires us to have the angle... which is the thing that we're trying to find. In this sense, we haven't made any progress on finding the angle between the two vectors. However, if we were to somehow already have the numerical value of the cross product, we could solve for sin(\Theta), since we also have the magnitudes of the two vectors concerned:
+
+<p>\Vert BA \Vert * \Vert BC \Vert * sin( \Theta )\ <p>
+
+The cross product of two vectors is actually equal to the determinant of the 2x2 matrix formed by these vectors. This means computing this determinant will allow us to find the angle! Computing the determinant of a matrix is done with the following formula:
+
+<p> v_1x * v_2y - v_2x * v_1y <\p>
+
+Then the value of the angle can be calculate as follows:
+
+<p> sin^(-1) = \frac{(v_1x * v_2y - v_2x * v_1y)}{\Vert BA \Vert * \Vert BC \Vert} </p>
 
 
 <pre><code>
