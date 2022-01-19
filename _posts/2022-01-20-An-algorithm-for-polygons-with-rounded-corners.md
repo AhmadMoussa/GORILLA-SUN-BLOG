@@ -5,15 +5,16 @@ categories:
   - p5js
 description: this blog post describes an approach to turn pointy polygons into smooth shapes with round corners
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: true
+published: false
 exclude_rss: true
 ---
 
-
+<!--
 <p>
   When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
   \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
 </p>
+-->
 
 <h2>Shapes with rounded corners</h2>
 
