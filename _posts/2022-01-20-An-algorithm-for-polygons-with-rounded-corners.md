@@ -10,9 +10,10 @@ exclude_rss: true
 ---
 
 
-$$
-\Pr\left(\bigcup_i \Omega_i\right)=\sum_i \Pr(\Omega_i)=\sum_i\Pr(X=u_i)=1
-$$
+<p>
+  When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+  \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+</p>
 
 <h2>Shapes with rounded corners</h2>
 
