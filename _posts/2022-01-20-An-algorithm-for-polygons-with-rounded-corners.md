@@ -5,7 +5,7 @@ categories:
   - p5js
 description: this blog post describes an approach to turn pointy polygons into smooth shapes with round corners
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: false
+published: true
 exclude_rss: true
 ---
 
@@ -163,7 +163,7 @@ What the cross product actually represents algebraically, is a bit outside of th
 
 The important part here is how the cross product can help us find the angle between two vectors. Generally the formula for finding the cross product is the multiplying the magnitudes of the two vectors at hand with the sine of the angle that they form. More concretely:
 
-<p> \( \Vert BA \Vert * \Vert BC \Vert * sin( \Theta ) ) <p>
+<p>\Vert BA \Vert * \Vert BC \Vert * sin( \Theta )\ <p>
 
 This means that, finding the cross product requires us to have the angle... which is the thing that we're trying to find. In this sense, we haven't made any progress on finding the angle between the two vectors. However, if we were to somehow already have the numerical value of the cross product, we could solve for sin(\Theta), since we also have the magnitudes of the two vectors concerned:
 
@@ -175,8 +175,13 @@ The cross product of two vectors is actually equal to the determinant of the 2x2
 
 Then the value of the angle can be calculate as follows:
 
-<p> sin^(-1) = \frac{(v_1x * v_2y - v_2x * v_1y)}{\Vert BA \Vert * \Vert BC \Vert} </p>
+<p> \Theta = sin^(-1)(\frac{(v_1x * v_2y - v_2x * v_1y)}{\Vert BA \Vert * \Vert BC \Vert}) </p>
 
+Additionally, this can be further simplified, since our vectors are already normalized \Vert BA \Vert * \Vert BC \Vert will simply evaluate to 1, leaving us with:
+
+<p> sin^(-1) = (det) </p>
+
+Let's have a look at the following lines of code by Blindman67:
 
 <pre><code>
 // compute vectors
@@ -186,18 +191,298 @@ asVec(p2, p3, v2);
 // Cross product of the two vectors
 sinA = v1.nx * v2.ny - v1.ny * v2.nx;
 
-// Cross product of v1 and the line at 90 degrees to v2
+// Cross product of v2 and the line at 90 degrees to v1
+// This will help determine the orientation of the angle
 sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
 
-// ???
+// Clamping the value of sinA to avoid NaNs
 angle = Math.asin(sinA < -1 ? -1 : sinA > 1 ? 1 : sinA);
 </code></pre>
 
+The trickiest part here is the double ternary check inside the asin function. By simply expanding it, it visually makes more sense:
+
+<pre><code>
+if(sinA<-1){
+  angle = Math.asin(-1)
+}else if(sinA>1){
+  angle = Math.asin(1)
+}else{
+  angle = Math.asin(sinA)
+}
+</code></pre>
+
+Go ahead a try putting values lesser than -1 or greater than 1 into the inverse sine function. It'll yield a NaN value. To avoid such thing, we simply clamp the value and can be done compactly as a one liner. And if you noticed, in actuality, we have already obtained the value of the angle!
+
+<h2>Finding the correct orientation of the angle</h2>
+
+Next up we have this if/else flurry to determine the orientation of our angle:
+
+<pre><code>radDirection = 1;
+drawDirection = false;
+if (sinA90 < 0) {
+  if (angle < 0) {
+    angle = Math.PI + angle;
+  } else {
+    angle = Math.PI - angle;
+    radDirection = -1;
+    drawDirection = true;
+  }
+} else {
+  if (angle > 0) {
+    radDirection = -1;
+    drawDirection = true;
+  }
+}
+</pre></code>
+
+There's quite a lot going on here. We'll go through it step by step. The important thing to grasp here is that the sign of the cross product also tells us if the angle is oriented clockwise or counter clockwise, which we'll use to find the half angle that splits our angle in two. And remember, order is important!
+
+Keeping in mind that sinA90 is the angle formed the perpendicular (to v1) and v2 (in that order), and sinA is the angle formed by v1 and v2 (in that order).
+
+If the value of sinA90 is less than 0 then this means that the angle sinA90 has a counter-clockwise orientation. the opposite is also true. In essence there's 4 different possibilities depending on how the vectors v1 and v2 are situated with respect to each other. Have a look at the badly drawn schematic:
+
+If sinA90 > 0, then the angle formed by the perpendicular (to v1) and v2 is oriented clockwise. In this case there is no need to do anything, and we can simply halve the value of angle to get the correct angle.
+
+If sinA90 is < 0, then this angle is oriented counterclockwise. In this case we must distinguish between v1 being before or past v2. If the angle is less than 0 then v1 is past v2, and we have to add PI to the angle formed, else we need to subtract the angle from PI. Halving this value then yields the correct mid-way angle.
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  w = min(windowWidth, windowHeight)
+  createCanvas(w, w);
+}
+
+function draw() {
+  background(220);
+
+  // make origin at center of canvas
+  translate(w/2,w/2)
+
+  randAng = random(TAU)
+  p1 = {x: 100*cos(randAng), y: 100*sin(randAng)}
+  p2 = {x: 0, y: 0}
+  p3 = {x: -100, y: 100}
+
+  strokeWeight(10)
+  point(p1.x,p1.y)
+  point(p2.x,p2.y)
+  point(p3.x,p3.y)
+
+  text('A',p1.x+5,p1.y)
+  text('B',p2.x+5,p2.y)
+  text('C',p3.x+5,p3.y)
+
+  strokeWeight(1)
+  line(p1.x,p1.y,p2.x,p2.y)
+  line(p3.x,p3.y,p2.x,p2.y)
+
+  v1 = {}
+  v2 = {}
+
+  toVec(p2,p1,v1)
+  toVec(p2,p3,v2)
+
+  //coordinates of perpendicular vector
+  perpx1 = v1.len*cos(v1.ang-PI/2)
+  perpy1 = v1.len*sin(v1.ang-PI/2)
+
+  perpx2 = v1.len*cos(v1.ang+PI/2)
+  perpy2 = v1.len*sin(v1.ang+PI/2)
+
+  stroke(255,0,0)
+  strokeWeight(10)
+  point(perpx1,perpy1)
+  point(perpx2,perpy2)
+  strokeWeight(1)
+  drawingContext.setLineDash([5,5])
+  line(perpx1,perpy1,perpx2,perpy2)
+
+  sinA = v1.nx * v2.ny - v1.ny * v2.nx;
+  sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
+  angle = Math.asin(sinA < -1 ? -1 : sinA > 1 ? 1 : sinA);
+  angle90 = Math.asin(sinA90 < -1 ? -1 : sinA90 > 1 ? 1 : sinA90);
+
+  print(sinA,sinA90,angle,angle90)
+
+  noFill();
+
+  if (sinA90 < 0) {
+    if (angle < 0) {
+      angle = Math.PI + angle;
+    } else {
+      angle = Math.PI - angle;
+    }
+  }
+  angle=angle
+  xx = 50*cos(v1.ang+angle/2)
+  yy = 50*sin(v1.ang+angle/2)
+
+  strokeWeight(10)
+  point(xx,yy)
+
+  noLoop()
+}
+
+// p1 -> first point
+// p2 -> second point
+// v -> container that we will fill
+function toVec(p1, p2, v) {
+    v.x = p2.x - p1.x;
+    v.y = p2.y - p1.y;
+    v.len = Math.sqrt(v.x * v.x + v.y * v.y);
+    v.nx = v.x / v.len;
+    v.ny = v.y / v.len;
+    v.ang = Math.atan2(v.ny, v.nx);
+}
+</script>
+<p></p>
+
+However this is still not entirely correct.
 
 <h2>Solving a triangle given two angles and one Side</h2>
 
-<h2>Finding the tangent points</h2>
+Now we can find the distance of the center of our circle from the corner:
 
-<h2>Angles larger than 90 degress</h2>
+<pre><code>lenOut = abs(cos(halfAngle) * radius / sin(halfAngle));
+</code></pre>
+
+One problem here is that the radius that we specified as input, might not fit into the corner. This can be remedied by the following check:
+
+<pre><code>
+if (lenOut > Math.min(v1.len / 2, v2.len / 2)) {
+  lenOut = Math.min(v1.len / 2, v2.len / 2);
+  cRadius = Math.abs(lenOut * Math.sin(halfAngle) / Math.cos(halfAngle));
+} else {
+  cRadius = radius;
+}
+</code></pre>
+
+<h2></h2>
+
+<pre><code>
+function setup() {
+  w = min(windowWidth, windowHeight)
+  createCanvas(w, w);
+}
+
+function draw() {
+  background(220);
+
+  // make origin at center of canvas
+  translate(w/2,w/2)
+
+  randAng1 = random(TAU)
+  randAng2 = random(TAU)
+  p1 = {x: 100*cos(randAng1), y: 100*sin(randAng1)}
+  p2 = {x: 0, y: 0}
+  p3 = {x: 100*cos(randAng2), y: 100*sin(randAng2)}
+
+  strokeWeight(10)
+  point(p1.x,p1.y)
+  point(p2.x,p2.y)
+  point(p3.x,p3.y)
+
+  text('A',p1.x+5,p1.y)
+  text('B',p2.x+5,p2.y)
+  text('C',p3.x+5,p3.y)
+
+  strokeWeight(1)
+  line(p1.x,p1.y,p2.x,p2.y)
+  line(p3.x,p3.y,p2.x,p2.y)
+
+  v1 = {}
+  v2 = {}
+
+  toVec(p2,p1,v1)
+  toVec(p2,p3,v2)
+
+  //coordinates of perpendicular vector
+  perpx1 = v1.len*cos(v1.ang-PI/2)
+  perpy1 = v1.len*sin(v1.ang-PI/2)
+
+  perpx2 = v1.len*cos(v1.ang+PI/2)
+  perpy2 = v1.len*sin(v1.ang+PI/2)
+
+  stroke(255,0,0)
+  strokeWeight(10)
+  point(perpx1,perpy1)
+  point(perpx2,perpy2)
+  strokeWeight(1)
+  drawingContext.setLineDash([5,5])
+  line(perpx1,perpy1,perpx2,perpy2)
+
+  sinA = v1.nx * v2.ny - v1.ny * v2.nx;
+  sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
+  angle = Math.asin(sinA < -1 ? -1 : sinA > 1 ? 1 : sinA);
+  angle90 = Math.asin(sinA90 < -1 ? -1 : sinA90 > 1 ? 1 : sinA90);
+
+  print(sinA,sinA90,angle,angle90)
+
+  noFill();
+  radius = 30
+  radiusAll = 10
+  radDirection = 1;
+    drawDirection = 0;
+    if (sinA90 < 0) {
+      if (angle < 0) {
+        angle = Math.PI + angle;
+      } else {
+        angle = Math.PI - angle;
+        radDirection = -1;
+        drawDirection = 1;
+      }
+    } else {
+      if (angle > 0) {
+        radDirection = -1;
+        drawDirection = 1;
+      }
+    }
+  halfAngle = angle/2
+
+  lenOut = Math.abs(Math.cos(halfAngle) * radius / Math.sin(halfAngle));
+
+  print(lenOut)
+  if (lenOut > Math.min(v1.len / 2, v2.len / 2)) {
+    lenOut = Math.min(v1.len / 2, v2.len / 2);
+    cRadius = Math.abs(lenOut * Math.sin(halfAngle) / Math.cos(halfAngle));
+  } else {
+    cRadius = radius;
+  }
+
+  xx = cRadius*cos(v1.ang+halfAngle)
+  yy = cRadius*sin(v1.ang+halfAngle)
+
+  strokeWeight(10)
+  //point(xx,yy)
+
+  // Part 4
+  x = p2.x + v2.nx * lenOut;
+  y = p2.y + v2.ny * lenOut;
+  //-----------------------------------------
+  // Part 5
+  x += -v2.ny * cRadius * radDirection;
+  y += v2.nx * cRadius * radDirection;
+
+  strokeWeight(1)
+  fill(255,0,0)
+  arc(x, y, cRadius*2,cRadius*2,
+      v1.ang + Math.PI / 2 * radDirection,
+      v2.ang - Math.PI / 2 * radDirection);
+
+  noLoop()
+}
+
+// p1 -> first point
+// p2 -> second point
+// v -> container that we will fill
+function toVec(p1, p2, v) {
+    v.x = p2.x - p1.x;
+    v.y = p2.y - p1.y;
+    v.len = Math.sqrt(v.x * v.x + v.y * v.y);
+    v.nx = v.x / v.len;
+    v.ny = v.y / v.len;
+    v.ang = Math.atan2(v.ny, v.nx);
+}
+</code></pre>
 
 <h2>Drawing the shape with the rendering context</h2>
