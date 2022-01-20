@@ -163,11 +163,11 @@ What the cross product actually represents algebraically, is a bit outside of th
 
 The important part here is how the cross product can help us find the angle between two vectors. Generally the formula for finding the cross product is the multiplying the magnitudes of the two vectors at hand with the sine of the angle that they form. More concretely:
 
-<p>\Vert BA \Vert * \Vert BC \Vert * sin( \Theta )\ <p>
+<p> \( \Vert BA \Vert * \Vert BC \Vert * sin( \Theta ) ) <p>
 
 This means that, finding the cross product requires us to have the angle... which is the thing that we're trying to find. In this sense, we haven't made any progress on finding the angle between the two vectors. However, if we were to somehow already have the numerical value of the cross product, we could solve for sin(\Theta), since we also have the magnitudes of the two vectors concerned:
 
-<p>\Vert BA \Vert * \Vert BC \Vert * sin( \Theta )\ <p>
+<p> \Vert BA \Vert * \Vert BC \Vert * sin( \Theta )\ <p>
 
 The cross product of two vectors is actually equal to the determinant of the 2x2 matrix formed by these vectors. This means computing this determinant will allow us to find the angle! Computing the determinant of a matrix is done with the following formula:
 
