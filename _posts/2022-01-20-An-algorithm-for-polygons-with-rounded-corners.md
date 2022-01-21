@@ -77,8 +77,7 @@ There are other cases that need to be handled, but in essence these are the main
 <h2>2 Vectors from 3 Points</h2>
 First we'll need to find the angle that is formed by three points. To do so we first need to compute the vectors formed by these three points. For three points A,B and C we can find the vectors BA and BC by using the following function:
 
-<pre><code>
-// p1 -> first point
+<pre><code>// p1 -> first point
 // p2 -> second point
 // v -> container that we will fill
 // we could also not pass v and simply return it
@@ -210,8 +209,7 @@ angle = Math.asin(sinA < -1 ? -1 : sinA > 1 ? 1 : sinA);
 
 The trickiest part here is the double ternary check inside the asin function. By simply expanding it, it visually makes more sense:
 
-<pre><code>
-if(sinA<-1){
+<pre><code>if(sinA<-1){
   angle = Math.asin(-1)
 }else if(sinA>1){
   angle = Math.asin(1)
@@ -246,7 +244,7 @@ if (sinA90 < 0) {
 
 There's quite a lot going on here. We'll go through it step by step. The important thing to grasp here is that the sign of the cross product also tells us if the angle is oriented clockwise or counter clockwise, which we'll use to find the half angle that splits our angle in two. And remember, order is important!
 
-Keeping in mind that sinA90 is the angle formed the perpendicular (to v1) and v2 (in that order), and sinA is the angle formed by v1 and v2 (in that order).
+Keeping in mind that sinA90 is the angle formed by the perpendicular (to v1) and v2 (in that order), and sinA is the angle formed by v1 and v2 (in that order).
 
 If the value of sinA90 is less than 0 then this means that the angle sinA90 has a counter-clockwise orientation. the opposite is also true. In essence there's 4 different possibilities depending on how the vectors v1 and v2 are situated with respect to each other. Have a look at the badly drawn schematic:
 
