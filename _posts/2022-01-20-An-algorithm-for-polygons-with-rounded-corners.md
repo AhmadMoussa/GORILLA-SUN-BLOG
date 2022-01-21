@@ -163,11 +163,11 @@ What the cross product actually represents algebraically, is a bit outside of th
 
 The important part here is how the cross product can help us find the angle between two vectors. Generally the formula for finding the cross product is the multiplying the magnitudes of the two vectors at hand with the sine of the angle that they form. More concretely:
 
-<div>
-<div style="margin: 0 auto;">
+
+<div style="width:100%; display: flex; justify-content: center;">
 <p> \( \Vert BA \Vert * \Vert BC \Vert * sin( \Theta ) \) </p>
 </div>
-</div>
+
 
 This means that, finding the cross product requires us to have the angle... which is the thing that we're trying to find. In this sense, we haven't made any progress on finding the angle between the two vectors. However, if we were to somehow already have the numerical value of the cross product, we could solve for sin(\Theta), since we also have the magnitudes of the two vectors concerned:
 
