@@ -67,10 +67,10 @@ Given a specific radius, the difficulty lies within finding where to exactly pos
 
 Overall, given three points A, B and C that form a corner, as well as a given radius, the steps are:
 
-1 - Calculate the angle that is formed by A, B and C by computing the cross product of the vectors BA and BC
-2 - Calculating the dot product of the vectors BA and the line at 90 degrees from BA
-3 - Finding the distance from B to F by solving it with R and the angle FBD or FBE
-4 - Draw an arc from E to F (or the other way around) by tracing a portion of the circle
+1. Calculate the angle that is formed by A, B and C by computing the cross product of the vectors BA and BC
+2. Calculating the dot product of the vectors BA and the line at 90 degrees from BA
+3. Finding the distance from B to F by solving it with R and the angle FBD or FBE
+4. Draw an arc from E to F (or the other way around) by tracing a portion of the circle
 
 There are other cases that need to be handled, but in essence these are the main steps.
 
