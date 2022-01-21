@@ -11,9 +11,9 @@ exclude_rss: true
 
 <h2>Shapes with rounded corners</h2>
 
-If you spent some time doing creative coding, you'll very quickly come to the realization that anything, with that has shape that is little more complicated than your average rectangle or circle, quickly starts requiring a fair amount of code to be summoned onto your canvas.
+If you spent some time doing creative coding, you'll very quickly come to the realization that anything, which has shape that is little more complicated than your average rectangle or circle, quickly starts requiring a fair amount of code to be summoned onto your canvas.
 
-This post/tutorial is dedicated to a snippet of code I found on stackoverflow, and that has unlocked for me many shapes and sketches that I otherwise wouldn't have been able to make. In essence the algorithm allows you to create arbitrarily shaped polygons, with any number of vertices while at the same time being able to control the roundness (or curvature) of each vertex.
+This post/tutorial is dedicated to a snippet of code I found on stackoverflow, and that has unlocked many shapes and sketches for me, that I otherwise wouldn't have been able to make. In essence the algorithm allows you to create arbitrarily shaped polygons, with any number of vertices while at the same time being able to control the roundness (or curvature) of each vertex.
 
 I came across this code when I attempted a sketch in which I wanted to round off the corners of some triangles.
 
@@ -30,7 +30,7 @@ I came across this code when I attempted a sketch in which I wanted to round off
 	</div>
 </div>
 
-In p5js there is no out-of-the-box method to doing so, as opposed to rectangular shapes where the 5th to 8th parameters can be used for that purpose. You could technically do it with a series of curveVertex() calls, however that strategy doesn't offer much control. The next two sketches that I made during #GENUARY2022 use the same algorithm.
+In p5js there is no out-of-the-box method to doing so, as opposed to rectangular shapes where the 5th to 8th parameters can be used for that purpose. You could technically do it with a series of curveVertex() calls, however that strategy doesn't offer much control. The next two sketches, that I made during #GENUARY2022, make use of this algorithm:
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-4">
