@@ -165,17 +165,17 @@ The important part here is how the cross product can help us find the angle betw
 
 <div>
 <div style="margin: 0 auto;">
-<p> \( \Vert BA \Vert * \Vert BC \Vert * sin( \Theta ) \) <p>
+<p> \( \Vert BA \Vert * \Vert BC \Vert * sin( \Theta ) \) </p>
 </div>
 </div>
 
 This means that, finding the cross product requires us to have the angle... which is the thing that we're trying to find. In this sense, we haven't made any progress on finding the angle between the two vectors. However, if we were to somehow already have the numerical value of the cross product, we could solve for sin(\Theta), since we also have the magnitudes of the two vectors concerned:
 
-<p> \( \Vert BA \Vert * \Vert BC \Vert * sin( \Theta ) \) <p>
+<p> \( \Vert BA \Vert * \Vert BC \Vert * sin( \Theta ) \) </p>
 
 The cross product of two vectors is actually equal to the determinant of the 2x2 matrix formed by these vectors. This means computing this determinant will allow us to find the angle! Computing the determinant of a matrix is done with the following formula:
 
-<p> \( v_1x * v_2y - v_2x * v_1y \) <\p>
+<p> \( v_1x * v_2y - v_2x * v_1y \) </p>
 
 Then the value of the angle can be calculate as follows:
 
