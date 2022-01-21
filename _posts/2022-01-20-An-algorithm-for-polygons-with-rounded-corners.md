@@ -5,7 +5,7 @@ categories:
   - p5js
 description: this blog post describes an approach to turn pointy polygons into smooth shapes with round corners
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: true
+published: false
 exclude_rss: true
 ---
 
@@ -152,8 +152,9 @@ function toVec(p1, p2, v) {
 
 Now that we have converted our 3 points into vector form, we can compute the intermediary angle between the two vectors!
 
-<h2>Finding the angle using the cross product ~ the Math</h2>
+<h2>Finding the angle using the cross product</h2>
 
+<h3>The Math</h3>
 Getting the halfway angle is probably the trickiest part of the procedure. It is important to mention here that the order of the points is crucial! When dealing with a closed polygonal shape the order of the points is such that the formed angle is pointing inwards. Given 3 points the formed angle is ambiguous, in the previous example the angle forms an acute wedge but could equivalently be interpreted as an obtuse fan. Keep this in mind for now, it will be relevant in a bit!
 
 The next part of blindman67's code was a little tricky to decipher, and will require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors. Essentially, we will be exploiting the cross product of the two vectors to find the value of the angle between them.
@@ -181,15 +182,19 @@ Then the value of the angle can be calculated as follows:
 <p> \( \Theta = sin^{-1}(\frac{v_{1}x * v_{2}y - v_{2}x * v_{1}y}{\Vert BA \Vert * \Vert BC \Vert}) \) </p>
 </div>
 
-Additionally, this can be further simplified, since our vectors are already normalized \( \Vert BA \Vert * \Vert BC \Vert \), they will simply evaluate to 1, leaving us with:
+If you're not familiar with the inverse sine function, it simply does the reverse operation that a regular sine function does. So for example, a sine function will accept a value between 0 adn TAU and return a value that ranges between -1 and 1. The inverse function will accept values between -1 and 1 and return an angle that ranges between 0 and TAU. 
+
+Furthermore, this formula can be further simplified! Since our vectors are already normalized \( \Vert BA \Vert * \Vert BC \Vert \), they will simply evaluate to 1, leaving us with:
 
 <div style="width:100%; display: flex; justify-content: center;">
 <p> \( \Theta = sin^{-1}(det) \)</p>
 </div>
 
-<h2>Finding the angle using the cross product ~ the Code</h2>
+Which is thus simply the inverse sine of the determinant. If you've followed until here, then congrats, the hardest part is past us!
 
-Let's have a look at the following lines of code by Blindman67:
+<h3>The Code</h3>
+
+The code for all of what we have discussed in the previous section is relatively... tame, and can essentially be summarised in a single line of code! Let's have a look at the snippet by Blindman67:
 
 <pre><code>
 // compute vectors
@@ -207,7 +212,7 @@ sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
 angle = Math.asin(sinA < -1 ? -1 : sinA > 1 ? 1 : sinA);
 </code></pre>
 
-The trickiest part here is the double ternary check inside the asin function. By simply expanding it, it visually makes more sense:
+The trickiest part here, I found to be the nested ternary check inside the inverse sine function. By simply expanding it, it visually makes more sense:
 
 <pre><code>if(sinA<-1){
   angle = Math.asin(-1)
