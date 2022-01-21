@@ -178,19 +178,19 @@ This means that, finding the cross product requires us to have the angle... whic
 The cross product of two vectors is actually equal to the determinant of the 2x2 matrix formed by these vectors. This means computing this determinant will allow us to find the angle! Computing the determinant of a matrix is done with the following formula:
 
 <div style="width:100%; display: flex; justify-content: center;">
-<p> \( v_1x * v_2y - v_2x * v_1y \) </p>
+<p> \( v_{1}x * v_{2}y - v_{2}x * v_{1}y \) </p>
 </div>
 
 Then the value of the angle can be calculate as follows:
 
 <div style="width:100%; display: flex; justify-content: center;">
-<p> \( \Theta = sin^{-1}(\frac{(v_1x * v_2y - v_2x * v_1y)}{\Vert BA \Vert * \Vert BC \Vert} \) </p>
+<p> \( \Theta = sin^{-1}(\frac{v_{1}x * v_{2}y - v_{2}x * v_{1}y}{\Vert BA \Vert * \Vert BC \Vert}) \) </p>
 </div>
 
 Additionally, this can be further simplified, since our vectors are already normalized \( \Vert BA \Vert * \Vert BC \Vert \), they will simply evaluate to 1, leaving us with:
 
 <div style="width:100%; display: flex; justify-content: center;">
-<p> \( sin^(-1) = (det) \)</p>
+<p> \( sin^{-1} = (det) \)</p>
 </div>
 
 Let's have a look at the following lines of code by Blindman67:
