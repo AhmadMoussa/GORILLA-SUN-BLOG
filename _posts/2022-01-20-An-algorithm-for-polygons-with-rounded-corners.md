@@ -153,7 +153,7 @@ function toVec(p1, p2, v) {
 
 Now that we have converted our 3 points into vector form, we can compute the intermediary angle between the two vectors!
 
-<h2>Finding the angle using the cross product</h2>
+<h2>Finding the angle using the cross product ~ the Math</h2>
 
 Getting the halfway angle is probably the trickiest part of the procedure. It is important to mention here that the order of the points is crucial! When dealing with a closed polygonal shape the order of the points is such that the formed angle is pointing inwards. Given 3 points the formed angle is ambiguous, in the previous example the angle forms an acute wedge but could equivalently be interpreted as an obtuse fan. Keep this in mind for now, it will be relevant in a bit!
 
@@ -161,27 +161,22 @@ The next part of blindman67's code was a little tricky to decipher, and will req
 
 What the cross product actually represents algebraically, is a bit outside of the scope of this post. A perfect resource for understanding it can be found in the form of <a href="https://www.youtube.com/watch?v=eu6i7WJeinw&ab_channel=3Blue1Brown">this video</a> by <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a> (and I think there is no need for me to introduce the channel XD).
 
-The important part here is how the cross product can help us find the angle between two vectors. Generally the formula for finding the cross product is the multiplying the magnitudes of the two vectors at hand with the sine of the angle that they form. More concretely:
-
-
-<div style="width:100%; display: flex; justify-content: center;">
-<p> \( \Vert BA \Vert * \Vert BC \Vert * sin( \Theta ) \) </p>
-</div>
-
-
-This means that, finding the cross product requires us to have the angle... which is the thing that we're trying to find. In this sense, we haven't made any progress on finding the angle between the two vectors. However, if we were to somehow already have the numerical value of the cross product, we could solve for \( sin(\Theta) ), since we also have the magnitudes of the two vectors concerned:
+The important part here is how the cross product can help us find the angle between two vectors. Generally the formula for finding the cross product is the product of the magnitudes of our two vectors, with the sine of the angle that they form. More concretely:
 
 <div style="width:100%; display: flex; justify-content: center;">
 <p> \( \Vert BA \Vert * \Vert BC \Vert * sin( \Theta ) \) </p>
 </div>
 
-The cross product of two vectors is actually equal to the determinant of the 2x2 matrix formed by these vectors. This means computing this determinant will allow us to find the angle! Computing the determinant of a matrix is done with the following formula:
+
+This means that, finding the cross product requires us to have the angle... who's value we're trying to find. Now, if we were to somehow already have the numerical value of the cross product, we could solve for \( sin(\Theta) \), since we also already have the magnitudes of the two vectors concerned \( \Vert BA \Vert \) and \( \Vert BC \Vert \).
+
+And actually, there is another way to find the numerical value of the cross product! It is actually equal to the determinant of the 2x2 matrix formed by these vectors. This means computing this determinant will allow us to find the angle by solving the previous formula! Computing the determinant of a matrix is done as follows:
 
 <div style="width:100%; display: flex; justify-content: center;">
 <p> \( v_{1}x * v_{2}y - v_{2}x * v_{1}y \) </p>
 </div>
 
-Then the value of the angle can be calculate as follows:
+Then the value of the angle can be calculated as follows:
 
 <div style="width:100%; display: flex; justify-content: center;">
 <p> \( \Theta = sin^{-1}(\frac{v_{1}x * v_{2}y - v_{2}x * v_{1}y}{\Vert BA \Vert * \Vert BC \Vert}) \) </p>
@@ -190,8 +185,10 @@ Then the value of the angle can be calculate as follows:
 Additionally, this can be further simplified, since our vectors are already normalized \( \Vert BA \Vert * \Vert BC \Vert \), they will simply evaluate to 1, leaving us with:
 
 <div style="width:100%; display: flex; justify-content: center;">
-<p> \( sin^{-1} = (det) \)</p>
+<p> \( \Theta = sin^{-1}(det) \)</p>
 </div>
+
+<h2>Finding the angle using the cross product ~ the Code</h2>
 
 Let's have a look at the following lines of code by Blindman67:
 
@@ -200,7 +197,7 @@ Let's have a look at the following lines of code by Blindman67:
 asVec(p2, p1, v1);
 asVec(p2, p3, v2);
 
-// Cross product of the two vectors
+// Cross product of the two vectors - what we discussed in the previous section
 sinA = v1.nx * v2.ny - v1.ny * v2.nx;
 
 // Cross product of v2 and the line at 90 degrees to v1
@@ -227,7 +224,7 @@ Go ahead a try putting values lesser than -1 or greater than 1 into the inverse 
 
 <h2>Finding the correct orientation of the angle</h2>
 
-Next up we have this if/else flurry to determine the orientation of our angle:
+There's a couple more steps that we have to do to go through to get the correct half angle between our two vectors. We'll start with this if/else flurry to determine the orientation of our angle:
 
 <pre><code>radDirection = 1;
 drawDirection = false;
