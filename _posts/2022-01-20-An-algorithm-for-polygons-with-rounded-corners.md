@@ -184,7 +184,7 @@ The cross product of two vectors is actually equal to the determinant of the 2x2
 Then the value of the angle can be calculate as follows:
 
 <div style="width:100%; display: flex; justify-content: center;">
-<p> \( \Theta = sin^(-1)(\frac{(v_1x * v_2y - v_2x * v_1y)}{\Vert BA \Vert * \Vert BC \Vert} \) </p>
+<p> \( \Theta = sin^{-1}(\frac{(v_1x * v_2y - v_2x * v_1y)}{\Vert BA \Vert * \Vert BC \Vert} \) </p>
 </div>
 
 Additionally, this can be further simplified, since our vectors are already normalized \( \Vert BA \Vert * \Vert BC \Vert \), they will simply evaluate to 1, leaving us with:
