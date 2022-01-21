@@ -18,12 +18,12 @@ This post/tutorial is dedicated to a snippet of code I found on stackoverflow, a
 I came across this code when I attempted a sketch in which I wanted to round off the corners of some triangles.
 
 <div class="row gtr-50 gtr-uniform">
-	<div class="col-4">
+	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/1.png" alt="">
 		</span>
 	</div>
-	<div class="col-4">
+	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/2.png" alt="">
 		</span>
@@ -33,12 +33,12 @@ I came across this code when I attempted a sketch in which I wanted to round off
 In p5js there is no out-of-the-box method to doing so, as opposed to rectangular shapes where the 5th to 8th parameters can be used for that purpose. You could technically do it with a series of curveVertex() calls, however that strategy doesn't offer much control. The next two sketches, that I made during #GENUARY2022, make use of this algorithm:
 
 <div class="row gtr-50 gtr-uniform">
-	<div class="col-4">
+	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/SolLeWitt.png" alt="">
 		</span>
 	</div>
-	<div class="col-4">
+	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/Sand.png" alt="">
 		</span>
