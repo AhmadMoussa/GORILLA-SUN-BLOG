@@ -9,6 +9,10 @@ published: true
 exclude_rss: true
 ---
 
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+	<img class="viewable" src="https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/Sand.gif" alt="">
+</span>
+		
 <h2>Shapes with rounded corners</h2>
 
 If you spent some time doing creative coding, you'll very quickly come to the realization that anything, which has shape that is little more complicated than your average rectangle or circle, quickly starts requiring a fair amount of code to be summoned onto your canvas.
@@ -35,12 +39,12 @@ In p5js there is no out-of-the-box method to doing so, as opposed to rectangular
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/SolLeWitt.png" alt="">
+			<img class="viewable" src="https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/9dunes.png" alt="">
 		</span>
 	</div>
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/Sand.png" alt="">
+			<img class="viewable" src="https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/4dunes.png" alt="">
 		</span>
 	</div>
 </div>
