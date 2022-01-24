@@ -13,7 +13,7 @@ exclude_rss: true
 	<img class="viewable" src="https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/Sand.gif" alt="">
 </span>
 		
-<h2>Shapes with rounded corners</h2>
+<h2>An algorithm for rounded corners</h2>
 
 If you spent some time doing creative coding, you'll very quickly come to the realization that anything, which has shape that is little more complicated than your average rectangle or circle, quickly starts requiring a fair amount of code to be summoned onto your canvas.
 
@@ -33,6 +33,7 @@ I came across this code when I attempted a sketch in which I wanted to round off
 		</span>
 	</div>
 </div>
+<p></p>
 
 In p5js there is no out-of-the-box method to doing so, as opposed to rectangular shapes where the 5th to 8th parameters can be used for that purpose. You could technically do it with a series of curveVertex() calls, however that strategy doesn't offer much control. The next two sketches, that I made during #GENUARY2022, make use of this algorithm:
 
@@ -48,33 +49,40 @@ In p5js there is no out-of-the-box method to doing so, as opposed to rectangular
 		</span>
 	</div>
 </div>
+<p></p>
 
 You can notice that you can even mix between pointy corners and round corners, which is another thing that isn't possible with pure p5js (without writing a lot of additional code towards that end). This came in clutch for two Genuary sketches
 
 The remainder of this post will walk you through this really cool and useful algorithm, step by step.
 
 <h2>Credit where credit's due</h2>
-The code discussed in this post stems from this <a href="https://stackoverflow.com/a/44856925">stackoverflow answer</a> by SO user <a href="https://stackoverflow.com/users/3877726/blindman67">Blindman67</a>. (Go give him some upvotes on his answer XD) Blindman67 explains his strategy in detail in his answer, and is more than sufficient for you to start using his code, but for the sake of REALLY understanding the algorithm, we'll recreate it from scratch solely based off of his explanation.
+The code discussed in this post stems from this <a href="https://stackoverflow.com/a/44856925">stackoverflow answer</a> by SO user <a href="https://stackoverflow.com/users/3877726/blindman67">Blindman67</a>. (Go give him some upvotes on his answer if you find this useful!) Blindman67 explains his strategy in detail in his answer, and is more than sufficient for you to start using his code, but for the sake of REALLY understanding the algorithm, we'll recreate it from scratch based off of his explanation and analyzing his code!
 
 
 
 
-<h2>An algorithm for rounded corners</h2>
+<h2>Intuitive explanation of the algorithm</h2>
 A corner, which essentially is an angle, can generally be defined by three points. And since we'll be drawing our shapes through the positioning of vertices at specific coordinates, we can be certain that we have these coordinates (a given).
 
-The idea behind what we're trying to do is simple. We're going to take an imaginary circle of a certain radius, and push it as far as possible into the corner that we're trying to round. Now we erase the lines that form the pointy corner, starting from the place where they are tangential to the imaginary circle, and close the shape again by tracing the outwards facing portion of our circle.
+The idea behind what we're trying to do is simple. We're going to take an imaginary circle of a certain radius, and push it as far as possible into the corner that we're trying to round. Next, we erase the lines that form the pointy corner, starting from the place where they are tangential to the imaginary circle, and close the shape again by tracing the outward facing portion of our circle.
 
-And voila, we have a rounded corner with a specific radius. Seems straightforward? Right, but there are some caveats and some calculations to be done.
+And voila, we have a rounded corner with a specific radius. Seems straightforward, right? There are some caveats and some calculations to be done.
 
-<h2>Breaking down the algorithm</h2>
-Given a specific radius, the difficulty lies within finding where to exactly position the circle that rounds the corner to that radius. If we can exactly locate where this circle is positioned, we can also determine where it is tangential to the lines that form the pointy corner. Those two points will determine the start and end of the arc that will form the rounded corner.
+<h2>Breakdown of the algorithm</h2>
+Given a specific radius, the difficulty lies within finding where to exactly position the circle that rounds the corner to that radius. If we can exactly locate where this circle is positioned, we can also determine where it is tangential to the lines that form the pointy corner. Those two points will determine the start and end of the arc that will form the rounded corner. Overall, given three points A, B and C that form a corner, as well as a given radius, the steps are:
 
-Overall, given three points A, B and C that form a corner, as well as a given radius, the steps are:
-
+<!--
 1. Calculate the angle that is formed by A, B and C by computing the cross product of the vectors BA and BC
-2. Calculating the dot product of the vectors BA and the line at 90 degrees from BA
+2. Calculating the cross product of the vectors BA and the line at 90 degrees from BA, to find the which side of the vector to place the circle
 3. Finding the distance from B to F by solving it with R and the angle FBD or FBE
-4. Draw an arc from E to F (or the other way around) by tracing a portion of the circle
+4. Drawing an arc from E to F (or the other way around) by tracing a portion of the circle
+-->
+
+1. Converting 3 points into 2 vectors
+2. Calculating the angle between those two vectors
+3. Calculating and locating the half-angle between the two vector
+4. Finding the distance from the circle center to the corner
+5. Drawing the arc
 
 There are other cases that need to be handled, but in essence these are the main steps.
 
@@ -154,16 +162,18 @@ function toVec(p1, p2, v) {
 </script>
 <p></p>
 
-Now that we have converted our 3 points into vector form, we can compute the intermediary angle between the two vectors!
+Now that we have converted our 3 points into vector form, we can tackle computing and locating the intermediary angle between the two vectors!
 
 <h2>Finding the angle using the cross product</h2>
 
 <h3>The Math</h3>
-Getting the halfway angle is probably the trickiest part of the procedure. It is important to mention here that the order of the points is crucial! When dealing with a closed polygonal shape the order of the points is such that the formed angle is pointing inwards. Given 3 points the formed angle is ambiguous, in the previous example the angle forms an acute wedge but could equivalently be interpreted as an obtuse fan. Keep this in mind for now, it will be relevant in a bit!
+Getting the halfway angle is probably the trickiest part of the procedure, and requires a number of steps. There probably are multiple ways to obtaining the angle, but here's the method that as deduced from Blindman67's code.
+
+It is important to mention here that the order of the points is crucial! When dealing with a closed polygonal shape the order of the points is such that the formed angle is pointing inwards. Given 3 points the formed angle is ambiguous, in the previous example the angle forms an acute wedge but could equivalently be interpreted as an obtuse fan. Keep this in mind for now, it will be relevant in a bit!
 
 The next part of blindman67's code was a little tricky to decipher, and will require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors. Essentially, we will be exploiting the cross product of the two vectors to find the value of the angle between them.
 
-What the cross product actually represents algebraically, is a bit outside of the scope of this post. A perfect resource for understanding it can be found in the form of <a href="https://www.youtube.com/watch?v=eu6i7WJeinw&ab_channel=3Blue1Brown">this video</a> by <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a> (and I think there is no need for me to introduce the channel XD).
+What the cross product actually represents algebraically, is a bit outside of the scope of this post. A perfect resource for understanding it can be found in the form of <a href="https://www.youtube.com/watch?v=eu6i7WJeinw&ab_channel=3Blue1Brown">this video</a> by <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a> (I don't think there's a need for me to introduce his channel).
 
 The important part here is how the cross product can help us find the angle between two vectors. Generally the formula for finding the cross product is the product of the magnitudes of our two vectors, with the sine of the angle that they form. More concretely:
 
@@ -172,7 +182,7 @@ The important part here is how the cross product can help us find the angle betw
 </div>
 
 
-This means that, finding the cross product requires us to have the angle... who's value we're trying to find. Now, if we were to somehow already have the numerical value of the cross product, we could solve for \( sin(\Theta) \), since we also already have the magnitudes of the two vectors concerned \( \Vert BA \Vert \) and \( \Vert BC \Vert \).
+This means that, finding the cross product requires us to have the angle... who's value we're trying to find. Now, if we were to somehow already have the numerical value of the cross product, we could solve for <p>\( sin( \Theta ) \)</p>, since we also already have the magnitudes of the two vectors concerned <p> \( \Vert BA \Vert \) </p> and <p> \( \Vert BC \Vert \) </p>.
 
 And actually, there is another way to find the numerical value of the cross product! It is actually equal to the determinant of the 2x2 matrix formed by these vectors. This means computing this determinant will allow us to find the angle by solving the previous formula! Computing the determinant of a matrix is done as follows:
 
