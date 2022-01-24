@@ -365,7 +365,7 @@ function toVec(p1, p2, v) {
 </script>
 <p></p>
 
-Well take care of the faulty case in a bit.
+We'll take care of the faulty case in a bit.
 
 <h2>Solving a triangle given two angles and one Side</h2>
 
@@ -373,6 +373,22 @@ Now we can find the distance of the center of our circle from the corner:
 
 <pre><code>lenOut = abs(cos(halfAngle) * radius / sin(halfAngle));
 </code></pre>
+
+<p> Here, instead of finding the distance of the circle center F to corner point B, we're directly finding the distance from the corner point B to the tangential points E and F. For this we're making use of the formulas that can be applied for finding the length of the hypothenuse, which is deisgnated by BF. We then have \( BF * cos(\Theta) = BE \) and \( BF * sin( \Theta) = FE \). 
+</p>
+
+Using these two formulas we find the formula that Blindman67 used:
+
+<div style="width:100%; display: flex; justify-content: center;">
+<p> \( \frac{BE}{cos(\Theta)} = \frac{r}{sin(\theta)} \)</p>
+</div>
+
+And here we also have the value of the radius (that we specified):
+
+<div style="width:100%; display: flex; justify-content: center;">
+<p> \( BE = abs( \frac{cos(\Theta) * r}{sin(\theta)}) \)</p>
+</div>
+
 
 One problem here is that the radius that we specified as input, might not fit into the corner. This can be remedied by the following check:
 
