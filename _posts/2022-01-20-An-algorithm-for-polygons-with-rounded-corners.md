@@ -260,7 +260,7 @@ if (sinA90 < 0) {
     drawDirection = true;
   }
 }
-</pre></code>
+</code></pre>
 
 There's quite a lot going on here. We'll go through it step by step. The important thing to grasp here is that the sign of the cross product also tells us if the angle is oriented clockwise or counter clockwise, which we'll use to find the half angle that splits our angle in two. And remember, order is important!
 
