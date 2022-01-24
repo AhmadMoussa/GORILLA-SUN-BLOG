@@ -167,15 +167,11 @@ Now that we have converted our 3 points into vector form, we can tackle computin
 <h2>Finding the angle using the cross product</h2>
 
 <h3>The Math</h3>
-Getting the halfway angle is probably the trickiest part of the procedure, and requires a number of steps. There probably are multiple ways to obtaining the angle, but here's the method that as deduced from Blindman67's code.
-
-It is important to mention here that the order of the points is crucial! When dealing with a closed polygonal shape the order of the points is such that the formed angle is pointing inwards. Given 3 points the formed angle is ambiguous, in the previous example the angle forms an acute wedge but could equivalently be interpreted as an obtuse fan. Keep this in mind for now, it will be relevant in a bit!
-
-The next part of blindman67's code was a little tricky to decipher, and will require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors. Essentially, we will be exploiting the cross product of the two vectors to find the value of the angle between them.
+Getting the halfway angle is probably the trickiest part of the procedure, and requires a number of steps. There probably are multiple ways to obtaining the angle, but here's the method that as deduced from Blindman67's code. It will also require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors. Essentially, we will be exploiting the cross product of the two vectors to find the value of the angle between them.
 
 What the cross product actually represents algebraically, is a bit outside of the scope of this post. A perfect resource for understanding it can be found in the form of <a href="https://www.youtube.com/watch?v=eu6i7WJeinw&ab_channel=3Blue1Brown">this video</a> by <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a> (I don't think there's a need for me to introduce his channel).
 
-The important part here is how the cross product can help us find the angle between two vectors. Generally the formula for finding the cross product is the product of the magnitudes of our two vectors, with the sine of the angle that they form. More concretely:
+The important part here is how the cross product can help us find the angle between two vectors. It is important to mention here that the order of the points is crucial! When dealing with a closed polygonal shape the order of the points is such that the formed angle is pointing inwards. Given 3 points the formed angle is ambiguous, in the previous example the angle forms an acute wedge but could equivalently be interpreted as an obtuse fan. Keep this in mind for now, it will be relevant in a bit! Generally the formula for finding the cross product is the product of the magnitudes of our two vectors, with the sine of the angle that they form. More concretely:
 
 <div style="width:100%; display: flex; justify-content: center;">
 <p> \( \Vert BA \Vert * \Vert BC \Vert * sin( \Theta ) \) </p>
@@ -185,7 +181,7 @@ The important part here is how the cross product can help us find the angle betw
 This means that, finding the cross product requires us to have the angle... who's value we're trying to find. Now, if we were to somehow already have the numerical value of the cross product, we could solve for \( sin( \Theta ) \), since we also already have the magnitudes of the two vectors concerned \( \Vert BA \Vert \) and \( \Vert BC \Vert \).
 </p>
 
-And actually, there is another way to find the numerical value of the cross product! It is actually equal to the determinant of the 2x2 matrix formed by these vectors. This means computing this determinant will allow us to find the angle by solving the previous formula! Computing the determinant of a matrix is done as follows:
+Luckily, there is another way to find the numerical value of the cross product! It is actually equal to the determinant of the 2x2 matrix formed by these vectors. This means computing this determinant will allow us to find the angle by solving the previous formula! Computing the determinant of a matrix is done as follows:
 
 <div style="width:100%; display: flex; justify-content: center;">
 <p> \( v_{1}x * v_{2}y - v_{2}x * v_{1}y \) </p>
@@ -197,9 +193,11 @@ Then the value of the angle can be calculated as follows:
 <p> \( \Theta = sin^{-1}(\frac{v_{1}x * v_{2}y - v_{2}x * v_{1}y}{\Vert BA \Vert * \Vert BC \Vert}) \) </p>
 </div>
 
-If you're not familiar with the inverse sine function, it simply does the reverse operation that a regular sine function does. So for example, a sine function will accept a value between 0 adn TAU and return a value that ranges between -1 and 1. The inverse function will accept values between -1 and 1 and return an angle that ranges between 0 and TAU. 
+If you're not familiar with the inverse sine function, it simply does the reverse operation that a regular sine function does. So for example, a sine function will accept a value between -PI/2 and PI/2, and return a value that ranges between -1 and 1. The inverse function will accept values between -1 and 1 and return an angle that ranges between -PI/2 and PI/2. 
 
-Furthermore, this formula can be further simplified! Since our vectors are already normalized \( \Vert BA \Vert * \Vert BC \Vert \), they will simply evaluate to 1, leaving us with:
+<p>
+This formula can be further simplified! Since our vectors are already normalized \( \Vert BA \Vert * \Vert BC \Vert \), they will simply evaluate to 1, leaving us with:
+</p>
 
 <div style="width:100%; display: flex; justify-content: center;">
 <p> \( \Theta = sin^{-1}(det) \)</p>
@@ -212,7 +210,7 @@ Which is thus simply the inverse sine of the determinant. If you've followed unt
 The code for all of what we have discussed in the previous section is relatively... tame, and can essentially be summarised in a single line of code! Let's have a look at the snippet by Blindman67:
 
 <pre><code>
-// compute vectors
+// compute and store our 2 vectors
 asVec(p2, p1, v1);
 asVec(p2, p3, v2);
 
