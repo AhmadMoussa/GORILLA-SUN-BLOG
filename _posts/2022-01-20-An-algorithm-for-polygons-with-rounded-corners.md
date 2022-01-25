@@ -218,8 +218,7 @@ Which is thus simply the inverse sine of the determinant. If you've followed unt
 
 The code for all of what we have discussed in the previous section is relatively... tame, and can essentially be summarised in a single line of code! Let's have a look at the snippet by Blindman67:
 
-<pre><code>
-// compute and store our 2 vectors
+<pre><code>// compute and store our 2 vectors
 asVec(p2, p1, v1);
 asVec(p2, p3, v2);
 
