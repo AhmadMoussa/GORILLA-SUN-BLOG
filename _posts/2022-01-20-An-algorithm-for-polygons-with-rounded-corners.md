@@ -5,7 +5,7 @@ categories:
   - p5js
 description: this blog post describes an approach to turn pointy polygons into smooth shapes with round corners
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: true
+published: false
 exclude_rss: true
 ---
 
