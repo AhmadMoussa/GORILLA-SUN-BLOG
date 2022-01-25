@@ -5,7 +5,7 @@ categories:
   - p5js
 description: this blog post describes an approach to turn pointy polygons into smooth shapes with round corners
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: false
+published: true
 exclude_rss: true
 ---
 
@@ -96,7 +96,7 @@ Given a specific radius, the difficulty lies within finding where to exactly pos
 5. Drawing the arc
 
 <h2><a name='vecstopoints'></a>2 Vectors from 3 Points</h2>
-First we'll need to find the angle that is formed by three points. To do so we first need to compute the vectors formed by these three points. For three points A,B and C we can find the vectors BA and BC by using the following function:
+First we'll need to find the angle that is formed by three points. To do so we first need to compute the vectors formed by these three points. For three points A, B and C we can find the vectors BA and BC by using the following function:
 
 <pre><code>// p1 -> first point
 // p2 -> second point
@@ -120,10 +120,9 @@ function toVec(p1, p2, v) {
 }
 </code></pre>
 
-The comments should be sufficient to understand what is happening, we also use the atan2() function to calculate the angle of the vectors with respect to the zero angle. Here's a quick working example:
+The comments should be sufficient to understand what is happening, we also use the atan2() function to calculate the angle of the vectors with respect to the zero angle. For simplicity's sake we'll make the origin at the center of the canvas. To fill our vector containers, we can do as such:
 
-<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+<pre><code>
 function setup() {
   w = min(windowWidth, windowHeight)
   createCanvas(w, w);
@@ -150,10 +149,6 @@ function draw() {
   toVec(p1,p2,v1)
   toVec(p3,p2,v2)
 
-  noFill()
-  strokeWeight(1)
-  arc(0,0,v1.len*2,v1.len*2,v1.ang+PI,v2.ang+PI)
-
   noLoop()
 }
 
@@ -168,15 +163,14 @@ function toVec(p1, p2, v) {
     v.ny = v.y / v.len;
     v.ang = Math.atan2(v.ny, v.nx);
 }
-</script>
-<p></p>
+</code></pre>
 
 Now that we have converted our 3 points into vector form, we can tackle computing and locating the intermediary angle between the two vectors!
 
 <h2><a name='angle'></a>Calculating the angle using the cross product</h2>
 
 <h3>The Math</h3>
-Getting the halfway angle is probably the trickiest part of the procedure, and requires a number of steps. There probably are multiple ways to obtaining the angle, but here's the method that as deduced from Blindman67's code. It will also require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors. Essentially, we will be exploiting the cross product of the two vectors to find the value of the angle between them.
+Getting the halfway angle is probably the trickiest part of the procedure, and requires a number of steps. There probably are multiple ways to obtaining the angle, but here's the method deduced from Blindman67's code. It will require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors, which we will be exploiting to find the value of the angle that they form.
 
 What the cross product actually represents algebraically, is a bit outside of the scope of this post. A perfect resource for understanding it can be found in the form of <a href="https://www.youtube.com/watch?v=eu6i7WJeinw&ab_channel=3Blue1Brown">this video</a> by <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a> (I don't think there's a need for me to introduce his channel).
 
@@ -343,7 +337,7 @@ function draw() {
   perpx2 = v1.len*cos(v1.ang+PI/2)
   perpy2 = v1.len*sin(v1.ang+PI/2)
 
-  stroke(255,0,0)
+  stroke(0,0,255)
   strokeWeight(10)
   point(perpx1,perpy1)
   //point(perpx2,perpy2)
@@ -384,8 +378,12 @@ function draw() {
   xx = 50*cos(v1.ang + angle/2)
   yy = 50*sin(v1.ang + angle/2)
 
+  stroke(255,0,0)
+  drawingContext.setLineDash([0,0])
   strokeWeight(10)
   point(xx,yy)
+  strokeWeight(1)
+  line(xx,yy,0,0)
   
   drawingContext.setLineDash([0,0])
   strokeWeight(1)
@@ -393,9 +391,10 @@ function draw() {
   fill(0)
   text('sinA: '+(Math.round(sinA * 100) / 100).toFixed(2), -w/2+10, -w/2+20)
   text('angle: '+(Math.round(map(angle,-PI/2,PI/2,-90,90) * 100) / 100).toFixed(2), -w/2+10, -w/2+40)
+  text('half angle: '+(Math.round(map(angle/2,-PI/2,PI/2,-90,90) * 100) / 100).toFixed(2), -w/2+10, -w/2+60)
   
-  text('sinA90: '+(Math.round(sinA90 * 100) / 100).toFixed(2), -w/2+10, -w/2+80)
-  text('angle90: '+(Math.round(map(angle90,-PI/2,PI/2,-90,90) * 100) / 100).toFixed(2), -w/2+10, -w/2+100)
+  text('sinA90: '+(Math.round(sinA90 * 100) / 100).toFixed(2), -w/2+10, -w/2+100)
+  text('angle90: '+(Math.round(map(angle90,-PI/2,PI/2,-90,90) * 100) / 100).toFixed(2), -w/2+10, -w/2+120)
 
   noLoop()
 }
