@@ -18,7 +18,7 @@ exclude_rss: true
 3. <a href='#intuitive'>An intuitive explanation of the algorithm</a>
 4. <a href='#vecstopoints'>2 Vectors from 3 Points</a>
 5. <a href='#angle'>Calculating the angle using the cross product</a>
-6. <a href='#ambiguity'>Solving the ambiguity of the cross product</a>
+6. <a href='#ambiguity'>Ambiguity of the cross product</a>
 7. <a href='#position'>Positioning the circle</a>
 8. <a href='#ctx'>The rendering context</a>
 		
@@ -247,7 +247,7 @@ The trickiest part here, I found to be the nested ternary check inside the inver
 
 Go ahead a try putting values lesser than -1 or greater than 1 into the inverse sine function. It'll yield a NaN value. To avoid such thing, we simply clamp the value and can be done compactly as a one liner. And if you noticed, in actuality, we have already obtained the value of the angle!
 
-<h2><a name='ambiguity'></a>Solving the ambiguity of the cross product</h2>
+<h2><a name='ambiguity'></a>Ambiguity of the cross product</h2>
 
 There's a couple more steps that we have to do to go through to get the correct half angle between our two vectors. We'll start with this if/else flurry to determine the orientation of our angle:
 
@@ -269,7 +269,7 @@ if (sinA90 < 0) {
 }
 </code></pre>
 
-The problem that we're trying to solve here, is that the angle returned by the cross product is ambiguous. Meaning, that we can't tell if the angle return is the acute or obtuse one formed by the two vectors. And in order to correctly position our circle we need to know if we are splitting the obtuse fan or the acute wedge. 
+The problem that we're trying to solve here, is that the angle returned by the cross product is ambiguous. Meaning, that we can't tell if the angle returned designated the acute wedge or obtuse fan formed by the two vectors (sometimes we want the reflex angle rather than the one return). And in order to correctly position our circle we need to know if we are splitting the obtuse fan or the acute wedge.
 
 Hence, we need another indicator to be able to determine where to position the center of the circle. For this purpose we can use the cross product of the angle formed by the perpendicular of BA and the vector BC. By inspecting the sign of these two cross products we can pin point where the bisector is located. Let's examine the different scenarios that arise:
 
@@ -392,6 +392,18 @@ function toVec(p1, p2, v) {
 <p></p>
 
 We'll take care of the faulty case in a bit.
+
+<h4>Simpler way to calculating the angle?</h4>
+
+Now these are a lot of hoops to go through for simply finding the angle between two vectors. If you want to have a simpler way of that angle you can use:
+
+<pre><code>// vectors should be normalized
+angle = atan2(v2.y, v2.x) - atan2(v1.y, v1.x)
+if (angle < 0) { angle += 2 * PI;}
+</code></pre>
+
+<h4>A visual example</h4>
+Here's a visual examle of why this is necessary:
 
 <h2><a name='start'></a>Positioning the circle</h2>
 
