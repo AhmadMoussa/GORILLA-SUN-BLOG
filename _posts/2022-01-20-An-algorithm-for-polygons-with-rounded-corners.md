@@ -19,7 +19,8 @@ exclude_rss: true
 4. <a href='#vecstopoints'>2 Vectors from 3 Points</a>
 5. <a href='#angle'>Calculating the angle using the cross product</a>
 6. <a href='#ambiguity'>Solving the ambiguity of the cross product</a>
-7. <a href='#ctx'>The rendering context</a>
+7. <a href='#position'>Positioning the circle</a>
+8. <a href='#ctx'>The rendering context</a>
 		
 <h2><a name='start'></a>Introduction: An algorithm for rounded corners</h2>
 
@@ -296,7 +297,7 @@ If sinA90 is less than 0, then this angle is oriented counterclockwise. In this 
 -->
 
 <h4> Example </h4>
-Here's an example of this in action. You'll notice that there is still the case of ABC > 180 which will yield a wrong midway angle:
+Here's an example of this in action. Observe the position of BC, BA and it's perpendicular as well as the values of sinA and sinA90:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -392,7 +393,7 @@ function toVec(p1, p2, v) {
 
 We'll take care of the faulty case in a bit.
 
-<h2>Positionning the circle</h2>
+<h2><a name='start'></a>Positioning the circle</h2>
 
 Now we can find the distance of the center of our circle from the corner:
 
