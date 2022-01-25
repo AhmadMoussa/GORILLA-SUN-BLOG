@@ -312,9 +312,10 @@ function draw() {
   translate(w/2,w/2)
 
   randAng = random(TAU)
+  randAng2 = random(TAU)
   p1 = {x: 100*cos(randAng), y: 100*sin(randAng)}
   p2 = {x: 0, y: 0}
-  p3 = {x: -100, y: 100}
+  p3 = {x: 100*cos(randAng2), y: 100*sin(randAng2)}
 
   strokeWeight(10)
   point(p1.x,p1.y)
@@ -345,33 +346,56 @@ function draw() {
   stroke(255,0,0)
   strokeWeight(10)
   point(perpx1,perpy1)
-  point(perpx2,perpy2)
+  //point(perpx2,perpy2)
   strokeWeight(1)
   drawingContext.setLineDash([5,5])
-  line(perpx1,perpy1,perpx2,perpy2)
+  line(perpx1,perpy1,0,0)
 
   sinA = v1.nx * v2.ny - v1.ny * v2.nx;
   sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
   angle = Math.asin(sinA < -1 ? -1 : sinA > 1 ? 1 : sinA);
   angle90 = Math.asin(sinA90 < -1 ? -1 : sinA90 > 1 ? 1 : sinA90);
 
-  print(sinA,sinA90,angle,angle90)
+  print(sinA,sinA90,
+        map(angle,-PI/2,PI/2,-45,45),
+        map(angle90,-PI/2,PI/2,-45,45))
 
   noFill();
 
-  if (sinA90 < 0) {
-    if (angle < 0) {
-      angle = Math.PI + angle;
+    radDirection = 1;
+    drawDirection = false;
+    if (sinA90 < 0) {
+      if (angle < 0) {
+        angle = Math.PI - angle;
+      } else {
+        angle = Math.PI - angle;
+        radDirection = -1;
+        drawDirection = true;
+      }
     } else {
-      angle = Math.PI - angle;
+      if (angle > 0) {
+        radDirection = -1;
+        drawDirection = true;
+      }else{
+        angle = TAU + angle
+      }
     }
-  }
-  angle=angle
-  xx = 50*cos(v1.ang+angle/2)
-  yy = 50*sin(v1.ang+angle/2)
+
+  xx = 50*cos(v1.ang + angle/2)
+  yy = 50*sin(v1.ang + angle/2)
 
   strokeWeight(10)
   point(xx,yy)
+  
+  drawingContext.setLineDash([0,0])
+  strokeWeight(1)
+  stroke(0)
+  fill(0)
+  text('sinA: '+(Math.round(sinA * 100) / 100).toFixed(2), -w/2+10, -w/2+20)
+  text('angle: '+(Math.round(map(angle,-PI/2,PI/2,-90,90) * 100) / 100).toFixed(2), -w/2+10, -w/2+40)
+  
+  text('sinA90: '+(Math.round(sinA90 * 100) / 100).toFixed(2), -w/2+10, -w/2+80)
+  text('angle90: '+(Math.round(map(angle90,-PI/2,PI/2,-90,90) * 100) / 100).toFixed(2), -w/2+10, -w/2+100)
 
   noLoop()
 }
@@ -390,7 +414,6 @@ function toVec(p1, p2, v) {
 </script>
 <p></p>
 
-We'll take care of the faulty case in a bit.
 
 <h4>Simpler way to calculating the angle?</h4>
 
