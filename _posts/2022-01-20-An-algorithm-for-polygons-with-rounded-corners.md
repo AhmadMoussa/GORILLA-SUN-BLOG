@@ -268,18 +268,18 @@ if (sinA90 < 0) {
 }
 </code></pre>
 
-The problem that we're trying to solve here, is that the angle returned by the cross product is ambiguous. Meaning, that we can't tell if the angle returned designated the acute wedge or obtuse fan formed by the two vectors (sometimes we want the reflex angle rather than the one return). And in order to correctly position our circle we need to know if we are splitting the obtuse fan or the acute wedge.
+The problem that we're trying to solve here, is that the angle returned by the cross product is ambiguous. Meaning, that we can't tell if the angle returned value designates the acute wedge or obtuse fan formed by the two vectors (sometimes we want the reflex angle rather than the one that is returned). And in order to correctly position our circle we need to know if we are splitting the obtuse fan or the acute wedge.
 
 Hence, we need another indicator to be able to determine where to position the center of the circle. For this purpose we can use the cross product of the angle formed by the perpendicular of BA and the vector BC. By inspecting the sign of these two cross products we can pin point where the bisector is located. Let's examine the different scenarios that arise:
 
-<h4>When sinA90 &#60 0 and sinA &#62 0 </h4>
-when sinA90 is larger than 0, and sinA is less than 0, then we can conclude that the perpendicular lies in between BA and BC, and the vectors BA and BC form an obtuse fan. In this case we need to add PI to the angle before halving it to obtain the correct half angle. 
+<h4>When sinA90 &#60; 0 and sinA &#62; 0 </h4>
+When sinA90 is larger than 0, and sinA is less than 0, then we can conclude that the perpendicular lies in between BA and BC, and the vectors BA and BC form an obtuse fan. In this case we need to add PI to the angle before halving it to obtain the correct half angle. 
 
-<h4>When sinA90 &#60 0 and sinA &#62 0 </h4>
+<h4>When sinA90 &#60; 0 and sinA &#62; 0 </h4>
 In this case the angle formed is also an obtuse fan, but the perpendicular does not lie in between BA and BC. In this case we need to subtract the angle from PI and also invert the drawing order (this is what radDirection and drawDirection are used for).
 
-<h4>When sinA90 &#62 0 </h4>
-In this case the angle formed is an acute wedge, and we need to distinguish the two cases where the vector BC lies in between BA and it's perpendicular aka sinA &#60 0 and when it's not aka sinA &#62 0, and in the latter case we need to invert the drawing order.
+<h4>When sinA90 &#62; 0 </h4>
+In this case the angle formed is an acute wedge, and we need to distinguish the two cases where the vector BC lies in between BA and it's perpendicular aka sinA &#60; 0 and when it's not aka sinA &#62; 0, and in the latter case we need to invert the drawing order.
 	
 If that explanation wasn't enough mental gymnastics, then feel welcome to sketch out a couple of angles and work them out by yourself.
 	
