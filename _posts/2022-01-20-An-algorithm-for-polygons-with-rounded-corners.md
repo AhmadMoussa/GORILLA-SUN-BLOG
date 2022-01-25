@@ -5,7 +5,7 @@ categories:
   - p5js
 description: this blog post describes an approach to turn pointy polygons into smooth shapes with round corners
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
-published: false
+published: true
 exclude_rss: true
 ---
 
@@ -164,7 +164,7 @@ function toVec(p1, p2, v) {
 
 Now that we have converted our 3 points into vector form, we can tackle computing and locating the intermediary angle between the two vectors!
 
-<h2>Finding the angle using the cross product</h2>
+<h2>Calculating the angle using the cross product</h2>
 
 <h3>The Math</h3>
 Getting the halfway angle is probably the trickiest part of the procedure, and requires a number of steps. There probably are multiple ways to obtaining the angle, but here's the method that as deduced from Blindman67's code. It will also require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors. Essentially, we will be exploiting the cross product of the two vectors to find the value of the angle between them.
@@ -384,14 +384,14 @@ function toVec(p1, p2, v) {
 
 We'll take care of the faulty case in a bit.
 
-<h2>Solving a triangle given two angles and one Side</h2>
+<h2>Positionning the circle</h2>
 
 Now we can find the distance of the center of our circle from the corner:
 
 <pre><code>lenOut = abs(cos(halfAngle) * radius / sin(halfAngle));
 </code></pre>
 
-<p> Here, instead of finding the distance of the circle center F to corner point B, we're directly finding the distance from the corner point B to the tangential points E and F. For this we're making use of the formulas that can be applied for finding the length of the hypothenuse, which is deisgnated by BF. We then have \( BF * cos(\Theta) = BE \) and \( BF * sin( \Theta) = FE \). 
+<p> Here, instead of finding the distance of the circle center F to corner point B, we're directly finding the distance from the corner point B to the tangential points E and F. For this we're making use of the formulas that can be applied for finding the length of the hypothenuse, which is designated by BF. We then have \( BF * cos(\Theta) = BE \) and \( BF * sin( \Theta) = FE \). 
 </p>
 
 Using these two formulas we find the formula that Blindman67 used:
@@ -406,19 +406,81 @@ And here we also have the value of the radius (that we specified):
 <p> \( BE = abs( \frac{cos(\Theta) * r}{sin(\theta)}) \)</p>
 </div>
 
-
 One problem here is that the radius that we specified as input, might not fit into the corner. This can be remedied by the following check:
 
 <pre><code>
-if (lenOut > Math.min(v1.len / 2, v2.len / 2)) {
-  lenOut = Math.min(v1.len / 2, v2.len / 2);
-  cRadius = Math.abs(lenOut * Math.sin(halfAngle) / Math.cos(halfAngle));
+if (lenOut > min(v1.len / 2, v2.len / 2)) {
+  lenOut = min(v1.len / 2, v2.len / 2);
+  cRadius = abs(lenOut * sin(halfAngle) / cos(halfAngle));
 } else {
   cRadius = radius;
 }
 </code></pre>
 
-<h2></h2>
+Once this is dealt with, we can calculate the coordinates of one of the tangetial points to the circle:
+
+<pre><code>x = p2.x + v2.nx * lenOut;
+y = p2.y + v2.ny * lenOut;
+</code></pre>
+
+Then move along the perpendicular to find the circle center:
+
+<pre><code>x += -v2.ny * cRadius * radDirection;
+y += v2.nx * cRadius * radDirection;
+</code></pre>
+
+Note that this also depends on the direction that we determined earlier.
+
+<h2>Drawing the arc</h2>
+
+For drawing purposes we will make use of the javascript canvas rendering context interface, which allows us to draw all sorts of shapes. You can find an extensive documentation <a href='https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D'>here<a>.
+
+To do so we need to invoke the context, usually I do this in the setup function such as follows:
+<pre><code>function setup(){
+    const ctx = canvas.getContext('2d');
+}
+</code></pre>
+
+And then we can make use of it to draw stuff:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup(){
+	const ctx = canvas.getContext('2d');
+}
+
+function draw(){
+	// Set line width
+	ctx.lineWidth = 10;
+
+	// Wall
+	ctx.strokeRect(75, 140, 150, 110);
+
+	// Door
+	ctx.fillRect(130, 190, 40, 60);
+
+	// Roof
+	ctx.beginPath();
+	ctx.moveTo(50, 140);
+	ctx.lineTo(150, 60);
+	ctx.lineTo(250, 140);
+	ctx.closePath();
+	ctx.stroke();
+	
+	noLoop();
+}
+</script>
+<p></p>
+
+For our purposes we'll only need to use one function, namely the ctx.arc() call:
+<pre><code>ctx.arc(x, y, cRadius, v1.ang + Math.PI / 2 * radDirection, v2.ang - Math.PI / 2 * radDirection, drawDirection);
+</code></pre>
+
+Where the first two parameters are the coordinates of the arc center, followed by the radius in third place, and the starting and end angle in fourth and fifth position. the last input specifies if this arc is draw in clockwise or counter clockwise manner.
+
+
+
+
 
 <pre><code>
 function setup() {
