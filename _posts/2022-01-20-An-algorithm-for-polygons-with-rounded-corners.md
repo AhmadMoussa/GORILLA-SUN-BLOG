@@ -218,7 +218,7 @@ asVec(p2, p3, v2);
 sinA = v1.nx * v2.ny - v1.ny * v2.nx;
 
 // Cross product of v2 and the line at 90 degrees to v1
-// This will help determine the orientation of the angle
+// This will help determine where to eactly position the center of the circle
 sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
 
 // Clamping the value of sinA to avoid NaNs
@@ -238,7 +238,7 @@ The trickiest part here, I found to be the nested ternary check inside the inver
 
 Go ahead a try putting values lesser than -1 or greater than 1 into the inverse sine function. It'll yield a NaN value. To avoid such thing, we simply clamp the value and can be done compactly as a one liner. And if you noticed, in actuality, we have already obtained the value of the angle!
 
-<h2>Finding the correct orientation of the angle</h2>
+<h2>Solving the ambiguity of the cross product</h2>
 
 There's a couple more steps that we have to do to go through to get the correct half angle between our two vectors. We'll start with this if/else flurry to determine the orientation of our angle:
 
@@ -260,15 +260,32 @@ if (sinA90 < 0) {
 }
 </code></pre>
 
+The problem that we're trying to solve here, is that the angle returned by the cross product is ambiguous. Meaning, that we can't tell if the angle return is the acute or obtuse one formed by the two vectors. And in order to correctly position our circle we need to know if we are splitting the obtuse fan or the acute wedge. 
+
+Hence, we need another indicator to be able to determine where to position the center of the circle. For this purpose we can use the cross product of the angle formed by the perpendicular of BA and the vector BC. By inspecting the sign of these two cross products we can pin point where the bisector is located. Let's examine the different scenarios that arise:
+
+<h4>When sinA90 &#60 0 and sinA &#62 0 </h4>
+when sinA90 is larger than 0, and sinA is less than 0, then we can conclude that the perpendicular lies in between BA and BC, and the vectors BA and BC form an obtuse fan. In this case we need to add PI to the angle before halving it to obtain the correct half angle. 
+
+<h4>When sinA90 &#60 0 and sinA &#62 0 </h4>
+In this case the angle formed is also an obtuse fan, but the perpendicular does not lie in between BA and BC. In this case we need to subtract the angle from PI and also invert the drawing order (this is what radDirection and drawDirection are used for).
+
+<h4>When sinA90 &#62 0 </h4>
+In this case the angle formed is an acute wedge, and we need to distinguish the two cases where the vector BC lies in between BA and it's perpendicular aka sinA &#60 0 and when it's not aka sinA &#62 0, and in the latter case we need to invert the drawing order.
+	
+If that explanation wasn't enough mental gymnastics, then feel welcome to sketch out a couple of angles and work them out by yourself.
+	
+<!--
 There's quite a lot going on here. We'll go through it step by step. The important thing to grasp here is that the sign of the cross product also tells us if the angle is oriented clockwise or counter clockwise, which we'll use to find the half angle that splits our angle in two. And remember, order is important! Keeping in mind that sinA90 is the angle formed by the perpendicular (to v1) and v2 (in that order), and sinA is the angle formed by v1 and v2 (in that order).
 
 If the value of sinA90 is less than 0 then this means that the angle sinA90 has a counter-clockwise orientation. the opposite is also true. In essence there's 4 different possibilities depending on how the vectors v1 and v2 are situated with respect to each other. Have a look at the badly drawn examples:
 
 <h4> When sinA90 > 0 </h4>
-If sinA90 > 0, then the angle formed by the perpendicular (to v1) and v2 is oriented clockwise. In this case there is no need to do anything, and we can simply halve the value of angle to get the correct angle.
+If sinA90 larger than 0, then the angle formed by the perpendicular (to v1) and v2 is oriented clockwise. In this case there is no need to do anything, and we can simply halve the value of angle to get the correct angle.
 
-<h4> When sinA90 < 0 </h4>
-If sinA90 is < 0, then this angle is oriented counterclockwise. In this case we must distinguish between v1 being before or past v2. If the angle is less than 0 then v1 is past v2, and we have to add PI to the angle formed, else we need to subtract the angle from PI. Halving this value then yields the correct mid-way angle.
+<h4> When sinA90 &#60 0 </h4>
+If sinA90 is less than 0, then this angle is oriented counterclockwise. In this case we must distinguish between v1 being before or past v2. If the angle is less than 0 then v1 is past v2, and we have to add PI to the angle formed, else we need to subtract the angle from PI. Halving this value then yields the correct mid-way angle.
+-->
 
 <h4> Example </h4>
 Here's an example of this in action. You'll notice that there is still the case of ABC > 180 which will yield a wrong midway angle:
