@@ -16,12 +16,13 @@ exclude_rss: true
 1. <a href='#start'>Introduction: An algorithm for rounded corners</a>
 2. <a href='#credit'>Credit where credit's due</a>
 3. <a href='#intuitive'>An intuitive explanation of the algorithm</a>
-4. <a href='#vecstopoints'>2 Vectors from 3 Points</a>
-5. <a href='#angle'>Calculating the angle using the cross product</a>
-6. <a href='#ambiguity'>Ambiguity of the cross product</a>
-7. <a href='#position'>Positioning the circle</a>
-8. <a href='#ctx'>The rendering context</a>
-9. <a href='#drawing'>Drawing the final shape</a>
+4. <a href='#breakdown'>Breakdown of the algorithm</a>
+5. <a href='#vecstopoints'>2 Vectors from 3 Points</a>
+6. <a href='#angle'>Calculating the angle using the cross product</a>
+7. <a href='#ambiguity'>Ambiguity of the cross product</a>
+8. <a href='#position'>Positioning the circle</a>
+9. <a href='#ctx'>The rendering context</a>
+10. <a href='#drawing'>Drawing the final shape</a>
 		
 <h2><a name='start'></a>Introduction: An algorithm for rounded corners</h2>
 
@@ -72,15 +73,13 @@ But for the sake of REALLY understanding the algorithm, we'll recreate it from s
 
 
 <h2><a name='intuitive'></a>An intuitive explanation of the algorithm</h2>
-We'll begin with an intuitive depiction of what the algorithm is accomplishing.
-
-A corner, which essentially is an angle, can generally be defined by three points. And since we'll be drawing our shapes through the positioning of vertices at specific coordinates, we can be certain that we have these coordinates (a given).
+We'll begin with an intuitive depiction of what the algorithm is accomplishing. A corner, which essentially is an angle, can generally be defined by three points. And since we'll be drawing our shapes through the positioning of vertices at specific coordinates, we can be certain that we have these coordinates (a given).
 
 The idea behind what we're trying to do is simple. We're going to take an imaginary circle of a certain radius, and push it as far as possible into the corner that we're trying to round. Next, we erase the lines that form the pointy corner, starting from the place where they are tangential to the imaginary circle, and close the shape again by tracing the outward facing portion of our circle.
 
 And voila, we have a rounded corner with a specific radius. Seems straightforward, right? However, to accomplish this there are a number of steps that we need to follow.
 
-<h2>Breakdown of the algorithm</h2>
+<h2><a name='breakdown'></a>Breakdown of the algorithm</h2>
 Given a specific radius, the difficulty lies within finding where to exactly position the circle that rounds the corner to that radius. If we can exactly pinpoint where this circle is positioned, we can also determine where it is tangential to the lines that form the pointy corner. Those two points will determine the start and end of the arc that will form the rounded corner. Overall, given three points A, B and C that form a corner, as well as a given radius, the steps are:
 
 <!--
