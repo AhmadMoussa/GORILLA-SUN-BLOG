@@ -21,6 +21,7 @@ exclude_rss: true
 6. <a href='#ambiguity'>Ambiguity of the cross product</a>
 7. <a href='#position'>Positioning the circle</a>
 8. <a href='#ctx'>The rendering context</a>
+9. <a href='#drawing'>Drawing the final shape</a>
 		
 <h2><a name='start'></a>Introduction: An algorithm for rounded corners</h2>
 
@@ -206,7 +207,7 @@ This formula can be further simplified! Since our vectors are already normalized
 <p> \( \Theta = sin^{-1}(det) \)</p>
 </div>
 
-Which is thus simply the inverse sine of the determinant. If you've followed until here, then congrats, the hardest part is past us!
+Which is thus simply the inverse sine of the determinant. Onward!
 
 <h3>The Code</h3>
 
@@ -413,6 +414,7 @@ function toVec(p1, p2, v) {
 </script>
 <p></p>
 
+If you've followed until here, then congrats, the hardest part is past us!
 
 <h4>Simpler way to calculating the angle?</h4>
 
@@ -424,7 +426,131 @@ if (angle < 0) { angle += 2 * PI;}
 </code></pre>
 
 <h4>A visual example</h4>
-Here's a visual examle of why this is necessary:
+Here's a visual examle of why this is necessary. If we were to ignore the correct orientation and drawing order of the arcs we would end up with weird behaviour:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  createCanvas(400, 400);
+  
+  ctx = canvas.getContext('2d');
+}
+
+function draw() {
+  background(220);
+  
+  vertices = []
+  vertices.push({x: 100, y: 100})
+  vertices.push({x: 300, y: 100})
+  vertices.push({x: 200, y: 200})
+  vertices.push({x: 400, y: 400})
+  vertices.push({x: 100, y: 300})
+  vertices.push({x: 200, y: 200})
+  vertices.push({x: 150, y: 200})
+  
+  ctx.beginPath();
+  roundedPoly(ctx, vertices, 50+40*sin(frameCount/50));
+  ctx.stroke();
+  ctx.fill();
+}
+
+// To draw you must call between 
+//    ctx.beginPath();
+//    roundedPoly(ctx, points, radius);
+//    ctx.stroke();
+//    ctx.fill();
+// as it only adds a path and does not render. 
+function roundedPoly(ctx, points, radiusAll) {
+  var i, x, y, len, p1, p2, p3, v1, v2, sinA, sinA90, radDirection, drawDirection, angle, halfAngle, cRadius, lenOut,radius;
+  // convert 2 points into vector form, polar form, and normalised 
+  var asVec = function(p, pp, v) {
+    v.x = pp.x - p.x;
+    v.y = pp.y - p.y;
+    v.len = Math.sqrt(v.x * v.x + v.y * v.y);
+    v.nx = v.x / v.len;
+    v.ny = v.y / v.len;
+    v.ang = Math.atan2(v.ny, v.nx);
+  }
+  radius = radiusAll;
+  v1 = {};
+  v2 = {};
+  len = points.length;
+  p1 = points[len - 1];
+  // for each point
+  for (i = 0; i < len; i++) {
+    p2 = points[(i) % len];
+    p3 = points[(i + 1) % len];
+    //-----------------------------------------
+    // Part 1
+    asVec(p2, p1, v1);
+    asVec(p2, p3, v2);
+    sinA = v1.nx * v2.ny - v1.ny * v2.nx;
+    sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
+    angle = Math.asin(sinA < -1 ? -1 : sinA > 1 ? 1 : sinA);
+    //-----------------------------------------
+    radDirection = 1;
+    drawDirection = false;
+    // if (sinA90 < 0) {
+    //   if (angle < 0) {
+    //     angle = Math.PI - angle;
+    //   } else {
+    //     angle = Math.PI - angle;
+    //     radDirection = -1;
+    //     drawDirection = true;
+    //   }
+    // } else {
+    //   if (angle > 0) {
+    //     radDirection = -1;
+    //     drawDirection = true;
+    //   }else{
+    //     angle = TAU + angle
+    //   }
+    // }
+    
+    
+    if(p2.radius !== undefined){
+        radius = p2.radius;
+    }else{
+        radius = radiusAll;
+    }
+    //-----------------------------------------
+    // Part 2
+    halfAngle = angle / 2;
+    //-----------------------------------------
+
+    //-----------------------------------------
+    // Part 3
+    lenOut = Math.abs(Math.cos(halfAngle) * radius / Math.sin(halfAngle));
+    //-----------------------------------------
+
+    //-----------------------------------------
+    // Special part A
+    if (lenOut > Math.min(v1.len / 2, v2.len / 2)) {
+      lenOut = Math.min(v1.len / 2, v2.len / 2);
+      cRadius = Math.abs(lenOut * Math.sin(halfAngle) / Math.cos(halfAngle));
+    } else {
+      cRadius = radius;
+    }
+    //-----------------------------------------
+    // Part 4
+    x = p2.x + v2.nx * lenOut;
+    y = p2.y + v2.ny * lenOut;
+    //-----------------------------------------
+    // Part 5
+    x += -v2.ny * cRadius * radDirection;
+    y += v2.nx * cRadius * radDirection;
+    //-----------------------------------------
+    // Part 6
+    ctx.arc(x, y, cRadius, v1.ang + Math.PI / 2 * radDirection, v2.ang - Math.PI / 2 * radDirection, drawDirection);
+    //-----------------------------------------
+    p1 = p2;
+    p2 = p3;
+  }
+  ctx.closePath();
+}
+</script>
+<p></p>
+
 
 <h2><a name='start'></a>Positioning the circle</h2>
 
@@ -433,7 +559,7 @@ Now we can find the distance of the center of our circle from the corner:
 <pre><code>lenOut = abs(cos(halfAngle) * radius / sin(halfAngle));
 </code></pre>
 
-<p> Here, instead of finding the distance of the circle center F to corner point B, we're directly finding the distance from the corner point B to the tangential points E and F. For this we're making use of the formulas that can be applied for finding the length of the hypothenuse, which is designated by BF. We then have \( BF * cos(\Theta) = BE \) and \( BF * sin( \Theta) = FE \). 
+<p> Here, instead of finding the distance of the circle center F to corner point B, we're directly finding the distance from the corner point B to the tangential points E and F. For this we're making use of the formulas that can be applied for finding the length of the hypotenuse, which is designated by BF. We then have \( BF * cos(\Theta) = BE \) and \( BF * sin( \Theta) = FE \). 
 </p>
 
 Using these two formulas we find the formula that Blindman67 used:
@@ -521,133 +647,34 @@ For our purposes we'll only need to use one function, namely the ctx.arc() call:
 Where the first two parameters are the coordinates of the arc center, followed by the radius in third place, and the starting and end angle in fourth and fifth position. the last input specifies if this arc is draw in clockwise or counter clockwise manner.
 
 
+<h2><a name='drawing'></a>Drawing the final shape</h2>
 
+The final shape will be drawn by looping through the set of points that make up the vertices of our polygon. 
 
-
-<pre><code>
-function setup() {
-  w = min(windowWidth, windowHeight)
-  createCanvas(w, w);
-}
-
-function draw() {
-  background(220);
-
-  // make origin at center of canvas
-  translate(w/2,w/2)
-
-  randAng1 = random(TAU)
-  randAng2 = random(TAU)
-  p1 = {x: 100*cos(randAng1), y: 100*sin(randAng1)}
-  p2 = {x: 0, y: 0}
-  p3 = {x: 100*cos(randAng2), y: 100*sin(randAng2)}
-
-  strokeWeight(10)
-  point(p1.x,p1.y)
-  point(p2.x,p2.y)
-  point(p3.x,p3.y)
-
-  text('A',p1.x+5,p1.y)
-  text('B',p2.x+5,p2.y)
-  text('C',p3.x+5,p3.y)
-
-  strokeWeight(1)
-  line(p1.x,p1.y,p2.x,p2.y)
-  line(p3.x,p3.y,p2.x,p2.y)
-
-  v1 = {}
-  v2 = {}
-
-  toVec(p2,p1,v1)
-  toVec(p2,p3,v2)
-
-  //coordinates of perpendicular vector
-  perpx1 = v1.len*cos(v1.ang-PI/2)
-  perpy1 = v1.len*sin(v1.ang-PI/2)
-
-  perpx2 = v1.len*cos(v1.ang+PI/2)
-  perpy2 = v1.len*sin(v1.ang+PI/2)
-
-  stroke(255,0,0)
-  strokeWeight(10)
-  point(perpx1,perpy1)
-  point(perpx2,perpy2)
-  strokeWeight(1)
-  drawingContext.setLineDash([5,5])
-  line(perpx1,perpy1,perpx2,perpy2)
-
-  sinA = v1.nx * v2.ny - v1.ny * v2.nx;
-  sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
-  angle = Math.asin(sinA < -1 ? -1 : sinA > 1 ? 1 : sinA);
-  angle90 = Math.asin(sinA90 < -1 ? -1 : sinA90 > 1 ? 1 : sinA90);
-
-  print(sinA,sinA90,angle,angle90)
-
-  noFill();
-  radius = 30
-  radiusAll = 10
-  radDirection = 1;
-    drawDirection = 0;
-    if (sinA90 < 0) {
-      if (angle < 0) {
-        angle = Math.PI + angle;
-      } else {
-        angle = Math.PI - angle;
-        radDirection = -1;
-        drawDirection = 1;
-      }
-    } else {
-      if (angle > 0) {
-        radDirection = -1;
-        drawDirection = 1;
-      }
-    }
-  halfAngle = angle/2
-
-  lenOut = Math.abs(Math.cos(halfAngle) * radius / Math.sin(halfAngle));
-
-  print(lenOut)
-  if (lenOut > Math.min(v1.len / 2, v2.len / 2)) {
-    lenOut = Math.min(v1.len / 2, v2.len / 2);
-    cRadius = Math.abs(lenOut * Math.sin(halfAngle) / Math.cos(halfAngle));
-  } else {
-    cRadius = radius;
+<pre><code>ctx.beginPath();
+len = points.length;
+p1 = points[len - 1];
+for (i = 0; i < len; i++) {
+    p2 = points[(i) % len];
+    p3 = points[(i + 1) % len];
+    
+    // Here go the calculations
+    
+    p1 = p2;
+    p2 = p3;
   }
-
-  xx = cRadius*cos(v1.ang+halfAngle)
-  yy = cRadius*sin(v1.ang+halfAngle)
-
-  strokeWeight(10)
-  //point(xx,yy)
-
-  // Part 4
-  x = p2.x + v2.nx * lenOut;
-  y = p2.y + v2.ny * lenOut;
-  //-----------------------------------------
-  // Part 5
-  x += -v2.ny * cRadius * radDirection;
-  y += v2.nx * cRadius * radDirection;
-
-  strokeWeight(1)
-  fill(255,0,0)
-  arc(x, y, cRadius*2,cRadius*2,
-      v1.ang + Math.PI / 2 * radDirection,
-      v2.ang - Math.PI / 2 * radDirection);
-
-  noLoop()
-}
-
-// p1 -> first point
-// p2 -> second point
-// v -> container that we will fill
-function toVec(p1, p2, v) {
-    v.x = p2.x - p1.x;
-    v.y = p2.y - p1.y;
-    v.len = Math.sqrt(v.x * v.x + v.y * v.y);
-    v.nx = v.x / v.len;
-    v.ny = v.y / v.len;
-    v.ang = Math.atan2(v.ny, v.nx);
-}
+ctx.closePath();
+ctx.stroke() // add an outline to the shape
+ctx.fill()   // add color to the shape
 </code></pre>
 
-<h2>Drawing the shape with the rendering context</h2>
+In this manner, the first point is actually the last vertex of the polygon. The final shape would then be drawn by first positioning all of your vertices, and storing them in an array, in the following manner:
+
+<pre><code>vertices = []
+vertices.push({x: coordX, y:coordY})
+// add more vertices etc...
+</code></pre>
+
+And then passing the array to the drawing function. The final snippet of code that you would then use is the one provided by Blindman67.
+
+And that's a wrap! If there are any unclear notions, mistakes or questions, feel free to leave me a comment or reach out to me on social media! If you find this post useful, consider supporting me by sharing it or following me on my social medias. Otherwise, cheers and happy sketching!
