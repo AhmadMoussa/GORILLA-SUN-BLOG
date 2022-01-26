@@ -30,7 +30,7 @@ If you spent some time doing creative coding, you'll very quickly come to the re
 
 This post/tutorial is dedicated to a snippet of code I found on stackoverflow, and that has unlocked many shapes and sketches for me, that I otherwise wouldn't have been able to make. In essence the algorithm allows you to create arbitrarily shaped polygons, with any number of vertices while at the same time being able to control the roundness (or curvature) of each vertex.
 
-I came across this code when I attempted a sketch in which I wanted to round off the corners of some triangles.
+I came across this code when I attempted a sketch in which I wanted to round off the corners of some triangles:
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -46,7 +46,7 @@ I came across this code when I attempted a sketch in which I wanted to round off
 </div>
 <p></p>
 
-In p5js there is no out-of-the-box method to doing so, as opposed to rectangular shapes where the 5th to 8th parameters can be used for that purpose. You could technically do it with a series of curveVertex() calls, however that strategy doesn't offer much control. The next two sketches, that I made during #GENUARY2022, make use of this algorithm:
+In p5js there is no out-of-the-box method for doing so, except rectangular shapes where the 5th to 8th parameters can be used for that purpose. You could technically do it with a series of curveVertex() calls, however that strategy doesn't offer much control. The next sketche, that I made during #GENUARY2022, also make use of this algorithm, even if it isn't as obvious:
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -62,22 +62,17 @@ In p5js there is no out-of-the-box method to doing so, as opposed to rectangular
 </div>
 <p></p>
 
-You can notice that you can even mix between pointy corners and round corners, which is another thing that isn't possible with pure p5js (without writing a lot of additional code towards that end). This came in clutch for two Genuary sketches
-
-The remainder of this post will walk you through this really cool and useful algorithm, step by step.
+You can notice that you can even mix between pointy corners and round corners, which is another thing that isn't possible with pure p5js (without writing a lot of additional code towards that end). This definitely came in clutch this Genuary. The remainder of this post will walk you through this really cool and useful algorithm, step by step.
 
 <h2><a name='credit'></a>Credit where credit's due</h2>
-The code discussed in this post stems from this <a href="https://stackoverflow.com/a/44856925">stackoverflow answer</a> by SO user <a href="https://stackoverflow.com/users/3877726/blindman67">Blindman67</a>. (Go give him some upvotes on his answer if you find this useful!) Blindman67 explains his strategy in detail, and is more than sufficient for you to start using his code. 
+The code discussed in this post stems from this <a href="https://stackoverflow.com/a/44856925">stackoverflow answer</a> by stackoverflow user <a href="https://stackoverflow.com/users/3877726/blindman67">Blindman67</a>. (Go give him some upvotes on his answer if you find this useful!) Blindman67 explains his strategy in detail, and is more than sufficient for you to start using his code. 
 
-But for the sake of REALLY understanding the algorithm, we'll recreate it from scratch based off of his explanation and analyzing his code! There are a number of noteworthy things going on, that are worth inspecting in more detail and can be generalized to a number of other scenarios.
-
+But for the sake of REALLY understanding the algorithm, we'll recreate it from scratch based off of his explanation and analyzing his code! There are a number of noteworthy things going on, that are worth inspecting in more detail, and can be generalized to a number of other scenarios.
 
 <h2><a name='intuitive'></a>An intuitive explanation of the algorithm</h2>
-We'll begin with an intuitive depiction of what the algorithm is accomplishing. A corner, which essentially is an angle, can generally be defined by three points. And since we'll be drawing our shapes through the positioning of vertices at specific coordinates, we can be certain that we have these coordinates (a given).
+We'll begin with an intuitive depiction of what the algorithm is accomplishing. The idea behind what we're trying to do is generally simple: We're going to take an imaginary circle of a certain radius, and push it as far as possible into a corner (any kind of corner, not necessarily 90 degrees) that we're trying to round. Next, we erase the lines that form the pointy corner, starting from the place where they are tangential to the imaginary circle, and close the shape again by tracing the outward facing portion of our circle.
 
-The idea behind what we're trying to do is simple. We're going to take an imaginary circle of a certain radius, and push it as far as possible into the corner that we're trying to round. Next, we erase the lines that form the pointy corner, starting from the place where they are tangential to the imaginary circle, and close the shape again by tracing the outward facing portion of our circle.
-
-And voila, we have a rounded corner with a specific radius. Seems straightforward, right? However, to accomplish this there are a number of steps that we need to follow.
+And voila, we have obtained a rounded corner with a specific radius. Seems straightforward, right? However, to accomplish this there are a number of steps that we need to follow.
 
 <h2><a name='breakdown'></a>Breakdown of the algorithm</h2>
 Given a specific radius, the difficulty lies within finding where to exactly position the circle that rounds the corner to that radius. If we can exactly pinpoint where this circle is positioned, we can also determine where it is tangential to the lines that form the pointy corner. Those two points will determine the start and end of the arc that will form the rounded corner. Overall, given three points A, B and C that form a corner, as well as a given radius, the steps are:
@@ -96,7 +91,7 @@ Given a specific radius, the difficulty lies within finding where to exactly pos
 5. Drawing the arc
 
 <h2><a name='vecstopoints'></a>2 Vectors from 3 Points</h2>
-First we'll need to find the angle that is formed by three points. To do so we first need to compute the vectors formed by these three points. For three points A, B and C we can find the vectors BA and BC by using the following function:
+First we'll need to find the value of the angle that is formed by three points. To do so we first need to compute the vectors formed by these three points. For three points A, B and C we can find the vectors BA and BC by using the following function:
 
 <pre><code>// p1 -> first point
 // p2 -> second point
@@ -169,11 +164,14 @@ Now that we have converted our 3 points into vector form, we can tackle computin
 <h2><a name='angle'></a>Calculating the angle using the cross product</h2>
 
 <h3>The Math</h3>
-Getting the halfway angle is probably the trickiest part of the procedure, and requires a number of steps. There probably are multiple ways to obtaining the angle, but here's the method deduced from Blindman67's code. It will require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors, which we will be exploiting to find the value of the angle that they form.
+Getting the halfway angle is probably the trickiest part of the procedure, and requires a number of steps. There probably are multiple ways to do so, but here's the method deduced from Blindman67's code. It will require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors, which we will be exploiting to find the value of the angle that they form.
 
 What the cross product actually represents algebraically, is a bit outside of the scope of this post. A perfect resource for understanding it can be found in the form of <a href="https://www.youtube.com/watch?v=eu6i7WJeinw&ab_channel=3Blue1Brown">this video</a> by <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a> (I don't think there's a need for me to introduce his channel).
 
-The important part here is how the cross product can help us find the angle between two vectors. It is important to mention here that the order of the points is crucial! When dealing with a closed polygonal shape the order of the points is such that the formed angle is pointing inwards. Given 3 points the formed angle is ambiguous, in the previous example the angle forms an acute wedge but could equivalently be interpreted as an obtuse fan. Keep this in mind for now, it will be relevant in a bit! Generally the formula for finding the cross product is the product of the magnitudes of our two vectors, with the sine of the angle that they form. More concretely:
+The important part here is how the cross product can help us find the angle between two vectors, and what problems arise from this method. It is important to mention here that the order of the points is crucial! When dealing with a closed polygonal shape the order of the points is such that the formed angle is pointing inwards. Using the corss product to determine the angle between two vectors gives an ambiguous result, the angle can form an acute wedge but could equivalently be interpreted as an obtuse fan. Keep this in mind for now, it will be relevant in a bit!
+
+
+Generally the formula for finding the cross product is the product of the magnitudes of our two vectors, with the sine of the angle that they form. More concretely:
 
 <div style="width:100%; display: flex; justify-content: center;">
 <p> \( \Vert BA \Vert * \Vert BC \Vert * sin( \Theta ) \) </p>
@@ -205,11 +203,11 @@ This formula can be further simplified! Since our vectors are already normalized
 <p> \( \Theta = sin^{-1}(det) \)</p>
 </div>
 
-Which is thus simply the inverse sine of the determinant. Onward!
+Which is thus simply the inverse sine of the determinant. Now let's implement this.
 
 <h3>The Code</h3>
 
-The code for all of what we have discussed in the previous section is relatively... tame, and can essentially be summarised in a single line of code! Let's have a look at the snippet by Blindman67:
+The code for all of what we have discussed in the previous section is relatively... tame, and can essentially be summarised in a single line! Let's have a look at the snippet by Blindman67:
 
 <pre><code>// compute and store our 2 vectors
 asVec(p2, p1, v1);
@@ -219,7 +217,7 @@ asVec(p2, p3, v2);
 sinA = v1.nx * v2.ny - v1.ny * v2.nx;
 
 // Cross product of v2 and the line at 90 degrees to v1
-// This will help determine where to eactly position the center of the circle
+// This is necessary and will help determine where to exactly position the center of the circle
 sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
 
 // Clamping the value of sinA to avoid NaNs
@@ -261,7 +259,7 @@ if (sinA90 < 0) {
 }
 </code></pre>
 
-The problem that we're trying to solve here, is that the angle returned by the cross product is ambiguous. Meaning, that we can't tell if the angle returned value designates the acute wedge or obtuse fan formed by the two vectors (sometimes we want the reflex angle rather than the one that is returned). And in order to correctly position our circle we need to know if we are splitting the obtuse fan or the acute wedge.
+The problem that we're trying to solve here, is that the angle returned by the cross product is ambiguous. Meaning, that we can't tell if the returned value designates the acute wedge or obtuse fan formed by the two vectors, depending on the drawing order (sometimes we want the reflex angle rather than the one that is returned). And in order to correctly position our circle we need to know if we are splitting the obtuse fan or the acute wedge.
 
 Hence, we need another indicator to be able to determine where to position the center of the circle. For this purpose we can use the cross product of the angle formed by the perpendicular of BA and the vector BC. By inspecting the sign of these two cross products we can pin point where the bisector is located. Let's examine the different scenarios that arise:
 
@@ -289,12 +287,12 @@ If sinA90 is less than 0, then this angle is oriented counterclockwise. In this 
 -->
 
 <h4> Example </h4>
-Here's an example of this in action. Observe the position of BC, BA and it's perpendicular as well as the values of sinA and sinA90:
+Here's an example of this in action. Observe the position of BC, BA and it's perpendicular as well as the values of sinA and sinA90. The assumed drawing order is clockwise starting from BA, going to BC:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
 function setup() {
-  w = min(windowWidth, windowHeight)
+  w = min(windowWidth, windowHeight);
   createCanvas(w, w);
 }
 
@@ -302,112 +300,151 @@ function draw() {
   background(220);
 
   // make origin at center of canvas
-  translate(w/2,w/2)
+  translate(w / 2, w / 2);
 
-  randAng = random(TAU)
-  randAng2 = random(TAU)
-  p1 = {x: 100*cos(randAng), y: 100*sin(randAng)}
-  p2 = {x: 0, y: 0}
-  p3 = {x: 100*cos(randAng2), y: 100*sin(randAng2)}
+  randAng = random(TAU);
+  randAng2 = random(TAU);
+  p1 = { x: 100 * cos(randAng), y: 100 * sin(randAng) };
+  p2 = { x: 0, y: 0 };
+  p3 = { x: 100 * cos(randAng2), y: 100 * sin(randAng2) };
 
-  strokeWeight(10)
-  point(p1.x,p1.y)
-  point(p2.x,p2.y)
-  point(p3.x,p3.y)
+  strokeWeight(10);
+  point(p1.x, p1.y);
+  point(p2.x, p2.y);
+  point(p3.x, p3.y);
 
-  text('A',p1.x+5,p1.y)
-  text('B',p2.x+5,p2.y)
-  text('C',p3.x+5,p3.y)
+  text("A", p1.x + 5, p1.y);
+  text("B", p2.x + 5, p2.y);
+  text("C", p3.x + 5, p3.y);
 
-  strokeWeight(1)
-  line(p1.x,p1.y,p2.x,p2.y)
-  line(p3.x,p3.y,p2.x,p2.y)
+  strokeWeight(1);
+  line(p1.x, p1.y, p2.x, p2.y);
+  line(p3.x, p3.y, p2.x, p2.y);
 
-  v1 = {}
-  v2 = {}
+  v1 = {};
+  v2 = {};
 
-  toVec(p2,p1,v1)
-  toVec(p2,p3,v2)
+  toVec(p2, p1, v1);
+  toVec(p2, p3, v2);
 
   //coordinates of perpendicular vector
-  perpx1 = v1.len*cos(v1.ang-PI/2)
-  perpy1 = v1.len*sin(v1.ang-PI/2)
+  perpx1 = v1.len * cos(v1.ang - PI / 2);
+  perpy1 = v1.len * sin(v1.ang - PI / 2);
 
-  perpx2 = v1.len*cos(v1.ang+PI/2)
-  perpy2 = v1.len*sin(v1.ang+PI/2)
+  perpx2 = v1.len * cos(v1.ang + PI / 2);
+  perpy2 = v1.len * sin(v1.ang + PI / 2);
 
-  stroke(0,0,255)
-  strokeWeight(10)
-  point(perpx1,perpy1)
+  stroke(0, 0, 255);
+  strokeWeight(10);
+  point(perpx1, perpy1);
   //point(perpx2,perpy2)
-  strokeWeight(1)
-  drawingContext.setLineDash([5,5])
-  line(perpx1,perpy1,0,0)
+  strokeWeight(1);
+  drawingContext.setLineDash([5, 5]);
+  line(perpx1, perpy1, 0, 0);
 
   sinA = v1.nx * v2.ny - v1.ny * v2.nx;
   sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
   angle = Math.asin(sinA < -1 ? -1 : sinA > 1 ? 1 : sinA);
   angle90 = Math.asin(sinA90 < -1 ? -1 : sinA90 > 1 ? 1 : sinA90);
 
-  print(sinA,sinA90,
-        map(angle,-PI/2,PI/2,-45,45),
-        map(angle90,-PI/2,PI/2,-45,45))
+  stroke(0);
+  drawingContext.setLineDash([0, 0]);
+  text(
+    "angle: " +
+      (Math.round(map(angle, -PI / 2, PI / 2, -90, 90) * 100) / 100).toFixed(2),
+    -w / 2 + 10,
+    -w / 2 + 40
+  );
+
+  print(
+    sinA,
+    sinA90,
+    map(angle, -PI / 2, PI / 2, -45, 45),
+    map(angle90, -PI / 2, PI / 2, -45, 45)
+  );
 
   noFill();
 
-    radDirection = 1;
-    drawDirection = false;
-    if (sinA90 < 0) {
-      if (angle < 0) {
-        angle = Math.PI - angle;
-      } else {
-        angle = Math.PI - angle;
-        radDirection = -1;
-        drawDirection = true;
-      }
+  radDirection = 1;
+  drawDirection = false;
+  if (sinA90 < 0) {
+    if (angle < 0) {
+      angle = Math.PI - angle;
     } else {
-      if (angle > 0) {
-        radDirection = -1;
-        drawDirection = true;
-      }else{
-        angle = TAU + angle
-      }
+      angle = Math.PI - angle;
+      radDirection = -1;
+      drawDirection = true;
     }
+  } else {
+    if (angle > 0) {
+      radDirection = -1;
+      drawDirection = true;
+    } else {
+      angle = TAU + angle;
+    }
+  }
 
-  xx = 50*cos(v1.ang + angle/2)
-  yy = 50*sin(v1.ang + angle/2)
+  xx = 50 * cos(v1.ang + angle / 2);
+  yy = 50 * sin(v1.ang + angle / 2);
 
-  stroke(255,0,0)
-  drawingContext.setLineDash([0,0])
-  strokeWeight(10)
-  point(xx,yy)
-  strokeWeight(1)
-  line(xx,yy,0,0)
-  
-  drawingContext.setLineDash([0,0])
-  strokeWeight(1)
-  stroke(0)
-  fill(0)
-  text('sinA: '+(Math.round(sinA * 100) / 100).toFixed(2), -w/2+10, -w/2+20)
-  text('angle: '+(Math.round(map(angle,-PI/2,PI/2,-90,90) * 100) / 100).toFixed(2), -w/2+10, -w/2+40)
-  text('half angle: '+(Math.round(map(angle/2,-PI/2,PI/2,-90,90) * 100) / 100).toFixed(2), -w/2+10, -w/2+60)
-  
-  text('sinA90: '+(Math.round(sinA90 * 100) / 100).toFixed(2), -w/2+10, -w/2+100)
-  text('angle90: '+(Math.round(map(angle90,-PI/2,PI/2,-90,90) * 100) / 100).toFixed(2), -w/2+10, -w/2+120)
+  stroke(255, 0, 0);
+  drawingContext.setLineDash([0, 0]);
+  strokeWeight(10);
+  point(xx, yy);
+  strokeWeight(1);
+  line(xx, yy, 0, 0);
 
-  noLoop()
+  drawingContext.setLineDash([0, 0]);
+  strokeWeight(1);
+  stroke(0);
+  fill(0);
+  text(
+    "sinA: " + (Math.round(sinA * 100) / 100).toFixed(2),
+    -w / 2 + 10,
+    -w / 2 + 20
+  );
+  text(
+    "actual angle: " +
+      (Math.round(map(angle, -PI / 2, PI / 2, -90, 90) * 100) / 100).toFixed(2),
+    -w / 2 + 10,
+    -w / 2 + 60
+  );
+  text(
+    "half angle: " +
+      (
+        Math.round(map(angle / 2, -PI / 2, PI / 2, -90, 90) * 100) / 100
+      ).toFixed(2),
+    -w / 2 + 10,
+    -w / 2 + 80
+  );
+
+  text(
+    "sinA90: " + (Math.round(sinA90 * 100) / 100).toFixed(2),
+    -w / 2 + 10,
+    -w / 2 + 120
+  );
+  text(
+    "angle90: " +
+      (Math.round(map(angle90, -PI / 2, PI / 2, -90, 90) * 100) / 100).toFixed(
+        2
+      ),
+    -w / 2 + 10,
+    -w / 2 + 140
+  );
+
+  noLoop();
 }
 
 // p1 -> first point
 // p2 -> second point
 // v -> container that we will fill
 function toVec(p1, p2, v) {
-    v.x = p2.x - p1.x;
-    v.y = p2.y - p1.y;
-    v.len = Math.sqrt(v.x * v.x + v.y * v.y);
-    v.nx = v.x / v.len;
-    v.ny = v.y / v.len;
-    v.ang = Math.atan2(v.ny, v.nx);
+  v.x = p2.x - p1.x;
+  v.y = p2.y - p1.y;
+  v.len = Math.sqrt(v.x * v.x + v.y * v.y);
+  v.nx = v.x / v.len;
+  v.ny = v.y / v.len;
+  v.ang = Math.atan2(v.ny, v.nx);
 }
 </script>
 <p></p>
@@ -422,6 +459,8 @@ Now these are a lot of hoops to go through for simply finding the angle between 
 angle = atan2(v2.y, v2.x) - atan2(v1.y, v1.x)
 if (angle < 0) { angle += 2 * PI;}
 </code></pre>
+
+However, this isn't sufficient to figuring out the drawing order of the angle.
 
 <h4>A visual example</h4>
 Here's a visual examle of why this is necessary. If we were to ignore the correct orientation and drawing order of the arcs we would end up with weird behaviour:
