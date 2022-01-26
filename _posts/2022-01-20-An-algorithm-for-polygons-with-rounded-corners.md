@@ -469,7 +469,6 @@ Here's a visual examle of why this is necessary. If we were to ignore the correc
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
 function setup() {
   createCanvas(400, 400);
-  
   ctx = canvas.getContext('2d');
 }
 
@@ -642,7 +641,7 @@ For drawing purposes we will make use of the javascript canvas rendering context
 
 To do so we need to invoke the context, usually I do this in the setup function such as follows:
 <pre><code>function setup(){
-    const ctx = canvas.getContext('2d');
+    ctx = canvas.getContext('2d');
 }
 </code></pre>
 
@@ -651,7 +650,7 @@ And then we can make use of it to draw stuff:
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
 function setup(){
-	const ctx = canvas.getContext('2d');
+	ctx = canvas.getContext('2d');
 }
 
 function draw(){
