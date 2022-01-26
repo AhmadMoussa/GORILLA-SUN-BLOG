@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: this blog post describes an approach to turn pointy polygons into smooth shapes with round corners
-thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
+thumbnail_path: https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/4dunes.png
 published: true
 exclude_rss: true
 ---
