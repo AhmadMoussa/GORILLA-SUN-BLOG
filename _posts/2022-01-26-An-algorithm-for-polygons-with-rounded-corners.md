@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: An approach for creating all sorts of different smooth shapes in p5, using the canvas rendering context.
-thumbnail_path: https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/4dunes.png
+thumbnail_path: https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/sand.mp4
 published: true
 exclude_rss: true
 ---
