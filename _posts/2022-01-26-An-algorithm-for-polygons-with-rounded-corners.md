@@ -104,7 +104,7 @@ function toVec(p1, p2, v) {
     v.y = p2.y - p1.y;
 
     // compute length of vector
-    v.len = Math.sqrt(v.x * v.x + v.y * v.y);
+    v.len = Math.hypot(v.x, v.y); // alternatively v.len = Math.sqrt(v.x * v.x + v.y * v.y);
 
     // normalize based on length
     v.nx = v.x / v.len;
@@ -152,7 +152,7 @@ function draw() {
 function toVec(p1, p2, v) {
     v.x = p2.x - p1.x;
     v.y = p2.y - p1.y;
-    v.len = Math.sqrt(v.x * v.x + v.y * v.y);
+    v.len = Math.hypot(v.x, v.y);
     v.nx = v.x / v.len;
     v.ny = v.y / v.len;
     v.ang = Math.atan2(v.ny, v.nx);
@@ -441,7 +441,7 @@ function draw() {
 function toVec(p1, p2, v) {
   v.x = p2.x - p1.x;
   v.y = p2.y - p1.y;
-  v.len = Math.sqrt(v.x * v.x + v.y * v.y);
+  v.len = Math.hypot(v.x, v.y);
   v.nx = v.x / v.len;
   v.ny = v.y / v.len;
   v.ang = Math.atan2(v.ny, v.nx);
@@ -502,7 +502,7 @@ function roundedPoly(ctx, points, radiusAll) {
   var asVec = function(p, pp, v) {
     v.x = pp.x - p.x;
     v.y = pp.y - p.y;
-    v.len = Math.sqrt(v.x * v.x + v.y * v.y);
+    v.len = Math.hypot(v.x, v.y);
     v.nx = v.x / v.len;
     v.ny = v.y / v.len;
     v.ang = Math.atan2(v.ny, v.nx);
@@ -688,20 +688,23 @@ Where the first two parameters are the coordinates of the arc center, followed b
 
 <h2><a name='drawing'></a>Drawing the final shape</h2>
 
-The final shape will be drawn by looping through the set of points that make up the vertices of our polygon. 
+The final shape will be drawn by looping through the set of points that make up the vertices of our polygon. Here's a condensed version of this loop with the calculations omitted: 
 
 <pre><code>ctx.beginPath();
 len = points.length;
+
+// initial point is the last point of the shape
 p1 = points[len - 1];
 for (i = 0; i < len; i++) {
     p2 = points[(i) % len];
     p3 = points[(i + 1) % len];
     
-    // Here go the calculations
+    // Calculations go here
     
+    // get the next set of points
     p1 = p2;
     p2 = p3;
-  }
+}
 ctx.closePath();
 ctx.stroke() // add an outline to the shape
 ctx.fill()   // add color to the shape
@@ -714,6 +717,161 @@ vertices.push({x: coordX, y:coordY})
 // add more vertices etc...
 </code></pre>
 
-And then passing the array to the drawing function. The final snippet of code that you would then use is the one provided by Blindman67.
+And then passing the array to the drawing function:
+
+<pre><code>drawRoundPoly(ctx, vertices, radius)
+</code></pre>
+
+The final snippet of code that you would then use, is the one provided by Blindman67. Here's a minimal example:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  createCanvas(400, 400);
+
+  ctx = canvas.getContext("2d");
+}
+
+function draw() {
+  background(220);
+
+  vertices = [];
+  vertices.push({ x: 100, y: 100 });
+  vertices.push({ x: 300, y: 100, radius: 20 });
+  vertices.push({ x: 200, y: 200 });
+  vertices.push({ x: 400, y: 400 });
+  vertices.push({ x: 100, y: 300 });
+  vertices.push({ x: 200, y: 200, radius: 0 });
+  vertices.push({ x: 150, y: 200 });
+
+  ctx.beginPath();
+  roundedPoly(ctx, vertices, 200);
+  ctx.stroke();
+  ctx.fill();
+
+  noLoop();
+}
+
+// To draw you must call between
+//    ctx.beginPath();
+//    roundedPoly(ctx, points, radius);
+//    ctx.stroke();
+//    ctx.fill();
+// as it only adds a path and does not render.
+function roundedPoly(ctx, points, radiusAll) {
+  var i,
+    x,
+    y,
+    len,
+    p1,
+    p2,
+    p3,
+    v1,
+    v2,
+    sinA,
+    sinA90,
+    radDirection,
+    drawDirection,
+    angle,
+    halfAngle,
+    cRadius,
+    lenOut,
+    radius;
+  // convert 2 points into vector form, polar form, and normalised
+  var asVec = function (p, pp, v) {
+    v.x = pp.x - p.x;
+    v.y = pp.y - p.y;
+    v.len = Math.sqrt(v.x * v.x + v.y * v.y);
+    v.nx = v.x / v.len;
+    v.ny = v.y / v.len;
+    v.ang = Math.atan2(v.ny, v.nx);
+  };
+  radius = radiusAll;
+  v1 = {};
+  v2 = {};
+  len = points.length;
+  p1 = points[len - 1];
+  // for each point
+  for (i = 0; i < len; i++) {
+    p2 = points[i % len];
+    p3 = points[(i + 1) % len];
+    //-----------------------------------------
+    // Part 1
+    asVec(p2, p1, v1);
+    asVec(p2, p3, v2);
+    sinA = v1.nx * v2.ny - v1.ny * v2.nx;
+    sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
+    angle = Math.asin(sinA < -1 ? -1 : sinA > 1 ? 1 : sinA);
+    //-----------------------------------------
+    radDirection = 1;
+    drawDirection = false;
+    if (sinA90 < 0) {
+      if (angle < 0) {
+        angle = Math.PI + angle;
+      } else {
+        angle = Math.PI - angle;
+        radDirection = -1;
+        drawDirection = true;
+      }
+    } else {
+      if (angle > 0) {
+        radDirection = -1;
+        drawDirection = true;
+      } else {
+        angle = TAU + angle;
+      }
+    }
+
+    if (p2.radius !== undefined) {
+      radius = p2.radius;
+    } else {
+      radius = radiusAll;
+    }
+    //-----------------------------------------
+    // Part 2
+    halfAngle = angle / 2;
+    //-----------------------------------------
+
+    //-----------------------------------------
+    // Part 3
+    lenOut = Math.abs((Math.cos(halfAngle) * radius) / Math.sin(halfAngle));
+    //-----------------------------------------
+
+    //-----------------------------------------
+    // Special part A
+    if (lenOut > Math.min(v1.len / 2, v2.len / 2)) {
+      lenOut = Math.min(v1.len / 2, v2.len / 2);
+      cRadius = Math.abs((lenOut * Math.sin(halfAngle)) / Math.cos(halfAngle));
+    } else {
+      cRadius = radius;
+    }
+    //-----------------------------------------
+    // Part 4
+    x = p2.x + v2.nx * lenOut;
+    y = p2.y + v2.ny * lenOut;
+    //-----------------------------------------
+    // Part 5
+    x += -v2.ny * cRadius * radDirection;
+    y += v2.nx * cRadius * radDirection;
+    //-----------------------------------------
+    // Part 6
+    ctx.arc(
+      x,
+      y,
+      cRadius,
+      v1.ang + (Math.PI / 2) * radDirection,
+      v2.ang - (Math.PI / 2) * radDirection,
+      drawDirection
+    );
+    //-----------------------------------------
+    p1 = p2;
+    p2 = p3;
+  }
+  ctx.closePath();
+}
+</script>
+<p></p>
+
+Also notice that you can additionally pass a 'radius' to each individual vertex to override the main radius passed to the function call.
 
 And that's a wrap! If there are any unclear notions, mistakes or questions, feel free to leave me a comment or reach out to me on social media! If you find this post useful, consider supporting me by sharing it or following me on my social medias. Otherwise, cheers and happy sketching!
