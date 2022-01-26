@@ -122,8 +122,7 @@ function toVec(p1, p2, v) {
 
 The comments should be sufficient to understand what is happening, we also use the atan2() function to calculate the angle of the vectors with respect to the zero angle. For simplicity's sake we'll make the origin at the center of the canvas. To fill our vector containers, we can do as such:
 
-<pre><code>
-function setup() {
+<pre><code>function setup() {
   w = min(windowWidth, windowHeight)
   createCanvas(w, w);
 }
