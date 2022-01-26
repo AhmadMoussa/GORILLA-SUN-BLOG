@@ -46,7 +46,7 @@ I came across this code when I attempted a sketch in which I wanted to round off
 </div>
 <p></p>
 
-In p5js there is no out-of-the-box method for doing so, except rectangular shapes where the 5th to 8th parameters can be used for that purpose. You could technically do it with a series of curveVertex() calls, however that strategy doesn't offer much control. The next sketche, that I made during #GENUARY2022, also make use of this algorithm, even if it isn't as obvious:
+In p5js there is no out-of-the-box method for doing so, except rectangular shapes where the 5th to 8th parameters can be used for that purpose. You could technically do it with a series of curveVertex() calls, however that strategy doesn't offer much control. Here's another sketch that I made during #GENUARY2022, which also makes use of the same algorithm, even if it might not be as obvious:
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
