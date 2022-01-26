@@ -650,10 +650,13 @@ And then we can make use of it to draw stuff:
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
 function setup(){
+	w = min(windowWidth, windowHeight)
+	createCanvas(w,w)
 	ctx = canvas.getContext('2d');
 }
 
 function draw(){
+	background(220)
 	// Set line width
 	ctx.lineWidth = 10;
 
