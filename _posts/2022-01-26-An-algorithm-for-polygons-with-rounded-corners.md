@@ -210,8 +210,8 @@ Which is thus simply the inverse sine of the determinant. Now let's implement th
 The code for all of what we have discussed in the previous section is relatively... tame, and can essentially be summarised in a single line! Let's have a look at the snippet by Blindman67:
 
 <pre><code>// compute and store our 2 vectors
-asVec(p2, p1, v1);
-asVec(p2, p3, v2);
+toVec(p2, p1, v1);
+toVec(p2, p3, v2);
 
 // Cross product of the two vectors - what we discussed in the previous section
 sinA = v1.nx * v2.ny - v1.ny * v2.nx;
