@@ -5,7 +5,7 @@ categories:
   - p5js
 description: An approach for creating all sorts of different smooth shapes in p5, using the canvas rendering context.
 thumbnail_path: https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/sand.mp4
-published: true
+published: false
 exclude_rss: true
 ---
 
@@ -30,6 +30,7 @@ exclude_rss: true
 <h2>Further Improvements</h2>
 1. <a href='#p5vec'>Blindman67's method using p5 vectors</a>
 2. <a href='#dave'>Dave's acceleration method</a>
+3. <a href='#bezier'>Dave's Bezier curve method</a>
 		
 <h2><a name='start'></a>Introduction: An algorithm for rounded corners</h2>
 
@@ -280,9 +281,110 @@ if (sinA90 < 0) {
 }
 </code></pre>
 
-The problem that we're trying to solve here, is that the angle returned by the cross product is ambiguous. Meaning, that we can't tell if the returned value designates the acute wedge or obtuse fan formed by the two vectors, depending on the drawing order (sometimes we want the reflex angle rather than the one that is returned). And in order to correctly position our circle we need to know if we are splitting the obtuse fan or the acute wedge.
+In essence, the information that we're trying to find here, is where exactly the center of the circle is located (the angle or it's reflex) as well as the correct drawing order of the arc (clockwise or counter clockwise). This is what the above if/else block takes care of. Let's for a second assume that the angle which calculated is sufficient and simply half it to find the bisector:
 
-Hence, we need another indicator to be able to determine where to position the center of the circle. For this purpose we can use the cross product of the angle formed by the perpendicular of BA and the vector BC. By inspecting the sign of these two cross products we can pin point where the bisector is located. Let's examine the different scenarios that arise:
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  w = min(windowWidth, windowHeight);
+  createCanvas(w, w);
+}
+
+function draw() {
+  background(220);
+
+  // make origin at center of canvas
+  translate(w / 2, w / 2);
+
+  randAng = random(TAU);
+  randAng2 = random(TAU);
+  p1 = { x: 100 * cos(randAng), y: 100 * sin(randAng) };
+  p2 = { x: 0, y: 0 };
+  p3 = { x: 100 * cos(randAng2), y: 100 * sin(randAng2) };
+
+  strokeWeight(10);
+  point(p1.x, p1.y);
+  point(p2.x, p2.y);
+  point(p3.x, p3.y);
+
+  text("A", p1.x + 5, p1.y);
+  text("B", p2.x + 5, p2.y);
+  text("C", p3.x + 5, p3.y);
+
+  strokeWeight(1);
+  line(p1.x, p1.y, p2.x, p2.y);
+  line(p3.x, p3.y, p2.x, p2.y);
+
+  v1 = {};
+  v2 = {};
+
+  toVec(p2, p1, v1);
+  toVec(p2, p3, v2);
+
+  //coordinates of perpendicular vector
+  perpx = v1.len * cos(v1.ang + PI / 2);
+  perpy = v1.len * sin(v1.ang + PI / 2);
+
+  stroke(0, 0, 255);
+  strokeWeight(10);
+  point(perpx, perpy);
+  strokeWeight(1);
+  drawingContext.setLineDash([5, 5]);
+  line(perpx, perpy, 0, 0);
+  drawingContext.setLineDash([0, 0]);
+
+  sinA = v1.nx * v2.ny - v1.ny * v2.nx;
+  sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
+  angle = Math.asin(sinA < -1 ? -1 : sinA > 1 ? 1 : sinA);
+
+  xx = 50 * cos(v1.ang + angle / 2);
+  yy = 50 * sin(v1.ang + angle / 2);
+
+  stroke(255, 0, 0);
+  strokeWeight(10);
+  point(xx, yy);
+  strokeWeight(1);
+  line(xx, yy, 0, 0);
+
+  strokeWeight(1);
+  stroke(0);
+  fill(0);
+  text(
+    "sinA: " + (Math.round(sinA * 100) / 100).toFixed(2),
+    -w / 2 + 20,
+    -w / 2 + 20
+  );
+  text(
+    "sinA90: " + (Math.round(sinA90 * 100) / 100).toFixed(2),
+    -w / 2 + 20,
+    -w / 2 + 40
+  );
+  
+  stroke(0,0,255)
+  fill(0,0,255)
+  text('BLUE: The Perpendicular',-w/2+20,w/2-40)
+  
+  stroke(255,0,0)
+  fill(255,0,0)
+  text('RED: The Bisector',-w/2+20,w/2-20)
+
+  noLoop();
+}
+
+function toVec(p1, p2, v) {
+  v.x = p2.x - p1.x;
+  v.y = p2.y - p1.y;
+  v.len = Math.hypot(v.x, v.y);
+  v.nx = v.x / v.len;
+  v.ny = v.y / v.len;
+  v.ang = Math.atan2(v.ny, v.nx);
+}
+</script>
+<p></p>
+
+Run the snippet a couple of times and take note of where the red line falls, it only gets it right when the angle is acute. And then again, when BC precedes BA in clockwise order, we need to flip the drawing order, to correctly draw our arc.
+
+Hence, we need another indicator to be able to determine where to position the center of the circle. For this purpose we can use the cross product of the angle formed by the perpendicular of BA and the vector BC that we previously calculated and simultaneously observing where that perpendicular falls with respect to BC. By inspecting the sign of these two cross products we can pin point where the bisector is located. Let's examine the different scenarios that arise:
 
 <h4>When sinA90 &#60; 0 and sinA &#62; 0 </h4>
 When sinA90 is larger than 0, and sinA is less than 0, then we can conclude that the perpendicular lies in between BA and BC, and the vectors BA and BC form an obtuse fan. In this case we need to add PI to the angle before halving it to obtain the correct half angle. 
@@ -293,7 +395,7 @@ In this case the angle formed is also an obtuse fan, but the perpendicular does 
 <h4>When sinA90 &#62; 0 </h4>
 In this case the angle formed is an acute wedge, and we need to distinguish the two cases where the vector BC lies in between BA and it's perpendicular aka sinA &#60; 0 and when it's not aka sinA &#62; 0, and in the latter case we need to invert the drawing order.
 	
-If that explanation wasn't enough mental gymnastics, then feel welcome to sketch out a couple of angles and work them out by yourself.
+If that explanation wasn't enough mental gymnastics, then feel welcome to sketch out a couple of angles and work them out by yourself. Important to keep in mind that if we were to select the other perpendicular, we then would have to flip some of the checks.
 	
 <!--
 There's quite a lot going on here. We'll go through it step by step. The important thing to grasp here is that the sign of the cross product also tells us if the angle is oriented clockwise or counter clockwise, which we'll use to find the half angle that splits our angle in two. And remember, order is important! Keeping in mind that sinA90 is the angle formed by the perpendicular (to v1) and v2 (in that order), and sinA is the angle formed by v1 and v2 (in that order).
@@ -349,42 +451,20 @@ function draw() {
   toVec(p2, p3, v2);
 
   //coordinates of perpendicular vector
-  perpx1 = v1.len * cos(v1.ang - PI / 2);
-  perpy1 = v1.len * sin(v1.ang - PI / 2);
-
-  perpx2 = v1.len * cos(v1.ang + PI / 2);
-  perpy2 = v1.len * sin(v1.ang + PI / 2);
+  perpx = v1.len * cos(v1.ang + PI / 2);
+  perpy = v1.len * sin(v1.ang + PI / 2);
 
   stroke(0, 0, 255);
   strokeWeight(10);
-  point(perpx1, perpy1);
-  //point(perpx2,perpy2)
+  point(perpx, perpy);
   strokeWeight(1);
   drawingContext.setLineDash([5, 5]);
-  line(perpx1, perpy1, 0, 0);
+  line(perpx, perpy, 0, 0);
+  drawingContext.setLineDash([0, 0]);
 
   sinA = v1.nx * v2.ny - v1.ny * v2.nx;
   sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
   angle = Math.asin(sinA < -1 ? -1 : sinA > 1 ? 1 : sinA);
-  angle90 = Math.asin(sinA90 < -1 ? -1 : sinA90 > 1 ? 1 : sinA90);
-
-  stroke(0);
-  drawingContext.setLineDash([0, 0]);
-  text(
-    "angle: " +
-      (Math.round(map(angle, -PI / 2, PI / 2, -90, 90) * 100) / 100).toFixed(2),
-    -w / 2 + 10,
-    -w / 2 + 40
-  );
-
-  print(
-    sinA,
-    sinA90,
-    map(angle, -PI / 2, PI / 2, -45, 45),
-    map(angle90, -PI / 2, PI / 2, -45, 45)
-  );
-
-  noFill();
 
   radDirection = 1;
   drawDirection = false;
@@ -400,8 +480,6 @@ function draw() {
     if (angle > 0) {
       radDirection = -1;
       drawDirection = true;
-    } else {
-      angle = TAU + angle;
     }
   }
 
@@ -409,56 +487,36 @@ function draw() {
   yy = 50 * sin(v1.ang + angle / 2);
 
   stroke(255, 0, 0);
-  drawingContext.setLineDash([0, 0]);
   strokeWeight(10);
   point(xx, yy);
   strokeWeight(1);
   line(xx, yy, 0, 0);
 
-  drawingContext.setLineDash([0, 0]);
   strokeWeight(1);
   stroke(0);
   fill(0);
   text(
     "sinA: " + (Math.round(sinA * 100) / 100).toFixed(2),
-    -w / 2 + 10,
+    -w / 2 + 20,
     -w / 2 + 20
   );
   text(
-    "actual angle: " +
-      (Math.round(map(angle, -PI / 2, PI / 2, -90, 90) * 100) / 100).toFixed(2),
-    -w / 2 + 10,
-    -w / 2 + 60
-  );
-  text(
-    "half angle: " +
-      (
-        Math.round(map(angle / 2, -PI / 2, PI / 2, -90, 90) * 100) / 100
-      ).toFixed(2),
-    -w / 2 + 10,
-    -w / 2 + 80
-  );
-
-  text(
     "sinA90: " + (Math.round(sinA90 * 100) / 100).toFixed(2),
-    -w / 2 + 10,
-    -w / 2 + 120
+    -w / 2 + 20,
+    -w / 2 + 40
   );
-  text(
-    "angle90: " +
-      (Math.round(map(angle90, -PI / 2, PI / 2, -90, 90) * 100) / 100).toFixed(
-        2
-      ),
-    -w / 2 + 10,
-    -w / 2 + 140
-  );
+  
+  stroke(0,0,255)
+  fill(0,0,255)
+  text('BLUE: The Perpendicular',-w/2+20,w/2-40)
+  
+  stroke(255,0,0)
+  fill(255,0,0)
+  text('RED: The Bisector',-w/2+20,w/2-20)
 
   noLoop();
 }
 
-// p1 -> first point
-// p2 -> second point
-// v -> container that we will fill
 function toVec(p1, p2, v) {
   v.x = p2.x - p1.x;
   v.y = p2.y - p1.y;
@@ -474,17 +532,17 @@ If you've followed until here, then congrats, the hardest part is past us!
 
 <h4>Simpler way to calculating the angle?</h4>
 
-Now these are a lot of hoops to go through for simply finding the angle between two vectors. If you want to have a simpler way of that angle you can use:
+Now these are a lot of hoops to go through for simply finding the angle between two vectors. If you want to have a simpler way of finding that angle you can use:
 
 <pre><code>// vectors should be normalized
 angle = atan2(v2.y, v2.x) - atan2(v1.y, v1.x)
 if (angle < 0) { angle += 2 * PI;}
 </code></pre>
 
-However, this isn't sufficient to figuring out the drawing order of the angle.
+However, this isn't sufficient to figuring out the drawing order of the angle. We'll go over a simpler way to our strategy later in this post.
 
 <h4>A visual example</h4>
-Here's a visual examle of why this is necessary. If we were to ignore the correct orientation and drawing order of the arcs we would end up with weird behaviour:
+And here's a visual examle of why this is necessary. If we were to ignore the correct orientation and drawing order of the arcs we would end up with weird behaviour:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -508,7 +566,7 @@ function draw() {
   ctx.beginPath();
   roundedPoly(ctx, vertices, 50+40*sin(frameCount/50));
   ctx.stroke();
-  ctx.fill();
+
 }
 
 // To draw you must call between 
@@ -608,7 +666,6 @@ function roundedPoly(ctx, points, radiusAll) {
 </script>
 <p></p>
 
-
 <h2><a name='start'></a>Positioning the circle</h2>
 
 Now we can find the distance of the center of our circle from the corner:
@@ -631,7 +688,7 @@ And here we also have the value of the radius (that we specified):
 <p> \( BE = abs( \frac{cos(\Theta) * r}{sin(\theta)}) \)</p>
 </div>
 
-One problem here is that the radius that we specified as input, might not fit into the corner. This can be remedied by the following check:
+One problem here is that the radius that we specified as input, might not fit into the corner. This can be remedied with the following check:
 
 <pre><code>
 if (lenOut > min(v1.len / 2, v2.len / 2)) {
@@ -660,7 +717,7 @@ Note that this also depends on the direction that we determined earlier.
 
 For drawing purposes we will make use of the javascript canvas rendering context interface, which allows us to draw all sorts of shapes. You can find an extensive documentation <a href='https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D'>here<a>.
 
-To do so we need to invoke the context, usually I do this in the setup function such as follows:
+To do so we need to invoke the context, usually I do this in the setup function, as such:
 <pre><code>function setup(){
     ctx = canvas.getContext('2d');
 }
@@ -705,7 +762,6 @@ For our purposes we'll only need to use one function, namely the ctx.arc() call:
 </code></pre>
 
 Where the first two parameters are the coordinates of the arc center, followed by the radius in third place, and the starting and end angle in fourth and fifth position. the last input specifies if this arc is draw in clockwise or counter clockwise manner.
-
 
 <h2><a name='drawing'></a>Drawing the final shape</h2>
 
@@ -896,7 +952,7 @@ function roundedPoly(ctx, points, radiusAll) {
 Also notice that you can additionally pass a 'radius' to each individual vertex to override the main radius passed to the function call.
 
 <h1>Extra</h1>
-First off, huge thanks to Dave and Clay from the birsnest for the feedback! Thanks to Dave (who's a freaking coding wizard), you're getting three additional sections here, firstly we'll update the method that we've discussed so far using the inbuilt p5 vector class and it's functionalities, and secondly we'll have a look at the solution Dave came up with for rounding off corners. He also shared a version using Bezier Curves!
+First off, huge thanks to Dave and Clay from the birbsnest for the feedback! Thanks to Dave (who's a freaking coding wizard), you're getting three additional sections here, firstly we'll update the method that we've discussed so far using the inbuilt p5 vector class and it's functionalities, and secondly we'll have a look at the solution Dave came up with for rounding off corners. He also shared a version using Bezier Curves!
 
 <h2><a name='p5vec'></a>Blindman67's method using p5 vectors</h2>
 Rather than defining our own asVec() function, we can make use of the p5 vector class and the functions that come along with it. In that manner we declare our vector BA and BC like this:
@@ -928,6 +984,6 @@ Also note how we're now calculating the dot product rather than the cross produc
 
 <h2><a name='dave'></a>Dave's acceleration method</h2>
 
-<h2><a name='dave'></a>Using Bezier vertices</h2>
+<h2><a name='bezier'></a>Using Bezier vertices</h2>
 
 And that's a wrap! If there are any unclear notions, mistakes or questions, feel free to leave me a comment or reach out to me on social media! If you find this post useful, consider supporting me by sharing it or following me on my social medias. Otherwise, cheers and happy sketching!
