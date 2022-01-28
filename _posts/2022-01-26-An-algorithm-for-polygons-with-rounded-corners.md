@@ -181,18 +181,18 @@ The important part here is how the cross product can help us find the angle betw
 
 The important part here is how the cross product can help us find the angle between two vectors, and what problems arise from this method. Given three points, we can consider two angles, one that is less than 180 degrees and another 'reflex' angle larger than 180 degrees. Assuming a clockwise drawing order throughout (the arcs we'll draw alway sweep from BA to BC in a clockwise manner), we can only round off a corner if we select the angle that has a value less than 180 degrees. 
 
-In this manner, we also need to determine the correct drawing order. We're going around the polygonal shape in a clockwise manner, but depending if the angle is concave or convex (curved inwards vs being curved outwards), we'll have to sometimes draw our arcs in a counterclockwise manner. To this end, calculating the value of the angle is not sufficient, we need an additional indicator that tells us how the second vector BC is situated with respect to the first one BA. For this we can use the cross product of between BC and the perpendicular line to BA.
+In this manner, we also need to determine the correct drawing order. We're going around the polygonal shape in a clockwise manner, but depending if the angle is concave or convex (curved inwards vs being curved outwards), we'll have to sometimes draw our arcs in a counterclockwise manner. To this end, calculating the value of the angle is not sufficient, we need an additional indicator that tells us how the second vector BC is situated with respect to the first one BA. For this we can use the cross product of BC and the perpendicular line to BA. More on that in a bit.
 
 
 <h3>The Math</h3>
-Generally the formula for finding the cross product is the product of the magnitudes of our two vectors, with the sine of the angle that they form. More concretely:
+Generally the formula for finding the cross product, is the product of the magnitudes of our two vectors, with the sine of the angle that they form. More concretely:
 
 <div style="width:100%; display: flex; justify-content: center;">
 <p> \( \Vert BA \Vert * \Vert BC \Vert * sin( \Theta ) \) </p>
 </div>
 
 <p>
-This means that, finding the cross product requires us to have the angle... who's value we're trying to find. Now, if we were to somehow already have the numerical value of the cross product, we could solve for \( sin( \Theta ) \), since we also already have the magnitudes of the two vectors concerned \( \Vert BA \Vert \) and \( \Vert BC \Vert \).
+This means that, finding the cross product requires us to already have the angle... who's value we're trying to find. Now, if we were to somehow already have the numerical value of the cross product, we could solve for \( sin( \Theta ) \), since we also already have the magnitudes of the two vectors concerned \( \Vert BA \Vert \) and \( \Vert BC \Vert \).
 </p>
 
 Luckily, there is another way to find the numerical value of the cross product! It is actually equal to the determinant of the 2x2 matrix formed by these vectors. This means computing this determinant will allow us to find the angle by solving the previous formula! Computing the determinant of a matrix is done as follows:
@@ -221,7 +221,7 @@ Which is thus simply the inverse sine of the determinant. Now let's implement th
 
 <h3>The Code</h3>
 
-The code for all of what we have discussed in the previous section is relatively... tame, and can essentially be summarised in a single line! Let's have a look at the snippet by Blindman67:
+The code for all of what we have discussed in the previous section is relatively... tame, and can essentially be summarised in a single line! Let's have a look at Blindman67's code:
 
 <pre><code>// compute and store our 2 vectors
 toVec(p2, p1, v1);
@@ -238,7 +238,14 @@ sinA90 = v1.nx * v2.nx - v1.ny * -v2.ny;
 angle = Math.asin(sinA < -1 ? -1 : sinA > 1 ? 1 : sinA);
 </code></pre>
 
-The trickiest part here, I found to be the nested ternary check inside the inverse sine function. By simply expanding it, it visually makes more sense:
+We already discussed at length the first calculation that computes the variable sinA. The second line computes the cross product of the perpendicular line to BA and the vector BC. In actuality, we don't need to create a separate vector for this perpendicular, we can simply exploit the fact that the dot product of two vectors is zero when they're perpendicular. A vector perpendicular to BA would be simply one that has it's x and y values flipped, in addition to having one of their signs flipped. For example:
+
+<pre><code>zeroDotProduct = v1.nx*(-v1.ny) + v1.ny*v1.nx
+</code></pre>
+
+Of course it also matter which coordinate's sign we flip, because it determines which perpendicular we're selecting (the one at 90 degrees or the other one at -90 degrees). If we flip the other sign, we'll would have to proceed differently in the calculations that follow.
+
+Another tricky part here, I found to be the nested ternary check inside the inverse sine function. By simply expanding it, it visually makes more sense:
 
 <pre><code>if(sinA<-1){
   angle = Math.asin(-1)
