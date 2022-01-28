@@ -5,13 +5,16 @@ categories:
   - p5js
 description: An approach for creating all sorts of different smooth shapes in p5, using the canvas rendering context.
 thumbnail_path: https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/sand.mp4
-published: true
+published: false
 exclude_rss: true
 ---
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/Sand.gif" alt="">
 </span>
+<p></p>
+
+<h2>Quick Index</h2>
 
 1. <a href='#start'>Introduction: An algorithm for rounded corners</a>
 2. <a href='#credit'>Credit where credit's due</a>
@@ -23,6 +26,10 @@ exclude_rss: true
 8. <a href='#position'>Positioning the circle</a>
 9. <a href='#ctx'>The rendering context</a>
 10. <a href='#drawing'>Drawing the final shape</a>
+
+<h2>Further Improvements</h2>
+1. <a href='#p5vec'>Blindman67's method using p5 vectors</a>
+2. <a href='#dave'>Dave's acceleration method</a>
 		
 <h2><a name='start'></a>Introduction: An algorithm for rounded corners</h2>
 
@@ -163,14 +170,21 @@ Now that we have converted our 3 points into vector form, we can tackle computin
 
 <h2><a name='angle'></a>Calculating the angle using the cross product</h2>
 
-<h3>The Math</h3>
-Getting the halfway angle is probably the trickiest part of the procedure, and requires a number of steps. There probably are multiple ways to do so, but here's the method deduced from Blindman67's code. It will require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors, which we will be exploiting to find the value of the angle that they form.
+<h3>Explanation</h3>
+Getting the halfway angle is probably the trickiest part of the procedure, and requires a number of steps. There probably are multiple ways to do so (more on that later), but for starters we'll begin with the method deduced from Blindman67's code. It will require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors. We'll be heavily exploiting this cross product to compute the value of the formed angle, as well as where it is located with respect to the two vectors.
 
 What the cross product actually represents algebraically, is a bit outside of the scope of this post. A perfect resource for understanding it can be found in the form of <a href="https://www.youtube.com/watch?v=eu6i7WJeinw&ab_channel=3Blue1Brown">this video</a> by <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a> (I don't think there's a need for me to introduce his channel).
 
+<!--
 The important part here is how the cross product can help us find the angle between two vectors, and what problems arise from this method. It is important to mention here that the order of the points is crucial! When dealing with a closed polygonal shape the order of the points is such that the formed angle is pointing inwards. Using the cross product to determine the angle between two vectors gives an ambiguous result, the angle can form an acute wedge but could equivalently be interpreted as an obtuse fan. Keep this in mind for now, it will be relevant in a bit!
+-->
+
+The important part here is how the cross product can help us find the angle between two vectors, and what problems arise from this method. Given three points, we can consider two angles, one that is less than 180 degrees and another 'reflex' angle larger than 180 degrees. Assuming a clockwise drawing order throughout (the arcs we'll draw alway sweep from BA to BC in a clockwise manner), we can only round off a corner if we select the angle that has a value less than 180 degrees. 
+
+In this manner, we also need to determine the correct drawing order. We're going around the polygonal shape in a clockwise manner, but depending if the angle is concave or convex (curved inwards vs being curved outwards), we'll have to sometimes draw our arcs in a counterclockwise manner. To this end, calculating the value of the angle is not sufficient, we need an additional indicator that tells us how the second vector BC is situated with respect to the first one BA. For this we can use the cross product of between BC and the perpendicular line to BA.
 
 
+<h3>The Math</h3>
 Generally the formula for finding the cross product is the product of the magnitudes of our two vectors, with the sine of the angle that they form. More concretely:
 
 <div style="width:100%; display: flex; justify-content: center;">
@@ -873,5 +887,40 @@ function roundedPoly(ctx, points, radiusAll) {
 <p></p>
 
 Also notice that you can additionally pass a 'radius' to each individual vertex to override the main radius passed to the function call.
+
+<h1>Extra</h1>
+First off, huge thanks to Dave and Clay from the birsnest for the feedback! Thanks to Dave (who's a freaking coding wizard), you're getting three additional sections here, firstly we'll update the method that we've discussed so far using the inbuilt p5 vector class and it's functionalities, and secondly we'll have a look at the solution Dave came up with for rounding off corners. He also shared a version using Bezier Curves!
+
+<h2><a name='p5vec'></a>Blindman67's method using p5 vectors</h2>
+Rather than defining our own asVec() function, we can make use of the p5 vector class and the functions that come along with it. In that manner we declare our vector BA and BC like this:
+
+<pre><code>p2 = points[i % len];
+p3 = points[(i + 1) % len];
+
+A = createVector(p1.x, p1.y);
+B = createVector(p2.x, p2.y);
+C = createVector(p3.x, p3.y);
+
+BA = A.sub(B);
+BC = C.sub(B);
+</code></pre>
+
+Next we can compute the angle and the that of the perpendicular in the following manner:
+<pre><code>// need to call copy() because most vector functions are in-place
+BAnorm = BA.copy().normalize();
+BCnorm = BC.copy().normalize();
+
+sinA = -BAnorm.dot(BCnorm.copy().rotate(PI / 2));
+sinA90 = BAnorm.dot(BCnorm);
+angle = asin(sinA);
+</code></pre>
+
+Note that we have to call the copy() function prior to functions such as normalize() and rotate(), as they will mutate and alter the vector itself. Hence we create two normalized copies of BA and BC, since we'll need to use their magnitudes later on again.
+
+Also note how we're now calculating the dot product rather than the cross product! We do this for
+
+<h2><a name='dave'></a>Dave's acceleration method</h2>
+
+<h2><a name='dave'></a>Using Bezier vertices</h2>
 
 And that's a wrap! If there are any unclear notions, mistakes or questions, feel free to leave me a comment or reach out to me on social media! If you find this post useful, consider supporting me by sharing it or following me on my social medias. Otherwise, cheers and happy sketching!
