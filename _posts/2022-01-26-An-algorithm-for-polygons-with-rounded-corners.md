@@ -980,7 +980,107 @@ angle = asin(sinA);
 
 Note that we have to call the copy() function prior to functions such as normalize() and rotate(), as they will mutate and alter the vector itself. Hence we create two normalized copies of BA and BC, since we'll need to use their magnitudes later on again.
 
-Also note how we're now calculating the dot product rather than the cross product! We do this for
+Also note how we're now calculating the dot product rather than the cross product! It's still the same calculation, but for convenience it's easier to do it in that manner. This is derived from the fact that the dot product of two vectors is equal to the cross product of one of these vectors and the perpendicular to the other vector. So we simply rotate one of them by 90 degress and compute the dot product. Same for sinA90.
+
+The rest of the code is identical to what we had before, with the exception that we're solely using the p5 vector properties and functions:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  createCanvas(400, 400);
+
+  ctx = canvas.getContext("2d");
+  rSlider = createSlider(0, 50, 25)
+}
+
+function draw() {
+  background(220);
+
+  vertices = [];
+  vertices.push({ x: 300, y: 100 });
+  vertices.push({ x: 200, y: 200});
+  vertices.push({ x: 350, y: 350 });
+  vertices.push({ x: 100, y: 300 });
+  vertices.push({ x: 200, y: 300 });
+  //vertices.push({ x: 200, y: 200, radius: 0 });
+  vertices.push({ x: 150, y: 200 });
+
+  ctx.beginPath();
+  roundedPoly(ctx, vertices, rSlider.value());
+  ctx.stroke();
+  ctx.fill()
+}
+
+function roundedPoly(ctx, points, radiusAll) {
+  radius = radiusAll;
+  len = points.length;
+  p1 = points[len - 1];
+
+  for (i = 0; i < len; i++) {
+    p2 = points[i % len];
+    p3 = points[(i + 1) % len];
+
+    A = createVector(p1.x, p1.y);
+    B = createVector(p2.x, p2.y);
+    C = createVector(p3.x, p3.y);
+
+    (BA = A.sub(B)), (BC = C.sub(B));
+
+    (BAnorm = BA.copy().normalize()), (BCnorm = BC.copy().normalize());
+
+    sinA = -BAnorm.dot(BCnorm.copy().rotate(PI / 2));
+    sinA90 = BAnorm.dot(BCnorm);
+    angle = asin(sinA);
+
+    (radDirection = 1), (drawDirection = false);
+    if (sinA90 < 0) {
+      angle < 0 ? (angle += PI) : ((radDirection = -1), (drawDirection = true));
+    } else {
+      angle > 0 ? ((radDirection = -1), (drawDirection = true)) : 0;
+    }
+    
+    // accelDir = BAnorm.rotate(PI/2).copy().add(BCnorm)
+    // radDirection = Math.sign(accelDir.dot(BCnorm.rotate(PI / 2)))
+    // drawDirection = radDirection === -1
+
+    p2.radius ? (radius = p2.radius) : (radius = radiusAll);
+
+    halfAngle = angle / 2;
+    lenOut = abs((cos(halfAngle) * radius) / sin(halfAngle));
+
+    // Special part A
+    if (lenOut > min(BA.mag() / 2, BC.mag() / 2)) {
+      lenOut = min(BA.mag() / 2, BC.mag() / 2);
+      cRadius = abs((lenOut * sin(halfAngle)) / cos(halfAngle));
+    } else {
+      cRadius = radius;
+    }
+
+    x =
+      B.x +
+      BC.normalize().x * lenOut -
+      BC.normalize().y * cRadius * radDirection;
+    y =
+      B.y +
+      BC.normalize().y * lenOut +
+      BC.normalize().x * cRadius * radDirection;
+
+    ctx.arc(
+      x,
+      y,
+      cRadius,
+      BA.heading() + (PI / 2) * radDirection,
+      BC.heading() - (PI / 2) * radDirection,
+      drawDirection
+    );
+
+    p1 = p2;
+    p2 = p3;
+  }
+  ctx.closePath();
+}
+</script>
+<p></p>
 
 <h2><a name='dave'></a>Dave's acceleration method</h2>
 
