@@ -20,7 +20,7 @@ exclude_rss: true
 2. <a href='#credit'>Credit where credit's due</a>
 3. <a href='#intuitive'>An intuitive explanation of the algorithm</a>
 4. <a href='#breakdown'>Breakdown of the algorithm</a>
-5. <a href='#vecstopoints'>2 Vectors from 3 Points</a>
+5. <a href='#vecstopoints'>Two Vectors from three Points</a>
 6. <a href='#angle'>Calculating the angle using the cross product</a>
 7. <a href='#ambiguity'>Ambiguity of the cross product</a>
 8. <a href='#position'>Positioning the circle</a>
@@ -34,9 +34,9 @@ exclude_rss: true
 		
 <h2><a name='start'></a>Introduction: An algorithm for rounded corners</h2>
 
-If you spent some time doing creative coding, you'll very quickly come to the realization that anything, which has shape that is little more complicated than your average rectangle or circle, quickly starts requiring a fair amount of code to be summoned onto your canvas.
+If you spent some time doing creative coding, you'll very quickly come to the realization that anything, which has a shape that is little more complicated than your average rectangle or circle, quickly starts requiring a fair amount of code to be summoned onto your canvas.
 
-This post/tutorial is dedicated to a snippet of code I found on stackoverflow, and that has unlocked many shapes and sketches for me, that I otherwise wouldn't have been able to make. In essence the algorithm allows you to create arbitrarily shaped polygons, with any number of vertices while at the same time being able to control the roundness (or curvature) of each vertex.
+This post/tutorial was initially sparked by a snippet of code that I've found on stackoverflow. In the past months, this algorithm has unlocked a number shapes and sketches for me, that I otherwise wouldn't have been able to make. In essence, the algorithm allows you to create arbitrarily shaped polygons, with any number of vertices while at the same time being able to control the roundness (or curvature) of each vertex.
 
 I came across this code when I attempted a sketch in which I wanted to round off the corners of some triangles:
 
@@ -54,7 +54,7 @@ I came across this code when I attempted a sketch in which I wanted to round off
 </div>
 <p></p>
 
-In p5js there is no out-of-the-box method for doing so, except rectangular shapes where the 5th to 8th parameters can be used for that purpose. You could technically do it with a series of curveVertex() calls, however that strategy doesn't offer much control. Here's another sketch that I made during #GENUARY2022, which also makes use of the same algorithm, even if it might not be as obvious:
+In p5js there is no out-of-the-box method for doing so, except when it comes to rectangular shapes, where the 5th to 8th parameters can be used for that purpose. You could technically do it with a series of curveVertex() calls, however that strategy doesn't offer much control. Here's another sketch that I made during #GENUARY2022, which also makes use of the same algorithm, even if it might not be as obvious:
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -73,7 +73,7 @@ In p5js there is no out-of-the-box method for doing so, except rectangular shape
 You can notice that you can even mix between pointy corners and round corners, which is another thing that isn't possible with pure p5js (without writing a lot of additional code towards that end). This definitely came in clutch this Genuary. The remainder of this post will walk you through this really cool and useful algorithm, step by step.
 
 <h2><a name='credit'></a>Credit where credit's due</h2>
-The code discussed in this post stems from this <a href="https://stackoverflow.com/a/44856925">stackoverflow answer</a> by stackoverflow user <a href="https://stackoverflow.com/users/3877726/blindman67">Blindman67</a>. (Go give him some upvotes on his answer if you find this useful!) Blindman67 explains his strategy in detail, and is more than sufficient for you to start using his code. 
+The code discussed in this post stems from this <a href="https://stackoverflow.com/a/44856925">stackoverflow answer</a> by stackoverflow user <a href="https://stackoverflow.com/users/3877726/blindman67">Blindman67</a>. (Go give him some upvotes on his answer if you find this useful!) Blindman67 explains his strategy succinctly, and is more than sufficient for you to start using his code. 
 
 But for the sake of REALLY understanding the algorithm, we'll recreate it from scratch based off of his explanation and analyzing his code! There are a number of noteworthy things going on, that are worth inspecting in more detail, and can be generalized to a number of other scenarios.
 
@@ -98,8 +98,8 @@ Given a specific radius, the difficulty lies within finding where to exactly pos
 4. Finding the distance from the circle center to the corner
 5. Drawing the arc
 
-<h2><a name='vecstopoints'></a>2 Vectors from 3 Points</h2>
-First we'll need to find the value of the angle that is formed by three points. To do so we first need to compute the vectors formed by these three points. For three points A, B and C we can find the vectors BA and BC by using the following function:
+<h2><a name='vecstopoints'></a>Two Vectors from three Points</h2>
+First we'll need to find the value of the angle that is formed by three points. To do so we first need to turn these 3 points into two vectors. For three points A, B and C we can find the vectors BA and BC by using the following function:
 
 <pre><code>// p1 -> first point
 // p2 -> second point
@@ -107,14 +107,16 @@ First we'll need to find the value of the angle that is formed by three points. 
 // we could also not pass v and simply return it
 function toVec(p1, p2, v) {
 
-    // center the vector based on the coordinates of B
+    // center the vector based on the coordinates of p2 (the point B in this case)
     v.x = p2.x - p1.x;
     v.y = p2.y - p1.y;
 
-    // compute length of vector
-    v.len = Math.hypot(v.x, v.y); // alternatively v.len = Math.sqrt(v.x * v.x + v.y * v.y);
+    // compute magnitude (length) of the vector
+    v.len = Math.sqrt(v.x * v.x + v.y * v.y);
+    
+    // alternatively and more concisely v.len = Math.hypot(v.x, v.y); 
 
-    // normalize based on length
+    // normalized coordinates
     v.nx = v.x / v.len;
     v.ny = v.y / v.len;
 
@@ -167,12 +169,12 @@ function toVec(p1, p2, v) {
 }
 </code></pre>
 
-Now that we have converted our 3 points into vector form, we can tackle computing and locating the intermediary angle between the two vectors!
+You might ask, why we're not doing this with p5js's inbuilt vector class? And fret not, at the end of this post well go over an alternative version where we use the class with all it's functionalities. Now that we have converted our 3 points into vector form, we can tackle computing and locating the intermediary angle between the two vectors!
 
 <h2><a name='angle'></a>Calculating the angle using the cross product</h2>
 
 <h3>Explanation</h3>
-Getting the halfway angle is probably the trickiest part of the procedure, and requires a number of steps. There probably are multiple ways to do so (more on that later), but for starters we'll begin with the method deduced from Blindman67's code. It will require us to freshen up on our linear algebra a little bit, specifically the cross product of two vectors. We'll be heavily exploiting this cross product to compute the value of the formed angle, as well as where it is located with respect to the two vectors.
+Getting the halfway angle is probably the trickiest part of the procedure, and requires a number of steps. There probably are multiple ways to do so (more on that later), but for starters we'll begin with the method deduced from Blindman67's code. It will require us to freshen up on our linear algebra a little bit, specifically on the cross product of two vectors. We'll be heavily exploiting the formula of the cross product to compute the value of the formed angle, as well as where it is located with respect to the two vectors.
 
 What the cross product actually represents algebraically, is a bit outside of the scope of this post. A perfect resource for understanding it can be found in the form of <a href="https://www.youtube.com/watch?v=eu6i7WJeinw&ab_channel=3Blue1Brown">this video</a> by <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a> (I don't think there's a need for me to introduce his channel).
 
@@ -180,7 +182,7 @@ What the cross product actually represents algebraically, is a bit outside of th
 The important part here is how the cross product can help us find the angle between two vectors, and what problems arise from this method. It is important to mention here that the order of the points is crucial! When dealing with a closed polygonal shape the order of the points is such that the formed angle is pointing inwards. Using the cross product to determine the angle between two vectors gives an ambiguous result, the angle can form an acute wedge but could equivalently be interpreted as an obtuse fan. Keep this in mind for now, it will be relevant in a bit!
 -->
 
-The important part here is how the cross product can help us find the angle between two vectors, and what problems arise from this method. Given three points, we can consider two angles, one that is less than 180 degrees and another 'reflex' angle larger than 180 degrees. Assuming a clockwise drawing order throughout (the arcs we'll draw alway sweep from BA to BC in a clockwise manner), we can only round off a corner if we select the angle that has a value less than 180 degrees. 
+The important part here is how the cross product can help us find the angle between two vectors, and what problems arise from this method. Given two vectors, we observe two angles, one that is less than 180 degrees, and another 'reflex' angle larger than 180 degrees. Our task is thus finding the angle that allows us to draw an arc, such that we can trace it and round off the pointy corner. We can only round off a corner if we select the angle that has a value less than 180 degrees. 
 
 In this manner, we also need to determine the correct drawing order. We're going around the polygonal shape in a clockwise manner, but depending if the angle is concave or convex (curved inwards vs being curved outwards), we'll have to sometimes draw our arcs in a counterclockwise manner. To this end, calculating the value of the angle is not sufficient, we need an additional indicator that tells us how the second vector BC is situated with respect to the first one BA. For this we can use the cross product of BC and the perpendicular line to BA. More on that in a bit.
 
@@ -244,9 +246,9 @@ We already discussed at length the first calculation that computes the variable 
 <pre><code>zeroDotProduct = v1.nx*(-v1.ny) + v1.ny*v1.nx
 </code></pre>
 
-Of course it also matter which coordinate's sign we flip, because it determines which perpendicular we're selecting (the one at 90 degrees or the other one at -90 degrees). If we flip the other sign, we'll would have to proceed differently in the calculations that follow.
+Of course it also matters which coordinate's sign we flip, because it determines which perpendicular we're selecting (the one at 90 degrees or the other one at -90 degrees). If we flip the other sign, we'll would have to proceed differently in the calculations that follow.
 
-Another tricky part here, I found to be the nested ternary check inside the inverse sine function. By simply expanding it, it visually makes more sense:
+Another tricky part here, I found to be the nested ternary check inside the inverse sine function. By simply expanding it, we visually get some clarity:
 
 <pre><code>if(sinA<-1){
   angle = Math.asin(-1)
@@ -281,7 +283,7 @@ if (sinA90 < 0) {
 }
 </code></pre>
 
-In essence, the information that we're trying to find here, is where exactly the center of the circle is located (the angle or it's reflex) as well as the correct drawing order of the arc (clockwise or counter clockwise). This is what the above if/else block takes care of. Let's for a second assume that the angle which calculated is sufficient and simply half it to find the bisector:
+In essence, the information that we're trying to find here, is where exactly the center of the circle is located (the angle or it's reflex) as well as the correct drawing order of the arc (clockwise or counter clockwise). This is what the above if/else block takes care of. Let's for a second assume that the angle that we have calculated is sufficient, and simply halve it to find the bisector:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -382,9 +384,9 @@ function toVec(p1, p2, v) {
 </script>
 <p></p>
 
-Run the snippet a couple of times and take note of where the red line falls, it only gets it right when the angle is acute. And then again, when BC precedes BA in clockwise order, we need to flip the drawing order, to correctly draw our arc.
+Run the snippet a couple of times and take note of where the red line falls, it only gets it right when the angle is acute. We do not get the correct bisector when the angle is obtuse.
 
-Hence, we need another indicator to be able to determine where to position the center of the circle. For this purpose we can use the cross product of the angle formed by the perpendicular of BA and the vector BC that we previously calculated and simultaneously observing where that perpendicular falls with respect to BC. By inspecting the sign of these two cross products we can pin point where the bisector is located. Let's examine the different scenarios that arise:
+Hence, we need another indicator to be able to determine where to position the center of the circle. For this purpose we can use the cross product of the angle formed by the perpendicular of BA and the vector BC that we previously calculated. Simultaneously observing where that perpendicular falls with respect to BC, by inspecting the sign of these two cross products we can pin point where the bisector is located. Let's examine the different scenarios that arise:
 
 <h4>When sinA90 &#60; 0 and sinA &#62; 0 </h4>
 When sinA90 is larger than 0, and sinA is less than 0, then we can conclude that the perpendicular lies in between BA and BC, and the vectors BA and BC form an obtuse fan. In this case we need to add PI to the angle before halving it to obtain the correct half angle. 
@@ -532,17 +534,17 @@ If you've followed until here, then congrats, the hardest part is past us!
 
 <h4>Simpler way to calculating the angle?</h4>
 
-Now these are a lot of hoops to go through for simply finding the angle between two vectors. If you want to have a simpler way of finding that angle you can use:
+Now these are a lot of hoops to go through for simply calculating. If you want to have a simpler way of finding that angle you can use:
 
 <pre><code>// vectors should be normalized
 angle = atan2(v2.y, v2.x) - atan2(v1.y, v1.x)
 if (angle < 0) { angle += 2 * PI;}
 </code></pre>
 
-However, this isn't sufficient to figuring out the drawing order of the angle. We'll go over a simpler way to our strategy later in this post.
+However, this isn't sufficient to figuring out the correct drawing order of our arc. We'll go over a simpler way to our strategy later in this post.
 
 <h4>A visual example</h4>
-And here's a visual examle of why this is necessary. If we were to ignore the correct orientation and drawing order of the arcs we would end up with weird behaviour:
+To conclude this section, here's a visual example of why this is necessary. If we were to ignore the correct orientation and drawing order of the arcs we would end up with weird behaviour:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -668,7 +670,7 @@ function roundedPoly(ctx, points, radiusAll) {
 
 <h2><a name='start'></a>Positioning the circle</h2>
 
-Now we can find the distance of the center of our circle from the corner:
+The next step is finding the distance from the circlecenter to the coordinate of the corner:
 
 <pre><code>lenOut = abs(cos(halfAngle) * radius / sin(halfAngle));
 </code></pre>
@@ -688,7 +690,7 @@ And here we also have the value of the radius (that we specified):
 <p> \( BE = abs( \frac{cos(\Theta) * r}{sin(\theta)}) \)</p>
 </div>
 
-One problem here is that the radius that we specified as input, might not fit into the corner. This can be remedied with the following check:
+One problem here is that the radius that we specified as input, might not fit into the corner. Since it could techincally be longer than the edge itself. This can be remedied with the following check:
 
 <pre><code>
 if (lenOut > min(v1.len / 2, v2.len / 2)) {
@@ -761,7 +763,7 @@ For our purposes we'll only need to use one function, namely the ctx.arc() call:
 <pre><code>ctx.arc(x, y, cRadius, v1.ang + Math.PI / 2 * radDirection, v2.ang - Math.PI / 2 * radDirection, drawDirection);
 </code></pre>
 
-Where the first two parameters are the coordinates of the arc center, followed by the radius in third place, and the starting and end angle in fourth and fifth position. the last input specifies if this arc is draw in clockwise or counter clockwise manner.
+Where the first two parameters are the coordinates of the arc center, followed by the radius in third place, and the starting and end angle in fourth and fifth position. the last input specifies if this arc is drawn in clockwise or counter clockwise manner.
 
 <h2><a name='drawing'></a>Drawing the final shape</h2>
 
