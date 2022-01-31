@@ -809,6 +809,8 @@ function setup() {
   createCanvas(400, 400);
 
   ctx = canvas.getContext("2d");
+  rSlider = createSlider(0, 50, 25)
+  rSlider.position(10, 10);
 }
 
 function draw() {
@@ -824,11 +826,9 @@ function draw() {
   vertices.push({ x: 150, y: 200 });
 
   ctx.beginPath();
-  roundedPoly(ctx, vertices, 200);
+  roundedPoly(ctx, vertices, rSlider.value());
   ctx.stroke();
   ctx.fill();
-
-  noLoop();
 }
 
 // To draw you must call between
@@ -995,6 +995,7 @@ function setup() {
 
   ctx = canvas.getContext("2d");
   rSlider = createSlider(0, 50, 25)
+  rSlider.position(10, 10);
 }
 
 function draw() {
@@ -1090,7 +1091,7 @@ This makes it a little more compact, but also less readable.
 
 <h2><a name='dave'></a>Dave's acceleration method</h2>
 
-After asking for feedback and discussing the Blindman67's method a little, Dave pointed out that an alternative way to knowing the drawing order would be using the curvature vector's direction. Rather than using the positions of BA and it's perpepndicular with respect to BC, and doing this check:
+After asking for feedback on <a href='https://twitter.com/sableRaph'>Raph's</a> discord and discussing the previous method a little, Dave pointed out that an alternative way to knowing the drawing order would be using the curvature vector's direction. Rather than using the positions of BA and it's perpepndicular with respect to BC, and doing this check:
 
 <pre><code>(radDirection = 1), (drawDirection = false);
 if (sinA90 < 0) {
@@ -1118,6 +1119,7 @@ function setup() {
 
   ctx = canvas.getContext("2d");
   rSlider = createSlider(0, 50, 25)
+  rSlider.position(10, 10);
 }
 
 function draw() {
@@ -1156,8 +1158,7 @@ function drawAccelerations(ctx, points, radiusAll) {
 
     (BAnorm = BA.copy().normalize()), (BCnorm = BC.copy().normalize());
 
-    sinA = -BAnorm.dot(BCnorm.rotate(PI / 2));
-    sinA90 = BAnorm.rotate(PI / 2).dot(BCnorm);
+    sinA = -BAnorm.dot(BCnorm.copy().rotate(PI / 2));
     angle = asin(sinA);
 
     accelDir = BAnorm.copy().add(BCnorm)
@@ -1232,8 +1233,7 @@ function roundedPoly(ctx, points, radiusAll) {
 
     (BAnorm = BA.copy().normalize()), (BCnorm = BC.copy().normalize());
 
-    sinA = -BAnorm.dot(BCnorm.rotate(PI / 2));
-    sinA90 = BAnorm.rotate(PI / 2).dot(BCnorm);
+    sinA = -BAnorm.dot(BCnorm.copy().rotate(PI / 2));
     angle = asin(sinA);
 
     accelDir = BAnorm.copy().add(BCnorm)
@@ -1306,6 +1306,7 @@ function setup() {
   createCanvas(400, 400);
   background(255)
   rSlider = createSlider(0, 50, 25)
+  rSlider.position(10, 10);
   verts = [
     createVector(300, 100),
     createVector(200, 200),
