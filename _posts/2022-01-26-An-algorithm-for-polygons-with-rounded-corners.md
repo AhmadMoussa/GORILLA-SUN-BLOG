@@ -411,7 +411,7 @@ If sinA90 larger than 0, then the angle formed by the perpendicular (to v1) and 
 If sinA90 is less than 0, then this angle is oriented counterclockwise. In this case we must distinguish between v1 being before or past v2. If the angle is less than 0 then v1 is past v2, and we have to add PI to the angle formed, else we need to subtract the angle from PI. Halving this value then yields the correct mid-way angle.
 -->
 
-<h4> Example </h4>
+<h4>Example </h4>
 Here's an example of this in action. Observe the position of BC, BA and it's perpendicular as well as the values of sinA and sinA90. The assumed drawing order is clockwise starting from BA, going to BC:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
@@ -956,7 +956,7 @@ Also notice that you can additionally pass a 'radius' to each individual vertex 
 
 
 <h1><a name='p5vec'></a>Further Improvements</h1>
-First off, huge thanks to Dave and Clay from the birbsnest for the feedback! Thanks to Dave (who's a freaking coding wizard), you're getting three additional sections here, firstly we'll update the method that we've discussed so far using the inbuilt p5 vector class and it's functionalities, and secondly we'll have a look at the solution Dave came up with for rounding off corners. He also shared a version using Bezier Curves!
+First off, huge thanks to <a href='https://twitter.com/davepvm'>Dave</a> and <a href='https://twitter.com/clayheaton'>Clay</a> from the birbsnest for the feedback! Thanks to Dave (who's a freaking coding wizard), you're getting three additional sections here, firstly we'll update the method that we've discussed so far using the inbuilt p5 vector class and it's functionalities, and secondly we'll have a look at the solution Dave came up with for rounding off corners. He also shared a version using Bezier Curves!
 
 <h2><a name='p5vec'></a>Blindman67's method using p5 vectors</h2>
 Rather than defining our own asVec() function, we can make use of the p5 vector class and the functions that come along with it. In that manner we declare our vector BA and BC like this:
@@ -972,7 +972,7 @@ BA = A.sub(B);
 BC = C.sub(B);
 </code></pre>
 
-Next we can compute the angle and the that of the perpendicular in the following manner:
+Next we can compute the angle and the angle of the perpendicular in the following manner:
 <pre><code>// need to call copy() because most vector functions are in-place
 BAnorm = BA.copy().normalize();
 BCnorm = BC.copy().normalize();
@@ -1086,8 +1086,292 @@ function roundedPoly(ctx, points, radiusAll) {
 </script>
 <p></p>
 
+This makes it a little more compact, but also less readable.
+
 <h2><a name='dave'></a>Dave's acceleration method</h2>
 
+After asking for feedback and discussing the Blindman67's method a little, Dave pointed out that an alternative way to knowing the drawing order would be using the curvature vector's direction. Rather than using the positions of BA and it's perpepndicular with respect to BC, and doing this check:
+
+<pre><code>(radDirection = 1), (drawDirection = false);
+if (sinA90 < 0) {
+  angle < 0 ? (angle += PI) : ((radDirection = -1), (drawDirection = true));
+} else {
+  angle > 0 ? ((radDirection = -1), (drawDirection = true)) : 0;
+}
+</code></pre>
+
+We can do this:
+
+<pre><code>accelDir = BAnorm.copy().add(BCnorm)
+radDirection = Math.sign(accelDir.dot(BCnorm.rotate(PI / 2)))
+drawDirection = radDirection === -1
+</code></pre>
+
+We obtain the curvature vector by adding BA and BC, and this vector will generally always point into the direction of the circlecenter. Now we only need to determine if we need to draw the arc in a clockwise or counterclockwise direction. For this we recycle our previous check and observe where the curvature vector falls with respect to BC. The drawing order can then be deduced from the arc direction!
+
+Here's a sketch where we visualize these curvature vectors:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  createCanvas(400, 400);
+
+  ctx = canvas.getContext("2d");
+  rSlider = createSlider(0, 50, 25)
+}
+
+function draw() {
+  background(220);
+
+  vertices = [];
+  vertices.push({ x: 300, y: 100 });
+  vertices.push({ x: 200, y: 200});
+  vertices.push({ x: 350, y: 350 });
+  vertices.push({ x: 100, y: 300 });
+  vertices.push({ x: 200, y: 200 });
+  //vertices.push({ x: 200, y: 200, radius: 0 });
+  vertices.push({ x: 150, y: 200 });
+
+  ctx.beginPath();
+  roundedPoly(ctx, vertices, rSlider.value());
+  ctx.stroke();
+  ctx.fill()
+  drawAccelerations(ctx, vertices, rSlider.value());
+}
+
+function drawAccelerations(ctx, points, radiusAll) {
+  radius = radiusAll;
+  len = points.length;
+  p1 = points[len - 1];
+
+  for (i = 0; i < len; i++) {
+    p2 = points[i % len];
+    p3 = points[(i + 1) % len];
+
+    A = createVector(p1.x, p1.y);
+    B = createVector(p2.x, p2.y);
+    C = createVector(p3.x, p3.y);
+
+    (BA = A.sub(B)), (BC = C.sub(B));
+
+    (BAnorm = BA.copy().normalize()), (BCnorm = BC.copy().normalize());
+
+    sinA = -BAnorm.dot(BCnorm.rotate(PI / 2));
+    sinA90 = BAnorm.rotate(PI / 2).dot(BCnorm);
+    angle = asin(sinA);
+
+    accelDir = BAnorm.copy().add(BCnorm)
+    accelDirunorm = BA.copy().add(BC).limit(30)
+    
+    strokeWeight(5)
+    point(B.x,B.y)
+    strokeWeight(1)
+    push()
+    translate(B.x,B.y)
+    line(0,0, accelDirunorm.x,accelDirunorm.y)
+    vbase = createVector(0,0)
+    vhead = createVector(accelDirunorm.x,accelDirunorm.y)
+    drawArrow(vbase, vhead, 'black');
+    pop()
+    radDirection = Math.sign(accelDir.dot(BCnorm.rotate(PI / 2)))
+    drawDirection = radDirection === -1
+
+
+    p2.radius ? (radius = p2.radius) : (radius = radiusAll);
+
+    halfAngle = angle / 2;
+    lenOut = abs((cos(halfAngle) * radius) / sin(halfAngle));
+
+    // Special part A
+    if (lenOut > min(BA.mag() / 2, BC.mag() / 2)) {
+      lenOut = min(BA.mag() / 2, BC.mag() / 2);
+      cRadius = abs((lenOut * sin(halfAngle)) / cos(halfAngle));
+    } else {
+      cRadius = radius;
+    }
+
+    x =
+      B.x +
+      BC.normalize().x * lenOut -
+      BC.normalize().y * cRadius * radDirection;
+    y =
+      B.y +
+      BC.normalize().y * lenOut +
+      BC.normalize().x * cRadius * radDirection;
+
+    // ctx.arc(
+    //   x,
+    //   y,
+    //   cRadius,
+    //   BA.heading() + (PI / 2) * radDirection,
+    //   BC.heading() - (PI / 2) * radDirection,
+    //   drawDirection
+    // );
+
+    p1 = p2;
+    p2 = p3;
+  }
+  // ctx.closePath();
+}
+
+
+function roundedPoly(ctx, points, radiusAll) {
+  radius = radiusAll;
+  len = points.length;
+  p1 = points[len - 1];
+
+  for (i = 0; i < len; i++) {
+    p2 = points[i % len];
+    p3 = points[(i + 1) % len];
+
+    A = createVector(p1.x, p1.y);
+    B = createVector(p2.x, p2.y);
+    C = createVector(p3.x, p3.y);
+
+    (BA = A.sub(B)), (BC = C.sub(B));
+
+    (BAnorm = BA.copy().normalize()), (BCnorm = BC.copy().normalize());
+
+    sinA = -BAnorm.dot(BCnorm.rotate(PI / 2));
+    sinA90 = BAnorm.rotate(PI / 2).dot(BCnorm);
+    angle = asin(sinA);
+
+    accelDir = BAnorm.copy().add(BCnorm)
+    radDirection = Math.sign(accelDir.dot(BCnorm.rotate(PI / 2)))
+    drawDirection = radDirection === -1
+
+
+    p2.radius ? (radius = p2.radius) : (radius = radiusAll);
+
+    halfAngle = angle / 2;
+    lenOut = abs((cos(halfAngle) * radius) / sin(halfAngle));
+
+    // Special part A
+    if (lenOut > min(BA.mag() / 2, BC.mag() / 2)) {
+      lenOut = min(BA.mag() / 2, BC.mag() / 2);
+      cRadius = abs((lenOut * sin(halfAngle)) / cos(halfAngle));
+    } else {
+      cRadius = radius;
+    }
+
+    x =
+      B.x +
+      BC.normalize().x * lenOut -
+      BC.normalize().y * cRadius * radDirection;
+    y =
+      B.y +
+      BC.normalize().y * lenOut +
+      BC.normalize().x * cRadius * radDirection;
+
+    ctx.arc(
+      x,
+      y,
+      cRadius,
+      BA.heading() + (PI / 2) * radDirection,
+      BC.heading() - (PI / 2) * radDirection,
+      drawDirection
+    );
+
+    p1 = p2;
+    p2 = p3;
+  }
+   ctx.closePath();
+}
+
+function drawArrow(base, vec, myColor) {
+  push();
+  stroke(myColor);
+  fill(myColor);
+  translate(base.x, base.y);
+  line(0, 0, vec.x, vec.y);
+  rotate(vec.heading());
+  let arrowSize = 7;
+  translate(vec.mag() - arrowSize, 0);
+  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
+  pop();
+}
+</script>
+<p></p>
+
 <h2><a name='bezier'></a>Using Bezier vertices</h2>
+
+And for the final alternative method, Dave wrote <a href='https://editor.p5js.org/davepagurek/sketches/AwgpGbabn'>this method</a> that relies on the bezierVertex() function in p5:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+let verts
+let rSlider
+
+function setup() {
+  createCanvas(400, 400);
+  background(255)
+  rSlider = createSlider(0, 50, 25)
+  verts = [
+    createVector(300, 100),
+    createVector(200, 200),
+    createVector(400, 400),
+    createVector(100, 300),
+    createVector(200, 200),
+    createVector(150, 200),
+  ]
+}
+
+function draw() {
+  background(255)
+  noFill()
+  stroke(0)
+  beginShape()
+  for (const { x, y } of verts) {
+    vertex(x, y)
+  }
+  endShape(CLOSE)
+
+  noStroke()
+  fill(255, 0, 0, 100)
+  drawRounded(verts, rSlider.value())
+}
+
+function drawRounded(points, r) {
+  beginShape()
+  for (let i = 0; i < points.length; i++) {
+    const a = points[i]
+    const b = points[(i+1) % points.length]
+    const c = points[(i+2) % points.length]
+    const ba = a.copy().sub(b).normalize()
+    const bc = c.copy().sub(b).normalize()
+    
+    // Points in the direction the corner is accelerating towards
+    const normal = ba.copy().add(bc).normalize()
+    
+    // Shortest angle between the two edges
+    const theta = ba.angleBetween(bc)
+    
+    // Find the circle radius that would cause us to round off half
+    // of the shortest edge. We leave the other half for neighbouring
+    // corners to potentially cut.
+    const maxR = min(a.dist(b), c.dist(b))/2 * abs(sin(theta / 2))
+    const cornerR = min(r, maxR)
+    // Find the distance away from the corner that has a distance of
+    // 2*cornerR between the edges
+    const distance = abs(cornerR / sin(theta / 2))
+    
+    // Approximate an arc using a cubic bezier
+    const c1 = b.copy().add(ba.copy().mult(distance))
+    const c2 = b.copy().add(bc.copy().mult(distance))
+    const bezierDist = 0.5523 // https://stackoverflow.com/a/27863181
+    const p1 = c1.copy().sub(ba.copy().mult(2*cornerR*bezierDist))
+    const p2 = c2.copy().sub(bc.copy().mult(2*cornerR*bezierDist))
+    vertex(c1.x, c1.y)
+    bezierVertex(
+      p1.x, p1.y,
+      p2.x, p2.y,
+      c2.x, c2.y
+    )
+  }
+  endShape(CLOSE)
+}
+</script>
+<p></p>
+
 
 And that's a wrap! If there are any unclear notions, mistakes or questions, feel free to leave me a comment or reach out to me on social media! If you find this post useful, consider supporting me by sharing it or following me on my social medias. Otherwise, cheers and happy sketching!
