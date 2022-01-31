@@ -5,7 +5,7 @@ categories:
   - p5js
 description: An approach for creating all sorts of different smooth shapes in p5, using the canvas rendering context.
 thumbnail_path: https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/sand.mp4
-published: false
+published: true
 exclude_rss: true
 ---
 
@@ -27,7 +27,7 @@ exclude_rss: true
 9. <a href='#ctx'>The rendering context</a>
 10. <a href='#drawing'>Drawing the final shape</a>
 
-<h2>Further Improvements</h2>
+<h2><a href='#further'>Further Improvements</h2>
 1. <a href='#p5vec'>Blindman67's method using p5 vectors</a>
 2. <a href='#dave'>Dave's acceleration method</a>
 3. <a href='#bezier'>Dave's Bezier curve method</a>
@@ -953,7 +953,9 @@ function roundedPoly(ctx, points, radiusAll) {
 
 Also notice that you can additionally pass a 'radius' to each individual vertex to override the main radius passed to the function call.
 
-<h1>Extra</h1>
+
+
+<h1><a name='p5vec'></a>Further Improvements</h1>
 First off, huge thanks to Dave and Clay from the birbsnest for the feedback! Thanks to Dave (who's a freaking coding wizard), you're getting three additional sections here, firstly we'll update the method that we've discussed so far using the inbuilt p5 vector class and it's functionalities, and secondly we'll have a look at the solution Dave came up with for rounding off corners. He also shared a version using Bezier Curves!
 
 <h2><a name='p5vec'></a>Blindman67's method using p5 vectors</h2>
