@@ -27,7 +27,7 @@ exclude_rss: true
 9. <a href='#ctx'>The rendering context</a>
 10. <a href='#drawing'>Drawing the final shape</a>
 
-<h2><a href='#further'>Further Improvements</h2>
+<h2><a href='#further'>Further Improvements</a></h2>
 1. <a href='#p5vec'>Blindman67's method using p5 vectors</a>
 2. <a href='#dave'>Dave's acceleration method</a>
 3. <a href='#bezier'>Dave's Bezier curve method</a>
