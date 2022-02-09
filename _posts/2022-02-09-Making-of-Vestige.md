@@ -9,7 +9,7 @@ published: false
 exclude_rss: true
 ---
 
-<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+<span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/75.png" alt="">
 </span>
 <p><i>Vestige #75</i></p>
@@ -19,21 +19,43 @@ Originally, Vestige was meant to be a successor for my 'Furbol' GT on fxhash. Fo
 
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/50.png" alt="">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/25.png" alt="">
 </span>
-<p><i>Vestige #50</i></p>
+<p><i>Vestige #25</i></p>
 <p></p>
 
 
-<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/42.png" alt="">
-</span>
-<p><i>Vestige #42</i></p>
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/22.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/16.png" alt="">
+		</span>
+	</div>
+</div>
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<p><i>Vestige #22</i></p>
+	</div>
+	<div class="col-6">
+		<p><i>Vestige #16</i></p>
+	</div>
+</div>
 <p></p>
 
 
-<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+<span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/81.png" alt="">
+</span>
+<p><i>Vestige #81</i></p>
+<p></p>
+
+<span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/93.png" alt="">
 </span>
 <p><i>Vestige #81</i></p>
 <p></p>
