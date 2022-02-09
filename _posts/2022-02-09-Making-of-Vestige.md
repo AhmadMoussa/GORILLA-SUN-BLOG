@@ -5,7 +5,7 @@ categories:
   - p5js
 description: Notes and thoughts on my generative fxhash token 'Vestige'
 thumbnail_path: https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/sand.mp4
-published: true
+published: false
 exclude_rss: true
 ---
 
@@ -15,7 +15,7 @@ exclude_rss: true
 <p><i>Vestige #75</i></p>
 <p></p>
 
-Originally, Vestige was meant to be a successor for my 'Furbol' GT on fxhash. For the 30th prompt of genuary 'Organic looking output only using rectangles' I made this fluffy texture with the same layering technique that I had previously used for a couple of my artworks, including the Furbols.
+For the 30th prompt of genuary 'Organic looking output only using rectangles' I made this fluffy texture with the same layering technique that I had previously used for a couple of my artworks (including the Furbols):
 
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
