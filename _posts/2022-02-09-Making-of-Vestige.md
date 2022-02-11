@@ -100,7 +100,7 @@ And to glue everything together we need to add some grain. Now we have a noticea
 <p><i>Vestige #25</i></p>
 <p></p>
 
-However interesting, these backgrounds are a bit bland. I wanted to decorate them a little, and make them visually a bit more interesting. One of my first ideas was to add cracks and fissures reminiscent of an old, brittle wall. After initial version, my partner commented and said "What are these? Ancient writing systems?", and I liked that idea so I leaned into it.
+However interesting, these backgrounds are a bit bland. I wanted to decorate them a little, and make them visually a bit more interesting. One of my first ideas was to add cracks and fissures reminiscent of an old, brittle wall. After initial version, my partner commented and said "What is this? Some kind of ancient writing system?", and I liked that idea so I leaned into it.
 
 Instead of utilizing regular lines or dashed ones (that can be achieved through the drawingContext), I made my own! For this process we also step through the canvas from the left to right. Then in each of these sections we randomly choose a starting point for our line (we position it somewhere in the upper half of the canvas) and an end point (somewhere in the bottom half at random):
 
