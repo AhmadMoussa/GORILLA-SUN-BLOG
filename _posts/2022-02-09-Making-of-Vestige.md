@@ -86,11 +86,66 @@ And to glue everything together we need to add some grain. Now we have a noticea
 
 <h2>Ancient writing System</h2>
 
-<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+<span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/25.png" alt="">
 </span>
 <p><i>Vestige #25</i></p>
 <p></p>
+
+However interesting, these backgrounds are a bit bland. I wanted to decorate them a little, and make them visually a bit more interesting. One of my first ideas was to add cracks and fissures reminiscent of an old, brittle wall. After initial version, my partner commented and said "What are these? Ancient writing systems?", and I liked that idea so I leaned into it.
+
+Instead of utilizing regular lines or dashed ones (that can be achieved through the drawingContext), I made my own! For this process we also step through the canvas from the left to right. Then in each of these sections we randomly choose a starting point for our line (we position it somewhere in the upper half of the canvas) and an end point (somewhere in the bottom half at random):
+
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/crackspoints.png" alt="">
+</span>
+
+Then we'll draw points downwards from the starting position until we hit that second point. For now, this looks just like a line:
+
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/crackslines.png" alt="">
+</span>
+
+But now we have some options to customize it's style. Let's add some swing to it with a slight sine wave:
+
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/cracksswing.png" alt="">
+</span>
+
+Next we cann build in some rules to control the size of the drawn dots. We can do this with good old perlin noise:
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/cracks1.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/cracks2.png" alt="">
+		</span>
+	</div>
+</div>
+
+As you notice this line disconnects sometimes and then picks up again, we can do this with a clause that checks if the returned perlin noise value at the coordinate of a certain point drops below a certain threshold. Doing so at different scales allows for different line styles. Next we can add some ornamentation, for example we could sprout some branches at randome:
+
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/cracksbranch.png" alt="">
+</span>
+
+Or other other ornametations that briefly interrupt the flow of the line:
+
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/crackscirc.png" alt="">
+</span>
+
+
+
+
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/crackslines.png" alt="">
+</span>
+
 
 
 <div class="row gtr-50 gtr-uniform">
