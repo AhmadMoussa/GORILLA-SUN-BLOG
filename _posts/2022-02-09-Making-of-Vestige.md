@@ -9,9 +9,9 @@ published: true
 exclude_rss: true
 ---
 
-<p style="margin: 0 0 0 0;">
-<span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
-	<img class="viewable" style="margin: 0 0 0 0;" src="https://gorillasun.de/assets/images/vestiges/75.png" alt="">	
+<p style="margin: 0 0 0px 0;">
+<span class="image fit" style="margin: 0 0 0px 0; padding: 0 0 0 0;">
+	<img class="viewable" style="margin: 0 0 0px 0;" src="https://gorillasun.de/assets/images/vestiges/75.png" alt="">	
 </span>
 </p>
 <p><i>Vestige #75</i></p>
