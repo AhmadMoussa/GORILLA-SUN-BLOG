@@ -145,6 +145,27 @@ And finally some ornamentations in between the lines:
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/cracksornament.png" alt="">
 </span>
 
+Putting all of this together we can obtain a variety of outputs. I spent far too long just refreshing my browser to see 'just one more' version. Here are a few random ones:
+
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/rand.png" alt="">
+</span>
+
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/rand2.png" alt="">
+</span>
+
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/rand3.png" alt="">
+</span>
+
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/rand4.png" alt="">
+</span>
+
+
+<h2>Mint Reveals</h2>
+This wasn't a very technical post, but maybe it gave you some insight into what went into the making of Vestige. Vestige was minted as a <a href='https://www.fxhash.xyz/generative/slug/vestige'>generative token on fxhash</a> and here a few more of my favorite mint reveals:
 
 
 <div class="row gtr-50 gtr-uniform">
@@ -169,7 +190,6 @@ And finally some ornamentations in between the lines:
 </div>
 <p></p>
 
-
 <span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/81.png" alt="">
 </span>
@@ -181,3 +201,5 @@ And finally some ornamentations in between the lines:
 </span>
 <p><i>Vestige #93</i></p>
 <p></p>
+
+Thanks for reading!
