@@ -214,4 +214,4 @@ This wasn't a very technical post, but maybe it gave you some insight into what 
 <p><i>Vestige #93</i></p>
 <p></p>
 
-Thanks for reading!
+Thanks for reading and happy sketching!
