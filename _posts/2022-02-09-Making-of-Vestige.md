@@ -102,7 +102,7 @@ And to glue everything together we need to add some grain. Now we have a noticea
 
 However interesting, these backgrounds are a bit bland. I wanted to decorate them a little, and make them visually a bit more interesting. One of my first ideas was to add cracks and fissures reminiscent of an old, brittle wall. After initial version, my partner commented and said "What is this? Some kind of ancient writing system?", and I liked that idea so I leaned into it.
 
-Instead of utilizing regular lines or dashed ones (that can be achieved through the drawingContext), I made my own! For this process we also step through the canvas from the left to right. Then in each of these sections we randomly choose a starting point for our line (we position it somewhere in the upper half of the canvas) and an end point (somewhere in the bottom half at random):
+Instead of utilizing regular lines or dashed ones (that can be achieved through the drawingContext), I made my own! For this process we also step through the canvas from the left to right, then in each of these sections we randomly choose a starting point for our line (we position it somewhere in the upper half of the canvas) and an end point (somewhere in the bottom half at random):
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/crackspoints.png" alt="">
@@ -141,7 +141,7 @@ As you notice this line disconnects sometimes and then picks up again, we can do
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/cracksbranch.png" alt="">
 </span>
 
-Or other other ornametations that briefly interrupt the flow of the line:
+Or other ornametations that briefly interrupt the flow of the line:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/crackscirc.png" alt="">
