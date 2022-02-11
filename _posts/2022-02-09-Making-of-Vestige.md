@@ -66,10 +66,10 @@ In each of these regions we'll draw many rectangles, and randomiye their shape a
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/regionstransp255.png" alt="">
 </span>
 
-This doesn' change much, since if only one of the drawn rectangles botains an alpha value of 255, the other transparent layers won't affect it anymore. We need to bring down this range way down. Here the alpha value can obtain a random value between 0 and 6:
+This doesn' change much, since if only one of the drawn rectangles botains an alpha value of 255, the other transparent layers won't affect it anymore. We need to bring this range way down so that . Here the alpha value can obtain a random value between 0 and 6:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/regionstrasnp6.png" alt="">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/regionstransp6.png" alt="">
 </span>
 
 Afterwards we can also play a bit with the blend mode in p5, such that prior to drawing some rectangles we call a different blendMode than the default BLEND one. Here I give a 50/50 chance to using the HARD_LIGHT and BLEND blend modes. The difference is subtle however:
@@ -84,6 +84,7 @@ And to glue everything together we need to add some grain. Now we have a noticea
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/regionsgrain.png" alt="">
 </span>
 
+<h2>Ancient writing System</h2>
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/25.png" alt="">
