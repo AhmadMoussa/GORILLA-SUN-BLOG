@@ -5,7 +5,7 @@ categories:
   - p5js
 description: Notes and thoughts on my generative fxhash token 'Vestige'
 thumbnail_path: https://gorillasun.de/assets/images/2022-01-20-An-algorithm-for-polygons-with-rounded-corners/sand.mp4
-published: false
+published: true
 exclude_rss: true
 ---
 
