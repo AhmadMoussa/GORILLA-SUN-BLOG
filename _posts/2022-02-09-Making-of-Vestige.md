@@ -10,9 +10,9 @@ exclude_rss: true
 ---
 
 <span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
-	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/75.png" alt="">
-	<p><i>Vestige #75</i></p>
+	<img class="viewable" style="margin: 0 0 0 0;" src="https://gorillasun.de/assets/images/vestiges/75.png" alt="">	
 </span>
+<p><i>Vestige #75</i></p>
 <p></p>
 
 <h2>A bit of history</h2>
