@@ -9,26 +9,32 @@ published: true
 exclude_rss: true
 ---
 
+<p style="margin: 0 0 0 0;">
 <span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
 	<img class="viewable" style="margin: 0 0 0 0;" src="https://gorillasun.de/assets/images/vestiges/75.png" alt="">	
 </span>
+</p>
 <p><i>Vestige #75</i></p>
 <p></p>
 
 <h2>A bit of history</h2>
 Ever since I've come across Tyler Hobbs' essay <a href='https://tylerxhobbs.com/essays/2020/how-to-hack-a-painting'>'How to hack a painting'</a>, I've been utterly obsessed with simulating watercolor-esque textures in p5. Following the pointers in the essay and spending a long time experimenting and tweaking I think I've had some success at it. Here's one render that I'm really proud of:
 
+<p style="margin: 0 0 0 0;">
 <span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/gorilla sun 2021/November/painterly.jfif" alt="">
 </span>
+</p>
 <p><i>Painterly</i></p>
 <p></p>
 
 Some have described this texture as 'painterly', which I think is an apt description. I reused tweaked versions of this technique on several occasions, such as the 30th prompt of genuary: 'Organic looking output only using rectangles'. In some way this was a little bit of a flex, but also a demonstration of the versatility of this technique:
 
+<p style="margin: 0 0 0 0;">
 <span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/Furboland.png" alt="">
 </span>
+</p>
 <p><i>Organic looking output using only rectangular shapes</i></p>
 <p></p>
 
