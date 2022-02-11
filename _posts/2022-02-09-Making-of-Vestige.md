@@ -124,12 +124,12 @@ Next we cann build in some rules to control the size of the drawn dots. We can d
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/cracks1.png" alt="">
 		</span>
 	</div>
 	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/cracks2.png" alt="">
 		</span>
 	</div>
