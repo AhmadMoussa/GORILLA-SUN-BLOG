@@ -139,11 +139,10 @@ Or other other ornametations that briefly interrupt the flow of the line:
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/crackscirc.png" alt="">
 </span>
 
-
-
+And finally some ornamentations in between the lines:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/crackslines.png" alt="">
+	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/cracksornament.png" alt="">
 </span>
 
 
