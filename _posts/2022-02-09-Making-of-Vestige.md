@@ -72,7 +72,7 @@ In each of these regions we'll draw many rectangles, and randomize their shape a
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/regionstransp255.png" alt="">
 </span>
 
-This doesn't change much, since if only one of the drawn rectangles botains an alpha value of 255, the other transparent layers won't affect it anymore. We need to bring this range way down so that. Here the alpha value can obtain a random value between 0 and 6:
+This doesn't change much, since if only one of the drawn rectangles obtains an alpha value of 255, the other transparent layers won't affect it anymore. We need to bring this range way down so that. Here the alpha value can obtain a random value between 0 and 6:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/regionstransp6.png" alt="">
