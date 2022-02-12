@@ -39,7 +39,7 @@ Some have described this texture as 'painterly', which I think is an apt descrip
 <p></p>
 
 <h2>Making of Vestige</h2>
-This technique was the starting point for vestige. Depending on the positioning, the number of layers and the type of shape used, you can obtain various different textures. Even though it's takes a moment to run, the generated backgrounds are so much more interesting than plain regular background:
+This technique was the starting point for vestige. Depending on the positioning, the number of layers and the type of shape used, you can obtain various different textures. Even though it takes a moment to run, the generated backgrounds are so much more interesting than plain regular background:
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -60,19 +60,19 @@ This type of layering also enabled me to get away with bolder color choices, in 
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/watercolor.png" alt="">
 </span>
 
-In some of them it might be a bit more obvious than others, but we partition the background in horiyontal regions. Each ergion obtains two distinct colors, one to color the top part and another than colors the botton part:
+In some of them it might be a bit more obvious than others, but we partition the background in horizontal regions. Each region obtains two distinct colors, one to color the top part and another than colors the botton part:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/regions.png" alt="">
 </span>
 
-In each of these regions we'll draw many rectangles, and randomiye their shape and size. This looks very ugly, but we're not done just yet. Next we'll have to play with the transparency of the color. In p5 the fourth argument of the fill() and stroke() function calls allow you to control this transparency. Let's try assigning a random value between 0 and 255 to this channel:
+In each of these regions we'll draw many rectangles, and randomize their shape and size. This looks very ugly, but we're not done just yet. Next we'll have to play with the transparency of the color. In p5 the fourth argument of the fill() and stroke() function calls allow you to control this transparency. Let's try assigning a random value between 0 and 255 to this channel:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/regionstransp255.png" alt="">
 </span>
 
-This doesn' change much, since if only one of the drawn rectangles botains an alpha value of 255, the other transparent layers won't affect it anymore. We need to bring this range way down so that . Here the alpha value can obtain a random value between 0 and 6:
+This doesn't change much, since if only one of the drawn rectangles botains an alpha value of 255, the other transparent layers won't affect it anymore. We need to bring this range way down so that. Here the alpha value can obtain a random value between 0 and 6:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/regionstransp6.png" alt="">
@@ -120,7 +120,7 @@ But now we have some options to customize it's style. Let's add some swing to it
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/cracksswing.png" alt="">
 </span>
 
-Next we cann build in some rules to control the size of the drawn dots. We can do this with good old perlin noise:
+Next we can build in some rules to control the size of the drawn dots. We can do this with good old perlin noise:
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -135,7 +135,7 @@ Next we cann build in some rules to control the size of the drawn dots. We can d
 	</div>
 </div>
 
-As you notice this line disconnects sometimes and then picks up again, we can do this with a clause that checks if the returned perlin noise value at the coordinate of a certain point drops below a certain threshold. Doing so at different scales allows for different line styles. Next we can add some ornamentation, for example we could sprout some branches at randome:
+As you notice this line disconnects sometimes and then picks up again, we can do this with a clause that checks if the returned perlin noise value at the coordinate of a certain point drops below a certain threshold. Doing so at different scales allows for different line styles. Next we can add some ornamentation, for example we could sprout some branches at random:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 	<img class="viewable" src="https://gorillasun.de/assets/images/vestiges/cracksbranch.png" alt="">
