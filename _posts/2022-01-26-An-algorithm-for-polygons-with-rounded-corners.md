@@ -1039,7 +1039,7 @@ function roundedPoly(ctx, points, radiusAll) {
 
     (radDirection = 1), (drawDirection = false);
     if (sinA90 < 0) {
-      angle < 0 ? (angle += PI) : ((radDirection = -1), (drawDirection = true));
+      angle < 0 ? (angle += PI) : ((angle += PI), (radDirection = -1), (drawDirection = true));
     } else {
       angle > 0 ? ((radDirection = -1), (drawDirection = true)) : 0;
     }
