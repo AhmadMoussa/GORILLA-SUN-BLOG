@@ -36,44 +36,10 @@ exclude_rss: true
 </span>
 
 
-<div class="row gtr-50 gtr-uniform">
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/abstractvegetation.png" alt="">
-		</span>
-	</div>
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/abstractvegetation2.png" alt="">
-		</span>
-	</div>
-</div>
 
-<div class="row gtr-50 gtr-uniform">
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/tiles1.png" alt="">
-		</span>
-	</div>
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/tiles2.png" alt="">
-		</span>
-	</div>
-</div>
 
-<div class="row gtr-50 gtr-uniform">
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/tiles3.png" alt="">
-		</span>
-	</div>
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/tiles4.png" alt="">
-		</span>
-	</div>
-</div>
+
+
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
   <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/tiles.png" alt="">
@@ -147,6 +113,18 @@ Since we're only going to draw hexagons, we can omit the numSides input paramete
 
 
 <h2>The grid method</h2>
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/tiles1.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/tiles3.png" alt="">
+		</span>
+	</div>
+</div>
 
 At first I wanted to call this the 'naive' way of constructing a hexagonal lattice, but I don't think it deserves to be labeled as such, since occasionally it has advantages over the following methods (depending on the sketch you might want to do it this way). I believe that the caveat here is thinking of a hexagonal lattice as a 'grid', when it is a lot more than that!
 
@@ -290,6 +268,18 @@ function draw(){
 <p></p>
 
 <h2>Hexagon Spirals</h2>
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/abstractvegetation.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/abstractvegetation2.png" alt="">
+		</span>
+	</div>
+</div>
 
 Rather than drawing a grid in a top down, left to right manner, this method starts at a given point and paves it's way outwards spiraling around the already drawn hexagons. Here's a visualization of how this works:
 
@@ -460,6 +450,18 @@ Okay, this was tough to explain, but I hope it makes sense. If there are any unc
 
 
 <h2>Recursive subdivision method</h2>
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/flowers.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jap.png" alt="">
+		</span>
+	</div>
+</div>
 
 If you're a fan of the honeycomb shape, then you'll love the sweet recursive way to do it:
 
@@ -482,6 +484,18 @@ function recursiveHexagon(cX, cY, depth, r){
 This is the first time that I talk about a recursion on the blog. So for those not familiar, something is called 'recursive' is when you call a method from within itself. Naturally, if done wrong, you'll end up with your machine exploding. But when done correctly you can achieve some pretty neat results, and often in a lot less code!
 
 
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/bubblepop3.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/bubblepop.png" alt="">
+		</span>
+	</div>
+</div>
 
 
 
