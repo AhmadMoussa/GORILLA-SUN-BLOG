@@ -5,7 +5,7 @@ categories:
   - p5js
 description: A tutorial on multiple ways to create a hexagonal grid in p5js
 thumbnail_path: https://gorillasun.de/assets/images/hexagons/hexagon.mp4
-published: true
+published: false
 exclude_rss: true
 ---
 
@@ -13,19 +13,12 @@ exclude_rss: true
   <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jewelsbanner.png" alt="">
 </span>
 
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+  <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/tiles.png" alt="">
+</span>
 
-<div class="row gtr-50 gtr-uniform">
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/roses.png" alt="">
-		</span>
-	</div>
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jestercap.png" alt="">
-		</span>
-	</div>
-</div>
+
+
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
   <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/texture.png" alt="">
@@ -41,9 +34,6 @@ exclude_rss: true
 
 
 
-<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-  <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/tiles.png" alt="">
-</span>
 
 
 Hexagonal grids have many names, depending on the context. Maybe the first term that comes to mind is the honeycomb lattice, where the term lattice has implications for physics and chemistry. Joh Conway called it the hextille (https://en.wikipedia.org/wiki/Hexagonal_tiling),  which also has a nice ring to it. In geometry we would call it a 'hexagonal tiling' or 'hexagonal tesselation'. Note that Tesselation is a vast and incredibly interesting field of mathematics (https://en.wikipedia.org/wiki/Tessellation), that one could study for hours and draw endless inspiration from. You can dip your toes into it with this Veritasum video (https://www.youtube.com/watch?v=48sCx-wBs34&ab_channel=Veritasium).
@@ -59,6 +49,21 @@ Hexagonal grids have many names, depending on the context. Maybe the first term 
 7. other methods
 10. Beyond Hexagonal tesselations
 
+
+
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/roses.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jestercap.png" alt="">
+		</span>
+	</div>
+</div>
 
 <h2>Drawing a hexagon in p5</h2>
 
