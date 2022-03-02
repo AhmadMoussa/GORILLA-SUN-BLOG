@@ -13,7 +13,7 @@ exclude_rss: true
   <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jewelsbanner.png" alt="">
 </span>
 
-<h2>A little bit of terminology</h2>
+<h2>A little bit of Terminology</h2>
 One aspect of writing these posts, that I haven't quite mastered yet, is choosing titles. Ideally, I'd like to maximise the number of people that fall into the intersection of the Venn diagram comprised of 'those to whom my content is meaningful' and 'those that end up clicking on my website'. And my post titles are usually the most important factor! This time again, it was a doozy, since hexagonal grids are transverse to multiple fields. 
 
 Depending on the context, a hexagonal grid can be called a number of different things. However, for creative coding purposes I think that the term 'Grid' is the most fitting. When I started working on this post, I wanted to call it a 'A guide to Hexagonal lattices', but in some way that is misleading. Googling the term 'hexagonal lattice' yields a bunch of research papers, that study 'lattices' in the context of <a href='https://www.mrl.ucsb.edu/~seshadri/old/Chem173B/galen_1_cryst.pdf'>Crystallography</a>, <a href='https://www.sciencedirect.com/topics/computer-science/hexagonal-lattice'>micro structures</a> and other fields of science that I have absolutely no clue about. So even though the term lattice literally means 'and interlaced structure', it implies some sort of functional purpose. 
