@@ -37,7 +37,7 @@ Terminology aside, I've made a list of three methods that one can use for the co
 
 
 1. <a href='#hex'>Drawing a Hexagon</a>
-2. <a href='#grid'>Constructin a Grid</a>
+2. <a href='#grid'>Constructing a Grid</a>
 3. <a href='#spiralo'>Hexagon Spirals</a>
 4. <a href='#spiral1'>Spiral Method 1</a>
 5. <a href='#spiral2'>Spiral Method 2</a>
@@ -46,7 +46,7 @@ Terminology aside, I've made a list of three methods that one can use for the co
 
 <h2><a name='hex'></a>Drawing a Hexagon</h2>
 
-The first step we need to tackle, is how to draw a singular hexagon in p5. I believe that the most sensible approach to doing so is by using trigonometry.
+The first step we need to tackle, is how to draw a singular hexagon in p5. I believe that the most sensible approach to doing so is by using trigonometry, and for that it's good to first refresh on some properties of equilateral polygons.
 
 A regular polygon satisfies two properties: it is equiangular and equilateral. Meaning that the value of it's vertex angles are equal, and it's sides are of equal length. In this manner, the vertices of any regular polygon, with any number of sides, all lie on a <a href='https://en.wikipedia.org/wiki/Regular_polygon'>common circle</a>. We can leverage this property to construct our hexagons (or any other regular polygon for that matter).
 
@@ -81,7 +81,7 @@ function drawHexagon(centerX, centerY, radius, numSides){
 }
 </code></pre>
 
-Go through the code and have a look at the comments, they should explain the purpose of every statement. We make use of P5's beginShape() and endShape() to draw our hexagon. Also make sure to add the 'CLOSE' statement in the endShape() function to close up our hexagon. Heere's a condensed version of the function:
+Go through the code and have a look at the comments, they should explain the purpose of every statement. We make use of P5's beginShape() and endShape() to draw our hexagon. Also make sure to add the 'CLOSE' statement in the endShape() function to close up our hexagon. Here's a condensed version of the function:
 
 <pre><code>function drawHexagon(cX, cY, r){
   beginShape()
@@ -92,7 +92,7 @@ Go through the code and have a look at the comments, they should explain the pur
 }
 </code></pre>
 
-Since we're only going to draw hexagons, we can also omit the numSides input parameter.
+Since we're only going to draw hexagons, we can also omit the numSides input parameter. Next up is how to draw a bunch of hexagons and arrange them into a tightly packed grid.
 
 <h2><a name='grid'></a>Constructing a Grid</h2>
 <div class="row gtr-50 gtr-uniform">
@@ -479,133 +479,6 @@ Why do we need (side%6==0) in the condition? Well, every loop we make around, we
 
 
 <h2><a name='recursive'></a>Recursive subdivision method</h2>
-<div class="row gtr-50 gtr-uniform">
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/flowers.png" alt="">
-		</span>
-	</div>
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jap.png" alt="">
-		</span>
-	</div>
-</div>
-
-
-This is actually the first time that I write about a recursive method on the blog. So for the uninitiated, a function is denoted as 'recursive', when said function invokes itself from within itself. Naturally, if done wrong, you'll end up with your machine exploding! But when done correctly you can achieve some pretty neat results, and often in a lot less code! Hence, to achieve a recursive hexagonal grid, we'll construct it in the following manner:
-
-<pre><code>function recursiveHexagon(cX, cY, depth, r){
-  for(let a = 0; a<TAU; a+=TAU/6){
-    var x = cX + r * cos(a)
-    var y = cY + r * sin(a)
-
-    strokeWeight(2)
-    point(x,y)
-
-    if(depth > 0){
-      recursiveHexagon(x,y,depth-1,r/2)
-    }
-  }
-}
-</code></pre>
-
-Generally, recursive methods consist of two parts, namely a 'base case' and a 'recursive step'. The recursive step, is simply the function calling itself. The base case on the other hand serves to protect from a problem that often occurs with recursive methods. The base case prevents the recursive function calling itself in an infinite loop! 
-
-For our purposes we make use of a parameter called 'depth', that gets decremented by 1 each recursive call, by passing 'depth - 1' to the recursive call. If this depth parameter becomes zero, we stop recursing. Note that our method actually makes 6 recursive calls! Here's how this works:
-
-<div class="row gtr-50 gtr-uniform">
-	<div class="col-3">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r1.png" alt="">
-		</span>
-	</div>
-	<div class="col-3">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r2.png" alt="">
-		</span>
-	</div>
-	<div class="col-3">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r3.png" alt="">
-		</span>
-	</div>
-	<div class="col-3">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r4.png" alt="">
-		</span>
-	</div>
-</div>
-
-Hexagons have this beautiful self-symmetric property, that you approximately get another hexagon when you place a half-size hexagon at each vertex of the original hexagon! We leverage this for our recursive method, each call placing smaller hexagons at the vertices of the previous ones. Here's a working example:
-
-<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
-function setup() {
-  w = min(windowWidth, windowHeight)
-  createCanvas(w, w);
-
-  maxRecursion = 4
-
-  rad = 150
-  sR = rad/(maxRecursion - 1)/4
-
-  strokeJoin(ROUND)
-
-}
-
-
-function draw() {
-  background(0);
-  translate(w/2, w/2)
-
-  stroke(255)
-  fill(255,20)
-  noFill()
-  strokeWeight(1)
-
-  recursiveHexagon(0,0,maxRecursion,rad)
-
-
-  noLoop()
-}
-
-
-function drawHexagon(cX, cY, r){
-
-  beginShape()
-  for(let a = TAU/12; a < TAU + TAU/12; a+=TAU/6){
-    var x1 = cX + r * cos(a)
-    var y1 = cY + r * sin(a)
-
-    vertex(x1, y1)
-  }
-  endShape(CLOSE)
-}
-
-function recursiveHexagon(cX, cY, depth, r){
-
-  for(let a = 0; a<TAU; a+=TAU/6){
-    var x = cX + r * cos(a)
-    var y = cY + r * sin(a)
-
-    drawHexagon(cX,cY,r)
-    if(depth == 0){
-      drawHexagon(cX,cY,r)
-      //drawHexagon(x,y,r/2)
-    }
-
-    if(depth > 0){
-      recursiveHexagon(cX,cY,depth-1,r/2)
-      recursiveHexagon(x,y,depth-1,r/2)
-    }
-  }
-}
-
-</script>
-<p></p>
-
-
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -623,11 +496,155 @@ function recursiveHexagon(cX, cY, depth, r){
 
 
 
+This is actually the first time that I write about a recursive method on the blog. So for the uninitiated, a function is denoted as 'recursive', when said function invokes itself from within itself. Naturally, if done wrong, you'll end up with your machine exploding! But when done correctly you can achieve some pretty neat results, and often feels really satisfying! Hence, to achieve a recursive hexagonal grid, we'll construct it in the following manner:
+
+<pre><code>function recursiveHexagon(cX, cY, depth, r){
+  if(depth == 0){
+    drawHexagon(cX,cY,r)
+  }else{
+    for(let a = 0; a<TAU; a+=TAU/6){
+      var x = cX + r * cos(a)
+      var y = cY + r * sin(a)
+
+      if(depth > 0){
+        recursiveHexagon(cX,cY,depth-1,r/2)
+        recursiveHexagon(x,y,depth-1,r/2)
+      }
+    }
+  }
+}
+</code></pre>
+
+Generally, recursive methods consist of two parts, namely a 'base case' and a 'recursive step'. The recursive step, is simply the part where the function calls itself. The base case on the other hand serves to protect from a problem that often occurs with recursive methods. The base case prevents the recursive function calling itself in an infinite loop, and usually terminates execution, such that the pending function calls can resolve (similar to the stack in MTG).
+
+For our purposes we make use of a parameter called 'depth', that gets decremented by 1 each recursive call, by passing 'depth - 1' to the recursive call. If this depth parameter becomes zero, we stop recursing. Note, that our method actually makes 6 recursive calls! Here's how this works:
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r1.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r2.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+</div>
+
+<div class="row gtr-50 gtr-uniform">
+	<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r3.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r4.png" alt="">
+		</span>
+	</div>
+</div>
+
+Hexagons have this beautiful self-symmetric property, that you approximately get another hexagon when you place a half-size hexagon at each vertex of the original hexagon! (plus one at the center) We leverage this for our recursive method, each call placing smaller hexagons at the vertices of the previous ones. Here's a working example:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  w = min(windowWidth, windowHeight)
+  createCanvas(w, w);
+
+  maxRecursionDepth = 4
+  rad = w/5
+  
+  strokeJoin(ROUND)
+}
 
 
+function draw() {
+  background(0);
+  translate(w/2, w/2)
+
+  stroke(255)
+  noFill()
+  strokeWeight(1)
+
+  recursiveHexagon(0,0,maxRecursionDepth,rad)
+  noLoop()
+}
 
 
-Hexagonal Grid related methods and resources that go beyond drawing: https://www.redblobgames.com/grids/hexagons/#:~:text=In%20the%20pointy%20orientation%2C%20a,from%20sin(60%C2%B0).&text=The%20horizontal%20distance%20between%20adjacent,is%20h%20*%203%2F4%20.
+function drawHexagon(cX, cY, r){
+  beginShape()
+  for(let a = TAU/12; a < TAU + TAU/12; a+=TAU/6){
+    var x1 = cX + r * cos(a)
+    var y1 = cY + r * sin(a)
+
+    vertex(x1, y1)
+  }
+  endShape(CLOSE)
+}
+
+function recursiveHexagon(cX, cY, depth, r){
+  if(depth == 0){
+    drawHexagon(cX,cY,r)
+  }else{
+    recursiveHexagon(cX,cY,depth-1,r/2)
+    for(let a = 0; a<TAU; a+=TAU/6){
+      var x = cX + r * cos(a)
+      var y = cY + r * sin(a)
+
+      if(depth > 0){
+        recursiveHexagon(x,y,depth-1,r/2)
+      }
+    }
+  }
+}
+
+</script>
+<p></p>
+
+Here, the base case is when we reach a depth equal to 0. If that is the case we simply draw a hexagon with a radius of r. If that is not the case, we replace our hexagon by 7 new recursive calls, that will either terminate with the base case, or keep recursing until the base case is reached. Thus, simply by setting the 'maxRecursionDepth' paramter, we can control how many subdivision we want to achieve.
 
 
-Tiling interesting question: https://math.stackexchange.com/questions/4187829/can-one-always-tile-the-plane-with-a-regular-polygon-a-single-other-shape
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/rr1.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/rr2.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+</div>
+
+<div class="row gtr-50 gtr-uniform">
+	<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/rr3.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/rr4.png" alt="">
+		</span>
+	</div>
+</div>
+
+Hope this post was useful to you and gets you started with your own hexagonal endeavors. There so much more to explore down the line with regarding tesselation and hexagonal arrangement. Even Truchet tiling is applicable! I hope you enjoyed this post, learned something new and/or got inspired! Happy sketching!
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/flowers.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jap.png" alt="">
+		</span>
+	</div>
+</div>
+
+Additionally, if you want a really extensive resource on hexagonal grids, that is sort of more oriented towards game development, you should definitely check out <a href='https://www.redblobgames.com/grids/hexagons/#:~:text=In%20the%20pointy%20orientation%2C%20a,from%20sin(60%C2%B0).&text=The%20horizontal%20distance%20between%20adjacent,is%20h%20*%203%2F4%20.'>this page by redblobgames that's been constantly updated over the course of several years</a>! 
