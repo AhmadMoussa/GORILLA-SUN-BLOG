@@ -590,7 +590,8 @@ Here, the base case is when we reach a depth equal to 0. If that is the case we 
 </div>
 
 <div class="row gtr-50 gtr-uniform">
-	<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/rr3.png" alt="">
 		</span>
 	</div>
