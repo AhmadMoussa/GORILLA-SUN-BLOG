@@ -507,7 +507,8 @@ For our purposes we make use of a parameter called 'depth', that gets decremente
 </div>
 
 <div class="row gtr-50 gtr-uniform">
-	<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r3.png" alt="">
 		</span>
 	</div>
