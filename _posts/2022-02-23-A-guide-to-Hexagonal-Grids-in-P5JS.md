@@ -33,11 +33,11 @@ Interestingly, John Conway coined it the <a href='https://en.wikipedia.org/wiki/
 	</div>
 </div>
 
-Terminology aside, I've made a list of three methods that one can use for the construction of such a grid:
+Terminology aside, I've made a list of three methods that one can use for the construction of such a grid. Each of which I'll explain in the following section of this post. Here's a quick index:
 
 
 1. <a href='#hex'>Drawing a Hexagon</a>
-2. <a href='#grid'>Grid Method</a>
+2. <a href='#grid'>Constructin a Grid</a>
 3. <a href='#spiralo'>Hexagon Spirals</a>
 4. <a href='#spiral1'>Spiral Method 1</a>
 5. <a href='#spiral2'>Spiral Method 2</a>
@@ -46,18 +46,18 @@ Terminology aside, I've made a list of three methods that one can use for the co
 
 <h2><a name='hex'></a>Drawing a Hexagon</h2>
 
-The first step we need to tackle, is how to draw a singular hexagon in p5. I believe that the most sensible approach to doing so is by utilising trigonometry.
+The first step we need to tackle, is how to draw a singular hexagon in p5. I believe that the most sensible approach to doing so is by using trigonometry.
 
 A regular polygon satisfies two properties: it is equiangular and equilateral. Meaning that the value of it's vertex angles are equal, and it's sides are of equal length. In this manner, the vertices of any regular polygon, with any number of sides, all lie on a <a href='https://en.wikipedia.org/wiki/Regular_polygon'>common circle</a>. We can leverage this property to construct our hexagons (or any other regular polygon for that matter).
 
 A full circle has 360 degrees, or equivalently TAU radians (TAU == 2 * PI). Constructing any regular polygon thus boils down to splitting 360 degrees by the number of sides that the desired polygon has. In the case of a hexagon, we divide a full rotation of 360 degrees by 6, ending up with a value of 60 degrees. We can now use this knowledge to position the hexagon vertices in an equiangular manner around a circle:
 
-<pre><code>
-// Function that draws a hexagon (or any other regular polygon)
+<pre><code>// Function that draws a hexagon (or any other regular polygon)
 // centerX and centerY determine where the polygon is positioned
 // the radius parameter determines the size of the enclosing circle
 // numSides specifies the number of the polygon's sides
 function drawHexagon(centerX, centerY, radius, numSides){
+
   // p5 already has some functionality for drawing more complex shapes
   // beginShape tells p5 that we'll be positioning some vertices in a bit
   beginShape()
@@ -81,7 +81,7 @@ function drawHexagon(centerX, centerY, radius, numSides){
 }
 </code></pre>
 
-Go through the code and have a look at the comments, they should explain the purpose of every statement. And here's a condensed version of the function:
+Go through the code and have a look at the comments, they should explain the purpose of every statement. We make use of P5's beginShape() and endShape() to draw our hexagon. Also make sure to add the 'CLOSE' statement in the endShape() function to close up our hexagon. Heere's a condensed version of the function:
 
 <pre><code>function drawHexagon(cX, cY, r){
   beginShape()
@@ -92,11 +92,9 @@ Go through the code and have a look at the comments, they should explain the pur
 }
 </code></pre>
 
-Since we're only going to draw hexagons, we can omit the numSides input parameter.
+Since we're only going to draw hexagons, we can also omit the numSides input parameter.
 
-
-
-<h2><a name='grid'></a>Grid Method</h2>
+<h2><a name='grid'></a>Constructing a Grid</h2>
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
@@ -110,9 +108,9 @@ Since we're only going to draw hexagons, we can omit the numSides input paramete
 	</div>
 </div>
 
-At first I wanted to call this the 'naive' way of constructing a hexagonal lattice, but I don't think it deserves to be labeled as such, since occasionally it has advantages over the following methods (depending on the sketch you might want to do it this way). I believe that the caveat here is thinking of a hexagonal lattice as a 'grid', when it is a lot more than that!
+At first I wanted to call this the 'naive' way of constructing a hexagonal grid, but I don't think it deserves to be labeled as such, since occasionally it has advantages over the following methods (depending on the sketch you might want to do it this way). I believe that the caveat here is thinking of a hexagonal grid, just as a 'grid', when it is a lot more than that!
 
-Essentially, we'll construct our lattice with a nested for loop, in the same manner that we would construct a rectangular grid:
+Essentially, we'll construct our grid with a nested for loop, in the same manner that we would construct a rectangular grid:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -156,9 +154,9 @@ function draw(){
 </script>
 <p></p>
 
-Ok, so we got a grid... but it doesn't look right at all! The hexagons are arranged, just as if they were sitting on top of a rectangular grid. After all, we programmed it the same way. We'll have to make a couple of modifications! Also note that we are dividing the the value passed to the drawHexagon() function by two, since we need to pass a radius and not a diameter.
+Ok, so we got a grid... but it doesn't look right at all! The hexagons are arranged, just as if they were sitting on top of a rectangular grid. After all, we programmed it in the same way. We'll have to make a couple of modifications! Also note that we are dividing the value passed to the drawHexagon() function by two, since we need to pass a radius and not a diameter.
 
-First, let's space out this grid a little more, simply by multiplying the increment of the inner loop by 1.5:
+First, let's horiyontlly space out this grid a little more. We can do so by multiplying the increment of the inner loop by 1.5:
 
 <pre><code>for(x = 0; x < gridWidth; x+=hexagonSize*1.5){}
 </code></pre>
@@ -166,7 +164,9 @@ First, let's space out this grid a little more, simply by multiplying the increm
 Next up, we'll have to offset every other row. To accomplish this we can keep track of the row number with an additional 'count' variable:
 
 <pre><code>function makeGrid(){
-  count = 0
+
+  count = 0 // init counter
+  
   for(y = 0; y < gridHeight; y+=hexagonSize){
     for(x = 0; x < gridWidth; x+=hexagonSize*1.5){
       drawHexagon(
@@ -175,7 +175,9 @@ Next up, we'll have to offset every other row. To accomplish this we can keep tr
         hexagonSize/2
       )
     }
-    count ++
+    
+    count ++ // increment every row
+    
   }
 }
 </code></pre>
@@ -273,7 +275,7 @@ Rather than drawing a grid in a top down, left to right manner, this method star
 
 <h2><a name='spiral1'></a>Spiral Method 1</h2>
 
-An alternate method to generating a hexagonal grid is by spiraling outwards around an initial hexagon:
+Here's one way to create this hexagon spiral, that simply makes use of a bunch of for loops to do so:
 
 <pre><code>// modified from: https://stackoverflow.com/a/2143499
 function makeSpiral(centerX, centerY, size, count){
@@ -297,11 +299,60 @@ function makeSpiral(centerX, centerY, size, count){
 }
 </code></pre>
 
-This is pretty straightforward, we are stepping around an initial hexagon paving our way with other hexagons. We do this by incrementing two counters x and y that specify the position of the drawn hexagons (we need to multiply by the hexagon size to get the right spacing).
+This is pretty straightforward, we are stepping around an initial hexagon paving our way with other hexagons outwards. We do this by incrementing two counters x and y that specify the position of the drawn hexagons (we need to multiply by the hexagon size to get the right spacing). The further out we go the more hexagons we need to draw on a line/side, this is determined by the variable 'n' in the outer loop. In this manner the count variable controls the number of hexagons that will be found on the longest outer side of the final hexagon cluster.
 
-The further out we go the more hexagons we need to draw on a line/side, this is determined by the variable 'n' in the outer loop. In this manner the count variable controls the number of hexagons that will be found on the longest outer side of the final hexagon cluster.
+However, if you run this snippet as is, you'll notice that the final cluster doesn't quite look right:
 
-However, if you run this snippet as is, you'll notice that the final cluster doesn't quite look right. We still need to apply a transform to the position of the drawn hexagons. In that manner our hexagon function becomes:
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup(){
+  w = min(windowWidth, windowHeight)
+  createCanvas(w, w)
+
+  gridWidth = w
+  gridHeight = w
+  hexagonSize = w/10
+}
+
+function drawHexagon(cX, cY, r){
+  beginShape()
+  for(let a = TAU/12; a < TAU + TAU/12; a+=TAU/6){
+    vertex(cX + r * cos(a), cY + r * sin(a))
+  }
+  endShape(CLOSE)
+}
+
+function makeSpiral(centerX, centerY, size, count){
+  var x = 0;
+  var y = 0;
+
+  s = size/1.75
+
+  push()
+  translate(centerX, centerY)
+  drawHexagon(centerX, centerY, size/1.75)
+  for(let n = 0; n<count; n++ ) {
+    for(let i=0; i<n; i++){x++;drawHexagon(x*s,y*s,s/1.75)}  // move right
+    for(let i=0; i<n-1; i++){y++;drawHexagon(x*s,y*s,s/1.75)} // move down right. Note N-1
+    for(let i=0; i<n; i++){x--;y++;drawHexagon(x*s,y*s,s/1.75)} // move down left
+    for(let i=0; i<n; i++){x--;drawHexagon(x*s,y*s,s/1.75)} // move left
+    for(let i=0; i<n; i++){y--;drawHexagon(x*s,y*s,s/1.75)} // move up left
+    for(let i=0; i<n; i++){x++;y--;drawHexagon(x*s,y*s,s/1.75)} // move up right
+  }
+  pop()
+}
+
+function draw(){
+  background(0);
+
+  makeSpiral(w/2,w/2,hexagonSize, 5);
+
+  noLoop();
+}
+</script>
+<p></p>
+
+We still need to apply a transform to the position of the drawn hexagons and skew them into the right spot. In that manner our hexagon function becomes:
 
 <pre><code>function drawHexagon(cX, cY, r){
   hx = cX + cY/2
@@ -314,6 +365,8 @@ However, if you run this snippet as is, you'll notice that the final cluster doe
   endShape(CLOSE)
 }
 </code></pre>
+
+And a working example of this:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -372,7 +425,7 @@ function draw(){
 
 If you don't like 6 separate for loops, we can do the same thing with only one and a tricky calculation. Here goes the compacter version:
 
-<pre><code>// source: https://stackoverflow.com/a/43913544
+<pre><code>// modified from: https://stackoverflow.com/a/43913544
 function makeSpiral(centerX, centerY, radius, count) {
     var x = centerX
     var y = centerY
@@ -393,17 +446,13 @@ function makeSpiral(centerX, centerY, radius, count) {
 }
 </code></pre>
 
-
-
-Essentially the function accomplishes the same thing similar to the previous version. Similarly to it's little brother, we're stepping in a spiral around our initial hexagon, gradually going outwards. Here we also keep track of our position with the x and y variables:
+Essentially the function accomplishes the same thing similar to the previous version. Similarly to it's little sibling, we're stepping in a spiral around our initial hexagon, gradually going outwards. Here we also keep track of our position with the x and y variables:
 
 <pre><code>y = y - radius * cos(side * angle);
 x = x - radius * sin(side * angle);
 </code></pre>
 
-The variable 'side' being the indicator that tells us in which direction we need to step next (multiplying the angle). Now the inner for loop just needs to be able to determine how many steps we need to take before we are required to increment the side variable and change direction.
-
-This happens in the condition statement of the for loop and is a bit heavy to digest, so let's go through it step by step! Let's have a look at what this calculation does:
+The variable 'side' being the indicator that tells us in which direction we need to step next (multiplying the angle). Now the inner for loop just needs to be able to determine how many steps we need to take before we are required to increment the side variable and change direction. This is accomplished in the condition statement of the for loop and is a bit heavy to digest, so let's go through it step by step! Let's have a look at what this calculation does:
 
 <pre><code>floor((side+4)/6)+(side%6==0)
 </code></pre>
@@ -422,15 +471,11 @@ Next we decrement the count variable and increment the side variable (note that 
 
 Essentially the neat little formula in the for loop condition tells us how many steps we need to take in one direction, before we should increment the variable 'side' and make a turn paving new hexagons onto a new side of the hexagonal spiral.
 
-Why do we need:
+Why do we need (side%6==0) in the condition? Well, every loop we make around, we're gonna need one extra additional hexagon to begin a new lap around. This happens when the 'side' variable assumes a multiple of 6. So basically, every time we complete six sides.
 
-<pre><code>(side%6==0)
-</code></pre>
-
-in the condition? Well, every loop we make around, we're gonna need one extra additional hexagon to begin a new lap around. This happens when the 'side' variable assumes a multiple of 6. So basically, every time we complete six sides.
-
-
-Okay, this was tough to explain, but I hope it makes sense. If there are any unclear points leave me a comment or send me a DM! Alright, onto the next method!
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+  <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/conditionimg.png" alt="">
+</span>
 
 
 <h2><a name='recursive'></a>Recursive subdivision method</h2>
@@ -447,10 +492,10 @@ Okay, this was tough to explain, but I hope it makes sense. If there are any unc
 	</div>
 </div>
 
-If you're a fan of the honeycomb shape, then you'll love the sweet recursive way to do it:
 
-<pre><code>
-function recursiveHexagon(cX, cY, depth, r){
+This is actually the first time that I write about a recursive method on the blog. So for the uninitiated, a function is denoted as 'recursive', when said function invokes itself from within itself. Naturally, if done wrong, you'll end up with your machine exploding! But when done correctly you can achieve some pretty neat results, and often in a lot less code! Hence, to achieve a recursive hexagonal grid, we'll construct it in the following manner:
+
+<pre><code>function recursiveHexagon(cX, cY, depth, r){
   for(let a = 0; a<TAU; a+=TAU/6){
     var x = cX + r * cos(a)
     var y = cY + r * sin(a)
@@ -465,7 +510,9 @@ function recursiveHexagon(cX, cY, depth, r){
 }
 </code></pre>
 
-This is the first time that I talk about a recursion on the blog. So for those not familiar, something is called 'recursive' is when you call a method from within itself. Naturally, if done wrong, you'll end up with your machine exploding. But when done correctly you can achieve some pretty neat results, and often in a lot less code!
+Generally, recursive methods consist of two parts, namely a 'base case' and a 'recursive step'. The recursive step, is simply the function calling itself. The base case on the other hand serves to protect from a problem that often occurs with recursive methods. The base case prevents the recursive function calling itself in an infinite loop! 
+
+For our purposes we make use of a parameter called 'depth', that gets decremented by 1 each recursive call, by passing 'depth - 1' to the recursive call. If this depth parameter becomes zero, we stop recursing. Note that our method actually makes 6 recursive calls!
 
 
 <div class="row gtr-50 gtr-uniform">
