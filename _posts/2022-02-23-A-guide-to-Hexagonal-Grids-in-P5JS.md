@@ -1,11 +1,11 @@
 ---
-title: Hexagonal Grids in P5JS
+title: A guide to Hexagonal Grids in P5JS
 author: Ahmad Moussa
 categories:
   - p5js
 description: A tutorial on multiple ways to create a hexagonal grid in p5js
 thumbnail_path: https://gorillasun.de/assets/images/hexagons/hexagon.mp4
-published: false
+published: true
 exclude_rss: true
 ---
 
@@ -13,12 +13,15 @@ exclude_rss: true
   <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jewelsbanner.png" alt="">
 </span>
 
-Depending on the context, a hexagonal grid can be called a number of different things. For creative coding purposes I think that the term Grid is the most fitting. When I started working on this post, I wanted to call it a 'hexagonal lattice', but in some way that is misleading. Googling the term 'hexagonal lattice' yields a bunch of research papers, that study 'lattices' in the context of <a href='https://www.mrl.ucsb.edu/~seshadri/old/Chem173B/galen_1_cryst.pdf'>Crystallography</a>, <a href='https://www.sciencedirect.com/topics/computer-science/hexagonal-lattice'>micro structures</a> and other fields of science that I have absolutely no clue about. So even though the term lattice literally means 'and interlaced structure', it implies a functional purpose in some manner. 
+<h2>A little bit of terminology</h2>
+One aspect of writing these posts, that I haven't quite mastered yet, is choosing titles. Ideally, I'd like to maximise the number of people that fall into the intersection of the Venn diagram comprised of 'those to whom my content is meaningful' and 'those that end up clicking on my website'. And my post titles are usually the most important factor! This time again, it was a doozy, since hexagonal grids are transverse to multiple fields. 
 
-Joh Conway called it the hextille (https://en.wikipedia.org/wiki/Hexagonal_tiling),  which also has a nice ring to it.
+Depending on the context, a hexagonal grid can be called a number of different things. However, for creative coding purposes I think that the term 'Grid' is the most fitting. When I started working on this post, I wanted to call it a 'A guide to Hexagonal lattices', but in some way that is misleading. Googling the term 'hexagonal lattice' yields a bunch of research papers, that study 'lattices' in the context of <a href='https://www.mrl.ucsb.edu/~seshadri/old/Chem173B/galen_1_cryst.pdf'>Crystallography</a>, <a href='https://www.sciencedirect.com/topics/computer-science/hexagonal-lattice'>micro structures</a> and other fields of science that I have absolutely no clue about. So even though the term lattice literally means 'and interlaced structure', it implies some sort of functional purpose. 
 
-In geometry we would call it a 'hexagonal tiling' or 'hexagonal tesselation'. Note that Tesselation is a vast and incredibly interesting field of mathematics (https://en.wikipedia.org/wiki/Tessellation), that one could study for hours and draw endless inspiration from. You can dip your toes into it with this Veritasum video (https://www.youtube.com/watch?v=48sCx-wBs34&ab_channel=Veritasium).
+Interestingly, John Conway coined it the <a href='https://en.wikipedia.org/wiki/Hexagonal_tiling'>hextille</a>. Which also has a nice ring to it, but I couldn't find out why, when or for what purpose he gave it this name. I assume he was studying different types of tilings. Hence, for geometric purposes we could also call it a 'hexagonal tiling' or 'hexagonal tesselation'. Note that the field of <a href='https://en.wikipedia.org/wiki/Tessellation'>Tesselation</a> is not only interesting to those looking to decorate their bathroom, but it is in fact a vast and incredibly interesting field of mathematics. You can dip your toes into it with this <a href='https://www.youtube.com/watch?v=48sCx-wBs34&ab_channel=Veritasium'>Veritasum</a> video. Lastly, we could also call it a 'Honeycomb' due to it's resemblance to a beehive's structure. Which term do you think is the most appropriate one?
 
+
+Terminology aside, I've made a list of three methods that one can use for the construction of such a grid:
 
 
 1. Drawing a hexagon in p5
