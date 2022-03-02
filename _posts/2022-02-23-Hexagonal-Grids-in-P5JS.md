@@ -5,7 +5,7 @@ categories:
   - p5js
 description: A tutorial on multiple ways to create a hexagonal grid in p5js
 thumbnail_path: https://gorillasun.de/assets/images/hexagons/hexagon.mp4
-published: true
+published: false
 exclude_rss: true
 ---
 
@@ -13,42 +13,19 @@ exclude_rss: true
   <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jewelsbanner.png" alt="">
 </span>
 
-<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-  <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/tiles.png" alt="">
-</span>
+Depending on the context, a hexagonal grid can be called a number of different things. For creative coding purposes I think that the term Grid is the most fitting. When I started working on this post, I wanted to call it a 'hexagonal lattice', but in some way that is misleading. Googling the term 'hexagonal lattice' yields a bunch of research papers, that study 'lattices' in the context of <a href='https://www.mrl.ucsb.edu/~seshadri/old/Chem173B/galen_1_cryst.pdf'>Crystallography</a>, <a href='https://www.sciencedirect.com/topics/computer-science/hexagonal-lattice'>micro structures</a> and other fields of science that I have absolutely no clue about. So even though the term lattice literally means 'and interlaced structure', it implies a functional purpose in some manner. 
 
+Joh Conway called it the hextille (https://en.wikipedia.org/wiki/Hexagonal_tiling),  which also has a nice ring to it.
 
-
-
-<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-  <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/texture.png" alt="">
-</span>
-
-<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-  <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/texture2.png" alt="">
-</span>
-
-
-
-
-
-
-
-
-
-Hexagonal grids have many names, depending on the context. Maybe the first term that comes to mind is the honeycomb lattice, where the term lattice has implications for physics and chemistry. Joh Conway called it the hextille (https://en.wikipedia.org/wiki/Hexagonal_tiling),  which also has a nice ring to it. In geometry we would call it a 'hexagonal tiling' or 'hexagonal tesselation'. Note that Tesselation is a vast and incredibly interesting field of mathematics (https://en.wikipedia.org/wiki/Tessellation), that one could study for hours and draw endless inspiration from. You can dip your toes into it with this Veritasum video (https://www.youtube.com/watch?v=48sCx-wBs34&ab_channel=Veritasium).
+In geometry we would call it a 'hexagonal tiling' or 'hexagonal tesselation'. Note that Tesselation is a vast and incredibly interesting field of mathematics (https://en.wikipedia.org/wiki/Tessellation), that one could study for hours and draw endless inspiration from. You can dip your toes into it with this Veritasum video (https://www.youtube.com/watch?v=48sCx-wBs34&ab_channel=Veritasium).
 
 
 
 1. Drawing a hexagon in p5
-2. The grid method
-3. The spiral method
-4. The recursive subdivision method
-5. The bravais method
-6. Two offset triangular lattices
-7. other methods
-10. Beyond Hexagonal tesselations
-
+2. Grid Method
+3. Spiral Method 1
+4. Spiral Method 2
+5. Recursive Method
 
 
 
