@@ -23,15 +23,15 @@ Interestingly, John Conway coined it the <a href='https://en.wikipedia.org/wiki/
 Terminology aside, I've made a list of three methods that one can use for the construction of such a grid. We'll discuss each one in the following sections. Here's a quick index:
 
 
-1. <a href='#hex'>Drawing a Hexagon</a>
-2. <a href='#grid'>Constructing a Grid</a>
-3. <a href='#spiralo'>Hexagon Spirals</a>
+1. <a href='#hex'>Drawing a Single Hexagon in p5</a>
+2. <a href='#grid'>Constructing a Hexagonal Grid</a>
+3. <a href='#spiralo'>Hexagon Spiral</a>
 4. <a href='#spiral1'>Spiral Method 1</a>
 5. <a href='#spiral2'>Spiral Method 2</a>
 6. <a href='#recursive'>Recursive Method</a>
 
 
-<h2><a name='hex'></a>Drawing a Hexagon</h2>
+<h2><a name='hex'></a>Drawing a Single Hexagon in p5</h2>
 
 The first step we need to tackle, is how to actually draw a singular hexagon in p5. I believe that the most sensible approach to doing so is by using trigonometry, and a property of equilateral polygons.
 
@@ -81,7 +81,7 @@ Go through the code and have a look at the comments, they should explain the pur
 
 Since we're only going to draw hexagons, we can also omit the numSides input parameter. Next up is how to draw a bunch of hexagons and arrange them into a tightly packed grid.
 
-<h2><a name='grid'></a>Constructing a Grid</h2>
+<h2><a name='grid'></a>Constructing a Hexagonal Grid</h2>
 At first I wanted to call this the 'naive' way of constructing a hexagonal grid, but I don't think it deserves to be labeled as such, since occasionally it has advantages over the following methods (depending on the sketch you might want to do it this way). I believe that the caveat here is thinking of a hexagonal grid, just as a 'grid', when it is a lot more than that!
 
 Essentially, we'll construct our grid with a nested for loop, in the same manner that we would construct a rectangular grid:
