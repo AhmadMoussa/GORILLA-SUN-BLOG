@@ -5,7 +5,7 @@ categories:
   - p5js
 description: A tutorial on multiple ways to create a hexagonal grid in p5js
 thumbnail_path: https://gorillasun.de/assets/images/hexagons/hexagon.mp4
-published: true
+published: false
 exclude_rss: true
 ---
 
@@ -20,18 +20,6 @@ Depending on the context, a hexagonal grid can be called a number of different t
 
 Interestingly, John Conway coined it the <a href='https://en.wikipedia.org/wiki/Hexagonal_tiling'>hextille</a>. Which also has a nice ring to it, but I couldn't find out why, when or for what purpose he gave it this name. I assume he was studying different types of tilings. Hence, for geometric purposes we could also call it a 'hexagonal tiling' or 'hexagonal tesselation'. Note that the field of <a href='https://en.wikipedia.org/wiki/Tessellation'>Tesselation</a> is not only interesting to those looking to decorate their bathroom, but it is in fact a vast and incredibly interesting field of mathematics. You can dip your toes into it with this <a href='https://www.youtube.com/watch?v=48sCx-wBs34&ab_channel=Veritasium'>Veritasum</a> video. Lastly, we could also call it a 'Honeycomb' due to it's resemblance to a beehive's structure. Which term do you think is the most appropriate one?
 
-
-Terminology aside, I've made a list of three methods that one can use for the construction of such a grid:
-
-
-1. Drawing a hexagon in p5
-2. Grid Method
-3. Spiral Method 1
-4. Spiral Method 2
-5. Recursive Method
-
-
-
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
@@ -45,7 +33,18 @@ Terminology aside, I've made a list of three methods that one can use for the co
 	</div>
 </div>
 
-<h2>Drawing a hexagon in p5</h2>
+Terminology aside, I've made a list of three methods that one can use for the construction of such a grid:
+
+
+1. <a href='#hex'>Drawing a Hexagon</a>
+2. <a href='#grid'>Grid Method</a>
+3. <a href='#spiralo'>Hexagon Spirals</a>
+4. <a href='#spiral1'>Spiral Method 1</a>
+5. <a href='#spiral2'>Spiral Method 2</a>
+6. <a href='#recursive'>Recursive Method</a>
+
+
+<h2><a name='hex'></a>Drawing a Hexagon</h2>
 
 The first step we need to tackle, is how to draw a singular hexagon in p5. I believe that the most sensible approach to doing so is by utilising trigonometry.
 
@@ -97,7 +96,7 @@ Since we're only going to draw hexagons, we can omit the numSides input paramete
 
 
 
-<h2>The grid method</h2>
+<h2><a name='grid'></a>Grid Method</h2>
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
@@ -252,7 +251,7 @@ function draw(){
 </script>
 <p></p>
 
-<h2>Hexagon Spirals</h2>
+<h2><a name='spiralo'></a>Hexagon Spirals</h2>
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
@@ -272,7 +271,7 @@ Rather than drawing a grid in a top down, left to right manner, this method star
   <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/spiralgrid.gif" alt="">
 </span>
 
-<h2>Spiral Method 1</h2>
+<h2><a name='spiral1'></a>Spiral Method 1</h2>
 
 An alternate method to generating a hexagonal grid is by spiraling outwards around an initial hexagon:
 
@@ -369,7 +368,7 @@ function draw(){
 <p></p>
 
 
-<h2>Spiral Method 2</h2>
+<h2><a name='spiral2'></a>Spiral Method 2</h2>
 
 If you don't like 6 separate for loops, we can do the same thing with only one and a tricky calculation. Here goes the compacter version:
 
@@ -434,7 +433,7 @@ in the condition? Well, every loop we make around, we're gonna need one extra ad
 Okay, this was tough to explain, but I hope it makes sense. If there are any unclear points leave me a comment or send me a DM! Alright, onto the next method!
 
 
-<h2>Recursive subdivision method</h2>
+<h2><a name='recursive'></a>Recursive subdivision method</h2>
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
