@@ -500,7 +500,6 @@ For our purposes we make use of a parameter called 'depth', that gets decremente
 			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r2.png" alt="">
 		</span>
 	</div>
-	<div class="col-6">
 </div>
 
 <div class="row gtr-50 gtr-uniform">
@@ -588,7 +587,6 @@ Here, the base case is when we reach a depth equal to 0. If that is the case we 
 			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/rr2.png" alt="">
 		</span>
 	</div>
-	<div class="col-6">
 </div>
 
 <div class="row gtr-50 gtr-uniform">
@@ -604,6 +602,8 @@ Here, the base case is when we reach a depth equal to 0. If that is the case we 
 </div>
 
 Hope this post was useful to you and gets you started with your own hexagonal endeavors. There so much more to explore down the line with regarding tesselation and hexagonal arrangement. Even Truchet tiling is applicable! I hope you enjoyed this post, learned something new and/or got inspired! Happy sketching! Here are a couple more sketches based on hexagonal grids:
+
+<p></p>
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
