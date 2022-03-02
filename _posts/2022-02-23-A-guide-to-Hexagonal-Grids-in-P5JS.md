@@ -20,20 +20,7 @@ Depending on the context, a hexagonal grid can be called a number of different t
 
 Interestingly, John Conway coined it the <a href='https://en.wikipedia.org/wiki/Hexagonal_tiling'>hextille</a>. Which also has a nice ring to it, but I couldn't find out why, when or for what purpose he gave it this name. I assume he was studying different types of tilings. Hence, for geometric purposes we could also call it a 'hexagonal tiling' or 'hexagonal tesselation'. Note that the field of <a href='https://en.wikipedia.org/wiki/Tessellation'>Tesselation</a> is not only interesting to those looking to decorate their bathroom, but it is in fact a vast and incredibly interesting field of mathematics. You can dip your toes into it with this <a href='https://www.youtube.com/watch?v=48sCx-wBs34&ab_channel=Veritasium'>Veritasum</a> video. Lastly, we could also call it a 'Honeycomb' due to it's resemblance to a beehive's structure. Which term do you think is the most appropriate one?
 
-<div class="row gtr-50 gtr-uniform">
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/roses.png" alt="">
-		</span>
-	</div>
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jestercap.png" alt="">
-		</span>
-	</div>
-</div>
-
-Terminology aside, I've made a list of three methods that one can use for the construction of such a grid. Each of which I'll explain in the following section of this post. Here's a quick index:
+Terminology aside, I've made a list of three methods that one can use for the construction of such a grid. We'll discuss each one in the following sections. Here's a quick index:
 
 
 1. <a href='#hex'>Drawing a Hexagon</a>
@@ -46,7 +33,7 @@ Terminology aside, I've made a list of three methods that one can use for the co
 
 <h2><a name='hex'></a>Drawing a Hexagon</h2>
 
-The first step we need to tackle, is how to draw a singular hexagon in p5. I believe that the most sensible approach to doing so is by using trigonometry, and for that it's good to first refresh on some properties of equilateral polygons.
+The first step we need to tackle, is how to actually draw a singular hexagon in p5. I believe that the most sensible approach to doing so is by using trigonometry, and a property of equilateral polygons.
 
 A regular polygon satisfies two properties: it is equiangular and equilateral. Meaning that the value of it's vertex angles are equal, and it's sides are of equal length. In this manner, the vertices of any regular polygon, with any number of sides, all lie on a <a href='https://en.wikipedia.org/wiki/Regular_polygon'>common circle</a>. We can leverage this property to construct our hexagons (or any other regular polygon for that matter).
 
@@ -95,19 +82,6 @@ Go through the code and have a look at the comments, they should explain the pur
 Since we're only going to draw hexagons, we can also omit the numSides input parameter. Next up is how to draw a bunch of hexagons and arrange them into a tightly packed grid.
 
 <h2><a name='grid'></a>Constructing a Grid</h2>
-<div class="row gtr-50 gtr-uniform">
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/tiles1.png" alt="">
-		</span>
-	</div>
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/tiles3.png" alt="">
-		</span>
-	</div>
-</div>
-
 At first I wanted to call this the 'naive' way of constructing a hexagonal grid, but I don't think it deserves to be labeled as such, since occasionally it has advantages over the following methods (depending on the sketch you might want to do it this way). I believe that the caveat here is thinking of a hexagonal grid, just as a 'grid', when it is a lot more than that!
 
 Essentially, we'll construct our grid with a nested for loop, in the same manner that we would construct a rectangular grid:
@@ -631,7 +605,7 @@ Here, the base case is when we reach a depth equal to 0. If that is the case we 
 	</div>
 </div>
 
-Hope this post was useful to you and gets you started with your own hexagonal endeavors. There so much more to explore down the line with regarding tesselation and hexagonal arrangement. Even Truchet tiling is applicable! I hope you enjoyed this post, learned something new and/or got inspired! Happy sketching!
+Hope this post was useful to you and gets you started with your own hexagonal endeavors. There so much more to explore down the line with regarding tesselation and hexagonal arrangement. Even Truchet tiling is applicable! I hope you enjoyed this post, learned something new and/or got inspired! Happy sketching! Here are a couple more sketches based on hexagonal grids:
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -642,6 +616,19 @@ Hope this post was useful to you and gets you started with your own hexagonal en
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jap.png" alt="">
+		</span>
+	</div>
+</div>
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/roses.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jestercap.png" alt="">
 		</span>
 	</div>
 </div>
