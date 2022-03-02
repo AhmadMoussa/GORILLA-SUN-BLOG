@@ -541,6 +541,67 @@ Hexagons have this beautiful self-symmetric property, that you approximately get
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  w = min(windowWidth, windowHeight)
+  createCanvas(w, w);
+
+  maxRecursion = 4
+
+  rad = 150
+  sR = rad/(maxRecursion - 1)/4
+
+  strokeJoin(ROUND)
+
+}
+
+
+function draw() {
+  background(0);
+  translate(w/2, w/2)
+
+  stroke(255)
+  fill(255,20)
+  noFill()
+  strokeWeight(1)
+
+  recursiveHexagon(0,0,maxRecursion,rad)
+
+
+  noLoop()
+}
+
+
+function drawHexagon(cX, cY, r){
+
+  beginShape()
+  for(let a = TAU/12; a < TAU + TAU/12; a+=TAU/6){
+    var x1 = cX + r * cos(a)
+    var y1 = cY + r * sin(a)
+
+    vertex(x1, y1)
+  }
+  endShape(CLOSE)
+}
+
+function recursiveHexagon(cX, cY, depth, r){
+
+  for(let a = 0; a<TAU; a+=TAU/6){
+    var x = cX + r * cos(a)
+    var y = cY + r * sin(a)
+
+    drawHexagon(cX,cY,r)
+    if(depth == 0){
+      drawHexagon(cX,cY,r)
+      //drawHexagon(x,y,r/2)
+    }
+
+    if(depth > 0){
+      recursiveHexagon(cX,cY,depth-1,r/2)
+      recursiveHexagon(x,y,depth-1,r/2)
+    }
+  }
+}
+
 </script>
 <p></p>
 
