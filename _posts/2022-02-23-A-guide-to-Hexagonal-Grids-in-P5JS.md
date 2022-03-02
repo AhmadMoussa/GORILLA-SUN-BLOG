@@ -4,7 +4,7 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: A tutorial on multiple ways to create a hexagonal grid in p5js
-thumbnail_path: https://gorillasun.de/assets/images/hexagons/hexagon.mp4
+thumbnail_path: https://gorillasun.de/assets/images/hexagons/spiralgrid.mp4
 published: true
 exclude_rss: true
 ---
