@@ -26,9 +26,8 @@ Terminology aside, I've made a list of three methods that one can use for the co
 1. <a href='#hex'>Drawing a Single Hexagon in p5</a>
 2. <a href='#grid'>Constructing a Hexagonal Grid</a>
 3. <a href='#spiralo'>Hexagon Spiral</a>
-4. <a href='#spiral1'>Spiral Method 1</a>
-5. <a href='#spiral2'>Spiral Method 2</a>
-6. <a href='#recursive'>Recursive Method</a>
+4. <a href='#spiral2'>Spiral Method Compact</a>
+5. <a href='#recursive'>Recursive Method</a>
 
 
 <h2><a name='hex'></a>Drawing a Single Hexagon in p5</h2>
@@ -130,7 +129,7 @@ function draw(){
 
 Ok, so we got a grid... but it doesn't look right at all! The hexagons are arranged, just as if they were sitting on top of a rectangular grid. After all, we programmed it in the same way. We'll have to make a couple of modifications! Also note that we are dividing the value passed to the drawHexagon() function by two, since we need to pass a radius and not a diameter.
 
-First, let's horiyontlly space out this grid a little more. We can do so by multiplying the increment of the inner loop by 1.5:
+First, let's horizontlly space out this grid a little more. We can do so by multiplying the increment of the inner loop by 1.5:
 
 <pre><code>for(x = 0; x < gridWidth; x+=hexagonSize*1.5){}
 </code></pre>
@@ -247,9 +246,7 @@ Rather than drawing a grid in a top down, left to right manner, this method star
   <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/spiralgrid.gif" alt="">
 </span>
 
-<h2><a name='spiral1'></a>Spiral Method 1</h2>
-
-Here's one way to create this hexagon spiral, that simply makes use of a bunch of for loops to do so:
+Here's one way to create this hexagon spiral, that simply makes use of a number of sequential for loops to do so:
 
 <pre><code>// modified from: https://stackoverflow.com/a/2143499
 function makeSpiral(centerX, centerY, size, count){
@@ -263,7 +260,7 @@ function makeSpiral(centerX, centerY, size, count){
   drawHexagon(centerX, centerY, size/1.75)
   for(let n = 0; n<count; n++ ) {
     for(let i=0; i<n; i++){x++;drawHexagon(x*s, y*s, s/1.75)}  // move right
-    for(let i=0; i<n-1; i++){y++;drawHexagon(x*s, y*s, s/1.75)} // move down right. Note N-1
+    for(let i=0; i<n-1; i++){y++;drawHexagon(x*s, y*s, s/1.75)} // move down right. Note n-1
     for(let i=0; i<n; i++){x--;y++;drawHexagon(x*s, y*s, s/1.75)} // move down left
     for(let i=0; i<n; i++){x--;drawHexagon(x*s, y*s, s/1.75)} // move left
     for(let i=0; i<n; i++){y--;drawHexagon(x*s, y*s, s/1.75)} // move up left
@@ -397,7 +394,7 @@ function draw(){
 You still might need to add a final loop that completes the missing chunk of the honeycomb. If you want your grid to feel the entire canvas, I would opt for the grid method, since it won't draw unecessary hexagons offscreen.
 
 
-<h2><a name='spiral2'></a>Spiral Method 2</h2>
+<h2><a name='spiral2'></a>Spiral Method Compact</h2>
 
 If you don't like 6 separate for loops, we can do the same thing with only one and a tricky calculation. Here goes the compacter version:
 
@@ -422,7 +419,7 @@ function makeSpiral(centerX, centerY, radius, count) {
 }
 </code></pre>
 
-Essentially the function accomplishes the same thing similar to the previous version. Similarly to it's little sibling, we're stepping in a spiral around our initial hexagon, gradually going outwards. Here we also keep track of our position with the x and y variables:
+Essentially we're still doing the same thing! Similarly to it's little sibling, we're stepping in a spiral around our initial hexagon, gradually going outwards, but with the different that we do all of this with a single for loop! Here we also keep track of our position with the x and y variables:
 
 <pre><code>y = y - radius * cos(side * angle);
 x = x - radius * sin(side * angle);
