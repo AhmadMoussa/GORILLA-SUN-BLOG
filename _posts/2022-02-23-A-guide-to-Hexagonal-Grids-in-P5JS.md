@@ -420,6 +420,8 @@ function draw(){
 </script>
 <p></p>
 
+You still might need to add a final loop that completes the missing chunk of the honeycomb. If you want your grid to feel the entire canvas, I would opt for the grid method, since it won't draw unecessary hexagons offscreen.
+
 
 <h2><a name='spiral2'></a>Spiral Method 2</h2>
 
@@ -452,7 +454,7 @@ Essentially the function accomplishes the same thing similar to the previous ver
 x = x - radius * sin(side * angle);
 </code></pre>
 
-The variable 'side' being the indicator that tells us in which direction we need to step next (multiplying the angle). Now the inner for loop just needs to be able to determine how many steps we need to take before we are required to increment the side variable and change direction. This is accomplished in the condition statement of the for loop and is a bit heavy to digest, so let's go through it step by step! Let's have a look at what this calculation does:
+The variable 'side' being the indicator that tells us in which direction we need to step next (multiplied by the angle). Now the inner for loop just needs to be able to determine how many steps we need to take before we are required to increment the side variable and change direction. This is accomplished in the condition statement of the for loop and is a bit heavy to digest, so let's go through it step by step! Let's have a look at what this calculation does:
 
 <pre><code>floor((side+4)/6)+(side%6==0)
 </code></pre>
@@ -463,7 +465,7 @@ The best way to explain this is by going through the first couple of iterations 
   <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/2.png" alt="">
 </span>
 
-Next we decrement the count variable and increment the side variable (note that the side variable gets incremented outside of the for loop). Repeating the same thought process we proceed: floor((side+4)/6) will again evaluate to 1. In fact it will evaluate to 1 for the first 5 iterations. Only on the 6th iteration it will evaluate to 2, since we need to step in the same direction twice:
+Next we decrement the count variable and increment the side variable (note that the side variable gets incremented outside of the for loop). Repeating the same thought process we proceed: floor((side+4)/6) will again evaluate to 1. In fact, it will evaluate to 1 for the first 5 iterations. Only on the 6th iteration will it evaluate to 2, since we need to step in the same direction twice:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
   <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/6th.png" alt="">
@@ -492,9 +494,6 @@ Why do we need (side%6==0) in the condition? Well, every loop we make around, we
 		</span>
 	</div>
 </div>
-
-
-
 
 This is actually the first time that I write about a recursive method on the blog. So for the uninitiated, a function is denoted as 'recursive', when said function invokes itself from within itself. Naturally, if done wrong, you'll end up with your machine exploding! But when done correctly you can achieve some pretty neat results, and often feels really satisfying! Hence, to achieve a recursive hexagonal grid, we'll construct it in the following manner:
 
