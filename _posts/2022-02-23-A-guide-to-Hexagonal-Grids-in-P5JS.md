@@ -78,7 +78,7 @@ Go through the code and have a look at the comments, they should explain the pur
 }
 </code></pre>
 
-Since we're only going to draw hexagons, we can also omit the numSides input parameter. Next up is how to draw a bunch of hexagons and arrange them into a tightly packed grid.
+Since we're only going to draw hexagons, we can also omit the numSides input parameter. Also make sure to have a strokeJoin(ROUND) somewhere in your code, otherwise the corners of the hexagon will have little pointy horns! Next up is how to draw a bunch of hexagons and arrange them into a tightly packed grid.
 
 <h2><a name='grid'></a>Constructing a Hexagonal Grid</h2>
 At first I wanted to call this the 'naive' way of constructing a hexagonal grid, but I don't think it deserves to be labeled as such, since occasionally it has advantages over the following methods (depending on the sketch you might want to do it this way). I believe that the caveat here is thinking of a hexagonal grid, just as a 'grid', when it is a lot more than that!
@@ -450,6 +450,7 @@ Why do we need (side%6==0) in the condition? Well, every loop we make around, we
   <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/conditionimg.png" alt="">
 </span>
 
+And this wraps up the spiral method! This one is probably my favorite of the three methods, since it allows for some fun shenanigans in animations, especially in SDFs we can pass the spiral index of the hexagons, and have some outward, or inward going motion.
 
 <h2><a name='recursive'></a>Recursive subdivision method</h2>
 
