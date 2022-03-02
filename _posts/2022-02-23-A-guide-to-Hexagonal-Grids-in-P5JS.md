@@ -5,7 +5,7 @@ categories:
   - p5js
 description: A tutorial on multiple ways to create a hexagonal grid in p5js
 thumbnail_path: https://gorillasun.de/assets/images/hexagons/hexagon.mp4
-published: false
+published: true
 exclude_rss: true
 ---
 
@@ -512,7 +512,38 @@ This is actually the first time that I write about a recursive method on the blo
 
 Generally, recursive methods consist of two parts, namely a 'base case' and a 'recursive step'. The recursive step, is simply the function calling itself. The base case on the other hand serves to protect from a problem that often occurs with recursive methods. The base case prevents the recursive function calling itself in an infinite loop! 
 
-For our purposes we make use of a parameter called 'depth', that gets decremented by 1 each recursive call, by passing 'depth - 1' to the recursive call. If this depth parameter becomes zero, we stop recursing. Note that our method actually makes 6 recursive calls!
+For our purposes we make use of a parameter called 'depth', that gets decremented by 1 each recursive call, by passing 'depth - 1' to the recursive call. If this depth parameter becomes zero, we stop recursing. Note that our method actually makes 6 recursive calls! Here's how this works:
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-3">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r1.png" alt="">
+		</span>
+	</div>
+	<div class="col-3">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r2.png" alt="">
+		</span>
+	</div>
+	<div class="col-3">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r3.png" alt="">
+		</span>
+	</div>
+	<div class="col-3">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/r4.png" alt="">
+		</span>
+	</div>
+</div>
+
+Hexagons have this beautiful self-symmetric property, that you approximately get another hexagon when you place a half-size hexagon at each vertex of the original hexagon! We leverage this for our recursive method, each call placing smaller hexagons at the vertices of the previous ones. Here's a working example:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+</script>
+<p></p>
+
 
 
 <div class="row gtr-50 gtr-uniform">
