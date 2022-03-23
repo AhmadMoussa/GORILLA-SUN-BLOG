@@ -1,11 +1,11 @@
 ---
-title: Making of: Behind the Canvas
+title: Making of Behind the Canvas
 author: Ahmad Moussa
 categories:
   - p5js
 description: An in depth look into the inner workings of my crayon codes sketch Behind the Canvas
 thumbnail_path: https://gorillasun.de/assets/images/hexagons/spiralgrid.mp4
-published: true
+published: false
 exclude_rss: true
 ---
 
