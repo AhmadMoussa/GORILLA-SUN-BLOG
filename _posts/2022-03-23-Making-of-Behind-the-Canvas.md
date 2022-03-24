@@ -1020,7 +1020,7 @@ Here we would to make sure that this for loop makes the same number of random() 
 
 To exemplify this, let's make the sketch we have coded up to this point window scale and size agnostic.
 
-<iframe src="https://openprocessing.org/sketch/1525688/embed/?plusEmbedHash=MmY5NTE1YWE0ZmJiYzkyODViNDA4NzY4ZmJjOTkwNmU4ZGFiN2MyMmI5ODkzNWM4NDYxNDIwNDEwMzAxYzhjODQ3ZWY5OTczNjUyNzU0ZDM2NTQ2ZWI0ZjFiYTdhMmFjODA1NThmMWQxOTA1NzNkNDMwNTU3YWYxMzgxOGNjZDY2eW9XM2U0NklVRHhyaWc2VldYSUIzVVlGeTgxdW5iSXhkT0JyZVhGSTZtQnRRR1c5RVlaN0QxWk81aEVhcU9QdCtaNDN6TU9Sa3Jxb1lvOXZHUUFIUT09&plusEmbedTitle=true" width="400" height="400"></iframe>
+<iframe src="https://openprocessing.org/sketch/1525688/embed/?plusEmbedHash=MmY5NTE1YWE0ZmJiYzkyODViNDA4NzY4ZmJjOTkwNmU4ZGFiN2MyMmI5ODkzNWM4NDYxNDIwNDEwMzAxYzhjODQ3ZWY5OTczNjUyNzU0ZDM2NTQ2ZWI0ZjFiYTdhMmFjODA1NThmMWQxOTA1NzNkNDMwNTU3YWYxMzgxOGNjZDY2eW9XM2U0NklVRHhyaWc2VldYSUIzVVlGeTgxdW5iSXhkT0JyZVhGSTZtQnRRR1c5RVlaN0QxWk81aEVhcU9QdCtaNDN6TU9Sa3Jxb1lvOXZHUUFIUT09&plusEmbedTitle=true" width="100%" height="400"></iframe>
 
 
 
