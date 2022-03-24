@@ -5,7 +5,7 @@ categories:
   - p5js
 description: An in depth look into the inner workings of my crayon codes sketch Behind the Canvas
 thumbnail_path: https://gorillasun.de/assets/images/hexagons/spiralgrid.mp4
-published: false
+published: true
 exclude_rss: true
 ---
 
@@ -35,13 +35,13 @@ The one that he especially liked was the following:
 
 <h2>Setting up your sketch with the OPC Configurator 3000</h2>
 
-A good starting point for this were the previous Crayon Code sketches. There's a couple of ways to do this, depending on how you structure your sketch and how you want to incorporate the initial random seed throughout your sketch. The most fitting way to do this was how Okazz handled it in his 'Crack' sketch which only draws and redraws the graphics to the canvas on three occasions:
+A good starting point for this were previous Crayon Code sketches. There's a couple of ways to do this, depending on how you structure your sketch and how you want to incorporate the initial random seed throughout your sketch. The most fitting way to do this for my purposes, was how Okazz handled it in his 'Crack' sketch, which only draws and redraws the graphics to the canvas on three occasions:
 
 1. An initial rendering pass
-2. Whenever one of the OPC parameters change
+2. Whenever one of the OPC parameters changes
 3. Whenever the sketch/window is resized
 
-This was important because running my sketch the sketch that I had in mind in real-time would have been very laggy, and since it doesn't have any animated components it doesn't need to do so. To set up his method we'll first have to set up a couple of sliders:
+This was important because running the sketch that I had in mind in real-time would have been very laggy, and since it doesn't have any animated components it doesn't need to do so. Hence it was sufficient to update the sketch only when the parameters changed, or when the window is resized. Let's have a quick look how their method handles this! We'll first have to make some sliders to work with:
 
 <pre><code>/** OPC START **/
 OPC.slider('seed', Math.floor(Math.random() * 1000), 0, 1000, 1);
@@ -50,7 +50,7 @@ OPC.slider('parameter2', Math.floor(Math.random() * 5), 0, 5, 2);
 /** OPC END**/
 </code></pre>
 
-The OPC.slider() will create a slider in the small UI widget (that you'll see in the top right corner when you run your sketch), but will also create a variable in your code which will contain the selected slider value. The created variable can will have the same name as the string that you pass to the first parameter. Then you also have to specify a default starting value, a minimum value, a maximum value and the step amount, in that order. So for example:
+Invoking the OPC.slider() function will create a slider in the small UI widget (that you'll see in the top right corner when you run your sketch), but will also create a variable in your code which will contain the selected slider value. The created variable will then have the same name as the string that you pass to the first parameter. You also need to specify a default starting value, a minimum value, a maximum value and the step amount, in that order. For example:
 
 <pre><code>OPC.slider('seed', Math.floor(Math.random() * 1000), 0, 1000, 1);</code></pre>
 
@@ -73,7 +73,6 @@ Essentially, we will only call the generate() function if any of the slider valu
 
 <pre><code>function setup() {
 	createCanvas(windowWidth, windowHeight);
-
 	generate();
 }
 
@@ -83,7 +82,7 @@ function windowResized() {
 }
 </code></pre>
 
-And then we just need to update the temporary values within the generate function:
+And then we just need to update the temporary values at the top of the generate function:
 
 <pre><code>function generate() {
 	pSeed = seed;
@@ -105,9 +104,9 @@ It's also important that you set your random seed here. Now we can begin writing
 
 <h2>Creating smooth polygons</h2>
 
-The main portion of the sketch consists of patterened layers, each of which has an opening in the shape of a deformed circle that gives way to the next layer. I've already written about deforming a circular shape with perlin noise <a href='https://gorillasun.de/blog/Radial-Perlin-Noise-and-Generative-Tree-Rings'>here</a>, however this time I did it a little differently reusing my <a href='https://gorillasun.de/blog/An-algorithm-for-polygons-with-rounded-corners'>smooth polygon code</a>, for slightly different shapes.
+The main portion of the sketch consists of patterned layers, each of which has an opening in the shape of a deformed circle that gives way to the next layer. I've already written about deforming a circular shape with perlin noise <a href='https://gorillasun.de/blog/Radial-Perlin-Noise-and-Generative-Tree-Rings'>here</a>, however this time I did it a little differently reusing my <a href='https://gorillasun.de/blog/An-algorithm-for-polygons-with-rounded-corners'>smooth polygon code</a>, for slightly different shapes.
 
-Let's start by positiong a couple of points in a circular fashion and offsetting them slightly:
+Let's start by positioning a couple of points in a circular fashion and offsetting them slightly by a random amount:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -253,11 +252,11 @@ function roundedPoly(ctx, points, radiusAll) {
 </script>
 <p></p>
 
-And we've got ourselves a nice smooth shape!
+And we've got ourselves a nice smooth shape! The next step will be layering these shapes on top of each other.
 
 <h2>Clipping out regions</h2>
 
-For the next part we'll make heavy use of the rendering context's <a href='https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clip'>clip() function</a>, where clipping in this sense means cutting out a certain region/portion of the canvas. Let's have a look at a quick example:
+Now we'll make heavy use of the rendering context's <a href='https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clip'>clip() function</a>, where clipping in this sense means cutting out a certain region/portion of the canvas such that we only show this specific region and hide the rest. Let's have a look at a quick example:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -297,7 +296,7 @@ function drawPattern(posX, posY, size){
 </script>
 <p></p>
 
-Basically, the first step is to draw a shape that will constitute the clipping region, then invoke the clip() function, and finally draw whatever we want to have contained within the clipping region! Now we can chain these clip calls one after another to have several clip regions within each other, which is essentially how the circular openings in 'Behind the Canvas' were made. Here's an example of successive clip calls:
+Basically, using the clip() function consists of first drawing a shape that will constitute the clipping region, then calling the clip() function, and lastly drawing whatever we want to have contained within the clipping region. Note that the shape you're clipping out needs to have a stroke for this to work. If aesthetically you don't want it to have stroke you can still set strokeWeight(0) and the region won't have a stroke. Now we can chain these clip calls one after another to have several clip regions within each other, which is essentially how the circular openings in 'Behind the Canvas' were made. Here's an example of successive clip calls:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -348,8 +347,7 @@ function drawPattern(posX, posY, size) {
 </script>
 <p></p>
 
-The thing of note here is that on subsequent clip calls we need to draw two circles, one that has a fill to hide the
-Here we're only doing it with simple circles, let's combine it with the shape that we made earlier:
+The thing of note here is that on subsequent clip calls we need to draw a shape that has a fill, such that it hides the pattern of previous layers which it overlaps. Here we're only doing it with simple circles, let's combine it with the irregular shape that we made earlier:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -504,7 +502,7 @@ function roundedPoly(ctx, points, radiusAll) {
 </script>
 <p></p>
 
-IMPORTANT! Here, prior to making the clip call, we precede the clip region by the exact same shape, that is slightly larger and has a fill. This makes sure that the previous pattern doesn't overlap with the new one. Which would look like that:
+IMPORTANT! Here, to improve visual separation, prior to making the clip call, we precede the clip region by the exact same shape, that is slightly larger and has a fill. This makes sure that the previous pattern doesn't overlap with the new one and has some padding in between itself and the previous layer. If we would use shapes that have no fill, we end up with something that looks like this:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -657,10 +655,372 @@ function roundedPoly(ctx, points, radiusAll) {
 </script>
 <p></p>
 
-Which also makes for an interesting effect, but that's for another sketch. Ultimately, chaining clip calls might not be very intuitive.
+Which also makes for an interesting effect, but that's for another sketch. Ultimately, chaining clip calls might not be very intuitive. but it makes for a very interesting visual effect! And maybe you already noticed, but we could substitute the drawPattern() function for any other kind of pattern and it would still work, which is neat.
+
+Another visual improvement we can make is adding a slight shadow between layers, to make it seem as if previous layers are somewhat elevated with respect to subsequent ones. We can also make use of the rendering context for this:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+function setup() {
+  w = min(windowWidth, windowHeight);
+  createCanvas(w, w);
+  ctx = canvas.getContext("2d");
+}
+
+function draw() {
+  background(220);
+
+  noFill();
+  strokeWeight(2);
+  stroke(255, 0, 0);
+  drawClipLayer(w / 2);
+
+  stroke(0, 0, 255);
+  drawClipLayer(w / 3);
+
+  stroke(0, 255, 0);
+  drawClipLayer(w / 4);
+
+  noLoop();
+}
+
+function drawClipLayer(size) {
+  strokeWeight(2);
+  fill(220);
+
+  let verts = 0;
+  verts = makeShape(w / 2, w / 2, size);
+
+  roundedPoly(ctx, verts[0], 9999);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.clip();
+
+  ctx.shadowColor = 'black';
+  ctx.shadowBlur = 20;
+
+  roundedPoly(ctx, verts[0], 9999);
+  ctx.stroke()
+
+  ctx.shadowBlur = 0;
+
+  roundedPoly(ctx, verts[1], 9999);
+  ctx.stroke();
+  ctx.clip();
+
+  strokeWeight(2);
+  drawPattern(w / 2, w / 2, size * 2);
+}
+
+function makeShape(posX, posY, R) {
+  let vertices1 = [];
+  let vertices2 = [];
+
+  for (a = 0; a < TAU; a += TAU / 9) {
+    rad = random(1 / 2, 1) * R;
+
+    x1 = posX + rad * cos(a);
+    y1 = posY + rad * sin(a);
+
+    vertices1.push({ x: x1, y: y1 });
+
+    x2 = posX + (rad - 20) * cos(a);
+    y2 = posY + (rad - 20) * sin(a);
+
+    vertices2.push({ x: x2, y: y2 });
+  }
+
+  return [vertices1, vertices2];
+}
+
+function drawPattern(posX, posY, size) {
+  push();
+
+  translate(posX, posY);
+  rotate(random(TAU));
+
+  for (let l = 0; l < 1; l += 0.05) {
+    y = map(l, 0, 1, 0, size);
+
+    line(-size / 2, y - size / 2, size / 2, y - size / 2);
+  }
+  pop();
+}
+
+function roundedPoly(ctx, points, radiusAll) {
+  ctx.beginPath();
+  radius = radiusAll;
+  len = points.length;
+  p1 = points[len - 1];
+
+  for (i = 0; i < len; i++) {
+    p2 = points[i % len];
+    p3 = points[(i + 1) % len];
+
+    A = createVector(p1.x, p1.y);
+    B = createVector(p2.x, p2.y);
+    C = createVector(p3.x, p3.y);
+
+    (BA = A.sub(B)), (BC = C.sub(B));
+
+    (BAnorm = BA.copy().normalize()), (BCnorm = BC.copy().normalize());
+
+    sinA = -BAnorm.dot(BCnorm.copy().rotate(PI / 2));
+    sinA90 = BAnorm.dot(BCnorm);
+    angle = asin(sinA);
+
+    (radDirection = 1), (drawDirection = false);
+    if (sinA90 < 0) {
+      angle < 0
+        ? (angle += PI)
+        : ((angle += PI), (radDirection = -1), (drawDirection = true));
+    } else {
+      angle > 0 ? ((radDirection = -1), (drawDirection = true)) : 0;
+    }
+
+    // accelDir = BAnorm.rotate(PI/2).copy().add(BCnorm)
+    // radDirection = Math.sign(accelDir.dot(BCnorm.rotate(PI / 2)))
+    // drawDirection = radDirection === -1
+
+    p2.radius ? (radius = p2.radius) : (radius = radiusAll);
+
+    halfAngle = angle / 2;
+    lenOut = abs((cos(halfAngle) * radius) / sin(halfAngle));
+
+    // Special part A
+    if (lenOut > min(BA.mag() / 2, BC.mag() / 2)) {
+      lenOut = min(BA.mag() / 2, BC.mag() / 2);
+      cRadius = abs((lenOut * sin(halfAngle)) / cos(halfAngle));
+    } else {
+      cRadius = radius;
+    }
+
+    x =
+      B.x +
+      BC.normalize().x * lenOut -
+      BC.normalize().y * cRadius * radDirection;
+    y =
+      B.y +
+      BC.normalize().y * lenOut +
+      BC.normalize().x * cRadius * radDirection;
+
+    ctx.arc(
+      x,
+      y,
+      cRadius,
+      BA.heading() + (PI / 2) * radDirection,
+      BC.heading() - (PI / 2) * radDirection,
+      drawDirection
+    );
+
+    p1 = p2;
+    p2 = p3;
+  }
+  ctx.closePath();
+}
+</script>
+<p></p>
+
+Here it gets a bit tricky, because we need an additional clip call. I wanted to have the slightly larger shape cast a shadow, for this we can hide a the same shape underneath itself and momentarily toggle on the shadow (using the shadowBlur parameter) and then toggle it off when we don't need it anymore. Finally let us add some color to the mix:
+
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+palette = ['#e74645', '#fb7756', '#facd60', '#fdfa66', '#1ac0c6']
+
+function setup() {
+  w = min(windowWidth, windowHeight);
+  createCanvas(w, w);
+  ctx = canvas.getContext("2d");
+}
+
+function draw() {
+  background(220);
+
+  noFill();
+  strokeWeight(2);
+
+  drawClipLayer(w / 2);
+
+  drawClipLayer(w / 3);
+
+  drawClipLayer(w / 4);
+
+  noLoop();
+}
+
+function drawClipLayer(size) {
+  strokeWeight(2);
+  fill(220);
+
+  shuffle(palette, true)
+  fill(palette[1])
+  //background(palette[1])
+  stroke(palette[0])
+
+
+  let verts = 0;
+  verts = makeShape(w / 2, w / 2, size);
+
+  roundedPoly(ctx, verts[0], 9999);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.clip();
+
+  ctx.shadowColor = 'black';
+  ctx.shadowBlur = 20;
+
+  roundedPoly(ctx, verts[0], 9999);
+  ctx.stroke()
+
+  ctx.shadowBlur = 0;
+
+  roundedPoly(ctx, verts[1], 9999);
+  ctx.stroke();
+  ctx.clip();
+
+  strokeWeight(2);
+  drawPattern(w / 2, w / 2, size * 2);
+}
+
+function makeShape(posX, posY, R) {
+  let vertices1 = [];
+  let vertices2 = [];
+
+  for (a = 0; a < TAU; a += TAU / 9) {
+    rad = random(1 / 2, 1) * R;
+
+    x1 = posX + rad * cos(a);
+    y1 = posY + rad * sin(a);
+
+    vertices1.push({ x: x1, y: y1 });
+
+    x2 = posX + (rad - 20) * cos(a);
+    y2 = posY + (rad - 20) * sin(a);
+
+    vertices2.push({ x: x2, y: y2 });
+  }
+
+  return [vertices1, vertices2];
+}
+
+function drawPattern(posX, posY, size) {
+  push();
+
+  translate(posX, posY);
+  rotate(random(TAU));
+
+  for (let l = 0; l < 1; l += 0.05) {
+    y = map(l, 0, 1, 0, size);
+
+    line(-size / 2, y - size / 2, size / 2, y - size / 2);
+  }
+  pop();
+}
+
+function roundedPoly(ctx, points, radiusAll) {
+  ctx.beginPath();
+  radius = radiusAll;
+  len = points.length;
+  p1 = points[len - 1];
+
+  for (i = 0; i < len; i++) {
+    p2 = points[i % len];
+    p3 = points[(i + 1) % len];
+
+    A = createVector(p1.x, p1.y);
+    B = createVector(p2.x, p2.y);
+    C = createVector(p3.x, p3.y);
+
+    (BA = A.sub(B)), (BC = C.sub(B));
+
+    (BAnorm = BA.copy().normalize()), (BCnorm = BC.copy().normalize());
+
+    sinA = -BAnorm.dot(BCnorm.copy().rotate(PI / 2));
+    sinA90 = BAnorm.dot(BCnorm);
+    angle = asin(sinA);
+
+    (radDirection = 1), (drawDirection = false);
+    if (sinA90 < 0) {
+      angle < 0
+        ? (angle += PI)
+        : ((angle += PI), (radDirection = -1), (drawDirection = true));
+    } else {
+      angle > 0 ? ((radDirection = -1), (drawDirection = true)) : 0;
+    }
+
+    // accelDir = BAnorm.rotate(PI/2).copy().add(BCnorm)
+    // radDirection = Math.sign(accelDir.dot(BCnorm.rotate(PI / 2)))
+    // drawDirection = radDirection === -1
+
+    p2.radius ? (radius = p2.radius) : (radius = radiusAll);
+
+    halfAngle = angle / 2;
+    lenOut = abs((cos(halfAngle) * radius) / sin(halfAngle));
+
+    // Special part A
+    if (lenOut > min(BA.mag() / 2, BC.mag() / 2)) {
+      lenOut = min(BA.mag() / 2, BC.mag() / 2);
+      cRadius = abs((lenOut * sin(halfAngle)) / cos(halfAngle));
+    } else {
+      cRadius = radius;
+    }
+
+    x =
+      B.x +
+      BC.normalize().x * lenOut -
+      BC.normalize().y * cRadius * radDirection;
+    y =
+      B.y +
+      BC.normalize().y * lenOut +
+      BC.normalize().x * cRadius * radDirection;
+
+    ctx.arc(
+      x,
+      y,
+      cRadius,
+      BA.heading() + (PI / 2) * radDirection,
+      BC.heading() - (PI / 2) * radDirection,
+      drawDirection
+    );
+
+    p1 = p2;
+    p2 = p3;
+  }
+  ctx.closePath();
+}
+</script>
+<p></p>
+
+And that's it, I think that covers all bases for the main portion of the sketch! Next let's have a look at how scaling and resizing is handled.
 
 
 
+<h2>Handling scaling and resizing</h2>
+
+Scaling and resizing the sketch was one of the more difficult hurdles to overcome. An important factor to consider here, is how we tie the window dimensions into the random elements of the sketch, oftentimes I make a random call within a for loop that depends on the width or height of the window, which is not something that should be done if you intend to preserve the determinism of the sketch. I intend to discuss this at length in an upcoming blog post, but I will give a few examples of things that can't be done:
+
+<pre><code>rand = random(W/5, W/2)
+</code></pre>
+
+For example we can not have random calls that depend on another variable, it needs to be agnostic and should rather be written as follows:
+
+<pre><code>rand = random(1/5, 1/2)*w
+</code></pre>
+
+And another example that is not admissible, is having a varying number of random calls:
+
+<pre><code>for(let x = 0; x < windowWidth; x+=step){
+    someFunction(random())
+}
+</code></pre>
+
+Here we would to make sure that this for loop makes the same number of random() calls each and every time it is executed, either by making the increment value scale with the window width, or make the loop independent from the window width. While testing my sketch I encountered this problem, and it took me quite a while to figure out why the sketch was changing when I resized the window.
+
+To exemplify this, let's make the sketch we have coded up to this point window scale and size agnostic.
+
+<iframe src="https://openprocessing.org/sketch/1525688/embed/?plusEmbedHash=MmY5NTE1YWE0ZmJiYzkyODViNDA4NzY4ZmJjOTkwNmU4ZGFiN2MyMmI5ODkzNWM4NDYxNDIwNDEwMzAxYzhjODQ3ZWY5OTczNjUyNzU0ZDM2NTQ2ZWI0ZjFiYTdhMmFjODA1NThmMWQxOTA1NzNkNDMwNTU3YWYxMzgxOGNjZDY2eW9XM2U0NklVRHhyaWc2VldYSUIzVVlGeTgxdW5iSXhkT0JyZVhGSTZtQnRRR1c5RVlaN0QxWk81aEVhcU9QdCtaNDN6TU9Sa3Jxb1lvOXZHUUFIUT09&plusEmbedTitle=true" width="400" height="400"></iframe>
 
 
 
