@@ -5,37 +5,91 @@ categories:
   - p5js
 description: An in depth look into the inner workings of my crayon codes sketch Behind the Canvas
 thumbnail_path: https://gorillasun.de/assets/images/hexagons/spiralgrid.mp4
-published: false
+published: true
 exclude_rss: true
 ---
 
 I am exhilarated to have had the opportunity to work on a sketch for Crayon Codes! First off, I'd like to thank Sinan for reaching out to me about this opportunity, and for his continuous feedback throughout the different iterations my sketch went through!
 
-Secondly I'd like to thank all those who've collected an edition or two of 'Behind the Canvas'! It was a joy to make, and as always I learned a lot along the way. Making a sketch where the collector can specify parameters prior to collecting, was yet another beast to conquer.
+Secondly I'd like to thank all those who've collected an edition or two of 'Behind the Canvas'! It was a joy to make, and as always I learned a lot along the way. Making a sketch where the collector could specify parameters prior to collecting, was yet another beast to conquer. Here are a few of the 70 editions that have been collected:
 
-There's a couple of cool things going on in the sketch, that are worth inspecting a little bit more closely. Such as:
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/samsara.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/anna.png" alt="">
+		</span>
+	</div>
 
-1. Ideation and initial ideas
-2. Setting up our sketch with the OPC Configurator 3000
-3. Using the ctx.clip() call
-4. A closer look at each one of the patterns
-5. Handling scaling and resizing
-6. Making sure that we get the same output for every seed
+  <div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/conrad.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/GB.png" alt="">
+		</span>
+	</div>
+</div>
+
+There's a couple of cool things going on in the sketch, that are worth inspecting a little bit in more detail. Such as:
+
+
+
+1. <a href='#idea'>Initial ideas</a>
+2. <a href='#opc'>Setting up our sketch with the OPC Configurator 3000</a>
+3. <a href='#smooth'>Creating smooth polygons</a>
+4. <a href='#determinism'>Notes on preserving sketch determinism</a>
+5. <a href='#resize'>Resizing and rescaling</a>
 
 <h2>Ideation and initial ideas</h2>
 
 
-The ideation process began with Sinan shooting me some of my sketches that he had seen and thought could be a good fit for the Crayon Code raster. I took a couple of days to dig up their code from my harddrive
+Early February Sinan reached out to me, and sent me some of my sketches that he had seen and thought could be a good fit for the Crayon Code raster. I took a couple of days to dig up their code from my hard drive and assess which ones had enough variety to be turned into generative tokens.
 
-The one that he especially liked was the following:
+The ones that he especially liked were the following:
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/init1.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/init2.png" alt="">
+		</span>
+	</div>
+</div>
+
+However I wasn't certain if it was possible for them to have enough variety to create an entire collection. And I already had made the 'scribble' GT on fxhash which explored a similar avenue. How I ultimately arrived at what 'Behind the Canvas' ended up being, might sound like a far stretch, but my brain works in mysterious ways. What Sinan liked about the two previous sketches, was the 'rug' like texture of them, and how the edges of the lines overlapped with each other.
+
+I pondered a bit on that, and wanted to see if I could somehow make a sketch that didn't convey the texture of fabric, but rather a different property. I explored some other ideas that came to mind, one of them being an attempt at emulating a tear or split in some sort of fabric. I ended up with something that looked like the following:
 
 
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/proto1.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/proto2.png" alt="">
+		</span>
+	</div>
+</div>
 
-
+And from here on it's probably obvious how the sketch developed further.
 
 <h2>Setting up your sketch with the OPC Configurator 3000</h2>
 
-A good starting point for this were previous Crayon Code sketches. There's a couple of ways to do this, depending on how you structure your sketch and how you want to incorporate the initial random seed throughout your sketch. The most fitting way to do this for my purposes, was how Okazz handled it in his 'Crack' sketch, which only draws and redraws the graphics to the canvas on three occasions:
+A good starting point for figuring out how to weave the Configurator into my code were previous Crayon Code sketches, which conveniently have their code publicly visible. There's a couple of ways to do this, depending on how you structure your sketch, if it's animated or not, and how you want to incorporate the initial random seed throughout your sketch. The most fitting way to do this for my purposes, was how Okazz handled it in his 'Crack' sketch, which only draws and redraws the graphics to the canvas on three occasions:
 
 1. An initial rendering pass
 2. Whenever one of the OPC parameters changes
@@ -96,17 +150,15 @@ And then we just need to update the temporary values at the top of the generate 
 }
 </code></pre>
 
-It's also important that you set your random seed here. Now we can begin writing the code for our sketch within the generate function, and optionally other functions that should be called from the generate function.
-
-
+It's also important that you set your random seed here at the very top, this is to ensure that the same seed produces the same sketch every time the generate() function is run. I go into this a bit more in detail in a later section, but if we wouldn't set the random seed here, on a subsequent generate() calls we would get completely different sketches. Having discussed this necessary boilerplate component, we can move on to main pat of code that actually generates the visuals. This code will be contained within the generate function, and optionally also inside other helper functions that will be called from the generate function.
 
 
 
 <h2>Creating smooth polygons</h2>
 
-The main portion of the sketch consists of patterned layers, each of which has an opening in the shape of a deformed circle that gives way to the next layer. I've already written about deforming a circular shape with perlin noise <a href='https://gorillasun.de/blog/Radial-Perlin-Noise-and-Generative-Tree-Rings'>here</a>, however this time I did it a little differently reusing my <a href='https://gorillasun.de/blog/An-algorithm-for-polygons-with-rounded-corners'>smooth polygon code</a>, for slightly different shapes.
+The main portion of the sketch consists of patterned layers, each of which has an opening in the shape of a deformed circle that gives way to the next layer. I've already written about deforming a circular shape with perlin noise <a href='https://gorillasun.de/blog/Radial-Perlin-Noise-and-Generative-Tree-Rings'>here</a>, however this time I did it a little differently reusing my <a href='https://gorillasun.de/blog/An-algorithm-for-polygons-with-rounded-corners'>smooth polygon code</a> for a slightly different aesthetic that does not require perlin noise. If you're interested you can read up on it, but it is not necessary to understand the remainder of this post.
 
-Let's start by positioning a couple of points in a circular fashion and offsetting them slightly by a random amount:
+Let's begin by positioning a couple of points in a circular fashion and offsetting them slightly by a random amount:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -119,7 +171,7 @@ function draw() {
   background(220);
   strokeWeight(5);
 
-  drawShape(w/2, w/2, w/5);
+  drawShape(w/2, w/2, w/4);
   noLoop();
 }
 
@@ -145,7 +197,7 @@ function drawShape(posX, posY, R) {
 </script>
 <p></p>
 
-We obtain quite a pointy shape when we connect the vertices. Here's where we'll reuse the smooth polygon algorithm, to shave off those pointy corners:
+We obtain a relatively pointy shape when we connect the vertices that we positioned. Here's where we'll reuse the smooth polygon algorithm, to shave off those pointy corners:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -160,7 +212,7 @@ function draw() {
   background(220);
   strokeWeight(3);
 
-  drawShape(w/2, w/2, w/5);
+  drawShape(w/2, w/2, w/4);
   noLoop();
 }
 
@@ -252,11 +304,11 @@ function roundedPoly(ctx, points, radiusAll) {
 </script>
 <p></p>
 
-And we've got ourselves a nice smooth shape! The next step will be layering these shapes on top of each other.
+And that's the beauty of reusing and building on top of code you've previously written! Here I knew exactly what shape I wanted and how I could achieve it, and it felt really good achieving it with a simple function call.
 
 <h2>Clipping out regions</h2>
 
-Now we'll make heavy use of the rendering context's <a href='https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clip'>clip() function</a>, where clipping in this sense means cutting out a certain region/portion of the canvas such that we only show this specific region and hide the rest. Let's have a look at a quick example:
+Next we will have a look at the rendering context's <a href='https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clip'>clip()</a> function. Clipping here means cutting out a certain region/portion of the canvas, such that only things inside this specific region are visible, whereas everything that falls outside of it is hidden. Let's have a look at a quick example:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -270,7 +322,6 @@ function draw() {
   background(220);
 
   noFill()
-  strokeWeight(0)
   circle(w/2,w/2,w/3)
   ctx.clip()
 
@@ -296,7 +347,9 @@ function drawPattern(posX, posY, size){
 </script>
 <p></p>
 
-Basically, using the clip() function consists of first drawing a shape that will constitute the clipping region, then calling the clip() function, and lastly drawing whatever we want to have contained within the clipping region. Note that the shape you're clipping out needs to have a stroke for this to work. If aesthetically you don't want it to have stroke you can still set strokeWeight(0) and the region won't have a stroke. Now we can chain these clip calls one after another to have several clip regions within each other, which is essentially how the circular openings in 'Behind the Canvas' were made. Here's an example of successive clip calls:
+Basically, using the clip() function consists of first drawing a shape that will constitute the clipping region, then calling the clip() function, and thirdly drawing whatever we want to have contained within the clipping region. Note that the shape you're clipping out needs to have a stroke for this to work. If aesthetically you don't want it to have stroke you can still set strokeWeight(0) and the region won't have a stroke. In this example, we're simply clipping out a few parallel lines to obtain something that looks like a hachure.
+
+Now we can chain these clip calls one after another to have several clip regions within each other, which is essentially how the circular openings in 'Behind the Canvas' were made. Here's an example of this:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -347,7 +400,7 @@ function drawPattern(posX, posY, size) {
 </script>
 <p></p>
 
-The thing of note here is that on subsequent clip calls we need to draw a shape that has a fill, such that it hides the pattern of previous layers which it overlaps. Here we're only doing it with simple circles, let's combine it with the irregular shape that we made earlier:
+The thing of note here is that on subsequent clip calls we need to draw a clip region with a fill, such that it hides the pattern of previous layers which it overlaps. So far we've only done it with simple circles, let's combine it with the irregular shape that we've made earlier:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -822,7 +875,7 @@ function roundedPoly(ctx, points, radiusAll) {
 </script>
 <p></p>
 
-Here it gets a bit tricky, because we need an additional clip call. I wanted to have the slightly larger shape cast a shadow, for this we can hide a the same shape underneath itself and momentarily toggle on the shadow (using the shadowBlur parameter) and then toggle it off when we don't need it anymore. Finally let us add some color to the mix:
+Here it gets a bit tricky, because we need an additional clip call. I wanted to have the slightly larger shape cast a shadow, for this we can hide an identical shape underneath itself and momentarily toggle on the shadow (using the shadowBlur parameter) and then toggle it off when we don't need it anymore. Finally let us add some color to the mix:
 
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
@@ -854,10 +907,8 @@ function drawClipLayer(size) {
   fill(220);
 
   shuffle(palette, true)
-  fill(palette[1])
-  //background(palette[1])
-  stroke(palette[0])
-
+  fill(palette[0])
+  stroke(palette[1])
 
   let verts = 0;
   verts = makeShape(w / 2, w / 2, size);
@@ -993,13 +1044,14 @@ function roundedPoly(ctx, points, radiusAll) {
 </script>
 <p></p>
 
-And that's it, I think that covers all bases for the main portion of the sketch! Next let's have a look at how scaling and resizing is handled.
+And that should cover all bases for the main portion of the sketch! I won't go into too much detail on the patterns, but for hexagonal grids you can find my tutorial on them <a href='https://gorillasun.de/blog/A-guide-to-Hexagonal-Grids-in-P5JS'>here</a>, as well an OpenProcessing sketch on the main pattern <a href='https://openprocessing.org/sketch/1483294'>here</a>.
 
 
+<h2>A note on preserving sketch determinism</h2>
 
-<h2>Handling scaling and resizing</h2>
+This is an aspect of the sketch where you really have to make sure that everything is done correctly. Having a few fxhash sketches under my belt, I've had a good amount of practice with this, but I still do get some situations where I have to scratch my head for a bit before I can figure out what's wrong.
 
-Scaling and resizing the sketch was one of the more difficult hurdles to overcome. An important factor to consider here, is how we tie the window dimensions into the random elements of the sketch, oftentimes I make a random call within a for loop that depends on the width or height of the window, which is not something that should be done if you intend to preserve the determinism of the sketch. I intend to discuss this at length in an upcoming blog post, but I will give a few examples of things that can't be done:
+For example, I oftentimes make a random call within a for loop that depends on a variable that, well, varies over the course of the sketch, increasing or decreasing the number of random calls that are being made. This naturally breaks the determinism of the sketch. I intend to discuss this specific issue at length in an upcoming blog post, but I will give a few examples of things that should be avoided:
 
 <pre><code>rand = random(W/5, W/2)
 </code></pre>
@@ -1011,62 +1063,79 @@ For example we can not have random calls that depend on another variable, it nee
 
 And another example that is not admissible, is having a varying number of random calls:
 
-<pre><code>for(let x = 0; x < windowWidth; x+=step){
+<pre><code>for(let n = 0; n < windowWidth; n+=step){
     someFunction(random())
 }
 </code></pre>
 
-Here we would to make sure that this for loop makes the same number of random() calls each and every time it is executed, either by making the increment value scale with the window width, or make the loop independent from the window width. While testing my sketch I encountered this problem, and it took me quite a while to figure out why the sketch was changing when I resized the window.
-
-To exemplify this, let's make the sketch we have coded up to this point window scale and size agnostic.
-
-<iframe src="https://openprocessing.org/sketch/1525688/embed/?plusEmbedHash=MmY5NTE1YWE0ZmJiYzkyODViNDA4NzY4ZmJjOTkwNmU4ZGFiN2MyMmI5ODkzNWM4NDYxNDIwNDEwMzAxYzhjODQ3ZWY5OTczNjUyNzU0ZDM2NTQ2ZWI0ZjFiYTdhMmFjODA1NThmMWQxOTA1NzNkNDMwNTU3YWYxMzgxOGNjZDY2eW9XM2U0NklVRHhyaWc2VldYSUIzVVlGeTgxdW5iSXhkT0JyZVhGSTZtQnRRR1c5RVlaN0QxWk81aEVhcU9QdCtaNDN6TU9Sa3Jxb1lvOXZHUUFIUT09&plusEmbedTitle=true" width="100%" height="400"></iframe>
+Here we would have to make sure that this for loop makes the same number of random() calls each and every time it is executed. This is tricky because what happens when you resize your sketch horizontally? You would either have to make the increment value 'step' scale with the window width, or make this loop independent from the window width altogether. There are a couple of strategies to approach this, but it will have to wait.
 
 
+<h2>Resizing and rescaling</h2>
 
 
+This previous issue leads directly into how we handle scaling and resizing of the sketch, which was also one of the more tricky hurdles to overcome. I've come to the opinion that there isn't really a universal solution to this specific problem, and it really depends on how you want your sketch to behave when you resize it.
 
+An important factor to consider here, is how we tie the window dimensions into the random elements of the sketch as we discussed before. To exemplify this, let's make the sketch, that we have coded up to this point, window scale and size agnostic.
 
+Ideally, we would like to have our sketch span across the entire canvas, but keep the main portion centred and scale regardless of the aspect ratio. Let's setup our sketch in that manner:
 
+<pre><code>function setup() {  
+  w = min(windowWidth, windowHeight)
+  createCanvas(windowWidth, windowHeight);
 
+  // other setup stuff
 
+  generate()
+}
 
+function windowResized(){
+  w = min(windowWidth, windowHeight)
+  resizeCanvas(windowWidth, windowHeight);
+}
 
+function draw() {
+  generate()
+  noLoop()
+}
 
+function generate(){
+  randomSeed(seed)
 
+  // other stuff
+}
+</code></pre>
 
+Here we create a canvas that takes up the entire window, and we make use of p5's windowResized function that triggers when the containing window is resized to adjust the canvas dimensions accordingly. We also keep track of the minimum dimension, which we will use in a second. Additionally, we reset the random seed at the top of the generate function such that the same random calls are made whenever it is rerun. And if you've had a keen eye you will also notice that there is noLoop() statement at the end of the draw function, in which case it shouldn't be redrawn when we resize the window. The resizeCanvas() function however calls the draw() function when it is done resizing the canvas dimensions.
 
+As for the the main shape, if we base our dimensions off of a variable that is tied to the screen dimensions, we can make all the drawn shapes adjust their size when redrawn, and here's an example to show how this works:
 
+<pre><code>function generate(){
+  randomSeed(seed)
+  translate(windowWidth/2, windowHeight/2)
 
+  clipLayer(w/2)
+}
 
-1. <a href='#hex'>Drawing a Single Hexagon in p5</a>
-2. <a href='#grid'>Constructing a Hexagonal Grid</a>
-3. <a href='#spiralo'>Hexagon Spiral</a>
-4. <a href='#spiral2'>Spiral Method Compact</a>
-5. <a href='#recursive'>Recursive Method</a>
+function clipLayer(size){
+  verts = makeShape(size);
 
-<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-  <img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jewelsbanner.png" alt="">
-</span>
+  roundedPoly(ctx, vertices, 9999);
+}
 
-<h2>A little bit of Terminology</h2>
+function makeShape(R) {
+  let vertices = [];
+  for (a = 0; a < TAU; a += TAU / 9) {
+     rad = random(1 / 2, 1) * R;
 
+     x = rad * cos(a);
+     y = rad * sin(a);
 
-<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+     vertices.push({x: x, y: y})
+  }
 
-</script>
-<p></p>
+  return vertices
+}   
+</code></pre>
 
-<div class="row gtr-50 gtr-uniform">
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/roses.png" alt="">
-		</span>
-	</div>
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/hexagons/jestercap.png" alt="">
-		</span>
-	</div>
-</div>
+We base the radius of the blobby shape off of the minimum dimension of the canvas, and this way ensuring that it will scale along with it, when the canvas is resized. <a href='https://openprocessing.org/sketch/1525688'>Here is an example</a> in the OpenProcessing editor where you can see this in action, just drag the middle separator and observe how it behaves!
