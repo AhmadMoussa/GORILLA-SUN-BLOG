@@ -12,7 +12,7 @@ exclude_rss: true
   <img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/banner2.png" alt="">
 </span>
 
-If you haven't seen it on my Twitter already, I've had the chance to make a sketch for Crayon Codes! I'm very excited about how it turned out and how everyone responded to it! But before going into any details, I'd like to thank <a href='https://twitter.com/msawired'>Sinan</a> for reaching out to me about this opportunity, and for his continuous feedback throughout the different iterations my sketch went through!
+If you haven't seen it on my Twitter already, this past month I've had the chance to make a sketch for Crayon Codes! I'm incredibly happy with how it turned out and with everyone's response to it! Before going into any details, I'd like to thank <a href='https://twitter.com/msawired'>Sinan</a> for reaching out to me about this opportunity, and for his continuous feedback throughout the different iterations my sketch went through!
 
 Secondly I'd like to thank all those who've collected an edition or two of 'Behind the Canvas'! It was a joy to make, and as always I learned a lot along the way. Making a sketch where the collector could specify parameters prior to collecting, was yet another beast to conquer. Here are a few of the 70 editions that have been collected:
 
