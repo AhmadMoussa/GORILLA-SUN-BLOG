@@ -1162,10 +1162,12 @@ We base the radius of the blobby shape off of the minimum dimension of the canva
 
 If you've reached here, thank you for reading! I believe I touched upon all the facets of the sketch that were worth mentioning. Ultimately, what I've realised from projects like this one, is how important it is to complete them, even if you ultimately aren't 100% happy with them. In other words, you can only get better at the entire process, from ideation, to coding up initial versions, to releasing your final sketch, by going through the entire process several times. I think I will be much more confident with my next projects, having more experience as well as more reusable code to back me up in the future.
 
-And again, before my writing becomes unfocused, I am incredibly grateful to everyone who has collected an edition, as well as everyone who has shown me support on Twitter in any form or shape! Thank you, and happy sketching!
-
 <div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
   <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
     <source src="https://gorillasun.de/assets/images/behind_the_canvas/cut.mp4" type="video/mp4">
   </video>
 </div>
+
+<p></p>
+
+And again, before my writing becomes unfocused, I am incredibly grateful to everyone who has collected an edition, as well as everyone who has shown me support on Twitter in any form or shape! Thank you, and happy sketching!
