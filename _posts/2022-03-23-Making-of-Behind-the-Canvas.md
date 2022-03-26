@@ -45,9 +45,10 @@ You can check out the entire collection <a href='https://openprocessing.org/cray
 1. <a href='#idea'>From initial idea to final sketch</a>
 2. <a href='#opc'>Setting up our sketch with the OPC Configurator 3000</a>
 3. <a href='#smooth'>Creating smooth Polygons</a>
-4. <a href='#determinism'>Notes on preserving sketch determinism</a>
-5. <a href='#resize'>Resizing and Rescaling</a>
-6. <a href='#end'>Closing Notes</a>
+4. <a href='#clip'>Clipping out Regions</a>
+5. <a href='#determinism'>Notes on preserving sketch determinism</a>
+6. <a href='#resize'>Resizing and Rescaling</a>
+7. <a href='#end'>Closing Notes</a>
 
 <h2><a name='idea'></a>From initial idea to final sketch</h2>
 
@@ -319,7 +320,7 @@ function roundedPoly(ctx, points, radiusAll) {
 
 And that's the beauty of reusing and building on top of code you've previously written! Here I knew exactly what shape I wanted and how I could achieve it, and it felt really good achieving it with a simple function call.
 
-<h2>Clipping out regions</h2>
+<h2><a name='clip'></a>Clipping out regions</h2>
 
 Next we will have a look at the rendering context's <a href='https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clip'>clip()</a> function. Clipping here means cutting out a certain region/portion of the canvas, such that only things inside this specific region are visible, whereas everything that falls outside of it is hidden. Let's have a look at a quick example:
 
