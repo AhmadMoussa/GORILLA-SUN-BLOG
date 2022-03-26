@@ -5,54 +5,53 @@ categories:
   - p5js
 description: An in depth look into the inner workings of my crayon codes sketch Behind the Canvas
 thumbnail_path: https://gorillasun.de/assets/images/hexagons/spiralgrid.mp4
-published: false
+published: true
 exclude_rss: true
 ---
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+  <img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/banner2.png" alt="">
+</span>
 
-I am exhilarated to have had the opportunity to work on a sketch for Crayon Codes! First off, I'd like to thank Sinan for reaching out to me about this opportunity, and for his continuous feedback throughout the different iterations my sketch went through!
+If you haven't seen it on my Twitter already, I've had the chance to make a sketch for Crayon Codes! I'm very excited about how it turned out and how everyone responded to it! But before going into any details, I'd like to thank <a href='https://twitter.com/msawired'>Sinan</a> for reaching out to me about this opportunity, and for his continuous feedback throughout the different iterations my sketch went through!
 
 Secondly I'd like to thank all those who've collected an edition or two of 'Behind the Canvas'! It was a joy to make, and as always I learned a lot along the way. Making a sketch where the collector could specify parameters prior to collecting, was yet another beast to conquer. Here are a few of the 70 editions that have been collected:
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/samsara.png" alt="">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/50.png" alt="">
 		</span>
 	</div>
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/anna.png" alt="">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/27.png" alt="">
 		</span>
 	</div>
 
   <div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/conrad.png" alt="">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/16.png" alt="">
 		</span>
 	</div>
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/GB.png" alt="">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/31.png" alt="">
 		</span>
 	</div>
 </div>
 
-There's a couple of cool things going on in the sketch, that are worth inspecting a little bit in more detail. Such as:
+You can check out the entire collection <a href='https://openprocessing.org/crayon/28'>here</a>. I think that there's a couple of cool things going on in the sketch, that from a technical and ideative point of view are worth inspecting a little bit in more detail:
 
-
-
-1. <a href='#idea'>Initial ideas</a>
+1. <a href='#idea'>From initial idea to final sketch</a>
 2. <a href='#opc'>Setting up our sketch with the OPC Configurator 3000</a>
-3. <a href='#smooth'>Creating smooth polygons</a>
+3. <a href='#smooth'>Creating smooth Polygons</a>
 4. <a href='#determinism'>Notes on preserving sketch determinism</a>
-5. <a href='#resize'>Resizing and rescaling</a>
+5. <a href='#resize'>Resizing and Rescaling</a>
+6. <a href='#end'>Closing Notes</a>
 
-<h2>Ideation and initial ideas</h2>
+<h2><a name='idea'></a>From initial idea to final sketch</h2>
 
-
-Early February Sinan reached out to me, and sent me some of my sketches that he had seen and thought could be a good fit for the Crayon Code raster. I took a couple of days to dig up their code from my hard drive and assess which ones had enough variety to be turned into generative tokens.
-
-The ones that he especially liked were the following:
+Early February Sinan reached out to me, and sent me some of my sketches that he had seen and thought could be a good fit for the Crayon Code raster. I took a couple of days to dig up their code from my hard drive and assess which ones had enough variety to be turned into generative tokens. The ones that he especially liked were the following:
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -67,10 +66,24 @@ The ones that he especially liked were the following:
 	</div>
 </div>
 
-However I wasn't certain if it was possible for them to have enough variety to create an entire collection. And I already had made the 'scribble' GT on fxhash which explored a similar avenue. How I ultimately arrived at what 'Behind the Canvas' ended up being, might sound like a far stretch, but my brain works in mysterious ways. What Sinan liked about the two previous sketches, was the 'rug' like texture of them, and how the edges of the lines overlapped with each other.
+However I wasn't certain if it was possible for them to have enough variety to create an entire collection. And I already had made my <a href='https://www.fxhash.xyz/generative/1193'>'scribble' sketch</a> on fxhash which explored a similar avenue. I did come up with some variations however to see if I could push the idea in a different directon:
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/idea1.png" alt="">
+		</span>
+	</div>
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/idea2.png" alt="">
+		</span>
+	</div>
+</div>
+
+How I ultimately arrived at what 'Behind the Canvas' ended up being, might sound like a far stretch, but my brain works in mysterious ways. What Sinan liked about the two previous sketches, was the 'rug' like texture of them, and how the edges of the lines overlapped with each other.
 
 I pondered a bit on that, and wanted to see if I could somehow make a sketch that didn't convey the texture of fabric, but rather a different property. I explored some other ideas that came to mind, one of them being an attempt at emulating a tear or split in some sort of fabric. I ended up with something that looked like the following:
-
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -87,7 +100,7 @@ I pondered a bit on that, and wanted to see if I could somehow make a sketch tha
 
 And from here on it's probably obvious how the sketch developed further.
 
-<h2>Setting up your sketch with the OPC Configurator 3000</h2>
+<h2><a name='opc'></a>Setting up your sketch with the OPC Configurator 3000</h2>
 
 A good starting point for figuring out how to weave the Configurator into my code were previous Crayon Code sketches, which conveniently have their code publicly visible. There's a couple of ways to do this, depending on how you structure your sketch, if it's animated or not, and how you want to incorporate the initial random seed throughout your sketch. The most fitting way to do this for my purposes, was how Okazz handled it in his 'Crack' sketch, which only draws and redraws the graphics to the canvas on three occasions:
 
@@ -123,7 +136,7 @@ We need a placeholder value for each slider. This seems redundant but will make 
 	}
 }</code></pre>
 
-Essentially, we will only call the generate() function if any of the slider values have changed. Here the generate() function is where we put all of things that render graphics to the canvas. This generate function will also be called at the end of setup and when the window is resized:
+Essentially, we will only call the generate() function if any of the slider values have changed. Here the generate() function is where we put all of the things that render graphics to the canvas. This generate function will also be called at the end of setup and when the window is resized:
 
 <pre><code>function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -154,7 +167,7 @@ It's also important that you set your random seed here at the very top, this is 
 
 
 
-<h2>Creating smooth polygons</h2>
+<h2><a name='smooth'></a>Creating smooth polygons</h2>
 
 The main portion of the sketch consists of patterned layers, each of which has an opening in the shape of a deformed circle that gives way to the next layer. I've already written about deforming a circular shape with perlin noise <a href='https://gorillasun.de/blog/Radial-Perlin-Noise-and-Generative-Tree-Rings'>here</a>, however this time I did it a little differently reusing my <a href='https://gorillasun.de/blog/An-algorithm-for-polygons-with-rounded-corners'>smooth polygon code</a> for a slightly different aesthetic that does not require perlin noise. If you're interested you can read up on it, but it is not necessary to understand the remainder of this post.
 
@@ -1047,7 +1060,7 @@ function roundedPoly(ctx, points, radiusAll) {
 And that should cover all bases for the main portion of the sketch! I won't go into too much detail on the patterns, but for hexagonal grids you can find my tutorial on them <a href='https://gorillasun.de/blog/A-guide-to-Hexagonal-Grids-in-P5JS'>here</a>, as well an OpenProcessing sketch on the main pattern <a href='https://openprocessing.org/sketch/1483294'>here</a>.
 
 
-<h2>A note on preserving sketch determinism</h2>
+<h2><a name='determinism'></a>Notes on preserving sketch determinism</h2>
 
 This is an aspect of the sketch where you really have to make sure that everything is done correctly. Having a few fxhash sketches under my belt, I've had a good amount of practice with this, but I still do get some situations where I have to scratch my head for a bit before I can figure out what's wrong.
 
@@ -1071,8 +1084,13 @@ And another example that is not admissible, is having a varying number of random
 Here we would have to make sure that this for loop makes the same number of random() calls each and every time it is executed. This is tricky because what happens when you resize your sketch horizontally? You would either have to make the increment value 'step' scale with the window width, or make this loop independent from the window width altogether. There are a couple of strategies to approach this, but it will have to wait.
 
 
-<h2>Resizing and rescaling</h2>
+<h2><a name='resize'></a>Resizing and Rescaling</h2>
 
+<div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
+  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+    <source src="https://gorillasun.de/assets/images/behind_the_canvas/cutscale.mp4" type="video/mp4">
+  </video>
+</div>
 
 This previous issue leads directly into how we handle scaling and resizing of the sketch, which was also one of the more tricky hurdles to overcome. I've come to the opinion that there isn't really a universal solution to this specific problem, and it really depends on how you want your sketch to behave when you resize it.
 
@@ -1139,3 +1157,15 @@ function makeShape(R) {
 </code></pre>
 
 We base the radius of the blobby shape off of the minimum dimension of the canvas, and this way ensuring that it will scale along with it, when the canvas is resized. <a href='https://openprocessing.org/sketch/1525688'>Here is an example</a> in the OpenProcessing editor where you can see this in action, just drag the middle separator and observe how it behaves!
+
+<h2><a name='end'></a>Closing Notes</h2>
+
+If you've reached here, thank you for reading! I believe I touched upon all the facets of the sketch that were worth mentioning. Ultimately, what I've realised from projects like this one, is how important it is to complete them, even if you ultimately aren't 100% happy with them. In other words, you can only get better at the entire process, from ideation, to coding up initial versions, to releasing your final sketch, by going through the entire process several times. I think I will be much more confident with my next projects, having more experience as well as more reusable code to back me up in the future.
+
+And again, before my writing becomes unfocused, I am incredibly grateful to everyone who has collected an edition, as well as everyone who has shown me support on Twitter in any form or shape! Thank you, and happy sketching!
+
+<div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
+  <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+    <source src="https://gorillasun.de/assets/images/behind_the_canvas/cut.mp4" type="video/mp4">
+  </video>
+</div>
