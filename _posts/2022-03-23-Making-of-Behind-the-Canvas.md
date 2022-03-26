@@ -71,12 +71,12 @@ However I wasn't certain if it was possible for them to have enough variety to c
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/idea1.png" alt="">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/idea1scaled.png" alt="">
 		</span>
 	</div>
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/idea2.png" alt="">
+			<img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/idea2scaled.png" alt="">
 		</span>
 	</div>
 </div>
