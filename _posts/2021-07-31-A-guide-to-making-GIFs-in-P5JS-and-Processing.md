@@ -4,6 +4,9 @@ author: Ahmad Moussa
 description: This article is a run down of all the possible ways you can turn your sketch into a GIF.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/makinggifs.webm
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
 
 
