@@ -6,6 +6,9 @@ categories:
 description: Delve with me into the wonderful world of P5JS. Procedural and generative art are becoming a lot more popular these days, so why not learn how to make some?
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/first.webm
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
 
 <h2>Why you need a visual medium alongside your music</h2>
