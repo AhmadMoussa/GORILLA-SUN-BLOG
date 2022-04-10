@@ -6,7 +6,11 @@ categories:
 description: Modulating the height and width of rectangle objects, arranged in a grid-like manner, with respect to their x and y coordinates allows you to create interesting patterns, this blog post explains how to achieve this effect.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/sine.webm
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
+
 <div class="box alt">
     <div class="row gtr-50 gtr-uniform">
         <div class="col-4"><span class="image fit"><img src="https://gorillasun.de/assets/images/2021-03-03-Modulating-Shapes-and-Creating-Patterns-in-P5JS-with-Sines-and-Cosines/positionX.gif" alt="" /></span></div>
