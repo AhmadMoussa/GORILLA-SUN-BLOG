@@ -6,7 +6,11 @@ categories:
 description: We have a closer look at a free scripting language that allows us to create tablature and sheet music.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/sheet.webm
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
+
 <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/MmhZ6qe099sETqGzhZ" width="100%" height="100%" style="position:absolute; pointer-events: none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 <p></p>
 <h2>Archiving Ideas as a musician</h2>
