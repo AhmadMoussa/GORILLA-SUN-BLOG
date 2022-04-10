@@ -5,7 +5,12 @@ categories:
   - ableton
 description: Writing interesting chord progressions can be difficult, but arming yourself with a little bit of music theory and creativity you'll be able to break out of any type musical rut.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/chords.webm
+published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
+
 <span class="image left"><img src="https://gorillasun.de/assets/images/thumbnails/2021-02-05-10-tips-to-spice-up-your-chord-progressions.png" alt="" /></span>
 
 <p>The chord progression is without a doubt the underlying driving force of your song. The way I like to think about it, is that specific chords can convey very specific types of emotions, and more specifically, it's the transition between two chords what conveys a sense of emotive movement in your composition. I am well aware that this type of blog post is probably a horse beaten far beyond the point of no return, but I'll try to offer some tips that I use when I feel like I'm stuck while writing music. Let's get started!</p>
