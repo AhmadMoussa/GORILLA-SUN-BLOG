@@ -6,6 +6,9 @@ categories:
 description: This is one of my favorite things I've made with perlin noise so far, generative tree rings.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/treering.mp4
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
 
 This is the 4th installment in the explorative series on Perlin Noise, If you haven't done so yet, or have no idea what Perlin Noise is, go have a look at the previous posts in this series. Otherwise, read onward!
