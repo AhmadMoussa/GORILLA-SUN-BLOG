@@ -6,6 +6,9 @@ categories:
 description: Only a month has passed, however a lot has changed in the Tezos NFT world. Hicetnunc.xyz has become a lot slicker since it's launch roughly 2 months ago.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/cat.webm
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
 
 This will be a loaded article, so hold on to your NFTs as we dive into all the recent developments of the past month! Here's a quick overview, if you're interested in reading up on something in particular:
