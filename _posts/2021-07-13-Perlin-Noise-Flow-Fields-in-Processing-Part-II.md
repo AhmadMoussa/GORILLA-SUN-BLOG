@@ -6,6 +6,9 @@ categories:
 description: Part 2 of creating perlin noise flow fields in Processing.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/flowfield22.webm
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
 
 <div class="row gtr-200">
