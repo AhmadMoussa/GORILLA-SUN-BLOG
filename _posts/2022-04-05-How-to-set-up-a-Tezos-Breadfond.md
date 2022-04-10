@@ -1,5 +1,5 @@
 ---
-title: Tezos Breadfonds: Collaboration and Beyond
+title: "How to set up a Tezos Breadfond"
 author: Ahmad Moussa
 categories:
   - p5js
