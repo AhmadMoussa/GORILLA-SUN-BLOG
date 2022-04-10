@@ -147,35 +147,37 @@ permalink: /posts/
 <div class="row gtr-200">
 	
 {% for post in site.posts %}
-	<div class="col-6 col-12-medium" style="margin: 0 0 1.5em 0;">
-		<div class="image left" style="margin: 0 0 0 0; padding: 0 1em 0 0;">
-			<video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
-				<source src="{{ post.thumbnail_path }}" type="video/mp4">
-			</video>	
+	{% if post.excluded %}
+		<div class="col-6 col-12-medium" style="margin: 0 0 1.5em 0;">
+			<div class="image left" style="margin: 0 0 0 0; padding: 0 1em 0 0;">
+				<video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+					<source src="{{ post.thumbnail_path }}" type="video/mp4">
+				</video>	
+			</div>
+			<a href="https://gorillasun.de{{ post.url }}">
+				<h4 style="margin: 0 0 0 0;">{{post.title}}</h4>
+			</a>
+			<strong>{{ post.date | date: "%m/%d/%Y" }}</strong>
+			<br/>
+			<div style="text-overflow: ellipsis;">{{ post.description }}</div>
 		</div>
-		<a href="https://gorillasun.de{{ post.url }}">
-			<h4 style="margin: 0 0 0 0;">{{post.title}}</h4>
-		</a>
-		<strong>{{ post.date | date: "%m/%d/%Y" }}</strong>
-		<br/>
-		<div style="text-overflow: ellipsis;">{{ post.description }}</div>
-	</div>
-	
+	{% endif %}
 {% continue%}
-	
-	<div class="col-6 col-12-medium" style="margin: 0 0 1.5em 0;">
-		<div class="image left" style="margin: 0 0 0 0; padding: 0 1em 0 0;">
-			<video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
-				<source src="{{ post.thumbnail_path }}" type="video/mp4">
-			</video>	
+	{% if post.excluded %}
+		<div class="col-6 col-12-medium" style="margin: 0 0 1.5em 0;">
+			<div class="image left" style="margin: 0 0 0 0; padding: 0 1em 0 0;">
+				<video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+					<source src="{{ post.thumbnail_path }}" type="video/mp4">
+				</video>	
+			</div>
+			<a href="https://gorillasun.de{{ post.url }}">
+				<h4 style="margin: 0 0 0 0;">{{post.title}}</h4>
+			</a>
+			<strong>{{ post.date | date: "%m/%d/%Y" }}</strong>
+			<br/>
+			<div style="text-overflow: ellipsis;">{{ post.description }}</div>
 		</div>
-		<a href="https://gorillasun.de{{ post.url }}">
-			<h4 style="margin: 0 0 0 0;">{{post.title}}</h4>
-		</a>
-		<strong>{{ post.date | date: "%m/%d/%Y" }}</strong>
-		<br/>
-		<div style="text-overflow: ellipsis;">{{ post.description }}</div>
-	</div>
+	{% endif %}
 </div>
 {% endfor %}
 </section>
