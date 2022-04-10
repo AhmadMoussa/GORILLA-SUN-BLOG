@@ -21,17 +21,25 @@ I wouldn't be writing this post if it weren't for this tweet from <a href='https
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">There has to be better models than just collecting works I have realized. <br>I have been thinking for a while now, you can split sales on most platforms on tezos. I would love to make an event to promote each of us making one work and splitting the royalties with 5 to 10 artists.</p>&mdash; Mical Noelson (@micalnoelson) <a href="https://twitter.com/micalnoelson/status/1502562539699376131?ref_src=twsrc%5Etfw">March 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<p></p>
+
 Afterwards I retweeted his tweet because I thought that it was a formidable idea and had a lot of potential. <a href='https://twitter.com/aebrer'>Andrew</a> quickly hopped onto the bandwagon in the replies and pointed out that this would be possible via the TEIA collab contracts:
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Why not have an event, where everyone can pitch an NFT, set 100% revenue to go to a neutral address, then split profits equally and automatically among everyone who contributed? <br><br>For some artists it might be peanuts but for others it might make all the difference! <a href="https://twitter.com/hashtag/tezos?src=hash&amp;ref_src=twsrc%5Etfw">#tezos</a> <a href="https://twitter.com/hashtag/versum?src=hash&amp;ref_src=twsrc%5Etfw">#versum</a> <a href="https://t.co/Veox4THsTt">https://t.co/Veox4THsTt</a></p>&mdash; Ahmad Moussa || Gorilla Sun (@gorillasu) <a href="https://twitter.com/gorillasu/status/1502632630742884353?ref_src=twsrc%5Etfw">March 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p></p>
 
 We discussed it a bit more, and Andrew quickly did a little test to see if it was possible to setup such a thing:
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Collaboration Abomination<a href="https://t.co/JOo7uUtZSO">https://t.co/JOo7uUtZSO</a><br><br>I&#39;m testing an idea I have for splitting. If this works, 80% of the revenue goes to me, and 20% will go to a Teia collab contract that splits between myself and my two siblings.<br><br>Accepting the highest offer in the next 10 min lol <a href="https://t.co/iY9zUFp0I7">pic.twitter.com/iY9zUFp0I7</a></p>&mdash; 🔺aebrer (Andrew Brereton) (@aebrer) <a href="https://twitter.com/aebrer/status/1502725134184071173?ref_src=twsrc%5Etfw">March 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<p></p>
+
 And it was indeed possible!
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">IT WORKED! <a href="https://t.co/wffX0KlnS0">pic.twitter.com/wffX0KlnS0</a></p>&mdash; 🔺aebrer (Andrew Brereton) (@aebrer) <a href="https://twitter.com/aebrer/status/1502728290146136068?ref_src=twsrc%5Etfw">March 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p></p>
 
 Essentially, what Andrew had done here was a little proof of concept. He minted an NFT via the TEIA collab contract, which upon sale automatically sent and split a portion of the revenue between a set of wallets that he had specified. We'll get into the implications of this in the next sections.
 
