@@ -7,6 +7,8 @@ description: FFmpeg is an essential tool for creative coders. Here's a primer on
 thumbnail_path: https://media.giphy.com/media/ZgSDX7fstahz8kbhzZ/giphy.mp4
 published: true
 exclude_rss: true
+listed: true
+legacy: false
 ---
 
 <div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
