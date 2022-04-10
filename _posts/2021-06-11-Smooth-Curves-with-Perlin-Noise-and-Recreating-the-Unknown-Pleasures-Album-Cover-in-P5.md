@@ -6,7 +6,11 @@ categories:
 description: In this part of the perlin noise tutorial series we will have a look at creating smooth curves with Perlin Noise in P5js and processing.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/unknown_pleasures.mp4
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
+
 This is part three of the explorative series on Perlin Noise in p5js (and processing). In this blog post we'll have a look at making smooth curves with the curveVertex() function. We'll also be recreating Joy Division's famous album cover for 'Unknown Pleasures'!
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-11-Smooth-curves-with-Perlin-Noise-in-P5JS-and_Processing/uknown_pleasures.png" alt="" /></span>
