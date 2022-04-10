@@ -6,7 +6,11 @@ categories:
 description: Hooke's Law is generally found in physics and concerns the behaviour of springs, however it can also come in handy for simulating brush strokes programmatically.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/Kanji.webm
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
+
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-07-Simulating-brush-strokes-with-Hooke's-Law-in-P5js/Kanji.gif" alt="" /></span>
 
 One continuous big source of inspiration for me has been Processing's <a href='https://openprocessing.org/browse/#'>Discover Tab</a>, where you can browse sketches from different users and see what they have come up with.
