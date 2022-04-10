@@ -8,6 +8,7 @@ thumbnail_path: https://gorillasun.de/assets/images/behind_the_canvas/cut.mp4
 published: true
 exclude_rss: true
 listed: true
+legacy: false
 ---
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
   <img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/banner2.png" alt="">
