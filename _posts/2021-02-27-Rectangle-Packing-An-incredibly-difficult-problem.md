@@ -6,6 +6,9 @@ categories:
 description: Sometimes problems can be much more difficult than they appear to be.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/rectangle.webm
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-02-27-rectangle-packing/rectangles1.png" alt="" /></span>
