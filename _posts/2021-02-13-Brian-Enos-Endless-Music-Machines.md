@@ -5,6 +5,9 @@ categories:
   - music
 description: The idea of procedurally generated music is interesting, in this article we have a look at how Brian Eno sparked this idea into life and how he approached it, as well as how you can start making something similar.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/musicmachine.webm
+exclude_rss: false
+listed: true
+legacy: false
 ---
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/thumbnails/musicmachine.webm" alt="" /></span>
