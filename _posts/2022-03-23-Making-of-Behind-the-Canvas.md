@@ -7,6 +7,7 @@ description: An in depth look into the inner workings of my crayon codes sketch 
 thumbnail_path: https://gorillasun.de/assets/images/behind_the_canvas/cut.mp4
 published: true
 exclude_rss: true
+excluded: false
 ---
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
   <img class="viewable" src="https://gorillasun.de/assets/images/behind_the_canvas/banner2.png" alt="">
