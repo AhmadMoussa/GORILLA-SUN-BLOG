@@ -6,6 +6,9 @@ categories:
 description: This blog post shows you how to get started with tezos and minting your first NFT on hicetnunc.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/donald.webm
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
 
 
