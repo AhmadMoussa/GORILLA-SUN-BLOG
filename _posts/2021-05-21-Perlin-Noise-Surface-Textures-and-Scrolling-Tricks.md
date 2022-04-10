@@ -6,6 +6,9 @@ categories:
 description: In this part of the explorative series on Perlin Noise, we will have a look at scrolling Perlin noise across the canvas, quantizing it and obtaining interesting surface textures with it.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/corrupt_datastream.webm
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-05-21-Perlin-Noise-Surface-Textures-and-Scrolling-Tricks/Perlin Landscape.gif" alt="" /></span>
