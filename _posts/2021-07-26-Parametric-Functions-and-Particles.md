@@ -6,6 +6,9 @@ categories:
 description: This is one of my favorite tricks. Albeit being very simple, visually it looks very impressive.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/galacticdisc.webm
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
 
 <div class="row gtr-200">
