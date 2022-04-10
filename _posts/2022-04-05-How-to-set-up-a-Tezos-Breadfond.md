@@ -8,6 +8,7 @@ thumbnail_path: https://gorillasun.de/assets/images/breadfond/thumb.mp4
 published: true
 exclude_rss: true
 listed: false
+legacy: false
 ---
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
