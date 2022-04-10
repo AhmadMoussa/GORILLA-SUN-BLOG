@@ -7,6 +7,8 @@ description: A closer look at random walkers, and how to make them explore and t
 thumbnail_path: https://gorillasun.de/assets/images/gifs/random_walkers/out2.mp4
 published: true
 exclude_rss: true
+listed: true
+legacy: false
 ---
 
 <div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
