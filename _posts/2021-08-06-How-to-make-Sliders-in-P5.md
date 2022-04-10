@@ -6,6 +6,9 @@ categories:
 description: Sliders are a wonderful tool to add some interactivity to your sketches. Here's everything you need to know.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/giphy.webm
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
 
 <h2>Adding sliders to your sketches</h2>
