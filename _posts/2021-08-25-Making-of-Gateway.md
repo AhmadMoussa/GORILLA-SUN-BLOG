@@ -7,6 +7,9 @@ categories:
 description: An in depth tutorial on recreating a beesandbombs' sketch! We'll have a closer look at seamlessly looping points and creating infinitely expanding patterns!
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/Gateway.webm
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-08-25-Making-of-Gateway/gateway.gif" alt="" /></span>
