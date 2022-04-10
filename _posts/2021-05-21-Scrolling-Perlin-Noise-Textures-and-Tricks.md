@@ -6,6 +6,9 @@ categories:
 description: In this part of the perlin noise tutorial series we will have a look at creative applications of Perlin Noise and using it to texture.
 thumbnail_path: 2021-04-16-Generative-Art-and-Creative-Coding-Showcase.png
 published: false
+exclude_rss: false
+listed: true
+legacy: false
 ---
 
 This is the second part of the explorative series on Perlin Noise in P5JS and Processing, and focuses on applying Perlin Noise to a 2 dimensional grid of items on the canvas and how we can obtain interesting textures in this manner.
