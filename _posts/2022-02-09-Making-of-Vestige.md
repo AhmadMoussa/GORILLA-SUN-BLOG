@@ -7,6 +7,8 @@ description: Notes and thoughts on my generative fxhash token 'Vestige'
 thumbnail_path: https://gorillasun.de/assets/images/vestiges/crop.mp4
 published: true
 exclude_rss: true
+listed: true
+legacy: false
 ---
 
 <p style="margin: 0 0 0.1em 0;">
