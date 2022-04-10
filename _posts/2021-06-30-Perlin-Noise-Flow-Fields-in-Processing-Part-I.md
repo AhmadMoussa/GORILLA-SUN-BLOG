@@ -6,6 +6,9 @@ categories:
 description: This blog post will explain how to code up a Flow Field in Processing.
 thumbnail_path: https://gorillasun.de/assets/images/thumbnails/ff.mp4
 published: true
+exclude_rss: false
+listed: true
+legacy: false
 ---
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-06-30-Perlin-Noise-Flow-Fields-in-Processing-Part-I/fieldColorDashedShort58.png" alt="" /></span>
 
