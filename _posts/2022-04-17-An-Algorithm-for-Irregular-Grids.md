@@ -7,7 +7,8 @@ description: An in depth look into the inner workings of my crayon codes sketch 
 thumbnail_path: https://gorillasun.de/assets/images/hexagons/spiralgrid.mp4
 published: true
 exclude_rss: true
-listed: true
+listed: false
+legacy: false
 ---
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-4">
