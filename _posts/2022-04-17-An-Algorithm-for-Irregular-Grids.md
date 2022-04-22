@@ -10,6 +10,7 @@ exclude_rss: true
 listed: false
 legacy: false
 ---
+
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-4">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
