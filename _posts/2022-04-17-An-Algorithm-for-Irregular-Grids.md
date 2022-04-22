@@ -103,7 +103,7 @@ They allowed me to explore concepts like <a href='https://gorillasun.de/blog/Mak
 First, I'd like to discuss a little what I mean with an irregular grid because I have something very specific in mind. When you google 'irregular grid' you get a bunch of odd looking grid layouts, some of them look like this:
 
 <div class="row gtr-50 gtr-uniform">
-	<div class="col-6">
+	<div class="col-4">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular1.png" alt="">
 		</span>
@@ -137,7 +137,7 @@ First, I'd like to discuss a little what I mean with an irregular grid because I
     <p></p>
 
 	</div>
-	<div class="col-6">
+	<div class="col-4">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular2.png" alt="">
 		</span>
@@ -187,6 +187,40 @@ First, I'd like to discuss a little what I mean with an irregular grid because I
     <p></p>
 
 	</div>
+</div>
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+    <pre><code>
+        function setup(){
+          w = min(windowWidth, windowHeight);
+          createCanvas(w, w);
+          pad = w/10;
+          spc = 25;
+
+          rectMode(CENTER)
+          noFill()
+          strokeWeight(2)
+        }
+
+        function draw(){
+          background(0)
+          stroke(255)
+          for (x = pad; x < w - pad; x += spc) {
+            for (y = pad; y < w - pad; y += spc) {
+              rect(x, y, spc, spc)
+            }
+          }
+          noLoop()
+        }
+    </code></pre>
+  </div>
+
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular1.png" alt="">
+		</span>
+  </div>
 </div>
 
 
