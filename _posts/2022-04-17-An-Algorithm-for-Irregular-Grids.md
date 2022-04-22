@@ -103,7 +103,7 @@ They allowed me to explore concepts like <a href='https://gorillasun.de/blog/Mak
 First, I'd like to discuss a little what I mean with an irregular grid because I have something very specific in mind. When you google 'irregular grid' you get a bunch of odd looking grid layouts, some of them look like this:
 
 <div class="row gtr-50 gtr-uniform">
-	<div class="col-4">
+	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular1.png" alt="">
 		</span>
@@ -137,7 +137,7 @@ First, I'd like to discuss a little what I mean with an irregular grid because I
     <p></p>
 
 	</div>
-	<div class="col-4">
+	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular2.png" alt="">
 		</span>
@@ -182,20 +182,6 @@ First, I'd like to discuss a little what I mean with an irregular grid because I
         rect(posX, posY, wid, hei)
       }
     }
-
-    </script>
-    <p></p>
-
-	</div>
-  <div class="col-4">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular3.png" alt="">
-		</span>
-
-    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
-
-      r=[1,2];setup=_=>{w=min(windowWidth, windowHeight);createCanvas(w,w);s=w/9;background(0);noFill();stroke(w);strokeWeight(2);q=w-s*2;cc(s,s,q,q,6);};function cc(x,y,i,h,d){if(d>0){var [o,k]=[i/2,h/2];cc(x,y,o,k,d-random(r));cc(x+o,y,o,k,d-random(r));cc(x,y+k,o,k,d-random(r));cc(x+o,y+k,o,k,d-random(r))}else{rect(x,y,i,h);}}
 
     </script>
     <p></p>
