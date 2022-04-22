@@ -107,22 +107,55 @@ Here are a few strategies for creating odd looking grids. <b>Cick on the thumbna
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-4">
-  <a href='https://editor.p5js.org/AhmadMoussa/sketches/gF1cgJ1rX'>
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/grid.png" alt="">
-		</span>
-  </a>
+    <a href='https://editor.p5js.org/AhmadMoussa/sketches/gF1cgJ1rX'>
+  		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+  			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/regular.png" alt="">
+  		</span>
+    </a>
+	</div>
+
+  <div class="col-4">
+    <a href='https://editor.p5js.org/AhmadMoussa/sketches/LfCknGtBU'>
+  		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+  			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/recursiveregular.png" alt="">
+  		</span>
+    </a>
 	</div>
 
 	<div class="col-4">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular.png" alt="">
-		</span>
+    <a href='https://editor.p5js.org/AhmadMoussa/sketches/HicH5_LjC'>
+  		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+  			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/recursiveirregular.png" alt="">
+  		</span>
+    </a>
 	</div>
+</div>
+
+
+<div class="row gtr-50 gtr-uniform">
+
   <div class="col-4">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/quad.png" alt="">
-		</span>
+    <a href='https://editor.p5js.org/AhmadMoussa/sketches/EKXXHHhkt'>
+      <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+        <img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/randomspacing.png" alt="">
+      </span>
+    </a>
+  </div>
+
+  <div class="col-4">
+    <a href='https://editor.p5js.org/AhmadMoussa/sketches/59wTZ0i_s'>
+      <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+        <img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/quad.png" alt="">
+      </span>
+    </a>
+  </div>
+
+	<div class="col-4">
+    <a href='https://editor.p5js.org/AhmadMoussa/sketches/59wTZ0i_s'>
+  		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+  			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/displacement.png" alt="">
+  		</span>
+    </a>
 	</div>
 </div>
 
