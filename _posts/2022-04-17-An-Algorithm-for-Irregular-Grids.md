@@ -1,14 +1,13 @@
----
+ ---
 title: An Algorithm for Irregular Grids
 author: Ahmad Moussa
 categories:
   - p5js
-description: An in depth look into the inner workings of my crayon codes sketch Behind the Canvas
+description: An approach for constructing irregular grids
 thumbnail_path: https://gorillasun.de/assets/images/hexagons/spiralgrid.mp4
 published: true
 exclude_rss: true
-listed: false
-legacy: false
+listed: true
 ---
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-4">
@@ -26,19 +25,183 @@ legacy: false
 			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/3mod.png" alt="">
 		</span>
 	</div>
-
 </div>
 
-You can check out the entire collection <a href='https://openprocessing.org/crayon/28'>here</a>. I think that there's a couple of cool things going on in the sketch, that from a technical and ideative point of view are worth inspecting a little bit in more detail:
 
-1. <a href='#idea'>From initial idea to final sketch</a>
-2. <a href='#opc'>Setting up our sketch with the OPC Configurator 3000</a>
-3. <a href='#smooth'>Creating smooth Polygons</a>
-4. <a href='#determinism'>Notes on preserving sketch determinism</a>
-5. <a href='#resize'>Resizing and Rescaling</a>
-6. <a href='#end'>Closing Notes</a>
+Grids, in their various shapes and forms, have been an important backbone for my sketches since I started. Some of the best sketches that I've seen to date begin with a grid and evolve from there, for example Julien Gachadoats 'Umwelt', or Jeff's (aka ippsketch) Bent series, or William Mapan's Generative Tapestry just to name a few among many, many others.
 
-<h2><a name='idea'></a>From initial idea to final sketch</h2>
+
+Lately I've been thinking a lot about generative art 'archetypes', and I believe that grids have secured their place as such, as they constitute an important backbone that many sketches build upon. Two influential examples from an early generative art period would be Georg Nees' 1968 work Schotter (german word for Gravel) and Vera Molnár's 1974 artwork (Dés)Ordres:
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/nees.png" alt="">
+		</span>
+	</div>
+  <div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/molnar.png" alt="">
+		</span>
+	</div>
+</div>
+
+
+Grids are by nature 'orderly'. We generally use grids and tables to neatly display information and delimit text/numbers in such a way that it is easy for the eye to follow. Observing these two artworks reveals a characteristic that is inherent to many contemporary generative pieces: the interplay between order and chaos. Our brains are pattern recognition machines, and introducing twists and irregularities in repetitive patterns most likely triggers something within us.
+
+
+More contemporary pieces that make use of grids in various flavours are <a href='https://feralfile.com/artworks/umwelt-hyf?fromExhibition=graph-eg6'>Julien Gachadoat's Umwelt</a>, <a href='https://ippsketch.com/bent/'>ippsketch's Bent series</a> as well as <a href='https://twitter.com/williamapan/status/1516831897334210570' >William Mapan's generative tapestry</a>, just to name a few:
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-4">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/umwelt.png" alt="">
+		</span>
+	</div>
+	<div class="col-4">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/bent.png" alt="">
+		</span>
+	</div>
+  <div class="col-4">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/mapan.png" alt="">
+		</span>
+	</div>
+</div>
+
+I also recommend reading ippsketch's excellent article on how Bent was made! Here I'd like to conclude this little interlude and dedicate the rest of the post towards an grid-construction algorithm that I have used extensively in the past weeks. The algo is relatively straight-forward and unoptimized, but quite versatile. Here's a little index:
+
+
+
+Explanations:
+1. <a href='#grids'>Interlude</a>
+2. <a href='#irregular'>Irregular Grids?</a>
+3. <a href='#strat'>A strategy for constructing Irregular Grids</a>
+
+The Algorithm:
+1. <a href='#bool'>A Boolean Grid</a>
+2. <a href='#pack'>The Packing Procedure</a>
+3. <a href='#gap'>Leftover Gaps?</a>
+4. <a href='#styles'>Different Grid Styles</a>
+
+Extras:
+1. <a href='#indx'>Indexing Cells and Adjacency</a>
+2. <a href='#recursive'>Recursive Subdivision</a>
+
+
+
+<h2><a name='regular'></a>Grids and their Variations</h2>
+
+Most of my first sketches were based on simple grids:
+
+They allowed me to explore concepts like <a href='https://gorillasun.de/blog/Making-of-Gzork'>SDFs</a> and <a href='https://gorillasun.de/blog/Introduction-to-Perlin-Noise-in-P5JS-and-Processing'>noise fields</a>. These two posts are also good starting points if you'd like to learn how to construct grids! I have also experimented quite a bit with hexagonal grids and written about different strategies to construct them <a href='https://gorillasun.de/blog/A-guide-to-Hexagonal-Grids-in-P5JS'>here</a>.
+
+
+First, I'd like to discuss a little what I mean with an irregular grid because I have something very specific in mind. When you google 'irregular grid' you get a bunch of odd looking grid layouts, some of them look like this:
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-4">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular1.png" alt="">
+		</span>
+
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+      function setup(){
+        w = min(windowWidth, windowHeight);
+        createCanvas(w, w);
+        strokeWeight(4);
+        off = w/10;
+
+        spcX = 25;
+        spcY = 25;
+
+        rectMode(CENTER)
+        noFill()
+        strokeWeight(2)
+      }
+
+      function draw(){
+        background(0)
+        stroke(255)
+        for (x = off; x < w - off; x += spcX) {
+          for (y = off; y < w - off; y += spcY) {
+            rect(x, y, spcX, spcY)
+          }
+        }
+      }
+    </script>
+    <p></p>
+
+	</div>
+	<div class="col-4">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular2.png" alt="">
+		</span>
+
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+
+        function setup(){
+      w = min(windowWidth, windowHeight);
+      createCanvas(w, w);
+      strokeWeight(4);
+      pad = w/10;
+
+      spcX = 25;
+      spcY = 25;
+
+      //rectMode(CENTER)
+      noFill()
+      strokeWeight(2)
+      background(0)
+      stroke(255)
+    }
+
+    function draw(){
+
+      createCell(pad,pad,w-pad*2,w-pad*2,5)
+      noLoop()
+    }
+
+    function createCell(posX, posY, wid, hei, depth){
+      if(depth>0){
+        var div = random(0.25, 0.75)
+        if(random()>0.5){
+          createCell(posX, posY, wid, hei*div, depth-1)
+          createCell(posX, posY+hei*div, wid, hei*(1-div), depth-1)
+        }else{
+          createCell(posX, posY, wid*div, hei, depth-1)
+          createCell(posX+wid*div, posY, wid*(1-div), hei, depth-1)
+        }
+
+      }else{
+        rect(posX, posY, wid, hei)
+      }
+    }
+
+    </script>
+    <p></p>
+
+	</div>
+  <div class="col-4">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular3.png" alt="">
+		</span>
+
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
+
+      r=[1,2];setup=_=>{w=min(windowWidth, windowHeight);createCanvas(w,w);s=w/9;background(0);noFill();stroke(w);strokeWeight(2);q=w-s*2;cc(s,s,q,q,6);};function cc(x,y,i,h,d){if(d>0){var [o,k]=[i/2,h/2];cc(x,y,o,k,d-random(r));cc(x+o,y,o,k,d-random(r));cc(x,y+k,o,k,d-random(r));cc(x+o,y+k,o,k,d-random(r))}else{rect(x,y,i,h);}}
+
+    </script>
+    <p></p>
+
+	</div>
+</div>
+
+
 
 <div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
   <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
