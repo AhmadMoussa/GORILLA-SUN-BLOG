@@ -1,14 +1,14 @@
- ---
-title: "An Algorithm for Irregular Grids"
+---
+title: An Algorithm for Irregular Grids
 author: Ahmad Moussa
 categories:
   - p5js
-description: An approach for constructing irregular grids and in depth info about it
+description: An in depth look into the inner workings of my crayon codes sketch Behind the Canvas
 thumbnail_path: https://gorillasun.de/assets/images/hexagons/spiralgrid.mp4
 published: true
 exclude_rss: true
-listed: false
 legacy: false
+listed: false
 ---
 
 <div class="row gtr-50 gtr-uniform">
