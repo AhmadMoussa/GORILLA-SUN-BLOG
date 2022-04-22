@@ -109,7 +109,7 @@ Here are a few strategies for creating odd looking grids. <b>Cick on the thumbna
 	<div class="col-4">
     <a href='https://editor.p5js.org/AhmadMoussa/sketches/gF1cgJ1rX'>
   		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-  			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/regular.png" alt="">
+  			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/grid.png" alt="">
   		</span>
     </a>
 	</div>
@@ -151,9 +151,9 @@ Here are a few strategies for creating odd looking grids. <b>Cick on the thumbna
   </div>
 
 	<div class="col-4">
-    <a href='https://editor.p5js.org/AhmadMoussa/sketches/59wTZ0i_s'>
+    <a href='https://editor.p5js.org/AhmadMoussa/sketches/iNhMm5J8v'>
   		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-  			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/displacement.png" alt="">
+  			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/distorted.png" alt="">
   		</span>
     </a>
 	</div>
