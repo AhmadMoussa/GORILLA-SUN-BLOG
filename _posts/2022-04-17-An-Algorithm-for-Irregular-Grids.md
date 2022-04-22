@@ -102,126 +102,33 @@ They allowed me to explore concepts like <a href='https://gorillasun.de/blog/Mak
 
 First, I'd like to discuss a little what I mean with an irregular grid because I have something very specific in mind. When you google 'irregular grid' you get a bunch of odd looking grid layouts, some of them look like this:
 
+
+Here are a few strategies for creating odd looking grids. <b>Cick on the thumbnail of each grid and it will take you to it's corresponding code in the p5 editor</b>:
+
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-4">
+  <a href='https://editor.p5js.org/AhmadMoussa/sketches/gF1cgJ1rX'>
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular1.png" alt="">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/grid.png" alt="">
 		</span>
-
-    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
-      function setup(){
-        w = min(windowWidth, windowHeight);
-        createCanvas(w, w);
-        strokeWeight(4);
-        off = w/10;
-
-        spcX = 25;
-        spcY = 25;
-
-        rectMode(CENTER)
-        noFill()
-        strokeWeight(2)
-      }
-
-      function draw(){
-        background(0)
-        stroke(255)
-        for (x = off; x < w - off; x += spcX) {
-          for (y = off; y < w - off; y += spcY) {
-            rect(x, y, spcX, spcY)
-          }
-        }
-      }
-    </script>
-    <p></p>
-
+  </a>
 	</div>
+
 	<div class="col-4">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular2.png" alt="">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular.png" alt="">
 		</span>
-
-    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/p5" data-p5-version="1.2.0" data-autoplay data-preview-width="350" data-height="400">
-
-        function setup(){
-      w = min(windowWidth, windowHeight);
-      createCanvas(w, w);
-      strokeWeight(4);
-      pad = w/10;
-
-      spcX = 25;
-      spcY = 25;
-
-      //rectMode(CENTER)
-      noFill()
-      strokeWeight(2)
-      background(0)
-      stroke(255)
-    }
-
-    function draw(){
-
-      createCell(pad,pad,w-pad*2,w-pad*2,5)
-      noLoop()
-    }
-
-    function createCell(posX, posY, wid, hei, depth){
-      if(depth>0){
-        var div = random(0.25, 0.75)
-        if(random()>0.5){
-          createCell(posX, posY, wid, hei*div, depth-1)
-          createCell(posX, posY+hei*div, wid, hei*(1-div), depth-1)
-        }else{
-          createCell(posX, posY, wid*div, hei, depth-1)
-          createCell(posX+wid*div, posY, wid*(1-div), hei, depth-1)
-        }
-
-      }else{
-        rect(posX, posY, wid, hei)
-      }
-    }
-
-    </script>
-    <p></p>
-
+	</div>
+  <div class="col-4">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/quad.png" alt="">
+		</span>
 	</div>
 </div>
 
-<div class="row gtr-50 gtr-uniform">
-	<div class="col-6">
-    <pre><code>
-        function setup(){
-          w = min(windowWidth, windowHeight);
-          createCanvas(w, w);
-          pad = w/10;
-          spc = 25;
 
-          rectMode(CENTER)
-          noFill()
-          strokeWeight(2)
-        }
 
-        function draw(){
-          background(0)
-          stroke(255)
-          for (x = pad; x < w - pad; x += spc) {
-            for (y = pad; y < w - pad; y += spc) {
-              rect(x, y, spc, spc)
-            }
-          }
-          noLoop()
-        }
-    </code></pre>
-  </div>
 
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/irregular1.png" alt="">
-		</span>
-  </div>
-</div>
 
 
 
