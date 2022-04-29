@@ -53,19 +53,13 @@ More contemporary pieces that make use of grids in various flavours are <a href=
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-4">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/umwelt.png" alt="">
-		</span>
+		<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Umwelt #25 exhibited for <a href="https://twitter.com/FeralFile?ref_src=twsrc%5Etfw">@FeralFile</a> –GRAPH. <a href="https://t.co/rDSbApBv4t">pic.twitter.com/rDSbApBv4t</a></p>&mdash; Julien Gachadoat (@v3ga) <a href="https://twitter.com/v3ga/status/1504858856299630604?ref_src=twsrc%5Etfw">March 18, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</div>
 	<div class="col-4">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/bent.png" alt="">
-		</span>
+		<blockquote class="twitter-tweet"><p lang="en" dir="ltr">One algorithm, two outputs<br>Bent #780 | #425<a href="https://twitter.com/hashtag/BendsdayWednesday?src=hash&amp;ref_src=twsrc%5Etfw">#BendsdayWednesday</a> <a href="https://t.co/Tga294Urb6">pic.twitter.com/Tga294Urb6</a></p>&mdash; Jeff (@ippsketch) <a href="https://twitter.com/ippsketch/status/1514204251739901964?ref_src=twsrc%5Etfw">April 13, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</div>
   <div class="col-4">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/mapan.png" alt="">
-		</span>
+		<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Can&#39;t wait to show you this generative art series I&#39;ve been working on for so long 🖍️🎨<a href="https://twitter.com/hashtag/generativeart?src=hash&amp;ref_src=twsrc%5Etfw">#generativeart</a> <a href="https://twitter.com/hashtag/javascript?src=hash&amp;ref_src=twsrc%5Etfw">#javascript</a> <a href="https://t.co/gWNbtcWBI5">pic.twitter.com/gWNbtcWBI5</a></p>&mdash; William Mapan (@williamapan) <a href="https://twitter.com/williamapan/status/1516831897334210570?ref_src=twsrc%5Etfw">April 20, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</div>
 </div>
 
