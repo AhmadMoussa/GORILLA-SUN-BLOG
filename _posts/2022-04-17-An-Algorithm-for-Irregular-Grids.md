@@ -447,13 +447,13 @@ This change can be effectuated by introducing a couple more variables in the set
 Now we can control the aspect ratio of the sketch simply by specifying it with the widMod and lenMod variables. For demonstration purposes I am using a fixed seed number:
 
 <div class="row gtr-50 gtr-uniform">
-  <div class="col-6">
+  <div class="col-4">
       <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
         <img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/regular.png" alt="">
       </span>
   </div>
 
-  <div class="col-6">
+  <div class="col-8">
       <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
         <img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/stretch.png" alt="">
       </span>
