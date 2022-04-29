@@ -40,7 +40,7 @@ Grids, in their various shapes and forms, have been an important backbone for my
 	</div>
   <div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/molnar.png" alt="">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/vera.png" alt="">
 		</span>
 	</div>
 </div>
