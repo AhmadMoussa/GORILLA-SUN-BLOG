@@ -84,18 +84,39 @@ The Algorithm:
 4. <a href='#gap'>Filling out the Leftover Gaps</a>
 5. <a href='#styles'>Different Grid Styles</a>
 
-Extras:
-1. <a href='#indx'>Indexing Cells and Adjacency</a>
-2. <a href='#recursive'>Recursive Subdivision</a>
-
+Bonus:
+1. <a href='#indx'>Tsubuyaki Grids</a>
 
 
 <h2><a name='grids'></a>Grids and their Variations</h2>
 
 Most of my first sketches were based on simple grids:
 
-They allowed me to explore concepts like <a href='https://gorillasun.de/blog/Making-of-Gzork'>SDFs</a> and <a href='https://gorillasun.de/blog/Introduction-to-Perlin-Noise-in-P5JS-and-Processing'>noise fields</a>. These two posts are also good starting points if you'd like to learn how to construct grids! I have also experimented a bit with hexagonal grids and written about different strategies to construct them <a href='https://gorillasun.de/blog/A-guide-to-Hexagonal-Grids-in-P5JS'>here</a>.
 
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-4">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/gorilla sun 2021/April/datastream.gif" alt="">	
+		</span>
+	</div>
+	<div class="col-4">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/gorilla sun 2021/June/hieroglyphs I.jfif" alt="">	
+		</span>
+	</div>
+	<div class="col-4">
+		<span class="image fit" style="margin: 0 0 0 0; padding: 0 0 0 0;">
+			<video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius: 0.375em; margin: 0 0 0 0;" draggable="true">
+				<source src="https://gorillasun.de/assets/images/gifs/sdf/ktork.webm" type="video/mp4">
+			</video>	
+		</span>
+	</div>
+</div>
+	
+	
+	
+
+They allowed me to explore concepts like <a href='https://gorillasun.de/blog/Making-of-Gzork'>SDFs</a> and <a href='https://gorillasun.de/blog/Introduction-to-Perlin-Noise-in-P5JS-and-Processing'>noise fields</a>. These two posts are also good starting points if you'd like to learn how to construct grids! I have also experimented a bit with hexagonal grids and written about different strategies to construct them <a href='https://gorillasun.de/blog/A-guide-to-Hexagonal-Grids-in-P5JS'>here</a>.
 
 First, I'd like to discuss a little what I mean with an irregular grid because I have something very specific in mind. When you google 'irregular grid' you get a bunch of odd looking grid layouts, some of them look like this:
 
