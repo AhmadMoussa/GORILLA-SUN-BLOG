@@ -29,7 +29,7 @@ listed: false
 	</div>
 </div>
 
-
+<p></p>
 
 Grids, in their various shapes and forms, have been an important backbone for my sketches since I started creative coding. I'd go as far as saying that grids are a prominent generative art archetype that sits at the foundation of many works. Two influential examples from an early generative art period would be Georg Nees' 1968 work Schotter (german word for Gravel) and Vera Molnár's 1974 artwork (Dés)Ordres (french word for (dis)order):
 
