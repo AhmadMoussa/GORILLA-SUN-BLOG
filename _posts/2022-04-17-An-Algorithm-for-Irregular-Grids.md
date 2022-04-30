@@ -36,12 +36,12 @@ Grids, in their various shapes and forms, have been an important backbone for my
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/nees.png" alt="">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/nees.jpeg" alt="">
 		</span>
 	</div>
   <div class="col-6">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/vera.png" alt="">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/vera.jpeg" alt="">
 		</span>
 	</div>
 </div>
