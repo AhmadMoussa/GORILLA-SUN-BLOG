@@ -34,12 +34,12 @@ listed: false
 Grids, in their various shapes and forms, have been an important backbone for my sketches since I started creative coding. I'd go as far as saying that grids are a prominent generative art archetype that sits at the foundation of many works. Two influential examples from an early generative art period would be Georg Nees' 1968 work Schotter (german word for Gravel) and Vera Molnár's 1974 artwork (Dés)Ordres (french word for (dis)order):
 
 <div class="row gtr-50 gtr-uniform">
-	<div class="col-6">
+	<div class="col-4">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/nees.jpeg" alt="">
 		</span>
 	</div>
-  <div class="col-6">
+  <div class="col-8">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/vera.jpeg" alt="">
 		</span>
@@ -50,25 +50,7 @@ Grids, in their various shapes and forms, have been an important backbone for my
 
 Grids go hand in hand with what computers do best: repetition. Grids are also by nature 'orderly'. We usually use grids and tables to neatly display information, align elements in an organized manner, as well as delimit text/numbers in such a way that it is easy for the eye to follow. However, observing these two artworks reveals a characteristic that is inherent to many generative pieces: the interplay between order and chaos. And I believe that that's one of the most fun aspects of gen-art, when you're presented with a new artwork for the first time and you have to figure out what the pattern is and where the twists and irregularities were introduced.
 
-
-Examples of more contemporary pieces that make use of grids in various flavours would be <a href='https://feralfile.com/artworks/umwelt-hyf?fromExhibition=graph-eg6'>Julien Gachadoat's Umwelt</a> as well as <a href='https://ippsketch.com/bent/'>ippsketch's Bent series</a> among manz others. I would also recommend reading ippsketch's excellent article on how Bent was made! 
-
-<div class="row gtr-50 gtr-uniform">
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<blockquote class="twitter-tweet"><p lang="en" dir="ltr">One algorithm, two outputs<br>Bent #780 | #425<a href="https://twitter.com/hashtag/BendsdayWednesday?src=hash&amp;ref_src=twsrc%5Etfw">#BendsdayWednesday</a> <a href="https://t.co/Tga294Urb6">pic.twitter.com/Tga294Urb6</a></p>&mdash; Jeff (@ippsketch) <a href="https://twitter.com/ippsketch/status/1514204251739901964?ref_src=twsrc%5Etfw">April 13, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		</span>
-	</div>
-  <div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Umwelt #25 exhibited for <a href="https://twitter.com/FeralFile?ref_src=twsrc%5Etfw">@FeralFile</a> –GRAPH. <a href="https://t.co/rDSbApBv4t">pic.twitter.com/rDSbApBv4t</a></p>&mdash; Julien Gachadoat (@v3ga) <a href="https://twitter.com/v3ga/status/1504858856299630604?ref_src=twsrc%5Etfw">March 18, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		</span>
-	</div>
-</div>
-
-
 Here I'd like to conclude this little interlude and dedicate the rest of the post towards a grid-construction algorithm that I have used extensively in the past weeks. The algo is relatively straight-forward and unoptimized, but quite versatile. Here's a little index:
-
 
 Explanations:
 1. <a href='#grids'>Interlude</a>
