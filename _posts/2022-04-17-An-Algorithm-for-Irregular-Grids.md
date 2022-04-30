@@ -35,14 +35,22 @@ Grids, in their various shapes and forms, have been an important backbone for my
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-5">
+		<p style="margin: 0 0 0.1em 0;">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/nees.jpeg" alt="">
 		</span>
+		</p>
+		<p><i>Schotter - Georg Nees, 1968</i></p>
+		<p></p>
 	</div>
   <div class="col-7">
+	  	<p style="margin: 0 0 0.1em 0;">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/vera.jpeg" alt="">
 		</span>
+	  	</p>
+		<p><i>(Dés)Ordres - Vera Molnár, 1974</i></p>
+		<p></p>
 	</div>
 </div>
 
@@ -155,7 +163,7 @@ They allowed me to explore concepts like <a href='https://gorillasun.de/blog/Mak
 
 Except for the first, each of these is an irregular grid in it's own right. <b>Click on the thumbnail of each grid and it will take you to it's corresponding code in the openprocessing editor</b>, <b><u>I would however recommend to attempt recreating these by yourself first, since I found it to be an interesting little exercise</u></b>.
 
-There is however one pattern that does not emerge in these grids, which occurred to me after reading a question by @griff420 on the birbsnest discord server:
+There is however one pattern that does not emerge in these grids, which occurred to me after reading a question by <a href='Griff420 | PixelWank'>@griff420</a> on the birbsnest discord server:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
   <img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/griffquestion.png" alt="">
