@@ -34,12 +34,12 @@ listed: false
 Grids, in their various shapes and forms, have been an important backbone for my sketches since I started creative coding. I'd go as far as saying that grids are a prominent generative art archetype that sits at the foundation of many works. Two influential examples from an early generative art period would be Georg Nees' 1968 work Schotter (german word for Gravel) and Vera Molnár's 1974 artwork (Dés)Ordres (french word for (dis)order):
 
 <div class="row gtr-50 gtr-uniform">
-	<div class="col-4">
+	<div class="col-5">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/nees.jpeg" alt="">
 		</span>
 	</div>
-  <div class="col-8">
+  <div class="col-7">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/vera.jpeg" alt="">
 		</span>
@@ -93,7 +93,7 @@ Most of my first sketches were based on simple grids:
 	</div>
 </div>
 	
-	
+<p></p>	
 	
 
 They allowed me to explore concepts like <a href='https://gorillasun.de/blog/Making-of-Gzork'>SDFs</a> and <a href='https://gorillasun.de/blog/Introduction-to-Perlin-Noise-in-P5JS-and-Processing'>noise fields</a> (these two posts are also good starting points if you'd like to learn how to construct grids!). I have also experimented a bit with hexagonal grids and written about different strategies to construct them <a href='https://gorillasun.de/blog/A-guide-to-Hexagonal-Grids-in-P5JS'>here</a>. This leads to the next point that I'd like to discuss, that is irregular grids. When you google 'irregular grid' you get a bunch of odd looking grid layouts, some of them look like this:
@@ -151,6 +151,7 @@ They allowed me to explore concepts like <a href='https://gorillasun.de/blog/Mak
 	</div>
 </div>
 
+<p></p>
 
 Except for the first, each of these is an irregular grid in it's own right. <b>Click on the thumbnail of each grid and it will take you to it's corresponding code in the openprocessing editor</b>, <b><u>I would however recommend to attempt recreating these by yourself first, since I found it to be an interesting little exercise</u></b>.
 
