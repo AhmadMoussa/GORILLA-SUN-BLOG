@@ -114,9 +114,7 @@ Most of my first sketches were based on simple grids:
 	
 	
 
-They allowed me to explore concepts like <a href='https://gorillasun.de/blog/Making-of-Gzork'>SDFs</a> and <a href='https://gorillasun.de/blog/Introduction-to-Perlin-Noise-in-P5JS-and-Processing'>noise fields</a>. These two posts are also good starting points if you'd like to learn how to construct grids! I have also experimented a bit with hexagonal grids and written about different strategies to construct them <a href='https://gorillasun.de/blog/A-guide-to-Hexagonal-Grids-in-P5JS'>here</a>.
-
-First, I'd like to discuss a little what I mean with an irregular grid because I have something very specific in mind. When you google 'irregular grid' you get a bunch of odd looking grid layouts, some of them look like this:
+They allowed me to explore concepts like <a href='https://gorillasun.de/blog/Making-of-Gzork'>SDFs</a> and <a href='https://gorillasun.de/blog/Introduction-to-Perlin-Noise-in-P5JS-and-Processing'>noise fields</a> (these two posts are also good starting points if you'd like to learn how to construct grids!). I have also experimented a bit with hexagonal grids and written about different strategies to construct them <a href='https://gorillasun.de/blog/A-guide-to-Hexagonal-Grids-in-P5JS'>here</a>. This leads to the next point that I'd like to discuss, that is irregular grids. When you google 'irregular grid' you get a bunch of odd looking grid layouts, some of them look like this:
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-4">
