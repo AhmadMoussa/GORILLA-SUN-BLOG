@@ -77,14 +77,10 @@ Here I'd like to conclude this little interlude and dedicate the rest of the pos
 4. <a href='#gap'>Filling out the Leftover Gaps</a>
 5. <a href='#styles'>Different Grid Styles</a>
 
-Bonus:
-1. <a href='#indx'>Tsubuyaki Grids</a>
-
 
 <h2><a name='grids'></a>Grids and their Variations</h2>
 
 Most of my first sketches were based on simple grids:
-
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-4">
@@ -632,7 +628,6 @@ Now we are passing in two independent arrays, one that specifies the range of wi
         <img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/123-12.png" alt="">
       </span>
   </div>
-
   <div class="col-4">
       <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
         <img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/13-24.png" alt="">
@@ -646,6 +641,33 @@ Now we are passing in two independent arrays, one that specifies the range of wi
   </div>
 </div>
 
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-4">
+		<p style="margin: 0 0 0.1em 0;">
+		</p>
+		<p><i>[1,2,3],[1,2]</i></p>
+		<p></p>
+	</div>
+  	<div class="col-4">
+	  	<p style="margin: 0 0 0.1em 0;">
+	  	</p>
+		<p><i>[1,3],[2,4]</i></p>
+		<p></p>
+	</div>
+	<div class="col-4">
+	  	<p style="margin: 0 0 0.1em 0;">
+	  	</p>
+		<p><i>[3,4],[1,2]</i></p>
+		<p></p>
+	</div>
+</div>
+
+And that's prettymuch everything that goes into this algorithm, if I stumble across any additional modifications I will make sure to include them here. If you do end up using this, and/or make anything with please @ me on Twitter when you share it!
+
+
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+        <img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/wideend.png" alt="">
+</span>
 
 
 
