@@ -158,7 +158,7 @@ Except for the first, each of these is an irregular grid in it's own right. <b>C
 There is however one pattern that does not emerge in these grids, which occurred to me after reading a question by @griff420 on the birbsnest discord server:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-  <img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/griff.png" alt="">
+  <img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/griffquestion.png" alt="">
 </span>
 
 
