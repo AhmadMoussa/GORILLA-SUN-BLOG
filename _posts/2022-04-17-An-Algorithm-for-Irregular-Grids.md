@@ -35,37 +35,42 @@ Grids, in their various shapes and forms, have been an important backbone for my
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-5">
-		<p style="margin: 0 0 0.1em 0;">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
 			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/nees.jpeg" alt="">
 		</span>
+	</div>
+  <div class="col-7">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/vera.jpeg" alt="">
+		</span>
+	</div>
+</div>
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-5">
+		<p style="margin: 0 0 0.1em 0;">
 		</p>
 		<p><i>Schotter - Georg Nees, 1968</i></p>
 		<p></p>
 	</div>
   <div class="col-7">
 	  	<p style="margin: 0 0 0.1em 0;">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/vera.jpeg" alt="">
-		</span>
 	  	</p>
 		<p><i>(Dés)Ordres - Vera Molnár, 1974</i></p>
 		<p></p>
 	</div>
 </div>
 
-<p></p>
-
 Grids go hand in hand with what computers do best: repetition. Grids are also by nature 'orderly'. We usually use grids and tables to neatly display information, align elements in an organized manner, as well as delimit text/numbers in such a way that it is easy for the eye to follow. However, observing these two artworks reveals a characteristic that is inherent to many generative pieces: the interplay between order and chaos. And I believe that that's one of the most fun aspects of gen-art, when you're presented with a new artwork for the first time and you have to figure out what the pattern is and where the twists and irregularities were introduced.
 
 Here I'd like to conclude this little interlude and dedicate the rest of the post towards a grid-construction algorithm that I have used extensively in the past weeks. The algo is relatively straight-forward and unoptimized, but quite versatile. Here's a little index:
 
-Explanations:
+<h3>Discussion:</h3>
 1. <a href='#grids'>Interlude</a>
 2. <a href='#grids'>Grids and their Variations</a>
 3. <a href='#strat'>A strategy for constructing Irregular Grids</a>
 
-The Algorithm:
+<h3>The Algorithm:</h3>
 1. <a href='#bool'>A Boolean Grid</a>
 2. <a href='#pack'>The Packing Procedure</a>
 3. <a href='#gap'>Visualising the Grid</a>
