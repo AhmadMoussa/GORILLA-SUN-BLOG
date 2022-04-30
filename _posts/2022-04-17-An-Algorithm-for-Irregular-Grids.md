@@ -8,7 +8,7 @@ thumbnail_path: https://gorillasun.de/assets/images/irregular_grids/thumb.mp4
 published: true
 exclude_rss: true
 legacy: false
-listed: false
+listed: true
 ---
 
 <div class="row gtr-50 gtr-uniform">
@@ -645,19 +645,19 @@ Now we are passing in two independent arrays, one that specifies the range of wi
 	<div class="col-4">
 		<p style="margin: 0 0 0.1em 0;">
 		</p>
-		<p><i>[1,2,3],[1,2]</i></p>
+		<p><i>[1,2,3], [1,2]</i></p>
 		<p></p>
 	</div>
   	<div class="col-4">
 	  	<p style="margin: 0 0 0.1em 0;">
 	  	</p>
-		<p><i>[1,3],[2,4]</i></p>
+		<p><i>[1,3], [2,4]</i></p>
 		<p></p>
 	</div>
 	<div class="col-4">
 	  	<p style="margin: 0 0 0.1em 0;">
 	  	</p>
-		<p><i>[3,4],[1,2]</i></p>
+		<p><i>[3,4], [1,2]</i></p>
 		<p></p>
 	</div>
 </div>
