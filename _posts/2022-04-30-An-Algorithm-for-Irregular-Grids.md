@@ -663,11 +663,3 @@ Now we are passing in two independent arrays, one that specifies the range of wi
 </div>
 
 And that's prettymuch everything that goes into this algorithm, if I stumble across any additional modifications I will make sure to include them here. If you do end up using this, and/or make anything with please @ me on Twitter when you share it!
-
-
-<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-        <img class="viewable" src="https://gorillasun.de/assets/images/irregular_grids/wideend.png" alt="">
-</span>
-
-
-
