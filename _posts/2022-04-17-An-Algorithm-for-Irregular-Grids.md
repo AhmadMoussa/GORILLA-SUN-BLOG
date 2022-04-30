@@ -81,7 +81,7 @@ Most of my first sketches were based on simple grids:
 	</div>
 	<div class="col-4">
 		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/gorilla sun 2021/June/hieroglyphs I.jfif" alt="">	
+			<img class="viewable" src="https://gorillasun.de/assets/images/gorilla sun 2021/June/hieroglyphs I.jfif" alt="">
 		</span>
 	</div>
 	<div class="col-4">
