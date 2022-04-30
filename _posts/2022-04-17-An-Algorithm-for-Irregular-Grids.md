@@ -66,14 +66,14 @@ Grids go hand in hand with what computers do best: repetition. Grids are also by
 Here I'd like to conclude this little interlude and dedicate the rest of the post towards a grid-construction algorithm that I have used extensively in the past weeks. The algo is relatively straight-forward and unoptimized, but quite versatile. Here's a little index:
 
 <h3>Discussion:</h3>
-1. <a href='#grids'>Interlude</a>
+1. <a href='#interlude'>Interlude</a>
 2. <a href='#grids'>Grids and their Variations</a>
 3. <a href='#strat'>A strategy for constructing Irregular Grids</a>
 
 <h3>The Algorithm:</h3>
 1. <a href='#bool'>A Boolean Grid</a>
 2. <a href='#pack'>The Packing Procedure</a>
-3. <a href='#gap'>Visualising the Grid</a>
+3. <a href='#viz'>Visualising the Grid</a>
 4. <a href='#gap'>Filling out the Leftover Gaps</a>
 5. <a href='#styles'>Different Grid Styles</a>
 
@@ -187,7 +187,7 @@ First, we pick a reasonable rectangle size that spans a specific area of the gri
 We repeat this process while iterating over the grid. Once we are done and visualise the grid, we will notice that some unoccupied spots remain, this is due to choosing rectangle sizes that either overlapped with occupied spots in the grid or exceeded it's dimensions. Once we tackle the code we'll find that we have an implicit solution already. And this is pretty much all there is to it, we basically place some rectangles on a grid, and with
 
 
-<h2><a name='boolean'></a>A Boolean Grid</h2>
+<h2><a name='bool'></a>A Boolean Grid</h2>
 
 Let's begin by creating the 2d boolean array! For starters we'll only consider the case where the shape of the grid is square (the final code will be able to produce any arbitrarily shaped grid however):
 
@@ -296,7 +296,7 @@ You probably noticed that we are storing the rectangle information as a custom o
 }
 </code></pre>
 
-<h2><a name='boolean'></a>Visualising the Grid</h2>
+<h2><a name='viz'></a>Visualising the Grid</h2>
 
 Drawing the grid to the canvas now is relatively straight forward, we simply loop over the array in which we stored our rectangle information:
 
@@ -481,7 +481,7 @@ gridDivsY = 15*lenMod;
 
 That should give you a couple of options to obtain a variety of sketches that don't always have a square aspect ratio!
 
-<h2><a name='gaps'></a>Filling out the Leftover Gaps</h2>
+<h2><a name='gap'></a>Filling out the Leftover Gaps</h2>
 
 Now on to completely filling out the grid! For this we simply need to make an additional constructGrid() call:
 
