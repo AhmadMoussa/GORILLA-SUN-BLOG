@@ -28,10 +28,10 @@ In this post I will show you how to set up a Breadfond via the TEIA collab contr
 7. <a href='#improvement'>Recent Improvements</a>
 8. <a href='#versum'>Breadfonds on Versum</a>
 9. <a href='#fxhash'>Breadfonds on Fxhash</a>
-10. <a href='#outlook'>Closing notes and outlook</a>
+10. <a href='#outlook'>Issues and outlook</a>
 
 
-<h2>A bit of context</h2>
+<h2><a name='context'></a>A bit of context</h2>
 
 I wouldn't be writing this post if it weren't for this tweet from <a href='https://twitter.com/micalnoelson'>Mical Noelson</a>:
 
@@ -60,7 +60,7 @@ And it was indeed possible!
 Essentially, what Andrew had done here was a little proof of concept. He minted an NFT via the TEIA collab contract, which upon sale automatically sent and split a portion of the revenue between a set of wallets that he had specified. We'll get into the implications of this in the next sections.
 
 
-<h2>What actually happened here?</h2>
+<h2><a name='nest'></a>What actually happened here?</h2>
 
 So, what did Andrew actually do? The TEIA collaborative contract is generally used by a group of two or more creators to share revenue between them in fixed percentages. However this collab contract doesn't only split revenue generated from the sale of NFTs, but actually any amount of incoming tez that is sent to this contract. Andrew created a collab contract that splits revenue in equal shares between his own wallet address and his two siblings' addresses (33.33% each basically). Now he didn't actually mint his NFT from this collab contract, but rather used the address of this collab contract as a beneficiary within another collab contract. Essentially nesting those two contracts!
 
@@ -73,7 +73,7 @@ Moreover, he created a "top-level" collab that sent 80% of tez to his own addres
 
 
 
-<h2>What's a Breadfond?</h2>
+<h2><a name='breadfond'></a>What's a Breadfond?</h2>
 
 It's important to point out here, that this idea has an analogue in the real world, namely: Broodfonds, which is a concept originating from the Netherlands, and that literally translates to 'Breadfund' in English. In essence, the term defines a group of people that bands together to provide and enable each of it's individual members with financial support during times of hardship. There's a little wikipedia entry about them <a href='https://en.wikipedia.org/wiki/Broodfonds'>here</a>.
 
@@ -82,7 +82,7 @@ For instance, when a member falls sick, they will receive donations (or support 
 The term “Breadfond” is a mash up of the original dutch term and the english term, and what we rolled with to indicate our version of the concept.
 
 
-<h2>Translating this concept to Tezos</h2>
+<h2><a name='tezosfund'></a>Translating this concept to Tezos</h2>
 
 The Breadfond collective is a Tezos version of this concept! Essentially, we will make use of the tools available on the Tezos blockchain to set up a support system that is similar to it's real world analogue (with some differences). More specifically, this will be done by making use of the collab and split contracts that currently exist on the TEIA and Versum NFT marketplaces (as well as others in the future, like fxhash i.e.).
 
@@ -91,7 +91,7 @@ The core idea: each member of a Breadfond voluntarily relinquishes a small porti
 This relinquished portion can be a minuscule percentage  >1%. Each user then will have a unique personal Breadfond, essentially a list of people they choose to support for whatever reason. The Breadfond collective is simply the group of people made up of all the people using a Breadfond. We've made a little <a href='https://discord.gg/nbpfU8P6XW'>discord</a> for everyone that would like to discuss these matters further or to find a Breadfond to be part of.
 
 
-<h2>Setting up a Breadfond on TEIA</h2>
+<h2><a name='TEIA'></a>Setting up a Breadfond on TEIA</h2>
 
 Now to the nitty gritty! In this section we'll go over how a Breadfond can be set up via the TEIA collab contract. First off, you'll have to make sure that you're synced on TEIA with one of your wallets.
 
@@ -182,7 +182,7 @@ If you want you can update this information now. One last thing is that you shou
 You can find the address by clicking "more detail" in the manage view. And this essentially concludes this part of the tutorial.
 
 
-<h2>Setting up the top level Collab on TEIA</h2>
+<h2><a name='SPLIT'></a>Setting up the top level Collab on TEIA</h2>
 
 In this part we're largely going to repeat the same steps that we've taken before, with some slight, but important differences. First, let's make sure that we are synced with the correct wallet that we want to create this collab contract from. This is important because we are going to mint our NFT from this wallet address. We'll repeat the same steps as before, but after arriving at the create tab of the collab contract, we're gonna want to add a core collaborator this time, instead of just skipping. And this core collaborator will be none other than ourselves, make sure that you this is the wallet that you want to mint your NFT from, we will add our own wallet address (the one with which we are synced right now) into one of the core collaborator fields:
 
@@ -204,7 +204,7 @@ And then we proceed to the review screen again. Note that you can add a differen
 
 Now you can return to your "Manage" view, sign in and edit your profile information. And that's about it regarding setup, now we're ready to mint an NFT! The next step would then be minting an NFT from the collab contract, which is relatively straightforward. You proceed as you usually would when minting an NFT on TEIA, the only difference here is, by being core collaborators, we need to sign the NFT before we can do anything with it.
 
-<h2>Recent Improvements</h2>
+<h2><a name='improvement'></a>Recent Improvements</h2>
 
 One problematic aspect of being part of a breadfond is receiving an occasional trickle of tez in your wallet (breadcrumbs). This is undesirable if you want to maintain a tidy wallet and transaction history. @ztepler added a feature that allows collab admins to set a threshold value, which essentially specifies how much tez has to be accumulated in breadfond royalties before they will be dispensed to breadfond members.
 
@@ -214,7 +214,7 @@ There is also an option to withdraw any amount of funds immediately without havi
   <img class="viewable" src="https://gorillasun.de/assets/images/breadfond/withdraw.png" alt="">
 </span>
 
-<h2>Versum breadfonds</h2>
+<h2><a name='versum'></a>Versum breadfonds</h2>
 
 Creating breadfonds on Versum is also possible, albeit a little different. Due to KYC (Know Your Customer) issues which Versum tries to ensure for artists, TEIA KT1s are problematic. For this reason they are blocked as of now and can not be set as neither collaborator nor royalty beneficiary.
 
@@ -226,7 +226,7 @@ However it is still possible to set up your breadfond by adding each individual 
 
 Some discussions have been made about making this step easier by allowing to load in a list of addresses and fill out the fields automatically.
 
-<h2>Fxhash v1.0 breadfonds</h2>
+<h2><a name='fxhash'></a>Fxhash v1.0 breadfonds</h2>
 
 If you've recently been active in the Tezos NFT space, then you've probably heard about the launch of Fxhash. Fxhash v1.0 now also allows collaborations! <a href='https://www.fxhash.xyz/doc/artist/collaborations'>Here</a> is the official Fxhash documentation that provides a detailed explanation of how collaboration works.
 
@@ -237,7 +237,7 @@ Contract entry points were not immediately supported at the time of launch, but 
 </span>
 
 
-<h2>Issues and Outlook</h2>
+<h2><a name='outlook'></a>Issues and Outlook</h2>
 
 There's a couple of caveats with the way that we're using the collab contracts here. One problematic point is that once created, the list of beneficiary wallet addresses is immutable. This is tricky, because what if you want to add new people to your Breadfond? Or alternatively what if someone wishes to be removed from your Breadfond? The only way right now would be to create a new collab contract alltogether. Hopefully, the more this contract nesting strategy gets used, the better the methods will get.
 
