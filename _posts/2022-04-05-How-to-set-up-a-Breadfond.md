@@ -7,25 +7,24 @@ description: In this tutorial I will guide you through setting up a Breadfond on
 thumbnail_path: https://gorillasun.de/assets/images/breadfond/thumb.mp4
 published: true
 exclude_rss: true
-legacy: false
-listed: false
+listed: true
 ---
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-  <img class="viewable" src="https://gorillasun.de/assets/images/breadfond/banner.png" alt="">
+  <img class="viewable" src="https://gorillasun.de/assets/images/breadfond/breadfond.png" alt="">
 </span>
 
 In this post I will show you how to set up a Breadfond via the TEIA collab contracts. In just a second, you'll have an idea what that actually means and learn about the required steps to create your very own Breadfond. I'll begin with a little bit of context to show how this idea came to be. Here's a little index to help you through the sections:
 
-The Idea:
+<h3>The Idea:</h3>
 1. <a href='#context'>A bit of context</a>
 2. <a href='#nest'>Nesting collab contracts</a>
 3. <a href='#breadfond'>What's a Breadfond?</a>
 4. <a href='#tezosfund'>Breadfunds on Tezos</a>
 
-Setting up breadfonds on different marketplaces:
+<h3>Setting up breadfonds on different marketplaces:</h3>
 5. <a href='#TEIA'>Setting up a breadfond on TEIA</a>
-6. <a href='#SPLIT'>Top level breadfond contract</a>
+6. <a href='#SPLIT'>The Top level breadfond contract</a>
 7. <a href='#improvement'>Recent Improvements</a>
 8. <a href='#versum'>Breadfonds on Versum</a>
 9. <a href='#fxhash'>Breadfonds on Fxhash</a>
@@ -38,17 +37,25 @@ I wouldn't be writing this post if it weren't for this tweet from <a href='https
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">There has to be better models than just collecting works I have realized. <br>I have been thinking for a while now, you can split sales on most platforms on tezos. I would love to make an event to promote each of us making one work and splitting the royalties with 5 to 10 artists.</p>&mdash; Mical Noelson (@micalnoelson) <a href="https://twitter.com/micalnoelson/status/1502562539699376131?ref_src=twsrc%5Etfw">March 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<p></p>
+
 Afterwards I retweeted his tweet because I thought that it was a formidable idea and had a lot of potential. <a href='https://twitter.com/aebrer'>Andrew</a> quickly hopped onto the bandwagon in the replies and pointed out that this would be possible via the TEIA collab contracts:
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Why not have an event, where everyone can pitch an NFT, set 100% revenue to go to a neutral address, then split profits equally and automatically among everyone who contributed? <br><br>For some artists it might be peanuts but for others it might make all the difference! <a href="https://twitter.com/hashtag/tezos?src=hash&amp;ref_src=twsrc%5Etfw">#tezos</a> <a href="https://twitter.com/hashtag/versum?src=hash&amp;ref_src=twsrc%5Etfw">#versum</a> <a href="https://t.co/Veox4THsTt">https://t.co/Veox4THsTt</a></p>&mdash; Ahmad Moussa || Gorilla Sun (@gorillasu) <a href="https://twitter.com/gorillasu/status/1502632630742884353?ref_src=twsrc%5Etfw">March 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p></p>
 
 We discussed it a bit more, and Andrew quickly did a little test to see if it was possible to setup such a thing:
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Collaboration Abomination<a href="https://t.co/JOo7uUtZSO">https://t.co/JOo7uUtZSO</a><br><br>I&#39;m testing an idea I have for splitting. If this works, 80% of the revenue goes to me, and 20% will go to a Teia collab contract that splits between myself and my two siblings.<br><br>Accepting the highest offer in the next 10 min lol <a href="https://t.co/iY9zUFp0I7">pic.twitter.com/iY9zUFp0I7</a></p>&mdash; 🔺aebrer (Andrew Brereton) (@aebrer) <a href="https://twitter.com/aebrer/status/1502725134184071173?ref_src=twsrc%5Etfw">March 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<p></p>
+
 And it was indeed possible!
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">IT WORKED! <a href="https://t.co/wffX0KlnS0">pic.twitter.com/wffX0KlnS0</a></p>&mdash; 🔺aebrer (Andrew Brereton) (@aebrer) <a href="https://twitter.com/aebrer/status/1502728290146136068?ref_src=twsrc%5Etfw">March 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p></p>
 
 Essentially, what Andrew had done here was a little proof of concept. He minted an NFT via the TEIA collab contract, which upon sale automatically sent and split a portion of the revenue between a set of wallets that he had specified. We'll get into the implications of this in the next sections.
 
@@ -68,7 +75,7 @@ Moreover, he created a "top-level" collab that sent 80% of tez to his own addres
 
 <h2>What's a Breadfond?</h2>
 
-It's important to point out here, that this idea has an analogue in the real world, namely: Broodfonds, which is a concept originating from the Netherlands, and that literally translates to 'Breadfund' in English. In essence, the term defines a group of people that bands together to provide and enable each of it's individual members with financial support during times of hardship: https://en.wikipedia.org/wiki/Broodfonds
+It's important to point out here, that this idea has an analogue in the real world, namely: Broodfonds, which is a concept originating from the Netherlands, and that literally translates to 'Breadfund' in English. In essence, the term defines a group of people that bands together to provide and enable each of it's individual members with financial support during times of hardship. There's a little wikipedia entry about them <a href='https://en.wikipedia.org/wiki/Broodfonds'>here</a>.
 
 For instance, when a member falls sick, they will receive donations (or support in other forms) from the other members of this support system until they are able to get back on their feet again. This doesn't necessarily mean that this is how a Breadfund has to behave, it can be setup in many different ways. It all depends on the participating members and the dynamic that is agreed upon. It is based on consensus.
 
@@ -230,30 +237,10 @@ Contract entry points were not immediately supported at the time of launch, but 
 </span>
 
 
+<h2>Issues and Outlook</h2>
 
-<h2>Objktcom breadfonds</h2>
+There's a couple of caveats with the way that we're using the collab contracts here. One problematic point is that once created, the list of beneficiary wallet addresses is immutable. This is tricky, because what if you want to add new people to your Breadfond? Or alternatively what if someone wishes to be removed from your Breadfond? The only way right now would be to create a new collab contract alltogether. Hopefully, the more this contract nesting strategy gets used, the better the methods will get.
 
-I haven't tested it yet, but 
+Another issue is how the minted collab pieces are listed on TEIA. Technically being the sole core collaborator of a piece in top level contract, it should show it with your other personal mints on TEIA, but it will actually put it under the assets page of the collab contract. The same issue also occurs on Objkt.com where the collab mints are listed, but under the collab contract's address.
 
-<h2>Things to keep in mind and outlook</h2>
-
-
-
-There's a couple of caveats with the way that we're using the collab contracts here. One problematic point is that once created, the list of beneficiary wallet addresses is immutable. This is tricky, because what if you want to add new people to your Breadfond? Or alternatively what if someone wishes to be removed from your Breadfond? The only way right now would be to create a new collab contract alltogether,
-
-
-
-
-
-
-<div class="row gtr-50 gtr-uniform">
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/breadfond/50.png" alt="">
-		</span>
-	</div>
-	<div class="col-6">
-		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-			<img class="viewable" src="https://gorillasun.de/assets/images/breadfond/27.png" alt="">
-		</span>
-	</div>
+To conclude, I believe that this is an incredibly interesting way to make use of the tools available on the Tezos blockchain. I haven't seen or heard of anything similar on other chains. And that's pretty much everything I have to say! If there are any changes or updates, I will make sure to include them here. Also big shoutout to <a href='https://twitter.com/aebrer'>Andrew</a> and <a href='https://twitter.com/micalnoelson'>Mical</a>, and thanks for reading!
