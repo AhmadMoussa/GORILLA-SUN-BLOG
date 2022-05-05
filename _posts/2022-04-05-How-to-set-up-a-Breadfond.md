@@ -7,6 +7,7 @@ description: In this tutorial I will guide you through setting up a Breadfond on
 thumbnail_path: https://gorillasun.de/assets/images/breadfond/thumb.mp4
 published: true
 exclude_rss: true
+legacy: false
 listed: false
 ---
 
