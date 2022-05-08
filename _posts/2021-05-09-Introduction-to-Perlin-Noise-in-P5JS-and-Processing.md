@@ -145,6 +145,8 @@ Naturally, you can get more creative by plugging in different functions into the
 
 </div>
 
+<p></p>
+
 <h2>3D Perlin Noise</h2>
 The little tricks we did above are neat, but what if we want to modulate the noise texture itself with time? That's where the 3rd parameter comes into play, here we keep the position of the perlin space the same, but modulate the color of each square via the 3rd parameter, in this sense the 3rd parameter is the z axis and is manifests itself as a change of color of each rectangle. This allows us to obtain a wobbly texture that seems to wobble back and forth:
 
