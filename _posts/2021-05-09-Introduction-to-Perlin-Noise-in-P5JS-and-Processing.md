@@ -129,6 +129,22 @@ If we were to multiply or divide it we would obtain a zoom out / zoom in effect 
 </div>
 Naturally, you can get more creative by plugging in different functions into the noise() function.
 
+<div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
 <h2>3D Perlin Noise</h2>
 The little tricks we did above are neat, but what if we want to modulate the noise texture itself with time? That's where the 3rd parameter comes into play, here we keep the position of the perlin space the same, but modulate the color of each square via the 3rd parameter, in this sense the 3rd parameter is the z axis and is manifests itself as a change of color of each rectangle. This allows us to obtain a wobbly texture that seems to wobble back and forth:
 
