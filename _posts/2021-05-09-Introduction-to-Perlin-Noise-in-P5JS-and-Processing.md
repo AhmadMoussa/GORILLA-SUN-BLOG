@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Introduction to Perlin Noise in P5JS and Processing
 author: Ahmad Moussa
 categories:
