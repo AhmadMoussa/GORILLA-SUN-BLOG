@@ -1,4 +1,5 @@
 ---
+layout: default
 title: How to make sliders in P5
 author: Ahmad Moussa
 categories:
