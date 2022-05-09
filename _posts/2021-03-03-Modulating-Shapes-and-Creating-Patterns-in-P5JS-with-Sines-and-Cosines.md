@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Creating Patterns with Grids and Sine Waves in P5
 author: Ahmad Moussa
 categories:
