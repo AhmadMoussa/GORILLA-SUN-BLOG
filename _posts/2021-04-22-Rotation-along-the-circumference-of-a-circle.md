@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Rotation and Circular Positioning
 author: Ahmad Moussa
 categories:
