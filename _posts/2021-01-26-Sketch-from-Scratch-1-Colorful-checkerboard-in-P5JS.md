@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Sketch from Scratch 1 Colorful checkerboard in P5JS
 author: Ahmad Moussa
 categories:
