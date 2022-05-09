@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Scrolling Perlin Noise Textures and Tricks
 author: Ahmad Moussa
 categories:
