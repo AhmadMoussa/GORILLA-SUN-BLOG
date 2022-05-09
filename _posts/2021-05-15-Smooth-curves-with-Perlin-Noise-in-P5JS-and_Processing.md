@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Smooth cruves with Perlin Noise in P5JS and Processing
 author: Ahmad Moussa
 categories:
