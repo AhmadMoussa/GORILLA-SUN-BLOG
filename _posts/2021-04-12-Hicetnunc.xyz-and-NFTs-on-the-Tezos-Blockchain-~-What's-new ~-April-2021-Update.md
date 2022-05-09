@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Hicetnunc.xyz and NFTs on the Tezos Blockchain ~ What's new ~ April 2021 Mega Update
 author: Ahmad Moussa
 categories:
