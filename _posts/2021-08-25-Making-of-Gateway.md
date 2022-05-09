@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Making of: Gateway"
 author: Ahmad Moussa
 categories:
