@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Getting started with Tezos and minting on hicetnunc.xyz
 author: Ahmad Moussa
 categories:
