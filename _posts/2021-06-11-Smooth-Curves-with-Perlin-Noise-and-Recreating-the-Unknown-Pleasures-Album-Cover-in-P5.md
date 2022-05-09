@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Smooth curves with Perlin Noise and Recreating the Unknown Pleasures Album Cover in P5
 author: Ahmad Moussa
 categories:
