@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Brian Eno's Endless Music Machines
 author: Ahmad Moussa
 categories:
