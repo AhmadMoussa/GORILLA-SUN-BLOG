@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Continuous oscillating motion in P5JS with Sine functions
 author: Ahmad Moussa
 categories:
