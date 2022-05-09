@@ -1,4 +1,5 @@
 ---
+layout: default
 title: An algorithm for polygons with rounded corners
 author: Ahmad Moussa
 categories:
