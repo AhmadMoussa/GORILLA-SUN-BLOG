@@ -1,4 +1,5 @@
 ---
+layout: default
 title: A guide to making GIFs in P5JS and Processing
 author: Ahmad Moussa
 description: This article is a run down of all the possible ways you can turn your sketch into a GIF.
