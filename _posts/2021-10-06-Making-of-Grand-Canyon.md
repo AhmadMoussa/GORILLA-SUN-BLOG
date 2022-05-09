@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Making of: Grand Canyon"
 author: Ahmad Moussa
 categories:
