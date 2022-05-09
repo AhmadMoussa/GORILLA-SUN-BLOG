@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Sending MIDI signals between Ableton and P5JS
 author: Ahmad Moussa
 categories:
