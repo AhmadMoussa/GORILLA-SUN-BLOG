@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Making of Behind the Canvas
 author: Ahmad Moussa
 categories:
