@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "How to set up a Tezos Breadfond"
 author: Ahmad Moussa
 categories:
