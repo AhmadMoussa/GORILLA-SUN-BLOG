@@ -1,4 +1,5 @@
 ---
+layout: default
 title: A guide to Hexagonal Grids in P5JS
 author: Ahmad Moussa
 categories:
