@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Simulating brush strokes with Hooke's Law in P5JS
 author: Ahmad Moussa
 categories:
