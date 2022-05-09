@@ -1,4 +1,5 @@
 ---
+layout: default
 title: A simple guide to FFmpeg
 author: Ahmad Moussa
 categories:
