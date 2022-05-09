@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Hexagonal Lattices in p5
 author: Ahmad Moussa
 categories:
