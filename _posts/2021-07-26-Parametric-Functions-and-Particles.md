@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Parametric Functions and Particles
 author: Ahmad Moussa
 categories:
