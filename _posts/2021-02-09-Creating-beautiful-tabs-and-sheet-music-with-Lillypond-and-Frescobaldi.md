@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Beautiful tablature and sheet music with Lillypond and Frescobaldi
 author: Ahmad Moussa
 categories:
