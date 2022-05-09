@@ -1,4 +1,5 @@
 ---
+layout: default
 title: MIDI signals from Python to Ableton Live
 author: Ahmad Moussa
 categories:
