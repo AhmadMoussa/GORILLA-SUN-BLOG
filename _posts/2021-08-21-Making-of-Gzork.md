@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Making of: Gzork"
 author: Ahmad Moussa
 categories:
