@@ -1,4 +1,5 @@
 ---
+layout: default
 title: How to write interesting chord progressions
 author: Ahmad Moussa
 categories:
