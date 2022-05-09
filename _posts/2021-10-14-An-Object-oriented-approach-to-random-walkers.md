@@ -1,4 +1,5 @@
 ---
+layout: default
 title: An Object Oriented approach to Random Walkers
 author: Ahmad Moussa
 categories:
