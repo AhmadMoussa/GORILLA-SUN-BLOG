@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Glue Gun Constructs
 author: Ahmad Moussa
 categories:
