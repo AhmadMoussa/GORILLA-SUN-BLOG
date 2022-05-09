@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Perlin Noise Flow Fields in Processing - Part II
 author: Ahmad Moussa
 categories:
