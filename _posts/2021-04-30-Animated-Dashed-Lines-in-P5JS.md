@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Dashed Lines in P5JS
 author: Ahmad Moussa
 categories:
