@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Radial Perlin Noise and Generative Tree Rings
 author: Ahmad Moussa
 categories:
