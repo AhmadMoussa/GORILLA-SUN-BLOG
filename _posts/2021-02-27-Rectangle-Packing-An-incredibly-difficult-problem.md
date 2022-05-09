@@ -27,6 +27,21 @@ Packing problems are a class of optimization problems in mathematics that involv
 
 <p>Essentially, we'll want to jampack the largest possible number of items into the least amount of space. This type of problem is usually studied in the context where you have multiple bins or containers which you want to fill optimally with the items at hand, however we're only going to concern ourselves with the case were we have one bin (which is not to be confused with the knapsack problem, which might be a topic for a future post).</p>
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<p></p>
+
 <h2>Why is Rectangle Packing so difficult</h2>
 
 <p>Optimization problems are generally not my cup of tea, and even though I've had to take some courses on algorithmic complexity as well as convex optimization during my time at university, it's usually way over my head, however I will attempt to explain succinctly.</p>
