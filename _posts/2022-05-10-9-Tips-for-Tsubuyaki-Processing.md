@@ -1,5 +1,5 @@
 ---
-title: 10 Tips for Tsubuyaki Processing
+title: 9 Tips for Tsubuyaki Processing
 author: Ahmad Moussa
 categories:
   - p5js
