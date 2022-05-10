@@ -1,4 +1,5 @@
 ---
+layout: default
 title: 9 Tips for Tsubuyaki Processing
 author: Ahmad Moussa
 categories:
@@ -8,7 +9,7 @@ thumbnail_path: https://gorillasun.de/assets/images/tsubuyaki/thumb.mp4
 published: true
 exclude_rss: true
 legacy: false
-listed: false
+listed: true
 ---
 
 <div class="image fit" style="display: block; margin: 0 0 0 0; padding: 0 0 0 0;">
@@ -234,7 +235,7 @@ I personally don't like it, but it's a possibility.
 
 
 
-<h2><a name='skip'>Skipping last condition in the for loop</h2>
+<h2><a name='skip'></a>Skipping last condition in the for loop</h2>
 
 A for loop formally consists of three parts: an initializer, a termination condition and an iterator. In most cases we can actually make do without the third part:
 
@@ -247,7 +248,14 @@ for(let i = 10; i--;){}
 
 In this case we reversed the iteration order, counting down from ten rather than starting from 0. Why does this loop actually terminate? After completing ten iterations the variable will reach a point where it is equal to zero, in that case the for loop will check the condition and determine that it is false. Thus it will stop looping. I'm sure there are other creative ways to make use of this as well!
 
-<h2><a name='forcode'>Code inside the for loop</h2>
+
+
+
+
+
+
+
+<h2><a name='forcode'></a>Code inside the for loop</h2>
 
 Moreover, we can make use of the fact the initialization clause in the for loop only gets executed once, and the iteration clause several times. As a matter of fact, the for loop doesn't really care what you write inside of it. As long as you still fulfill the termination condition you should be fine. Let's have a look at an example:
 
@@ -281,7 +289,7 @@ f=0,draw=(a=>{for(f++||createCanvas(w=762,w),background(0,50),noStroke(),p=w/9,N
 
 Due to having a fixed canvas size you might have to copy it into the p5js editor to see it as intended. And credit where redit's due, putting code in the for loop I stumbled across through <a href='https://twitter.com/MaximGifmaker'>Maxim's</a> awesome video on Tsubuyaki Processing tricks:
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/PDj0NQLEMtQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/PDj0NQLEMtQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Seriously go check it out, it's a really good video where goes over a number of sketches. All of which have some interesting tips and tricks!
 
@@ -301,7 +309,10 @@ In this example the loop will print 5 when i is odd and 0 when i is even. This i
 
 
 
-<h2><a name='multiple'>Multiple assignment with an array</h2>
+
+
+
+<h2><a name='multiple'></a>Multiple assignment with an array</h2>
 
 Last but not least, here's another trick to assign multiple different values to several variables. This is sometimes useful when we create variables with the 'var' or 'let' keywords and don't want to declare them with a global scope. We've already seen that we can assign the same value to multiple variables like so:
 
@@ -320,7 +331,7 @@ var d = a + b + c
 
 This way of assigning values is also a feature of ES6 and is called array destructuring.
 
-<h2><a name='final'>Putting it all together</h2>
+<h2><a name='final'></a>Putting it all together</h2>
 
 And finally here's a sketch where I combine a lot of these techniques that we've discussed today:
 
