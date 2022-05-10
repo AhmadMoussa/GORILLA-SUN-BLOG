@@ -18,6 +18,7 @@ listed: true
   </video>
 </div>
 
+<p></p>
 
 Initially this was supposed to be a quick post on a bunch of useful tricks to shorten the javascript code of your #つぶやきProcessing sketches. However, I really needed to dig into and research some points on my list, because I wasn't 100% sure how certain things actually worked! This made the post end up being a list of 10 #つぶやきProcessing tips, each of which is a tiny javascript lesson.
 
@@ -29,18 +30,15 @@ This 280 character sized challenge first emerged with Japanese twitter user <a h
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="ja" dir="ltr">唐突に <a href="https://twitter.com/hashtag/%E3%81%A4%E3%81%B6%E3%82%84%E3%81%8DProcessing?src=hash&amp;ref_src=twsrc%5Etfw">#つぶやきProcessing</a> というタグを作ってみる。</p>&mdash; はぅ君 (@Hau_kun) <a href="https://twitter.com/Hau_kun/status/1133006598136139776?ref_src=twsrc%5Etfw">May 27, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<p></p>
 He says as much as:
 
-<quote>I'm going to create a tag #TweetProcessing out of the blue!</quote>
+<blockquote>I'm going to create a tag #TweetProcessing out of the blue!</blockquote>
 
-And in the replies he elaborates that he had been previously trying to make a rainbow sketch within the 140 character limit, and that the character limit increase had given him a lot more flexibility. And it genuinely seems tough to make anything interesting within 140 characters. Hau-kun then started tweeting many #つぶやきProcessing sketches over the course of the next months:
-
-<blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">for(float i = 0; i &lt; PI * 2; i+= PI / 8.0){<br> translate(50, 50);<br> rotate(i);<br> fill(255, 255, 64);<br> ellipse(30, 0, 30, 10);<br> fill(255, 192, 64);<br> ellipse(35, 2, 20, 5);<br> fill(255, 192, 192);<br> ellipse(15, -2, 10, 3);<br> translate(-50, -50);<br>}<a href="https://twitter.com/hashtag/%E3%81%A4%E3%81%B6%E3%82%84%E3%81%8DProcessing?src=hash&amp;ref_src=twsrc%5Etfw">#つぶやきProcessing</a> <a href="https://t.co/p091Oz0BCI">pic.twitter.com/p091Oz0BCI</a></p>&mdash; はぅ君 (@Hau_kun) <a href="https://twitter.com/Hau_kun/status/1133006751089844225?ref_src=twsrc%5Etfw">May 27, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-Later lots of folks started joining in before the hashtag started to take on a life of it's own:
+And in the replies he elaborates that he had been previously trying to make a rainbow sketch within the 140 character limit, and that the character limit increase had given him a lot more flexibility. And it genuinely seems tough to make anything interesting within 140 characters. Hau-kun then started tweeting many #つぶやきProcessing sketches over the course of the next months. Fast forward a bit, and lots of folks started joining in before the hashtag started to take on a life of it's own:
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">i=n=a=0;draw=_=&gt;{i||createCanvas(q=512,q);colorMode(HSB,1);v=createVector;h(i++);m=a.mult(4).add(2);stroke(i/4**7,1,1);line(m.x,m.y,n.x,n.y);n=m};h=i=&gt;{a=v((i&amp;3)&gt;&gt;1,[0,1,1][i&amp;3]);for(j=1;j&lt;8;){i/=4;k=i&amp;3;l=2**j++;!k?a=v(a.y,a.x):k&lt;2?a.y+=l:k==2?a.add(l,l):a=v(l-1-a.y+l,l-1-a.x)}} <a href="https://t.co/23S3gHsm4J">pic.twitter.com/23S3gHsm4J</a></p>&mdash; Daniel Shiffman (@shiffman) <a href="https://twitter.com/shiffman/status/1333117934827343872?ref_src=twsrc%5Etfw">November 29, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<p></p>
 
 Hence, let's have a closer look at some tips to get you started with #つぶやきProcessing! Enjoy, it's a fun one! Here's the index:
 
@@ -124,9 +122,9 @@ func(R(), R())
 
 This is another trick that had me scratching my head! I get what's happening, but why is it possible?! For this we have to have a closer look at how javascript works internally. I asked the folks in the birbsnest discord and <a href=''>Julien Pradet</a> explained it very elegantly:
 
-<quote>A function in javascript (and many other languages) is another type of value. Just like you have string or numbers, you have functions. So just like string and numbers, you can store functions in variables, move them around, etc.
+<blockquote>A function in javascript (and many other languages) is another type of value. Just like you have string or numbers, you have functions. So just like string and numbers, you can store functions in variables, move them around, etc.
 
-So when you do function draw() { }, what you actually do is storing the draw function in a variable called draw. It's done automatically. But you could also write: let draw = function draw() { }. draw() would still behave the same way.</quote>
+So when you do function draw() { }, what you actually do is storing the draw function in a variable called draw. It's done automatically. But you could also write: let draw = function draw() { }. draw() would still behave the same way.</blockquote>
 
 And also provided a nice example:
 
@@ -140,7 +138,7 @@ R(); // outputs the result of the `random`
 
 In conclusion he also adds:
 
-<quote>[...] but beware, you're dangerously close from entering the world of functional programming. In no time, you'll be creating functions that return functions, want to curry all your functions and so on. (I'm personally in love with this way of writing code.)</quote>
+<blockquote>[...] but beware, you're dangerously close from entering the world of functional programming. In no time, you'll be creating functions that return functions, want to curry all your functions and so on. (I'm personally in love with this way of writing code.)</blockquote>
 
 So there's that, go show <a href='https://twitter.com/JulienPradet'>Julien</a> some love, he makes some cool gen-art and <a href='https://www.twitch.tv/superroipatate'>streams live coding on twitch</a> every monday and saturday. Also join the birbsnest, it's a lovely community.
 
@@ -290,10 +288,11 @@ f=0,draw=(a=>{for(f++||createCanvas(w=762,w),background(0,50),noStroke(),p=w/9,N
 Due to having a fixed canvas size you might have to copy it into the p5js editor to see it as intended. And credit where redit's due, putting code in the for loop I stumbled across through <a href='https://twitter.com/MaximGifmaker'>Maxim's</a> awesome video on Tsubuyaki Processing tricks:
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/PDj0NQLEMtQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<p></p>
 Seriously go check it out, it's a really good video where goes over a number of sketches. All of which have some interesting tips and tricks!
 
-<h2><a name='multcond'>Multiplying conditions</h2>
+
+<h2><a name='multcond'></a>Multiplying conditions</h2>
 
 Another thing that comes in handy very often, is the ability to multiply conditional expressions with numbers. This is often useful when doing combinatoions and permutations of things. Let's have a look at how this works:
 
@@ -306,7 +305,7 @@ In this example the loop will print 5 when i is odd and 0 when i is even. This i
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Even shorter:<br><br>setup=_=&gt;{createCanvas(w=600,w);s=w/9;q=w-s*2;c(s,s,q,q,7)};function c(x,y,i,h,d){if(d&gt;0){var[o,k]=[i/2,h/2];for(let n=4;n--;){c(x+o*(n==3||!n),y+k*(n==2||!n),o,k,d-random([1,2]))}}else{rect(x,y,i,h)}}<a href="https://twitter.com/hashtag/%E3%81%A4%E3%81%B6%E3%82%84%E3%81%8DProcessing?src=hash&amp;ref_src=twsrc%5Etfw">#つぶやきProcessing</a> look Ma, so many leftover characters💪😎💪 <a href="https://t.co/KrY4mUWwso">https://t.co/KrY4mUWwso</a></p>&mdash; Ahmad Moussa || Gorilla Sun (@gorillasu) <a href="https://twitter.com/gorillasu/status/1517502897524719616?ref_src=twsrc%5Etfw">April 22, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
+<p></p>
 
 
 
@@ -336,6 +335,6 @@ This way of assigning values is also a feature of ES6 and is called array destru
 And finally here's a sketch where I combine a lot of these techniques that we've discussed today:
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="ht" dir="ltr"><a href="https://twitter.com/hashtag/%E3%81%A4%E3%81%B6%E3%82%84%E3%81%8DProcessing?src=hash&amp;ref_src=twsrc%5Etfw">#つぶやきProcessing</a> 😬😵‍💫😁<br>f=0,draw=(a=&gt;{for(f++||createCanvas(w=762,w),background(0,50),noStroke(),p=w/9,N=21,n=N**2,s=(w-2*p)/N;n&gt;0;k=millis()/w+n/3,l=w/6,c=(n=&gt;l+l*n),o=cos(k),fill(c(sin(k)),c(o),c(-o)),ellipse(int(n--/N)*s+p,map(fract(n/N),0,.9,0,20)*s+p,s-3+s*sin(k)));}); <a href="https://t.co/iqQ7W5WQw9">pic.twitter.com/iqQ7W5WQw9</a></p>&mdash; Ahmad Moussa || Gorilla Sun (@gorillasu) <a href="https://twitter.com/gorillasu/status/1523973819924455427?ref_src=twsrc%5Etfw">May 10, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<p></p>
 
 And here we find ourselves at the bottom of the blog post again! If you've enjoyed the post, share it with your friend, it helps out a lot! Otherwise come say hello on Twitter! Thanks for reading and happy sketching!
