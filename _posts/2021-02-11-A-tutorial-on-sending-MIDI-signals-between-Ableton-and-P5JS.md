@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - ableton
 description: A tutorial on sending MIDI signals between Ableton and P5JS.
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/MIDI2.webm
+thumbtype: vid
+thumbnail_path: https://gorillasun.de/assets/images/compressed/MIDI2.webm
 exclude_rss: false
 listed: true
 legacy: false
