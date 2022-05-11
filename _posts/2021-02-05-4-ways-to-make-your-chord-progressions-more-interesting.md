@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - ableton
 description: Writing interesting chord progressions can be difficult, but arming yourself with a little bit of music theory and creativity you'll be able to break out of any type musical rut.
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/chords.webm
+thumbtype: vid
+thumbnail_path: https://gorillasun.de/assets/images/compressed/chords.webm
 published: true
 exclude_rss: false
 listed: true
