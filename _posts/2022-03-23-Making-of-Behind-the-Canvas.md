@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: An in depth look into the inner workings of my crayon codes sketch Behind the Canvas
-thumbnail_path: https://gorillasun.de/assets/images/behind_the_canvas/cut.mp4
+thumbtype: img
+thumbnail_path: https://gorillasun.de/assets/images/compressed/behindthecanvas.jpg
 published: true
 exclude_rss: true
 listed: true
