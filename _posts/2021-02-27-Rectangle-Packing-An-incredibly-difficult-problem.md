@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: Sometimes problems can be much more difficult than they appear to be.
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/rectangle.webm
+thumbtype: img
+thumbnail_path: https://gorillasun.de/assets/images/compressed/rectpack2smol-min.png
 published: true
 exclude_rss: false
 listed: true
