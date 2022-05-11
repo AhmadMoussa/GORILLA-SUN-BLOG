@@ -4,7 +4,7 @@ title: A guide to making GIFs in P5JS and Processing
 author: Ahmad Moussa
 description: This article is a run down of all the possible ways you can turn your sketch into a GIF.
 thumbtype: vid
-thumbnail_path: https://gorillasun.de/assets/images/compressed/makinggif.webm
+thumbnail_path: https://gorillasun.de/assets/images/compressed/makegif.webm
 published: true
 exclude_rss: false
 listed: true
