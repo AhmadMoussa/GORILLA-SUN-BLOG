@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: Notes and thoughts on my generative fxhash token 'Vestige'
-thumbnail_path: https://gorillasun.de/assets/images/vestiges/crop.mp4
+thumbtype: img
+thumbnail_path: https://gorillasun.de/assets/images/compressed/vestigesmol.png
 published: true
 exclude_rss: true
 listed: true
