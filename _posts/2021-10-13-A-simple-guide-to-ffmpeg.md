@@ -6,7 +6,7 @@ categories:
   - p5js
 description: FFmpeg is an essential tool for creative coders. Here's a primer on using FFmpeg, and showcase of some of it's capabilities.
 thumbtype: img
-thumbnail_path: https://media.giphy.com/media/ZgSDX7fstahz8kbhzZ/giphy.mp4
+thumbnail_path: https://gorillasun.de/assets/images/compressed/ffmpeg.png
 published: true
 exclude_rss: true
 listed: true
