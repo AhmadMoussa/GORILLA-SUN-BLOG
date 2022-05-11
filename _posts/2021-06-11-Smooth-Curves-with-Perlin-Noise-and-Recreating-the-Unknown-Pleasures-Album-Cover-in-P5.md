@@ -6,7 +6,7 @@ categories:
   - p5js
 description: In this part of the perlin noise tutorial series we will have a look at creating smooth curves with Perlin Noise in P5js and processing.
 thumbtype: img
-thumbnail_path: https://gorillasun.de/assets/images/compressed/unknown_pleasures.mp4
+thumbnail_path: https://gorillasun.de/assets/images/compressed/uknown_pleasures.mp4
 published: true
 exclude_rss: false
 listed: true
