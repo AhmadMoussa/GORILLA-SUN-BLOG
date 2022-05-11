@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: In this tutorial I will guide you through setting up a Breadfond on the Tezos blockchain using the TEIA and/or Versum smart contracts.
-thumbnail_path: https://gorillasun.de/assets/images/breadfond/thumb.mp4
+thumbtype: img
+thumbnail_path: https://gorillasun.de/assets/images/compressed/breadfondsmol-min.png
 published: true
 exclude_rss: true
 listed: true
