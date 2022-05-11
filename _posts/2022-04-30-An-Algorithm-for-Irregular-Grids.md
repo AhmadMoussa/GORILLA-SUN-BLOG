@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: A step by step tutorial to constructing a variety of irregular grids
-thumbnail_path: https://gorillasun.de/assets/images/irregular_grids/thumb.mp4
+thumbtype: img
+thumbnail_path: https://gorillasun.de/assets/images/compressed/irregularsmol.png
 published: true
 exclude_rss: true
 legacy: false
