@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: Modulating the height and width of rectangle objects, arranged in a grid-like manner, with respect to their x and y coordinates allows you to create interesting patterns, this blog post explains how to achieve this effect.
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/sine.webm
+thumbtype: vid
+thumbnail_path: https://gorillasun.de/assets/images/compressed/modulate.webm
 published: true
 exclude_rss: false
 listed: true
