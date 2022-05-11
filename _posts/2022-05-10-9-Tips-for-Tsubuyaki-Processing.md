@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: Tsubuyaki processing has become a popular and fun little challenge on Twitter. In this post I'll be going over some character saving tricks that can come in clutch when you're out of ideas for reducing the size of your code!
-thumbnail_path: https://gorillasun.de/assets/images/tsubuyaki/thumb.mp4
+thumbtype: img
+thumbnail_path: https://gorillasun.de/assets/images/compressed/tsubuyaki.jpg
 published: true
 exclude_rss: true
 legacy: false
