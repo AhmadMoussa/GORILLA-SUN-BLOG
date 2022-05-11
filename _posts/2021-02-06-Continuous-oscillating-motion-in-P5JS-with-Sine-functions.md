@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - ableton
 description: Creating continuous oscillating motion in P5JS can be done via sine functions, in this blog post I explain how it's done and how it can be intuitively understood.
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/oscillating.webm
+thumbtype: vid
+thumbnail_path: https://gorillasun.de/assets/images/compressed/oscilation.webm
 published: true
 exclude_rss: false
 listed: true
