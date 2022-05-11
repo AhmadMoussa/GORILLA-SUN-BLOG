@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: A step-by-step tutorial to recreating my parasite sketch, which involves coding all kinds of squiggly movement!
-thumbnail_path: https://gorillasun.de/assets/images/gifs/parasite/parasite.mp4
+thumbtype: vid
+thumbnail_path: https://gorillasun.de/assets/images/compressed/parasite.webm
 published: true
 listed: true
 legacy: false
