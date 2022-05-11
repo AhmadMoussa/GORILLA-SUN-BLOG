@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - ableton
 description: We have a closer look at a free scripting language that allows us to create tablature and sheet music.
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/sheet.webm
+thumbtype: vid
+thumbnail_path: https://gorillasun.de/assets/images/compressed/lilipond.webm
 published: true
 exclude_rss: false
 listed: true
