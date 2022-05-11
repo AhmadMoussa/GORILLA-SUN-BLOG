@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: An aesthetically minimalistic sketch that is based on a boolean grid and perlin noise
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/loopscape.mp4
+thumbtype: img
+thumbnail_path: https://gorillasun.de/assets/images/compressed/grandcanyon.png
 published: true
 listed: true
 legacy: false
