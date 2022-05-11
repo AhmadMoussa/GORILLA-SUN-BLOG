@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: Achieving dashed lines in P5JS was more difficult than I thought it would be, here's a tutorial on how to do it.
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/Circular Final.webm
+thumbtype: vid
+thumbnail_path: https://gorillasun.de/assets/images/compressed/dashed.webm
 published: true
 exclude_rss: false
 listed: true
