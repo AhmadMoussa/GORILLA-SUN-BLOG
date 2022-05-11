@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: The Perlin noise generator in p5js is a fantastic feature that allows us to code up a plethora of fantastic sketches, here's a rundown of how it works as well as some examples.
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/homer.mp4
+thumbtype: img
+thumbnail_path: https://gorillasun.de/assets/images/compressed/intro_to_perlinnoise.jfif
 published: true
 exclude_rss: false
 listed: true
