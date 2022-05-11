@@ -5,7 +5,8 @@ author: Ahmad Moussa
 categories:
   - p5js
 description: This blog post will explain how to code up a Flow Field in Processing.
-thumbnail_path: https://gorillasun.de/assets/images/thumbnails/ff.mp4
+thumbtype: img
+thumbnail_path: https://gorillasun.de/assets/images/compressed/flow1.png
 published: true
 exclude_rss: false
 listed: true
