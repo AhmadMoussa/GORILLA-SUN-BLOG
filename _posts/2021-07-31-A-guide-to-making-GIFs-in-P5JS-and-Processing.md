@@ -137,6 +137,21 @@ One downside that I want to point out, is that when you try to create large GIFs
 
 Next up, concatenating your frames into an actual GIF!
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<p></p>
+
+
 <h2><a name='gif'>Converting a Series of Frames into a GIF</a></h2>
 
 For concatenating individual frames into a GIF we got another slew of different ways to do it. We'll first have a look at two famous CLI (command line interface) tools, namely FFMPEG and ImageMagick. And then we'll have a look at some other online and offline options like ezgif and ScreenToGif
