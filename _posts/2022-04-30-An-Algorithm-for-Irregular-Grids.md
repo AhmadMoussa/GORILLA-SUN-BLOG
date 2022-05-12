@@ -298,6 +298,20 @@ You probably noticed that we are storing the rectangle information as a custom o
 }
 </code></pre>
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<p></p>
+
 <h2><a name='viz'></a>Visualising the Grid</h2>
 
 Drawing the grid to the canvas now is relatively straight forward, we simply loop over the array in which we stored our rectangle information:
