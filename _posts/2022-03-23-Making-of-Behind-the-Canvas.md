@@ -727,6 +727,21 @@ function roundedPoly(ctx, points, radiusAll) {
 <p></p>
 
 Which also makes for an interesting effect, but that's for another sketch. Ultimately, chaining clip calls might not be very intuitive. but it makes for a very interesting visual effect! And maybe you already noticed, but we could substitute the drawPattern() function for any other kind of pattern and it would still work, which is neat.
+	
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<p></p>
+
 
 Another visual improvement we can make is adding a slight shadow between layers, to make it seem as if previous layers are somewhat elevated with respect to subsequent ones. We can also make use of the rendering context for this:
 
