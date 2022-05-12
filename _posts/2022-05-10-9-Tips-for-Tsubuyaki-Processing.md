@@ -191,7 +191,20 @@ Since the setup function doesn't take any paramteres, we can make it a parameter
 Now we could technically pass in an argument to the setup function, but the setup function is usually never called a second time from within the code, so it doesn't matter, and it saves us a character.
 
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
+<p></p>
 
 
 
