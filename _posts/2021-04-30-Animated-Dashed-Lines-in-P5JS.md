@@ -359,6 +359,21 @@ function draw() {
 
 This works, and it even works for any numbers that you give as parameters for segment length and spacing length. Except for negative numbers, which don't make sense to begin with and can be checked for in the constructor.
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<p></p>
+
+
 <h2><a name='5'>Pumping forward animation</a></h2>
 
 <span class="image fit"><img src="https://gorillasun.de/assets/images/2021-04-30-Animated-Dashed-Lines-in-P5JS/Dashed Final.gif" alt="" /></span>
