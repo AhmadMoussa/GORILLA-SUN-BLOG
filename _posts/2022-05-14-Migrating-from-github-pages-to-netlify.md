@@ -6,7 +6,7 @@ categories:
   - p5js
 description: Github Pages and Netlify are bost fantastic solutions for hosting your first website. Switching from one to the other when you've already established your website on one of them might be a bit tricky however. But here's how you can do it!
 thumbtype: img
-thumbnail_path: https://gorillasun.de/assets/images/neetlify/thumb.png
+thumbnail_path: https://gorillasun.de/assets/images/netlify/thumb.png
 published: true
 exclude_rss: true
 legacy: false
