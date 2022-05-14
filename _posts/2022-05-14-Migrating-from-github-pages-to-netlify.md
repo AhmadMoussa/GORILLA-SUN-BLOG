@@ -23,14 +23,14 @@ Also, this post is NOT sponsored by Netlify! (I'd be open to the idea though lol
 Here's a quick index:
 
 
-2. So... why Netlify?
-3. Taking down your github page
-4. Setting up Netlify
-5. Updating your DNS settings
-6. Recap of required steps
+1. <a href='#a'>So... why Netlify?</a>
+2. <a href='#b'>Taking down your github page</a>
+3. <a href='#c'>Setting up Netlify</a>
+4. <a href='#d'>Updating your DNS settings</a>
+5. <a href='#e'>Recap of required steps</a>
 
 
-<h2>So... why Netlify?</h2>
+<h2><a name='a'></a>So... why Netlify?</h2>
 
 Mainly because of scalability concerns. Github pages only offers one tier, which is free but imposes a number of limitations:
 
@@ -48,7 +48,10 @@ Where the second point on the list is a bit of a problem, since you can't really
 What is also great is that you can see how close you are to meeting those limits. That said, Github pages is still a great option if you're just getting started, and I would definitely recommend it. In many ways it trivializes setting up your very first site. You just upload your files in a repo and you're good to go! But it's nice to have the options which Netlify provides.
 
 
-<h2>Taking down your github page</h2>
+
+
+
+<h2><a name='b'></a>Taking down your github page</h2>
 
 The next sections explain how to migrate your blog from Github pages to Netlify. If your site isn't tied to a custom domain name, it's incredibly straightforward. If you have your website tied to a custom domain there are a few extra steps.
 
@@ -60,7 +63,11 @@ First things first, you'll probably want to take down your github page. This can
 
 DON'T delete this repository however, we'll need it for Netlify!
 
-<h2>Setting up Netlify</h2>
+
+
+
+
+<h2><a name='c'></a>Setting up Netlify</h2>
 
 Once you sign up to Netlify you'll be asked to deploy your first project. Luckily since our site already exists as a repository on github, we can simply point Netlify to build it from there!
 
@@ -107,7 +114,10 @@ If you don't have a custom domain yet, you should only see one entry. This will 
 Then if everything is in order, your site should be accessible under this link. Go and check it out! If you still want to link a custom domain to your page, then read on.
 
 
-<h2>Pointing a custom domain to Netlify</h2>
+
+
+
+<h2><a name='d'></a>Pointing a custom domain to Netlify</h2>
 
 Now we can add our custom domain to Netlify.
 
@@ -142,7 +152,7 @@ Doing the migration as detailed in this post, will lead to some unavoidable down
 
 There are however some ways to drastically reduce this downtime, as detailed in <a href='https://answers.netlify.com/t/support-guide-how-do-i-migrate-a-domain-to-netlify-dns-with-zero-downtime/3397'>this comprehensive post</a> on the Netlify support forum.
 
-<h2>Recap of required steps</h2>
+<h2><a name='e'></a>Recap of required steps</h2>
 
 And to end, here's a recap of the essential steps required to effectuate the switch from Github pages to Netlify:
 
