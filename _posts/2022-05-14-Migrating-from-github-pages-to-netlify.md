@@ -10,7 +10,7 @@ thumbnail_path: https://gorillasun.de/assets/images/neetlify/thumb.png
 published: true
 exclude_rss: true
 legacy: false
-listed: false
+listed: true
 ---
 
 
