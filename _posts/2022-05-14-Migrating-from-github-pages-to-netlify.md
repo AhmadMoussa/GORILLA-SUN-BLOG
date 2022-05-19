@@ -6,13 +6,16 @@ categories:
   - p5js
 description: Github Pages and Netlify are bost fantastic solutions for hosting your first website. Switching from one to the other when you've already established your website on one of them might be a bit tricky however. But here's how you can do it!
 thumbtype: img
-thumbnail_path: https://gorillasun.de/assets/images/netlify/thumb.png
+thumbnail_path: https://gorillasun.de/assets/images/netlify/thumb.jpg
 published: true
 exclude_rss: true
 legacy: false
 listed: true
 ---
 
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+  <img class="viewable" src="https://gorillasun.de/assets/images/netlify/thumb.jpng" alt="">
+</span>
 
 I recently migrated the Gorilla Sun blog from Github pages to Netlify. It seemed a daunting task at first, but it was much easier than I expected. I was worried that I'd be breaking something, or that my page would go offline and that it would negatively impact my SEO rankings in some manner.
 
