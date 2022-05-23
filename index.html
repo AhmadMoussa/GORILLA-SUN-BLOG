@@ -16,10 +16,13 @@ permalink:
 			<p>and this is the <strong>Gorilla Sun</strong> blog!</p>
 		</header>
 		
-		<p>If you're looking to take your first dip into creative coding and generative art then you're in the right place! Scroll down to check out some of my articles, some of the art I've made or how to get in touch with me!</p>
+		<p>If you're looking to take your first dip into creative coding and generative art then you're in the right place! The articles and tutorials I write mainly discuss creative coding techniques, algorithms and frameworks like P5JS!</p>
+		
+		<p>Scroll down to check out some of my articles, some of the art I've made or how to get in touch with me!</p>
 		<pre><code>GorillaSun.init(...ideas);</code></pre>
 	</div>
 	
+	<!--
 	<span class="image object" style="position: relative; overflow: hidden;">
 			
 			<video autoplay loop muted playsinline style="height: 100%; left:50%; top:50%; transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%); background-color:gray; position:absolute; border-radius: 0.375em;"
@@ -27,6 +30,201 @@ permalink:
 			
 		
 	</span>
+-->
+	
+			<div id='container' style="height: 100%;
+		left:50%; top:50%; transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%); background-color:gray; position:absolute; border-radius: 0.375em;"> </div>
+		 </span>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+		 <script>
+  let sketch = function(p) {
+    p.setup = function(){
+      p.createCanvas(1200, 1200);
+      p.background(0);
+
+			p.frameRate(50)
+			p.pixelDensity(1)
+
+		  numFrames = 300
+			w = 1200
+    	startRad = w / 2
+
+    	rads = []
+    	reps = 10
+
+    	div = 6
+    	step = Math.PI*2 / div
+    	for (let i = 1; i <= div * 2 + 1; i++) {
+        for (let n = 0; n < reps; n++) {
+          rads.push(p.map(i, 1, div * 2, w, 0) + p.map(n, 0, reps, 0, w * 2))
+        }
+    	}
+
+    	radD = p.map(1, 0, reps, 0, w * 2)/1.5
+
+    	ctx = p.canvas.getContext('2d')
+    	ctx.lineWidth = 10
+    	p.strokeJoin(p.ROUND)
+    }
+
+		p.draw = function(){
+			p.background(colors[2])
+			p.translate(w / 2, 0)
+
+			t = (p.frameCount / numFrames) % (numFrames*2)
+			t2 = 0
+
+			if(t<1){
+				toggle = false
+				tinput = easeOutExpo(t%1)
+				tinput1 = p.map(t%1, 0, 1, 0, 0.5)
+				tinput2 = p.map(t%1, 0, 1, 0, 0.6)
+				t2 = 0
+				angOffset = 0
+			}else if (t >= 1 && t < 2) {
+				toggle = true
+				t2 = (p.frameCount / numFrames) % numFrames
+				easint = easeInCirc(t2%1)
+				angOffset = p.map(t2%1, 0, 1, 0, -step)
+			} else if(t>=2 && t<3){
+				toggle = true
+				t2 = 1
+				tinput = easeOutExpo(t%1)
+				tinput1 = p.map(t%1, 0, 1, 0.5, 0)
+				tinput2 = p.map(t%1, 0, 1, 0.6, 0)
+			}else if(t>=3 && t<4){
+				toggle = true
+				t2 = (p.frameCount / numFrames) % numFrames
+				easint = easeInCirc(t2%1)
+				angOffset = p.map(t2%1, 0, 1, -step, 0)
+			}else{
+				p.frameCount = 0
+			}
+
+
+			sinput = p.map(t,0,4,0,Math.PI*2)
+			p.rotate(-sinput)
+			p.strokeWeight(10)
+			p.stroke(0)
+
+			generate()
+
+			p.fill(255, 60, 0)
+			p.ellipse(0, 0, 120)
+		}
+
+		colors = ["#ffd919", "#262104", "#fffbe6"]
+
+		function easeInCirc(x) {
+  			return 1 - p.sqrt(1 - p.pow(x, 2));
+			}
+
+		function easeOutExpo(x) {
+		  return x === 1 ? 1 : 1 - p.pow(2, -10 * x);
+		}
+
+function generate() {
+
+    count = 0
+    currRad = 0
+    for (let a = step; a < Math.PI*2; a += step) {
+        storage = []
+        storage2 = []
+        for (let n = 0; n < reps; n++) {
+            currRad = (p.map(
+                tinput2,
+                0, 1, 0 + rads[count],
+                w * 2 + rads[count])) % (w * 2)
+            storage.push([currRad, count])
+
+            currRad = p.map(tinput1, 0, 1, 0 + rads[count], w * 2 + rads[count]) % (w * 2)
+
+            storage2.push([currRad, count])
+
+            count++
+        }
+
+        storage.sort(([a, b], [c, d]) => c - a || b - d);
+        storage2.sort(([a, b], [c, d]) => c - a || b - d);
+
+        for (let n = 0; n < storage.length; n++) {
+            if (storage2[n][1] % 2 == 0) {
+                p.fill(colors[1])
+
+                // arc(0, 0, storage2[n][0], storage2[n][0],
+                //     a + step / 2 , a + step , PIE)
+
+                drawWedge(storage2[n][0]-radD/2,storage2[n][0],
+                      a + step / 2, a + step)
+
+
+
+                ctx.fill()
+                ctx.stroke()
+            } else {
+                p.fill(colors[1])
+                // arc(0, 0, storage2[n][0], storage2[n][0],
+                //     a + step / 2 , a + step , PIE)
+
+                drawWedge(storage2[n][0]-radD/2,storage2[n][0],
+                      a + step / 2, a + step)
+
+
+
+                ctx.fill()
+                ctx.stroke()
+            }
+
+            if (storage[n][1] % 2 == 0) {
+                p.fill(colors[0])
+
+                p.arc(0, 0, storage[n][0], storage[n][0],
+                    a + step  + angOffset, a + step + step / 2 + angOffset, p.PIE)
+            } else {
+                p.fill(colors[2])
+
+                p.arc(0, 0, storage[n][0], storage[n][0],
+                    a + step  + angOffset, a + step + step / 2  + angOffset, p.PIE)
+            }
+        }
+    }
+}
+
+
+
+function getCoords(rad, ang){
+  return {x: rad * p.cos(ang), y: rad * p.sin(ang)}
+}
+
+function drawWedge(radS, radL, beginAng, endAng){
+  radS = p.max(0, radS)
+  radL = p.max(0, radL)
+
+  c1 = getCoords(radL, beginAng)
+
+  ctx.moveTo(c1.x, c1.y)
+  ctx.beginPath()
+  ctx.arc(0, 0, radL, beginAng, endAng, 0)
+
+  c2 = getCoords(radL, endAng)
+  c3 = getCoords(radS, endAng)
+
+  ctx.lineTo(c2.x,c2.y,c3.x,c3.y)
+  ctx.arc(0, 0, radS, endAng, beginAng, 1)
+
+  c4 = getCoords(radS, beginAng)
+  ctx.lineTo(c4.x,c4.y,c1.x,c1.y)
+
+  ctx.closePath()
+}
+
+  };
+  new p5(sketch, 'container');
+
+
+	</script>
 	
 	
 	<!--
