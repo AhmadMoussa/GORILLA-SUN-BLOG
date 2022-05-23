@@ -20,11 +20,11 @@ pagination:
 	<h3> {{paginator.page}} / {{paginator.total_pages}}</h3>
 	<ul class="actions fit">
 		{% if paginator.previous_page %}
-					<li><a href="{{ paginator.previous_page_path | replace: '//', '/' }}" class="button fit">Previous Page</a></li>
+					<li><a href="{{ paginator.previous_page_path | replace: '//', '/' }}" class="button fit">Previous</a></li>
 		{% endif %}
 
 		{% if paginator.next_page %}
-			<li><a href="{{ paginator.next_page_path | replace: '//', '/' }}" class="button fit">Older Posts</a></li>
+			<li><a href="{{ paginator.next_page_path | replace: '//', '/' }}" class="button fit">Older</a></li>
 		{% endif %}
 	</ul>
 </div>
