@@ -5,7 +5,7 @@ author: Ahmad Moussa
 categories:
   - p5js
   - tutorial
-description: Step-by-step guide to coding up a sketch that I submitted for processing's 20-th anniversary fundraiser. "Gzork"
+description: Step-by-step guide to coding up a sketch that I submitted for processing's 20-th anniversary fundraiser.
 thumbtype: vid
 thumbnail_path: https://gorillasun.de/assets/images/compressed/gzork.webm
 published: true
