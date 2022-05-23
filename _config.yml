@@ -1,13 +1,18 @@
 title: GORILLA SUN BLOG
 author: Ahmad Moussa
 url: https://gorillasun.de # the base hostname & protocol for your site
-baseurl: 
+baseurl:
 permalink: blog/:title
+
+paginate:  8
+paginate_path: "/posts/page:num/"
+
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-archives
-  
+  - jekyll-paginate
+
 # 5. Collections
 collections:
   posts:
