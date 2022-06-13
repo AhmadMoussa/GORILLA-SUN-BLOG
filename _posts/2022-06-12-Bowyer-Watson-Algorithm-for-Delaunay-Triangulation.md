@@ -4,7 +4,7 @@ title: Bowyer-Watson Algorithm for Delaunay Triangulation
 author: Ahmad Moussa
 categories:
   - blog
-description: The Bowyer-Watson algorithm for Delaunay triangulation is maybe one of the easier methods to implement and understand for obtaining a Delaunay Triangulation.
+description: The Bowyer-Watson algorithm for Delaunay triangulation is maybe one of the easier methods to implement and understand for obtaining a Delaunay Triangulation. This post serves as a step by step guide to coding up the algorithm from scratch.
 thumbtype: img
 thumbnail_path: https://gorillasun.de/assets/images/delaunay/banner.jpg
 published: true
