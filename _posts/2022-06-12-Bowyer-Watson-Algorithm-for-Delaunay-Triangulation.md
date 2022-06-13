@@ -394,5 +394,3 @@ And finally let's put everything together! The final code ends up being relative
 <h2><a name='delaunator'></a>Using the Delaunator Class</h2>
 
 And lastly, I want to include a section on using the delaunator, because in most projects it's probably better to use an efficient library rather than reinventing the wheel. You can find the library <a href='https://github.com/mapbox/delaunator'>here</a>, where you're provided with a couple of options to integrate it with your project, depending on your preferences and needs.
-
-I like having a copy of the code
