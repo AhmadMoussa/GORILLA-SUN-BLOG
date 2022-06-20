@@ -6,7 +6,7 @@ categories:
   - blog
 description: This is the first in a series of blog posts on Delaunay triangulation. This first part explains the task at hand and possible strategies to create a Delaunay Triangulation.
 thumbtype: img
-thumbnail_path: https://gorillasun.de/assets/images/delaunay/banner.jpg
+thumbnail_path: https://gorillasun.de/assets/images/delaunay-intro/mountains.jpg
 published: true
 exclude_rss: true
 legacy: false
