@@ -21,9 +21,25 @@ listed: true
 
 I have to confess... I've been a little obsessed with triangular shapes.
 
-This obsession actually goes back a couple of months ago, when I worked on a little sketch where I tried to pack as many triangles as possible, as closely as possible, somehow coming up with a peculiar triangle packing algorithm. While this take on triangle packing was super fun to make and nets you visually interesting results, an alternative method to split a plane into triangles would be the construction of a Delaunay Triangulation.
+This obsession actually goes back a couple of months ago, when I worked on a little sketch where I tried to pack as many triangles as possible, as closely as possible, somehow coming up with a peculiar triangle packing algorithm. While this take on triangle packing was super fun to make and nets you visually interesting results, an alternative method to split a plane into triangles would be the construction of a Delaunay Triangulation. I attached some of the artworks I've made with Delaunay triangulations to this post, as well as the sketch where this entire triangle thing started:
+
+<div class="row gtr-50 gtr-uniform">
+	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/delaunay-intro/tri1.png" alt="">
+		</span>
+	</div>
+  	<div class="col-6">
+		<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+			<img class="viewable" src="https://gorillasun.de/assets/images/delaunay-intro/tri2.png" alt="">
+		</span>
+	</div>
+</div>
+<p></p>
 
 Consider this post an initiation into Delaunay triangulations and related concepts like Voronoi tessellations, as well as the many methods with which they can be achieved. So much interesting art has come from these two techniques, so much so that I believe the topic requires a little attention from everyone who wants to seriously get into creative coding. In terms of different things you can do with these techniques, we've got quite some ground to cover.
+
+Delaunay triangulations were coined after <a href='https://en.wikipedia.org/wiki/Boris_Delaunay'>Boris Delaunay</a> for his research on this topic in 1934, and we'll talk a little bit more about him in one of the following sections, as well as <a href='https://en.wikipedia.org/wiki/Georgy_Voronoy'>Georgy Voronoy</a>, both of which actually knew each other.
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-4">
@@ -43,9 +59,6 @@ Consider this post an initiation into Delaunay triangulations and related concep
 	</div>
 </div>
 <p></p>
-
-
-Delaunay triangulations were coined after <a href='https://en.wikipedia.org/wiki/Boris_Delaunay'>Boris Delaunay</a> for his research on this topic in 1934, and we'll talk a little bit more about him in one of the following sections, as well as <a href='https://en.wikipedia.org/wiki/Georgy_Voronoy'>Georgy Voronoy</a>, both of which actually knew each other.
 
 For now, you just need to know that for our purposes a triangulation simply means the subdivision and/or partitioning of a geometric shape into smaller triangles. Delaunay triangulations additionally  also have many geometric properties that are useful for a plethora of applications across various fields, and can in many ways be used to derive a dual Voronoi diagram, and vice versa!  Let's first have a look at some creative things that have been created with these two space partioning algorithms.
 
