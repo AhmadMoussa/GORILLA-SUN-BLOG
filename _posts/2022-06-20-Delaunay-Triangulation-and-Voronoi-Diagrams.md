@@ -4,7 +4,7 @@ title: "Delaunay Triangulation and Voronoi Diagrams"
 author: Ahmad Moussa
 categories:
   - blog
-description: This is the first in a series of blog posts on Delaunay triangulation. This first part explains the task at hand and possible strategies to create a Delaunay Triangulation.
+description: This is the first in a series of blog posts on Delaunay triangulations and Voronoi Diagrams. This first part covers some artworks that have been created with these techniques as well as some of their history and origins.
 thumbtype: img
 thumbnail_path: https://gorillasun.de/assets/images/delaunay-intro/mountains.jpg
 published: true
