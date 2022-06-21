@@ -6,11 +6,11 @@ categories:
   - blog
 description: The Bowyer-Watson algorithm for Delaunay triangulation is maybe one of the easier methods to implement and understand for obtaining a Delaunay Triangulation.
 thumbtype: img
-thumbnail_path: https://gorillasun.de/assets/images/delaunay/banner.jpg
+thumbnail_path: https://gorillasun.de/assets/images/delaunay/color_triangulation.jpg
 published: true
 exclude_rss: true
 legacy: false
-listed: false
+listed: true
 ---
 
 <div class="row gtr-50 gtr-uniform">
@@ -29,7 +29,7 @@ listed: false
 
 <!-- https://www.newcastle.edu.au/__data/assets/pdf_file/0017/22508/13_A-fast-algorithm-for-constructing-Delaunay-triangulations-in-the-plane.pdf -->
 
-Before we begin with this post, I'd like to point out that a lot of research has gone into constructing Delaunay Triangulations. The intent of this post is solely to present a straightforward and popular method to constructing such a triangulation, as well as learning some useful techniques along the way. The Bowyer-Watson algorithm is well suited for making static artworks with a moderate amount of points. For creating animated or interactive triangulations I would recommend using one of the many efficient and highly optimized libraries that already exist for these purposes like <a href='https://github.com/mapbox/delaunator'>delaunator</a>. I'll include a short section how to use the delaunator at the end!
+Before we begin with this post, I'd like to point out that a lot of research has gone into algorithms for constructing Delaunay Triangulations. The intent of this post is solely to present a somewhat straightforward and popular method for constructing such a triangulation, as well as learning some useful techniques along the way. The Bowyer-Watson algorithm is well suited for making artworks with a moderate amount of points. For creating animated or interactive triangulations I would recommend using one of the many efficient and highly optimized libraries that already exist for these purposes like <a href='https://github.com/mapbox/delaunator'>delaunator</a>. I'll include a short section how to use the delaunator at the end!
 
 Lastly, before we begin, you can find a highly un-optimized version of the BW algo <a href='https://openprocessing.org/sketch/1587231'>here</a> which was essentially my initial version of the algo. This tutorial is loosely based on <a href='https://github.com/msavela'>Matias Savela</a>'s implementation which is quite digestible and very readable, and improves on the mistakes and implementation choices that I've made during my initial attempt! With this out of the way we can dive into the algorithm:
 
@@ -92,11 +92,11 @@ After digging a bit on how to approach the triangulation task I came across a ps
    return triangulation
 </code></pre>
 
-If you've already got a headache after reading this snippet, then fret not, things will get clearer in what follows of this post. Albeit translating pseudocode into executable code being a very good exercise, a lot of the implementation details are left for the coder to decide on. In many ways this pseudocode snippet can be further simplified. But let's first go through the algorithm step by step!
+If you've already got a headache after reading this snippet, then fret not, things will get clearer in what follows in this post. Albeit translating pseudocode into executable code being a very good exercise, a lot of the implementation details are left for the coder to decide on. In many ways this pseudocode snippet can be further simplified. But let's first go through the algorithm step by step!
 
 <h2><a name='algo'></a>An intuitive explanation of the Algorithm</h2>
 
-Here's a little step-by-step animation to illustrate the how the Bowyer-Watson algorithm functions on a very simple set of three points:
+Here's a little step-by-step animation to illustrate how the Bowyer-Watson algorithm functions on a very simple set of three points. The Bowyer-Watson algorithm is essentially an iterative procedure that loops over a given set of points (placed at random or purposefully), one at a time, and constructs a valid Delaunay triangulation:
 
 
 <div class="row gtr-50 gtr-uniform">
@@ -120,7 +120,7 @@ Here's a little step-by-step animation to illustrate the how the Bowyer-Watson a
 <p></p>
 
 
-The triangulation function in our case accepts as input a list of points. These will be the vertices from which we will create our future triangle mesh. An initial and necessary first step here, is to create a large triangle, which will contain within it's three edges, all of the points that ought to be triangulated. We call this triangle a 'super triangle'. Generally we assume this triangle to be infinite in size, however pragmatically we can make it just big enough to contain all of our points.
+An initial and necessary first step here, to get things going, is to create a large triangle which will contain within it's three edges all of the points that ought to be triangulated. We call this triangle a 'super triangle'. We could technically make this triangle infinite in size, to make sure that all triangulation vertices are contained within it, however pragmatically we can make it just big enough to contain all of the points:
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -138,9 +138,9 @@ The triangulation function in our case accepts as input a list of points. These 
 
 Having created this super triangle and placed our points we can begin constructing the triangulation. We will now iteratively go over each point that we have passed to the procedure to construct a valid triangulation. In the previous post we have discussed what makes a valid Delaunay Triangulation:
 
-<blockquote>No point is contained within the circumcircle of any other triangle</blockquote>
+<blockquote>A Delaunay triangulation for a given set P of discrete points in a general position is a triangulation DT(P) such that no point in P is inside the circumcircle of any triangle in DT(P).</blockquote>
 
-Thus we need to check if any of our points fall into the circumcircle of the already placed triangles. Initially this is simple, since we only have one triangle (the super triangle), which certainly contains all of the points within it's circumcircle.  We can mark this super triangle as invalid, and add it to an array that contains all of these invalid triangles. Again, we're still at the very beginning, hence the array will only contain the super triangle for now.
+Thus the next step is checking if any of our points fall within the circumcircle of any of the already existing triangles. Initially this is simple, since we only have one triangle (the super triangle), which certainly contains all of the points within it's circumcircle. We can mark this super triangle as invalid, and add it to an array that contains all of these invalid triangles. Again, we're still at the very beginning, hence the array will only contain the super triangle for now.
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -156,9 +156,11 @@ Thus we need to check if any of our points fall into the circumcircle of the alr
 </div>
 <p></p>
 
-Next, we need to replace the invalid triangles by a different set of triangles that is valid. Initially this is simple, we simply form new triangles by connecting the edges of the super triangle to the initial point. Later on this becomes trickier because we need to determine the boundaries of the polygonal hole that is formed in the triangulation where we marked a number of triangles as invalid. We essentially need to fill the empty spot where we figuratively 'deleted' the bad triangles, by connecting the edges of this polygonal hole to the current point we're iterating over.
+Next, we need to replace the invalid triangles by a different set of triangles that is valid. We can do so by connecting the edges of the super triangle to the initial point that we're currently iterating over. In this manner we can make sure that the point will be <b>on</b> the circumcircle of the new triangles, because it is a vertex of each one of those triangles.
 
-Before we end the current iteration we still need to remove all triangles that have been marked as invalid, and add the new triangles that we've formed by connecting the point with the edges of the polygonal hole. And we are ready for the next iteration.
+Later on this becomes trickier because we need to determine the boundaries of the polygonal hole that is formed in the triangulation where we, in most cases, marked several triangles as invalid. We essentially need to fill the empty spot where we figuratively 'deleted' the bad triangles, by connecting the edges of this polygonal hole to the current point we're iterating over.
+
+Before we end the current iteration we still need to delete all triangles that have been marked as invalid, and add the new triangles that we've formed by connecting the point with the edges of the polygonal hole. And we are ready for the next iteration.
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -174,7 +176,7 @@ Before we end the current iteration we still need to remove all triangles that h
 </div>
 <p></p>
 
-In the second iteration we will add the next point to the triangular mesh, and depending on it's position and the shape of the three triangles that we've created, it might fall into one or more circumcircles. If it does we need to mark those triangles as invalid, and we now need to find the polygonal hole again. The pseudocode snippet describes the polygonal hole as 'all edges in the set of bad triangles that is not shared between two bad triangles' which essentially means all the edges at the boundaries of that polygonal hole. Depending on how the code is implemented this can be more or less difficult. And again we form new triangles by connecting these unshared edges with the current point and adding these triangles to the triangulation.
+In the second iteration we will add the next point to the triangular mesh, and depending on it's position and the shape of the three triangles that we've created, it might fall into one, two or more circumcircles. If it does we need to mark those triangles as invalid, and we now need to find the polygonal hole, where we essentially deleted several triangles. The pseudocode snippet describes the polygonal hole as 'all edges in the set of bad triangles that is not shared between two bad triangles' which essentially means all the edges at the boundaries of that polygonal hole. Depending on how the code is implemented this can be more or less difficult. And again we form new triangles by connecting these unshared edges with the current point and adding these triangles to the triangulation.
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -190,7 +192,7 @@ In the second iteration we will add the next point to the triangular mesh, and d
 </div>
 <p></p>
 
-In this manner we iteratively add vertices to this triangle mesh, subdividing the initial super triangle into smaller ones. Ultimately we will have achieved a valid Delaunay triangulation, in the final step we will need to remove all triangles that share an edge or a vertex with the initial super triangle, since they weren't part of the initial set of points.
+In this manner we iteratively add vertices to this triangle mesh, subdividing the initial super triangle into smaller ones, until we've ultimately achieved a valid Delaunay triangulation. In the final step we will need to remove all triangles that share an edge or a vertex with the initial super triangle, since they weren't actually part of the initial set of points.
 
 <div class="row gtr-50 gtr-uniform">
 	<div class="col-6">
@@ -226,7 +228,7 @@ var Vertex = function(x, y) {
 }
 </code></pre>
 
-The edge object builds on top of the Vertex object. In this manner an edge essentially consists of two connected points, and can thus be represented by two vertices. It also has it's own comparison function. This function actually needs to do two comparisons to determine if an edge is equivalent to another one, this is due to the directionality of edges, which in this case, we don't really care for. Meaning that an edge going from vertex A to vertex B is the same as an edge going from vertex B to vertex A. Hence both cases need to be covered:
+The edge object builds on top of the Vertex object. In this manner an edge essentially consists of two connected points, and can thus be represented by two vertices. It also has it's own comparison function. This function actually needs to do two comparisons to determine if an edge is equivalent to another one, because for our purposes we don't really care for the cirectionality of the edges. Meaning that an edge going from vertex A to vertex B is the same as an edge going from vertex B to vertex A. Hence we need to cover both cases:
 
 <pre><code>// Edge object
 var Edge = function(v0, v1) {
@@ -243,7 +245,7 @@ var Edge = function(v0, v1) {
 }
 </code></pre>
 
-This could be further optimised by assigning a ID to each edge and vertex and keeping track of them in a lookup table, saving us costly and redundant comparison operations. This will do for now however. Next up is the triangle object:
+This could be further optimised by assigning an ID to each edge and vertex and keeping track of them in a lookup table, saving us costly and redundant comparison operations. A simply comparison should do for now however. Next up is the triangle object:
 
 <pre><code>// Triangle object
 var Triangle = function(v0, v1, v2) {
@@ -265,7 +267,7 @@ For the triangle object we don't require a comparison function (because we can c
 
 This seems like a very simple part of the overall algorithm, but can also be considered an interesting problem. As said earlier, we could just make a triangle gigantic enough such that it encloses all of the points. For example, we choose all of our point coordinates to fall within the region that makes up the canvas,  and then make our triangle large enough to contain the entire canvas. In that case all of the points would certainly be inside the super-triangle.
 
-A more interesting and much more difficult method would be finding a triangle that is just large enough to contain all points. There might even be problems with the first approach as detailed <a href='https://stackoverflow.com/questions/3642548/infinite-initial-bounding-triangle-in-iterative-delaunay-triangulators'>here </a> where the final triangulation doesn't end up being quite perfectly 'Delaunay'. In this sense we are looking at a minimum bounding box type of problem, and in this case it would be a minimum bounding triangle, one such algorithm that can compute this bounding triangle can be found <a href='https://link.springer.com/article/10.1007/s40314-014-0198-8'>here</a>. But this is a bit overkill as we would first have to compute the convex hull of the set of points, which makes things overly complicated when we can simply slap a big triangle around our points.
+A more interesting and much more difficult method would be finding a triangle that is just large enough to contain all points. There might even be problems with the first approach as detailed <a href='https://stackoverflow.com/questions/3642548/infinite-initial-bounding-triangle-in-iterative-delaunay-triangulators'>here </a> where the final triangulation doesn't end up being quite perfectly 'Delaunay'. In this sense we are looking at a minimum bounding box type of problem, and in this case it would be a minimum bounding triangle, one such algorithm that can compute this bounding triangle can be found <a href='https://link.springer.com/article/10.1007/s40314-014-0198-8'>here</a>. But this is a bit overkill as we would first have to compute the convex hull of the set of points, which makes things overly complicated when we could simply slap a big triangle around our points.
 
 Here's Matias' method for finding the super-triangle. His function first finds the minimum and maximum vertex coordinates and then centers a triangle on top of all the points:
 
@@ -301,7 +303,7 @@ Here's an example of how the algorithm works on a larger set of points (rerun a 
 
 <p></p>
 
-With all of the previous part in place, the remainder of the triangulation procedure becomes very straightforward! In this section we will iteratively add the triangulation vertices to the triangulation mesh and resolve the areas of conflict where vertices fall into the circumcircle of other triangles. This is done by removing the conflicting triangles, in turn creating a polygonal hole that can be patched up with a set of new triangles, by connecting the vacant edges with the current vertex in question. Doing this exactly as described by the pseudocode snippet may end up being a very inefficient way to do it, rather than comparing every triangle's edges against every other triangle's edges, we may actually just compare all edges and store the ones that are unique in a separate array to construct the polygonal hole.
+With all of the previous parts in place, the remainder of the triangulation procedure becomes very straightforward! In this section we will iteratively add the triangulation vertices to the triangulation mesh and resolve the areas of conflict where vertices fall into the circumcircle of other triangles. This is done by removing the conflicting triangles, in turn creating a polygonal hole that can be patched up with a set of new triangles, by connecting the vacant edges with the current vertex in question. Doing this exactly as described by the pseudocode snippet may end up being a very inefficient way to do it, rather than comparing every triangle's edges against every other triangle's edges, we may actually just compare all edges and store the ones that are unique in a separate array to construct the polygonal hole.
 
 With these considerations, we can model our procedure as follows:
 
@@ -393,4 +395,37 @@ And finally let's put everything together! The final code ends up being relative
 
 <h2><a name='delaunator'></a>Using the Delaunator Class</h2>
 
-And lastly, I want to include a section on using the delaunator, because in most projects it's probably better to use an efficient library rather than reinventing the wheel. You can find the library <a href='https://github.com/mapbox/delaunator'>here</a>, where you're provided with a couple of options to integrate it with your project, depending on your preferences and needs.
+And lastly, I want to include a section on using the delaunator, because in most projects it's probably better to use an efficient library rather than reinventing the wheel. You can find the library <a href='https://github.com/mapbox/delaunator'>here</a>, where you're provided with a couple of options to integrate it with your project depending on your preferences and needs. I like to simply include it like this:
+
+<pre><code>&#60;script src="https://unpkg.com/delaunator@5.0.0/delaunator.min.js"&#62;&#60;/script&#62;
+</code></pre>
+
+Then we need to create the initialize the Delaunator on a list of coordinates. Note that these coordinates should be in form of a flat list:
+
+<pre><code>// coordinate list of the Delaunay vertices
+const coords = [168,180, 168,178, 168,179, 168,181, 168,183, ...];
+
+const delaunay = new Delaunator(coords);
+console.log(delaunay.triangles);
+// [623, 636, 619,  636, 444, 619, ...]
+</code></pre>
+
+You can then get information about the triangles in the following manner:
+
+<pre><code>// coordinate list of the Delaunay vertices
+const coords = [168,180, 168,178, 168,179, 168,181, 168,183, ...];
+
+const delaunay = new Delaunator(coords);
+let triangles = delaunay.triangles
+for (let i = 0; i < triangles.length; i += 3) {
+    coordinates.push([
+        points[triangles[i]],
+        points[triangles[i + 1]],
+        points[triangles[i + 2]]
+    ]);
+}
+</code></pre>
+
+And I think you get the idea. There's a lot more things you can do with the Delaunator library, go check out the <a href='https://github.com/mapbox/delaunator'>github repo</a>.
+
+And that's a wrap! If you've reached here, thanks a million for reading! If you enjoyed this tutorial consider sharing it with your friends, it helps out quite a bit. Cheers!
