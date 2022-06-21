@@ -126,11 +126,6 @@ The very first instance of Voronoi diagrams dates back much further than Voronoi
 
 Another historical record of Voronoi diagrams is the figure to the right by John Snow (not the guy from Game of Thrones), where he was able to pinpoint a  defective water pump with a Voronoi diagram. That defective pump was at the root of a cholera outbreak in Victorian England. Actually a very interesting story, you can read more about it <a href='https://mbeconsulting.com/lifesaving-maths-you-know-something-john-snow/'>here</a> and <a href='ph.ucla.edu/epi/snow/broadstreetpump.html'>here</a>. I'm not exactly sure of the timeline here, but Dirichlet was working with Voronoi diagrams around the same time, which is why Voronoi diagrams are also sometimes known as Dirichlet Tesselations. Voronoi then later extended Dirichlets ideas to higher dimensions.
 
-
-https://mathshistory.st-andrews.ac.uk/Biographies/Voronoy/
-
-
-
 <h2>So what's a Delaunay Triangulation?</h2>
 
 <blockquote>A Delaunay triangulation for a given set P of discrete points in a general position is a triangulation DT(P) such that no point in P is inside the circumcircle of any triangle in DT(P).</blockquote>
