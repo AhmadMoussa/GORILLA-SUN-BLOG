@@ -99,13 +99,13 @@ Hence gen-art packing algorithms vary a little in that regard. I'd like to show 
 
 Caleb's pieces <a href='https://superrare.com/0x6125e13fc97f6fc97ea14cf925211e4dc0e99f0f/lens-3-18'>Lens 3</a> and <a href='https://superrare.com/0x6125e13fc97f6fc97ea14cf925211e4dc0e99f0f/colorshift-2-12'>Colorshift 2</a>, part of his ongoing 'Coalesce' series, are some of the most interesting circle packing sketches I've seen in a while. Note that the images shown here (2000x2000px) don't do the originals justice which are absolutely gigantic (16000x16000px). Built on a system of circles and rings, Caleb makes use of an underlying noise field for a nifty creative effect. I especially like how Lens conveys the illusion of multiple overlapping lenses that appear to contort the coloration of the underlying circles, which is done by scaling and multiplying the underlying noise field. Excited to see where this series is heading, always a pleasure when Caleb's sketches bless my timeline.
 
-A little less recent <a href='https://www.infinite.center/2015/08/08/circles-inside-circles/'>example</a> of a circle packing sketch is by none other than Javad Tarbell:
+A little less recent <a href='https://www.infinite.center/2015/08/08/circles-inside-circles/'>example</a> of a circle packing sketch is by none other than Jared Tarbell:
 <p></p>
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
   <img class="viewable" src="https://gorillasun.de/assets/images/shape-packing/javadpack.jpg" alt="">
 </span>
 
-As well as this <a href='https://www.reddit.com/r/generative/comments/ibk6pf/circle_packing_%C3%A0_la_tarbell/'>beautiful homage</a> to Javad's sketch by prolific creative coder <a href='https://twitter.com/dmitricherniak'>Dmitri Cherniak</a>:
+As well as this <a href='https://www.reddit.com/r/generative/comments/ibk6pf/circle_packing_%C3%A0_la_tarbell/'>beautiful homage</a> to Jared's sketch by prolific creative coder <a href='https://twitter.com/dmitricherniak'>Dmitri Cherniak</a>:
 <p></p>
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
   <img class="viewable" src="https://gorillasun.de/assets/images/shape-packing/dimitripack.webp" alt="">
