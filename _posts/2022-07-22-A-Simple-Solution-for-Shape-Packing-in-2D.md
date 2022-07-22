@@ -18,7 +18,7 @@ listed: false
 </span>
 <p></p>
 
-This blog post is about the age-old creative coding problem of shape packing! Even though it might seem like a simple task at first, it is actually quite an involved task. It also usually entails having a broader look at how collision detection algorithms work. In the following sections we'll work our way up to  an algorithm with which you can essentially pack any sort of geometric shapes, and combinations thereof.
+This blog post is about the age-old creative coding problem of shape packing! Even though it might seem like a simple task at first, it is actually quite an involved undertaking. It also usually entails having a broader look at how collision detection algorithms work. In the following sections we'll work our way up to  an algorithm with which you can essentially pack any sort of geometric shapes, and combinations thereof.
 
 
 <div class="row gtr-50 gtr-uniform">
