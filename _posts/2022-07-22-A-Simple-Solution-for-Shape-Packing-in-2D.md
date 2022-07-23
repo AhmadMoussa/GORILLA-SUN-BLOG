@@ -8,9 +8,9 @@ description: Shape packing is a popular type of sketch in gen-art, but is often 
 thumbtype: img
 thumbnail_path: https://gorillasun.de/assets/images/shape-packing/thumbnail.jpg
 published: true
-exclude_rss: true
+exclude_rss: false
 legacy: false
-listed: false
+listed: true
 ---
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
