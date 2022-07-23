@@ -56,12 +56,12 @@ Later on I also re-discovered <a href='https://twitter.com/tarwin'>Tarwin Stroh-
 1. <a href='#1'>Packing Algorithms in Generative Art</a>
 2. <a href='#2'>Strategies for Collision Detection</a>
 3. <a href='#3'>Collision Detection in Video Games</a>
-4. <a href='#4'>Proposed solution</a>
+4. <a href='#4'>Proposed Solution</a>
 
 
 <h3>Getting our hands dirty:</h3>
 
-5. <a href='#5'>A closer look at Tarwin's Circle Packeing Library</a>
+5. <a href='#5'>A closer look at Tarwin's Circle Packing Library</a>
 6. <a href='#6'>Generalizing for other Shapes</a>
 7. <a href='#7'>Compositing Shapes with Circles</a>
 8. <a href='#8'>The Shape Packing Procedure</a>
