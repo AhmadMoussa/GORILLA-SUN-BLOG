@@ -274,7 +274,7 @@ this.circleDistance = function(c1, c2) {
 }
 </code></pre>
 
-An important optimization that we can do here, as pointed out by <a href='https://twitter.com/azeemstweet'>Azeem</a> (thanks!), is that p5's inbuilt dist() function internally uses the Euclidean distance formula which requires the computation of a square root. This computation is quite expensive and can be sidestepped by squaring the distances!
+An important optimization that we can do here, as pointed out by <a href='https://twitter.com/azeemstweet'>Azeem</a> (thanks!), is that p5's inbuilt dist() function internally uses the Euclidean distance formula which requires the computation of a square root. This computation is quite expensive and can be sidestepped by squaring the distances! This is negligible when we're only packing a few shapes, but when we're effectuating millions of checks this can quickly add up to a noticeable overhead.
 
 <pre><code>// without square root
 this.circleDistance = function(c1, c2) {
