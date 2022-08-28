@@ -6,11 +6,11 @@ categories:
   - blog
 description: A detailed write-up about my most recent fxhash piece 'Exotic Quarpets' from initial inspiration, to specific implementation details all the way to last minute wrestling with a browser compatibility bug.
 thumbtype: img
-thumbnail_path: https://gorillasun.de/assets/images/shape-packing/thumbnail.jpg
+thumbnail_path: https://gorillasun.de/assets/images/exotic_quarpets/banner.jpg
 published: true
 exclude_rss: true
 legacy: false
-listed: false
+listed: true
 ---
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
