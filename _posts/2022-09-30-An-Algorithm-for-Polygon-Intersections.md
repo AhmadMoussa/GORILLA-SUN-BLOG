@@ -74,7 +74,7 @@ We will also have a look at how to compute the intersection of two line segments
 
 Lastly a note on terminology, for the most part I'll be using the words <b>intersection</b> and <b>collision</b> interchangeably, since they essentially mean the same thing: that two rectangles are touching or overlapping in some manner. Albeit this, the word <b>collision</b> implies movement on behalf of the two rectangles and is probably better suited in that context.
 
-The methods described in this post might not be the most efficient ones for larger numbers of rectangles, but make up for that in simplicity. Here's a quick index to the different sections of the article:
+The methods described in this post might not be the most efficient ones for larger numbers of shapes, but make up for that in simplicity. Here's a quick index to the different sections of the article:
 
 <h3>Quick Index</h3>
 
