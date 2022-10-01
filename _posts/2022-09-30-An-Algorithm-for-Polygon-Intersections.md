@@ -253,6 +253,19 @@ Here I've also given the rectangles the ability to bounce around the screen in a
 
 Alright, that concludes the first portion of this article, and I believe there's already a lot that can be done with what we've covered! In the next section we'll have a look a rectangles that aren't axis aligned and build up to a strategy for computing their intersections.
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<p></p>
 
 
 
