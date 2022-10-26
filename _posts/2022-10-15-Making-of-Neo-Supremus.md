@@ -53,7 +53,7 @@ While trying to figure out the math behind Neo Supremus, I coded and collected a
 The article also briefly made it onto the front page of hacker news on the 2nd of October, which was a really surreal experience. I've never had so many simultaneous visits on the blog!
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">We&#39;re on the front-page of hacker news! 😁😭 <a href="https://t.co/K2NZZgQ0Tw">pic.twitter.com/K2NZZgQ0Tw</a></p>&mdash; Ahmad Moussa || Gorilla Sun (@gorillasu) <a href="https://twitter.com/gorillasu/status/1576562874733891586?ref_src=twsrc%5Etfw">October 2, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<p></p>
 
 <h2>Movement in Directionality</h2>
 
@@ -142,9 +142,7 @@ The rectangles in the background can be overlapped, somehow as if they had a hea
 
 <h2>Texture and Color</h2>
 
-Yet again I recurred to my Perlin noise wobbly strokes that I've used on several occasions already, with the only difference that this time there is no random dropout in the strokes. This gave things a sort of painted style. The edges of shapes in Malevich's paintings are relatively straight and only at some points presenting a slight waviness, hence I didn't crank this effect up very much. It was a bit tricky finding high resolution scans of the artworks, but examining some examples we can have a closer look:
-
-[img]
+Yet again I recurred to my Perlin noise wobbly strokes that I've used on several occasions already, with the only difference that this time there is no random dropout in the strokes. This gave things a sort of painted style. The edges of shapes in Malevich's paintings are relatively straight and only at some points presenting a slight waviness, hence I didn't crank this effect up very much. It was a bit tricky finding high resolution scans of the artworks, but examining some examples we can notice that there is great detail in the canvas texture and how the color is applied to it.
 
 Nothing special was done to the colors this time, except that I sampled them from some famous Suprematist paintings, not solely restricted to Malevich, but also some of his contemporaries.
 
@@ -163,7 +161,7 @@ I also sampled palettes from other artworks as well as some that I already liked
 As for the canvas texture, it is still something that I am actively investigating. There's something very special about the old faded oil colors on a canvas that I have no idea how to go about yet. Krankarta is doing something super realistic in that regard currently:
 
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Boxes of colour <a href="https://t.co/qhJRs1UJ6Y">pic.twitter.com/qhJRs1UJ6Y</a></p>&mdash; KRANKARTA (@krankarta) <a href="https://twitter.com/krankarta/status/1579836348877635586?ref_src=twsrc%5Etfw">October 11, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<p></p>
 
 I looked into paint simulations a little bit, and it's a heavily researched field, especially with respect to drawing softwares intended for tablets and touch surfaces to emulate a realistic behaviour of color. For my purposes it doesn't have to be interactive though. Another one that recently really caught my eye in that regard was Disjoint and Disoriented back from June, a collab between Lunarean and dmarchi:
 
