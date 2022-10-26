@@ -31,7 +31,10 @@ To me, there is something very fascinating about the radical nature of the supre
 <br/>
 Kazimir Malevich: Atragic Visionary by Cathy Locke</blockquote>
 
-[img]
+<span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
+  <img class="viewable" src="https://gorillasun.de/assets/images/Making of Neo Supremus/img.png" alt="">
+</span>
+<p></p>
 
 Maybe this piqued your interest in the Suprematist art movement and learning more about it! It surely did for me, being the reason why I even started this entire project. Besides the historical and political background of it all, I also simply adore the compositions from an aesthetical point of view. In the rest of the article, we'll talk about how Neo Supremus came to be as well as some of the techniques that I utilised.
 
@@ -123,7 +126,7 @@ This function is quite handy to have when you need a random point within a trian
 So instead of picking a point at random, we now pre-emptively generate a couple evenly spaced points which we can later pick from to place our rectangles on. Constraining the points to a triangle was also not very difficult, I simply reused the 'Point in Polygon Test' code that I also covered in the polygon intersection article (which utilises raycasting to check if a point is contained within a polygonal shape). Poisson disk sampled points constrained to a triangular shape would look as follows:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-  <img class="viewable" src="https://gorillasun.de/assets/images/Making of Neo Supremus/poisson triangle.jpg" alt="">
+  <img class="viewable" src="https://gorillasun.de/assets/images/Making of Neo Supremus/poisson triangle.png" alt="">
 </span>
 <p></p>
 
@@ -153,7 +156,7 @@ Nothing special was done to the colors this time, except that I sampled them fro
 I also sampled palettes from other artworks as well as some that I already liked:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-  <img class="viewable" src="https://gorillasun.de/assets/images/Making of Neo Supremus/palettes.jpg" alt="">
+  <img class="viewable" src="https://gorillasun.de/assets/images/Making of Neo Supremus/palettes.png" alt="">
 </span>
 <p></p>
 
@@ -165,7 +168,7 @@ As for the canvas texture, it is still something that I am actively investigatin
 I looked into paint simulations a little bit, and it's a heavily researched field, especially with respect to drawing softwares intended for tablets and touch surfaces to emulate a realistic behaviour of color. For my purposes it doesn't have to be interactive though. Another one that recently really caught my eye in that regard was Disjoint and Disoriented back from June, a collab between Lunarean and dmarchi:
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-  <img class="viewable" src="https://gorillasun.de/assets/images/Making of Neo Supremus/disjoint and disoriented.jpg" alt="">
+  <img class="viewable" src="https://gorillasun.de/assets/images/Making of Neo Supremus/disjoint and disoriented.png" alt="">
 </span>
 <p></p>
 
@@ -186,7 +189,7 @@ In that manner, I wanted to create something that would look good as a still but
 <blockquote>The intuitive form should emerge from nothing.</blockquote>
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
-  <img class="viewable" src="https://gorillasun.de/assets/images/Making of Neo Supremus/notebook.jpg" alt="">
+  <img class="viewable" src="https://gorillasun.de/assets/images/Making of Neo Supremus/notebook.png" alt="">
 </span>
 <p></p>
 
