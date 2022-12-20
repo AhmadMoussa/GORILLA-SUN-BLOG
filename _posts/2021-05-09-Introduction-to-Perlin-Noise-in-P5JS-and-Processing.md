@@ -23,6 +23,19 @@ Whilst drawing freehand on a paper, it's only natural to utilize smooth curves i
 
 The special thing that will, hopefully, set this tutorial apart from already existing tutorials, is that it will exemplify how to use Perlin Noise in a number of specific scenarios. Where we'll start gentle and then iteratively increase the difficulty.
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <h2>P5's noise() function</h2>
 The noise() function is actually a little tricky to figure out by just messing around with it, since you can use it in a number of different ways. The random() function in P5JS accepts a specific range and returns a random number within this range. The noise() function however can accept 1, 2 or 3 numbers as input arguments. 
 
