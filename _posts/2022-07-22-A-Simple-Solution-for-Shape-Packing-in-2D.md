@@ -70,6 +70,20 @@ Later on I also re-discovered <a href='https://twitter.com/tarwin'>Tarwin Stroh-
 
 <p></p>
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<p></p>
+
 <h2><a name='1'></a>Packing Algorithms in Generative Art</h2>
 
 <span class="image fit" style="margin: 0 0 1em 0; padding: 0 0 0 0;">
