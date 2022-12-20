@@ -45,6 +45,21 @@ Lastly, before we begin, you can find a highly un-optimized version of the BW al
 4. <a href='#everything'>Putting it all together</a>
 5. <a href='#delaunator'>Using the Delaunator library</a>
 
+<p></p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<p></p>
+
 <h2><a name='wiki'></a>Wikipedia's Bowyer-Watson Pseudocode Snippet</h2>
 
 After digging a bit on how to approach the triangulation task I came across a pseudocode snippet on the <a href='https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm'>BW wikipedia page</a>. It loosely describes the required steps of the algorithm and I encourage you to read it until you've got a general idea, but it's not necessary, you can safely skip this section:
@@ -206,6 +221,20 @@ In this manner we iteratively add vertices to this triangle mesh, subdividing th
 		</span>
 	</div>
 </div>
+<p></p>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 <p></p>
 
 <h2><a name='implement'></a>Implementation Details</h2>
