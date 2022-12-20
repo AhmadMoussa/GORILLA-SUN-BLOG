@@ -33,6 +33,21 @@ Mastodon is inherently quite a bit different from Twitter, as it's built on top 
 7. <a href='#7'>More Reading Material</a>
 
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<p></p>
+
+
 <h2><a name='1'></a>What is Mastodon</h2>
 
 Mastodon describes itself as a decentralised open source microblogging platform. Moreover it isn't really a social media networking website, but rather a software that allows you to host your very own. Oof, that is already a lot to digest in two sentences... let's break that down. Superficially, Mastodon is very similar to Twitter, you create an account, post short texts and images to a timeline, follow other users and interact with their posts. Conceptually however, there are quite a few differences that we're gonna tackle throughout the sections of this post.
