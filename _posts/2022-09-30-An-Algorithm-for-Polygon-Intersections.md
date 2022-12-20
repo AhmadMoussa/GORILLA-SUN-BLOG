@@ -86,6 +86,21 @@ The methods described in this post might not be the most efficient ones for larg
 6. <a href='#6'>Drawing the Intersection Polygon</a>
 7. <a href='#7'>Beyond Rectangles: Polygon Intersection</a>
 
+<p></p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8883021699930297"
+     crossorigin="anonymous"></script>
+<!-- Middle Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8883021699930297"
+     data-ad-slot="4593843756"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<p></p>
+
 <h2><a name='1'></a>What's axis-alignment?</h2>
 
 The term <b>axis-aligned</b> indicates that a shape is aligned with the coordinate axes. For example an axis-aligned rectangle would have it's edges parallel to the x and y axes. Something that isn't axis aligned can occur with a different orientation such that it lies rotated with respect to the coordinate axes. Here's an example:
