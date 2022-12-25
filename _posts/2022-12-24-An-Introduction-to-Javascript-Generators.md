@@ -21,7 +21,6 @@ listed: true
 Generators are a bit of an obscure feature of javascript, and their usefulness might not be immediately evident. This article aims at explaining how they work and what they can be used for! We’ll first have a look at the syntax and how generators are typically implemented, followed by some use cases where generators come in really handy! We'll also briefly dip our toes into the concept of iteration, iterators and iterables. Lastly, we'll also have a look at the lazy evaluation programming paradigm and how generators are one way to implement it!
 
 Quick Index:
-
 1. <a href='#1'>A Tale of Iterators and Iterables</a>
 2. <a href='#2'>Generators: Iterators in Disguise!</a>
 3. <a href='#3'>Generators as Iterables</a>
