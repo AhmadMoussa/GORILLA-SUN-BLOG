@@ -153,7 +153,7 @@ The expected behaviour here, when passing it to a <b>for...of<b> loop, would be 
 
 <ul>
 <li>We need to implement a <b>next()</b> function</li>
-<li>We need to return an object of the form <b>{done: true|false, value: val}<b></li>
+<li>We need to return an object of the form <b>{done: true|false, value: val}</b></li>
 </ul>
 
 Typically this is implemented in the following manner:
