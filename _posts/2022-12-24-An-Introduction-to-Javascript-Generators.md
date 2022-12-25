@@ -66,14 +66,14 @@ We're gonna see what all of this means in a hands on manner throughout the next 
 
 A javascript generator is a special type of synchronous function where execution can be manually halted and resumed at any given point, all the while remembering where we halted execution. Regular functions don’t have this ability, once invoked they will run until fully executed or a return statement is encountered.
 
-To best illustrate this, let’s start by having a look at the syntax! To tell javascript that a function should be a generator, we simply follow the ‘function’ keyword by an asterisk symbol. And that's that, how this syntax came to be from a historical point of view is a bit hazy. Here's an initial minimal example:
+To best illustrate this, let’s start by having a look at the syntax! To tell javascript that a function should be a generator, we simply follow the <b>function</b> keyword by an asterisk symbol (<b>*</b>). And that's that, how this syntax came to be from a historical point of view is a bit hazy. Here's an initial minimal example:
 
 <pre><code>function* generator(){
   yield;
 }
 </code></pre>
 
-Our next point of interest is the <b>yield</b> keyword that you can see in the body of the generator's function. Think of it as the return keyword’s distant cousin: it is also used to get a value out of the generator function and returns it when the generator is invoked, however, unlike the return keyword, it doesn’t terminate the function instantaneously but rather just pauses it’s execution. The next time the generator is invoked again we will resume execution starting from the last yield keyword. This essentially means that the yield keyword can occur more than once throughout the generator’s body:
+Our next point of interest is the <b>yield</b> keyword that you can see in the body of the generator's function. Think of it as the return keyword’s distant cousin: it is also used to get a value out of the generator function and returns it when the generator is invoked, however, unlike the return keyword, it doesn’t terminate the function instantaneously but rather just pauses it’s execution. The next time the generator is invoked again we will resume execution starting from the last <b>yield</b> keyword. This essentially means that the <b>yield</b> keyword can occur more than once throughout the generator’s body:
 
 <pre><code>function* generator(){
   yield 1;
@@ -149,11 +149,11 @@ Some objects in javascript already have iterators built-in, simply allowing us t
 }
 </code></pre>
 
-The expected behaviour here, when passing it to a for...of loop, would be to loop over the all of the court + suit combinations in addition to the pip cards (the cards with numbers on them). Hence 52 distinct pairs in total, and we want to do this without manually having to type all of them out. Building our iterator object from scratch, we need to follow the two conditions:
+The expected behaviour here, when passing it to a <b>for...of<b> loop, would be to loop over the all of the court + suit combinations in addition to the pip cards (the cards with numbers on them). Hence 52 distinct pairs in total, and we want to do this without manually having to type all of them out. Building our iterator object from scratch, we need to follow the two conditions:
 
 <ul>
-<li>We need to implement a .next() function</li>
-<li>We need to return an object of the form {done: true|false, value: val}</li>
+<li>We need to implement a <b>next()<b> function</li>
+<li>We need to return an object of the form <b>{done: true|false, value: val}<b></li>
 </ul>
 
 Typically this is implemented in the following manner:
