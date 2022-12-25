@@ -152,7 +152,7 @@ Some objects in javascript already have iterators built-in, simply allowing us t
 The expected behaviour here, when passing it to a <b>for...of<b> loop, would be to loop over the all of the court + suit combinations in addition to the pip cards (the cards with numbers on them). Hence 52 distinct pairs in total, and we want to do this without manually having to type all of them out. Building our iterator object from scratch, we need to follow the two conditions:
 
 <ul>
-<li>We need to implement a <b>next()<b> function</li>
+<li>We need to implement a <b>next()</b> function</li>
 <li>We need to return an object of the form <b>{done: true|false, value: val}<b></li>
 </ul>
 
