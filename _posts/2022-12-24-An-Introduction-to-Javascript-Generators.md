@@ -20,7 +20,8 @@ listed: true
 
 Generators are a bit of an obscure feature of javascript, and their usefulness might not be immediately evident. This article aims at explaining how they work and what they can be used for! We’ll first have a look at the syntax and how generators are typically implemented, followed by some use cases where generators come in really handy! We'll also briefly dip our toes into the concept of iteration, iterators and iterables. Lastly, we'll also have a look at the lazy evaluation programming paradigm and how generators are one way to implement it!
 
-Quick Index:
+<h3>Quick Index:</h3>
+
 1. <a href='#1'>A Tale of Iterators and Iterables</a>
 2. <a href='#2'>Generators: Iterators in Disguise!</a>
 3. <a href='#3'>Generators as Iterables</a>
@@ -33,7 +34,7 @@ Quick Index:
 
 <h2><a name='1'></a>A Tale of Iterators and Iterables</h2>
 
-Generators are essentially iterators in disguise. Let me explain what that means! An iterator can be best explained as a "protocol that defines how to produce a sequence of values from an object". That's a bit of a mouthful, and it's probably best to directly have a look at an example. You're probably familiar with the for...of loop statement that was introduced in ES6 (not to be confused with the for...in):
+Generators are essentially iterators in disguise. Let me explain what that means! An iterator can be best explained as a "protocol that defines how to produce a sequence of values from an object". That's a bit of a mouthful, and it's probably best to directly have a look at an example. You're probably familiar with the <b>for...of</b> loop statement that was introduced in ES6 (not to be confused with the <b>for...in</b>):
 
 <pre><code>let nums = [1, 2, 3, 4, 5]
 
@@ -43,15 +44,15 @@ for(let n of nums){
 // 1, 2, 3, 4, 5
 </code></pre>
 
-It's essentially an alternative to the regular old school imperative for loop that we're used to, where we manually have to access the elements of the array we're looping over and requires us to keep track of the index. The for...of loop takes care of all of that for us, we just need to point to pass it the array we want to loop over and it will directly give us the elements of that array without us having to access the elements by index, as opposed to the for...in loop statement for example. Fun fact, the for...of loop can also be used for other objects such as sets and strings (and more)! Neat, right?.
+It's essentially an alternative to the regular old school imperative for loop that we're used to, where we manually have to access the elements of the array we're looping over and requires us to keep track of the index. The <b>for...of</b> loop takes care of all of that for us, we just need to pass it the array taht we want it to loop over and it'll directly serve us the elements of that array without having to access them by index (as opposed to the <b>for...in</b> loop statement for example). Fun fact, the <b>for...of</b> loop can also be used for other objects such as sets and strings (and more)! Neat, right?.
 
-The object that is passed to a for...of loop usually needs to be an 'iterable'. The important thing to understand here, is that the for...of loop doesn't actually loop over the object by itself, but makes use of an 'iterator' function that is attached to the iterable. The for...of loop simply invokes that iterator function and makes use of it to generate the correct sequence of items. This means that arrays, set, strings, etc. already have such an iterator function built into them that predicates in what sequence the for...of loop will go over the elements. Dr. Axel Rauschmayer’s gives a good summary of what iterables and iterators are in his book “exploring ES6”:
+The object that is passed to a <b>for...of</b> loop usually needs to be an <b>iterable</b>. The important thing to understand here, is that the <b>for...of</b> loop doesn't actually loop over the object by itself, but makes use of an <b>iterator</b> function that is attached to the iterable. The <b>for...of</b> loop simply invokes that iterator function and makes use of it to generate the correct sequence of items. This means that arrays, sets, strings, etc. already have such an iterator function built into them that predicate in what sequence the <b>for...of</b> loop will go over the elements. In <a href='https://exploringjs.com/es6.html'>exploring ES6</a>, Dr. Axel Rauschmayer gives a good summary of what iterables and iterators are:
 
 <blockquote>
-An iterable is a data structure that wants to make its elements accessible to the public. It does so by implementing a method whose key is Symbol.iterator. That method is a factory for iterators.
+An iterable is a data structure that wants to make its elements accessible to the public. It does so by implementing a method whose key is <b>Symbol.iterator</b>. That method is a factory for iterators.
 </blockquote>
 
-In essence, iterables are sequences of data that are intended to be traversed and consumed, and at the same time hold their own iterator function stored inside an object property with the identifier 'Symbol.iterator'. It describes what the sequence of items should look like when it's being looped over. What javascript Symbols are is widely outside the range of this article (<a href='https://www.javascripttutorial.net/es6/symbol/'>you can learn more about Symbols here</a>), and isn't even of much concern here, we simply need to implement this function to make an object iterable. More on that later.
+In essence, iterables are sequences of data that are intended to be traversed and consumed, and at the same time hold their own iterator function stored inside an object property with the identifier <b>Symbol.iterator</b>. It describes what the sequence of items should look like when it's being looped over. What javascript Symbols are is widely outside the range of this article (you can learn more about Symbols <a href='https://www.javascripttutorial.net/es6/symbol/'>here</a>), and isn't really of much concern for the purposes of this article, we simply need to implement this function to make an object iterable. More on that later.
 
 <blockquote>An iterator is a pointer for traversing the elements of a data structure (think cursors in databases).</blockquote>
 
@@ -59,7 +60,7 @@ Basically, iterators are procedures that describe how the iterable sequence is b
 
 <blockquote>In JavaScript an iterator is an object which defines a sequence and potentially a return value upon its termination. Specifically, an iterator is any object which implements the Iterator protocol by having a next() method […] — MDN</blockquote>
 
-We're gonna see what all of this means in a hands on manner throughout the next two sections! Additionally, as a matter of fact, all iterators are actually also iterables, because they can be iterated over by another iterator. However, not all iterables are iterators. This is probably very confusing at this point, but hang on it'll get a little clearer in the coming sections. I hope I have piqued your interest at this point, and you're curious to know how generators fit into the overall picture!
+We're gonna see what all of this means in a hands on manner throughout the next two sections! Additionally, as a matter of fact, all iterators are actually also iterables, because technically, they can be iterated over by another iterator. However, not all iterables are iterators. This is probably very confusing at this point, hang on though, it'll get a little clearer in the coming sections. I hope I have piqued your interest at this point, and you're curious to know how generators fit into the overall picture of iteration!
 
 <h2><a name='2'></a>Generators: Iterators in Disguise!</h2>
 
@@ -72,7 +73,7 @@ To best illustrate this, let’s start by having a look at the syntax! To tell j
 }
 </code></pre>
 
-Our next point of interest is the ‘yield’ keyword that you can see in the body of the generator's function. Think of it as the return keyword’s distant cousin: it is also used to get a value out of the generator function and returns it when the generator is invoked, however, unlike the return keyword, it doesn’t terminate the function instantaneously but rather just pauses it’s execution. The next time the generator is invoked again we will resume execution starting from the last yield keyword. This essentially means that the yield keyword can occur more than once throughout the generator’s body:
+Our next point of interest is the <b>yield</b> keyword that you can see in the body of the generator's function. Think of it as the return keyword’s distant cousin: it is also used to get a value out of the generator function and returns it when the generator is invoked, however, unlike the return keyword, it doesn’t terminate the function instantaneously but rather just pauses it’s execution. The next time the generator is invoked again we will resume execution starting from the last yield keyword. This essentially means that the yield keyword can occur more than once throughout the generator’s body:
 
 <pre><code>function* generator(){
   yield 1;
@@ -86,20 +87,20 @@ console.log(generator().next().value) // 3
 console.log(generator().next().value) // undefined
 </code></pre>
 
-You probably also noticed that we can’t simply invoke the generator like a regular function. Calling the generator function like a regular one would actually not do anything. To actually get a value out of it we need to use the .next() method. Invoking this method on the generator function we will obtain a little object with two properties ‘value’ and ‘done’, where the former is simply the value that we are returning with the yield statement, and the latter is a boolean indicating if the next .next() call will return a value or undefined. You will get a generator object with a ‘value: undefined’ when there are no more yield statements to consume.
+You probably also noticed that we can’t simply invoke the generator like a regular function. Calling the generator function like a regular one would actually not do anything. To actually get a value out of it we need to use the <b>next()</b> method. Invoking this method on the generator function we will obtain a little object with two properties <b>value</b> and <b>done</b>, where the former is simply the value that we are returning with the <b>yield</b> statement, and the latter is a boolean indicating if the next .next() call will return a value or undefined. You will get a generator object with a ‘value: undefined’ when there are no more yield statements to consume.
 
 <pre><code>console.log(generator().next()) // {done: false, value: val}</code></pre>
 
-If your generator accepts input parameters, these have to be passed through the .next(in_param) method as well. In this manner, generator functions are iterators as the satisfy the two conditions that we mentioned earlier:
+If your generator accepts input parameters, these have to be passed through the <b>next()</b> method as well. In this manner, generator functions are iterators as the satisfy the two conditions that we mentioned earlier:
 
-1. Generators are objects that implement a .next() function. Printing out the generator object itself with 'console.log(generator)' you'll see that it has a property called 'next' that holds a function.
+1. Generators are objects that implement a <b>next()</b> function. Printing out the generator object itself with <b>console.log(generator)</b> you'll see that it has a property called <b>next</b> that holds a function.
 2. A generator has a return value on when it terminates. This happens when all yield statements are exhausted, and even holds true when there are no yield statements in the body of the generator function.
 
 In the coming section we'll have a crack at creating our own custom iterator functions for our objects! Generators will come in very handy for that!
 
 <h2><a name='3'></a>Generators as Iterables!</h2>
 
-At the same time, generators also act as iterables! For example, we can simply pass our generator to a for/of loop to extract values from it:
+At the same time, generators also act as iterables! For example, we can simply pass our generator to a <b>for...of</b> loop to extract values from it:
 
 <pre><code>function* generator(){
   yield 1;
@@ -140,7 +141,7 @@ This can get a bit confusing and it's probably a bit difficult to see how this i
 
 <h2><a name='4'></a>Creating custom Iterables with Generators</h2>
 
-Some objects in javascript already have iterators built-in, simply allowing us to pass them to a for ... of loop. But what if we create a custom object, how can we turn it into an iterable that we can pass to a for ... of loop? In this case we would have to define our own iterator and attach it to the object under the [Symbol.iterator] property that we've already discussed earlier. To demonstrate this, I'll borrow an example from an amazing talk by <a href='https://twitter.com/AnjanaVakil'>Anjana Vakil</a>: <a href='https://www.youtube.com/watch?v=gu3FfmgkwUc'>The Power of JS Generators</a>. Let's assume we have the following object:
+Some objects in javascript already have iterators built-in, simply allowing us to pass them to a <b>for...of</b> loop. But what if we create a custom object, how can we turn it into an iterable that we can pass to a <b>for...of</b> loop? In this case we would have to define our own iterator and attach it to the object under the <b>Symbol.iterator</b> property that we've already discussed earlier. To demonstrate this, I'll borrow an example from an amazing talk by <a href='https://twitter.com/AnjanaVakil'>Anjana Vakil</a>: <a href='https://www.youtube.com/watch?v=gu3FfmgkwUc'>The Power of JS Generators</a>. Let's assume we have the following object:
 
 <pre><code>let cardDeck = {
   suits: ['♥️', '♦️', '♠️', '♣️'],
@@ -167,7 +168,7 @@ Typically this is implemented in the following manner:
 }
 </code></pre>
 
-A little bit difficult to digest on first glance. The function returns an object that holds as property the .next() function. In turn, the next() function is what returns the iterator object which holds the 'done' and 'value' properties. This would already work if we were to pass it to a for...of loop, but is still a bit primitive in its current state. Here we defaulted the done value to true, because having it set to false would be problematic if we fed it to a for...of loop (it would loop indefinitely). We've got to add some more stuff to make this work as intended:
+A little bit difficult to digest on first glance. The function returns an object that holds as property the <b>next()</b> function. In turn, the <b>next()</b> function is what returns the iterator object which holds the <b>done</b> and <b>value</b> properties. This would already work if we were to pass it to a <b>for...of</b> loop, but is still a bit primitive in its current state. Here we defaulted the done value to true, because having it set to false would be problematic if we fed it to a <b>for...of</b> loop (it would loop indefinitely). We've got to add some more stuff to make this work as intended:
 
 <pre><code>let cardDeck = {
   suits: ['♥️', '♦️', '♠️', '♣️'],
@@ -209,7 +210,7 @@ A little bit difficult to digest on first glance. The function returns an object
 }
 </code></pre>
 
-Now passing this to a for...of loop we would have successfully generated all of the possible suit/court combinations, we would still need to work on it to generate all of the 52 combinations. Try changing the code to make it also produce the numerical cards, it's a bit of a hassle... Imagine if you had more complicated objects for which you would want to generate certain sets of combinations! The problem of adding your own iterator function to your custom objects can be made much more tractable when using generators! Let's do the same thing as we just did, with the simple difference that this time around we'll use a generator as a middle man:
+Now passing this to a <b>for...of</b> loop we would have successfully generated all of the possible suit/court combinations, we would still need to work on it to generate all of the 52 combinations. Try changing the code to make it also produce the numerical cards, it's a bit of a hassle... Imagine if you had more complicated objects for which you would want to generate certain sets of combinations! The problem of adding your own iterator function to your custom objects can be made much more tractable when using generators! Let's do the same thing as we just did, with the simple difference that this time around we'll use a generator as a middle man:
 
 <pre><code>let cardDeck = {
   suits: ['♥️', '♦️', '♠️', '♣️'],
@@ -237,7 +238,7 @@ During my master studies I incidentally used generators on a daily basis, where 
 
 Generators allow us to do this with ease, and are much less clunky to work with than for loops in this scenario, often it the case that we want to fetch a small batch of data samples, apply some pre-processing steps to it, pass it to the neural network, do a training pass, and then every so many iterations we'd also want to evaluate how well our model is doing, and ultimately start over again and repeat these steps. Generators just make this interleaved and sequenced way of writing code super easy, as they will always wait for us when we suspend them and remember where we'e left off as well.
 
-This is however just one example of this lazy, on demand evaluation type of programming. A great resource on this lazy iteration, is James Sinclair's article "Why would anyone need Javascript Generator Functions?" where you will incidentally also learn a lot about Australian culture and what a Tim Tam Slam is. Let's have a look at a concrete example, say we have an array of numbers:
+This is however just one example of this lazy, on demand evaluation type of programming. A great resource on this lazy iteration, is James Sinclair's article <a href='https://jrsinclair.com/articles/2022/why-would-anyone-need-javascript-generator-functions/'>Why would anyone need javascript generator functions?</a> where you will incidentally also learn a lot about Australian culture and what a Tim Tam Slam is. Let's have a look at a concrete example, say we have an array of numbers:
 
 <pre><code>let nums = [0, 1, 2, 3, 4]
 </code></pre>
@@ -302,7 +303,7 @@ This is really cool, because technically there is no limit to how many generator
 
 <h2><a name='6'></a>Infinite Sequence Generators</h2>
 
-If you've noticed, we've had a 'while(true)' in our number generator, which is in any other scenario quite a scary statement, but thanks to the yield keyword we can rest assured that it won't run infinitely (except if we pass it to a for...of loop, but at that point it really is our fault). In essence, we've created an iterable that defines an infinite range, which could be potentially useful in certain situations, for instance when we don't know how many items/values we need in advance, we can just write a generator that defines the sequence and generate these values on demand. An example of an infinite sequence would be the fibonacci numbers:
+If you've noticed, we've had a <b>while(true)</b> in our number generator, which is in any other scenario quite a scary statement, but thanks to the yield keyword we can rest assured that it won't run infinitely (except if we pass it to a for...of loop, but at that point it really is our fault). In essence, we've created an iterable that defines an infinite range, which could be potentially useful in certain situations, for instance when we don't know how many items/values we need in advance, we can just write a generator that defines the sequence and generate these values on demand. An example of an infinite sequence would be the fibonacci numbers:
 
 <pre><code>function* () {
   let prev = 0;
