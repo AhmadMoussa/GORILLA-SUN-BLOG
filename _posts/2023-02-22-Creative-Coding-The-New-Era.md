@@ -387,10 +387,12 @@ Posting work that you've carefully put together over several hours or days, and 
 
 <h2><a name='5'></a>Concluding Thoughts</h2>
 
-Creative coding is an incredibly multifaceted endeavour that finds itself at the junction point of the arts and the sciences. It is a discipline that pushes the boundaries of computer code, and is actively shaping the arts of the future. In this rapidly advancing space, it's the job of the creative coder to investigate how new technologies can be utilised for the arts, and what effect these technologies will have on the evolution of the art space in coming years.
+Creative coding is an incredibly multifaceted discipline that finds itself at the junction point of the arts and the sciences. It is a diverse and nuanced amalgamation of different code based art practices that push the boundaries of computer code in various manners, and are also actively shaping the art of the future. In this rapidly advancing space, it's the creative coder's duty to investigate how new technologies can be utilised for the arts, and what effect these technologies will have on the evolution of the art space in the coming years.
+
+As it stands today, we are still at the beginning of a very long journey, where humanity engages in a discourse with the machine. In this context, creative coding is just one discussion out of many, but nonetheless a very important one.
 
 
-List of mentioned articles in order of appearance:
+<h4>List of articles in order of appearance:</h4>
 
 1. <a href='https://tylerxhobbs.com/essays/2021/the-importance-of-generative-art'>The Importance of Generative Art</a> - Tyler Hobbs
 2. <a href='https://timrodenbroeker.de/what-is-creative-coding/'>What is Creative Coding</a> - Tim Rodenbröcker
